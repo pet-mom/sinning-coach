@@ -184,6 +184,7 @@ function obituary(){const d=s.death,nm=`${s.given[0]} ${s.sur[0]}`,out=[];
   if(s.cnt.emigre)ex.push(`${s.emiPlace||'국외'}로 망명했다`);if(s.cnt.arrest)ex.push(`${s.cnt.arrest}번 체포되었다`);if(s.flags.russia===false&&s.flags.pow)ex.push('러시아에서 포로가 되었다');if(s.cnt.battle)ex.push(`${s.cnt.battle}번의 전투에 나섰다`);
   if(ex.length)out.push(ex.join(', ')+'.');
   const hon=[];if(s.flags.legion)hon.push('레지옹 도뇌르를 받았다');if(s.flags.title)hon.push('제국 작위를 받았다');if(s.flags.book)hon.push('책을 남겼다');if(hon.length)out.push(hon.join(', ')+'.');
+  if(s.met&&s.met.length)out.push(`생전에 ${s.met.join(', ')}${bat(s.met[s.met.length-1])?'을':'를'} 직접 보았다.`);
   const k=s.kids.length,ka=adultKids();out.push(s.spouse?`${jo(s.spouse.n,'과','와')} 혼인하여 자녀 ${k}명을 두었고, 그 가운데 ${ka}명이 어른이 되었다.`:'혼인하지 않았다.');
   out.push(`남긴 재산은 ${fmt(s.money)} ${money()}${s.land?`, 해마다 ${fmt(s.land)}의 지대가 나오는 땅`:''}.`);
   return out}
