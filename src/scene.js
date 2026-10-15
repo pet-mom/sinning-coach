@@ -8,7 +8,7 @@ function sceneKind(){if(s.cond==='prison')return 'prison';if(s.cond==='emigre')r
 function homeLabel(){const k=sceneKind();if(k==='prison')return '감옥';if(k==='abroad')return `망명지 하숙방 · ${s.emiPlace||''}`;if(k==='forest')return '은신처';if(k==='camp')return '야영지';
   if(k==='church')return isM()?'사제관':'수녀원';if(k==='chateau')return '성관';
   const rich=s.money>=20000||s.land>=1000;if(urban())return rich?'저택(오텔)':s.money>=1500?'석조 셋집':'다락방';return rich?'영지 저택':s.money>=600||s.land>0?'돌담 농가':'초가'}
-function companions(){const a=[];const kids=kidsAlive().filter(k=>s.year-k.y<18);
+function companions(){const k0=sceneKind();if(k0==='prison')return '독방';if(k0==='camp')return '전우들과 함께';if(k0==='forest')return '홀로 숨어서';const a=[];const kids=kidsAlive().filter(k=>s.year-k.y<18);
   if(s.spouse&&s.spouse.alive)a.push(isM()?'아내':'남편');
   if(s.age<25&&!(s.spouse&&s.spouse.alive)&&(s.fa.alive||s.mo.alive))a.push(s.fa.alive&&s.mo.alive?'부모님':s.fa.alive?'아버지':'어머니');
   if(s.age<18&&s.sibs)a.push(`형제자매 ${Math.min(s.sibs,4)}명`);

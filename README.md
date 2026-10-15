@@ -31,7 +31,8 @@ GitHub Pages 설정 (한 번만):
 | `src/events.js` | 무작위 사건과 행동 |
 | `src/stories.js` | 실존 인물과의 만남, 널리 알려진 일화, 지방 풍속, 연표 보강 |
 | `src/politics.js` | 시기별 실제 파벌, 강령(쟁점 7개), 정치 성향 점수, 당 활동, 파벌 숙청 |
-| `src/scene.js` | 거주지·시대·가족을 그리는 픽셀 아트 장면 |
+| `src/scene.js` | 장면 구성: 장소 판단, 가족 목록, 캡션 |
+| `src/art/` | 픽셀 아트: 공통 하늘·땅·깃발(`common.js`), 도시·항구(`city.js`), 마을·성관·숲(`country.js`), 감옥·야영지·성당·망명지(`places.js`), 시대 복식 인물(`people.js`) |
 | `src/ui.js` | 화면, 사건 창, 저장, 부고 |
 
 수정 후 `npm run build`(또는 `node build.mjs`)로 `docs/index.html`을 다시 만들고 함께 커밋합니다. `dist/artifact.html`은 Claude 아티팩트 게시용 조각으로, 저장소에는 올리지 않습니다.

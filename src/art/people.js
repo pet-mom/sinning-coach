@@ -81,7 +81,7 @@ function people_hat(B,L,type,col,o){o=o||{};const {hx,ht}=L;col=col||PEOPLE_C.bl
     B.px(hx+4,ht-4,2,1,r);B.px(hx+6,ht-3,1,2,rd);B.px(hx+4,ht-3,2,1,rd);
     B.px(hx,ht-1,1,1,PEOPLE_C.blue);B.px(hx+1,ht-1,1,1,PEOPLE_C.white);B.px(hx+2,ht-1,1,1,'#e04040');break}
   case 'cap': // 장인의 털모자
-    B.px(hx,ht-2,5,1,col);B.px(hx-1,ht-1,7,1,col);B.px(hx-1,ht-1,7,1,people_shade(col,-.2));B.px(hx+4,ht-3,2,1,col);break;
+    B.px(hx+1,ht-3,3,1,col);B.px(hx,ht-2,5,1,col);B.px(hx-1,ht-1,7,1,people_shade(col,-.25));break;
   case 'mob': {const w='#f4f2ea',w2='#d6d2c6';
     B.px(hx,ht-2,5,1,w);B.px(hx-1,ht-1,7,1,w);B.px(hx-1,ht,7,1,w2);B.px(hx-1,ht+1,1,1,w);B.px(hx+5,ht+1,1,1,w);
     if(o.ribbon)B.px(hx+4,ht-1,2,1,o.ribbon);if(o.cockade)people_cockade(B,hx,ht-1,o.cockade);break}
@@ -251,7 +251,7 @@ function people_dress(p,t,id){
     if(role==='soldier'||role==='officer'){const off=role==='officer';
       S.coat='full';S.collar=PEOPLE_C.red;S.cravat='#202024';S.stockings=PEOPLE_C.white;S.gaiters='#18181c';S.longGaiters=true;S.shoes='#18181c';
       if(pre89){S.coatCol='#e6e4dc';S.lapels=PEOPLE_C.blue;S.cuff=PEOPLE_C.blue;S.vest=PEOPLE_C.white;S.breeches=PEOPLE_C.white;S.lining=PEOPLE_C.blue;S.collar=PEOPLE_C.blue;
-        o.hat='tricorne';o.hatO={trim:off?PEOPLE_C.gold:PEOPLE_C.white,cockade:'white'};hd.style=off&&noble?'wig':'short';hd.style=off?'wig':'short'}
+        o.hat='tricorne';o.hatO={trim:off?PEOPLE_C.gold:PEOPLE_C.white,cockade:'white'};hd.style=off?'wig':'short'}
       else{S.coatCol=PEOPLE_C.blue;S.lapels=PEOPLE_C.white;S.cuff=PEOPLE_C.red;S.vest=PEOPLE_C.white;S.breeches=PEOPLE_C.white;S.lining=PEOPLE_C.red;
         if(t>=1829){S.breeches='#b82a2a';S.trousers=true;S.gaiters=null}
         if(off||t<1806.5){o.hat='bicorne';o.hatO={cockade:cockade||'tri',trim:off?PEOPLE_C.gold:null,plume:off?'tri':null}}
@@ -281,7 +281,7 @@ function people_dress(p,t,id){
       S.breeches='#7a6440';S.stockings='#b8b0a0';S.gaiters=people_pick(['#5a4a34','#8a8070'],h2);S.sabots=true;S.kneeBand=null;
       if(!kid){o.hat='felt';o.hatCol=people_pick(['#2a2420','#3a2e22','#4a3a28'],h2)}hd.style='long';if(a>=16&&a<60&&h3<.4)S.tool=true}
     else if(est==='artisan'){S.coat='shirt';S.vest=people_pick(['#5a3a2a','#3a4a3a','#6a5a3a'],h3);S.sleeve='#e2ded2';S.breeches=trousers?'#4a4438':'#6a5a40';
-      S.stockings='#8a8478';S.apron=a>=12?'#8a6038':null;S.shoes='#2a2018';S.cravat=null;if(!kid){o.hat='cap';o.hatCol=people_pick(['#3a4a6a','#5a3a2a','#6a2a2a'],h2)}}
+      S.stockings='#8a8478';S.apron=a>=12?'#8a6038':null;S.shoes='#2a2018';S.cravat=null;if(!kid){o.hat='cap';o.hatCol=people_pick(['#3a4a6a','#5a4a3a','#4a4a46'],h2)}}
     else { // 부르주아·귀족
       const pal=noble&&est!=='robe'?['#6a3a7a','#2f6a5a','#8a2a3a','#3a4f9a','#7a6a2a']:est==='robe'?['#1e1e24','#24222a']:['#5a4232','#2e3c58','#3e4a3a','#5a3a2e'];
       S.coatCol=people_pick(pal,h3);S.breeches=noble?'#e8e0c8':people_pick(['#d8ccb0','#3a3a40','#6a5a48'],h2);S.vest=noble?'#f0e6c8':people_pick(['#e8dcc0','#c8a85a','#d8d0c0'],h2);
