@@ -19,7 +19,7 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const estate=o.estate||wp
     job:null,jobSince:0,prevJob:null,best:{},hist:[],cond:'normal',condSince:0,
     fa:{alive:true,age:ri(24,40)},mo:{alive:true,age:ri(19,34)},sibs:ri(1,6),eldest:R()<.35,inherit:0,
     spouse:null,married:false,kids:[],widowed:0,divorced:false,
-    seeds:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null}}
+    seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null}}
 function birth(){L(`${yl()}`,'yr');const E=ESTATES[s.estate],Rg=REGIONS[s.region];
   const who=isM()?'아들':'딸';
   say(`${Rg.n}, ${E.noble?`${s.sur[0]} 가문의 영지`:`${s.sur[0]} 집안`}에서 ${who}이 태어났다. ${E.d}`,'big');

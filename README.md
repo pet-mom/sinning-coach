@@ -30,6 +30,7 @@ GitHub Pages 설정 (한 번만):
 | `src/engine.js` | 계절 진행, 경제, 가족, 승진, 공포정치, 전쟁·징집, 망명 |
 | `src/history.js` | 1751~1851년 연표 사건 |
 | `src/events.js` | 무작위 사건과 행동 |
+| `src/stories.js` | 실존 인물과의 만남, 널리 알려진 일화, 지방 풍속, 연표 보강 |
 | `src/ui.js` | 화면, 사건 창, 저장, 부고 |
 
 수정 후 `npm run build`(또는 `node build.mjs`)로 `docs/index.html`을 다시 만들고 함께 커밋합니다. `dist/artifact.html`은 Claude 아티팩트 게시용 조각으로, 저장소에는 올리지 않습니다.
