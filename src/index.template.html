@@ -3,13 +3,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23A3262C%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2210%22 fill=%22%23fff%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%2327407A%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700;800&family=IM+Fell+English:ital@0;1&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
 <style>
 /*@@CSS@@*/
 </style>
 <div id="app">
-  <div id="dtop"><div class="dt-logo disp">17<span>89</span></div><div class="dt-mid"><div class="dt-when"><b id="dwhen" class="disp"></b><span id="dage"></span></div><div class="dclock" aria-hidden="true"><div class="track"><i id="dclockFill"></i></div><div class="sea"><span>봄</span><span>여름</span><span>가을</span><span>겨울</span></div></div><span id="druler" class="meta"></span></div><button class="btn" id="dLives" type="button">지난 인생</button></div>
+  <div id="dtop"><div class="dt-logo"><span class="emb" id="demb" aria-hidden="true"></span><b>17<span>89</span></b></div><div class="decree" id="ddecree"></div><div class="dt-mid"><div class="dt-when"><b id="dwhen" class="disp"></b><span id="dage"></span></div><div class="dclock" aria-hidden="true"><div class="track"><i id="dclockFill"></i></div><div class="sea"><span>봄 <i>printemps</i></span><span>여름 <i>été</i></span><span>가을 <i>automne</i></span><span>겨울 <i>hiver</i></span></div></div></div><span id="druler" class="meta"></span><button class="btn" id="dLives" type="button">지난 인생</button></div>
   <header>
+    <div class="decree mob" id="decree"></div>
     <div class="top">
       <div><div class="nm disp" id="nm"></div><div class="meta" id="meta"></div></div>
       <div class="when"><b id="age"></b><span id="when"></span></div>
@@ -17,12 +18,12 @@
     <div class="post"><div class="rrow"><div class="on" id="post"></div><div class="fam" id="fam"></div></div><div class="ok" id="postk"></div></div>
     <div class="stats" id="stats"></div>
     <div class="sub" id="sub"></div>
-    <div class="clock" aria-hidden="true"><div class="track"><i id="clockFill"></i></div><div class="sea"><span>봄</span><span>여름</span><span>가을</span><span>겨울</span></div></div>
+    <div class="clock" aria-hidden="true"><div class="track"><i id="clockFill"></i></div><div class="sea"><span>봄 <i>printemps</i></span><span>여름 <i>été</i></span><span>가을 <i>automne</i></span><span>겨울 <i>hiver</i></span></div></div>
     <div id="dboard"></div>
   </header>
   <div id="center">
     <div class="logwrap"><main id="log" aria-live="polite"></main><button id="toBottom" class="btn" type="button" hidden>새 기록 보기 ↓</button></div>
-    <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shh"><h2 class="disp" id="shT"></h2><button class="btn" id="shMin" type="button">기록 보기</button></div><div id="shB"></div></div></div>
+    <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shdecree" id="shDecree"></div><div class="shh"><h2 class="disp" id="shT"></h2><button class="btn" id="shMin" type="button">기록 보기</button></div><div id="shB"></div></div></div>
     <button class="btn primary" id="shRet" type="button" hidden>사건으로 돌아가기</button>
   </div>
   <footer>
@@ -38,10 +39,15 @@
 
 <div id="title" class="full">
   <div class="tt">
-    <div class="vt">17<span>89</span></div>
-    <div class="ft">Liberté, Égalité, Fraternité — ou la mort</div>
-    <div class="tricolore" aria-hidden="true"><i style="background:var(--roi)"></i><i style="background:var(--sheet);border:1px solid var(--line)"></i><i style="background:var(--rouge)"></i></div>
-    <p class="disp" style="font-size:1.3rem;margin:0">한 프랑스인의 일생</p>
+    <div class="broadside">
+      <div class="bs-top">De l’Imprimerie nationale · An de grâce MDCCL</div>
+      <div class="bs-emb" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="var(--rouge)"/><circle cx="32" cy="32" r="21" fill="var(--sheet)"/><circle cx="32" cy="32" r="12" fill="var(--roi)"/></svg></div>
+      <div class="vt">17<span>89</span></div>
+      <div class="ft">Liberté, Égalité, Fraternité, ou la Mort</div>
+      <div class="tricolore" aria-hidden="true"><i style="background:var(--roi)"></i><i style="background:var(--sheet)"></i><i style="background:var(--rouge)"></i></div>
+      <p class="sub-t">한 프랑스인의 일생</p>
+      <p class="sub-f">Vie d’un citoyen, 1750–1850</p>
+    </div>
     <p class="lede">1750년, 루이 15세 치세의 프랑스에서 한 아이가 태어난다. 바스티유가 무너지고, 왕이 단두대에 오르고, 황제가 유럽을 휩쓰는 백 년을 그 아이는 어떻게 지나갈까. 주사위를 던지며 한 사람의 생을 살아 본다.</p>
     <div class="row" id="startRow">
       <button class="btn primary" id="newB" type="button">새 인생 시작</button>
@@ -49,7 +55,7 @@
       <button class="btn" id="livesB" type="button" hidden>지난 인생</button>
     </div>
     <div class="nameform" id="nameForm" hidden>
-      <p class="disp" style="font-size:1.1rem;margin:0">세례 명부에 이름을 적는다</p>
+      <p class="nf-h">세례 명부에 이름을 적는다 <span class="fr">Registre des baptêmes</span></p>
       <div class="nf"><label for="inSex">성별</label><select id="inSex"><option value="R">무작위</option><option value="M">남</option><option value="F">여</option></select><span></span></div>
       <div class="nf"><label for="inEst">신분</label><select id="inEst"></select><span></span></div>
       <div class="nf"><label for="inReg">출생지</label><select id="inReg"></select><span></span></div>
@@ -68,7 +74,7 @@
       <dt>자동과 배속</dt><dd>‘자동’을 켜면 성품에 맞게 대신 고른다. 1×~16×로 시간을 빨리 흐르게 한다.</dd>
     </dl>
     <div class="credit">
-      <h2 class="disp">참고</h2>
+      <h2 class="disp">참고 <span class="fr">Sources</span></h2>
       <p>화면 구성과 진행 방식은 웹게임 「승경도」(낙 @fr_frnds)의 구조를 따랐다. 확률은 다음 자료의 수치를 참고해 단순화하였다.</p>
       <ul>
         <li>Donald Greer, <i>The Incidence of the Terror during the French Revolution</i> (1935): 공식 처형 약 17,000명, 투옥 약 50만 명.</li>
