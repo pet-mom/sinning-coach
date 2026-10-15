@@ -20,6 +20,7 @@ const soldier=()=>onTrack('army');
 const deputy=()=>s.job==='p3'||s.job==='p4'||s.job==='p5';
 const money=()=>T()>=1795.5?'프랑':'리브르';
 const yl=()=>`${s.year}년`;
+const ym=()=>`${s.year}년 ${s.month+1}월`;
 const kidsAlive=()=>s.kids.filter(k=>k.alive);
 const adultKids=()=>s.kids.filter(k=>k.alive&&s.year-k.y>=20).length;
 
@@ -87,7 +88,7 @@ function loseJob(why){if(!s.job)return;closeJob();const n=pname(job());s.prevJob
 
 /* ================= 기록 ================= */
 let shown=0,sheetLive=false;
-function L(t,k='ev',d){s.log.push({t,k,se:s.season,d});flushLog()}
+function L(t,k='ev',d){s.log.push({t,k,a:s.age,m:s.month,d});flushLog()}
 function say(t,k='ev'){L(t,k);if(sheetLive)shText(t,k==='big'||k==='dark'?'q b':'q')}
 const BAD=new Set(['혐의']);
 function fx(o){const parts=[];for(const k in o){let n=o[k];if(typeof n==='function')n=n();if(!n)continue;
@@ -115,8 +116,8 @@ const RES=['','대실패','실패','보통','보통','성공','대성공'];
 async function roll(mod,o={}){let m=mod,why=o.why||'';
   if(s.flags.blessed){m+=1;s.flags.blessed=false;why=(why?why+' / ':'')+'성유물의 가호'}
   m=clamp(m,-2,2);const n=1+Math.abs(m);const f=Array.from({length:n},()=>ri(1,6));const v=m>=0?Math.max(...f):Math.min(...f);
-  const r={f,v,m};if(sheetLive&&o.inter!==false)await shThrow(r,o.label,why);
-  L(`${o.label||'판정'}: ${v} (${RES[v]})`,'dice',{f,v});return r}
+  const r={f,v,m};
+  L(`${o.label||'판정'} — 주사위 ${f.join('·')} → ${v} ${RES[v]}${why?` (${why})`:''}`,'dice',{f,v});return r}
 // 역사 통계에 따른 확률 추첨. true = 그 일이 일어난다.
-async function chance(p,label,why){p=clamp(p,0,1);const hit=R()<p;if(sheetLive)await shDraw(p,hit,label,why);
-  L(`${label}: ${Math.round(p*1000)/10}% → ${hit?'해당':'면함'}`,'dice');return hit}
+async function chance(p,label,why){p=clamp(p,0,1);const hit=R()<p;
+  L(`${label} ${Math.round(p*1000)/10}% → ${hit?'일어났다':'피했다'}${why?` · ${why}`:''}`,'dice');return hit}

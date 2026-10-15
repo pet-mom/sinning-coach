@@ -120,7 +120,7 @@ const EV=[
    {l:'붓을 든다',s:'학식 판정',a:'study',f:async()=>{const r=await roll(s.st.edu>=60?1:0,{label:'집필'});if(r.v>=4){s.flags.book=true;say('회고록을 펴냈다. 생각보다 많이 팔렸다.'+fx({fame:6,money:200}),'big')}else say('원고는 서랍 속에 남았다.'+fx({edu:1}))}},
    {l:'지난 일은 묻어 둔다',s:'',a:'safe',f:()=>say('지난 일은 말하지 않았다.')}])
 ];
-async function randomEvent(){if(s.dead||s.cond==='prison'||s.cond==='emigre')return;if(R()>.72)return;
+async function randomEvent(p=.72){if(s.dead||s.cond==='prison'||s.cond==='emigre')return;if(R()>p)return;
   s.cd=s.cd||{};const pool=EV.filter(e=>{try{return e.c()&&!(s.cd[e.id]>s.year)}catch(x){return false}});if(!pool.length)return;
   const tot=pool.reduce((a,e)=>a+e.w,0);let r=R()*tot,e=pool[0];for(const x of pool){r-=x.w;if(r<=0){e=x;break}}
   if(e.cd)s.cd[e.id]=s.year+e.cd;await e.run()}
@@ -135,7 +135,7 @@ const ACTS=[
  {k:'study',n:'대학에서 법학을 공부한다',s:'재산 300. 학식 +5',cost:300,c:()=>free()&&lit()&&isM()&&s.age<35,f:()=>say('법학부 강의를 들으며 로마법을 익혔다.'+fx({money:-300,edu:5}))},
  {k:'spa',n:'온천에서 요양한다',s:'재산 150. 건강 +6',cost:150,c:()=>free(),f:()=>say(pick(['플롱비에르의 온천에서 한 철을 보냈다.','비시 온천에서 몸을 추슬렀다.','바레주의 유황 온천을 찾았다.'])+fx({money:-150,hp:6}))},
  {k:'charity',n:'가난한 이웃을 돕는다',s:'재산 60. 명성 +2',cost:60,c:()=>free(),f:()=>{s.seeds.push({t:'saved',n:person(),y:s.year});say('흉년에 이웃들에게 빵과 장작을 나누었다.'+fx({money:-60,fame:2,faith:1}))}},
- {k:'club',n:'자코뱅 클럽에 가입한다',s:'급진 +10, 명성 +2. 공포정치기 혐의 감소',c:()=>free()&&T()>=1790&&T()<1794.75&&!s.flags.club&&(lit()||urban())&&isM(),f:()=>{s.flags.club=true;say('헌우회(자코뱅 클럽) 회원증을 받았다. 저녁마다 생토노레 거리의 옛 수도원 회합에 나갔다.'+fx({pol:10,fame:2,sus:-6}))}},
+ {k:'club',hide:1,n:'자코뱅 클럽에 가입한다',s:'급진 +10, 명성 +2. 공포정치기 혐의 감소',c:()=>free()&&T()>=1790&&T()<1794.75&&!s.flags.club&&(lit()||urban())&&isM(),f:()=>{s.flags.club=true;say('헌우회(자코뱅 클럽) 회원증을 받았다. 저녁마다 생토노레 거리의 옛 수도원 회합에 나갔다.'+fx({pol:10,fame:2,sus:-6}))}},
  {k:'cert',n:'시민증(공민 증명서)을 신청한다',s:'처세 판정. 혐의 감소',c:()=>free()&&T()>=1793.25&&T()<1794.5,inter:async()=>{const r=await roll(s.pol>=30?1:noble()?-1:0,{label:'시민증'});if(r.v>=4)say('구 위원회에서 시민증을 받았다.'+fx({sus:-12}));else say('위원회가 서류를 보류하였다.'+fx({sus:4}))}},
  {k:'pamph',n:'팸플릿을 써서 돌린다',s:'학식 판정. 명성과 성향',c:()=>free()&&lit()&&s.year>=1787,inter:async()=>{
    const i=await Q('팸플릿','pamphlet','어떤 논조로 쓸 것인가?',[{l:'혁명을 더 밀어붙이자',s:'',a:'radical'},{l:'질서와 화해를 말한다',s:'',a:'safe'},{l:'왕과 교회를 옹호한다',s:'',a:'royal pious'}]);
