@@ -20,6 +20,9 @@
   --roi:#7E98DA; --rouge:#DD6A66; --vert:#77B08E; --or:#D3AE5E; --gris:#9B9DA6; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
 html{height:100%}
 body{margin:0;height:100%;background:var(--paper);color:var(--ink);font-family:var(--f-body);line-height:1.65;font-size:15px}
 button{font:inherit;color:inherit}

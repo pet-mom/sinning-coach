@@ -7,9 +7,17 @@
 화면 구성과 진행 방식(자동 진행, 사건 창, 주사위 판정, 연간 방침과 행동, 이력, 부고)은
 웹게임 「승경도」의 구조를 따랐습니다.
 
-## 실행
+## 실행과 배포
 
-`index.html`을 브라우저로 열면 됩니다. 빌드 결과물이 커밋되어 있습니다.
+배포용 파일은 `docs/index.html` 하나입니다(빌드 결과물을 커밋합니다). 로컬에서는 이 파일을 브라우저로 바로 열면 됩니다.
+
+GitHub Pages 설정 (한 번만):
+
+1. 이 브랜치를 `main`에 병합합니다.
+2. 저장소 **Settings → Pages → Build and deployment**에서 Source를 **Deploy from a branch**로, Branch를 **`main`** / 폴더 **`/docs`**로 지정하고 저장합니다.
+3. 잠시 뒤 `https://<사용자명>.github.io/<저장소명>/`에서 열립니다.
+
+`docs/.nojekyll`이 있어 Jekyll 처리 없이 파일이 그대로 서비스됩니다.
 
 ## 구조
 
@@ -24,7 +32,7 @@
 | `src/events.js` | 무작위 사건과 행동 |
 | `src/ui.js` | 화면, 사건 창, 저장, 부고 |
 
-수정 후 `node build.mjs`로 `index.html`을 다시 만듭니다.
+수정 후 `npm run build`(또는 `node build.mjs`)로 `docs/index.html`을 다시 만들고 함께 커밋합니다. `dist/artifact.html`은 Claude 아티팩트 게시용 조각으로, 저장소에는 올리지 않습니다.
 
 ## 확률의 근거 (단순화)
 

@@ -1,5 +1,12 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="1750년 프랑스에서 태어나 혁명·공포정치·나폴레옹 제국을 지나는 한 사람의 일생을 살아 보는 인생 시뮬레이션">
 <title>1789 한 시민의 일생</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23A3262C%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2210%22 fill=%22%23fff%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%2327407A%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700;800&family=IM+Fell+English:ital@0;1&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
@@ -26,6 +33,9 @@
   --roi:#7E98DA; --rouge:#DD6A66; --vert:#77B08E; --or:#D3AE5E; --gris:#9B9DA6; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
 html{height:100%}
 body{margin:0;height:100%;background:var(--paper);color:var(--ink);font-family:var(--f-body);line-height:1.65;font-size:15px}
 button{font:inherit;color:inherit}
@@ -226,6 +236,8 @@ footer #pp{min-width:42px;display:grid;place-items:center}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 </style>
+</head>
+<body>
 <div id="app">
   <div id="dtop"><div class="dt-logo disp">17<span>89</span></div><div class="dt-mid"><div class="dt-when"><b id="dwhen" class="disp"></b><span id="dage"></span></div><div class="dclock" aria-hidden="true"><div class="track"><i id="dclockFill"></i></div><div class="sea"><span>봄</span><span>여름</span><span>가을</span><span>겨울</span></div></div><span id="druler" class="meta"></span></div><button class="btn" id="dLives" type="button">지난 인생</button></div>
   <header>
@@ -1540,3 +1552,5 @@ function boot(){
 boot();
 
 </script>
+</body>
+</html>
