@@ -1,0 +1,88 @@
+<title>1789 한 시민의 일생</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23A3262C%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2210%22 fill=%22%23fff%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%2327407A%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700;800&family=IM+Fell+English:ital@0;1&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/*@@CSS@@*/
+</style>
+<div id="app">
+  <div id="dtop"><div class="dt-logo disp">17<span>89</span></div><div class="dt-mid"><div class="dt-when"><b id="dwhen" class="disp"></b><span id="dage"></span></div><div class="dclock" aria-hidden="true"><div class="track"><i id="dclockFill"></i></div><div class="sea"><span>봄</span><span>여름</span><span>가을</span><span>겨울</span></div></div><span id="druler" class="meta"></span></div><button class="btn" id="dLives" type="button">지난 인생</button></div>
+  <header>
+    <div class="top">
+      <div><div class="nm disp" id="nm"></div><div class="meta" id="meta"></div></div>
+      <div class="when"><b id="age"></b><span id="when"></span></div>
+    </div>
+    <div class="post"><div class="rrow"><div class="on" id="post"></div><div class="fam" id="fam"></div></div><div class="ok" id="postk"></div></div>
+    <div class="stats" id="stats"></div>
+    <div class="sub" id="sub"></div>
+    <div class="clock" aria-hidden="true"><div class="track"><i id="clockFill"></i></div><div class="sea"><span>봄</span><span>여름</span><span>가을</span><span>겨울</span></div></div>
+    <div id="dboard"></div>
+  </header>
+  <div id="center">
+    <div class="logwrap"><main id="log" aria-live="polite"></main><button id="toBottom" class="btn" type="button" hidden>새 기록 보기 ↓</button></div>
+    <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shh"><h2 class="disp" id="shT"></h2><button class="btn" id="shMin" type="button">기록 보기</button></div><div id="shB"></div></div></div>
+    <button class="btn primary" id="shRet" type="button" hidden>사건으로 돌아가기</button>
+  </div>
+  <footer>
+    <button class="btn primary" id="pp" type="button" aria-label="일시정지"></button>
+    <button class="btn" id="autoB" type="button" aria-pressed="false">자동</button>
+    <div class="spd" id="spd"><button type="button" data-s="1">1×</button><button type="button" data-s="4">4×</button><button type="button" data-s="8">8×</button><button type="button" data-s="12">12×</button><button type="button" data-s="16">16×</button></div>
+    <span class="grow"></span>
+    <button class="btn" id="ab" type="button">행동</button>
+    <button class="btn" id="hb" type="button">이력</button>
+  </footer>
+  <aside id="dside" aria-label="행동, 이력, 설명"><div id="dtabs" role="tablist"><button data-t="행동" role="tab" type="button">행동</button><button data-t="이력" role="tab" type="button">이력</button><button data-t="설명" role="tab" type="button">설명</button></div><div id="dsBody"></div></aside>
+</div>
+
+<div id="title" class="full">
+  <div class="tt">
+    <div class="vt">17<span>89</span></div>
+    <div class="ft">Liberté, Égalité, Fraternité — ou la mort</div>
+    <div class="tricolore" aria-hidden="true"><i style="background:var(--roi)"></i><i style="background:var(--sheet);border:1px solid var(--line)"></i><i style="background:var(--rouge)"></i></div>
+    <p class="disp" style="font-size:1.3rem;margin:0">한 프랑스인의 일생</p>
+    <p class="lede">1750년, 루이 15세 치세의 프랑스에서 한 아이가 태어난다. 바스티유가 무너지고, 왕이 단두대에 오르고, 황제가 유럽을 휩쓰는 백 년을 그 아이는 어떻게 지나갈까. 주사위를 던지며 한 사람의 생을 살아 본다.</p>
+    <div class="row" id="startRow">
+      <button class="btn primary" id="newB" type="button">새 인생 시작</button>
+      <button class="btn" id="contB" type="button" hidden>이어하기</button>
+      <button class="btn" id="livesB" type="button" hidden>지난 인생</button>
+    </div>
+    <div class="nameform" id="nameForm" hidden>
+      <p class="disp" style="font-size:1.1rem;margin:0">세례 명부에 이름을 적는다</p>
+      <div class="nf"><label for="inSex">성별</label><select id="inSex"><option value="R">무작위</option><option value="M">남</option><option value="F">여</option></select><span></span></div>
+      <div class="nf"><label for="inEst">신분</label><select id="inEst"></select><span></span></div>
+      <div class="nf"><label for="inReg">출생지</label><select id="inReg"></select><span></span></div>
+      <div class="nf"><label for="inGiven">이름</label><input id="inGiven" maxlength="12" autocomplete="off"><button class="btn" id="rGiven" type="button">무작위</button></div>
+      <div class="nf"><label for="inSur">성</label><input id="inSur" maxlength="16" autocomplete="off"><button class="btn" id="rSur" type="button">무작위</button></div>
+      <label class="chk"><input type="checkbox" id="inHard" checked> <span>역사적 사망률을 그대로 쓴다. 18세기 프랑스에서는 아이 넷 중 하나가 첫돌 전에 죽었다. 끄면 유아·아동 사망률을 크게 낮춘다.</span></label>
+      <p class="meta" id="nfMsg">‘무작위’ 신분은 1789년 인구 구성비(농민 약 4분의 3, 귀족 약 1.5%)를 따른다.</p>
+      <button class="btn primary" id="goB" type="button">이 이름으로 태어난다</button>
+    </div>
+    <dl class="howto">
+      <dt>시간과 사건</dt><dd>시간은 계절마다 저절로 흐른다. 실제 연표의 사건(바스티유, 공포정치, 나폴레옹 전쟁)이 그 해 그 계절에 일어나고, 당신의 신분·거주지·성향에 따라 다르게 닥친다.</dd>
+      <dt>주사위</dt><dd>중요한 순간에는 선택하고 주사위를 던진다. 유리하면 여러 개를 던져 높은 눈을, 불리하면 낮은 눈을 쓴다.</dd>
+      <dt>확률</dt><dd>사망률, 징집, 체포와 처형, 망명, 전사 확률은 당대 인구·군사 통계를 바탕으로 정했다.</dd>
+      <dt>행동</dt><dd>해마다 방침을 정하고 독서, 클럽 가입, 국유재산 매입, 망명 같은 일을 한다.</dd>
+      <dt>이력</dt><dd>거쳐 간 직업과 신분, 가족을 본다.</dd>
+      <dt>자동과 배속</dt><dd>‘자동’을 켜면 성품에 맞게 대신 고른다. 1×~16×로 시간을 빨리 흐르게 한다.</dd>
+    </dl>
+    <div class="credit">
+      <h2 class="disp">참고</h2>
+      <p>화면 구성과 진행 방식은 웹게임 「승경도」(낙 @fr_frnds)의 구조를 따랐다. 확률은 다음 자료의 수치를 참고해 단순화하였다.</p>
+      <ul>
+        <li>Donald Greer, <i>The Incidence of the Terror during the French Revolution</i> (1935): 공식 처형 약 17,000명, 투옥 약 50만 명.</li>
+        <li>Louis Henry 외 INED 프랑스 역사인구학 생명표: 18세기 영아사망률 약 25%.</li>
+        <li>Jacques Houdaille, 나폴레옹 군 병사 사망률 연구; 러시아 원정 손실 추정.</li>
+        <li>Timothy Tackett, <i>Becoming a Revolutionary</i>; 선서 성직자 비율 약 52%(1791).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="panel" class="full" hidden><div class="in"><button class="btn closeb" id="pClose" type="button">닫기</button><div id="pin"></div></div></div>
+<div id="end" class="full" hidden><div class="card" id="card"></div><div class="endbtns"><button class="btn primary" id="copyB" type="button">부고 복사</button><button class="btn" id="againB" type="button">새 인생 시작</button><button class="btn" id="livesB2" type="button">지난 인생</button></div><div class="endlog" id="endlog"></div></div>
+
+<script>
+/*@@JS@@*/
+</script>

@@ -1,0 +1,7 @@
+{
+  "name": "fr1789-life",
+  "private": true,
+  "version": "1.0.0",
+  "description": "1789 — 한 프랑스인의 일생. 프랑스 혁명기 인생 시뮬레이션",
+  "scripts": { "build": "node build.mjs" }
+}
