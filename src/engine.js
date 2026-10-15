@@ -1,7 +1,7 @@
 /* ================= 새 인생 ================= */
 function rollName(sex,estate,region){const g=pick(sex==='M'?M_NAMES:F_NAMES);let f;
   if(ESTATES[estate].noble)f=pick(NOBLE_SURS);else if(REG_SURS[region]&&R()<.55)f=pick(REG_SURS[region]);else f=pick(SURS);return {g,f}}
-function newState(o){const sex=o.sex||(R()<.5?'M':'F');const estate=o.estate||wpick(Object.entries(ESTATES).map(([k,v])=>[k,v.w]));
+function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=ri(0,11);const estate=o.estate||wpick(Object.entries(ESTATES).map(([k,v])=>[k,v.w]));
   let region=o.region;if(!region){const urbanBias=estate==='epee'?[['paris',6],['bourgogne',1],['ile',2]]:estate==='bourgeois'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?12:1)]):estate==='artisan'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?20:.6)]):Object.entries(REGIONS).map(([k,v])=>[k,v.urban?0:v.w]);region=wpick(urbanBias)}
   const nm=rollName(sex,estate,region);
   const given=o.given?[o.given,'']:[nm.g[0],nm.g[1]],sur=o.sur?[o.sur,'']:[nm.f[0],nm.f[1]];
@@ -13,47 +13,67 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const estate=o.estate||wp
   if(estate==='artisan'){st.edu+=ri(3,8);pol=ri(-8,15)}
   if(estate==='peasant'){st.hp+=6;pol=ri(-15,6)}
   if(['bretagne','vendee'].includes(region))faith+=15;if(region==='paris')faith-=12;if(fk!=='catholic')faith=ri(50,80);
-  return {v:1,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
+  return {v:2,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
     st,money:0,land:0,dues:0,fame,sus:0,pol,faith:clamp(faith,0,100),literate:false,
-    age:0,year:1750,season:0,trait:null,goal:null,goalDone:false,plan:'근면',
+    age:0,year:by,month:bm,season:seasonOf(bm),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
     job:null,jobSince:0,prevJob:null,best:{},hist:[],cond:'normal',condSince:0,
     fa:{alive:true,age:ri(24,40)},mo:{alive:true,age:ri(19,34)},sibs:ri(1,6),eldest:R()<.35,inherit:0,
     spouse:null,married:false,kids:[],widowed:0,divorced:false,
     seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null}}
 function birth(){L(`${yl()}`,'yr');const E=ESTATES[s.estate],Rg=REGIONS[s.region];
   const who=isM()?'아들':'딸';
-  say(`${Rg.n}, ${E.noble?`${s.sur[0]} 가문의 영지`:`${s.sur[0]} 집안`}에서 ${who}이 태어났다. ${E.d}`,'big');
-  say(`세례명은 ${s.given[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}.`+(s.faithKind==='protestant'?' 집안은 몰래 신교 예배를 지키는 위그노다. 왕국의 법은 신교도의 혼인조차 인정하지 않는다.':s.faithKind==='jewish'?' 집안은 유대교를 믿는다. 왕국에서 유대인은 시민이 아니다.':''));
-  L(`지금 왕은 루이 15세. 프랑스 인구는 약 2,400만, 오스트리아 왕위 계승 전쟁이 끝난 지 두 해가 지났다.`,'sys')}
+  say(`${s.year}년 ${s.month+1}월, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 영지`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
+  say(`세례명은 ${s.given[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}.`+(s.faithKind==='protestant'?(s.year<1788?' 집안은 몰래 신교 예배를 지키는 위그노다. 왕국의 법은 신교도의 혼인조차 인정하지 않는다.':' 집안은 신교(위그노)를 믿는다.'):s.faithKind==='jewish'?(s.year<1791?' 집안은 유대교를 믿는다. 왕국에서 유대인은 시민이 아니다.':' 집안은 유대교를 믿는다.'):''));
+  L(`지금 프랑스를 다스리는 것은 ${ruler()}. 시대는 ${era().n}.`,'sys')}
 
-/* ================= 시간 ================= */
-function msPer(){return 9000}
+/* ================= 시간 =================
+   1789년 이전은 계절(3개월) 단위, 1789년 1월부터는 한 달 단위로 진행한다.
+   s.month: 0=1월 … 11=12월. s.season은 달에서 얻는다(3~5월 봄 … 12~2월 겨울). */
+const REV_START=1789*12;
+const MI=()=>s.year*12+s.month;
+const monthly=()=>MI()>=REV_START;
+function tickMonths(){return monthly()?1:3}
+const seasonOf=m=>m>=2&&m<=4?0:m>=5&&m<=7?1:m>=8&&m<=10?2:3;
+const quarter=()=>s.month%3===2; // 3·6·9·12월: 계절이 바뀌는 달
+function msPer(){return monthly()?4200:9000}
+function secPerYear(){return Math.round(msPer()*(12/tickMonths())/speed/1000)}
+function ageNow(){return s.year-s.by-(s.month<s.bm?1:0)}
 async function advanceSeason(){
-  s.season=(s.season+1)%4;if(s.season===0)newYear();
+  const k=tickMonths();const prev=MI();
+  // 1788년 12월 다음은 1789년 1월(월 단위 진입)
+  let nx=prev+k;if(prev<REV_START&&nx>REV_START)nx=REV_START;
+  const oldYear=s.year;s.year=Math.floor(nx/12);s.month=nx%12;s.season=seasonOf(s.month);s.tick=(nx-prev);
+  if(s.year!==oldYear)newYear();
+  const na=ageNow();if(na!==s.age){s.age=na;birthday()}
   if(s.dead)return;
+  const f=s.tick/12; // 이번 진행 길이(년)
   // 사망
-  if(R()<deathP(s.age)/4){die(s.age>=60?'old':'ill');return}
-  // 역사
-  await runHistory();if(s.dead)return;
-  // 개인 처지
-  if(s.cond==='prison'){await prisonSeason();if(s.dead)return}
-  else if(s.cond==='hiding'){await hidingSeason();if(s.dead)return}
-  else if(s.cond==='emigre'){await emigreSeason();if(s.dead)return}
-  if(s.cond==='normal'&&!child()){
-    if(T()>=1793.25&&T()<1794.5){await terrorCheck();if(s.dead)return}
-    if(soldier()&&atWar()){await warSeason();if(s.dead)return}
-    if(s.job&&(s.season===1||s.season===3))await promoCheck();
+  if(R()<deathP(s.age)*f){die(s.age>=60?'old':'ill');return}
+  // 역사: 지난 진행 구간 안의 사건을 모두 처리
+  await runHistory(prev,nx);if(s.dead)return;
+  await partyTick();if(s.dead)return;
+  // 개인 처지 (계절마다)
+  if(quarter()){
+    if(s.cond==='prison'){await prisonSeason();if(s.dead)return}
+    else if(s.cond==='hiding'){await hidingSeason();if(s.dead)return}
+    else if(s.cond==='emigre'){await emigreSeason();if(s.dead)return}
   }
-  if(s.cond==='normal'&&!child()&&!s.job&&!s.flags.retired&&s.flags.adult&&s.age<55&&s.season===0&&!(noble()&&s.land>=300)&&R()<.6)await careerChoice(false);
-  if(child())await childhood();
-  if(s.age===14&&s.season===0&&!s.flags.adult)await comingOfAge();
+  if(s.cond==='normal'&&!child()){
+    if(T()>=1793.25&&T()<1794.5){await terrorCheck(f*4);if(s.dead)return}
+    if(soldier()&&atWar()){await warSeason(f*4);if(s.dead)return}
+    if(s.job&&quarter()&&(s.season===1||s.season===3))await promoCheck();
+  }
+  if(quarter()&&s.cond==='normal'&&!child()&&!s.job&&!s.flags.retired&&s.flags.adult&&s.age<55&&s.season===0&&!(noble()&&s.land>=300)&&R()<.6)await careerChoice(false);
+  if(child()&&quarter())await childhood();
+  if(s.age>=14&&!s.flags.adult)await comingOfAge();
   if(s.dead)return;
-  await randomEvent();if(s.dead)return;
-  if(s.season===3){await family();if(s.dead)return;await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
+  await randomEvent(monthly()?.42:.72);if(s.dead)return;
+  if(s.month===11){await family();if(s.dead)return;await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
 }
-function newYear(){s.age++;s.year++;s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
+function birthday(){if(s.age>=50)s.st.hp=clamp(s.st.hp-(s.age>=65?2:1),0,100);else if(s.st.hp<50)s.st.hp+=2;else if(s.st.hp<60)s.st.hp+=1}
+function newYear(){s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
   const ry=repYear(s.year);L(`${yl()}${ry?' · '+ry:''}`,'yr');
-  if(s.age>=50)s.st.hp=clamp(s.st.hp-(s.age>=65?2:1),0,100);else if(s.st.hp<50)s.st.hp+=2;else if(s.st.hp<60)s.st.hp+=1;
+  s.polHist=s.polHist||[];s.polHist.push([s.year,s.pol]);s.pol=Math.round(s.pol*.96);
   s.sus=Math.max(0,s.sus-(inTerror()?0:3));
   if(child())return;
   if(trait('경건'))s.faith=clamp(s.faith+1,0,100);if(trait('열정'))s.st.cour=clamp(s.st.cour+1,0,100);
@@ -204,7 +224,7 @@ function arrestP(){let p=.0045;const why=[];
   if(deputy()&&s.pol<35){p*=2.5}
   if(T()<1793.5)p*=.5;if(greatTerror())p*=1.3;if(trait('신중'))p*=.85;
   return {p:clamp(p,0,.6),why:why.join(', ')}}
-async function terrorCheck(){const {p,why}=arrestP();if(R()<p)await arrest(why||'고발')}
+async function terrorCheck(q=1){const {p,why}=arrestP();if(R()<p*q)await arrest(why||'고발')}
 async function arrest(why){s.cnt.arrest++;sheetOpen('체포','arrestation');
   shText(`밤중에 감시위원회 사람들과 국민방위대가 문을 두드렸다. 혐의자법에 따라 체포한다고 한다. (사유: ${why})`,'q b');
   const opts=[{l:'무고를 항변한다',s:'처세·학식 판정',a:'safe'},{l:'뇌물을 찔러 준다',s:'500 이상 든다',a:'greedy',dis:s.money<500},{l:'창문으로 달아난다',s:'담력 판정. 실패하면 위험하다',a:'bold'},{l:'순순히 따라간다',s:'',a:'safe'}];
@@ -248,14 +268,14 @@ async function hidingSeason(){const t=T();s.money=Math.max(0,s.money-60);
 // 해당 연도 프랑스군 병사의 대략적 연간 사망률 (전사·부상사·병사 포함).
 const WARD={1756:.05,1757:.07,1758:.06,1759:.06,1760:.05,1761:.05,1762:.04,1778:.02,1779:.03,1780:.03,1781:.04,1782:.03,1792:.06,1793:.12,1794:.1,1795:.07,1796:.08,1797:.06,1798:.05,1799:.09,1800:.07,1801:.03,1803:.02,1804:.02,1805:.06,1806:.06,1807:.09,1808:.08,1809:.1,1810:.06,1811:.06,1812:.1,1813:.25,1814:.12,1815:.1};
 const FRONTS=y=>y<1763?['독일 전선','하노버','캐나다']:y<1784?['아메리카','앤틸리스 제도']:y<1796?['북부 전선','라인 전선','방데','알프스 전선','피레네 전선']:y<1800?['이탈리아','라인 전선','이집트','스위스']:y<1805?['마렝고','라인 전선','불로뉴 해안 진지']:y<1808?['아우스터리츠','예나','아일라우','프리틀란트']:y<1812?['에스파냐','바그람','포르투갈']:y<1813?['에스파냐']:['작센','라이프치히','샹파뉴','워털루'];
-async function warSeason(){const j=job();let p=(WARD[s.year]||.03)/4;
+async function warSeason(q=1){const j=job();let p=(WARD[s.year]||.03)/4*q;
   if(j.t>=6)p*=.55;else if(j.t>=3)p*=1.1;if(s.st.hp<40)p*=1.3;if(trait('신중'))p*=.85;
   const front=pick(FRONTS(s.year));s.flags.front=front;
   if(R()<p){die('battle',front);return}
   if(R()<p*2){s.cnt.wound++;const sev=R();
     if(sev<.25){say(`${front}에서 크게 다쳐 다리 하나를 잃었다. 군에서 물러나야 했다.`+fx({hp:-25,fame:3}),'big');s.flags.invalid=true;discharge('부상으로 ')}
     else say(`${front}에서 ${pick(['총탄이 어깨를 꿰뚫었다','칼에 베였다','포탄 파편에 맞았다','이질에 걸려 야전병원에 실려 갔다'])}.`+fx({hp:-ri(6,14)}));return}
-  if(R()<.3){await battleEvent(front)}}
+  if(R()<.3*q){await battleEvent(front)}}
 async function battleEvent(front){s.cnt.battle++;sheetOpen(front,'bataille');
   shText(pick([`${front}. 새벽 안개 속에서 적의 대열이 다가온다.`,`${front}. 포격이 멎자 북소리가 진격을 알린다.`,`${front}. 적의 기병이 측면을 노리고 있다.`]),'q');
   const i=await shButtons([{l:'선두에 서서 돌격한다',s:'담력 판정. 공을 세우면 승진, 실패하면 크게 다친다',a:'bold'},{l:'대열을 지키며 버틴다',s:'',a:'safe'},{l:'몸을 사린다',s:'명성 -',a:'safe'}]);

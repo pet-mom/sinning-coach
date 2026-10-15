@@ -4,7 +4,7 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 const here=p=>new URL('./'+p,import.meta.url);
 const r=f=>readFileSync(here('src/'+f),'utf8');
-const js=['core.js','life.js','engine.js','history.js','events.js','stories.js','ui.js'].map(r).join('\n');
+const js=['core.js','life.js','engine.js','history.js','events.js','stories.js','politics.js','scene.js','ui.js'].map(r).join('\n');
 const frag=r('index.template.html').replace('/*@@CSS@@*/',()=>r('style.css')).replace('/*@@JS@@*/',()=>js);
 const cut=frag.indexOf('<div id="app">');
 const head=frag.slice(0,cut).trim(),body=frag.slice(cut).trim();

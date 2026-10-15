@@ -98,7 +98,7 @@ const ERAS=[
   {k:'republic2',a:1848,b:1852,n:'제2공화국',c:'rouge',h:'République française',em:'bonnet'},
   {k:'empire2',a:1852,b:1900,n:'제2제국',c:'vert',h:'Empire français',em:'N'}
 ];
-function T(){return s.year+s.season/4}
+function T(){return s.year+(s.month-2)/12}
 function era(t=T()){if(t>=1815&&t<1815.25)return ERAS[5];return ERAS.find(e=>t>=e.a&&t<e.b)||ERAS[ERAS.length-1]}
 function ruler(t=T()){return t<1774?'루이 15세':t<1792.5?'루이 16세':t<1795.75?'국민공회':t<1799.75?'총재정부':t<1804.25?'제1통령 보나파르트':t<1814?'황제 나폴레옹 1세':t<1815?'루이 18세':t<1815.25?'나폴레옹 (백일천하)':t<1824.5?'루이 18세':t<1830.5?'샤를 10세':t<1848?'루이 필리프':t<1852?'대통령 루이 나폴레옹':'나폴레옹 3세'}
 const inTerror=()=>{const t=T();return t>=1793.5&&t<1794.5}

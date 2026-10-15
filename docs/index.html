@@ -9,354 +9,329 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23A3262C%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2210%22 fill=%22%23fff%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%2327407A%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
 <style>
-/* Layout: a printed life-register on laid paper. Phone: one column. Desktop ≥1100px: register | chronicle | ledger.
-   Visual language: 18th-century French print — Didone display type, laid-paper ground, double-rule engraved frames,
-   decree headers that change with the regime (DE PAR LE ROI → RÉPUBLIQUE FRANÇAISE → EMPIRE FRANÇAIS).
-   --era recolours the page: royal blue, revolutionary red, imperial green. */
+/* Layout: a single phone-width column of cards, like a life-tracker app. Sticky top bar: big age, date line, year progress, speed controls.
+   Cards: pixel scene · stats · political leaning · life record (newest first) · this year's focus. Dark-first. */
 :root{
-  --paper:#EEEAE1; --sheet:#F8F5EE; --ink:#221E1B; --ink2:#665E55; --line:#CDC4B4;
-  --roi:#22417F; --rouge:#A6232B; --vert:#2C5A42; --or:#9E7628; --gris:#6E675F;
-  --era:var(--roi);
-  --f-disp:'Playfair Display','Noto Serif KR',Georgia,serif;
-  --f-body:'EB Garamond','Noto Serif KR',Georgia,serif;
-  --f-fr:'IM Fell English','EB Garamond',Georgia,serif;
-  color-scheme:light;
+  --bg:#0f1318; --card:#161b22; --card2:#1d232c; --line:#2a313b; --fg:#e9edf2; --mut:#8e98a6;
+  --pink:#e8577d; --green:#3fbf7f; --yellow:#e2b23c; --teal:#35c1b2; --red:#e25b5b;
+  --roy:#6f9be8; --mod:#b7bec9; --rad:#e8574f; --gold:#d8b25a;
+  --roi:#6f9be8; --rouge:#e8574f; --vert:#3fbf7f; --or:#d8b25a; --gris:#9aa3b0;
+  --f:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+  --mono:'Nanum Gothic Coding','D2Coding',ui-monospace,monospace;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#15171E; --sheet:#1D2029; --ink:#EDE6D7; --ink2:#A99F90; --line:#3A3D49;
-    --roi:#86A0E2; --rouge:#E36F68; --vert:#80B898; --or:#D9B166; --gris:#A39C91; color-scheme:dark;
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3f4f6; --card:#ffffff; --card2:#f1f3f6; --line:#dfe3e8; --fg:#1a1f26; --mut:#68717e;
+    --pink:#d63c66; --green:#22a565; --yellow:#c99312; --teal:#139e90; --red:#d23f3f;
+    --roy:#2f62c7; --mod:#6a717c; --rad:#d2382f; --gold:#a8822c; color-scheme:light;
   }
 }
-:root[data-theme="dark"]{
-  --paper:#15171E; --sheet:#1D2029; --ink:#EDE6D7; --ink2:#A99F90; --line:#3A3D49;
-  --roi:#86A0E2; --rouge:#E36F68; --vert:#80B898; --or:#D9B166; --gris:#A39C91; color-scheme:dark;
+:root[data-theme="light"]{
+  --bg:#f3f4f6; --card:#ffffff; --card2:#f1f3f6; --line:#dfe3e8; --fg:#1a1f26; --mut:#68717e;
+  --pink:#d63c66; --green:#22a565; --yellow:#c99312; --teal:#139e90; --red:#d23f3f;
+  --roy:#2f62c7; --mod:#6a717c; --rad:#d2382f; --gold:#a8822c; color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-img{max-width:100%}
 html{height:100%}
-body{margin:0;height:100%;color:var(--ink);font-family:var(--f-body);line-height:1.7;font-size:15.5px;
-  background-color:var(--paper);
-  /* papier vergé: chain lines + laid lines */
-  background-image:
-    repeating-linear-gradient(90deg,transparent 0 41px,color-mix(in srgb,var(--ink) 4%,transparent) 41px 42px),
-    repeating-linear-gradient(0deg,transparent 0 3px,color-mix(in srgb,var(--ink) 1.6%,transparent) 3px 4px);
-  font-variant-numeric:lining-nums}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:var(--f);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.modal{overflow:hidden}
 button{font:inherit;color:inherit}
-button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--era);outline-offset:2px}
-.disp{font-family:var(--f-disp);font-weight:700}
-.fr{font-family:var(--f-fr);font-style:italic;font-weight:400}
-h1,h2,h3{text-wrap:balance}
-.emb{display:inline-grid;place-items:center;width:1.5em;height:1.5em;color:var(--era);vertical-align:-.3em}
-.emb svg{width:100%;height:100%}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+h2{font-size:1.25rem;font-weight:900;margin:0;letter-spacing:-.01em}
+h3{font-size:1rem;font-weight:700;margin:20px 0 6px}
+.mut{color:var(--mut);font-size:.86rem}
+#app{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-bottom:40px}
 
-/* decree header */
-.decree{font-family:var(--f-disp);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--era);text-align:center;
-  display:flex;align-items:center;gap:10px;white-space:nowrap;overflow:hidden}
-.decree::before,.decree::after{content:'';flex:1;border-top:1px solid currentColor;border-bottom:1px solid currentColor;height:3px;opacity:.7}
-
-#app{height:100%;max-width:680px;margin:0 auto;display:flex;flex-direction:column}
-header{padding-block:10px 10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:3px double var(--ink)}
-header .decree{margin-bottom:8px}
-.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.nm{font-family:var(--f-disp);font-weight:900;font-size:1.55rem;line-height:1.15}
-.nm .frn{display:block;margin-top:2px;line-height:1.3;font-family:var(--f-fr);font-style:italic;font-size:.95rem;color:var(--ink2);font-weight:400}
-.meta{font-size:.8rem;color:var(--ink2);margin-top:3px}
-.when{text-align:right;font-size:.86rem;white-space:nowrap}
-.when b{display:block;font-family:var(--f-disp);font-weight:900;font-size:1.25rem;line-height:1.1}
-.post{margin-top:10px;padding:8px 14px;border:1px solid var(--era);box-shadow:inset 0 0 0 3px var(--sheet),inset 0 0 0 4px color-mix(in srgb,var(--era) 45%,transparent);background:var(--sheet);transition:border-color .8s}
-.post .on{font-family:var(--f-disp);font-weight:700;font-size:1.15rem;line-height:1.3}
-.post .rrow{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
-.post .fam{font-size:.78rem;color:var(--ink2)}
-.post .ok{font-family:var(--f-fr);font-style:italic;font-size:.85rem;color:var(--ink2)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:11px}
-.st{font-size:.72rem;color:var(--ink2);letter-spacing:.06em;min-width:0}
-.st b{display:block;font-family:var(--f-disp);font-size:1.15rem;color:var(--ink);font-weight:700;line-height:1.15;letter-spacing:0}
-.st s{display:block;height:5px;margin-top:3px;text-decoration:none;position:relative;border:1px solid var(--line);
-  background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 1px),var(--line) calc(10% - 1px) 10%)}
-.st s u{position:absolute;inset:0 auto 0 0;background:var(--era);transition:width .4s}
-.sub{display:flex;flex-wrap:wrap;gap:3px 14px;font-size:.8rem;color:var(--ink2);margin-top:9px}
-.sub b{color:var(--ink);font-family:var(--f-disp)}
-.sub .warn b{color:var(--rouge)}
-.helpb{border:0;background:none;padding:0;text-decoration:underline;text-underline-offset:3px;color:var(--ink2);cursor:pointer;font-size:.8rem}
-.clock{margin-top:9px}
-.track{height:3px;background:var(--line);position:relative;overflow:hidden}
-.track i{position:absolute;inset:0 auto 0 0;background:var(--era);width:0}
-.sea{display:grid;grid-template-columns:repeat(4,1fr);font-size:.68rem;color:var(--ink2);margin-top:2px}
-.sea i{font-family:var(--f-fr);font-size:.72rem}
-
-#center{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}
-.logwrap{flex:1;min-height:0;position:relative;display:flex}
-#log{flex:1;overflow-y:auto;padding-block:6px 30px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));-webkit-overflow-scrolling:touch;min-width:0}
-.le{display:flex;gap:8px;align-items:baseline}
-.le p{margin:.32rem 0;font-size:.97rem;flex:1;min-width:0}
-.le .se{display:inline-block;min-width:4.6em;font-family:var(--f-fr);font-style:italic;font-size:.78rem;color:var(--ink2)}
-.le.yr{display:flex;align-items:center;gap:12px;margin-top:22px;margin-bottom:4px;font-family:var(--f-disp);font-weight:900;font-size:1.35rem;color:var(--ink);line-height:1}
-.le.yr::after{content:'';flex:1;border-top:1px solid var(--line);border-bottom:1px solid var(--line);height:3px}
-.le.yr small{font-family:var(--f-fr);font-style:italic;font-weight:400;font-size:.8rem;color:var(--ink2)}
-.le.big p{font-weight:600;border-left:2px solid var(--era);padding-left:10px}
-.le.hist p{font-style:normal;padding-left:10px;border-left:2px solid var(--or)}
-.le.hist p::before{content:'❦ ';color:var(--or)}
-.le.sys p,.le.dice p{font-size:.82rem;color:var(--ink2)}
-.le.dark p{color:var(--rouge);font-weight:600;font-family:var(--f-disp)}
-.chips{display:inline-flex;gap:3px;margin-right:6px;vertical-align:1px}
-.chip{font-size:.7rem;padding:0 5px;border:1px solid var(--line);color:var(--ink2);font-family:var(--f-disp)}
-.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.fxs{display:inline-flex;flex-wrap:wrap;gap:3px;margin-left:6px;vertical-align:1px}
-.fx{font-size:.7rem;padding:0 5px;white-space:nowrap;border:1px solid transparent;font-family:var(--f-body)}
-.fx.up{border-color:color-mix(in srgb,var(--vert) 50%,transparent);color:var(--vert)}
-.fx.dn{border-color:color-mix(in srgb,var(--rouge) 50%,transparent);color:var(--rouge)}
-.fx:not(.up):not(.dn){border-color:var(--line);color:var(--ink2)}
-#toBottom{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:12px;z-index:3}
-
-.btn{border:1px solid var(--ink);background:var(--sheet);padding:7px 14px;border-radius:0;cursor:pointer;font-size:.86rem;line-height:1.3;letter-spacing:.04em}
-.btn:hover{background:color-mix(in srgb,var(--era) 8%,var(--sheet))}
-.btn.primary{background:var(--era);border-color:var(--era);color:var(--sheet);box-shadow:inset 0 0 0 2px var(--era),inset 0 0 0 3px color-mix(in srgb,var(--sheet) 70%,transparent)}
-.btn.primary:hover{filter:brightness(1.08)}
-.btn:disabled{opacity:.45;cursor:not-allowed}
-footer{display:flex;align-items:center;gap:8px;padding-block:9px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-top:3px double var(--ink);background:var(--paper);flex-wrap:wrap}
-footer #pp{min-width:42px;display:grid;place-items:center}
-.grow{flex:1}
-.spd{display:inline-flex;border:1px solid var(--ink)}
-.spd button{border:0;background:var(--sheet);padding:6px 9px;cursor:pointer;font-size:.8rem;font-family:var(--f-disp)}
+/* top bar */
+#top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);padding-block:12px 12px;border-bottom:1px solid var(--line);margin:0 -16px;padding-left:16px;padding-right:16px}
+.agebar{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+#age{font-size:3.2rem;font-weight:900;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.sfx{font-size:1.6rem;font-weight:700;margin-right:8px}
+#subline{color:var(--mut);font-size:.95rem}
+.prog{height:5px;background:var(--line);border-radius:3px;margin:10px 0 12px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--pink);border-radius:3px}
+.ctl{display:flex;gap:8px;align-items:stretch;position:relative;flex-wrap:wrap}
+.cb{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:.95rem;min-height:42px;display:inline-grid;place-items:center}
+.cb:hover{background:var(--card2)}
+#pp{min-width:52px}
+.spd{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.spd button{border:0;background:none;padding:8px 10px;cursor:pointer;font-size:.92rem;min-width:40px;font-variant-numeric:tabular-nums}
 .spd button+button{border-left:1px solid var(--line)}
-.spd button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-#autoB[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.spd button[aria-pressed="true"]{background:var(--fg);color:var(--bg);font-weight:700}
+.menu{position:absolute;right:0;top:48px;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:6px;display:grid;min-width:170px;z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.menu button{border:0;background:none;text-align:left;padding:9px 12px;border-radius:6px;cursor:pointer}
+.menu button:hover{background:var(--card)}
+#autoT[aria-pressed="true"]{color:var(--pink);font-weight:700}
+.hint{margin-top:10px;background:#e7edf0;color:#1a1f26;border-radius:10px;padding:10px 14px;font-size:.95rem;position:relative;cursor:pointer}
+.hint::before{content:'';position:absolute;top:-7px;left:150px;border:7px solid transparent;border-top:0;border-bottom-color:#e7edf0}
 
-/* event sheet: a printed proclamation */
-#sheet{position:absolute;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:center;padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px));pointer-events:none}
-.sh{pointer-events:auto;width:100%;max-width:640px;max-height:min(76vh,620px);overflow-y:auto;background:var(--sheet);
-  border:1px solid var(--ink);border-bottom:0;outline:1px solid var(--line);outline-offset:-6px;
-  box-shadow:0 -10px 34px color-mix(in srgb,var(--ink) 22%,transparent);padding:16px 22px 20px}
-#sheet.min{display:none!important}
-.shdecree{font-family:var(--f-disp);font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--era);text-align:center;padding-bottom:8px;margin-bottom:10px;border-bottom:3px double var(--era)}
-.shh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.shh h2{margin:0;font-family:var(--f-disp);font-weight:900;font-size:1.35rem;line-height:1.2}
-.shh .fr{display:block;font-size:.95rem;color:var(--ink2);font-weight:400;margin-top:2px}
+/* cards */
+main{display:grid;gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.ch{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:9px 18px;cursor:pointer;font-size:.95rem;white-space:nowrap}
+.pill:hover{border-color:var(--mut)}
+.pill.pri{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700}
+.scene{padding:0;overflow:hidden}
+#cv{display:block;width:100%;height:auto;aspect-ratio:192/72;image-rendering:pixelated;image-rendering:crisp-edges;background:#0b1230}
+.sc-t{padding:12px 18px 14px}
+.where{font-size:1.08rem;font-weight:500}
+.era{margin-top:2px}
+.strow{display:flex;gap:12px;align-items:center}
+.stats{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;min-width:0}
+.st span{display:block;font-size:.82rem;color:var(--mut)}
+.st b{display:block;font-size:1.25rem;font-weight:900;line-height:1.2;font-variant-numeric:tabular-nums}
+.st s{display:block;height:5px;background:var(--line);border-radius:3px;margin-top:5px;overflow:hidden;text-decoration:none}
+.st s u{display:block;height:100%;border-radius:3px;transition:width .4s}
+.sub2{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.84rem;color:var(--mut);margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+.sub2 b{color:var(--fg);font-variant-numeric:tabular-nums}
+.sub2 .warn b{color:var(--red)}
+
+/* political leaning */
+.score{font-weight:900;font-variant-numeric:tabular-nums}
+.spec .bar{position:relative;height:12px;border-radius:6px;background:linear-gradient(90deg,var(--roy),var(--mod) 50%,var(--rad))}
+.spec .bar i{position:absolute;top:-4px;width:4px;height:20px;margin-left:-2px;border-radius:2px}
+.spec .mk{background:var(--fg);box-shadow:0 0 0 2px var(--card)}
+.spec .ghost{background:var(--mut);opacity:.6}
+.spec .lbl{display:flex;justify-content:space-between;font-size:.7rem;color:var(--mut);margin-top:6px}
+.sk{display:flex;align-items:center;gap:10px;margin-top:10px}
+.sk .mut{font-size:.76rem;white-space:nowrap}
+.spark{flex:1;height:30px;min-width:0}
+.facs{display:flex;gap:10px;overflow-x:auto;padding:12px 2px 6px;scroll-snap-type:x mandatory}
+.fac{flex:0 0 132px;scroll-snap-align:start;border:2px solid var(--fc);border-radius:12px;background:linear-gradient(180deg,color-mix(in srgb,var(--fc) 18%,var(--card2)),var(--card2));padding:10px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px}
+.fac.mem{box-shadow:0 0 0 3px color-mix(in srgb,var(--fc) 40%,transparent)}
+.fac .fh{font-size:.8rem;font-weight:900;letter-spacing:.02em;color:var(--fc);line-height:1.25;min-height:2.5em;display:grid;place-items:center}
+.fac .por{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.3rem;background:var(--card);border:2px solid var(--fc)}
+.fac .fl{font-size:.82rem}
+.fac .aff{display:block;width:100%;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.fac .aff i{display:block;height:100%;background:var(--fc)}
+.fac .fa{font-size:.72rem;color:var(--mut)}
+.fac.big{flex-basis:200px;text-align:left;align-items:stretch}
+.fac.big .por{align-self:center}
+.fac.big .fl{text-align:center}
+.fac dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 8px;font-size:.76rem;margin:6px 0}
+.fac dt{color:var(--fc);font-weight:700}
+.fac dd{margin:0;min-width:0}
+.facs.big{padding-bottom:10px}
+.facw{flex:0 0 220px;display:flex;flex-direction:column;gap:6px;align-items:stretch;scroll-snap-align:start}
+.facw .fac{flex:1 1 auto;width:100%}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
+.chip{font-size:.76rem;border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--mut)}
+.chip.on{color:var(--fg);border-color:var(--mut)}
+.pol-top{display:flex;align-items:center;gap:14px;overflow:hidden}
+.pol-top>div:nth-child(2){flex:0 0 auto}
+.pol-top .big{font-size:2.4rem;font-weight:900;font-variant-numeric:tabular-nums}
+.pol-top .spark{height:40px}
+.iss{border-top:1px solid var(--line);padding:10px 0}
+.iss .in{font-weight:700;font-size:.92rem;margin-bottom:6px}
+.iss .fr{font-weight:400;color:var(--mut);font-style:italic}
+.nodes{display:flex;gap:6px;flex-wrap:wrap}
+.node{flex:1 1 120px;border:1px solid color-mix(in srgb,var(--nc) 60%,var(--line));background:var(--card2);border-radius:8px;padding:7px 9px;text-align:left;cursor:pointer}
+.node b{display:block;font-size:.85rem;font-weight:500}
+.node small{font-size:.72rem;color:var(--mut)}
+.node.on{background:color-mix(in srgb,var(--nc) 22%,var(--card2));border-color:var(--nc)}
+.node.on small{color:var(--green)}
+.node:disabled:not(.on){opacity:.55;cursor:default}
+
+/* life record */
+#log{display:grid}
+.le{display:grid;grid-template-columns:3.6em 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.le:first-child{border-top:0}
+.le .ag{font-family:var(--mono);color:var(--mut);font-size:.9rem;padding-top:1px}
+.le .lb{min-width:0}
+.le .tx{font-size:1rem}
+.le.big .tx{font-weight:700;font-size:1.05rem}
+.le.dark .tx{font-weight:700;color:var(--red)}
+.le.sys .tx{color:var(--mut);font-size:.88rem}
+.le.hist .tx{color:var(--fg)}
+.le.dice{padding:6px 0;border-top:0}
+.le.dice .ag{visibility:hidden}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;margin-right:8px;border-radius:4px;padding:0 6px;vertical-align:1px}
+.tag.hist{background:color-mix(in srgb,var(--gold) 22%,transparent);color:var(--gold)}
+.tag.data{color:var(--teal);padding:0;margin-right:8px}
+.mono{font-family:var(--mono);color:var(--mut);font-size:.84rem;word-break:keep-all}
+.le.yr{display:flex;gap:10px;align-items:baseline;padding:16px 0 4px;border-top:1px solid var(--line)}
+.le.yr b{font-size:1.05rem;font-weight:900}
+.fxs{display:inline-flex;flex-wrap:wrap;gap:4px;margin-left:6px;vertical-align:1px}
+.fx{font-size:.72rem;padding:0 6px;border-radius:4px;white-space:nowrap;background:var(--card2);color:var(--mut)}
+.fx.up{color:var(--green);background:color-mix(in srgb,var(--green) 14%,transparent)}
+.fx.dn{color:var(--red);background:color-mix(in srgb,var(--red) 14%,transparent)}
+
+/* focus */
+.focus p{margin:.4rem 0}
+.plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:10px}
+.plan{border:1px solid var(--line);background:var(--card2);border-radius:10px;padding:8px 10px;text-align:left;cursor:pointer}
+.plan b{display:block;font-weight:700}
+.plan small{font-size:.74rem;color:var(--mut)}
+.plan[aria-pressed="true"]{border-color:var(--pink);box-shadow:inset 0 0 0 1px var(--pink)}
+.plan:disabled{opacity:.45;cursor:default}
+
+/* decision sheet */
+#sheet{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px));padding-bottom:env(safe-area-inset-bottom,0px);background:linear-gradient(transparent,rgba(0,0,0,.45) 40%)}
+.sh{width:100%;max-width:700px;max-height:78vh;overflow-y:auto;background:var(--card2);border:1px solid var(--line);border-bottom:0;border-radius:16px 16px 0 0;padding:18px 18px 22px;box-shadow:0 -12px 40px rgba(0,0,0,.4)}
+.shh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.shh .mut{font-style:italic}
 #shB p{margin:.6rem 0}
-#shB .q{font-size:1rem}
-#shB .q.b{font-weight:600}
-.opts{display:grid;gap:7px;margin-top:12px;counter-reset:art}
-.opt{text-align:left;border:1px solid var(--line);background:var(--paper);padding:9px 12px 9px 14px;cursor:pointer;display:block;width:100%;border-radius:0}
-.opts .opt::before{counter-increment:art;content:'Art. ' counter(art,upper-roman) '.';display:block;font-family:var(--f-disp);font-style:italic;font-size:.7rem;letter-spacing:.06em;color:var(--era)}
-.opt:hover:not(:disabled){border-color:var(--era);background:color-mix(in srgb,var(--era) 6%,var(--paper))}
-.opt small{display:block;color:var(--ink2);font-size:.8rem;margin-top:2px}
-.opt.chosen{border-color:var(--era);box-shadow:inset 3px 0 0 var(--era)}
+#shB .q{font-size:1.02rem}
+#shB .b{font-weight:700}
+.opts{display:grid;gap:8px;margin-top:12px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:11px 14px;cursor:pointer;display:block;width:100%}
+.opt .ol{display:block;font-weight:500}
+.opt small{display:block;color:var(--mut);font-size:.8rem;margin-top:2px}
+.opt:hover:not(:disabled){border-color:var(--pink)}
+.opt.chosen{border-color:var(--pink);background:color-mix(in srgb,var(--pink) 12%,var(--card))}
 .opt:disabled:not(.chosen){opacity:.5}
-.opt[aria-pressed="true"]{border-color:var(--era);box-shadow:inset 3px 0 0 var(--era)}
-.dicebox{margin-top:12px;padding:10px 12px;border:1px dashed var(--ink2)}
-.dinfo{font-size:.82rem;color:var(--ink2);margin:0 0 6px!important}
-.dice{display:flex;gap:8px;flex-wrap:wrap}
-.die{width:50px;height:50px;border:1.5px solid var(--ink);border-radius:6px;display:grid;place-items:center;background:var(--sheet);box-shadow:2px 2px 0 var(--line)}
-.die svg{width:36px;height:36px}
-.die.off{opacity:.35}
-.die.on{border-color:var(--era);box-shadow:2px 2px 0 var(--era)}
-.dres{font-family:var(--f-disp);font-weight:900;font-size:1.1rem;margin:.5rem 0 0!important}
-.throw{margin-top:10px}
-.cont{margin-top:12px}
-#shRet{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;z-index:6}
+.opt.row{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.opt.row em{font-style:normal;font-size:.76rem;color:var(--mut);white-space:nowrap}
+.acts{display:grid;gap:8px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:max(18px,env(safe-area-inset-bottom,0px));z-index:25;max-width:min(680px,calc(100vw - 32px));background:var(--fg);color:var(--bg);border-radius:12px;padding:10px 16px;font-size:.92rem;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 
-/* full panels */
-.full{position:fixed;inset:0;background-color:var(--paper);background-image:inherit;overflow-y:auto;z-index:20;padding-block:max(20px,env(safe-area-inset-top,0px)) max(30px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-#title,#panel,#end{background-image:repeating-linear-gradient(90deg,transparent 0 41px,color-mix(in srgb,var(--ink) 4%,transparent) 41px 42px)}
-.full .in,.tt{max-width:640px;margin:0 auto}
-.closeb{position:sticky;top:0;float:right;z-index:2}
-
-/* title: a revolutionary broadside */
-.broadside{margin:4vh 0 18px;padding:22px 20px 20px;border:1px solid var(--ink);outline:3px double var(--ink);outline-offset:4px;background:var(--sheet);text-align:center}
-.bs-top{font-family:var(--f-disp);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink2);padding-bottom:10px;border-bottom:1px solid var(--line)}
-.bs-emb{width:54px;height:54px;margin:14px auto 4px}
-.bs-emb svg{width:100%;height:100%}
-#title .vt{font-family:var(--f-disp);font-weight:900;font-size:clamp(4rem,19vw,7.5rem);line-height:.95;letter-spacing:-.02em}
-#title .vt span{color:var(--rouge);font-style:italic}
-#title .ft{font-family:var(--f-disp);font-style:italic;font-size:clamp(.95rem,3.6vw,1.2rem);color:var(--ink);margin-top:8px}
-.tricolore{display:flex;height:7px;width:150px;margin:16px auto;border:1px solid var(--ink)}
-.tricolore i{flex:1}
-.sub-t{font-family:var(--f-disp);font-weight:900;font-size:1.4rem;margin:0}
-.sub-f{font-family:var(--f-fr);font-style:italic;color:var(--ink2);margin:2px 0 0}
-.lede{font-size:1.04rem;max-width:36em}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
-.howto{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:.9rem;margin:22px 0;padding:14px 0;border-top:3px double var(--ink);border-bottom:1px solid var(--ink)}
-.howto dt{font-family:var(--f-disp);font-weight:700}
-.howto dd{margin:0;color:var(--ink2);min-width:0}
-.credit{font-size:.82rem;color:var(--ink2)}
-.credit h2{font-size:1rem;color:var(--ink);font-family:var(--f-disp)}
-.credit ul{padding-left:1.1em}
-.nameform{margin-top:8px;padding:16px 18px;background:var(--sheet);border:1px solid var(--ink);outline:1px solid var(--line);outline-offset:-5px}
-.nf-h{font-family:var(--f-disp);font-weight:900;font-size:1.15rem;margin:0 0 6px}
-.nf-h .fr{font-size:.9rem;color:var(--ink2);font-weight:400;margin-left:6px}
-.nf{display:grid;grid-template-columns:4.6em 1fr auto;gap:8px;align-items:center;margin:8px 0}
-.nf label{font-size:.85rem;color:var(--ink2)}
-.nf input,.nf select{min-width:0;width:100%;padding:7px 9px;border:0;border-bottom:1px solid var(--ink);background:transparent;color:var(--ink);font:inherit;border-radius:0}
-.nf select option{background:var(--sheet);color:var(--ink)}
-.chk{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:var(--ink2);margin:12px 0}
-.chk input{margin-top:5px;accent-color:var(--era)}
-
-/* panels content */
-#pin h2,#dsBody h2{font-family:var(--f-disp);font-weight:900;font-size:1.3rem;margin:.2rem 0 .6rem}
-#pin h3,#dsBody h3{font-family:var(--f-disp);font-weight:700;font-size:.98rem;margin:1.3rem 0 .2rem;padding-bottom:3px;border-bottom:1px solid var(--line)}
-.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px}
-.plans .opt::before,.acts .opt::before{content:none}
-.acts{display:grid;gap:6px;margin-top:8px}
-.acts .opt{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.acts .opt span{min-width:0}
-.acts .opt em{font-style:italic;font-family:var(--f-fr);font-size:.76rem;color:var(--ink2);white-space:nowrap}
-.hist{list-style:none;padding:0;margin:8px 0;border-left:1px solid var(--ink)}
-.hist li{padding:4px 0 4px 14px;font-size:.9rem;position:relative}
-.hist li::before{content:'';position:absolute;left:-4px;top:13px;width:7px;height:7px;transform:rotate(45deg);background:var(--era)}
-.hist li small{color:var(--ink2);margin-left:6px;font-family:var(--f-fr);font-style:italic}
-.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:.9rem}
-.kv dt{color:var(--ink2)}
+/* overlays */
+.over{position:fixed;inset:0;z-index:40;background:var(--bg);overflow-y:auto;padding-block:max(16px,env(safe-area-inset-top,0px)) max(30px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pw{max-width:720px;margin:0 auto;display:grid;gap:14px}
+.ph{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--bg);padding:6px 0;z-index:2}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;font-size:.92rem}
+.kv dt{color:var(--mut)}
 .kv dd{margin:0;min-width:0}
-.gloss{display:grid;gap:10px;font-size:.9rem}
-.gloss b{font-family:var(--f-disp)}
-.gloss p{margin:0;color:var(--ink2)}
-
-/* end: a black-bordered faire-part de décès */
-#end .card{max-width:560px;margin:4vh auto 0;background:var(--sheet);border:7px solid var(--ink);outline:1px solid var(--ink);outline-offset:-12px;padding:28px 30px;text-align:left}
-#end .card .meta{font-family:var(--f-disp);letter-spacing:.24em;text-transform:uppercase;font-size:.66rem;text-align:center}
-#end .ep{font-family:var(--f-disp);font-weight:900;font-size:1.75rem;line-height:1.2;margin:8px 0 4px;text-align:center}
-#end .who{font-family:var(--f-fr);font-style:italic;font-size:.92rem;color:var(--ink2);margin-bottom:14px;text-align:center;padding-bottom:12px;border-bottom:3px double var(--line)}
-#end .card p{margin:.55rem 0}
-#end .sa{font-family:var(--f-disp);font-style:italic;color:var(--ink2);border-top:1px solid var(--line);padding-top:10px;text-align:center}
-.endbtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:20px auto;max-width:560px}
-.endlog{max-width:640px;margin:0 auto}
-.endlog h3{font-family:var(--f-disp);font-size:1.05rem}
+.hist{list-style:none;padding:0;margin:6px 0}
+.hist li{padding:6px 0;border-top:1px solid var(--line)}
+.hist li small{color:var(--mut)}
+.gloss{display:grid;gap:12px}
+.gloss b{font-weight:700}
+.gloss p{margin:2px 0 0;color:var(--mut)}
 .lives{list-style:none;padding:0;display:grid;gap:10px}
-.lives li{padding:10px 14px;border:1px solid var(--ink);background:var(--sheet)}
-.lives li b{font-family:var(--f-disp)}
-.lives li p{margin:.3rem 0 0;font-size:.85rem;color:var(--ink2)}
+.lives li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.lives li p{margin:.3rem 0 0;font-size:.86rem;color:var(--mut)}
 
-/* desktop */
-#dtop,#dside,#dboard{display:none}
-.decree.mob{display:flex}
-@media (min-width:1100px){
-  #app{max-width:none;display:grid;grid-template-columns:minmax(330px,400px) minmax(0,1fr) minmax(320px,390px);grid-template-rows:auto 1fr auto;height:100%}
-  #dtop{display:flex;grid-column:1/-1;align-items:center;gap:22px;padding-block:9px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));border-bottom:3px double var(--ink)}
-  .dt-logo{display:flex;align-items:center;gap:8px;font-family:var(--f-disp);font-weight:900;font-size:1.45rem;line-height:1}
-  .dt-logo span span,.dt-logo b span{color:var(--rouge);font-style:italic}
-  #dtop .decree{flex:1;max-width:520px}
-  .dt-mid{display:flex;align-items:center;gap:18px;min-width:0}
-  .dt-when{white-space:nowrap}.dt-when b{font-family:var(--f-disp);font-weight:900;font-size:1.1rem;margin-right:8px}
-  .dt-mid .dclock{width:240px}
-  #druler{white-space:nowrap;font-family:var(--f-fr);font-style:italic;font-size:.9rem}
-  .decree.mob{display:none}
-  header{grid-column:1;grid-row:2;overflow-y:auto;border-bottom:0;border-right:1px solid var(--ink)}
-  header .when,header .clock{display:none}
-  #dboard{display:block;margin-top:16px}
-  #center{grid-column:2;grid-row:2}
-  #dside{display:flex;flex-direction:column;grid-column:3;grid-row:2/4;border-left:1px solid var(--ink);min-height:0;background:color-mix(in srgb,var(--sheet) 60%,transparent)}
-  #dtabs{display:flex;border-bottom:3px double var(--ink)}
-  #dtabs button{flex:1;border:0;background:none;padding:10px;cursor:pointer;font-family:var(--f-disp);font-weight:700;color:var(--ink2);letter-spacing:.06em}
-  #dtabs button[aria-selected="true"]{color:var(--ink);box-shadow:inset 0 -3px 0 var(--era)}
-  #dsBody{flex:1;overflow-y:auto;padding-block:12px 24px;padding-left:18px;padding-right:18px}
-  footer{grid-column:1/3;grid-row:3}
-  footer #ab,footer #hb{display:none}
+/* title */
+.logo{font-size:clamp(4rem,20vw,7rem);font-weight:900;letter-spacing:-.05em;line-height:1;margin-top:4vh}
+.logo span{color:var(--pink)}
+.lede-t{font-size:1.4rem;font-weight:900;margin:4px 0 0}
+.lede{color:var(--mut);max-width:36em;margin:0}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.nameform h2{margin-bottom:6px}
+.nf{display:grid;grid-template-columns:5.5em 1fr auto;gap:8px;align-items:center;margin:8px 0}
+.nf label{color:var(--mut);font-size:.9rem}
+.nf input,.nf select{min-width:0;width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card2);color:var(--fg);font:inherit}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:.86rem;color:var(--mut);margin:12px 0}
+.chk input{margin-top:5px;accent-color:var(--pink)}
+.howto{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;font-size:.92rem;margin:8px 0 0}
+.howto dt{font-weight:700}
+.howto dd{margin:0;color:var(--mut);min-width:0}
+.credit{font-size:.84rem;color:var(--mut)}
+.credit h2{color:var(--fg);font-size:1.05rem}
+.credit ul{padding-left:1.1em}
+
+/* end */
+.endc .ep{font-size:1.9rem;font-weight:900;line-height:1.2;margin:4px 0}
+.endc .who{color:var(--mut);margin-bottom:10px}
+.endc p{margin:.5rem 0}
+@media (max-width:460px){
+  #age{font-size:2.7rem}.sfx{font-size:1.3rem}
+  .ctl{flex-wrap:nowrap;gap:6px}
+  .spd{flex:1;min-width:0}.spd button{flex:1;min-width:0;padding:8px 2px;font-size:.8rem}
+  .cb{padding:8px 9px;font-size:.88rem}#pp{min-width:40px}
+  .stats{gap:8px}.st b{font-size:1.1rem}
 }
-/* board: era band + career ladder */
-.db-h{font-family:var(--f-disp);font-weight:700;font-size:.88rem;margin:16px 0 6px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:2px}
-.db-h span{font-family:var(--f-fr);font-style:italic;font-weight:400;font-size:.76rem;color:var(--ink2)}
-.eras{display:flex;height:20px;border:1px solid var(--ink);position:relative}
-.eras i{display:block;height:100%;border-right:1px solid var(--sheet)}
-.eras b{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink)}
-.erl{display:flex;justify-content:space-between;font-size:.68rem;color:var(--ink2);font-family:var(--f-disp);margin-top:2px}
-.ladder{display:grid;gap:3px}
-.lrow{display:grid;grid-template-columns:4.2em repeat(7,1fr);gap:3px;align-items:center}
-.lrow em{font-style:normal;font-size:.7rem;color:var(--ink2)}
-.lc{height:18px;border:1px solid var(--line);background:transparent;font-size:.58rem;line-height:16px;text-align:center;overflow:hidden;white-space:nowrap;color:transparent}
-.lc.held{background:color-mix(in srgb,var(--era) 50%,transparent);border-color:var(--era);color:var(--sheet)}
-.lc.cur{background:var(--era);color:var(--sheet);outline:2px solid var(--ink);outline-offset:-1px}
-.lc.none{border-color:transparent}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.pw>*,#pin{min-width:0}
+#pin{display:block}
+.pol-top .spark{flex:1;min-width:0;max-width:100%}
 
 </style>
 </head>
 <body>
 <div id="app">
-  <div id="dtop"><div class="dt-logo"><span class="emb" id="demb" aria-hidden="true"></span><b>17<span>89</span></b></div><div class="decree" id="ddecree"></div><div class="dt-mid"><div class="dt-when"><b id="dwhen" class="disp"></b><span id="dage"></span></div><div class="dclock" aria-hidden="true"><div class="track"><i id="dclockFill"></i></div><div class="sea"><span>봄 <i>printemps</i></span><span>여름 <i>été</i></span><span>가을 <i>automne</i></span><span>겨울 <i>hiver</i></span></div></div></div><span id="druler" class="meta"></span><button class="btn" id="dLives" type="button">지난 인생</button></div>
-  <header>
-    <div class="decree mob" id="decree"></div>
-    <div class="top">
-      <div><div class="nm disp" id="nm"></div><div class="meta" id="meta"></div></div>
-      <div class="when"><b id="age"></b><span id="when"></span></div>
+  <header id="top">
+    <div class="agebar"><b id="age">0</b><span class="sfx">세</span><span id="subline"></span></div>
+    <div class="prog"><i id="progFill"></i></div>
+    <div class="ctl">
+      <button class="cb" id="pp" type="button" aria-label="일시정지"></button>
+      <div class="spd" id="spd"><button type="button" data-s="1">1×</button><button type="button" data-s="2">2×</button><button type="button" data-s="4">4×</button><button type="button" data-s="8">8×</button><button type="button" data-s="12">12×</button><button type="button" data-s="16">16×</button></div>
+      <button class="cb" id="nextB" type="button">다음 »</button>
+      <button class="cb" id="moreB" type="button" aria-label="메뉴">⋯</button>
+      <div class="menu" id="menu" hidden>
+        <button type="button" id="mPol">정치</button>
+        <button type="button" id="mHist">이력</button>
+        <button type="button" id="mHelp">설명</button>
+        <button type="button" id="mLives">지난 인생</button>
+        <button type="button" id="autoT" aria-pressed="false">자동 선택 꺼짐</button>
+        <button type="button" id="mNew">처음 화면</button>
+      </div>
     </div>
-    <div class="post"><div class="rrow"><div class="on" id="post"></div><div class="fam" id="fam"></div></div><div class="ok" id="postk"></div></div>
-    <div class="stats" id="stats"></div>
-    <div class="sub" id="sub"></div>
-    <div class="clock" aria-hidden="true"><div class="track"><i id="clockFill"></i></div><div class="sea"><span>봄 <i>printemps</i></span><span>여름 <i>été</i></span><span>가을 <i>automne</i></span><span>겨울 <i>hiver</i></span></div></div>
-    <div id="dboard"></div>
+    <div class="hint" id="hint" hidden>빠르게 보려면 4×나 8×를 눌러 보세요. 중요한 결정이 오면 시간이 멈춰요.</div>
   </header>
-  <div id="center">
-    <div class="logwrap"><main id="log" aria-live="polite"></main><button id="toBottom" class="btn" type="button" hidden>새 기록 보기 ↓</button></div>
-    <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shdecree" id="shDecree"></div><div class="shh"><h2 class="disp" id="shT"></h2><button class="btn" id="shMin" type="button">기록 보기</button></div><div id="shB"></div></div></div>
-    <button class="btn primary" id="shRet" type="button" hidden>사건으로 돌아가기</button>
-  </div>
-  <footer>
-    <button class="btn primary" id="pp" type="button" aria-label="일시정지"></button>
-    <button class="btn" id="autoB" type="button" aria-pressed="false">자동</button>
-    <div class="spd" id="spd"><button type="button" data-s="1">1×</button><button type="button" data-s="4">4×</button><button type="button" data-s="8">8×</button><button type="button" data-s="12">12×</button><button type="button" data-s="16">16×</button></div>
-    <span class="grow"></span>
-    <button class="btn" id="ab" type="button">행동</button>
-    <button class="btn" id="hb" type="button">이력</button>
-  </footer>
-  <aside id="dside" aria-label="행동, 이력, 설명"><div id="dtabs" role="tablist"><button data-t="행동" role="tab" type="button">행동</button><button data-t="이력" role="tab" type="button">이력</button><button data-t="설명" role="tab" type="button">설명</button></div><div id="dsBody"></div></aside>
+  <main>
+    <section class="card scene">
+      <canvas id="cv" width="192" height="72" aria-label="지금 사는 곳과 가족"></canvas>
+      <div class="sc-t"><div class="where" id="where"></div><div class="mut" id="famAges"></div><div class="era mut" id="era"></div></div>
+    </section>
+    <section class="card statc">
+      <div class="strow"><div class="stats" id="stats"></div><button class="pill" id="actB" type="button">행동</button></div>
+      <div class="sub2" id="sub2"></div>
+    </section>
+    <section class="card polc" id="polCard"></section>
+    <section class="card logc">
+      <div class="ch"><h2>인생 기록</h2><span class="mut">최근 순</span></div>
+      <div id="log" aria-live="polite"></div>
+    </section>
+    <section class="card focus" id="focus"></section>
+  </main>
+  <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><div id="shB"></div></div></div>
+  <div class="toast" id="toast" role="status" hidden></div>
 </div>
 
-<div id="title" class="full">
-  <div class="tt">
-    <div class="broadside">
-      <div class="bs-top">De l’Imprimerie nationale · An de grâce MDCCL</div>
-      <div class="bs-emb" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="var(--rouge)"/><circle cx="32" cy="32" r="21" fill="var(--sheet)"/><circle cx="32" cy="32" r="12" fill="var(--roi)"/></svg></div>
-      <div class="vt">17<span>89</span></div>
-      <div class="ft">Liberté, Égalité, Fraternité, ou la Mort</div>
-      <div class="tricolore" aria-hidden="true"><i style="background:var(--roi)"></i><i style="background:var(--sheet)"></i><i style="background:var(--rouge)"></i></div>
-      <p class="sub-t">한 프랑스인의 일생</p>
-      <p class="sub-f">Vie d’un citoyen, 1750–1850</p>
-    </div>
-    <p class="lede">1750년, 루이 15세 치세의 프랑스에서 한 아이가 태어난다. 바스티유가 무너지고, 왕이 단두대에 오르고, 황제가 유럽을 휩쓰는 백 년을 그 아이는 어떻게 지나갈까. 주사위를 던지며 한 사람의 생을 살아 본다.</p>
+<div id="panel" class="over" hidden><div class="pw"><div class="ph"><h2 id="pT"></h2><button class="cb" id="pClose" type="button">닫기</button></div><div id="pin"></div></div></div>
+
+<div id="title" class="over">
+  <div class="pw tt">
+    <div class="logo">17<span>89</span></div>
+    <p class="lede-t">한 프랑스인의 일생</p>
+    <p class="lede">1750년부터 1790년 사이 프랑스 어딘가에서 한 아이가 태어납니다. 바스티유가 무너지고, 왕이 단두대에 오르고, 황제가 유럽을 휩쓰는 시대를 그 아이는 어떻게 지나갈까요. 혁명이 시작되는 1789년부터는 한 달 단위로 흐릅니다.</p>
     <div class="row" id="startRow">
-      <button class="btn primary" id="newB" type="button">새 인생 시작</button>
-      <button class="btn" id="contB" type="button" hidden>이어하기</button>
-      <button class="btn" id="livesB" type="button" hidden>지난 인생</button>
+      <button class="pill pri" id="newB" type="button">새 인생 시작</button>
+      <button class="pill" id="contB" type="button" hidden>이어하기</button>
+      <button class="pill" id="livesB" type="button" hidden>지난 인생</button>
     </div>
-    <div class="nameform" id="nameForm" hidden>
-      <p class="nf-h">세례 명부에 이름을 적는다 <span class="fr">Registre des baptêmes</span></p>
+    <div class="card nameform" id="nameForm" hidden>
+      <h2>세례 명부에 이름을 적는다</h2>
+      <div class="nf"><label for="inYear">출생 연도</label><select id="inYear"></select><span></span></div>
       <div class="nf"><label for="inSex">성별</label><select id="inSex"><option value="R">무작위</option><option value="M">남</option><option value="F">여</option></select><span></span></div>
       <div class="nf"><label for="inEst">신분</label><select id="inEst"></select><span></span></div>
       <div class="nf"><label for="inReg">출생지</label><select id="inReg"></select><span></span></div>
-      <div class="nf"><label for="inGiven">이름</label><input id="inGiven" maxlength="12" autocomplete="off"><button class="btn" id="rGiven" type="button">무작위</button></div>
-      <div class="nf"><label for="inSur">성</label><input id="inSur" maxlength="16" autocomplete="off"><button class="btn" id="rSur" type="button">무작위</button></div>
-      <label class="chk"><input type="checkbox" id="inHard" checked> <span>역사적 사망률을 그대로 쓴다. 18세기 프랑스에서는 아이 넷 중 하나가 첫돌 전에 죽었다. 끄면 유아·아동 사망률을 크게 낮춘다.</span></label>
-      <p class="meta" id="nfMsg">‘무작위’ 신분은 1789년 인구 구성비(농민 약 4분의 3, 귀족 약 1.5%)를 따른다.</p>
-      <button class="btn primary" id="goB" type="button">이 이름으로 태어난다</button>
+      <div class="nf"><label for="inGiven">이름</label><input id="inGiven" maxlength="12" autocomplete="off"><button class="cb" id="rGiven" type="button">무작위</button></div>
+      <div class="nf"><label for="inSur">성</label><input id="inSur" maxlength="16" autocomplete="off"><button class="cb" id="rSur" type="button">무작위</button></div>
+      <label class="chk"><input type="checkbox" id="inHard" checked> <span>역사적 사망률을 그대로 씁니다. 18세기 프랑스에서는 아이 넷 중 하나가 첫돌 전에 죽었습니다. 끄면 유아·아동 사망률이 크게 낮아집니다.</span></label>
+      <p class="mut">‘무작위’ 신분은 1789년 인구 구성비(농민 약 4분의 3, 귀족 약 1.5%)를 따릅니다.</p>
+      <button class="pill pri" id="goB" type="button">이 이름으로 태어난다</button>
     </div>
-    <dl class="howto">
-      <dt>시간과 사건</dt><dd>시간은 계절마다 저절로 흐른다. 실제 연표의 사건(바스티유, 공포정치, 나폴레옹 전쟁)이 그 해 그 계절에 일어나고, 당신의 신분·거주지·성향에 따라 다르게 닥친다.</dd>
-      <dt>주사위</dt><dd>중요한 순간에는 선택하고 주사위를 던진다. 유리하면 여러 개를 던져 높은 눈을, 불리하면 낮은 눈을 쓴다.</dd>
-      <dt>확률</dt><dd>사망률, 징집, 체포와 처형, 망명, 전사 확률은 당대 인구·군사 통계를 바탕으로 정했다.</dd>
-      <dt>행동</dt><dd>해마다 방침을 정하고 독서, 클럽 가입, 국유재산 매입, 망명 같은 일을 한다.</dd>
-      <dt>이력</dt><dd>거쳐 간 직업과 신분, 가족을 본다.</dd>
-      <dt>자동과 배속</dt><dd>‘자동’을 켜면 성품에 맞게 대신 고른다. 1×~16×로 시간을 빨리 흐르게 한다.</dd>
-    </dl>
-    <div class="credit">
-      <h2 class="disp">참고 <span class="fr">Sources</span></h2>
-      <p>화면 구성과 진행 방식은 웹게임 「승경도」(낙 @fr_frnds)의 구조를 따랐다. 확률은 다음 자료의 수치를 참고해 단순화하였다.</p>
+    <div class="card">
+      <h2>어떻게 하나요</h2>
+      <dl class="howto">
+        <dt>시간</dt><dd>저절로 흐릅니다. 1789년 전에는 계절, 그 뒤로는 달 단위. 결정이 오면 멈추고, 고르면 바로 이어집니다.</dd>
+        <dt>역사</dt><dd>실제 연표의 사건이 그 달에 일어나고, 신분·거주지·성향에 따라 다르게 닥칩니다.</dd>
+        <dt>정치</dt><dd>그 시기의 실제 파벌에 들어가 연설하고, 쟁점마다 강령을 밝히고, 출마합니다. 정치 성향 점수가 해마다 기록됩니다.</dd>
+        <dt>확률</dt><dd>사망, 징집, 체포와 처형, 전사 확률은 당대 통계를 바탕으로 합니다. 기록의 ‘자료’ 줄에 나옵니다.</dd>
+      </dl>
+    </div>
+    <div class="card credit">
+      <h2>참고</h2>
+      <p>화면 구성은 「80억분의 1」, 진행 방식은 「승경도」, 파벌 카드와 강령 표현은 「Bonaparte – A Mechanized Revolution」에서 영향을 받았습니다.</p>
       <ul>
-        <li>Donald Greer, <i>The Incidence of the Terror during the French Revolution</i> (1935): 공식 처형 약 17,000명, 투옥 약 50만 명.</li>
-        <li>Louis Henry 외 INED 프랑스 역사인구학 생명표: 18세기 영아사망률 약 25%.</li>
-        <li>Jacques Houdaille, 나폴레옹 군 병사 사망률 연구; 러시아 원정 손실 추정.</li>
-        <li>Timothy Tackett, <i>Becoming a Revolutionary</i>; 선서 성직자 비율 약 52%(1791).</li>
+        <li>Donald Greer, <i>The Incidence of the Terror</i> (1935): 공식 처형 약 17,000명, 투옥 약 50만 명.</li>
+        <li>INED 프랑스 역사인구학 생명표: 18세기 영아사망률 약 25%.</li>
+        <li>Timothy Tackett, <i>Becoming a Revolutionary</i>; 선서 성직자 약 52%(1791).</li>
       </ul>
     </div>
   </div>
 </div>
 
-<div id="panel" class="full" hidden><div class="in"><button class="btn closeb" id="pClose" type="button">닫기</button><div id="pin"></div></div></div>
-<div id="end" class="full" hidden><div class="card" id="card"></div><div class="endbtns"><button class="btn primary" id="copyB" type="button">부고 복사</button><button class="btn" id="againB" type="button">새 인생 시작</button><button class="btn" id="livesB2" type="button">지난 인생</button></div><div class="endlog" id="endlog"></div></div>
+<div id="end" class="over" hidden><div class="pw"><div class="card endc" id="card"></div><div class="row"><button class="pill pri" id="copyB" type="button">부고 복사</button><button class="pill" id="againB" type="button">새 인생 시작</button><button class="pill" id="livesB2" type="button">지난 인생</button></div><div class="card" id="endlog"></div></div></div>
 
 <script>
 'use strict';
@@ -459,7 +434,7 @@ const ERAS=[
   {k:'republic2',a:1848,b:1852,n:'제2공화국',c:'rouge',h:'République française',em:'bonnet'},
   {k:'empire2',a:1852,b:1900,n:'제2제국',c:'vert',h:'Empire français',em:'N'}
 ];
-function T(){return s.year+s.season/4}
+function T(){return s.year+(s.month-2)/12}
 function era(t=T()){if(t>=1815&&t<1815.25)return ERAS[5];return ERAS.find(e=>t>=e.a&&t<e.b)||ERAS[ERAS.length-1]}
 function ruler(t=T()){return t<1774?'루이 15세':t<1792.5?'루이 16세':t<1795.75?'국민공회':t<1799.75?'총재정부':t<1804.25?'제1통령 보나파르트':t<1814?'황제 나폴레옹 1세':t<1815?'루이 18세':t<1815.25?'나폴레옹 (백일천하)':t<1824.5?'루이 18세':t<1830.5?'샤를 10세':t<1848?'루이 필리프':t<1852?'대통령 루이 나폴레옹':'나폴레옹 3세'}
 const inTerror=()=>{const t=T();return t>=1793.5&&t<1794.5}
@@ -506,6 +481,7 @@ const soldier=()=>onTrack('army');
 const deputy=()=>s.job==='p3'||s.job==='p4'||s.job==='p5';
 const money=()=>T()>=1795.5?'프랑':'리브르';
 const yl=()=>`${s.year}년`;
+const ym=()=>`${s.year}년 ${s.month+1}월`;
 const kidsAlive=()=>s.kids.filter(k=>k.alive);
 const adultKids=()=>s.kids.filter(k=>k.alive&&s.year-k.y>=20).length;
 
@@ -573,7 +549,7 @@ function loseJob(why){if(!s.job)return;closeJob();const n=pname(job());s.prevJob
 
 /* ================= 기록 ================= */
 let shown=0,sheetLive=false;
-function L(t,k='ev',d){s.log.push({t,k,se:s.season,d});flushLog()}
+function L(t,k='ev',d){s.log.push({t,k,a:s.age,m:s.month,d});flushLog()}
 function say(t,k='ev'){L(t,k);if(sheetLive)shText(t,k==='big'||k==='dark'?'q b':'q')}
 const BAD=new Set(['혐의']);
 function fx(o){const parts=[];for(const k in o){let n=o[k];if(typeof n==='function')n=n();if(!n)continue;
@@ -601,16 +577,16 @@ const RES=['','대실패','실패','보통','보통','성공','대성공'];
 async function roll(mod,o={}){let m=mod,why=o.why||'';
   if(s.flags.blessed){m+=1;s.flags.blessed=false;why=(why?why+' / ':'')+'성유물의 가호'}
   m=clamp(m,-2,2);const n=1+Math.abs(m);const f=Array.from({length:n},()=>ri(1,6));const v=m>=0?Math.max(...f):Math.min(...f);
-  const r={f,v,m};if(sheetLive&&o.inter!==false)await shThrow(r,o.label,why);
-  L(`${o.label||'판정'}: ${v} (${RES[v]})`,'dice',{f,v});return r}
+  const r={f,v,m};
+  L(`${o.label||'판정'} — 주사위 ${f.join('·')} → ${v} ${RES[v]}${why?` (${why})`:''}`,'dice',{f,v});return r}
 // 역사 통계에 따른 확률 추첨. true = 그 일이 일어난다.
-async function chance(p,label,why){p=clamp(p,0,1);const hit=R()<p;if(sheetLive)await shDraw(p,hit,label,why);
-  L(`${label}: ${Math.round(p*1000)/10}% → ${hit?'해당':'면함'}`,'dice');return hit}
+async function chance(p,label,why){p=clamp(p,0,1);const hit=R()<p;
+  L(`${label} ${Math.round(p*1000)/10}% → ${hit?'일어났다':'피했다'}${why?` · ${why}`:''}`,'dice');return hit}
 
 /* ================= 새 인생 ================= */
 function rollName(sex,estate,region){const g=pick(sex==='M'?M_NAMES:F_NAMES);let f;
   if(ESTATES[estate].noble)f=pick(NOBLE_SURS);else if(REG_SURS[region]&&R()<.55)f=pick(REG_SURS[region]);else f=pick(SURS);return {g,f}}
-function newState(o){const sex=o.sex||(R()<.5?'M':'F');const estate=o.estate||wpick(Object.entries(ESTATES).map(([k,v])=>[k,v.w]));
+function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=ri(0,11);const estate=o.estate||wpick(Object.entries(ESTATES).map(([k,v])=>[k,v.w]));
   let region=o.region;if(!region){const urbanBias=estate==='epee'?[['paris',6],['bourgogne',1],['ile',2]]:estate==='bourgeois'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?12:1)]):estate==='artisan'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?20:.6)]):Object.entries(REGIONS).map(([k,v])=>[k,v.urban?0:v.w]);region=wpick(urbanBias)}
   const nm=rollName(sex,estate,region);
   const given=o.given?[o.given,'']:[nm.g[0],nm.g[1]],sur=o.sur?[o.sur,'']:[nm.f[0],nm.f[1]];
@@ -622,47 +598,67 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const estate=o.estate||wp
   if(estate==='artisan'){st.edu+=ri(3,8);pol=ri(-8,15)}
   if(estate==='peasant'){st.hp+=6;pol=ri(-15,6)}
   if(['bretagne','vendee'].includes(region))faith+=15;if(region==='paris')faith-=12;if(fk!=='catholic')faith=ri(50,80);
-  return {v:1,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
+  return {v:2,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
     st,money:0,land:0,dues:0,fame,sus:0,pol,faith:clamp(faith,0,100),literate:false,
-    age:0,year:1750,season:0,trait:null,goal:null,goalDone:false,plan:'근면',
+    age:0,year:by,month:bm,season:seasonOf(bm),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
     job:null,jobSince:0,prevJob:null,best:{},hist:[],cond:'normal',condSince:0,
     fa:{alive:true,age:ri(24,40)},mo:{alive:true,age:ri(19,34)},sibs:ri(1,6),eldest:R()<.35,inherit:0,
     spouse:null,married:false,kids:[],widowed:0,divorced:false,
     seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null}}
 function birth(){L(`${yl()}`,'yr');const E=ESTATES[s.estate],Rg=REGIONS[s.region];
   const who=isM()?'아들':'딸';
-  say(`${Rg.n}, ${E.noble?`${s.sur[0]} 가문의 영지`:`${s.sur[0]} 집안`}에서 ${who}이 태어났다. ${E.d}`,'big');
-  say(`세례명은 ${s.given[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}.`+(s.faithKind==='protestant'?' 집안은 몰래 신교 예배를 지키는 위그노다. 왕국의 법은 신교도의 혼인조차 인정하지 않는다.':s.faithKind==='jewish'?' 집안은 유대교를 믿는다. 왕국에서 유대인은 시민이 아니다.':''));
-  L(`지금 왕은 루이 15세. 프랑스 인구는 약 2,400만, 오스트리아 왕위 계승 전쟁이 끝난 지 두 해가 지났다.`,'sys')}
+  say(`${s.year}년 ${s.month+1}월, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 영지`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
+  say(`세례명은 ${s.given[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}.`+(s.faithKind==='protestant'?(s.year<1788?' 집안은 몰래 신교 예배를 지키는 위그노다. 왕국의 법은 신교도의 혼인조차 인정하지 않는다.':' 집안은 신교(위그노)를 믿는다.'):s.faithKind==='jewish'?(s.year<1791?' 집안은 유대교를 믿는다. 왕국에서 유대인은 시민이 아니다.':' 집안은 유대교를 믿는다.'):''));
+  L(`지금 프랑스를 다스리는 것은 ${ruler()}. 시대는 ${era().n}.`,'sys')}
 
-/* ================= 시간 ================= */
-function msPer(){return 9000}
+/* ================= 시간 =================
+   1789년 이전은 계절(3개월) 단위, 1789년 1월부터는 한 달 단위로 진행한다.
+   s.month: 0=1월 … 11=12월. s.season은 달에서 얻는다(3~5월 봄 … 12~2월 겨울). */
+const REV_START=1789*12;
+const MI=()=>s.year*12+s.month;
+const monthly=()=>MI()>=REV_START;
+function tickMonths(){return monthly()?1:3}
+const seasonOf=m=>m>=2&&m<=4?0:m>=5&&m<=7?1:m>=8&&m<=10?2:3;
+const quarter=()=>s.month%3===2; // 3·6·9·12월: 계절이 바뀌는 달
+function msPer(){return monthly()?4200:9000}
+function secPerYear(){return Math.round(msPer()*(12/tickMonths())/speed/1000)}
+function ageNow(){return s.year-s.by-(s.month<s.bm?1:0)}
 async function advanceSeason(){
-  s.season=(s.season+1)%4;if(s.season===0)newYear();
+  const k=tickMonths();const prev=MI();
+  // 1788년 12월 다음은 1789년 1월(월 단위 진입)
+  let nx=prev+k;if(prev<REV_START&&nx>REV_START)nx=REV_START;
+  const oldYear=s.year;s.year=Math.floor(nx/12);s.month=nx%12;s.season=seasonOf(s.month);s.tick=(nx-prev);
+  if(s.year!==oldYear)newYear();
+  const na=ageNow();if(na!==s.age){s.age=na;birthday()}
   if(s.dead)return;
+  const f=s.tick/12; // 이번 진행 길이(년)
   // 사망
-  if(R()<deathP(s.age)/4){die(s.age>=60?'old':'ill');return}
-  // 역사
-  await runHistory();if(s.dead)return;
-  // 개인 처지
-  if(s.cond==='prison'){await prisonSeason();if(s.dead)return}
-  else if(s.cond==='hiding'){await hidingSeason();if(s.dead)return}
-  else if(s.cond==='emigre'){await emigreSeason();if(s.dead)return}
-  if(s.cond==='normal'&&!child()){
-    if(T()>=1793.25&&T()<1794.5){await terrorCheck();if(s.dead)return}
-    if(soldier()&&atWar()){await warSeason();if(s.dead)return}
-    if(s.job&&(s.season===1||s.season===3))await promoCheck();
+  if(R()<deathP(s.age)*f){die(s.age>=60?'old':'ill');return}
+  // 역사: 지난 진행 구간 안의 사건을 모두 처리
+  await runHistory(prev,nx);if(s.dead)return;
+  await partyTick();if(s.dead)return;
+  // 개인 처지 (계절마다)
+  if(quarter()){
+    if(s.cond==='prison'){await prisonSeason();if(s.dead)return}
+    else if(s.cond==='hiding'){await hidingSeason();if(s.dead)return}
+    else if(s.cond==='emigre'){await emigreSeason();if(s.dead)return}
   }
-  if(s.cond==='normal'&&!child()&&!s.job&&!s.flags.retired&&s.flags.adult&&s.age<55&&s.season===0&&!(noble()&&s.land>=300)&&R()<.6)await careerChoice(false);
-  if(child())await childhood();
-  if(s.age===14&&s.season===0&&!s.flags.adult)await comingOfAge();
+  if(s.cond==='normal'&&!child()){
+    if(T()>=1793.25&&T()<1794.5){await terrorCheck(f*4);if(s.dead)return}
+    if(soldier()&&atWar()){await warSeason(f*4);if(s.dead)return}
+    if(s.job&&quarter()&&(s.season===1||s.season===3))await promoCheck();
+  }
+  if(quarter()&&s.cond==='normal'&&!child()&&!s.job&&!s.flags.retired&&s.flags.adult&&s.age<55&&s.season===0&&!(noble()&&s.land>=300)&&R()<.6)await careerChoice(false);
+  if(child()&&quarter())await childhood();
+  if(s.age>=14&&!s.flags.adult)await comingOfAge();
   if(s.dead)return;
-  await randomEvent();if(s.dead)return;
-  if(s.season===3){await family();if(s.dead)return;await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
+  await randomEvent(monthly()?.42:.72);if(s.dead)return;
+  if(s.month===11){await family();if(s.dead)return;await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
 }
-function newYear(){s.age++;s.year++;s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
+function birthday(){if(s.age>=50)s.st.hp=clamp(s.st.hp-(s.age>=65?2:1),0,100);else if(s.st.hp<50)s.st.hp+=2;else if(s.st.hp<60)s.st.hp+=1}
+function newYear(){s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
   const ry=repYear(s.year);L(`${yl()}${ry?' · '+ry:''}`,'yr');
-  if(s.age>=50)s.st.hp=clamp(s.st.hp-(s.age>=65?2:1),0,100);else if(s.st.hp<50)s.st.hp+=2;else if(s.st.hp<60)s.st.hp+=1;
+  s.polHist=s.polHist||[];s.polHist.push([s.year,s.pol]);s.pol=Math.round(s.pol*.96);
   s.sus=Math.max(0,s.sus-(inTerror()?0:3));
   if(child())return;
   if(trait('경건'))s.faith=clamp(s.faith+1,0,100);if(trait('열정'))s.st.cour=clamp(s.st.cour+1,0,100);
@@ -813,7 +809,7 @@ function arrestP(){let p=.0045;const why=[];
   if(deputy()&&s.pol<35){p*=2.5}
   if(T()<1793.5)p*=.5;if(greatTerror())p*=1.3;if(trait('신중'))p*=.85;
   return {p:clamp(p,0,.6),why:why.join(', ')}}
-async function terrorCheck(){const {p,why}=arrestP();if(R()<p)await arrest(why||'고발')}
+async function terrorCheck(q=1){const {p,why}=arrestP();if(R()<p*q)await arrest(why||'고발')}
 async function arrest(why){s.cnt.arrest++;sheetOpen('체포','arrestation');
   shText(`밤중에 감시위원회 사람들과 국민방위대가 문을 두드렸다. 혐의자법에 따라 체포한다고 한다. (사유: ${why})`,'q b');
   const opts=[{l:'무고를 항변한다',s:'처세·학식 판정',a:'safe'},{l:'뇌물을 찔러 준다',s:'500 이상 든다',a:'greedy',dis:s.money<500},{l:'창문으로 달아난다',s:'담력 판정. 실패하면 위험하다',a:'bold'},{l:'순순히 따라간다',s:'',a:'safe'}];
@@ -857,14 +853,14 @@ async function hidingSeason(){const t=T();s.money=Math.max(0,s.money-60);
 // 해당 연도 프랑스군 병사의 대략적 연간 사망률 (전사·부상사·병사 포함).
 const WARD={1756:.05,1757:.07,1758:.06,1759:.06,1760:.05,1761:.05,1762:.04,1778:.02,1779:.03,1780:.03,1781:.04,1782:.03,1792:.06,1793:.12,1794:.1,1795:.07,1796:.08,1797:.06,1798:.05,1799:.09,1800:.07,1801:.03,1803:.02,1804:.02,1805:.06,1806:.06,1807:.09,1808:.08,1809:.1,1810:.06,1811:.06,1812:.1,1813:.25,1814:.12,1815:.1};
 const FRONTS=y=>y<1763?['독일 전선','하노버','캐나다']:y<1784?['아메리카','앤틸리스 제도']:y<1796?['북부 전선','라인 전선','방데','알프스 전선','피레네 전선']:y<1800?['이탈리아','라인 전선','이집트','스위스']:y<1805?['마렝고','라인 전선','불로뉴 해안 진지']:y<1808?['아우스터리츠','예나','아일라우','프리틀란트']:y<1812?['에스파냐','바그람','포르투갈']:y<1813?['에스파냐']:['작센','라이프치히','샹파뉴','워털루'];
-async function warSeason(){const j=job();let p=(WARD[s.year]||.03)/4;
+async function warSeason(q=1){const j=job();let p=(WARD[s.year]||.03)/4*q;
   if(j.t>=6)p*=.55;else if(j.t>=3)p*=1.1;if(s.st.hp<40)p*=1.3;if(trait('신중'))p*=.85;
   const front=pick(FRONTS(s.year));s.flags.front=front;
   if(R()<p){die('battle',front);return}
   if(R()<p*2){s.cnt.wound++;const sev=R();
     if(sev<.25){say(`${front}에서 크게 다쳐 다리 하나를 잃었다. 군에서 물러나야 했다.`+fx({hp:-25,fame:3}),'big');s.flags.invalid=true;discharge('부상으로 ')}
     else say(`${front}에서 ${pick(['총탄이 어깨를 꿰뚫었다','칼에 베였다','포탄 파편에 맞았다','이질에 걸려 야전병원에 실려 갔다'])}.`+fx({hp:-ri(6,14)}));return}
-  if(R()<.3){await battleEvent(front)}}
+  if(R()<.3*q){await battleEvent(front)}}
 async function battleEvent(front){s.cnt.battle++;sheetOpen(front,'bataille');
   shText(pick([`${front}. 새벽 안개 속에서 적의 대열이 다가온다.`,`${front}. 포격이 멎자 북소리가 진격을 알린다.`,`${front}. 적의 기병이 측면을 노리고 있다.`]),'q');
   const i=await shButtons([{l:'선두에 서서 돌격한다',s:'담력 판정. 공을 세우면 승진, 실패하면 크게 다친다',a:'bold'},{l:'대열을 지키며 버틴다',s:'',a:'safe'},{l:'몸을 사린다',s:'명성 -',a:'safe'}]);
@@ -919,68 +915,69 @@ async function seeds(){for(const sd of s.seeds.slice()){const rm=()=>s.seeds.spl
   if(sd.t==='student'&&s.year-sd.y>=8&&R()<.2){rm();say(`옛 제자 ${jo(sd.n,'이','가')} 출세하여 인사를 왔다.`+fx({fame:3}));return}}}
 
 /* ================= 연표 =================
-   H(연도, 계절, 기록문, 개인 처리)
-   계절: 0 봄(3~5월) 1 여름(6~8월) 2 가을(9~11월) 3 겨울(12~2월) */
+   H(연도, 달(1~12), 기록문, 개인 처리). 진행 구간 안에 든 사건을 차례로 처리한다. */
 const HIST=[];
-function H(y,se,text,fn){HIST.push({y,se,text,fn})}
-async function runHistory(){for(const h of HIST){if(h.y!==s.year||h.se!==s.season)continue;
-  const tx=typeof h.text==='function'?h.text():h.text;if(tx)L(tx,'hist');
-  if(h.fn&&!s.dead){await h.fn();if(s.dead)return}}}
+function H(y,m,text,fn){HIST.push({mi:y*12+m-1,text,fn,i:HIST.length})}
+let histSorted=null;
+async function runHistory(a,b){if(!histSorted)histSorted=HIST.slice().sort((x,y)=>x.mi-y.mi||x.i-y.i);
+  for(const h of histSorted){if(h.mi<=a||h.mi>b)continue;
+    const tx=typeof h.text==='function'?h.text():h.text;if(tx)L(tx,'hist');
+    if(h.fn&&!s.dead){await h.fn();if(s.dead)return}}}
 const adult=()=>!child()&&s.cond==='normal';
 const maleAdult=(a=16,b=60)=>adult()&&isM()&&s.age>=a&&s.age<=b;
 async function Q(title,fr,text,opts){sheetOpen(title,fr);shText(text,'q');return await shButtons(opts)}
+// 날짜가 정해진 일화를 연표에서 직접 부른다(무작위 사건과 중복되지 않게)
+async function fireStory(id){const e=EV.find(x=>x.id===id);if(!e||s.dead)return;s.cd=s.cd||{};if(s.cd[id]>s.year)return;let ok=false;try{ok=e.c()}catch(x){}if(!ok)return;s.cd[id]=s.year+(e.cd||99);await e.run()}
 
 /* ---------- 루이 15세 ---------- */
-H(1751,1,'디드로와 달랑베르의 『백과전서』 제1권이 나왔다.');
-H(1754,1,'북아메리카 오하이오 강 유역에서 영국 식민지군과 프랑스군이 충돌하였다.');
-H(1756,1,'영국과의 7년 전쟁이 시작되었다. 왕은 오스트리아와 손을 잡았다.',async()=>{});
-for(const y of [1757,1758,1759,1760,1761,1762])H(y,0,null,async()=>{if(maleAdult(18,40)&&!noble()&&['peasant','artisan'].includes(s.estate))await conscript(.07,'민병대 추첨',{single:true,why:'미혼 남성 중 민병으로 뽑힌 비율',text:'7년 전쟁에 보낼 민병을 뽑는 추첨이 열렸다. 미혼 남자들이 모자 속 쪽지를 뽑는다.'})});
-H(1757,3,'다미앵이 베르사유에서 왕을 칼로 찔렀다. 그는 그레브 광장에서 사지가 찢기는 형을 받았다.');
-H(1757,3,'로스바흐에서 프로이센의 프리드리히 대왕이 프랑스군을 격파하였다.');
-H(1759,2,'퀘벡이 영국군에게 함락되었다.');
-H(1762,0,'볼테르가 툴루즈의 신교도 상인 장 칼라스의 억울한 처형을 고발하기 시작하였다.',async()=>{if(s.faithKind==='protestant'&&adult())say('위그노 마을 사람들이 칼라스 사건 소식에 숨을 죽였다.'+fx({pol:3}))});
-H(1762,1,'루소의 『사회계약론』과 『에밀』이 출간되자마자 금서가 되었다.',async()=>{if(adult()&&lit()&&R()<.3)say('몰래 『사회계약론』을 구해 읽었다. “인간은 자유롭게 태어났으나 어디서나 사슬에 묶여 있다.”'+fx({edu:2,pol:5}))});
-H(1763,0,'파리 조약으로 7년 전쟁이 끝났다. 프랑스는 캐나다와 인도 대부분을 잃었다.',async()=>{if(soldier()&&s.job==='a1'&&R()<.6)discharge('전쟁이 끝나 ')});
-H(1764,2,'예수회가 왕국에서 해산되었다. 예수회 학교들은 다른 교단에 넘어갔다.');
-H(1766,0,'로렌 공국이 프랑스에 병합되었다.');
-H(1768,1,'제노바로부터 코르시카 섬을 사들였다.');
-H(1769,1,'코르시카 아작시오에서 나폴레오네 부오나파르테라는 아이가 태어났다.');
-H(1770,0,'왕세자 루이와 오스트리아 황녀 마리 앙투아네트가 베르사유에서 혼인하였다. 파리의 축하 불꽃놀이에서 압사 사고로 백여 명이 죽었다.',async()=>{if(inParis()&&adult()&&R()<.08)say('루이 15세 광장 불꽃놀이에서 군중에 휩쓸려 갈비뼈를 다쳤다.'+fx({hp:-8}))});
-H(1770,2,'흉년이 들어 빵값이 크게 올랐다.');
-H(1771,0,'대법관 모푸가 고등법원을 해산하고 법관들을 유배 보냈다.',async()=>{if(s.job==='l4'){say('고등법원 동료들과 함께 지방으로 유배되었다.'+fx({fame:4,pol:4}),'big')}});
-H(1774,0,'루이 15세가 천연두로 죽었다. 스무 살의 루이 16세가 즉위하였다.',async()=>{if(adult())say(pick(['새 왕에게 기대를 거는 사람들이 많았다.','왕의 시신은 썩는 냄새 때문에 밤중에 서둘러 생드니로 옮겨졌다고 한다.']))});
-H(1774,2,'재무총감 튀르고가 곡물 거래를 자유화하였다.');
-H(1775,0,'밀가루 전쟁. 빵값이 오르자 파리 분지 곳곳에서 군중이 곡물 창고와 시장을 털었다.',async()=>{
+H(1751,7,'디드로와 달랑베르의 『백과전서』 제1권이 나왔다.');
+H(1754,7,'북아메리카 오하이오 강 유역에서 영국 식민지군과 프랑스군이 충돌하였다.');
+H(1756,7,'영국과의 7년 전쟁이 시작되었다. 왕은 오스트리아와 손을 잡았다.',async()=>{});
+for(const y of [1757,1758,1759,1760,1761,1762])H(y,4,null,async()=>{if(maleAdult(18,40)&&!noble()&&['peasant','artisan'].includes(s.estate))await conscript(.07,'민병대 추첨',{single:true,why:'미혼 남성 중 민병으로 뽑힌 비율',text:'7년 전쟁에 보낼 민병을 뽑는 추첨이 열렸다. 미혼 남자들이 모자 속 쪽지를 뽑는다.'})});
+H(1758,1,'다미앵이 베르사유에서 왕을 칼로 찔렀다. 그는 그레브 광장에서 사지가 찢기는 형을 받았다.');
+H(1758,1,'로스바흐에서 프로이센의 프리드리히 대왕이 프랑스군을 격파하였다.');
+H(1759,10,'퀘벡이 영국군에게 함락되었다.');
+H(1762,4,'볼테르가 툴루즈의 신교도 상인 장 칼라스의 억울한 처형을 고발하기 시작하였다.',async()=>{if(s.faithKind==='protestant'&&adult())say('위그노 마을 사람들이 칼라스 사건 소식에 숨을 죽였다.'+fx({pol:3}))});
+H(1762,7,'루소의 『사회계약론』과 『에밀』이 출간되자마자 금서가 되었다.',async()=>{if(adult()&&lit()&&R()<.3)say('몰래 『사회계약론』을 구해 읽었다. “인간은 자유롭게 태어났으나 어디서나 사슬에 묶여 있다.”'+fx({edu:2,pol:5}))});
+H(1763,4,'파리 조약으로 7년 전쟁이 끝났다. 프랑스는 캐나다와 인도 대부분을 잃었다.',async()=>{if(soldier()&&s.job==='a1'&&R()<.6)discharge('전쟁이 끝나 ')});
+H(1764,10,'예수회가 왕국에서 해산되었다. 예수회 학교들은 다른 교단에 넘어갔다.');
+H(1766,4,'로렌 공국이 프랑스에 병합되었다.');
+H(1768,7,'제노바로부터 코르시카 섬을 사들였다.');
+H(1769,7,'코르시카 아작시오에서 나폴레오네 부오나파르테라는 아이가 태어났다.');
+H(1770,4,'왕세자 루이와 오스트리아 황녀 마리 앙투아네트가 베르사유에서 혼인하였다. 파리의 축하 불꽃놀이에서 압사 사고로 백여 명이 죽었다.',async()=>{if(inParis()&&adult()&&R()<.08)say('루이 15세 광장 불꽃놀이에서 군중에 휩쓸려 갈비뼈를 다쳤다.'+fx({hp:-8}))});
+H(1770,10,'흉년이 들어 빵값이 크게 올랐다.');
+H(1771,4,'대법관 모푸가 고등법원을 해산하고 법관들을 유배 보냈다.',async()=>{if(s.job==='l4'){say('고등법원 동료들과 함께 지방으로 유배되었다.'+fx({fame:4,pol:4}),'big')}});
+H(1774,4,'루이 15세가 천연두로 죽었다. 스무 살의 루이 16세가 즉위하였다.',async()=>{if(adult())say(pick(['새 왕에게 기대를 거는 사람들이 많았다.','왕의 시신은 썩는 냄새 때문에 밤중에 서둘러 생드니로 옮겨졌다고 한다.']))});
+H(1774,10,'재무총감 튀르고가 곡물 거래를 자유화하였다.');
+H(1775,4,'밀가루 전쟁. 빵값이 오르자 파리 분지 곳곳에서 군중이 곡물 창고와 시장을 털었다.',async()=>{
   if(!adult()||!['paris','ile','picardie','champagne','normandie','bourgogne'].includes(loc())||noble()||rich())return;
   const i=await Q('밀가루 전쟁','guerre des farines','장터에 사람들이 모였다. 곡물상이 빵값을 올려 받는다며 자루를 끌어내 “정당한 값”에 팔자고 외친다.',[{l:'함께 곡물 자루를 끌어낸다',s:'군대가 진압에 나섰다',a:'bold radical'},{l:'멀찍이 지켜본다',s:'',a:'safe'}]);
   if(i===0){if(await chance(.04,'주동자로 체포','진압 후 체포·처벌된 비율')){say('주동자로 붙잡혔다. 파리에서는 두 사람이 본보기로 교수형을 당했다.','big');if(await chance(.15,'교수형','붙잡힌 이들 중 처형된 비율')){die('executed','밀가루 전쟁의 주동자로 교수형을 당했다.');await done();return}s.cond='prison';s.prisonKind='plain';s.condSince=T()}
     else say('정당한 값에 밀가루 한 자루를 샀다.'+fx({money:20,pol:4,cour:2}))}
   else say('멀찍이 서서 지켜보았다.');await done()});
-H(1776,1,'튀르고가 실각하였다. 길드 폐지와 부역 폐지는 없던 일이 되었다.');
-H(1776,1,'아메리카 13개 식민지가 영국으로부터 독립을 선언하였다.');
-H(1778,0,'프랑스가 아메리카와 동맹을 맺고 영국과 전쟁에 들어갔다. 볼테르와 루소가 같은 해에 죽었다.',async()=>{
+H(1776,7,'튀르고가 실각하였다. 길드 폐지와 부역 폐지는 없던 일이 되었다.');
+H(1776,7,'아메리카 13개 식민지가 영국으로부터 독립을 선언하였다.');
+H(1778,4,'프랑스가 아메리카와 동맹을 맺고 영국과 전쟁에 들어갔다. 볼테르와 루소가 같은 해에 죽었다.',async()=>{
   if(soldier()&&R()<.35){say('라파예트를 따라 아메리카로 건너가는 부대에 편성되었다.'+fx({pol:6,fame:2}),'big');s.flags.america=true}});
-H(1781,1,'세귀르 법령. 4대에 걸친 귀족 혈통이 아니면 장교가 될 수 없게 되었다. 재무총감 네케르가 왕실 재정 보고서를 펴냈다.');
-H(1781,2,'요크타운에서 영국군이 항복하였다.',async()=>{if(s.flags.america&&soldier())say('요크타운의 승리를 직접 보았다.'+fx({fame:4,pol:4}),'big')});
-H(1783,2,'몽골피에 형제의 열기구가 베르사유 하늘에 떠올랐다. 양과 오리와 수탉을 태웠다.');
-H(1783,3,'아이슬란드 라키 화산 폭발 뒤로 유난히 혹독한 겨울이 찾아왔다.',async()=>{if(adult()&&!rich()&&R()<.3)say('혹한에 장작이 떨어져 손발이 얼었다.'+fx({hp:-4}))});
-H(1784,0,'보마르셰의 『피가로의 결혼』이 공연되었다. 귀족을 조롱하는 대사에 귀족들이 박수를 쳤다.',async()=>{if(inParis()&&adult()&&(rich()||lit())&&R()<.4)say('코메디프랑세즈에서 『피가로의 결혼』을 보았다.'+fx({pol:3,soc:1}))});
-H(1785,1,'목걸이 사건. 왕비의 이름을 사칭한 사기극이 터지며 왕실의 위신이 땅에 떨어졌다.',async()=>{if(adult())fx({pol:2})});
-H(1786,2,'영국과 통상조약을 맺었다. 값싼 영국 면직물이 밀려들었다.',async()=>{if(adult()&&onTrack('craft')&&['rouen','lyon','normandie','picardie'].includes(loc())){say('영국산 직물에 밀려 일감이 줄었다.'+fx({money:-Math.round(s.money*.1)}))}});
-H(1787,0,'왕이 명사회를 소집하였으나 귀족과 성직자는 세금을 내라는 재무총감 칼론의 안을 거부하였다.');
-H(1787,2,'관용 칙령. 신교도의 혼인과 출생이 처음으로 법적으로 인정되었다.',async()=>{if(s.faithKind==='protestant'&&adult())say('백 년 만에 신교도도 법적으로 혼인하고 아이의 출생을 신고할 수 있게 되었다.'+fx({pol:5}),'big')});
-H(1788,1,'7월 13일, 거대한 우박 폭풍이 파리 분지의 밀밭을 쓸어버렸다. 그르노블에서는 ‘기왓장의 날’ 봉기가 일어났다.',async()=>{if(adult()&&onTrack('farm')&&!['provence','languedoc','gascogne'].includes(loc()))say('우박에 한 해 농사를 망쳤다.'+fx({money:-Math.round(s.money*.3),hp:-2}))});
-H(1788,2,'왕이 1614년 이후 처음으로 삼부회 소집을 약속하였다. 네케르가 다시 불려 왔다.');
-H(1788,3,'세기에 드문 혹한. 센 강이 얼어붙고 빵값은 계속 올랐다. 시에예스가 『제3신분이란 무엇인가』를 펴냈다.',async()=>{if(adult()&&lit()&&!noble()&&R()<.5)say('시에예스의 팸플릿을 읽었다. “제3신분이란 무엇인가? 모든 것이다.”'+fx({pol:5,edu:1}))});
+H(1781,7,'세귀르 법령. 4대에 걸친 귀족 혈통이 아니면 장교가 될 수 없게 되었다. 재무총감 네케르가 왕실 재정 보고서를 펴냈다.');
+H(1781,10,'요크타운에서 영국군이 항복하였다.',async()=>{if(s.flags.america&&soldier())say('요크타운의 승리를 직접 보았다.'+fx({fame:4,pol:4}),'big')});
+H(1783,10,'몽골피에 형제의 열기구가 베르사유 하늘에 떠올랐다. 양과 오리와 수탉을 태웠다.');
+H(1784,1,'아이슬란드 라키 화산 폭발 뒤로 유난히 혹독한 겨울이 찾아왔다.',async()=>{if(adult()&&!rich()&&R()<.3)say('혹한에 장작이 떨어져 손발이 얼었다.'+fx({hp:-4}))});
+H(1784,4,'보마르셰의 『피가로의 결혼』이 공연되었다. 귀족을 조롱하는 대사에 귀족들이 박수를 쳤다.',async()=>{if(inParis()&&adult()&&(rich()||lit())&&R()<.4)say('코메디프랑세즈에서 『피가로의 결혼』을 보았다.'+fx({pol:3,soc:1}))});
+H(1785,7,'목걸이 사건. 왕비의 이름을 사칭한 사기극이 터지며 왕실의 위신이 땅에 떨어졌다.',async()=>{if(adult())fx({pol:2})});
+H(1786,10,'영국과 통상조약을 맺었다. 값싼 영국 면직물이 밀려들었다.',async()=>{if(adult()&&onTrack('craft')&&['rouen','lyon','normandie','picardie'].includes(loc())){say('영국산 직물에 밀려 일감이 줄었다.'+fx({money:-Math.round(s.money*.1)}))}});
+H(1787,4,'왕이 명사회를 소집하였으나 귀족과 성직자는 세금을 내라는 재무총감 칼론의 안을 거부하였다.');
+H(1787,10,'관용 칙령. 신교도의 혼인과 출생이 처음으로 법적으로 인정되었다.',async()=>{if(s.faithKind==='protestant'&&adult())say('백 년 만에 신교도도 법적으로 혼인하고 아이의 출생을 신고할 수 있게 되었다.'+fx({pol:5}),'big')});
+H(1788,7,'7월 13일, 거대한 우박 폭풍이 파리 분지의 밀밭을 쓸어버렸다. 그르노블에서는 ‘기왓장의 날’ 봉기가 일어났다.',async()=>{if(adult()&&onTrack('farm')&&!['provence','languedoc','gascogne'].includes(loc()))say('우박에 한 해 농사를 망쳤다.'+fx({money:-Math.round(s.money*.3),hp:-2}))});
+H(1788,10,'왕이 1614년 이후 처음으로 삼부회 소집을 약속하였다. 네케르가 다시 불려 왔다.');
+H(1789,1,'세기에 드문 혹한. 센 강이 얼어붙고 빵값은 계속 올랐다. 시에예스가 『제3신분이란 무엇인가』를 펴냈다.',async()=>{if(adult()&&lit()&&!noble()&&R()<.5)say('시에예스의 팸플릿을 읽었다. “제3신분이란 무엇인가? 모든 것이다.”'+fx({pol:5,edu:1}))});
 
-/* ---------- 1789 ---------- */
-H(1789,0,'삼부회 선거. 전국의 교구와 길드가 진정서(카이에 드 돌레앙스)를 썼다. 4월 말 파리 생탕투안 문밖에서 레베용 벽지공장 폭동이 일어났다.',async()=>{
+/* ---------- 1789: 혁명 (여기부터 한 달 단위) ---------- */
+H(1789,3,'3월, 전국에서 삼부회 선거가 시작되었다. 교구와 길드마다 왕에게 올릴 진정서(카이에 드 돌레앙스)를 쓴다.',async()=>{
   if(!adult()||s.age<20)return;
-  if(inParis()&&s.estate==='artisan'&&R()<.25){const i=await Q('레베용 폭동','émeute Réveillon','벽지공장 주인 레베용이 “노동자는 하루 15수로도 살 수 있다”고 말했다는 소문이 돌았다. 생탕투안 문밖이 들끓는다.',[{l:'군중과 함께 공장으로 간다',s:'군대가 발포할 것이다',a:'bold radical'},{l:'집에 머문다',s:'',a:'safe'}]);
-    if(i===0){if(await chance(.08,'발포','군대의 발포로 죽은 폭도의 비율(추정 수십~수백 명)')){die('riot','레베용 폭동에서 군대의 총탄에 쓰러졌다.');await done();return}say('군대가 발포하기 직전 골목으로 빠져나왔다.'+fx({pol:6,cour:3}))}else say('문을 걸어 잠갔다.');await done()}
   const i=await Q('진정서','cahier de doléances',`${noble()?'귀족 신분회':priest()?'성직자 신분회':'교구 회의'}가 열려 왕에게 올릴 진정서를 쓴다.`,[{l:'회의에 나가 목소리를 낸다',s:'처세·학식 판정. 대표로 뽑힐 수도 있다',a:'social radical'},{l:'이름만 올린다',s:'',a:'safe'}]);
   if(i===1){say('진정서에 이름만 올렸다.');await done();return}
-  const ok=lit()&&s.st.edu>=45&&s.fame>=25&&(isM());
+  const ok=lit()&&s.st.edu>=45&&s.fame>=25&&isM();
   const {m,why}=md([[s.st.soc>=50,1,'처세'],[s.fame>=45,1,'명성'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!lit(),-2,'문맹']]);
   const r=await roll(m,{label:'회의',why});
   if(r.v>=4)say(pick(['소금세와 십일조를 없애 달라는 조항을 넣자고 했다.','영주의 비둘기와 토끼가 밭을 망친다는 조항을 넣었다.','신분에 상관없이 세금을 고르게 내자는 조항을 넣었다.','왕의 권위를 지키되 헌법을 세우자고 주장하였다.'])+fx({fame:3,pol:4}));
@@ -988,11 +985,19 @@ H(1789,0,'삼부회 선거. 전국의 교구와 길드가 진정서(카이에 �
   if(ok&&r.v>=5){const p=(s.fame>=55?.35:.15)*(onTrack('law')||noble()||priest()?1.4:1);
     if(await chance(p,'삼부회 대표 선출','바야주 선거인단에서 대표로 뽑힐 확률')){s.flags.wasDeputy=true;s.flags.constituent=true;s.loc='paris';if(s.job)s.prevJob=s.job;takeJob('p3',`${noble()?'귀족':priest()?'성직자':'제3신분'} 대표로 뽑혀 삼부회 `);fx({fame:10})}}
   await done()});
-H(1789,1,'5월 5일 삼부회 개회. 6월 17일 제3신분이 국민의회를 선포하고, 6월 20일 테니스코트에서 헌법 제정 때까지 해산하지 않겠다고 서약하였다.',async()=>{
+H(1789,4,'4월 27~28일, 파리 생탕투안 문밖에서 레베용 벽지공장 폭동이 일어났다. 군대의 발포로 수십에서 수백 명이 죽었다.',async()=>{
+  if(!adult()||!inParis()||s.estate!=='artisan'||R()>.5)return;
+  const i=await Q('레베용 폭동','émeute Réveillon','벽지공장 주인 레베용이 “노동자는 하루 15수로도 살 수 있다”고 말했다는 소문이 돌았다. 생탕투안 문밖이 들끓는다.',[{l:'군중과 함께 공장으로 간다',s:'군대가 발포할 것이다',a:'bold radical'},{l:'집에 머문다',s:'',a:'safe'}]);
+  if(i===0){if(await chance(.08,'발포','군대의 발포로 죽은 폭도의 비율(추정 수십~수백 명)')){die('riot','레베용 폭동에서 군대의 총탄에 쓰러졌다.');await done();return}say('군대가 발포하기 직전 골목으로 빠져나왔다.'+fx({pol:6,cour:3}))}else say('문을 걸어 잠갔다.');await done()});
+H(1789,5,'5월 5일, 베르사유 므뉘플레지르 홀에서 삼부회가 개회하였다. 신분별 투표냐 머릿수 투표냐를 놓고 제3신분과 특권 신분이 맞섰다.',async()=>{
+  if(s.flags.constituent&&deputy()){const i=await Q('투표 방식','vote par tête','제3신분은 세 신분이 한 회의장에서 머릿수로 투표하자고 한다. 귀족과 고위 성직자는 신분별 투표를 고집한다.',[{l:'머릿수 투표를 주장한다',s:'',a:'radical'},{l:'신분별 투표를 지킨다',s:'',a:'royal'}]);
+    setStance('vote',i===0?2:0,true);await done()}});
+H(1789,6,'6월 17일, 제3신분 대표들이 스스로 ‘국민의회’를 선포하였다. 6월 20일, 회의장 문이 닫히자 실내 정구장에서 헌법을 만들 때까지 흩어지지 않겠다고 서약하였다.',async()=>{
   if(!s.flags.constituent||!deputy())return;
   const i=await Q('테니스코트의 서약','serment du Jeu de paume','회의장 문이 닫혀 있다. 대표들이 근처 실내 정구장으로 몰려가 바이이의 선창에 따라 서약한다.',[{l:'손을 들고 서약한다',s:'',a:'radical bold'},{l:'서명을 거부한다',s:'단 한 사람만이 거부했다',a:'royal'}]);
   if(i===0)say('“헌법이 세워질 때까지 결코 흩어지지 않는다!” 다비드가 이 장면을 그렸다.'+fx({pol:10,fame:6,cour:3}),'big');else say('홀로 반대표를 던졌다. 마르탱 도슈처럼.'+fx({pol:-10,fame:3,sus:10}));await done()});
-H(1789,1,'7월 14일, 파리 민중이 앵발리드에서 총을 빼앗고 바스티유 요새를 함락하였다.',async()=>{
+H(1789,7,'7월 11일, 왕이 재무총감 네케르를 파면하였다. 파리가 술렁인다.',async()=>{await fireStory('desmoulins')});
+H(1789,7,'7월 14일, 파리 민중이 앵발리드에서 총을 빼앗고 바스티유 요새를 함락하였다. 수비대장 로네의 머리가 창끝에 꽂혀 거리를 돌았다.',async()=>{
   if(!adult()||!inParis()||deputy())return;
   if(noble()||rich()){say('거리에서 들려오는 총성과 경종 소리에 덧문을 닫아걸었다.'+fx({pol:-3}));return}
   if(!isM()){say('생탕투안 거리에서 바스티유 쪽으로 몰려가는 사람들을 보았다.'+fx({pol:3}));return}
@@ -1000,7 +1005,8 @@ H(1789,1,'7월 14일, 파리 민중이 앵발리드에서 총을 빼앗고 바�
   if(i===0){if(await chance(.1,'요새의 총격','공격자 가운데 전사자 비율')){die('riot','바스티유 공격 중 수비대의 총탄에 쓰러졌다.');await done();return}
     s.flags.bastille=true;say('도개교가 내려오고 요새가 함락되었다. ‘바스티유의 정복자’ 명단에 이름이 올랐다.'+fx({fame:12,pol:12,cour:5}),'big')}
   else if(i===1){s.flags.garde=true;say('국민방위대의 삼색 모표를 달고 거리를 순찰하였다.'+fx({pol:5,soc:2}))}else say('바스티유가 떨어졌다는 소식을 저녁에 들었다.');await done()});
-H(1789,1,'7월 말~8월 초, 대공포. 귀족들이 도적을 풀어 곡식을 망친다는 소문에 농민들이 무장하고 영주의 성관을 습격하였다.',async()=>{
+H(1789,7,'7월 17일, 왕이 파리 시청에 와서 삼색 모표를 받았다. 아르투아 백작 등 왕족과 대귀족들이 첫 망명길에 올랐다.');
+H(1789,8,'7월 말부터 8월 초까지 대공포. 귀족들이 도적을 풀어 곡식을 망친다는 소문에 농민들이 무장하고 영주의 성관을 습격하였다.',async()=>{
   if(!adult()||urban())return;
   if(noble()&&s.land>0){const i=await Q('대공포','Grande Peur','마을 사람들이 낫과 쇠스랑을 들고 성관으로 몰려온다. 영주권 문서를 내놓으라고 한다.',[{l:'문서를 내주고 달랜다',s:'처세 판정',a:'safe'},{l:'하인들을 무장시켜 막는다',s:'담력 판정',a:'bold royal'},{l:'몸만 빠져나와 도시로 피한다',s:'',a:'safe'}]);
     if(i===0){const r=await roll(s.st.soc>=50?1:0,{label:'협상'});if(r.v>=3)say('문서들이 마당에서 불탔다. 성관은 무사했다.'+fx({money:-Math.round(s.money*.05)}));else{say('성관에 불이 붙었다.'+fx({money:-Math.round(s.money*.3)}));s.land=Math.round(s.land*.7)}}
@@ -1011,201 +1017,261 @@ H(1789,1,'7월 말~8월 초, 대공포. 귀족들이 도적을 풀어 곡식을 
   if(s.estate==='peasant'||onTrack('farm')){const i=await Q('대공포','Grande Peur','도적 떼가 온다는 소문에 경종이 울린다. 도적은 오지 않았고, 사람들은 영주의 성관으로 향한다.',[{l:'성관으로 가서 영주권 문서를 불태운다',s:'',a:'bold radical'},{l:'마을 자경단으로 남는다',s:'',a:'safe social'}]);
     if(i===0){if(await chance(.03,'기마경찰대의 진압','습격 가담자가 처벌된 비율')){say('기마경찰대에 붙잡혀 감옥에 갇혔다.','big');s.cond='prison';s.prisonKind='plain';s.condSince=T()}else say('공납 장부가 불길 속에서 타올랐다.'+fx({pol:8,cour:3}))}
     else say('밤새 마을 어귀를 지켰다.'+fx({soc:2}));await done()}});
-H(1789,1,'8월 4일 밤, 국민의회가 봉건적 특권 폐지를 결의하였다. 8월 26일 「인간과 시민의 권리 선언」이 채택되었다.',async()=>{
+H(1789,8,'8월 4일 밤, 국민의회가 봉건적 특권 폐지를 결의하였다. 8월 26일 「인간과 시민의 권리 선언」이 채택되었다. “인간은 자유롭고 권리에서 평등하게 태어나 존재한다.”',async()=>{
   if(adult()&&noble()&&s.dues){const d=Math.round(s.dues*.5);s.dues-=d;say(`영주 공납의 상당 부분이 사라졌다. (공납 수입 -${fmt(d)})`)}
   if(adult()&&s.estate==='peasant')say('부역과 영주재판권이 사라졌다. 남은 공납은 돈을 내고 사들여야 한다고 한다.'+fx({pol:4}));
   if(s.flags.constituent&&deputy()){const i=await Q('8월 4일 밤','nuit du 4 août','노아유 자작이 귀족의 특권을 포기하자고 외치자, 대표들이 앞다투어 일어나 자기 신분과 도시의 특권을 내놓는다.',[{l:'일어나 특권 포기를 외친다',s:'',a:'radical'},{l:'자리를 지키며 신중론을 편다',s:'',a:'safe royal'}]);
-    say(i===0?'새벽 두 시까지 이어진 열광 속에서 박수를 받았다.'+fx({pol:8,fame:4}):'신중론은 환호성에 묻혔다.'+fx({pol:-4}));await done()}});
-H(1789,2,'10월 5~6일, 파리 시장의 여인들이 빵을 달라며 베르사유로 행진하였다. 왕 일가는 파리 튈르리 궁으로 끌려왔다.',async()=>{
+    if(i===0){say('새벽 두 시까지 이어진 열광 속에서 박수를 받았다.'+fx({pol:8,fame:4}));setStance('prop',1,true)}else{say('신중론은 환호성에 묻혔다.'+fx({pol:-4}));setStance('prop',0,true)}await done()}});
+H(1789,9,'9월, 국민의회가 왕에게 법률을 미룰 수 있는 ‘유예적 거부권’만 주기로 하였다. 양원제를 주장한 무니에 등 군주제파가 패하였다. 마라가 『인민의 벗』을 펴내기 시작하였다.',async()=>{
+  if(s.flags.constituent&&deputy()){const i=await Q('거부권 논쟁','veto royal','왕에게 어떤 거부권을 줄 것인가. 좌석의 오른쪽에는 절대 거부권 지지자들이, 왼쪽에는 반대자들이 모여 앉는다. ‘좌파’와 ‘우파’라는 말이 여기서 생겼다.',[{l:'절대 거부권 (오른쪽에 앉는다)',s:'',a:'royal'},{l:'유예적 거부권',s:'',a:'safe'},{l:'거부권 반대 (왼쪽에 앉는다)',s:'',a:'radical'}]);
+    setStance('crown',i===0?0:i===1?1:1,true);fx({pol:i===0?-8:i===2?8:0});await done()}
+  await fireStory('bastille7');await fireStory('dons')});
+H(1789,10,'10월 5~6일, 파리 시장의 여인들이 빵을 달라며 베르사유로 행진하였다. 왕 일가는 파리 튈르리 궁으로 끌려왔고, 의회도 파리로 옮겼다.',async()=>{
   if(!adult()||!inParis()||noble()||rich())return;
   if(!isM()){const i=await Q('베르사유 행진','marche des femmes','중앙시장 여인들이 북을 치며 시청 앞에 모였다. 빵을 달라, 베르사유로 가자!',[{l:'함께 비를 맞으며 베르사유까지 걷는다',s:'',a:'bold radical'},{l:'아이들 곁에 남는다',s:'',a:'safe family'}]);
     if(i===0){s.flags.marche=true;say('여섯 시간을 걸어 베르사유에 닿았다. 이튿날, “빵집 주인과 그 마누라와 꼬마 견습공”을 데리고 파리로 돌아왔다.'+fx({pol:10,cour:5,fame:4}),'big')}else say('밤새 소식을 기다렸다.');await done()}
   else say('여인들의 행렬이 베르사유로 떠나는 것을 보았다.')});
-H(1789,2,'11월 2일, 교회 재산이 국가에 귀속되었다. 이를 담보로 아시냐가 발행된다.',async()=>{if(priest()&&s.job!=='r1')say('교회 재산이 국유화되었다. 이제 성직자도 국가에서 봉급을 받는다.'+fx({faith:2,pol:-3}))});
+H(1789,11,'11월 2일, 교회 재산이 국가에 귀속되었다. 생토노레 거리의 자코뱅 수도원에서 ‘헌우회’(자코뱅 클럽)가 모이기 시작하였다.',async()=>{
+  if(priest()&&s.job!=='r1')say('교회 재산이 국유화되었다. 이제 성직자도 국가에서 봉급을 받는다.'+fx({faith:2,pol:-3}));
+  await partyInvite('jacobin')});
+H(1789,12,'12월, 교회 재산을 담보로 한 아시냐 발행이 결정되었다. 시정부를 주민 선거로 뽑는 법이 만들어졌다. 세금을 사흘치 품삯 이상 내는 ‘능동시민’만 투표할 수 있다.');
 
-/* ---------- 1790~1791 ---------- */
-H(1790,0,'2월, 수도 서원이 금지되었다. 수도자들은 수도원을 떠날 수 있게 되었다.',async()=>{
+/* ---------- 1790 ---------- */
+H(1790,2,'1~2월, 전국에서 첫 시정부 선거가 치러졌다. 2월 13일, 수도 서원이 금지되었다.',async()=>{
+  await municipal();
   if(!nun()&&!(priest()&&R()<.2))return;
   const i=await Q('수도원의 문','vœux monastiques','법은 이제 종신서원을 인정하지 않는다. 원하는 이는 수도원을 떠나 연금을 받을 수 있다.',[{l:'수도원에 남는다',s:'',a:'pious'},{l:'세상으로 나간다',s:'',a:'radical'}]);
   if(i===1){s.flags.exNun=!isM();loseJob('%의 자리를 떠나 속세로 나왔다.');s.faith-=10;s.money+=300}else say('봉쇄의 담장 안에 남았다.'+fx({faith:4}));await done()});
-H(1790,1,'6월 19일, 세습 귀족제와 작위가 폐지되었다.',async()=>{if(adult()&&noble())say('문장과 작위가 법으로 사라졌다. 이름 앞의 ‘드(de)’도 쓸 수 없다.'+fx({pol:-5,fame:-3}),'big')});
-H(1790,1,'7월 12일, 성직자 시민헌법. 주교와 신부는 주민 선거로 뽑히게 되었다. 7월 14일, 샹드마르스에서 전국 연맹제가 열렸다.',async()=>{
-  if(adult()&&(inParis()||s.flags.garde)&&R()<.7)say('샹드마르스의 연맹제에 참가하였다. 30만 명이 비를 맞으며 “국민, 법, 왕”에게 충성을 맹세하였다.'+fx({pol:4,soc:1}))});
-H(1790,2,'혁명이 전국을 83개 도(데파르트망)로 나누었다. 국유재산 경매가 시작되었다.');
-H(1790,3,'11월 27일, 모든 성직자에게 헌법 충성 선서가 요구되었다. 기한은 1791년 1월.',async()=>{
+H(1790,3,'3월, 왕국이 83개 도(데파르트망)로 새로 나뉘었다. 부역은 무상으로 사라지고, 지대는 돈을 내고 사들여야 한다는 법령이 나왔다.');
+H(1790,4,'4월, 당통과 마라가 드나드는 코르들리에 클럽이 문을 열었다. 회비가 싸서 장인과 소상인도 들어갈 수 있다.',async()=>{await partyInvite('cordelier')});
+H(1790,5,'5월, 국유재산 경매가 시작되었다. 옛 수도원의 밭과 건물이 촛불 경매에 붙여졌다.');
+H(1790,6,'6월 19일, 세습 귀족제와 작위가 폐지되었다.',async()=>{if(adult()&&noble())say('문장과 작위가 법으로 사라졌다. 이름 앞의 ‘드(de)’도 쓸 수 없다.'+fx({pol:-5,fame:-3}),'big')});
+H(1790,7,'7월 12일, 성직자 시민헌법. 주교와 신부는 주민 선거로 뽑고 국가가 봉급을 준다.',async()=>{if(priest()){const i=await Q('성직자 시민헌법','Constitution civile du clergé','동료 사제들이 갈린다. 국가가 교회를 다스리는가, 교회를 바로 세우는가.',[{l:'교회 개혁이라며 지지한다',s:'',a:'radical'},{l:'교황의 권위를 침해한다며 반대한다',s:'',a:'pious royal'}]);setStance('church',i===0?1:0,true);await done()}});
+H(1790,7,'7월 14일, 샹드마르스에서 전국 연맹제가 열렸다. 30만 명이 비를 맞으며 “국민, 법, 왕”에게 충성을 맹세하였다. 오툉 주교 탈레랑이 미사를 집전하고 라파예트가 맹세를 선창하였다.',async()=>{
+  if(adult()&&(inParis()||s.flags.garde)&&R()<.7){meet('라파예트');say('샹드마르스의 연맹제에 참가하였다.'+fx({pol:4,soc:1}))}});
+H(1790,8,'8월, 낭시 주둔 연대의 병사 반란이 부예 장군에게 진압되었다. 반란병 한 명이 수레바퀴형, 스물두 명이 교수형을 받았다.',async()=>{if(soldier()&&job().t<=2)say('낭시 사건 소식에 병영이 술렁였다.'+fx({pol:3}))});
+H(1790,9,'9월, 네케르가 사임하고 스위스로 떠났다. 아무도 그를 붙잡지 않았다.');
+H(1790,11,'11월 27일, 모든 성직자에게 헌법 충성 선서가 요구되었다. 기한은 1791년 1월.',async()=>{
   if(!priest())return;
   const i=await Q('선서','serment constitutionnel','교구민들 앞 주일 미사에서 헌법에 충성 선서를 해야 한다. 교황은 아직 침묵하고 있다. 동료 사제들의 절반가량이 선서할 것이다.',[{l:'선서한다 (선서 사제)',s:'성직을 지킨다. 교구민 일부가 등을 돌린다',a:'radical safe'},{l:'거부한다 (선서 거부 사제)',s:'자리를 잃고 혐의를 산다',a:'pious royal'}]);
-  if(i===0){s.flags.juror=true;say('강론대에서 선서하였다.'+fx({pol:10,faith:-6}),'big');if(west())say('미사에 오는 이가 절반으로 줄었다. 마을 사람들은 숲 속에서 선서 거부 사제의 미사를 드린다.'+fx({fame:-4}))}
-  else{s.flags.refractory=true;loseJob('선서를 거부하여 % 자리에서 쫓겨났다.');fx({faith:8,pol:-12,sus:25,fame:4})}
+  if(i===0){s.flags.juror=true;setStance('church',1,false);say('강론대에서 선서하였다.'+fx({pol:10,faith:-6}),'big');if(west())say('미사에 오는 이가 절반으로 줄었다. 마을 사람들은 숲 속에서 선서 거부 사제의 미사를 드린다.'+fx({fame:-4}))}
+  else{s.flags.refractory=true;setStance('church',0,false);loseJob('선서를 거부하여 % 자리에서 쫓겨났다.');fx({faith:8,pol:-12,sus:25,fame:4})}
   await done()});
-H(1791,0,'3월, 알라르드 법으로 길드가 폐지되었다. 누구나 영업세만 내면 장사를 할 수 있다. 교황 비오 6세가 성직자 시민헌법을 단죄하였다.',async()=>{
-  if(adult()&&s.job==='c2'&&R()<.3&&s.money>=300)say('길드 가입비 없이도 장인으로 독립할 수 있게 되었다.')});
-H(1791,1,'6월 20~21일, 왕 일가가 변장하고 달아나다 바렌에서 붙잡혔다. 7월 17일, 샹드마르스에서 왕의 폐위를 청원하던 군중에게 국민방위대가 발포하였다.',async()=>{
+
+/* ---------- 1791 ---------- */
+H(1791,3,'3월 2·17일, 알라르드 법으로 길드가 폐지되었다. 누구나 영업세만 내면 장사를 할 수 있다. 3~4월, 교황 비오 6세가 성직자 시민헌법을 단죄하였다.',async()=>{
+  if(adult()&&s.job==='c2'&&s.money>=300)say('길드 가입비 없이도 장인으로 독립할 수 있게 되었다.')});
+H(1791,4,'4월 2일, 혁명의 웅변가 미라보가 죽었다.',async()=>{await fireStory('mirabeau')});
+H(1791,6,'6월 14일, 르 샤플리에 법이 노동자의 단결과 파업을 금지하였다.',async()=>{if(adult()&&onTrack('craft')&&job().t<=2)fx({pol:2})});
+H(1791,6,'6월 20~21일, 왕 일가가 하인으로 변장하고 달아나다 바렌에서 붙잡혔다. 지폐에 그려진 왕의 얼굴을 알아본 역참장 드루에가 길을 막았다.',async()=>{
   if(adult())fx({pol:s.pol>=-10?4:-2});
-  if(adult()&&inParis()&&s.pol>=25&&!noble()&&isM()){const i=await Q('샹드마르스','fusillade du Champ-de-Mars','코르들리에 클럽이 조국의 제단 위에 왕의 폐위 청원서를 펼쳤다. 서명하러 간다.',[{l:'샹드마르스로 가 서명한다',s:'',a:'radical bold'},{l:'가지 않는다',s:'',a:'safe'}]);
-    if(i===0){if(await chance(.01,'국민방위대의 발포','청원 군중 가운데 사망자 비율(약 50명)')){die('shot','샹드마르스에서 국민방위대의 일제 사격에 쓰러졌다.');await done();return}say('라파예트의 국민방위대가 발포했다. 피 묻은 청원서를 두고 달아났다.'+fx({pol:8,sus:5}))}else say('저녁에 총성이 들렸다.');await done()}
   if(noble()&&soldier()&&job().t>=3){const i=await Q('국경 너머','émigration des officiers','바렌 사건 이후 동료 귀족 장교들이 하나둘 연대를 버리고 국경을 넘는다. 코블렌츠의 왕제들이 귀족의 명예를 지키라고 부른다.',[{l:'망명한다',s:'',a:'royal'},{l:'연대에 남는다',s:'',a:'safe'}]);
     if(i===0)await emigrate('코블렌츠');else say('연대에 남았다. 사병들의 눈빛이 예전 같지 않다.'+fx({sus:5,pol:4}));await done()}});
-H(1791,2,'9월, 헌법이 완성되고 입법의회 선거가 치러졌다. 제헌의원은 다시 출마할 수 없다. 9월 27일, 유대인이 시민권을 얻었다.',async()=>{
+H(1791,7,'7월 16일, 왕의 폐위 문제로 자코뱅 클럽이 갈라졌다. 라파예트와 바르나브 등 온건파가 푀양 수도원으로 나가 ‘푀양 클럽’을 세웠다.',async()=>{await partySplit()});
+H(1791,7,'7월 17일, 샹드마르스에서 왕의 폐위를 청원하던 군중에게 라파예트의 국민방위대가 발포하였다.',async()=>{
+  if(adult()&&inParis()&&s.pol>=25&&!noble()&&isM()){const i=await Q('샹드마르스','fusillade du Champ-de-Mars','코르들리에 클럽이 조국의 제단 위에 왕의 폐위 청원서를 펼쳤다. 서명하러 간다.',[{l:'샹드마르스로 가 서명한다',s:'',a:'radical bold'},{l:'가지 않는다',s:'',a:'safe'}]);
+    if(i===0){if(await chance(.01,'국민방위대의 발포','청원 군중 가운데 사망자 비율(약 50명)')){die('shot','샹드마르스에서 국민방위대의 일제 사격에 쓰러졌다.');await done();return}setStance('crown',2,false);say('라파예트의 국민방위대가 발포했다. 피 묻은 청원서를 두고 달아났다.'+fx({pol:8,sus:5}))}else say('저녁에 총성이 들렸다.');await done()}});
+H(1791,7,'7월 11일, 볼테르의 유해가 판테옹으로 옮겨졌다.',async()=>{await fireStory('voltaire2')});
+H(1791,8,'8월 22일 밤, 생도맹그(아이티)에서 노예 반란이 일어났다. 8월 27일, 오스트리아와 프로이센이 필니츠 선언으로 프랑스 왕을 돕겠다고 하였다.',async()=>{if(adult()&&['bordeaux','nantes','marseille'].includes(loc())&&onTrack('craft')&&job().t>=4){say('생도맹그 설탕 무역이 끊겨 큰 손해를 보았다.'+fx({money:-Math.round(s.money*.3)}),'big')}});
+H(1791,9,'9월, 헌법이 완성되고 왕이 서명하였다. 입법의회 선거가 치러졌다. 제헌의원은 다시 출마할 수 없다. 9월 27일, 유대인이 시민권을 얻었다.',async()=>{
   if(s.faithKind==='jewish'&&adult())say('유대인도 시민이 되었다. 알자스의 유대인 공동체에 환호와 두려움이 섞였다.'+fx({pol:6}),'big');
   if(s.flags.constituent&&deputy()){loseJob('제헌의회가 해산되어 % 임기를 마쳤다.');s.loc=null;if(s.prevJob&&meets(POST[s.prevJob]))takeJob(s.prevJob,'고향으로 돌아가 ');return}
   if(adult()&&isM()&&s.age>=25&&!deputy()&&s.fame>=40&&lit()&&s.pol>=-15)await election('입법의회 선거',.12)});
-H(1791,1,'8월, 생도맹그(아이티)에서 노예 반란이 일어났다.',async()=>{if(adult()&&['bordeaux','nantes','marseille'].includes(loc())&&onTrack('craft')&&job().t>=4){say('생도맹그 설탕 무역이 끊겨 큰 손해를 보았다.'+fx({money:-Math.round(s.money*.3)}),'big')}});
+H(1791,10,'10월 1일, 입법의회가 열렸다. 브리소를 따르는 지롱드 출신 의원들이 왕과 망명자들을 향한 전쟁을 부르짖는다.',async()=>{await partyInvite('girondin')});
+H(1791,11,'11월, 망명자와 선서 거부 사제를 처벌하는 법령에 왕이 거부권을 행사하였다. 사람들은 왕비를 ‘오스트리아 여자’, 왕을 ‘거부권 씨’라 불렀다.');
 
 /* ---------- 1792 ---------- */
-H(1792,0,'4월 20일, 프랑스가 오스트리아에 선전포고하였다. 단두대가 처음으로 쓰였다.');
-H(1792,1,'7월 11일, 의회가 “조국이 위기에 처했다”고 선포하였다. 마르세유 의용병들이 노래를 부르며 파리로 들어왔다.',async()=>{
+H(1792,2,'1~2월, 생도맹그 반란으로 설탕값이 치솟자 파리 여인들이 식료품 가게를 털었다.',async()=>{if(adult()&&inParis()&&onTrack('craft')&&job().t>=4&&R()<.3)say('가게가 털려 설탕 자루를 빼앗겼다.'+fx({money:-Math.round(s.money*.05)}))});
+H(1792,3,'3월, 지롱드파 내각(롤랑, 뒤무리에, 클라비에르)이 들어섰다.');
+H(1792,4,'4월 20일, 프랑스가 오스트리아 왕에게 선전포고하였다. 로베스피에르는 “무장한 선교사를 좋아하는 사람은 없다”며 반대했다. 4월 25일, 단두대가 처음으로 쓰였다.',async()=>{
+  if(adult()&&s.age>=18&&politic()){const i=await Q('전쟁인가 평화인가','la guerre','브리소는 전쟁이 배신자를 가려내고 자유를 퍼뜨릴 것이라 한다. 로베스피에르는 적은 코블렌츠가 아니라 파리 안에 있다고 한다.',[{l:'혁명을 유럽에 퍼뜨리자 (브리소)',s:'',a:'radical bold'},{l:'방어전이면 족하다',s:'',a:'safe'},{l:'전쟁은 독재를 부른다 (로베스피에르)',s:'',a:'radical'}]);
+    setStance('war',i===0?2:i===1?1:0,true);await done()}
+  await fireStory('guillotine1');await fireStory('marseillaise')});
+H(1792,6,'6월 20일, 군중이 튈르리 궁에 난입해 왕에게 붉은 프리지아 모자를 씌우고 국민의 건강을 위해 건배하게 하였다.');
+H(1792,7,'7월 11일, 의회가 “조국이 위기에 처했다”고 선포하였다. 마르세유 연맹병들이 새 군가를 부르며 파리로 들어왔다. 7월 25일 브라운슈바이크 공작이 왕을 해치면 파리를 쑥대밭으로 만들겠다고 선언하였다.',async()=>{
   if(!maleAdult(18,40)||noble()||priest())return;
   const i=await Q('조국이 위기에','la patrie en danger','광장에 연단이 섰다. 의용병 명부에 이름을 적는 젊은이들 사이로 「라 마르세예즈」가 울린다.',[{l:'의용병으로 지원한다',s:'',a:'bold radical'},{l:'집과 가족을 지킨다',s:'',a:'safe family'}]);
   if(i===0){await enlist('의용병으로 ');fx({pol:8,fame:3})}else say('지원하지 않았다.');await done()});
-H(1792,1,'8월 10일, 파리 민중과 연맹병이 튈르리 궁을 습격하였다. 스위스 근위대 대부분이 죽고 왕정은 정지되었다.',async()=>{
+H(1792,8,'8월 10일, 파리 구민과 연맹병이 튈르리 궁을 습격하였다. 스위스 근위대 대부분이 죽고 왕정은 정지되었다. 왕 일가는 탕플 탑에 갇혔다.',async()=>{
+  await purge('feuillant');if(s.dead)return;
   if(!adult()||!inParis())return;
   if(noble()&&isM()){const i=await Q('8월 10일','journée du 10 août','튈르리 궁을 지킬 귀족들을 모은다는 전갈이 왔다.',[{l:'궁으로 가 왕을 지킨다',s:'궁에 남은 수비대의 대부분이 죽었다',a:'royal bold'},{l:'몸을 숨긴다',s:'',a:'safe'}]);
     if(i===0){if(await chance(.55,'튈르리 수비','궁을 지킨 이들의 사망률')){die('massacre','튈르리 궁을 지키다 군중에게 살해되었다.');await done();return}say('피투성이가 되어 빠져나왔다. 이름이 혐의자 명단에 올랐다.'+fx({sus:30,pol:-10}),'big')}else say('지하실에 숨어 총성을 들었다.'+fx({sus:5}));await done();return}
   if(isM()&&s.pol>=25){const i=await Q('8월 10일','journée du 10 août','생탕투안과 생마르소의 구민들이 무장하고 튈르리로 향한다.',[{l:'함께 궁으로 진격한다',s:'',a:'bold radical'},{l:'가지 않는다',s:'',a:'safe'}]);
-    if(i===0){if(await chance(.04,'튈르리 공격','공격자 가운데 사망자 비율(약 400명)')){die('riot','튈르리 궁 공격 중 스위스 근위대의 총탄에 쓰러졌다.');await done();return}s.flags.dix=true;say('궁이 함락되었다.'+fx({pol:10,fame:5,cour:3}))}else say('총성이 오후 내내 이어졌다.');await done()}});
-H(1792,1,'8월 26일, 선서 거부 사제는 보름 안에 나라를 떠나라는 법령이 내려졌다. 망명자의 재산이 몰수되기 시작하였다.',async()=>{
+    if(i===0){if(await chance(.04,'튈르리 공격','공격자 가운데 사망자 비율(약 400명)')){die('riot','튈르리 궁 공격 중 스위스 근위대의 총탄에 쓰러졌다.');await done();return}s.flags.dix=true;setStance('crown',2,false);say('궁이 함락되었다.'+fx({pol:10,fame:5,cour:3}))}else say('총성이 오후 내내 이어졌다.');await done()}});
+H(1792,8,'8월 19일, 라파예트가 군대를 버리고 오스트리아 쪽으로 넘어갔다. 8월 26일, 선서 거부 사제는 보름 안에 나라를 떠나라는 법령이 내려졌다. 망명자의 재산 몰수가 시작되었다.',async()=>{
   if(s.cond==='emigre'&&s.land>0){s.lostLand=(s.lostLand||0)+s.land;s.land=0;L('망명자 재산 몰수령으로 고향의 땅이 국유재산이 되었다.','sys')}
   if(noble()&&adult()&&R()<.4)s.flags.emigreKin=true;
   if(s.flags.refractory&&s.cond==='normal'){const i=await Q('추방령','déportation','선서 거부 사제는 나라를 떠나야 한다. 남으면 기아나 유형이다.',[{l:'에스파냐로 떠난다',s:'',a:'safe'},{l:'숨어서 교우들을 돌본다',s:'붙잡히면 사형이다',a:'pious bold'}]);
     if(i===0)await emigrate(pick(['에스파냐','로마','런던']));else{s.cond='hiding';s.condSince=T();say('농가의 헛간과 다락을 옮겨 다니며 밤중에 미사를 드렸다.'+fx({faith:6,cour:4}),'big')}await done()}});
-H(1792,2,'9월 2~6일, 파리 감옥들에서 학살이 벌어졌다. 수감자 약 2,700명 가운데 1,100~1,400명이 끌려나와 죽었다.',async()=>{
+H(1792,9,'9월 2~6일, 파리 감옥들에서 학살이 벌어졌다. 수감자 약 2,700명 가운데 1,100~1,400명이 끌려나와 죽었다.',async()=>{
   if(s.cond==='prison'&&inParis()){sheetOpen('9월 학살','massacres de Septembre');shText('감방 문이 열리고 군중이 들이닥쳤다. 즉석 ‘재판관’들이 이름을 부른다.','q b');
     if(await chance(s.flags.refractory||noble()?.75:.45,'감옥 학살','갇혀 있던 이들 중 죽은 비율')){die('massacre');await done();return}
     s.cond='normal';say('“국민 만세!” 소리와 함께 풀려났다. 피 웅덩이를 밟고 나왔다.'+fx({hp:-5}),'big');await done()}});
-H(1792,2,'9월 20일, 발미에서 프로이센군을 막아냈다. 9월 21~22일, 국민공회가 왕정을 폐지하고 공화국을 선포하였다. 9월 20일 이혼법이 통과되었다.',async()=>{
-  if(adult()&&isM()&&s.age>=25&&!deputy()&&lit()&&s.fame>=35&&s.pol>=10)await election('국민공회 선거',.15);
+H(1792,9,'9월 20일, 발미에서 프로이센군을 막아냈다. 같은 날 이혼법이 통과되었다. 9월 21~22일, 보통선거로 뽑힌 국민공회가 왕정을 폐지하고 공화국을 선포하였다.',async()=>{
+  await fireStory('goethe');
+  if(adult()&&isM()&&s.age>=21&&!deputy()&&lit()&&s.fame>=35&&s.pol>=10)await election('국민공회 선거',.15);
   if(adult()&&s.married&&s.spouse&&s.spouse.alive&&s.flags.unhappy){const i=await Q('이혼법','loi sur le divorce','이제 부부는 합의만으로도 갈라설 수 있다.',[{l:'이혼한다',s:'',a:'radical'},{l:'그대로 산다',s:'',a:'safe family'}]);if(i===0){s.spouse.alive=false;s.divorced=true;s.flags.unhappy=false;say('시청에서 이혼 서류에 서명하였다.'+fx({pol:4}),'big')}else say('참고 살기로 했다.');await done()}});
+H(1792,10,'10월, 국민공회의 의석이 갈렸다. 높은 왼쪽 자리의 ‘산악파’, 오른쪽의 지롱드파, 그 사이 낮은 자리의 ‘평원파’.',async()=>{await partyInvite(s.pol>=45?'jacobin':s.pol>=15?'girondin':'plaine')});
+H(1792,11,'11월 20일, 튈르리 궁의 벽장에서 왕의 비밀 문서가 든 ‘쇠 궤짝’이 발견되었다. 11월 6일 즈마프에서 이긴 군대가 벨기에로 들어갔다.');
+H(1792,12,'12월 11일, 국민공회가 루이 카페(전 국왕 루이 16세)의 재판을 시작하였다. 생쥐스트가 말했다. “사람은 죄 없이 왕으로 군림할 수 없다.”');
 
 /* ---------- 1793 ---------- */
-H(1792,3,'국민공회가 루이 카페(전 국왕 루이 16세)를 반역죄로 재판하였다.',async()=>{
-  if(!deputy()||T()<1792.5)return;
-  const i=await Q('국왕 재판','procès du roi','1월, 의원 한 사람씩 연단에 올라 루이의 형벌을 말한다. 방청석의 상퀼로트들이 노려본다.',[{l:'사형',s:'',a:'radical'},{l:'국민투표에 부치자',s:'지롱드파의 안',a:'safe'},{l:'구금 후 추방',s:'',a:'royal safe'}]);
-  if(i===0){s.flags.regicide=true;say('“사형.” 짧게 말하고 연단을 내려왔다.'+fx({pol:15,fame:4}),'big')}else{s.flags.girondin=s.pol<50;say('“형벌을 국민에게 묻자.” 방청석에서 야유가 쏟아졌다.'+fx({pol:-8,sus:15}))}await done()});
-H(1793,0,'1월 21일, 루이 16세가 혁명 광장에서 처형되었다. 2월, 30만 명 징집령. 3월, 방데에서 징집에 반대하는 농민 반란이 일어났다. 4월, 공안위원회가 만들어졌다.',async()=>{
-  if(adult()){fx({pol:s.pol>=20?3:-3});if(noble()||s.faith>=70)say('왕이 죽었다는 소식에 몰래 미사를 올렸다.'+fx({sus:3}))}
+H(1793,1,'1월 15~17일, 국민공회 의원들이 한 사람씩 연단에 올라 루이의 형벌을 말했다. 사형 387표 대 334표.',async()=>{
+  if(!deputy())return;
+  const i=await Q('국왕 재판','procès du roi','의원 한 사람씩 연단에 올라 루이의 형벌을 말한다. 방청석의 상퀼로트들이 노려본다.',[{l:'사형',s:'',a:'radical'},{l:'국민투표에 부치자',s:'지롱드파의 안',a:'safe'},{l:'구금 후 추방',s:'',a:'royal safe'}]);
+  if(i===0){s.flags.regicide=true;setStance('justice',2,false);say('“사형.” 짧게 말하고 연단을 내려왔다.'+fx({pol:15,fame:4}),'big')}else{if(s.pol<50&&!s.party)joinParty('girondin',true);say('“형벌을 국민에게 묻자.” 방청석에서 야유가 쏟아졌다.'+fx({pol:-8,sus:15}))}await done()});
+H(1793,1,'1월 21일 아침, 루이 16세가 혁명 광장에서 처형되었다. 그는 군중에게 “나는 죄 없이 죽는다”고 말하려 했으나 북소리가 그의 목소리를 덮었다.',async()=>{if(adult()){fx({pol:s.pol>=20?3:-3});if(noble()||s.faith>=70)say('왕이 죽었다는 소식에 몰래 미사를 올렸다.'+fx({sus:3}))}});
+H(1793,2,'2월 1일 영국과 네덜란드에 선전포고. 2월 24일, 30만 명 징집령이 내려졌다.',async()=>{if(maleAdult(18,40))await conscript(.12,'30만 명 징집',{single:true,repl:900,why:'미혼 남성 가운데 뽑힌 비율'})});
+H(1793,3,'3월 10일, 혁명재판소가 세워졌다. 같은 달, 방데에서 징집에 반대하는 농민 반란이 일어났다.',async()=>{
   if(adult()&&(loc()==='vendee'||(loc()==='bretagne'&&R()<.4))&&!deputy()&&!soldier()){
     const i=await Q('방데 봉기','guerre de Vendée','교회 종이 울린다. 마을 남자들이 성심(聖心) 휘장을 달고 낫과 사냥총을 들었다. “하느님과 왕을 위하여!”',[{l:'가톨릭 왕당군에 가담한다',s:'방데 지역 인구의 약 4분의 1이 전쟁 중 죽었다',a:'royal pious bold'},{l:'공화국 편에 선다',s:'',a:'radical'},{l:'숲으로 몸을 피한다',s:'',a:'safe'}]);
-    if(i===0){s.flags.vendeen=true;s.pol=Math.min(s.pol,-40);say('가톨릭 왕당군에 들어갔다. 숄레와 소뮈르에서 이겼다.'+fx({faith:8,cour:6,fame:4}),'big');
+    if(i===0){s.flags.vendeen=true;joinParty('royalist',true);s.pol=Math.min(s.pol,-40);say('가톨릭 왕당군에 들어갔다. 숄레와 소뮈르에서 이겼다.'+fx({faith:8,cour:6,fame:4}),'big');
       if(await chance(.3,'방데 전쟁','반란군 전투원의 1년간 사망률')){die('battle','방데 전쟁');await done();return}}
     else if(i===1){say('공화파로 낙인찍혀 이웃의 눈을 피해 살았다.'+fx({pol:8,sus:-5}));if(await chance(.06,'왕당군의 보복','공화파 주민이 보복당한 비율')){die('murdered','왕당군에게 공화파로 몰려 살해되었다.');await done();return}}
-    else say('숲 속 오두막에 숨어 지냈다.'+fx({hp:-3}));await done();return}
-  if(maleAdult(18,40))await conscript(.12,'30만 명 징집',{single:true,repl:900,why:'미혼 남성 가운데 뽑힌 비율'})});
-H(1793,1,'6월 2일, 상퀼로트가 국민공회를 포위하고 지롱드파 의원 29명을 체포하였다. 7월 13일, 샤를로트 코르데가 마라를 찔러 죽였다. 리옹·마르세유·보르도에서 연방주의 반란이 일어났다.',async()=>{
-  if(deputy()&&(s.flags.girondin||s.pol<30)){const i=await Q('6월 2일','journées du 31 mai–2 juin','대포를 앞세운 국민방위대가 의사당을 둘러쌌다. 지롱드파 의원들의 체포 명단이 읽힌다. 그대의 이름도 들어 있다.',[{l:'지방으로 달아나 반란을 일으킨다',s:'',a:'bold'},{l:'남아서 체포된다',s:'',a:'safe'}]);
+    else say('숲 속 오두막에 숨어 지냈다.'+fx({hp:-3}));await done()}});
+H(1793,4,'4월 5일, 뒤무리에 장군이 적에게 넘어갔다. 4월 6일, 공안위원회가 만들어졌다.');
+H(1793,5,'5월 4일, 곡물 최고가격제가 처음 정해졌다. 파리 구민회와 지롱드파의 대립이 극에 달했다.',async()=>{
+  if(adult()&&politic()){const i=await Q('최고가격제','le Maximum','빵값을 법으로 묶을 것인가. 상퀼로트는 매점매석범을 단두대로 보내라 하고, 지롱드파는 자유 거래가 굶주림을 끝낸다고 한다.',[{l:'최고가격제를 지지한다',s:'',a:'radical'},{l:'자유 거래를 지킨다',s:'',a:'safe greedy'}]);setStance('econ',i===0?1:0,true);await done()}});
+H(1793,6,'5월 31일~6월 2일, 대포를 앞세운 파리 구민들이 국민공회를 포위하였다. 지롱드파 의원 29명이 체포되었다.',async()=>{
+  if(deputy()&&(s.party==='girondin'||s.flags.girondin||s.pol<30)){const i=await Q('6월 2일','journées du 31 mai–2 juin','대포를 앞세운 국민방위대가 의사당을 둘러쌌다. 지롱드파 의원들의 체포 명단이 읽힌다. 그대의 이름도 들어 있다.',[{l:'지방으로 달아나 반란을 일으킨다',s:'',a:'bold'},{l:'남아서 체포된다',s:'',a:'safe'}]);
     if(i===0){s.cond='hiding';s.condSince=T();s.flags.girondin=true;loseJob('% 자리를 버리고 칼바도스로 달아났다.');fx({sus:30})}else{s.flags.girondin=true;loseJob();s.cond='prison';s.prisonKind='terror';say('가택 연금을 거쳐 감옥에 갇혔다.'+fx({sus:30}),'big')}await done();return}
+  await purge('girondin');if(s.dead)return;
   if(adult()&&['lyon','marseille','bordeaux'].includes(loc())&&s.pol<40&&(rich()||s.estate==='bourgeois')){const i=await Q('연방주의 반란','insurrection fédéraliste',`${REGIONS[loc()].n}의 구민회가 파리의 자코뱅에 맞서 일어섰다.`,[{l:'반란 시 정부에 가담한다',s:'',a:'bold'},{l:'관망한다',s:'',a:'safe'}]);
     if(i===0){s.flags.federalist=true;say('구민회의 위원이 되었다.'+fx({sus:30,fame:4}),'big')}else fx({sus:5});await done()}});
-H(1793,1,'8월 23일, 국민총동원령. “젊은이는 싸우러 나가고, 기혼자는 무기를 만들고, 여자는 천막과 옷을 짓는다.”',async()=>{
+H(1793,7,'7월 13일, 캉에서 온 샤를로트 코르데가 욕조의 마라를 찔렀다. 7월 17일, 남은 영주 공납이 보상 없이 폐지되었다. 7월 27일, 로베스피에르가 공안위원회에 들어갔다.',async()=>{if(adult()&&noble()&&s.dues){say('남은 영주 공납이 보상 없이 사라졌다.'+` (공납 수입 -${fmt(s.dues)})`);s.dues=0}});
+H(1793,8,'8월 23일, 국민총동원령. “젊은이는 싸우러 나가고, 기혼자는 무기를 만들고, 여자는 천막과 옷을 짓는다.” 8월 27일, 툴롱이 영국 함대에 항구를 열었다.',async()=>{
   if(maleAdult(18,25))await conscript(.75,'국민총동원',{single:true,why:'18~25세 미혼 남성 가운데 실제로 입대한 비율',text:'국민총동원령. 18세에서 25세까지의 미혼 남자는 모두 징발 대상이다. 대리인은 허락되지 않는다.'})});
-H(1793,2,'9월 5일 “공포를 의사일정에”. 9월 17일 혐의자법, 9월 29일 최고가격제. 10월 16일 마리 앙투아네트 처형, 10월 31일 지롱드파 21명 처형. 10월 9일 리옹 함락. 10월 30일 여성 정치클럽 금지.',async()=>{
+H(1793,9,'9월 5일, 국민공회가 “공포를 의사일정에” 올렸다. 9월 17일 혐의자법, 9월 29일 전면 최고가격제.',async()=>{
+  if(adult()&&onTrack('craft')&&job().t>=4){say('최고가격제로 정해진 값 이상을 받으면 매점매석범으로 사형이다.'+fx({money:-Math.round(s.money*.1),sus:5}))}
+  if(adult()&&politic()){const i=await Q('공포를 의사일정에','la Terreur','“공포는 신속하고 엄격하며 굽힐 수 없는 정의일 뿐이다.” 혁명은 배신자에게 어떻게 해야 하는가.',[{l:'공포로 혁명을 지킨다',s:'',a:'radical'},{l:'공정한 재판은 지켜야 한다',s:'',a:'safe'},{l:'관용을 베풀어야 한다',s:'공포정치기에는 위험하다',a:'pious'}]);setStance('justice',i===0?2:i===1?1:0,true);await done()}});
+H(1793,10,'10월 9일 리옹 함락. 10월 16일 마리 앙투아네트 처형. 10월 30일 여성 정치클럽 금지. 10월 31일 지롱드파 21명이 「라 마르세예즈」를 부르며 단두대에 올랐다.',async()=>{
   if(adult()&&s.flags.federalist&&loc()==='lyon'){say('리옹이 함락되었다. 공화국은 “리옹은 더 이상 없다”고 선언하였다.','big');if(await chance(.35,'리옹 처형','가담자 가운데 처형된 비율(총 약 1,900명)')){die('shot','리옹 브로토 평원에서 산탄 총살을 당했다.');return}fx({sus:20})}
   if(adult()&&!isM()&&s.flags.femClub)say('여성 정치클럽이 금지되었다. “여자의 자리는 가정”이라고 의원들이 말했다.'+fx({pol:3}));
-  if(adult()&&onTrack('craft')&&job().t>=4){say('최고가격제로 정해진 값 이상을 받으면 매점매석범으로 사형이다.'+fx({money:-Math.round(s.money*.1),sus:5}))}});
-H(1793,3,'비기독교화 운동. 노트르담이 ‘이성의 신전’이 되고, 교회 종이 녹아 대포가 되었다. 낭트에서 카리에가 수천 명을 루아르 강에 수장하였다. 툴롱이 탈환되었다.',async()=>{
+  await fireStory('marieAntoinette');
+  if(s.party==='girondin'&&s.cond==='prison'&&s.prank>=2){if(await chance(.7,'지롱드파 재판','지도부 재판의 사형 비율')){die('guillotine');return}}});
+H(1793,11,'11월 10일, 노트르담이 ‘이성의 신전’이 되었다. 교회 종이 녹아 대포가 되었다. 11월 8일 롤랑 부인 처형.',async()=>{
+  await fireStory('roland');
   if(priest()&&s.flags.juror&&s.cond==='normal'){const i=await Q('사제직 포기','abdication de prêtrise','지역 혁명위원회가 사제들에게 “미신의 직분”을 버리고 서품장을 넘기라고 요구한다. 결혼하면 의심을 덜 받는다.',[{l:'사제직을 내려놓는다',s:'',a:'radical safe'},{l:'버티며 미사를 계속한다',s:'혐의가 짙어진다',a:'pious bold'}]);
-    if(i===0){loseJob('서품장을 위원회에 넘기고 % 자리를 버렸다.');fx({faith:-15,sus:-15,pol:6});s.flags.abdicated=true}else fx({faith:6,sus:25});await done()}
+    if(i===0){loseJob('서품장을 위원회에 넘기고 % 자리를 버렸다.');fx({faith:-15,sus:-15,pol:6});s.flags.abdicated=true;setStance('church',2,false)}else fx({faith:6,sus:25});await done()}
   if(adult()&&s.faith>=70&&!priest()&&R()<.35){const i=await Q('숨은 사제','prêtre caché','선서 거부 사제 한 사람이 밤중에 찾아와 하룻밤 재워 달라고 한다.',[{l:'다락에 숨겨 준다',s:'발각되면 사형',a:'pious bold'},{l:'돌려보낸다',s:'',a:'safe'}]);
     if(i===0){s.seeds.push({t:'hidPriest',y:s.year});say('다락에 숨겨 주고 새벽 미사를 드렸다.'+fx({faith:5,sus:5}))}else say('문을 닫았다.'+fx({faith:-2}));await done()}});
+H(1793,12,'12월, 데물랭이 신문 『비외 코르들리에』에서 “관용위원회”를 세우자고 썼다. 12월 19일 툴롱 탈환, 젊은 포병 대위 보나파르트가 이름을 알렸다. 낭트에서는 카리에가 수천 명을 루아르 강에 수장하였다.',async()=>{await partyInvite('indulgent')});
 
 /* ---------- 1794 ---------- */
-H(1794,0,'3월 에베르파, 4월 5일 당통파가 처형되었다. 1~5월 방데에 ‘지옥의 종대’가 휩쓸었다.',async()=>{
-  if(adult()&&loc()==='vendee'){if(await chance(s.flags.vendeen?.25:.08,'지옥의 종대','방데 주민 가운데 1794년 초에 죽은 비율')){die('massacre');return}say('마을이 불탔다. 살아남은 사람들은 숲으로 흩어졌다.'+fx({hp:-8,money:-Math.round(s.money*.5)}),'big')}
-  if(deputy()&&s.pol>=70&&R()<.4){s.flags.hebert=true}});
-H(1794,1,'6월 8일 최고존재의 제전. 6월 10일 프레리알 22일 법으로 대공포정치가 시작되었다. 7월 27일(테르미도르 9일), 로베스피에르가 국민공회에서 체포되어 이튿날 처형되었다.',async()=>{
+H(1794,1,'1~5월, 방데에 튀로 장군의 ‘지옥의 종대’가 휩쓸며 마을을 불태웠다.',async()=>{
+  if(adult()&&loc()==='vendee'){if(await chance(s.flags.vendeen?.25:.08,'지옥의 종대','방데 주민 가운데 1794년 초에 죽은 비율')){die('massacre');return}say('마을이 불탔다. 살아남은 사람들은 숲으로 흩어졌다.'+fx({hp:-8,money:-Math.round(s.money*.5)}),'big')}});
+H(1794,2,'2월 4일(플뤼비오즈 16일), 국민공회가 식민지의 노예제를 폐지하였다.');
+H(1794,3,'3월 24일, 에베르와 코르들리에 지도자들이 단두대에 올랐다.',async()=>{await purge('cordelier')});
+H(1794,4,'4월 5일, 당통과 데물랭이 처형되었다.',async()=>{await fireStory('danton');await purge('indulgent')});
+H(1794,5,'5월 8일, 징세청부인 스물여덟 명이 처형되었다. 그 가운데 화학자 라부아지에가 있었다.',async()=>{await fireStory('lavoisier')});
+H(1794,6,'6월 8일, 샹드마르스에서 최고존재의 제전. 6월 10일 프레리알 22일 법으로 피고는 변호인도 증인도 없이 재판받게 되었다. 대공포정치. 6월 26일 플뢰뤼스 승리.',async()=>{
+  if(adult()&&inParis()&&R()<.5)say('최고존재의 제전에서 로베스피에르가 무신론의 허수아비에 불을 붙였다. 의원들 사이에서 “독재자”라는 수군거림이 돌았다.');
+  await fireStory('carmelites')});
+H(1794,7,'7월 27일(테르미도르 9일), 로베스피에르가 국민공회에서 체포되었다. 이튿날 그와 생쥐스트, 쿠통 등 22명이 처형되었다.',async()=>{
+  await fireStory('chenier');
   if(deputy()&&s.cond==='normal'){const i=await Q('테르미도르 9일','9 Thermidor','탈리앵이 단검을 휘두르며 연단으로 뛰어오른다. “폭군을 타도하라!” 로베스피에르가 말하려 하지만 종소리가 그의 목소리를 덮는다.',[{l:'체포에 찬성한다',s:'',a:'safe'},{l:'로베스피에르를 변호한다',s:'',a:'radical bold'}]);
     if(i===1){say('로베스피에르와 함께 체포되었다.','big');if(await chance(.85,'테르미도르 처형','로베스피에르파로 체포된 이들의 처형 비율')){die('guillotine');await done();return}}
-    else say('“폭군 타도!” 함께 외쳤다.'+fx({pol:-10,sus:-10}));await done()}
-  if(adult()&&s.flags.club&&s.pol>=60)fx({sus:10})});
-H(1794,2,'테르미도르 반동. 혐의자들이 풀려나고, 11월 자코뱅 클럽이 문을 닫았다. 멋쟁이 청년들(뮈스카댕)이 자코뱅을 몽둥이로 쫓았다.',async()=>{if(adult()&&s.pol>=55&&inParis()&&R()<.3)say('금빛 청년단에게 몽둥이로 얻어맞았다.'+fx({hp:-5,sus:8}))});
-H(1794,3,'최고가격제가 폐지되자 물가가 폭등하였다. 세기에 드문 혹한이 겹쳐 굶주림이 번졌다.',async()=>{if(adult()&&!rich()&&R()<.4)say('빵 배급 줄에서 몇 시간을 떨었다.'+fx({hp:-6}))});
+    else{say('“폭군 타도!” 함께 외쳤다.'+fx({pol:-10,sus:-10}));if(s.party==='jacobin'||s.party==='plaine')joinParty('thermidor',true)}await done();return}
+  await purge('jacobin')});
+H(1794,8,'8월, 혐의자들이 풀려나기 시작하였다. 혁명재판소가 개편되고 프레리알 법이 폐지되었다.');
+H(1794,11,'11월 12일, 자코뱅 클럽이 문을 닫았다. 금빛 청년단(뮈스카댕)이 몽둥이를 들고 자코뱅을 쫓았다.',async()=>{if(adult()&&s.pol>=55&&inParis()&&R()<.3)say('금빛 청년단에게 몽둥이로 얻어맞았다.'+fx({hp:-5,sus:8}))});
+H(1794,12,'12월 24일, 최고가격제가 폐지되자 물가가 폭등하였다. 세기에 드문 혹한이 겹쳐 굶주림이 번졌다.',async()=>{if(adult()&&!rich()&&R()<.4)say('빵 배급 줄에서 몇 시간을 떨었다.'+fx({hp:-6}))});
 
 /* ---------- 1795~1799 ---------- */
-H(1795,0,'4월(제르미날)과 5월(프레리알), “빵과 1793년 헌법”을 외치는 파리 민중 봉기가 진압되었다. 남부에서는 백색테러로 자코뱅들이 살해되었다.',async()=>{
-  if(!adult())return;
-  if(inParis()&&!rich()&&s.pol>=35&&R()<.6){const i=await Q('프레리알 봉기','insurrection de Prairial','여인들이 앞장서 국민공회로 밀고 들어간다. 빵과 1793년 헌법!',[{l:'함께 의사당으로 들어간다',s:'',a:'bold radical'},{l:'가지 않는다',s:'',a:'safe'}]);
-    if(i===0){if(await chance(.06,'프레리알 진압','가담자 가운데 처형·사살된 비율')){die('executed','프레리알 봉기 가담자로 군사위원회에서 사형 선고를 받았다.');await done();return}s.sus+=15;say('군대가 생탕투안 문밖을 포위해 무장을 해제시켰다.'+fx({pol:5}))}else say('봉기 소식을 들으며 문을 닫았다.');await done()}
-  if(south()&&s.pol>=45&&s.fame>=15){if(await chance(.08,'백색테러','남부에서 알려진 자코뱅이 습격당한 비율')){die('murdered','예후단(Compagnie de Jéhu)에게 살해되었다.');return}say('예후단이 자코뱅을 찾아다닌다는 소문에 몸을 낮췄다.'+fx({sus:5}))}});
-H(1795,1,'6~7월, 영국 함대가 망명 귀족군을 브르타뉴 키브롱에 상륙시켰으나 오슈 장군에게 궤멸되었다. 포로 약 750명이 총살되었다.',async()=>{
+H(1795,4,'4월 1일(제르미날 12일), “빵과 1793년 헌법”을 외치는 파리 민중이 국민공회에 난입했다가 쫓겨났다. 남부에서 백색테러가 시작되었다.',async()=>{
+  if(adult()&&south()&&s.pol>=45&&s.fame>=15){if(await chance(.08,'백색테러','남부에서 알려진 자코뱅이 습격당한 비율')){die('murdered','예후단(Compagnie de Jéhu)에게 살해되었다.');return}say('예후단이 자코뱅을 찾아다닌다는 소문에 몸을 낮췄다.'+fx({sus:5}))}});
+H(1795,5,'5월 20일(프레리알 1일), 굶주린 파리 민중이 다시 국민공회로 밀고 들어가 의원 페로의 목을 창에 꽂았다. 군대가 생탕투안 문밖을 포위해 무장을 해제시켰다.',async()=>{
+  if(adult()&&inParis()&&!rich()&&s.pol>=35&&R()<.6){const i=await Q('프레리알 봉기','insurrection de Prairial','여인들이 앞장서 국민공회로 밀고 들어간다. 빵과 1793년 헌법!',[{l:'함께 의사당으로 들어간다',s:'',a:'bold radical'},{l:'가지 않는다',s:'',a:'safe'}]);
+    if(i===0){if(await chance(.06,'프레리알 진압','가담자 가운데 처형·사살된 비율')){die('executed','프레리알 봉기 가담자로 군사위원회에서 사형 선고를 받았다.');await done();return}s.sus+=15;say('군대가 생탕투안 문밖을 포위해 무장을 해제시켰다.'+fx({pol:5}))}else say('봉기 소식을 들으며 문을 닫았다.');await done()}});
+H(1795,6,'6월 8일, 탕플 탑의 열 살 루이 17세가 죽었다. 망명한 프로방스 백작이 스스로 루이 18세라 칭하였다.',async()=>{await fireStory('louis17')});
+H(1795,7,'6~7월, 영국 함대가 망명 귀족군을 브르타뉴 키브롱에 상륙시켰으나 오슈 장군에게 궤멸되었다. 포로 약 750명이 총살되었다.',async()=>{
   if(s.cond==='emigre'&&isM()&&noble()&&s.age<55){const i=await Q('키브롱 원정','expédition de Quiberon','영국이 망명 귀족 연대를 배에 태워 브르타뉴로 보낸다. 슈앙들이 맞이할 것이라 한다.',[{l:'원정에 참가한다',s:'',a:'royal bold'},{l:'남는다',s:'',a:'safe'}]);
     if(i===0){if(await chance(.6,'키브롱','상륙한 망명자 가운데 죽거나 총살된 비율')){die('shot','키브롱 원정에서 포로가 되어 오레에서 총살되었다.');await done();return}say('영국 배로 겨우 돌아왔다.'+fx({cour:5}))}await done()}});
-H(1795,2,'10월 5일(방데미에르 13일), 왕당파 봉기를 보나파르트 장군이 대포로 진압하였다. 10월 26일 국민공회가 해산되고 총재정부가 들어섰다.',async()=>{
+H(1795,8,'8월 22일, 공화력 3년 헌법이 채택되었다. 다시 납세자만 투표하고, 오백인회와 원로회의 양원제를 둔다. 새 의회의 3분의 2는 국민공회 의원 중에서 뽑기로 하였다.',async()=>{if(adult()&&politic()){const i=await Q('공화력 3년 헌법','Constitution de l’an III','보통선거를 버리고 납세자 선거로 돌아가자는 헌법이다. “재산을 가진 이가 다스려야 한다”고 부아시 당글라는 말했다.',[{l:'유산자의 질서를 지지한다',s:'',a:'safe'},{l:'1793년 헌법과 보통선거를 지킨다',s:'',a:'radical'}]);setStance('vote',i===0?1:2,true);await done()}});
+H(1795,10,'10월 5일(방데미에르 13일), 왕당파 봉기를 보나파르트 장군이 포도탄으로 진압하였다. 10월 26일 국민공회가 해산되고 총재정부가 들어섰다. 리브르 대신 프랑이 화폐 단위가 되었다.',async()=>{
   if(deputy()&&s.pol>-10)say('3분의 2 법령에 따라 오백인회 의원으로 자리를 이어 갔다.');
   else if(deputy()){loseJob('국민공회가 해산되어 % 임기를 마쳤다.');s.loc=null}
-  if(T()>=1795&&adult()&&s.money>100)L('리브르 대신 프랑이 새 화폐 단위가 되었다.','sys')});
-H(1796,0,'보나파르트가 이탈리아 원정군 사령관이 되었다. 5월, 바뵈프의 ‘평등파의 음모’가 적발되었다. 아시냐가 폐지되었다.',async()=>{
-  if(adult()&&s.pol>=75&&s.flags.club&&R()<.25){say('바뵈프의 ‘평등파’ 모임에 드나든 것이 드러났다.','big');s.cond='prison';s.prisonKind='plain';s.condSince=T();fx({sus:15})}});
-H(1797,2,'9월 4일(프뤽티도르 18일), 총재정부가 왕당파 의원들을 축출하고 기아나로 유형 보냈다. 국채의 3분의 2가 파기되었다.',async()=>{
+  await partyInvite(s.pol>=50?'babeuf':s.pol<=-20?'clichy':'thermidor')});
+H(1796,3,'3월, 보나파르트가 조제핀과 혼인하고 이탈리아 원정군 사령관이 되었다. 아시냐가 폐지되고 토지 증권(만다)으로 바뀌었다.');
+H(1796,5,'5월 10일, 바뵈프의 ‘평등파의 음모’가 적발되었다. 바뵈프는 이듬해 처형되었다.',async()=>{await purge('babeuf')});
+H(1797,4,'3~4월 선거에서 왕당파가 크게 이겼다. 클리시 클럽 의원들이 오백인회를 장악하였다.',async()=>{if(adult()&&isM()&&s.age>=30&&!deputy()&&lit()&&s.fame>=40&&s.pol<=10)await election('오백인회 선거',.12)});
+H(1797,9,'9월 4일(프뤽티도르 18일), 총재정부가 군대를 동원해 왕당파 의원들을 축출하고 기아나로 유형 보냈다. 9월 30일 국채의 3분의 2가 파기되었다.',async()=>{
   if(deputy()&&s.pol<-5){loseJob('프뤽티도르 정변으로 의원직을 박탈당했다.');if(await chance(.3,'기아나 유형','축출된 의원 가운데 유형당한 비율')){say('철창 수레에 실려 로슈포르 항으로 끌려갔다. ‘마른 단두대’ 기아나로 간다.','big');if(await chance(.5,'유형지 열병','기아나 유형수의 사망률')){die('deported');return}say('기아나를 탈출해 미국으로 건너갔다.'+fx({hp:-15}))}}
+  else await purge('clichy');if(s.dead)return;
   if(adult()&&s.money>=8000&&!s.land){const l=Math.round(s.money*.15);s.money-=l;say(`국채의 3분의 2가 파기되어 이자 수입을 잃었다. (재산 -${fmt(l)})`)}});
-H(1798,1,'보나파르트가 이집트로 원정을 떠났다. 9월 주르당 법으로 20~25세 남자에 대한 정기 징병이 시작되었다.');
-H(1799,0,'징병 대상 전 연령에 소집령이 내려졌다. 서부에서 슈앙들이 다시 일어났다.',async()=>{if(maleAdult(20,25))await conscript(.5,'주르당 징병',{why:'20~25세 해당 연령 남성 중 소집된 비율',text:'주르당 법에 따른 징병. 해당 연령의 청년들이 모두 소집된다.'})});
-H(1799,2,'11월 9~10일(브뤼메르 18~19일), 보나파르트가 생클루에서 총재정부를 무너뜨렸다. 통령정부가 들어섰다.',async()=>{
+H(1798,4,'4월 선거에서 신자코뱅이 크게 이겼다. 5월 11일(플로레알 22일), 총재정부가 그 당선을 무효로 만들었다.',async()=>{if(adult()&&isM()&&s.age>=30&&!deputy()&&lit()&&s.fame>=40&&s.pol>=20)await election('오백인회 선거',.12)});
+H(1798,5,'5월 19일, 보나파르트가 학자 167명과 함께 이집트 원정을 떠났다.');
+H(1798,9,'9월 5일, 주르당 법으로 20~25세 남자에 대한 정기 징병이 시작되었다.');
+H(1799,4,'징병 대상 전 연령에 소집령이 내려졌다. 서부에서 슈앙들이 다시 일어났다.',async()=>{if(maleAdult(20,25))await conscript(.5,'주르당 징병',{why:'20~25세 해당 연령 남성 중 소집된 비율',text:'주르당 법에 따른 징병. 해당 연령의 청년들이 모두 소집된다.'})});
+H(1799,7,'7월, 이집트 로제타에서 원정군이 비문이 새겨진 검은 돌을 찾았다.');
+H(1799,11,'11월 9~10일(브뤼메르 18~19일), 보나파르트가 생클루에서 총재정부를 무너뜨렸다. 통령정부가 들어섰다.',async()=>{
   if(deputy()){const i=await Q('브뤼메르 18일','18 Brumaire','생클루의 오렌지 온실. 척탄병들이 총검을 들고 회의장으로 들어온다. 보나파르트의 동생이 군인들에게 의원들을 내쫓으라고 외친다.',[{l:'보나파르트를 지지한다',s:'',a:'safe'},{l:'“독재자를 타도하라!” 외친다',s:'',a:'radical bold'}]);
-    if(i===0){say('그날 밤, 남은 의원들과 함께 통령정부 수립에 찬성하였다.'+fx({fame:3}));s.flags.bonap=true;if(s.fame>=55&&R()<.5){loseJob();takeJob('p5','원로원(Sénat)에 지명되어 ')}}
-    else{loseJob('창문으로 뛰어내려 달아났다. % 자리는 사라졌다.');fx({pol:6,sus:15})}await done()}});
+    if(i===0){say('그날 밤, 남은 의원들과 함께 통령정부 수립에 찬성하였다.'+fx({fame:3}));s.flags.bonap=true;joinParty('bonapartist',true);if(s.fame>=55&&R()<.5){loseJob();takeJob('p5','원로원(Sénat)에 지명되어 ')}}
+    else{loseJob('창문으로 뛰어내려 달아났다. % 자리는 사라졌다.');fx({pol:6,sus:15})}await done();return}
+  await purge('neojacobin')});
 
 /* ---------- 통령정부·제국 ---------- */
 for(const [y,p,r] of [[1800,.25,1500],[1801,.2,1500],[1802,.2,1600],[1803,.22,1800],[1804,.25,2000],[1805,.28,2200],[1806,.3,2400],[1807,.3,2600],[1808,.3,3000],[1809,.33,3200],[1810,.3,3500],[1811,.35,3800],[1812,.4,4000],[1813,.65,5000]])
-  H(y,2,null,async()=>{if(maleAdult(20,y>=1813?30:21))await conscript(p,`${y}년 징병`,{repl:r,single:y<1809,why:'해당 연령 남성 가운데 실제로 끌려간 비율',text:y>=1813?'라이프치히의 패전 뒤 이미 면제받았던 연령까지 다시 소집되었다.':'징병 추첨이 열렸다. 기혼자는 면제되고, 돈이 있으면 대리인을 살 수 있다.'})});
-H(1800,1,'6월 14일, 마렝고 전투에서 승리하였다. 망명자 명단에서 이름을 지우는 사면이 시작되었다.');
-H(1800,0,'신문 73종 가운데 60종이 폐간되었다.',async()=>{if(s.job==='w3'&&R()<.8)loseJob('경찰장관 푸셰의 명령으로 신문이 폐간되어 % 일을 잃었다.')});
-H(1801,1,'7월, 교황과 콩코르다트를 맺었다. 가톨릭은 “프랑스인 대다수의 종교”로 돌아왔다.',async()=>{
+  H(y,10,null,async()=>{if(maleAdult(20,y>=1813?30:21))await conscript(p,`${y}년 징병`,{repl:r,single:y<1809,why:'해당 연령 남성 가운데 실제로 끌려간 비율',text:y>=1813?'라이프치히의 패전 뒤 이미 면제받았던 연령까지 다시 소집되었다.':'징병 추첨이 열렸다. 기혼자는 면제되고, 돈이 있으면 대리인을 살 수 있다.'})});
+H(1800,7,'6월 14일, 마렝고 전투에서 승리하였다. 망명자 명단에서 이름을 지우는 사면이 시작되었다.');
+H(1800,4,'신문 73종 가운데 60종이 폐간되었다.',async()=>{if(s.job==='w3'&&R()<.8)loseJob('경찰장관 푸셰의 명령으로 신문이 폐간되어 % 일을 잃었다.')});
+H(1801,7,'7월, 교황과 콩코르다트를 맺었다. 가톨릭은 “프랑스인 대다수의 종교”로 돌아왔다.',async()=>{
   if(s.flags.refractory&&s.cond!=='emigre'){s.flags.refractory=false;s.cond='normal';say('콩코르다트로 다시 공개적으로 미사를 드릴 수 있게 되었다.'+fx({faith:6}),'big');if(isM()&&meets(POST.r3))takeJob('r3','새 주교의 임명으로 ')}
   if(adult()&&s.faith>=60)say('부활절에 십 년 만에 교회 종소리가 울렸다.'+fx({faith:3}))});
-H(1802,0,'아미앵 조약으로 잠시 평화가 찾아왔다. 5월, 레지옹 도뇌르가 제정되었다. 8월, 보나파르트가 종신 통령이 되었다.',async()=>{
+H(1802,4,'아미앵 조약으로 잠시 평화가 찾아왔다. 5월, 레지옹 도뇌르가 제정되었다. 8월, 보나파르트가 종신 통령이 되었다.',async()=>{
   if(adult()&&s.fame>=55&&!s.flags.legion&&(soldier()||onTrack('law')||onTrack('letters')||deputy())&&R()<.35){s.flags.legion=true;say('레지옹 도뇌르 훈장을 받았다.'+fx({fame:6}),'big')}});
-H(1804,0,'3월, 민법전(나폴레옹 법전)이 공포되었다. 3월 21일 앙기앵 공작이 처형되었다.',async()=>{if(adult()&&!isM()&&s.married)say('민법전은 아내가 남편에게 복종해야 한다고 정했다.')});
-H(1804,3,'12월 2일, 노트르담에서 나폴레옹이 스스로 황제의 관을 썼다.',async()=>{if(adult()&&soldier()&&job().t>=7)say('대관식 행렬에서 원수의 지휘봉을 들고 걸었다.'+fx({fame:5}))});
-H(1805,2,'10월 21일 트라팔가르 해전에서 함대를 잃었다. 12월 2일 아우스터리츠에서 러시아·오스트리아 연합군을 격파하였다.');
-H(1806,2,'10월, 예나와 아우어슈테트에서 프로이센을 격파하였다. 11월, 대륙봉쇄령.',async()=>{if(adult()&&['bordeaux','nantes','marseille'].includes(loc())&&onTrack('craft')&&job().t>=4)say('대륙봉쇄로 항구가 텅 비었다.'+fx({money:-Math.round(s.money*.2)}))});
-H(1807,0,'아일라우의 눈보라 속 전투. 양쪽에서 수만 명이 쓰러졌다. 7월 틸지트 조약.');
-H(1808,0,'에스파냐에서 반란이 일어났다. 제국 귀족 작위가 만들어졌다.',async()=>{
+H(1804,4,'3월, 민법전(나폴레옹 법전)이 공포되었다. 3월 21일 앙기앵 공작이 처형되었다.',async()=>{if(adult()&&!isM()&&s.married)say('민법전은 아내가 남편에게 복종해야 한다고 정했다.')});
+H(1805,1,'12월 2일, 노트르담에서 나폴레옹이 스스로 황제의 관을 썼다.',async()=>{if(adult()&&soldier()&&job().t>=7)say('대관식 행렬에서 원수의 지휘봉을 들고 걸었다.'+fx({fame:5}))});
+H(1805,10,'10월 21일 트라팔가르 해전에서 함대를 잃었다. 12월 2일 아우스터리츠에서 러시아·오스트리아 연합군을 격파하였다.');
+H(1806,10,'10월, 예나와 아우어슈테트에서 프로이센을 격파하였다. 11월, 대륙봉쇄령.',async()=>{if(adult()&&['bordeaux','nantes','marseille'].includes(loc())&&onTrack('craft')&&job().t>=4)say('대륙봉쇄로 항구가 텅 비었다.'+fx({money:-Math.round(s.money*.2)}))});
+H(1807,4,'아일라우의 눈보라 속 전투. 양쪽에서 수만 명이 쓰러졌다. 7월 틸지트 조약.');
+H(1808,4,'에스파냐에서 반란이 일어났다. 제국 귀족 작위가 만들어졌다.',async()=>{
   if(adult()&&!s.flags.title&&((soldier()&&job().t>=5)||s.job==='p5'||s.job==='l5b'||s.job==='l4c')&&R()<.5){s.flags.title=true;say(`제국 ${(soldier()&&job().t>=6)||s.job==='p5'?'백작':'남작'} 작위를 받았다.`+fx({fame:6}),'big')}
   if(soldier()&&R()<.3){say('에스파냐로 가는 부대에 배속되었다. 게릴라의 나라다.','big')}});
-H(1810,1,'4월, 나폴레옹이 오스트리아 황녀 마리 루이즈와 재혼하였다.');
-H(1812,1,'6월 24일, 60만 대군이 네만 강을 건너 러시아로 들어갔다.',async()=>{if(soldier()){s.flags.russia=R()<.65;if(s.flags.russia)say('대육군에 편성되어 네만 강을 건넜다.','big')}});
-H(1812,2,'9월 7일 보로디노 전투, 9월 14일 모스크바 입성. 모스크바는 불탔다. 10월 19일 퇴각이 시작되었다.',async()=>{
+H(1810,7,'4월, 나폴레옹이 오스트리아 황녀 마리 루이즈와 재혼하였다.');
+H(1812,7,'6월 24일, 60만 대군이 네만 강을 건너 러시아로 들어갔다.',async()=>{if(soldier()){s.flags.russia=R()<.65;if(s.flags.russia)say('대육군에 편성되어 네만 강을 건넜다.','big')}});
+H(1812,10,'9월 7일 보로디노 전투, 9월 14일 모스크바 입성. 모스크바는 불탔다. 10월 19일 퇴각이 시작되었다.',async()=>{
   if(!s.flags.russia||!soldier())return;sheetOpen('보로디노','la Moskova');shText('라에프스키 보루를 향해 진격한다. 하루에 양쪽 합쳐 7만 명이 쓰러졌다.','q');
   if(await chance(.12,'보로디노','대육군 병사의 이날 사망률')){die('battle','보로디노');await done();return}say('살아남아 불타는 모스크바에 들어갔다.'+fx({hp:-4}));await done()});
-H(1812,3,'영하 30도의 퇴각. 11월 26~29일 베레지나 강 도하. 러시아에 들어간 대육군 가운데 돌아온 이는 열에 하나 남짓이었다.',async()=>{
+H(1813,1,'영하 30도의 퇴각. 11월 26~29일 베레지나 강 도하. 러시아에 들어간 대육군 가운데 돌아온 이는 열에 하나 남짓이었다.',async()=>{
   if(!s.flags.russia||!soldier())return;sheetOpen('러시아의 겨울','la retraite de Russie');shText('말을 잡아먹고 눈 속에서 잔다. 코사크가 낙오병을 노린다.','q');
   const i=await shButtons([{l:'대열을 따라 버틴다',s:'',a:'safe'},{l:'약탈로 먹을 것을 구한다',s:'담력 판정',a:'bold'}]);
   if(i===1){const r=await roll(s.st.cour>=50?1:0,{label:'약탈'});if(r.v>=4)fx({hp:5})}
   if(await chance(s.st.hp>=60?.45:.6,'퇴각','퇴각 중 대육군의 사망률')){die('cold','러시아에서 퇴각하던 중 눈 속에 쓰러졌다.');await done();return}
   if(await chance(.2,'베레지나','베레지나 도하에서의 손실')){if(R()<.5){die('drowned','베레지나 강을 건너다 얼음물에 빠져 죽었다.');await done();return}say('코사크에게 사로잡혔다. 1814년에야 풀려났다.'+fx({hp:-10}),'big');s.flags.pow=true}
   say('넉 달 만에 몰골이 된 채 프로이센 땅에 닿았다.'+fx({hp:-15,cour:6,fame:4}),'big');s.flags.russia=false;await done()});
-H(1813,2,'10월 16~19일, 라이프치히 ‘국민전투’에서 패하였다.');
-H(1814,0,'3월 31일 연합군이 파리에 들어왔다. 4월 6일 나폴레옹이 퇴위하고 엘바로 떠났다. 루이 18세가 돌아왔다.',async()=>{
+H(1813,10,'10월 16~19일, 라이프치히 ‘국민전투’에서 패하였다.');
+H(1814,4,'3월 31일 연합군이 파리에 들어왔다. 4월 6일 나폴레옹이 퇴위하고 엘바로 떠났다. 루이 18세가 돌아왔다.',async()=>{
   if(soldier()&&job().t<=2&&R()<.7)discharge('전쟁이 끝나 ');
   if(soldier()&&job().t>=3)say('반급 장교(드미솔드)로 대기 명령을 받았다.'+fx({money:-Math.round(s.money*.05)}));
   if(adult())fx({pol:s.pol<0?-3:0})});
-H(1815,0,'3월 1일, 나폴레옹이 엘바를 탈출해 쥐앙만에 상륙하였다. 3월 20일 파리 입성. 백일천하.',async()=>{
+H(1815,4,'3월 1일, 나폴레옹이 엘바를 탈출해 쥐앙만에 상륙하였다. 3월 20일 파리 입성. 백일천하.',async()=>{
   if(!adult())return;if(soldier()||s.flags.bonap||(s.job&&job().t>=4)){const i=await Q('백일천하','les Cent-Jours','황제가 돌아왔다. 다시 독수리 깃발 아래로 가겠는가?',[{l:'황제에게 달려간다',s:'',a:'bold'},{l:'왕에게 충성을 지킨다',s:'',a:'royal safe'}]);
     if(i===0){s.flags.centjours=true;if(!soldier()&&isM()&&s.age<50&&R()<.4)await enlist('황제의 부름에 ');say('“황제 만세!”'+fx({fame:3}))}else{s.flags.loyal1815=true;say('겐트로 피신한 왕의 편에 섰다.'+fx({pol:-4}))}await done()}});
-H(1815,1,'6월 18일, 워털루에서 나폴레옹이 패하였다. 7월 왕이 돌아오고, 남부에서 2차 백색테러가 일어났다.',async()=>{
+H(1815,7,'6월 18일, 워털루에서 나폴레옹이 패하였다. 7월 왕이 돌아오고, 남부에서 2차 백색테러가 일어났다.',async()=>{
   if(soldier()&&s.flags.centjours){if(await chance(.15,'워털루','참전 프랑스군의 사망률')){die('battle','워털루');return}say('워털루의 패주 속에서 살아 돌아왔다.'+fx({hp:-6}))}
   if(adult()&&s.flags.centjours&&s.fame>=55&&(soldier()&&job().t>=6)){say('네 원수처럼 반역죄로 재판에 회부되었다.','big');if(await chance(.3,'반역죄 재판','백일천하 가담 고위 장성 처벌 비율')){die('shot','백일천하 가담죄로 총살되었다.');return}loseJob();s.flags.purged=true}
   if(adult()&&south()&&(s.faithKind==='protestant'||s.flags.centjours||s.pol>=40)){if(await chance(.04,'2차 백색테러','남부의 신교도·보나파르트파가 습격당한 비율')){die('murdered','님 근처에서 왕당파 폭도에게 살해되었다.');return}}
   if(soldier()&&s.flags.centjours)discharge('제국군 해산으로 ')});
-H(1816,0,'1월, 국왕 시해자 추방법. 루이 16세 사형에 투표하고 백일천하에 가담한 이들은 나라를 떠나야 했다. 5월, 이혼이 다시 금지되었다.',async()=>{if(s.flags.regicide&&s.flags.centjours&&adult()){say('국왕 시해자로 추방되어 브뤼셀로 떠났다.','big');s.cond='emigre';s.emiPlace='브뤼셀';s.condSince=T();loseJob()}});
-H(1816,1,'‘여름 없는 해’. 탐보라 화산 폭발 뒤 냉해로 흉년이 들었다.');
-H(1820,0,'2월, 왕위 계승자 베리 공작이 오페라 극장 앞에서 암살되었다.');
-H(1821,1,'5월 5일, 나폴레옹이 세인트헬레나 섬에서 죽었다.',async()=>{if(adult()&&(s.flags.centjours||s.flags.bonap))say('황제가 죽었다는 소식에 홀로 술잔을 들었다.'+fx({hp:-1}))});
-H(1824,2,'루이 18세가 죽고 샤를 10세가 즉위하였다.');
-H(1825,0,'망명 귀족 보상법(‘10억 프랑법’)이 통과되었다.',async()=>{if(adult()&&s.lostLand){const c=Math.round(s.lostLand*18);s.money+=c;say(`몰수당했던 땅에 대한 보상금 ${fmt(c)} 프랑을 받았다.`,'big')}});
-H(1830,1,'7월 27~29일 ‘영광의 사흘’. 파리 시민이 바리케이드를 쌓고 샤를 10세를 몰아냈다. 루이 필리프가 ‘프랑스인의 왕’이 되었다.',async()=>{if(adult()&&inParis()&&s.age<60&&s.pol>=10&&isM()){const i=await Q('영광의 사흘','Trois Glorieuses','삼색기가 다시 노트르담에 올랐다. 골목마다 포석을 뜯어 바리케이드를 쌓는다.',[{l:'바리케이드에 선다',s:'',a:'bold radical'},{l:'창문 너머로 본다',s:'',a:'safe'}]);if(i===0){if(await chance(.03,'7월 혁명','바리케이드 전투원의 사망률')){die('riot','7월 혁명의 바리케이드에서 쓰러졌다.');await done();return}say('사흘 만에 왕이 달아났다.'+fx({fame:4,pol:4}))}await done()}});
-H(1832,0,'파리에 콜레라가 번져 약 1만 8천 명이 죽었다.',async()=>{if(adult()&&inParis()&&await chance(.025,'콜레라','파리 주민의 콜레라 사망률')){die('cholera')}});
-H(1832,1,'6월 5~6일, 라마르크 장군의 장례식에서 공화파 봉기가 일어났다가 진압되었다.');
-H(1840,3,'12월, 나폴레옹의 유해가 앵발리드로 돌아왔다.',async()=>{if(adult()&&(s.flags.centjours||s.flags.bonap||s.cnt.battle>2))say('눈 내리는 샹젤리제에서 황제의 영구 행렬을 지켜보았다. 옛 근위대원들이 울고 있었다.'+fx({hp:1}))});
-H(1847,3,'흉년과 공황 뒤 2월 22~24일, 파리에서 혁명이 일어나 루이 필리프가 물러나고 제2공화국이 선포되었다.');
-H(1848,0,'남성 보통선거가 실시되었다. 노예제가 폐지되었다.',async()=>{if(adult()&&isM())say('평생 처음으로, 신분도 재산도 묻지 않는 선거에서 투표하였다.'+fx({pol:2}))});
-H(1848,1,'6월, 국립작업장 폐쇄에 맞선 노동자 봉기가 카베냐크 장군에게 진압되었다.');
-H(1848,3,'루이 나폴레옹 보나파르트가 대통령에 뽑혔다.');
-H(1851,3,'12월 2일, 대통령 루이 나폴레옹이 친위 쿠데타를 일으켰다.');
+H(1816,4,'1월, 국왕 시해자 추방법. 루이 16세 사형에 투표하고 백일천하에 가담한 이들은 나라를 떠나야 했다. 5월, 이혼이 다시 금지되었다.',async()=>{if(s.flags.regicide&&s.flags.centjours&&adult()){say('국왕 시해자로 추방되어 브뤼셀로 떠났다.','big');s.cond='emigre';s.emiPlace='브뤼셀';s.condSince=T();loseJob()}});
+H(1816,7,'‘여름 없는 해’. 탐보라 화산 폭발 뒤 냉해로 흉년이 들었다.');
+H(1820,4,'2월, 왕위 계승자 베리 공작이 오페라 극장 앞에서 암살되었다.');
+H(1821,7,'5월 5일, 나폴레옹이 세인트헬레나 섬에서 죽었다.',async()=>{if(adult()&&(s.flags.centjours||s.flags.bonap))say('황제가 죽었다는 소식에 홀로 술잔을 들었다.'+fx({hp:-1}))});
+H(1824,10,'루이 18세가 죽고 샤를 10세가 즉위하였다.');
+H(1825,4,'망명 귀족 보상법(‘10억 프랑법’)이 통과되었다.',async()=>{if(adult()&&s.lostLand){const c=Math.round(s.lostLand*18);s.money+=c;say(`몰수당했던 땅에 대한 보상금 ${fmt(c)} 프랑을 받았다.`,'big')}});
+H(1830,7,'7월 27~29일 ‘영광의 사흘’. 파리 시민이 바리케이드를 쌓고 샤를 10세를 몰아냈다. 루이 필리프가 ‘프랑스인의 왕’이 되었다.',async()=>{if(adult()&&inParis()&&s.age<60&&s.pol>=10&&isM()){const i=await Q('영광의 사흘','Trois Glorieuses','삼색기가 다시 노트르담에 올랐다. 골목마다 포석을 뜯어 바리케이드를 쌓는다.',[{l:'바리케이드에 선다',s:'',a:'bold radical'},{l:'창문 너머로 본다',s:'',a:'safe'}]);if(i===0){if(await chance(.03,'7월 혁명','바리케이드 전투원의 사망률')){die('riot','7월 혁명의 바리케이드에서 쓰러졌다.');await done();return}say('사흘 만에 왕이 달아났다.'+fx({fame:4,pol:4}))}await done()}});
+H(1832,4,'파리에 콜레라가 번져 약 1만 8천 명이 죽었다.',async()=>{if(adult()&&inParis()&&await chance(.025,'콜레라','파리 주민의 콜레라 사망률')){die('cholera')}});
+H(1832,7,'6월 5~6일, 라마르크 장군의 장례식에서 공화파 봉기가 일어났다가 진압되었다.');
+H(1841,1,'12월, 나폴레옹의 유해가 앵발리드로 돌아왔다.',async()=>{if(adult()&&(s.flags.centjours||s.flags.bonap||s.cnt.battle>2))say('눈 내리는 샹젤리제에서 황제의 영구 행렬을 지켜보았다. 옛 근위대원들이 울고 있었다.'+fx({hp:1}))});
+H(1848,1,'흉년과 공황 뒤 2월 22~24일, 파리에서 혁명이 일어나 루이 필리프가 물러나고 제2공화국이 선포되었다.');
+H(1848,4,'남성 보통선거가 실시되었다. 노예제가 폐지되었다.',async()=>{if(adult()&&isM())say('평생 처음으로, 신분도 재산도 묻지 않는 선거에서 투표하였다.'+fx({pol:2}))});
+H(1848,7,'6월, 국립작업장 폐쇄에 맞선 노동자 봉기가 카베냐크 장군에게 진압되었다.');
+H(1849,1,'루이 나폴레옹 보나파르트가 대통령에 뽑혔다.');
+H(1852,1,'12월 2일, 대통령 루이 나폴레옹이 친위 쿠데타를 일으켰다.');
 
 /* 선거 */
-async function election(name,base){const {m,why}=md([[s.fame>=60,1,'명성'],[s.st.soc>=55,1,'처세'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[s.flags.club,1,'클럽'],[s.flags.bastille||s.flags.dix,1,'혁명의 공'],[s.pol<0,-1,'온건']]);
+async function election(name,base){const {m,why}=md([[s.fame>=60,1,'명성'],[s.st.soc>=55,1,'처세'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!!s.party&&partyFit()>0,1,'당의 지지'],[s.prank>=2,1,'당 지도부'],[s.flags.bastille||s.flags.dix,1,'혁명의 공'],[s.pol<0,-1,'온건']]);
   const i=await Q(name,'élections','선거인 회의가 열린다. 출마하겠는가?',[{l:'출마한다',s:'처세·명성 판정',a:'social radical'},{l:'나서지 않는다',s:'',a:'safe'}]);
   if(i===1){await done();return}
   const r=await roll(m,{label:name,why});
@@ -1334,7 +1400,7 @@ const EV=[
    {l:'붓을 든다',s:'학식 판정',a:'study',f:async()=>{const r=await roll(s.st.edu>=60?1:0,{label:'집필'});if(r.v>=4){s.flags.book=true;say('회고록을 펴냈다. 생각보다 많이 팔렸다.'+fx({fame:6,money:200}),'big')}else say('원고는 서랍 속에 남았다.'+fx({edu:1}))}},
    {l:'지난 일은 묻어 둔다',s:'',a:'safe',f:()=>say('지난 일은 말하지 않았다.')}])
 ];
-async function randomEvent(){if(s.dead||s.cond==='prison'||s.cond==='emigre')return;if(R()>.72)return;
+async function randomEvent(p=.72){if(s.dead||s.cond==='prison'||s.cond==='emigre')return;if(R()>p)return;
   s.cd=s.cd||{};const pool=EV.filter(e=>{try{return e.c()&&!(s.cd[e.id]>s.year)}catch(x){return false}});if(!pool.length)return;
   const tot=pool.reduce((a,e)=>a+e.w,0);let r=R()*tot,e=pool[0];for(const x of pool){r-=x.w;if(r<=0){e=x;break}}
   if(e.cd)s.cd[e.id]=s.year+e.cd;await e.run()}
@@ -1349,7 +1415,7 @@ const ACTS=[
  {k:'study',n:'대학에서 법학을 공부한다',s:'재산 300. 학식 +5',cost:300,c:()=>free()&&lit()&&isM()&&s.age<35,f:()=>say('법학부 강의를 들으며 로마법을 익혔다.'+fx({money:-300,edu:5}))},
  {k:'spa',n:'온천에서 요양한다',s:'재산 150. 건강 +6',cost:150,c:()=>free(),f:()=>say(pick(['플롱비에르의 온천에서 한 철을 보냈다.','비시 온천에서 몸을 추슬렀다.','바레주의 유황 온천을 찾았다.'])+fx({money:-150,hp:6}))},
  {k:'charity',n:'가난한 이웃을 돕는다',s:'재산 60. 명성 +2',cost:60,c:()=>free(),f:()=>{s.seeds.push({t:'saved',n:person(),y:s.year});say('흉년에 이웃들에게 빵과 장작을 나누었다.'+fx({money:-60,fame:2,faith:1}))}},
- {k:'club',n:'자코뱅 클럽에 가입한다',s:'급진 +10, 명성 +2. 공포정치기 혐의 감소',c:()=>free()&&T()>=1790&&T()<1794.75&&!s.flags.club&&(lit()||urban())&&isM(),f:()=>{s.flags.club=true;say('헌우회(자코뱅 클럽) 회원증을 받았다. 저녁마다 생토노레 거리의 옛 수도원 회합에 나갔다.'+fx({pol:10,fame:2,sus:-6}))}},
+ {k:'club',hide:1,n:'자코뱅 클럽에 가입한다',s:'급진 +10, 명성 +2. 공포정치기 혐의 감소',c:()=>free()&&T()>=1790&&T()<1794.75&&!s.flags.club&&(lit()||urban())&&isM(),f:()=>{s.flags.club=true;say('헌우회(자코뱅 클럽) 회원증을 받았다. 저녁마다 생토노레 거리의 옛 수도원 회합에 나갔다.'+fx({pol:10,fame:2,sus:-6}))}},
  {k:'cert',n:'시민증(공민 증명서)을 신청한다',s:'처세 판정. 혐의 감소',c:()=>free()&&T()>=1793.25&&T()<1794.5,inter:async()=>{const r=await roll(s.pol>=30?1:noble()?-1:0,{label:'시민증'});if(r.v>=4)say('구 위원회에서 시민증을 받았다.'+fx({sus:-12}));else say('위원회가 서류를 보류하였다.'+fx({sus:4}))}},
  {k:'pamph',n:'팸플릿을 써서 돌린다',s:'학식 판정. 명성과 성향',c:()=>free()&&lit()&&s.year>=1787,inter:async()=>{
    const i=await Q('팸플릿','pamphlet','어떤 논조로 쓸 것인가?',[{l:'혁명을 더 밀어붙이자',s:'',a:'radical'},{l:'질서와 화해를 말한다',s:'',a:'safe'},{l:'왕과 교회를 옹호한다',s:'',a:'royal pious'}]);
@@ -1432,7 +1498,7 @@ EV.push(
  once('desmoulins',()=>par()&&s.year===1789&&s.season===1&&!child()&&!noble(),5,'팔레루아얄','12 juillet 1789','7월 12일, 네케르가 파면되었다. 팔레루아얄 카페 앞 탁자 위에서 젊은 변호사 카미유 데물랭이 권총을 휘두르며 외친다. “무기를 들라! 희망의 색, 초록 표지를 달라!” (초록은 곧 왕제 아르투아 백작의 색이라 하여 버려지고 삼색이 그 자리를 차지한다.)',[
    {l:'마로니에 잎을 따서 모자에 꽂는다',s:'',a:'radical bold',f:()=>{meet('카미유 데물랭');say('정원의 나뭇잎이 남김없이 뜯겼다. 이틀 뒤 바스티유가 무너졌다.'+fx({pol:6,cour:2}))}},
    {l:'소란을 피해 집으로 간다',s:'',a:'safe',f:()=>say('밤새 경종 소리가 들렸다.')}]),
- note('bastille7',()=>s.year===1789&&s.season===2&&!child(),2,[['바스티유에 갇혀 있던 죄수는 겨우 일곱 명이었다. 위조범 넷, 정신이상자 둘, 방탕죄로 갇힌 귀족 하나.',{}]]),
+ note('bastille7',()=>s.year===1789&&!child(),2,[['바스티유에 갇혀 있던 죄수는 겨우 일곱 명이었다. 위조범 넷, 정신이상자 둘, 방탕죄로 갇힌 귀족 하나.',{}]]),
  once('palloy',()=>par()&&yr(1789,1791)&&!child()&&s.money>=30,1.5,'바스티유 기념품','Palloy, patriote','건축업자 팔루아가 바스티유를 허물며 그 돌로 깎은 작은 요새 모형을 판다. 전국 83개 도에 하나씩 보냈다고 한다.',[
    {l:'바스티유 돌 조각을 산다',s:'재산 -15',a:'radical social',f:()=>{s.flags.relic=true;say('벽난로 위에 바스티유 돌 조각을 올려 두었다.'+fx({money:-15,pol:2}))}},
    {l:'사지 않는다',s:'',a:'safe',f:()=>say('돌덩이에 돈을 쓰지 않았다.')}]),
@@ -1500,7 +1566,7 @@ EV.push(
  /* ---------- 복고왕정 이후 ---------- */
  note('medusa',()=>s.year===1819&&!child()&&(par()||lit()),2,[['살롱 전시회에 제리코의 거대한 그림 「메뒤즈호의 뗏목」이 걸렸다. 1816년 아프리카 앞바다에서 좌초한 군함의 뗏목에 오른 150명 가운데 15명만 살아남았다. 무능한 망명 귀족 선장에 대한 분노가 들끓었다.',{pol:2}]]),
  note('champollion',()=>s.year===1822&&lit()&&!child(),2,[['샹폴리옹이 이집트 상형문자를 해독했다는 소식이 들렸다. 원정군이 로제타에서 찾았던 그 돌이었다.',{edu:1}]]),
- once('hernani',()=>par()&&s.year===1830&&s.season===0&&!child()&&lit(),2,'에르나니 전투','la bataille d’Hernani','2월 25일, 빅토르 위고의 『에르나니』 초연. 붉은 조끼를 입은 젊은 낭만주의자들과 고전주의 신사들이 객석에서 서로 야유를 퍼붓는다.',[
+ once('hernani',()=>par()&&s.year===1830&&s.month<=2&&!child()&&lit(),2,'에르나니 전투','la bataille d’Hernani','2월 25일, 빅토르 위고의 『에르나니』 초연. 붉은 조끼를 입은 젊은 낭만주의자들과 고전주의 신사들이 객석에서 서로 야유를 퍼붓는다.',[
    {l:'젊은이들 편에서 박수를 친다',s:'',a:'radical social',f:()=>say('붉은 조끼의 고티에가 앞장서 소리쳤다.'+fx({soc:2,pol:2}))},
    {l:'시의 규칙이 무너졌다며 야유한다',s:'',a:'royal',f:()=>say('“숨겨진 계단” 대사에 객석이 뒤집혔다.'+fx({soc:1}))}]),
  note('omnibus',()=>par()&&yr(1828,1840)&&!child(),1.2,[['‘모두를 위한’ 승합마차(옴니뷔스)가 파리 거리를 달린다. 몇 수만 내면 누구나 탈 수 있다.',{}],['밤이면 가스등이 대로를 밝힌다.',{}]]),
@@ -1541,202 +1607,411 @@ EV.push(
 );
 
 /* ---------- 연표 보강 ---------- */
-H(1752,0,'『백과전서』 첫 두 권이 국왕 참사회의 명령으로 금지되었다.');
-H(1757,0,'로스바흐 패전 뒤, 퐁파두르 부인이 “우리 뒤에 대홍수가 오든 말든”이라고 말했다는 이야기가 돌았다.');
-H(1764,0,'왕의 총희 퐁파두르 부인이 죽었다. 1769년 뒤바리 백작부인이 새 총희로 궁정에 소개되었다.');
-H(1765,0,'제보당의 짐승을 잡기 위해 왕의 총포 시종 프랑수아 앙투안이 파견되었다.');
-H(1774,0,'새 왕 루이 16세가 천연두 인두 접종을 받았다.');
-H(1777,0,'데옹 기사가 영국에서 돌아와 왕명으로 여자 옷을 입고 살게 되었다.');
-H(1784,2,'왕립 위원회(프랭클린, 라부아지에 참여)가 메스머의 동물 자기설이 상상력의 산물이라고 보고하였다.');
-H(1785,1,'필라트르 드 로지에가 기구로 영불 해협을 건너려다 추락해 죽었다. 하늘을 난 첫 사람이 하늘에서 죽은 첫 사람이 되었다.');
-H(1786,2,'라페루즈 탐험대가 태평양 너머 소식을 보내왔다. 이 탐험대는 1788년 이후 소식이 끊겼다.');
-H(1791,0,'국민의회가 판테옹을 “위인들에게, 감사하는 조국이”라는 글귀와 함께 위인의 묘당으로 정했다.');
-H(1792,3,'튈르리 궁에서 왕의 비밀 문서가 든 ‘쇠 궤짝’이 발견되었다.');
-H(1793,1,'7월 13일, 캉에서 온 스물네 살의 샤를로트 코르데가 욕조에 있던 마라를 찔렀다. 다비드가 「마라의 죽음」을 그렸다.');
-H(1793,2,'공화력이 채택되었다. 한 해는 열두 달, 한 달은 열흘씩 세 주(데카드), 날마다 순무·호박·쟁기 같은 이름이 붙었다.');
-H(1794,1,'조제핀 드 보아르네가 카름 감옥에 갇히고 남편 알렉상드르가 처형되었다. 테르미도르로 그녀는 살아남았다.');
-H(1798,2,'원정군을 따라간 학자들이 이집트에서 로제타 돌을 발견하였다.');
-H(1799,1,'미터법 원기(백금 미터자와 킬로그램 추)가 국립문서보관소에 보관되었다.');
-H(1803,2,'스탈 부인이 나폴레옹의 명령으로 파리에서 쫓겨났다.');
-H(1808,0,'바칼로레아 시험이 처음 생겼다.');
-H(1811,2,'나폴레옹의 아들 ‘로마 왕’이 태어났다(3월). 대혜성이 밤하늘에 몇 달 동안 걸렸다.');
-H(1816,1,'7월, 메뒤즈호가 아프리카 앞바다에서 좌초하였다.');
-H(1817,0,'흉년 뒤 빵값이 혁명 이후 가장 높았다.');
-H(1822,2,'샹폴리옹이 상형문자 해독을 발표하였다.');
-H(1828,0,'파리에 첫 승합마차(옴니뷔스)가 다니기 시작하였다.');
-H(1830,1,'알제가 점령되었다. 알제리 정복이 시작되었다.');
-H(1836,2,'룩소르에서 실어 온 오벨리스크가 콩코르드 광장(옛 혁명 광장)에 세워졌다. 단두대가 있던 자리다.');
-H(1837,2,'파리–생제르맹 철도가 개통되었다.');
-H(1839,2,'다게르의 은판 사진술이 발표되었다.');
+H(1752,2,'『백과전서』 첫 두 권이 국왕 참사회의 명령으로 금지되었다.');
+H(1757,11,'로스바흐 패전 뒤, 퐁파두르 부인이 “우리 뒤에 대홍수가 오든 말든”이라고 말했다는 이야기가 돌았다.');
+H(1764,4,'왕의 총희 퐁파두르 부인이 죽었다. 1769년 뒤바리 백작부인이 새 총희로 궁정에 소개되었다.');
+H(1765,6,'제보당의 짐승을 잡기 위해 왕의 총포 시종 프랑수아 앙투안이 파견되었다.');
+H(1774,6,'새 왕 루이 16세가 천연두 인두 접종을 받았다.');
+H(1777,8,'데옹 기사가 영국에서 돌아와 왕명으로 여자 옷을 입고 살게 되었다.');
+H(1784,8,'왕립 위원회(프랭클린, 라부아지에 참여)가 메스머의 동물 자기설이 상상력의 산물이라고 보고하였다.');
+H(1785,6,'필라트르 드 로지에가 기구로 영불 해협을 건너려다 추락해 죽었다. 하늘을 난 첫 사람이 하늘에서 죽은 첫 사람이 되었다.');
+H(1786,10,'라페루즈 탐험대가 태평양 너머 소식을 보내왔다. 이 탐험대는 1788년 이후 소식이 끊겼다.');
+H(1791,4,'국민의회가 판테옹을 “위인들에게, 감사하는 조국이”라는 글귀와 함께 위인의 묘당으로 정했다.');
+H(1793,10,'공화력이 채택되었다. 한 해는 열두 달, 한 달은 열흘씩 세 주(데카드), 날마다 순무·호박·쟁기 같은 이름이 붙었다.');
+H(1794,4,'조제핀 드 보아르네가 카름 감옥에 갇히고 남편 알렉상드르가 처형되었다. 테르미도르로 그녀는 살아남았다.');
+H(1799,6,'미터법 원기(백금 미터자와 킬로그램 추)가 국립문서보관소에 보관되었다.');
+H(1803,10,'스탈 부인이 나폴레옹의 명령으로 파리에서 쫓겨났다.');
+H(1808,3,'바칼로레아 시험이 처음 생겼다.');
+H(1811,9,'나폴레옹의 아들 ‘로마 왕’이 태어났다(3월). 대혜성이 밤하늘에 몇 달 동안 걸렸다.');
+H(1816,7,'7월, 메뒤즈호가 아프리카 앞바다에서 좌초하였다.');
+H(1817,5,'흉년 뒤 빵값이 혁명 이후 가장 높았다.');
+H(1822,9,'샹폴리옹이 상형문자 해독을 발표하였다.');
+H(1828,4,'파리에 첫 승합마차(옴니뷔스)가 다니기 시작하였다.');
+H(1830,7,'알제가 점령되었다. 알제리 정복이 시작되었다.');
+H(1836,10,'룩소르에서 실어 온 오벨리스크가 콩코르드 광장(옛 혁명 광장)에 세워졌다. 단두대가 있던 자리다.');
+H(1837,8,'파리–생제르맹 철도가 개통되었다.');
+H(1839,8,'다게르의 은판 사진술이 발표되었다.');
 
-/* ================= 기록 화면 ================= */
-function logNode(e,prev){const d=el('div','le '+e.k);
-  if(e.k==='yr'){const m=e.t.match(/^(\d+)년(?: · (.*))?$/);if(m){d.append(m[1]);d.appendChild(el('small',null,m[2]?`${m[2]} · ${repFr(+m[1])}`:''))}else d.textContent=e.t;return d}
-  const showSe=!prev||prev.k==='yr'||prev.se!==e.se;d.appendChild(el('span','se',showSe?SEASON_FR[e.se]:''));
-  let txt=e.t,fxs=null;const m=txt.match(/^(.*?)\s?\(([^()]*(?:[+-]\s?[\d,]+)[^()]*)\)(\.?)$/);if(m&&e.k!=='sys'){txt=m[1]+m[3];fxs=m[2].split(', ')}
-  const p=el('p',null,txt);
-  if(e.d&&e.d.f){const c=el('span','chips');const ci=e.d.f.indexOf(e.d.v);e.d.f.forEach((f,i)=>c.appendChild(el('span','chip'+(i===ci?' on':''),String(f))));p.prepend(c)}
-  if(fxs){const w=el('span','fxs');fxs.forEach(x=>{const lab=x.split(' ')[0];const neg=/\s-\s?\d/.test(x)||/ -[\d]/.test(x);const bad=BAD.has(lab)?!neg:neg;w.appendChild(el('span','fx '+(lab==='급진'||lab==='보수'?'':bad?'dn':'up'),x))});p.appendChild(w)}
-  d.appendChild(p);return d}
-function flushLog(){const box=$('#log');if(!box)return;const near=box.scrollHeight-box.scrollTop-box.clientHeight<160;let added=false;
-  for(;shown<s.log.length;shown++){box.appendChild(logNode(s.log[shown],s.log[shown-1]));added=true}
-  while(box.childElementCount>600)box.firstElementChild.remove();
-  if(near)box.scrollTop=box.scrollHeight;else if(added)$('#toBottom').hidden=false}
+/* ================= 정치: 파벌 · 강령 · 성향 =================
+   성향 점수 s.pol: -100(절대왕정) … +100(급진 상퀼로트). 해마다 s.polHist에 남는다.
+   파벌은 실제로 존재한 기간에만 나타나고, 몰락할 때 소속원은 화를 입는다. */
+const tm=(y,m)=>y+(m-3)/12; // T() 눈금으로 바꾼 '연도+달'
+// st: 강령 7개(왕정·참정권·재산권·교회·경제·혁명사법·전쟁)에 대한 파벌의 입장(-1 = 입장 없음)
+const FACTIONS=[
+ {id:'devot',n:'신앙파',fr:'Parti dévot',lead:'보몽 대주교',goal:'교회와 왕권 수호',belief:'신앙과 전통',sup:'성직자·법복귀족 일부',pol:-60,a:1750,b:tm(1789,5),st:[0,0,0,0,-1,-1,-1]},
+ {id:'philosophe',n:'철학자파',fr:'Philosophes',lead:'볼테르',goal:'관용과 이성의 개혁',belief:'계몽',sup:'살롱·문필가',pol:20,a:1750,b:tm(1789,5),st:[1,1,1,3,0,0,0]},
+ {id:'parlement',n:'고등법원파',fr:'Parlementaires',lead:'데프레메스닐',goal:'왕권 견제와 특권 수호',belief:'왕국의 기본법',sup:'법복귀족·법률가',pol:-15,a:1750,b:tm(1789,5),st:[1,0,1,0,0,1,-1]},
+ {id:'absolutist',n:'귀족파',fr:'Aristocrates (les Noirs)',lead:'아르투아 백작',goal:'신분제와 구체제 유지',belief:'왕과 제단',sup:'대귀족·고위 성직자',pol:-80,a:tm(1788,9),b:tm(1792,9),st:[0,0,0,0,0,-1,-1]},
+ {id:'monarchien',n:'군주제파',fr:'Monarchiens',lead:'무니에',goal:'영국식 양원제 입헌군주정',belief:'왕의 절대 거부권',sup:'자유주의 귀족·법률가',pol:-35,a:tm(1789,5),b:tm(1790,12),st:[1,1,1,0,0,1,0]},
+ {id:'patriote',n:'애국파',fr:'Parti patriote',lead:'미라보',goal:'헌법 제정과 특권 폐지',belief:'국민주권',sup:'제3신분 대표',pol:15,a:tm(1788,9),b:tm(1791,7),st:[1,1,2,1,0,1,1]},
+ {id:'jacobin',n:'자코뱅·산악파',fr:'Jacobins / Montagnards',lead:'로베스피에르',goal:'단일 불가분의 공화국',belief:'덕과 공포',sup:'상퀼로트·소생산자',pol:60,a:tm(1789,11),b:tm(1794,11),st:[2,3,2,3,1,2,0]},
+ {id:'cordelier',n:'코르들리에·에베르파',fr:'Cordeliers / Hébertistes',lead:'에베르',goal:'최고가격제와 비기독교화',belief:'인민의 직접 행동',sup:'파리 빈민·구민회',pol:85,a:tm(1790,4),b:tm(1794,3),st:[2,2,3,2,1,2,2]},
+ {id:'feuillant',n:'푀양파',fr:'Feuillants',lead:'라파예트',goal:'입헌군주정 수호',belief:'자유와 질서',sup:'부르주아·국민방위대',pol:-10,a:tm(1791,7),b:tm(1792,9),st:[1,1,1,1,0,1,1]},
+ {id:'girondin',n:'지롱드파',fr:'Girondins (Brissotins)',lead:'브리소',goal:'공화국과 혁명 전쟁',belief:'법치와 지방 자치',sup:'상공업 부르주아',pol:25,a:tm(1791,10),b:tm(1793,11),st:[2,2,2,1,0,1,2]},
+ {id:'plaine',n:'평원파',fr:'la Plaine (le Marais)',lead:'시에예스',goal:'혁명의 결실을 지키며 살아남기',belief:'중도',sup:'지방 유산층',pol:10,a:tm(1792,9),b:tm(1795,10),st:[2,1,1,1,0,1,1]},
+ {id:'indulgent',n:'관용파',fr:'Indulgents',lead:'당통',goal:'공포정치 완화와 평화',belief:'관용',sup:'온건 공화파',pol:40,a:tm(1793,12),b:tm(1794,4),st:[2,2,2,3,0,0,0]},
+ {id:'royalist',n:'왕당파',fr:'Royalistes',lead:'프로방스 백작',goal:'부르봉 왕정 복고',belief:'왕과 제단',sup:'망명 귀족·방데 농민',pol:-70,a:tm(1792,9),b:tm(1814,4),st:[0,0,0,0,0,-1,0]},
+ {id:'thermidor',n:'테르미도르파',fr:'Thermidoriens',lead:'바라스',goal:'공포 청산과 재산 질서',belief:'유산자의 공화국',sup:'부유층·금빛 청년단',pol:5,a:tm(1794,8),b:tm(1799,11),st:[2,1,2,3,0,1,2]},
+ {id:'babeuf',n:'평등파',fr:'Conjuration des Égaux',lead:'바뵈프',goal:'토지 공유와 1793년 헌법',belief:'완전한 평등',sup:'파리 빈민·옛 자코뱅',pol:95,a:tm(1795,10),b:tm(1797,6),st:[2,2,3,2,1,2,1]},
+ {id:'clichy',n:'클리시파',fr:'Club de Clichy',lead:'피슈그뤼',goal:'합법적 왕정 복고',belief:'질서와 신앙',sup:'지방 유산층·가톨릭',pol:-45,a:tm(1795,6),b:tm(1797,10),st:[1,1,1,0,0,0,0]},
+ {id:'neojacobin',n:'신자코뱅',fr:'Néo-Jacobins',lead:'주르당',goal:'공화국 수호',belief:'조국이 위기에',sup:'군인·옛 상퀼로트',pol:55,a:tm(1797,10),b:tm(1799,12),st:[2,2,2,3,1,2,2]},
+ {id:'ideologue',n:'자유파',fr:'Idéologues / Libéraux',lead:'뱅자맹 콩스탕',goal:'대의정치와 개인의 자유',belief:'자유주의',sup:'학자·문필가',pol:20,a:tm(1795,10),b:tm(1830,8),st:[1,1,1,3,0,1,0]},
+ {id:'bonapartist',n:'보나파르트파',fr:'Bonapartistes',lead:'나폴레옹',goal:'강한 국가로 혁명의 결실 보존',belief:'영광과 능력주의',sup:'군대·농민·신흥 명사',pol:0,a:tm(1799,11),b:1900,st:[-1,3,2,1,0,1,2]},
+ {id:'ultra',n:'극우 왕당파',fr:'Ultras',lead:'아르투아 백작',goal:'구체제 복원',belief:'왕좌와 제단',sup:'귀국 망명 귀족',pol:-80,a:tm(1814,4),b:tm(1830,8),st:[0,0,0,0,0,2,0]},
+ {id:'doctrinaire',n:'독트리네르',fr:'Doctrinaires',lead:'기조',goal:'헌장에 따른 입헌왕정',belief:'이성의 주권',sup:'명사층',pol:-5,a:tm(1814,4),b:tm(1848,2),st:[1,1,1,3,0,1,0]},
+ {id:'republican',n:'공화파',fr:'Républicains',lead:'르드뤼롤랭',goal:'공화국과 보통선거',belief:'1792년의 이상',sup:'학생·노동자',pol:55,a:tm(1830,8),b:1900,st:[2,2,2,3,0,1,1]},
+ {id:'legitimist',n:'정통왕조파',fr:'Légitimistes',lead:'샹보르 백작',goal:'부르봉 장자계 복위',belief:'정통성',sup:'서부 귀족·성직자',pol:-70,a:tm(1830,8),b:1900,st:[0,1,1,0,0,1,0]}
+];
+const FAC={};FACTIONS.forEach(f=>FAC[f.id]=f);
+const ISSUES=[
+ {id:'crown',n:'왕정',fr:'Le Roi',opts:[['절대왕정',-80],['입헌군주정',-15],['공화정',50]]},
+ {id:'vote',n:'참정권',fr:'Le suffrage',opts:[['신분별 투표',-70],['납세자 선거',-10],['남성 보통선거',55],['혁명정부(선거 중단)',75]]},
+ {id:'prop',n:'재산권',fr:'La propriété',opts:[['영주권 보호',-75],['사유재산 보호',-10],['국유재산 매각',25],['농지 분배',85]]},
+ {id:'church',n:'교회',fr:'L’Église',opts:[['가톨릭 국교',-60],['성직자 시민헌법',20],['비기독교화',80],['신앙의 자유',30]]},
+ {id:'econ',n:'경제',fr:'Les subsistances',opts:[['곡물 자유 거래',-5],['최고가격제',70]]},
+ {id:'justice',n:'혁명 사법',fr:'La justice',opts:[['관용',-20],['공정한 재판',10],['공포와 처형',80]]},
+ {id:'war',n:'전쟁',fr:'La guerre',opts:[['평화',-10],['방어전',15],['혁명 수출',40]]}
+];
+const PRANK=['지지자','회원','연사','지도부'];
+const politic=()=>!!s.party||s.plan==='정치'||((lit()||urban())&&s.age>=18&&R()<.7);
+function activeFactions(t=T()){return FACTIONS.filter(f=>t>=f.a&&t<f.b)}
+function party(){return s.party?FAC[s.party]:null}
+function affinity(f){let a=100-Math.abs(s.pol-f.pol)*.9;
+  ISSUES.forEach((iss,k)=>{const mine=s.stance[iss.id],theirs=f.st[k];if(mine==null||theirs<0)return;a+=mine===theirs?7:-5});
+  if(s.party===f.id)a+=10;return clamp(Math.round(a),0,100)}
+// 소속 파벌이 지금 권력과 얼마나 맞는가(선거·위험에 쓰인다)
+const RULING=t=>t<tm(1789,5)?['devot','parlement']:t<tm(1791,7)?['patriote']:t<tm(1791,10)?['feuillant','jacobin']:t<tm(1793,6)?['girondin','jacobin']:t<tm(1794,8)?['jacobin']:t<tm(1797,4)?['thermidor','plaine']:t<tm(1797,9)?['clichy','thermidor']:t<tm(1799,11)?['thermidor','neojacobin']:t<tm(1814,4)?['bonapartist']:t<tm(1830,8)?['ultra','doctrinaire']:t<tm(1848,2)?['doctrinaire']:['republican'];
+function partyFit(){if(!s.party)return 0;return RULING(T()).includes(s.party)?1:-1}
+function setStance(id,i,pub){const iss=ISSUES.find(x=>x.id===id);if(!iss)return;const prev=s.stance[id];s.stance[id]=i;
+  const v=iss.opts[i][1];const d=Math.round((v-s.pol)*.2);s.pol=clamp(s.pol+d,-100,100);
+  if(pub&&prev!==i){const txt=`‘${iss.n}’에 대해 ${iss.opts[i][0]} 입장을 밝혔다.`;
+    let sus=0;if(inTerror()&&v<10)sus=8;if(T()>=tm(1815,7)&&T()<tm(1830,8)&&v>40)sus=4;
+    say(txt+fx({fame:s.party?1:0,sus}),'sys')}}
+function joinParty(id,auto){const f=FAC[id];if(!f)return;if(s.party===id)return;
+  const was=s.party;s.party=id;s.prank=auto?Math.max(1,s.prank&&was?s.prank-1:1):0;s.partySince=T();
+  if(['jacobin','cordelier','neojacobin'].includes(id))s.flags.club=true;if(id==='girondin')s.flags.girondin=true;if(id==='bonapartist')s.flags.bonap=true;
+  say(`${f.n}에 ${auto?'몸담게':'들어가게'} 되었다. 지도자는 ${f.lead}.`+fx({pol:Math.round((f.pol-s.pol)*.15)}),'big')}
+function leaveParty(why){if(!s.party)return;const f=FAC[s.party];s.party=null;s.prank=0;say(why||`${jo(f.n,'을','를')} 떠났다.`)}
+// 파벌의 초대: 그 파벌 성향과 가깝고 정치에 관심 있는 사람에게만
+async function partyInvite(id,force){const f=FAC[id];if(!f||!adult()||s.age<18||s.party===id)return;if(!(T()>=f.a&&T()<f.b))return;
+  if(affinity(f)<(force?55:60))return;if(!force&&(!(s.plan==='정치'||lit()||urban()||s.fame>=20)||R()>.6))return;
+  const i=await Q(`${f.n}의 초대`,f.fr,`${f.lead}${bat(f.lead)?'을':'를'} 따르는 이들이 모임에 나오라고 권한다. 목표: ${f.goal}. 지지층: ${f.sup}.`,[{l:'가입한다',s:`성향 친밀도 ${affinity(f)}%`,a:'social radical'},{l:'사양한다',s:'',a:'safe'}]);
+  if(i===0)joinParty(id);else say('정중히 사양하였다.');await done()}
+async function partySplit(){if(s.party!=='jacobin'&&s.party!=='patriote')return;
+  const i=await Q('클럽의 분열','scission des Feuillants','왕을 폐위할 것인가. 라파예트와 바르나브가 자코뱅을 떠나 푀양 수도원으로 간다. 어느 쪽에 남겠는가.',[{l:'자코뱅에 남는다 (폐위 찬성)',s:'',a:'radical'},{l:'푀양파로 간다 (입헌군주정 수호)',s:'',a:'safe'}]);
+  if(i===0){joinParty('jacobin');setStance('crown',2,true)}else{joinParty('feuillant');setStance('crown',1,true)}await done()}
+// 파벌 몰락: 소속원은 지위(prank)에 따라 혐의·체포·처형을 겪는다
+const PURGE={
+ feuillant:{t:'푀양파의 몰락',d:'라파예트가 달아나고 입헌군주파는 ‘반혁명’으로 몰렸다.',sus:[5,15,25,35],arrest:[0,.05,.15,.3],death:.2},
+ girondin:{t:'지롱드파 숙청',d:'지롱드파 지도자들이 체포되었다. 당원 명부가 구 위원회로 넘어갔다.',sus:[10,20,35,50],arrest:[.02,.15,.4,.7],death:.4},
+ cordelier:{t:'에베르파 숙청',d:'“극단파”가 외국의 음모에 가담했다는 죄목으로 재판에 넘겨졌다.',sus:[5,15,30,45],arrest:[0,.08,.35,.7],death:.6},
+ indulgent:{t:'관용파 숙청',d:'당통과 데물랭이 “관용”을 외친 죄로 처형되었다.',sus:[5,15,30,45],arrest:[0,.08,.35,.7],death:.6},
+ jacobin:{t:'테르미도르 반동',d:'로베스피에르를 따르던 이들이 “꼬리”로 몰려 사냥당했다.',sus:[10,20,35,50],arrest:[.02,.1,.3,.6],death:.35},
+ babeuf:{t:'평등파 검거',d:'경찰 첩자가 바뵈프 일당의 명단을 넘겼다.',sus:[10,20,35,50],arrest:[.05,.25,.5,.8],death:.1},
+ clichy:{t:'프뤽티도르 숙청',d:'왕당파 의원과 신문 발행인들이 기아나 유형에 처해졌다.',sus:[5,15,30,45],arrest:[0,.05,.25,.5],death:.3},
+ neojacobin:{t:'브뤼메르 이후',d:'통령정부가 자코뱅 잔당 명단을 만들었다.',sus:[5,10,20,30],arrest:[0,.02,.1,.25],death:0}
+};
+async function purge(id){const P=PURGE[id];if(s.party!==id||s.dead)return;const r=s.prank;
+  if(s.cond!=='normal'){fx({sus:P.sus[r]});return}
+  sheetOpen(P.t,FAC[id].fr);shText(P.d,'q b');fx({sus:P.sus[r]});
+  if(await chance(P.arrest[r],'체포',`${PRANK[r]}급 당원이 붙잡힌 비율`)){s.cnt.arrest++;
+    if(P.death&&await chance(P.death,'재판','붙잡힌 이들 가운데 처형된 비율')){die(id==='clichy'?'deported':'guillotine');await done();return}
+    s.cond='prison';s.prisonKind=inTerror()?'terror':'plain';s.condSince=T();say('감옥에 갇혔다.','big')}
+  else say(r>=2?'이름을 바꾸고 몸을 숨겨 화를 면했다.':'명부에서 이름이 빠져 화를 면했다.');
+  const succ={jacobin:null,girondin:null,feuillant:null}[id];leaveParty(`${jo(FAC[id].n,'은','는')} 무너졌다.`);if(succ)joinParty(succ,true);
+  await done()}
+// 파벌이 사라지면 자연스레 이어지는 쪽으로 옮긴다
+const SUCC={devot:'absolutist',parlement:'patriote',philosophe:'patriote',patriote:null,absolutist:'royalist',monarchien:'feuillant',plaine:'thermidor',thermidor:'bonapartist',royalist:'ultra',clichy:'royalist',ultra:'legitimist',doctrinaire:null,ideologue:'doctrinaire',neojacobin:null,babeuf:null};
+async function partyTick(){if(!s.party){if(s.month===0&&adult()&&s.age>=18&&T()>=tm(1788,9)&&R()<.3){const best=activeFactions().filter(f=>affinity(f)>=55).sort((a,b)=>affinity(b)-affinity(a))[0];if(best)await partyInvite(best.id,true)}return}const f=party();if(T()<f.b)return;
+  const nx=SUCC[f.id]!==undefined?SUCC[f.id]:null;const old=f.n;s.party=null;
+  if(nx&&FAC[nx]&&T()>=FAC[nx].a&&T()<FAC[nx].b){s.party=nx;say(`${old}의 사람들은 이제 ${jo(FAC[nx].n,'으로')} 불린다.`,'sys')}
+  else if(f.id==='patriote'){joinParty(s.pol>=10?'jacobin':'feuillant',true)}
+  else say(`${jo(old,'은','는')} 역사 속으로 사라졌다.`,'sys')}
+// 1790년 첫 시정부 선거
+async function municipal(){if(!adult()||!isM()||s.age<25||s.money<60||s.job==='p1'||s.job==='p2'||deputy())return;
+  if(s.fame<15&&s.plan!=='정치')return;
+  const i=await Q('시정부 선거','élections municipales','고을에서 처음으로 시장과 시정 위원을 주민이 뽑는다. 능동시민 명부에 그대의 이름이 있다.',[{l:'시정 위원에 출마한다',s:'처세·명성 판정',a:'social radical'},{l:'투표만 한다',s:'',a:'safe'}]);
+  if(i===1){say('투표함에 표를 넣었다.');await done();return}
+  const {m,why}=md([[s.st.soc>=50,1,'처세'],[s.fame>=35,1,'명성'],[!!s.party,1,'파벌의 지원'],[noble(),-1,'귀족 출신']]);
+  const r=await roll(m,{label:'시정부 선거',why});
+  if(r.v>=4){if(s.job)s.prevJob=s.job;takeJob(r.v>=6&&s.fame>=30?'p2':'p1');fx({fame:4})}else say('표가 모자랐다.'+fx({fame:1}));await done()}
 
-/* ================= 사건 창 ================= */
-function sheetOpen(t,fr){$('#shDecree').textContent=s?era().h:'';$('#shT').innerHTML='';$('#shT').append(t);if(fr){$('#shT').appendChild(el('span','fr',fr))}$('#shB').innerHTML='';$('#sheet').hidden=false;$('#sheet').classList.remove('min');$('#shRet').hidden=true;sheetLive=true}
-function sheetClose(){$('#sheet').hidden=true;$('#sheet').classList.remove('min');$('#shRet').hidden=true;sheetLive=false}
-function sheetMin(on){$('#sheet').classList.toggle('min',on);$('#shRet').hidden=!on;if(on){const b=$('#log');b.scrollTop=b.scrollHeight;$('#shRet').focus()}else{const f=$('#shB').querySelector('button:not(:disabled)');if(f)f.focus()}}
-function shScroll(){const sh=$('.sh');sh.scrollTop=sh.scrollHeight}
-function shText(t,c){$('#shB').appendChild(el('p',c||'',t));shScroll()}
+/* ---------- 당 활동 (한 해에 한 번씩) ---------- */
+const PACTS=[
+ {k:'speech',n:'클럽 연단에서 연설한다',s:'처세 판정. 명성과 당내 지위',c:()=>!!s.party&&s.age>=18&&lit(),inter:async()=>{const f=party();
+   const r=await roll(md([[s.st.soc>=55,1,'처세'],[s.st.edu>=60,1,'학식'],[trait('열정'),1,'열정']]).m,{label:'연설'});
+   if(r.v>=5){say(`${f.n} 회합에서 연설해 우레 같은 박수를 받았다.`+fx({fame:4,soc:1}));if(s.prank<3&&R()<.6){s.prank++;say(`${f.n}의 ${PRANK[s.prank]}이 되었다.`,'big')}}
+   else if(r.v<=2)say('야유 속에 연단을 내려왔다.'+fx({fame:-2}));else say('연설은 무난했다.'+fx({fame:1}));await done()}},
+ {k:'write',n:'당 신문에 논설을 싣는다',s:'학식 판정. 성향이 당 쪽으로 기운다',c:()=>!!s.party&&lit()&&s.year>=1789,inter:async()=>{const f=party();
+   const r=await roll(s.st.edu>=60?1:0,{label:'논설'});say(`『${pick(['인민의 벗','애국 프랑스인','뒤셴 영감','혁명 연보','국민 소식'])}』에 ${f.goal}을 호소하는 글을 실었다.`+fx({fame:r.v>=4?3:1,pol:Math.round((f.pol-s.pol)*.2),sus:inTerror()&&f.pol<40?6:0}));await done()}},
+ {k:'rally',n:'청원과 시위를 조직한다',s:'담력 판정. 명성↑, 혐의↑',c:()=>!!s.party&&s.age>=18&&((T()>=1789.25&&T()<1795.5)||T()>=tm(1830,7)),inter:async()=>{
+   const r=await roll(s.st.cour>=50?1:0,{label:'시위'});if(r.v>=4)say('구민 수천 명이 청원서에 서명하였다.'+fx({fame:4,sus:6,cour:2}));else if(r.v===1){say('국민방위대에 해산당하고 주동자로 찍혔다.'+fx({sus:15}));if(R()<.3){s.cond='prison';s.prisonKind=inTerror()?'terror':'plain';s.condSince=T();say('감옥에 갇혔다.','big')}}else say('모인 사람이 많지 않았다.'+fx({sus:3}));await done()}},
+ {k:'caucus',n:'파벌 지도부와 만난다',s:'처세 판정. 당내 지위',c:()=>!!s.party&&s.prank<3,inter:async()=>{const f=party();
+   const r=await roll(s.st.soc>=50?1:0,{label:'회합'});if(r.v>=5&&s.prank<3){s.prank++;meet(f.lead);say(`${f.lead}${bat(f.lead)?'과':'와'} 마주 앉았다. ${f.n}의 ${PRANK[s.prank]}이 되었다.`+fx({fame:2}),'big')}else say('지도부는 바빴다.');await done()}},
+ {k:'run',n:'선거에 나선다',s:'의원이 될 수 있다',c:()=>isM()&&s.age>=25&&lit()&&!deputy()&&s.fame>=30&&[1791,1792,1795,1797,1798,1799].includes(s.year),inter:async()=>{await election('보궐 선거',.08)}},
+ {k:'leave',n:'파벌을 떠난다',s:'',c:()=>!!s.party,f:()=>leaveParty()}
+];
+
+/* ================= 픽셀 장면 =================
+   192×72 논리 픽셀을 캔버스에 그리고 CSS로 확대한다(image-rendering: pixelated).
+   장소(도시·항구·마을·성관·감옥·막사·망명지·숲·수도원)와 시대(바스티유, 단두대, 깃발), 계절, 가족을 그린다. */
+const SW=192,SH=72,GY=60;
+function srng(seed){let a=seed>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function sceneKind(){if(s.cond==='prison')return 'prison';if(s.cond==='emigre')return 'abroad';if(s.cond==='hiding')return 'forest';
+  if(soldier()&&atWar())return 'camp';if(priest()||nun())return 'church';
+  const r=REGIONS[loc()];if(r.urban)return r.port?'port':'city';if(noble()&&s.land>=300)return 'chateau';return 'village'}
+function homeLabel(){const k=sceneKind();if(k==='prison')return '감옥';if(k==='abroad')return `망명지 하숙방 · ${s.emiPlace||''}`;if(k==='forest')return '은신처';if(k==='camp')return '야영지';
+  if(k==='church')return isM()?'사제관':'수녀원';if(k==='chateau')return '성관';
+  const rich=s.money>=20000||s.land>=1000;if(urban())return rich?'저택':s.money>=1500?'아파르트망':'다락 셋방';return rich?'영지 저택':s.money>=600||s.land>0?'농가':'초가'}
+function companions(){const a=[];const kids=kidsAlive().filter(k=>s.year-k.y<18);
+  if(s.spouse&&s.spouse.alive)a.push(isM()?'아내':'남편');
+  if(s.age<25&&!(s.spouse&&s.spouse.alive)&&(s.fa.alive||s.mo.alive))a.push(s.fa.alive&&s.mo.alive?'부모님':s.fa.alive?'아버지':'어머니');
+  if(s.age<18&&s.sibs)a.push(`형제자매 ${Math.min(s.sibs,4)}명`);
+  if(kids.length)a.push(`자녀 ${kids.length}명`);
+  if(!a.length)return '혼자';const j=a.join('·');return `${jo(j,'과','와')} 함께`}
+function familyAges(){const a=[`나 ${s.age}세`];if(s.spouse&&s.spouse.alive)a.push(`${isM()?'아내':'남편'} ${s.spouse.age}세`);
+  if(s.age<25&&!(s.spouse&&s.spouse.alive)){if(s.mo.alive)a.push(`어머니 ${s.mo.age}세`);if(s.fa.alive)a.push(`아버지 ${s.fa.age}세`)}
+  kidsAlive().slice(-4).forEach(k=>a.push(`${k.sex==='M'?'아들':'딸'} ${s.year-k.y}세`));return a.join(' · ')}
+function drawScene(cv){if(!cv||!s)return;const c=cv.getContext('2d');c.imageSmoothingEnabled=false;
+  const R2=srng((s.by*977+s.region.length*131+(s.loc||'').length*17)>>>0);const kind=sceneKind();const winter=s.season===3,t=T();
+  const px=(x,y,w,h,col)=>{c.fillStyle=col;c.fillRect(Math.round(x),Math.round(y),w,h)};
+  // 하늘
+  for(let y=0;y<GY;y++){const k=y/GY;const r=Math.round(10+14*k),g=Math.round(16+22*k),b=Math.round(42+34*k);px(0,y,SW,1,`rgb(${r},${g},${b})`)}
+  const st=srng(s.year*12+s.month);for(let i=0;i<34;i++)px(st()*SW|0,st()*30|0,1,1,st()<.3?'#fff7d6':'#9fb0d8');
+  px(160,7,5,5,'#efe6c4');px(161,6,3,1,'#efe6c4');px(161,12,3,1,'#efe6c4');
+  const lit=()=>R2()<.45?'#f3c65a':'#29324a';
+  const flag=(x,y)=>{px(x,y,1,12,'#9aa3b5');const e=era().k;
+    if(['ancien','restoration'].includes(e)&&!(t>=1815&&t<1815.25)){px(x+1,y,8,5,'#eeeeea');px(x+4,y+2,2,1,'#d8b25a')}
+    else{px(x+1,y,3,5,'#2c4fa8');px(x+4,y,3,5,'#eeeeea');px(x+7,y,3,5,'#c8323a');if(e==='empire'||e==='consulate')px(x+5,y+2,1,1,'#d8b25a')}};
+  const building=(x,w,h,base='#2b3550',roof='#1d2438')=>{px(x,GY-h,w,h,base);px(x-1,GY-h-3,w+2,3,roof);if(winter)px(x-1,GY-h-4,w+2,1,'#dfe6f2');
+    px(x+2,GY-h-6,2,3,roof);for(let yy=GY-h+3;yy<GY-4;yy+=5)for(let xx=x+2;xx<x+w-2;xx+=4)px(xx,yy,2,2,lit())};
+  if(kind==='city'||kind==='port'){
+    if(loc()==='paris'){px(128,GY-40,7,40,'#1c2540');px(140,GY-40,7,40,'#1c2540');px(135,GY-30,5,30,'#1c2540');px(129,GY-36,2,3,'#3a4466');px(141,GY-36,2,3,'#3a4466');}
+    let x=0;while(x<SW){const w=14+(R2()*14|0),h=22+(R2()*20|0);if(!(loc()==='paris'&&x>118&&x<150))building(x,w,h,R2()<.5?'#2b3550':'#323d5c');x+=w+1}
+    if(loc()==='paris'&&t<1789.5){px(8,GY-30,34,30,'#202a40');for(const tx of [6,16,26,36])px(tx,GY-34,6,34,'#262f48');px(10,GY-26,2,3,'#f3c65a');}
+    if(kind==='port'){px(0,GY-6,SW,6,'#132342');for(let i=0;i<SW;i+=7)px(i,GY-4,3,1,'#2f4f86');for(const mx of [30,70,150]){px(mx,GY-34,1,28,'#4a3a2a');px(mx-6,GY-30,12,8,'#cfc8b0');px(mx-5,GY-20,10,6,'#cfc8b0')}}
+    flag(96,GY-52);
+    if(loc()==='paris'&&t>=1793.25&&t<1794.5){px(108,GY-22,1,22,'#5a3a2a');px(115,GY-22,1,22,'#5a3a2a');px(108,GY-22,8,1,'#5a3a2a');px(109,GY-20,6,2,'#b8c0cc');px(106,GY-3,12,3,'#4a2f22')}
+  }
+  if(kind==='village'||kind==='chateau'||kind==='forest'){
+    for(let x=0;x<SW;x++){const h=8+Math.round(5*Math.sin(x/23)+3*Math.sin(x/9));px(x,GY-h,1,h,'#1b3326')}
+    for(let x=0;x<SW;x+=2)px(x,GY-6,1,6,winter?'#cfd6e2':s.season===1?'#5b6a2a':'#3d4f2a');
+    if(kind!=='forest'){px(150,GY-30,10,22,'#3a3f52');px(153,GY-40,4,10,'#3a3f52');px(154,GY-44,2,4,'#3a3f52');px(154,GY-47,2,1,'#c9c2a6');px(155,GY-48,1,3,'#c9c2a6');px(154,GY-24,2,3,'#f3c65a');
+      for(const hx of [18,44,120,172]){px(hx,GY-12,14,12,'#5a4636');px(hx-1,GY-17,16,5,winter?'#dfe6f2':'#7a6a3a');px(hx+5,GY-8,3,4,'#2a1e16');px(hx+10,GY-10,2,2,'#f3c65a')}}
+    const trees=kind==='forest'?24:6;for(let i=0;i<trees;i++){const tx=R2()*SW|0,th=10+(R2()*14|0);px(tx,GY-th,2,th,'#2a1e16');px(tx-4,GY-th-6,10,9,winter?'#c9d2df':'#163b25')}
+    if(kind==='chateau'){px(60,GY-34,56,34,'#4a4a5a');for(const cx of [56,112]){px(cx,GY-42,10,42,'#555566');px(cx+1,GY-48,8,6,'#2b2f45');px(cx+3,GY-52,4,4,'#2b2f45')}
+      for(let yy=GY-30;yy<GY-6;yy+=7)for(let xx=64;xx<112;xx+=6)px(xx,yy,3,4,lit());flag(87,GY-48)}
+  }
+  if(kind==='church'){building(0,40,24);building(150,42,26);px(66,GY-40,60,40,'#3c4058');px(90,GY-54,12,14,'#3c4058');px(95,GY-60,2,6,'#c9c2a6');px(93,GY-58,6,2,'#c9c2a6');
+    px(92,GY-32,8,8,'#7a4ab0');px(94,GY-30,4,4,'#f3c65a');for(let xx=70;xx<122;xx+=8)px(xx,GY-14,5,14,'#252a3e')}
+  if(kind==='prison'){px(0,GY-46,SW,46,'#3b3d46');for(let yy=GY-40;yy<GY-4;yy+=9)for(let xx=6;xx<SW;xx+=14){px(xx,yy,6,6,'#15171e');for(let b=1;b<6;b+=2)px(xx+b,yy,1,6,'#6a6e7a')}
+    for(let xx=0;xx<SW;xx+=4)px(xx,GY-48,2,2,'#3b3d46');px(100,GY-20,3,3,'#f3c65a')}
+  if(kind==='camp'){for(let x=0;x<SW;x+=2)px(x,GY-4,1,4,'#2a3324');for(const tx of [20,60,130,168]){for(let i=0;i<10;i++)px(tx-i,GY-14+i,2*i+1,1,'#cfc6aa');px(tx,GY-4,1,4,'#2a1e16')}
+    px(96,GY-6,16,4,'#2a2a2a');px(100,GY-8,12,2,'#3a3a3a');px(98,GY-4,4,4,'#5a3a2a');px(84,GY-4,6,2,'#5a3a2a');px(85,GY-7,4,3,R2()<.5?'#f39a3a':'#f3c65a');flag(140,GY-26)}
+  if(kind==='abroad'){building(0,30,26,'#2f3448');building(150,42,30,'#2f3448');px(30,GY-8,120,8,'#132342');for(let i=0;i<4;i++){px(36+i*28,GY-18,24,4,'#4a4a52');px(44+i*28,GY-14,8,8,'#132342')}px(80,GY-44,26,14,'#2a2f45');px(86,GY-52,14,8,'#2a2f45');px(92,GY-56,2,4,'#c9c2a6')}
+  // 길
+  px(0,GY,SW,SH-GY,'#262b36');px(0,GY,SW,1,'#3b4252');for(let x=4;x<SW;x+=12)px(x,GY+7,6,1,'#6b7280');if(winter)for(let i=0;i<40;i++)px(R2()*SW|0,GY+1+(R2()*10|0),1,1,'#dfe6f2');
+  // 사람들
+  const people=[];const me=look(s.sex,s.age,true);people.push(me);
+  if(s.spouse&&s.spouse.alive)people.push(look(isM()?'F':'M',s.spouse.age,false,s.spouse.estate));
+  if(s.age<25&&!(s.spouse&&s.spouse.alive)){if(s.fa.alive&&kind!=='prison'&&kind!=='camp')people.unshift(look('M',s.fa.age,false));if(s.mo.alive&&kind!=='prison'&&kind!=='camp')people.unshift(look('F',s.mo.age,false))}
+  if(s.age<18&&kind!=='prison')for(let i=0;i<Math.min(s.sibs,2);i++)people.push(look(R2()<.5?'M':'F',clamp(s.age+(i?-3:3),2,30),false));
+  if(kind!=='prison'&&kind!=='camp')kidsAlive().filter(k=>s.year-k.y<18).slice(-4).forEach(k=>people.push(look(k.sex,s.year-k.y,false)));
+  let x=Math.round(SW/2-people.length*5);people.forEach(p=>{drawPerson(px,x,GY+3,p);x+=p.w+4})}
+function look(sex,age,me,est=s.estate){const t=T();const nob=ESTATES[est]&&ESTATES[est].noble;const skin=['#f1c9a5','#e3b38c','#c98e66'][(s.by+age+(sex==='M'?1:0))%3];
+  let coat='#5a4a3a',legs='#3a3028',hat=null,hair=age>=62?'#c8c8c8':['#3a2a1a','#6a4a2a','#2a2020','#8a6a3a'][(s.by+age)%4],dress=null;
+  if(est==='peasant')coat=sex==='M'?'#6b5236':'#7a5a4a';else if(est==='artisan')coat='#4a5a6a';else if(est==='bourgeois')coat='#2f3b5a';else if(nob)coat=['#7a2f4a','#2f5a7a','#4a6a2f'][(s.by)%3];
+  if(sex==='F'){dress=nob?'#c99ab0':est==='bourgeois'?'#5a7a9a':est==='artisan'?'#7a6a8a':'#8a6a4a';hat=age>=14?'cap':null}
+  if(me){if(soldier()){coat='#2b3f8f';legs='#d8d8d8';hat='bicorne'}else if(priest()){coat='#1a1a1e';legs='#1a1a1e';hat=null}else if(nun()){dress='#1a1a1e';hat='veil'}
+    else if(sex==='M'&&!nob&&s.pol>=40&&t>=1792.25&&t<1795.5){hat='bonnet';legs='stripe'}
+    if(s.cond==='prison')coat='#5a5a5a'}
+  if(sex==='M'&&nob&&t<1792.5&&age>=16&&!hat)hat='wig';if(sex==='M'&&!hat&&age>=16&&t<1800&&(est==='bourgeois'||nob))hat='tricorne';
+  const h=age<2?7:age<6?10:age<12?13:age<16?16:19;return {sex,age,me,skin,coat,legs,hat,hair,dress,h,w:age<6?4:age<12?5:6}}
+function drawPerson(px,x,base,p){const top=base-p.h,w=p.w,hd=p.age<6?3:4;const hx=x+Math.floor((w-hd)/2);
+  if(p.me){px(x+w/2-1,top-5,3,1,'#ffffff');px(x+w/2,top-4,1,1,'#ffffff')}
+  // 머리
+  px(hx,top,hd,hd,p.skin);px(hx,top,hd,1,p.hair);if(p.hat==='wig'){px(hx-1,top,hd+2,2,'#eeeeee');px(hx+hd,top+1,1,3,'#eeeeee')}
+  if(p.hat==='bonnet'){px(hx-1,top-2,hd+2,2,'#c8323a');px(hx+hd,top-3,2,2,'#c8323a')}
+  if(p.hat==='bicorne'){px(hx-2,top-2,hd+4,2,'#141414');px(hx+1,top-3,2,1,'#141414');px(hx+hd-1,top-2,1,1,'#c8323a')}
+  if(p.hat==='tricorne'){px(hx-1,top-2,hd+2,2,'#1a1a1a')}
+  if(p.hat==='cap'){px(hx-1,top-1,hd+2,2,'#eeeeea')}
+  if(p.hat==='veil'){px(hx-1,top-1,hd+2,hd+2,'#1a1a1e');px(hx,top+1,hd,hd-1,p.skin);px(hx,top,hd,1,'#eeeeea')}
+  const by=top+hd,bodyH=p.h-hd;
+  if(p.dress){px(x,by,w,Math.ceil(bodyH*.45),p.dress);px(x-1,by+Math.ceil(bodyH*.45),w+2,bodyH-Math.ceil(bodyH*.45),p.dress);px(x+1,by+1,w-2,1,'#eeeeea')}
+  else{const th=Math.ceil(bodyH*.5);px(x,by,w,th,p.coat);
+    if(p.legs==='stripe'){for(let i=0;i<bodyH-th;i++)px(x+1,by+th+i,w-2,1,i%2?'#e8e8e8':'#3050a0')}else{px(x+1,by+th,2,bodyH-th,p.legs);px(x+w-3,by+th,2,bodyH-th,p.legs)}
+    px(x-1,by+1,1,th-1,p.coat);px(x+w,by+1,1,th-1,p.coat)}
+}
+
+/* ================= 인생 기록 (최근 순) ================= */
+let logBox=null;
+function entryNode(e){
+  if(e.k==='yr'){const d=el('div','le yr');const m=e.t.match(/^(\d+)년(?: · (.*))?$/);d.appendChild(el('b',null,m?m[1]+'년':e.t));if(m&&m[2])d.appendChild(el('span','mut',m[2]));return d}
+  const d=el('div','le '+e.k);d.appendChild(el('span','ag',e.a!=null?e.a+'세':''));
+  const body=el('div','lb');
+  if(e.k==='dice'){body.appendChild(el('span','tag data','자료'));body.appendChild(el('span','mono',e.t))}
+  else{let txt=e.t,fxs=null;const m=txt.match(/^(.*?)\s?\(([^()]*(?:[+-]\s?[\d,]+)[^()]*)\)(\.?)$/);if(m&&e.k!=='sys'){txt=m[1]+m[3];fxs=m[2].split(', ')}
+    if(e.k==='hist'){body.appendChild(el('span','tag hist',`${e.m!=null?e.m+1+'월':''} 역사`.trim()));body.appendChild(document.createTextNode(' '))}
+    body.appendChild(el('span','tx',txt));
+    if(fxs){const w=el('span','fxs');fxs.forEach(x=>{const lab=x.split(' ')[0];const neg=/\s-\s?\d/.test(x);const bad=BAD.has(lab)?!neg:neg;w.appendChild(el('span','fx '+(lab==='급진'||lab==='보수'?'':bad?'dn':'up'),x))});body.appendChild(w)}}
+  d.appendChild(body);return d}
+function flushLog(){const box=logBox||$('#log');if(!box||!s)return;
+  for(;shown<s.log.length;shown++)box.prepend(entryNode(s.log[shown]));
+  while(box.childElementCount>360)box.lastElementChild.remove()}
+function rebuildLog(){const box=$('#log');box.innerHTML='';shown=Math.max(0,s.log.length-360);flushLog()}
+
+/* ================= 결정 창 ================= */
+let sheetMark=0;
+function sheetOpen(t,fr){sheetMark=s?s.log.length:0;$('#shT').textContent=t;$('#shFr').textContent=fr||'';$('#shB').innerHTML='';$('#sheet').hidden=false;sheetLive=true;freeze();document.body.classList.add('modal')}
+function sheetClose(){$('#sheet').hidden=true;sheetLive=false;document.body.classList.remove('modal')}
+function shText(t,c){$('#shB').appendChild(el('p',c||'',t))}
 let autoMode=false,pend=null;
-function ad(){return Math.max(250,1300/Math.sqrt(speed))}
+function ad(){return Math.max(220,1100/Math.sqrt(speed))}
 function arm(fn){pend=fn;if(autoMode)setTimeout(()=>{if(autoMode&&pend===fn)fn()},ad())}
 const PREF={열정:{bold:2,radical:1.5},신중:{safe:2.5},경건:{pious:2.5,royal:.6},계몽:{study:1.6,radical:1.2},야심:{social:1.4,greedy:1,bold:.6},쾌활:{social:2,family:1}};
 function autoPick(opts,btns){let best=-1e9,bi=0;opts.forEach((o,i)=>{if(btns[i].disabled)return;let sc=R()*.6;const tags=(o.a||'').split(' ');
   if(tags.includes('safe'))sc+=.5;if(tags.includes('work'))sc+=1.2;if(tags.includes('family'))sc+=.8;const P=PREF[s&&s.trait]||{};for(const t of tags)sc+=P[t]||0;
-  if(s&&s.pol<-30&&tags.includes('royal'))sc+=1;if(s&&s.pol>40&&tags.includes('radical'))sc+=1;
-  if(sc>best){best=sc;bi=i}});return bi}
-function setAuto(on){autoMode=on;$('#autoB').setAttribute('aria-pressed',String(on));if(on&&pend)setTimeout(()=>{if(autoMode&&pend)pend()},ad())}
+  if(s&&s.pol<-30&&tags.includes('royal'))sc+=.4;if(s&&s.pol>40&&tags.includes('radical'))sc+=.4;if(sc>best){best=sc;bi=i}});return bi}
+function setAuto(on){autoMode=on;$('#autoT').setAttribute('aria-pressed',String(on));$('#autoT').textContent=on?'자동 선택 켜짐':'자동 선택 꺼짐';if(on&&pend)setTimeout(()=>{if(autoMode&&pend)pend()},ad())}
 function shButtons(opts){return new Promise(res=>{const box=el('div','opts');
-  opts.forEach((o,i)=>{const b=el('button','opt');b.type='button';b.appendChild(document.createTextNode(o.l));if(o.s)b.appendChild(el('small',null,o.s));if(o.dis)b.disabled=true;
+  opts.forEach((o,i)=>{const b=el('button','opt');b.type='button';b.appendChild(el('span','ol',o.l));if(o.s)b.appendChild(el('small',null,o.s));if(o.dis)b.disabled=true;
     b.onclick=()=>{pend=null;box.querySelectorAll('button').forEach(x=>x.disabled=true);b.classList.add('chosen');res(i)};box.appendChild(b)});
-  $('#shB').appendChild(box);shScroll();arm(()=>{const btns=[...box.querySelectorAll('button')];btns[autoPick(opts,btns)].click()});const f=box.querySelector('button:not(:disabled)');if(f)f.focus({preventScroll:true})})}
-function shContinue(label='계속'){return new Promise(res=>{const b=el('button','btn primary cont',label);b.type='button';
-  b.onclick=()=>{pend=null;b.remove();res()};$('#shB').appendChild(b);shScroll();b.focus({preventScroll:true});arm(()=>b.click())})}
-async function done(){if(!sheetLive)return;await shContinue();sheetClose()}
-const PIPS={1:[[50,50]],2:[[28,28],[72,72]],3:[[26,26],[50,50],[74,74]],4:[[28,28],[72,28],[28,72],[72,72]],5:[[26,26],[74,26],[50,50],[26,74],[74,74]],6:[[28,24],[72,24],[28,50],[72,50],[28,76],[72,76]]};
-function dieSvg(v){return `<svg viewBox="0 0 100 100" aria-label="${v}">${(PIPS[v]||[]).map(([x,y])=>`<circle cx="${x}" cy="${y}" r="9" fill="currentColor"/>`).join('')}</svg>`}
-function modText(m){return m===0?'주사위 한 개를 던진다':m>0?`주사위 ${m+1}개를 던져 가장 높은 눈을 쓴다`:`주사위 ${1-m}개를 던져 가장 낮은 눈을 쓴다`}
-function shThrow(r,label,why){return new Promise(res=>{const box=el('div','dicebox');
-  box.appendChild(el('p','dinfo',(label?label+'. ':'')+modText(r.m)+(why?` (${why})`:'')+'. 5 이상이면 대개 성공, 2 이하는 실패다.'));
-  const row=el('div','dice');const dies=r.f.map(()=>{const d=el('div','die');d.innerHTML=dieSvg(0);row.appendChild(d);return d});box.appendChild(row);
-  const btn=el('button','btn primary throw','주사위를 던진다');btn.type='button';box.appendChild(btn);$('#shB').appendChild(box);shScroll();btn.focus({preventScroll:true});arm(()=>btn.click());
-  btn.onclick=()=>{pend=null;btn.remove();const settle=()=>{const ci=r.f.indexOf(r.v);dies.forEach((d,i)=>{d.innerHTML=dieSvg(r.f[i]);d.classList.add(i===ci?'on':'off')});box.appendChild(el('p','dres',`${r.v} · ${RES[r.v]}`));shScroll();res()};
-    if(RM){settle();return}let t=0;const iv=setInterval(()=>{dies.forEach(d=>d.innerHTML=dieSvg(ri(1,6)));if((t+=70)>=630){clearInterval(iv);settle()}},70)}})}
-function shDraw(p,hit,label,why){return new Promise(res=>{const box=el('div','dicebox');const pc=Math.round(p*1000)/10;
-  box.appendChild(el('p','dinfo',`${label}. 역사적 확률 ${pc}%`+(why?` — ${why}`:'')));
-  const tr=el('div','track');tr.style.height='14px';const fill=el('i');fill.style.width=pc+'%';fill.style.background='var(--rouge)';tr.appendChild(fill);const mk=el('b');mk.style.cssText='position:absolute;top:-3px;bottom:-3px;width:3px;background:var(--ink);left:0;display:none';tr.appendChild(mk);box.appendChild(tr);
-  const btn=el('button','btn primary throw','운명을 뽑는다');btn.type='button';box.appendChild(btn);$('#shB').appendChild(box);shScroll();btn.focus({preventScroll:true});arm(()=>btn.click());
-  btn.onclick=()=>{pend=null;btn.remove();const x=hit?R()*pc:pc+R()*(100-pc);mk.style.display='block';
-    const fin=()=>{mk.style.left=`calc(${x}% - 1px)`;box.appendChild(el('p','dres',hit?`${label} — 피하지 못했다`:`${label} — 피했다`));shScroll();res()};
-    if(RM){fin();return}let t=0;const iv=setInterval(()=>{mk.style.left=(R()*100)+'%';if((t+=70)>=630){clearInterval(iv);fin()}},70)}})}
+  $('#shB').appendChild(box);arm(()=>{const btns=[...box.querySelectorAll('button')];btns[autoPick(opts,btns)].click()});const f=box.querySelector('button:not(:disabled)');if(f)f.focus({preventScroll:true})})}
+async function shContinue(){}
+// 선택 뒤 바로 닫고, 그사이 생긴 결과를 잠깐 띄운다
+async function done(){if(!sheetLive)return;const news=s.log.slice(sheetMark).filter(e=>['ev','big','dark'].includes(e.k)).map(e=>e.t);sheetClose();if(news.length)toast(news.slice(-2).join(' '))}
+let toastT=null;
+function toast(t){const b=$('#toast');b.textContent=t;b.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{b.hidden=true},Math.max(1600,4200/Math.sqrt(speed)))}
 
 /* ================= 화면 ================= */
-// 시대 문장: 백합(왕정), 삼색 모표(입헌·총재), 프리기아 모자(공화), 월계관(통령), N(제국)
-const EMB={
- lis:'<svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 2c-2.6 3.4-3.6 6.6-1.6 10.4-3-.6-5.6-3.6-8.6-1.6-2.4 1.6-1.4 5.4 1.6 5.8-1.6-1.6-.6-3.6 1.2-3.2 2.6.6 4.4 3.4 5.6 5.4H9v2h4.6c-.8 2.6-2.6 4.4-4.6 5.2 2.8.4 5.2-1 7-3.6 1.8 2.6 4.2 4 7 3.6-2-.8-3.8-2.6-4.6-5.2H23v-2h-5.2c1.2-2 3-4.8 5.6-5.4 1.8-.4 2.8 1.6 1.2 3.2 3-.4 4-4.2 1.6-5.8-3-2-5.6 1-8.6 1.6C19.6 8.6 18.6 5.4 16 2z"/></svg>',
- cocarde:'<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="var(--rouge)"/><circle cx="16" cy="16" r="10" fill="var(--sheet)"/><circle cx="16" cy="16" r="5.5" fill="var(--roi)"/></svg>',
- bonnet:'<svg viewBox="0 0 32 32"><path fill="var(--rouge)" d="M6 25c0-8 2-15 9-18 4-1.6 9-.6 11 3-3-.4-5 .6-5.4 2.6 2.4 1.6 4.4 5.8 4.4 12.4z"/><rect x="5" y="24" width="21" height="4" fill="currentColor"/><circle cx="20" cy="26" r="2.6" fill="var(--sheet)" stroke="var(--roi)" stroke-width="1.6"/></svg>',
- laurel:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 27C4 22 3 13 8 6M22 27c6-5 7-14 2-21"/><path fill="currentColor" stroke="none" d="M7 22l-3-1 3-1zM6 17l-3-2 3-.5zM6.5 12l-2.5-2.5 3 .2zM8.5 8l-1.6-3 2.4 1.6zM25 22l3-1-3-1zM26 17l3-2-3-.5zM25.5 12l2.5-2.5-3 .2zM23.5 8l1.6-3-2.4 1.6z"/></svg>',
- N:'<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="16" r="11.5" fill="none" stroke="currentColor" stroke-width=".6"/><text x="16" y="22.5" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="900" font-style="italic" font-size="17" fill="currentColor">N</text></svg>'
-};
-function repFr(y){return y>=1793&&y<=1805?`an ${['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'][y-1792]} de la République`:''}
-function eraColor(){return `var(--${era().c})`}
-function statusText(){if(child())return [s.age<7?'어린아이':'아이',s.literate?'글을 깨쳤다':''];
-  const c={prison:'수감 중',hiding:s.flags.refractaire?'징집 기피자로 숨어 지냄':'은신 중',emigre:`망명 중 · ${s.emiPlace||''}`}[s.cond];if(c)return [c,job()?`전 ${pname(job())}`:''];
-  const j=job();if(j)return [pname(j),`${j.fr} · ${TRACKS[j.tr]} · ${s.year-s.jobSince}년째`];
-  return [s.flags.retired?'은퇴':noble()&&s.land?'지대로 사는 지주':'일 없음',s.prevJob?`전 ${pname(POST[s.prevJob])}`:''] }
-function famText(){const a=[];if(s.spouse&&s.spouse.alive)a.push(isM()?'아내 있음':'남편 있음');else if(s.widowed)a.push(isM()?'홀아비':'과부');const k=kidsAlive().length;if(k)a.push(`자녀 ${k}`);return a.join(' · ')}
-function render(){if(!s)return;document.documentElement.style.setProperty('--era',eraColor());const E=era();for(const id of ['#decree','#ddecree'])$(id).textContent=E.h;$('#demb').innerHTML=EMB[E.em]||'';
-  const nm=$('#nm');nm.innerHTML='';nm.append(`${s.given[0]} ${s.sur[0]}`);if(s.given[1])nm.appendChild(el('span','frn',`${s.given[1]} ${s.sur[1]}`));
-  $('#meta').textContent=`${REGIONS[loc()].n}${s.loc&&s.loc!==s.region?` (고향 ${REGIONS[s.region].n})`:''} · ${ESTATES[s.estate].n}${s.faithKind==='protestant'?' · 신교도':s.faithKind==='jewish'?' · 유대교':''}${s.trait?` · 성품 ${s.trait}`:''}${!child()?` · 방침 ${s.plan}`:''}`;
-  const w=`${yl()} ${SEASON[s.season]}`;$('#age').textContent=s.age+'세';$('#when').textContent=w;$('#dwhen').textContent=w;$('#dage').textContent=s.age+'세';$('#druler').textContent=era().n===ruler()?era().n:`${era().n} · ${ruler()}`;
-  const [a,b]=statusText();$('#post').textContent=a;$('#postk').textContent=b;$('#fam').textContent=famText();
-  const st=$('#stats');if(!st.children.length)STATS.forEach(([k,n])=>{const d=el('div','st');d.innerHTML=`${n}<b data-k="${k}"></b><s><u data-u="${k}"></u></s>`;st.appendChild(d)});
-  STATS.forEach(([k])=>{st.querySelector(`[data-k="${k}"]`).textContent=s.st[k];st.querySelector(`[data-u="${k}"]`).style.width=s.st[k]+'%'});
-  $('#sub').innerHTML=`<span>재산 <b>${fmt(s.money)}</b> ${money()}</span>${s.land?`<span>지대 <b>${fmt(s.land)}</b>/년</span>`:''}<span>명성 <b>${s.fame}</b></span><span>신앙 <b>${s.faith}</b></span><span class="${s.sus>=30?'warn':''}">혐의 <b>${s.sus}</b></span><span>성향 <b>${polLabel(s.pol)}</b></span><button class="helpb" type="button" id="helpB">설명</button>`;
-  $('#helpB').onclick=()=>{if(isDesk()){deskTab='설명';refreshSide()}else showHelp()};
-  renderBoard()}
-function renderBoard(){const B=$('#dboard');if(!B||!s||!isDesk())return;B.innerHTML='';
-  const h=el('div','db-h');h.innerHTML=`시대의 띠 <span>1750–1850</span>`;B.appendChild(h);
-  const band=el('div','eras');ERAS.forEach(e=>{const a=Math.max(1750,e.a),b=Math.min(1850,e.b);if(b<=a)return;const i=el('i');i.style.width=((b-a)/100*100)+'%';i.style.background=`color-mix(in srgb,var(--${e.c}) 60%,var(--line))`;i.title=`${e.n} (${Math.floor(e.a)}–${Math.floor(e.b)})`;band.appendChild(i)});
-  const mk=el('b');mk.style.left=((clamp(T(),1750,1850)-1750))+'%';band.appendChild(mk);B.appendChild(band);
-  const erl=el('div','erl');['1750','1789','1799','1815','1830','1850'].forEach(x=>erl.appendChild(el('span',null,x)));B.appendChild(erl);
-  const h2=el('div','db-h');h2.innerHTML=`출세의 사다리 <span>칠한 칸: 거쳐 간 자리</span>`;B.appendChild(h2);
-  const lad=el('div','ladder');const held=new Set(s.hist.map(x=>x.id));
-  for(const [tr,nm] of Object.entries(TRACKS)){const row=el('div','lrow');row.appendChild(el('em',null,nm));
-    for(let t=1;t<=7;t++){const ps=PL.filter(x=>x[1]===tr&&x[2]===t).map(x=>POST[x[0]]);const c=el('span','lc');
-      if(!ps.length)c.classList.add('none');else{const p=ps.find(p=>held.has(p.id))||ps[0];c.textContent=pname(p);c.title=ps.map(p=>`${pname(p)} (${p.fr})`).join(' / ');if(ps.some(p=>held.has(p.id)))c.classList.add('held');if(ps.some(p=>p.id===s.job))c.classList.add('cur')}
-      row.appendChild(c)}lad.appendChild(row)}
-  B.appendChild(lad)}
-const DQ=matchMedia('(min-width: 1100px)');function isDesk(){return DQ.matches}
-let deskTab='행동';
-function refreshSide(){if(!s||!isDesk())return;document.querySelectorAll('#dtabs button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.t===deskTab)));if(deskTab==='행동')showActs();else if(deskTab==='이력')showPanel();else showHelp()}
-function panelTarget(){const D=isDesk();const pin=D?$('#dsBody'):$('#pin');pin.innerHTML='';if(!D){$('#panel').hidden=false;setPaused(true,true)}return pin}
-function closePanel(){$('#panel').hidden=true;if(resumeAfterPanel)setPaused(false);resumeAfterPanel=false}
-let resumeAfterPanel=false;
-function showActs(){if(!s)return;const pin=panelTarget();if(!isDesk())pin.appendChild(el('h2','disp','행동'));
-  if(child()){pin.appendChild(el('p',null,'열네 살이 되면 한 해의 방침과 행동을 정할 수 있다.'));return}
-  pin.appendChild(el('h3',null,'한 해의 방침'));pin.appendChild(el('p','meta','해가 바뀔 때 이 방침대로 지표가 자란다.'));
-  const pg=el('div','plans');PLANS.forEach(p=>{const b=el('button','opt');b.type='button';b.appendChild(document.createTextNode(p.k));b.appendChild(el('small',null,p.s));b.setAttribute('aria-pressed',String(s.plan===p.k));
+const STATC={hp:'var(--green)',edu:'var(--teal)',soc:'var(--pink)',cour:'var(--yellow)'};
+const STATORD=[['hp','건강'],['edu','학식'],['soc','처세'],['cour','담력']];
+function statusText(){if(child())return s.age<7?'어린아이':'아이';
+  const c={prison:'수감 중',hiding:s.flags.refractaire?'징집 기피자로 숨어 지냄':'은신 중',emigre:`망명 중 · ${s.emiPlace||''}`}[s.cond];if(c)return c;
+  const j=job();if(j)return pname(j);return s.flags.retired?'은퇴':noble()&&s.land?'지대로 사는 지주':'일 없음'}
+function render(){if(!s)return;
+  $('#age').textContent=s.age;const nm=`${s.given[0]} ${s.sur[0]}`;
+  $('#subline').textContent=`${ym()} · ${nm} · 1년 ≈ ${secPerYear()}초`;
+  $('#where').innerHTML='';$('#where').append(`${REGIONS[loc()].n}, 프랑스 · ${homeLabel()} · ${companions()}`);
+  $('#famAges').textContent=familyAges();
+  $('#era').textContent=`${era().n} · ${ruler()}`;
+  drawScene($('#cv'));
+  const st=$('#stats');if(!st.children.length)STATORD.forEach(([k,n])=>{const d=el('div','st');d.innerHTML=`<span>${n}</span><b data-k="${k}"></b><s><u data-u="${k}" style="background:${STATC[k]}"></u></s>`;st.appendChild(d)});
+  STATORD.forEach(([k])=>{st.querySelector(`[data-k="${k}"]`).textContent=s.st[k];st.querySelector(`[data-u="${k}"]`).style.width=s.st[k]+'%'});
+  $('#sub2').innerHTML=`<span>재산 <b>${fmt(s.money)}</b> ${money()}</span>${s.land?`<span>지대 <b>${fmt(s.land)}</b>/년</span>`:''}<span>명성 <b>${s.fame}</b></span><span>신앙 <b>${s.faith}</b></span><span class="${s.sus>=30?'warn':''}">혐의 <b>${s.sus}</b></span>`;
+  renderPolCard();renderFocus();drawProg(0)}
+function polPos(p){return (p+100)/2}
+function polSpark(w,h){const pts=(s.polHist||[]).slice(-40).concat([[s.year,s.pol]]);if(pts.length<2)return '';const n=pts.length;
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="${w}" y1="${h/2}" y2="${h/2}" stroke="var(--line)" stroke-width="1"/><polyline fill="none" stroke="var(--fg)" stroke-width="1.5" points="${pts.map((p,i)=>`${(i/(n-1)*w).toFixed(1)},${(h/2-p[1]/100*(h/2-2)).toFixed(1)}`).join(' ')}"/><circle cx="${w}" cy="${(h/2-s.pol/100*(h/2-2)).toFixed(1)}" r="2.5" fill="var(--pink)"/></svg>`}
+function facColor(f){return f.pol<=-40?'var(--roy)':f.pol>=45?'var(--rad)':'var(--mod)'}
+function facCard(f,big){const a=affinity(f),mem=s.party===f.id;const c=el('button','fac'+(mem?' mem':'')+(big?' big':''));c.type='button';c.style.setProperty('--fc',facColor(f));
+  c.innerHTML=`<span class="fh">${f.n}</span><span class="por" aria-hidden="true">${f.lead.slice(0,1)}</span><span class="fl">${f.lead}</span>`+
+   (big?`<dl><dt>목표</dt><dd>${f.goal}</dd><dt>신념</dt><dd>${f.belief}</dd><dt>지지층</dt><dd>${f.sup}</dd></dl>`:'')+
+   `<span class="aff"><i style="width:${a}%"></i></span><span class="fa">${mem?`소속 · ${PRANK[s.prank]}`:`친밀도 ${a}%`}</span>`;
+  c.onclick=()=>showPolitics();return c}
+function renderPolCard(){const C=$('#polCard');C.innerHTML='';
+  const h=el('div','ch');h.innerHTML=`<h2>정치 성향</h2><span class="score" style="color:${s.pol<=-25?'var(--roy)':s.pol>=35?'var(--rad)':'var(--fg)'}">${s.pol>0?'+':''}${s.pol} · ${polLabel(s.pol)}</span>`;C.appendChild(h);
+  const sp=el('div','spec');const prev=(s.polHist&&s.polHist.length)?s.polHist[s.polHist.length-1][1]:s.pol;
+  sp.innerHTML=`<div class="bar"><i class="ghost" style="left:${polPos(prev)}%"></i><i class="mk" style="left:${polPos(s.pol)}%"></i></div><div class="lbl"><span>절대왕정</span><span>왕당</span><span>온건</span><span>공화</span><span>자코뱅</span><span>상퀼로트</span></div>`;C.appendChild(sp);
+  const sk=el('div','sk');sk.innerHTML=`<span class="mut">성향의 변화</span>${polSpark(220,30)}`;C.appendChild(sk);
+  const fs=activeFactions();if(fs.length){const row=el('div','facs');fs.slice().sort((a,b)=>a.pol-b.pol).forEach(f=>row.appendChild(facCard(f)));C.appendChild(row)}
+  const ch=el('div','chips');ISSUES.forEach(iss=>{const v=s.stance[iss.id];const c=el('span','chip'+(v!=null?' on':''),`${iss.n} · ${v!=null?iss.opts[v][0]:'미정'}`);ch.appendChild(c)});C.appendChild(ch);
+  const b=el('button','pill','정치 활동 ›');b.type='button';b.onclick=()=>showPolitics();C.appendChild(b)}
+function renderFocus(){const F=$('#focus');F.innerHTML='';F.appendChild(el('h2',null,'올해의 초점'));
+  F.appendChild(el('p','mut',`${child()?(s.age<7?'아기':'아이'):statusText()} · ${REGIONS[loc()].n} · ${ESTATES[s.estate].n}${s.party?` · ${FAC[s.party].n} ${PRANK[s.prank]}`:''}`));
+  if(child()){F.appendChild(el('p',null,s.age<7?'아직 어립니다. 부모님이 키우는 중이에요. 일곱 살 무렵 글을 배울지 정해지고, 열네 살에 첫 영성체를 마치면 성품과 진로를 고릅니다.':'아이입니다. 열네 살이 되면 성품을 정하고 먹고살 길을 고릅니다.'));return}
+  F.appendChild(el('p',null,`한 해의 방침: 해가 바뀔 때 이 방침대로 지표가 자랍니다.${s.goal?` 평생의 뜻은 ‘${s.goal}’${s.goalDone?'(이룸)':''}.`:''}`));
+  const pg=el('div','plans');PLANS.forEach(p=>{const b=el('button','plan');b.type='button';b.innerHTML=`<b>${p.k}</b><small>${p.s}</small>`;b.setAttribute('aria-pressed',String(s.plan===p.k));
     if(p.k==='학업'&&!lit())b.disabled=true;if(p.k==='정치'&&s.year<1788)b.disabled=true;
-    b.onclick=()=>{s.plan=p.k;save();pg.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render()};pg.appendChild(b)});pin.appendChild(pg);
-  pin.appendChild(el('h3',null,'올해 할 일'));pin.appendChild(el('p','meta','각각 한 해에 한 번. 사건 창이 열려 있으면 끝난 뒤에 할 수 있다.'));
-  const ac=el('div','acts');const list=ACTS.filter(a=>{try{return a.c()}catch(e){return false}});
-  if(!list.length)ac.appendChild(el('p','meta',s.cond==='prison'?'감옥에서는 할 수 있는 일이 없다.':s.cond==='emigre'?'망명지에서는 기다릴 수밖에 없다.':'지금은 할 수 있는 일이 없다.'));
-  list.forEach(a=>{const used=s.acts[a.k]===s.year,poor=a.cost&&s.money<a.cost;const b=el('button','opt');b.type='button';const sp=el('span');sp.appendChild(document.createTextNode(a.n));sp.appendChild(el('small',null,a.s));b.appendChild(sp);
-    b.appendChild(el('em',null,used?'올해 함':sheetLive?'사건 뒤에':''));b.disabled=used||poor||sheetLive||busy;
-    b.onclick=async()=>{if(busy||sheetLive)return;s.acts[a.k]=s.year;busy=true;freeze();try{if(a.inter){await a.inter();if(sheetLive)await done()}else a.f()}catch(e){console.error(e);sheetClose()}busy=false;render();save();if(s.dead){running=false;setTimeout(showEnd,900);return}if(isDesk())refreshSide();else showActs();schedule()};
-    ac.appendChild(b)});pin.appendChild(ac);
-  if(!isDesk()){const c=el('button','btn','닫기');c.type='button';c.style.marginTop='16px';c.onclick=closePanel;pin.appendChild(c)}}
-function showPanel(){if(!s)return;const pin=panelTarget();pin.appendChild(el('h2','disp',`${s.given[0]} ${s.sur[0]}의 이력`));
+    b.onclick=()=>{s.plan=p.k;save();renderFocus()};pg.appendChild(b)});F.appendChild(pg)}
+// 진행 막대: 한 해 가운데 지금 위치
+function drawProg(dur){const f=$('#progFill');if(!f||!s)return;const step=tickMonths()/12;const cur=(s.month+1)/12;f.style.transition='none';f.style.width=Math.min(100,(cur-step+step*frac)*100)+'%';
+  if(dur){void f.offsetWidth;f.style.transition=`width ${dur}ms linear`;f.style.width=Math.min(100,cur*100)+'%'}}
+
+/* ================= 겹창(행동·정치·이력·설명) ================= */
+let panelResume=false;
+function openPanel(title){const pin=$('#pin');pin.innerHTML='';$('#pT').textContent=title;$('#panel').hidden=false;document.body.classList.add('modal');if(running&&!paused){panelResume=true;setPaused(true)}return pin}
+function closePanel(){$('#panel').hidden=true;document.body.classList.remove('modal');if(panelResume){panelResume=false;setPaused(false)}}
+function actButtons(list,box){list.forEach(a=>{const used=s.acts[a.k]===s.year,poor=a.cost&&s.money<a.cost;const b=el('button','opt row');b.type='button';
+  const sp=el('span');sp.appendChild(el('span','ol',a.n));sp.appendChild(el('small',null,a.s));b.appendChild(sp);b.appendChild(el('em',null,used?'올해 함':a.cost?`${a.cost}`:''));b.disabled=used||poor||sheetLive||busy;
+  b.onclick=async()=>{if(busy||sheetLive)return;s.acts[a.k]=s.year;busy=true;$('#panel').hidden=true;try{if(a.inter){await a.inter();if(sheetLive)await done()}else a.f()}catch(e){console.error(e);sheetClose()}busy=false;render();save();if(s.dead){running=false;setTimeout(showEnd,900);return}closePanel()};
+  box.appendChild(b)})}
+function showActs(){if(!s)return;const pin=openPanel('행동');
+  if(child()){pin.appendChild(el('p','mut','열네 살이 되면 할 수 있는 일이 생깁니다.'));return}
+  pin.appendChild(el('p','mut','각각 한 해에 한 번. 시간이 멈춘 동안 고를 수 있습니다.'));
+  const list=ACTS.filter(a=>{try{return !a.hide&&a.c()}catch(e){return false}});const box=el('div','acts');
+  if(!list.length)box.appendChild(el('p','mut',s.cond==='prison'?'감옥에서는 할 수 있는 일이 없다.':s.cond==='emigre'?'망명지에서는 기다릴 수밖에 없다.':'지금은 할 수 있는 일이 없다.'));
+  actButtons(list,box);pin.appendChild(box)}
+function showPolitics(){if(!s)return;const pin=openPanel('정치');
+  const top=el('div','pol-top');top.innerHTML=`<div class="big">${s.pol>0?'+':''}${s.pol}</div><div><b>${polLabel(s.pol)}</b><div class="mut">${s.party?`${FAC[s.party].n} ${PRANK[s.prank]}`:'무소속'}</div></div>${polSpark(160,40)}`;pin.appendChild(top);
+  pin.appendChild(el('h3',null,'지금의 파벌'));const fs=activeFactions().slice().sort((a,b)=>a.pol-b.pol);
+  if(!fs.length)pin.appendChild(el('p','mut','아직 정치적 파벌이 뚜렷하지 않다.'));
+  const row=el('div','facs big');fs.forEach(f=>{const card=facCard(f,true);card.onclick=null;const w=el('div','facw');w.appendChild(card);
+    if(!child()&&s.age>=16&&s.cond==='normal'&&s.party!==f.id){const b=el('button','pill',isM()?'가입한다':'지지한다');b.type='button';b.onclick=()=>{joinParty(f.id);render();save();showPolitics()};w.appendChild(b)}
+    row.appendChild(w)});pin.appendChild(row);
+  pin.appendChild(el('h3',null,'나의 강령'));pin.appendChild(el('p','mut','쟁점마다 입장을 밝힌다. 한 해에 쟁점 하나당 한 번. 공포정치 때 관용을, 복고왕정 때 급진을 말하면 혐의를 산다.'));
+  ISSUES.forEach(iss=>{const r=el('div','iss');r.appendChild(el('div','in',`${iss.n} · `));r.firstChild.appendChild(el('span','fr',iss.fr));const ns=el('div','nodes');
+    iss.opts.forEach(([n,v],i)=>{const on=s.stance[iss.id]===i;const b=el('button','node'+(on?' on':''));b.type='button';b.innerHTML=`<b>${n}</b><small>${on?'✓ 지지 중':'표명'}</small>`;b.style.setProperty('--nc',v<=-30?'var(--roy)':v>=40?'var(--rad)':'var(--mod)');
+      b.disabled=on||child()||s.acts['st_'+iss.id]===s.year||s.cond!=='normal';b.onclick=()=>{s.acts['st_'+iss.id]=s.year;setStance(iss.id,i,true);render();save();showPolitics()};ns.appendChild(b)});r.appendChild(ns);pin.appendChild(r)});
+  pin.appendChild(el('h3',null,'당 활동'));const list=PACTS.filter(a=>{try{return a.c()}catch(e){return false}});const box=el('div','acts');
+  if(!list.length)box.appendChild(el('p','mut',s.party?'지금은 할 수 있는 당 활동이 없다.':'파벌에 들면 연설, 논설, 시위, 출마 같은 활동을 할 수 있다.'));actButtons(list,box);pin.appendChild(box)}
+function showHist(){if(!s)return;const pin=openPanel('이력');
   const dl=el('dl','kv');const add=(k,v)=>{dl.appendChild(el('dt',null,k));dl.appendChild(el('dd',null,v))};
-  add('태어난 곳',`${REGIONS[s.region].n} (${REGIONS[s.region].fr}), 1750년`);add('신분',`${ESTATES[s.estate].n} — ${ESTATES[s.estate].fr}`);add('신앙',{catholic:'가톨릭',protestant:'신교(위그노·루터파)',jewish:'유대교'}[s.faithKind]);add('글',lit()?'읽고 쓴다':'문맹');
+  add('이름',`${s.given[0]} ${s.sur[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}`);add('태어난 곳',`${REGIONS[s.region].n}, ${s.by}년 ${s.bm+1}월`);add('신분',`${ESTATES[s.estate].n} — ${ESTATES[s.estate].fr}`);add('신앙',{catholic:'가톨릭',protestant:'신교(위그노·루터파)',jewish:'유대교'}[s.faithKind]);add('글',lit()?'읽고 쓴다':'문맹');
   if(s.trait)add('성품',s.trait);if(s.goal)add('평생의 뜻',`${s.goal}${s.goalDone?' (이룸)':''}`);
   add('부모',`아버지 ${s.fa.alive?'생존':'사망'}, 어머니 ${s.mo.alive?'생존':'사망'}, 형제 ${s.sibs}명`);
   add('배우자',s.spouse?`${s.spouse.n} (${ESTATES[s.spouse.estate].n}) ${s.spouse.alive?'':s.divorced?'— 이혼':'— 사별'}`:'없음');
   add('자녀',s.kids.length?s.kids.map(k=>`${k.n}(${k.sex==='M'?'남':'여'}, ${k.alive?s.year-k.y+'세':'사망'})`).join(', '):'없음');
-  add('정치 성향',`${polLabel(s.pol)} (${s.pol>0?'+':''}${s.pol})`);pin.appendChild(dl);
+  add('정치',`${polLabel(s.pol)} (${s.pol>0?'+':''}${s.pol})${s.party?` · ${FAC[s.party].n} ${PRANK[s.prank]}`:''}`);pin.appendChild(dl);
   pin.appendChild(el('h3',null,'거쳐 간 일'));const ul=el('ul','hist');if(!s.hist.length)ul.appendChild(el('li',null,'아직 없다'));
-  s.hist.forEach(h=>{const li=el('li',null,h.n);li.appendChild(el('small',null,`${h.y0}–${h.y1??'지금'} · ${h.age}세부터`));ul.appendChild(li)});pin.appendChild(ul);
-  const ex=[];if(s.flags.bastille)ex.push('바스티유 공격');if(s.flags.marche)ex.push('베르사유 행진');if(s.flags.dix)ex.push('8월 10일 튈르리 공격');if(s.flags.club)ex.push('자코뱅 클럽');if(s.flags.regicide)ex.push('국왕 사형 투표');if(s.flags.refractory)ex.push('선서 거부');if(s.flags.juror)ex.push('헌법 선서');if(s.cnt.emigre)ex.push('망명');if(s.cnt.arrest)ex.push(`체포 ${s.cnt.arrest}회`);if(s.cnt.battle)ex.push(`전투 ${s.cnt.battle}회`);if(s.cnt.wound)ex.push(`부상 ${s.cnt.wound}회`);if(s.flags.legion)ex.push('레지옹 도뇌르');if(s.flags.title)ex.push('제국 작위');if(s.flags.bienNat)ex.push('국유재산 매입');
-  if(ex.length){pin.appendChild(el('h3',null,'혁명의 발자취'));pin.appendChild(el('p',null,ex.join(' · ')))}
-  if(!isDesk()){const c=el('button','btn','닫기');c.type='button';c.style.marginTop='16px';c.onclick=closePanel;pin.appendChild(c)}}
-function showHelp(){const pin=panelTarget();pin.appendChild(el('h2','disp','설명'));const g=el('div','gloss');
-  [['학식','글과 교양. 문맹이면 25를 넘지 못한다. 법조·교회·문필의 길과 선거에 쓰인다.'],['처세','사람을 다루는 솜씨. 승진, 항변, 혼담, 협상에 쓰인다.'],['건강','낮으면 병사 확률이 크게 오른다. 나이 쉰부터 해마다 줄어든다.'],['담력','위험한 선택의 판정에 쓰인다. 전투, 도주, 결투.'],
-   ['재산',`리브르(1795년부터 프랑). 날품팔이 연 140, 변호사 1,800, 대귀족은 수만에 이른다. 1791~96년 아시냐 붕괴 때 현금 가치가 녹는다. 땅(지대)은 덜 잃는다.`],['명성','이름이 알려진 정도. 선거, 승진, 훈장에 쓰인다.'],['신앙','교회에 대한 마음. 성직의 조건이고, 비기독교화 시기엔 화를 부를 수 있다.'],
-   ['혐의','공포정치(1793~94) 때 체포될 확률을 끌어올린다. 귀족 출신, 선서 거부, 왕당파 성향, 부유함, 반란 지역 거주도 체포 확률을 높인다. 해마다 조금씩 줄어든다.'],['성향','절대왕정파에서 급진 상퀼로트까지. 시대마다 위험한 쪽이 바뀐다. 1794년엔 왕당파가, 1795년 남부와 1816년엔 급진파가 위험하다.'],
-   ['주사위','유리한 조건마다 주사위를 하나 더 던져 높은 눈을, 불리하면 낮은 눈을 쓴다(최대 3개).'],['역사적 확률','징집, 학살, 처형, 전사 같은 일은 당대 통계에서 뽑은 확률로 정해진다. 붉은 막대가 그 확률이다.']].forEach(([k,v])=>{const d=el('div');d.appendChild(el('b',null,k));d.appendChild(el('p',null,v));g.appendChild(d)});
-  pin.appendChild(g);if(!isDesk()){const c=el('button','btn','닫기');c.type='button';c.style.marginTop='16px';c.onclick=closePanel;pin.appendChild(c)}}
+  s.hist.forEach(h=>{const li=el('li',null,h.n);li.appendChild(el('small',null,` ${h.y0}–${h.y1??'지금'} · ${h.age}세부터`));ul.appendChild(li)});pin.appendChild(ul);
+  const ex=[];if(s.flags.bastille)ex.push('바스티유 공격');if(s.flags.marche)ex.push('베르사유 행진');if(s.flags.dix)ex.push('8월 10일 튈르리 공격');if(s.flags.regicide)ex.push('국왕 사형 투표');if(s.flags.refractory)ex.push('선서 거부');if(s.flags.juror)ex.push('헌법 선서');if(s.cnt.emigre)ex.push('망명');if(s.cnt.arrest)ex.push(`체포 ${s.cnt.arrest}회`);if(s.cnt.battle)ex.push(`전투 ${s.cnt.battle}회`);if(s.flags.legion)ex.push('레지옹 도뇌르');if(s.flags.title)ex.push('제국 작위');if(s.flags.bienNat)ex.push('국유재산 매입');if(s.met&&s.met.length)ex.push('만난 인물: '+s.met.join(', '));
+  if(ex.length){pin.appendChild(el('h3',null,'혁명의 발자취'));pin.appendChild(el('p',null,ex.join(' · ')))}}
+function showHelp(){const pin=openPanel('설명');const g=el('div','gloss');
+  [['진행','1789년 전에는 계절 단위, 1789년 1월부터는 한 달 단위로 흐릅니다. 중요한 결정이 오면 시간이 멈춰요. 고르면 바로 이어집니다.'],['건강','낮으면 병사 확률이 크게 오릅니다. 쉰 살부터 해마다 줄어듭니다.'],['학식','글과 교양. 문맹이면 25를 넘지 못합니다. 법조·교회·문필, 연설과 논설에 쓰입니다.'],['처세','사람을 다루는 솜씨. 승진, 선거, 항변, 당내 지위에 쓰입니다.'],['담력','위험한 선택에 쓰입니다. 전투, 도주, 시위, 결투.'],
+   ['정치 성향','-100(절대왕정)에서 +100(급진 상퀼로트)까지. 강령 표명, 사건 선택, 파벌 활동으로 움직이고 해마다 기록됩니다. 시대마다 위험한 쪽이 바뀝니다.'],['파벌','그 시기에 실제로 있던 파벌만 나타납니다. 친밀도는 성향과 강령이 얼마나 맞는지입니다. 파벌이 몰락하면 지위가 높을수록 위험합니다.'],
+   ['혐의','공포정치(1793~94) 때 체포 확률을 높입니다. 귀족 출신, 선서 거부, 왕당파 성향, 부유함, 반란 지역도 위험합니다.'],['자료','기록의 ‘자료’ 줄은 판정 주사위와 당대 통계에서 뽑은 확률을 보여 줍니다.']].forEach(([k,v])=>{const d=el('div');d.appendChild(el('b',null,k));d.appendChild(el('p',null,v));g.appendChild(d)});pin.appendChild(g)}
+function showLives(){const pin=openPanel('지난 인생');const l=loadLives();if(!l.length)pin.appendChild(el('p','mut','아직 기록이 없습니다.'));const ul=el('ul','lives');
+  l.forEach(x=>{const li=el('li');li.appendChild(el('b',null,x.ep));li.appendChild(document.createTextNode(` — ${x.n}, ${x.y}, ${x.age}세`));li.appendChild(el('p',null,x.txt));ul.appendChild(li)});pin.appendChild(ul)}
 
 /* ================= 진행 제어 ================= */
 let running=false,paused=false,busy=false,speed=1,timer=null;
 let frac=0,tStart=0,tDur=0,ticking=false;
-function drawClock(dur){for(const f of [$('#clockFill'),$('#dclockFill')]){if(!f||!s)continue;f.style.transition='none';f.style.width=((s.season+frac)/4*100)+'%';
-  if(dur){void f.offsetWidth;f.style.transition=`width ${dur}ms linear`;f.style.width=((s.season+1)/4*100)+'%'}}}
-function freeze(){if(ticking){const e=performance.now()-tStart;frac=Math.min(.999,frac+(1-frac)*e/tDur);ticking=false}clearTimeout(timer);drawClock(0)}
-function schedule(){clearTimeout(timer);if(!running||paused||busy||s.dead){drawClock(0);return}
-  const dur=(1-frac)*msPer()/speed;tStart=performance.now();tDur=dur;ticking=true;drawClock(dur);
-  timer=setTimeout(()=>{ticking=false;frac=0;drawClock(0);step()},dur)}
+function freeze(){if(ticking){const e=performance.now()-tStart;frac=Math.min(.999,frac+(1-frac)*e/tDur);ticking=false}clearTimeout(timer);drawProg(0)}
+function schedule(){clearTimeout(timer);if(!running||paused||busy||sheetLive||s.dead){drawProg(0);return}
+  const dur=(1-frac)*msPer()/speed;tStart=performance.now();tDur=dur;ticking=true;drawProg(dur);
+  timer=setTimeout(()=>{ticking=false;frac=0;step()},dur)}
 async function step(){if(!running||busy)return;busy=true;try{await advanceSeason()}catch(e){console.error(e);sheetClose()}
-  busy=false;render();save();refreshSide();if(s.dead){running=false;setTimeout(showEnd,900);return}
-  if(!child()&&!s.goal&&s.age>=20&&!sheetLive)await pickGoal();schedule()}
+  busy=false;render();save();if(s.dead){running=false;setTimeout(showEnd,900);return}
+  if(!child()&&!s.goal&&s.age>=20)await pickGoal();schedule()}
 async function pickGoal(){busy=true;sheetOpen('평생의 뜻','vocation');shText('스무 살. 무엇을 이루며 살고 싶은가?','q');
-  const i=await shButtons(GOALS.map(g=>({l:g.k,s:g.s,a:{부:'greedy',명예:'social',자유:'radical',신앙:'pious',장수:'safe',가문:'family',학문:'study',무공:'bold'}[g.k]})));s.goal=GOALS[i].k;say(`평생의 뜻을 ‘${s.goal}’에 두었다.`);await shContinue();sheetClose();busy=false;render();save()}
-const PLAY='<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>',PAUSE='<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3" y="2" width="3.4" height="12" rx="1" fill="currentColor"/><rect x="9.6" y="2" width="3.4" height="12" rx="1" fill="currentColor"/></svg>';
-function setPaused(p,fromPanel){if(fromPanel&&p&&!paused)resumeAfterPanel=true;paused=p;$('#pp').innerHTML=p?PLAY:PAUSE;$('#pp').setAttribute('aria-label',p?'재생':'일시정지');if(p)freeze();else schedule()}
-function setSpeed(v){speed=v;document.querySelectorAll('#spd button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.s===v)));if(running&&!paused&&!busy){freeze();schedule()}try{localStorage.setItem(KEY+'_spd',v)}catch(e){}}
+  const i=await shButtons(GOALS.map(g=>({l:g.k,s:g.s,a:{부:'greedy',명예:'social',자유:'radical',신앙:'pious',장수:'safe',가문:'family',학문:'study',무공:'bold'}[g.k]})));s.goal=GOALS[i].k;say(`평생의 뜻을 ‘${s.goal}’에 두었다.`);await done();busy=false;render();save()}
+const PLAY='<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>',PAUSE='<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="3" y="2" width="3.4" height="12" rx="1" fill="currentColor"/><rect x="9.6" y="2" width="3.4" height="12" rx="1" fill="currentColor"/></svg>';
+function setPaused(p){paused=p;$('#pp').innerHTML=p?PLAY:PAUSE;$('#pp').setAttribute('aria-label',p?'재생':'일시정지');if(p)freeze();else schedule()}
+function setSpeed(v){speed=v;document.querySelectorAll('#spd button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.s===v)));if(s)$('#subline').textContent=`${ym()} · ${s.given[0]} ${s.sur[0]} · 1년 ≈ ${secPerYear()}초`;if(running&&!paused&&!busy){freeze();schedule()}try{localStorage.setItem(KEY+'_spd',v)}catch(e){}}
 
 /* ================= 저장 ================= */
 function save(){try{if(s&&!s.dead)localStorage.setItem(KEY,JSON.stringify(s));else localStorage.removeItem(KEY)}catch(e){}}
-function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');return x&&x.v===1?x:null}catch(e){return null}}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');return x&&x.v===2?x:null}catch(e){return null}}
 function loadLives(){try{return JSON.parse(localStorage.getItem(LKEY)||'[]')}catch(e){return []}}
-function recordLife(out,ep){try{const l=loadLives();l.unshift({n:`${s.given[0]} ${s.sur[0]}`,ep,y:`1750–${s.year}`,age:s.age,txt:out.slice(0,2).join(' ')});localStorage.setItem(LKEY,JSON.stringify(l.slice(0,30)))}catch(e){}}
+function recordLife(out,ep){try{const l=loadLives();l.unshift({n:`${s.given[0]} ${s.sur[0]}`,ep,y:`${s.by}–${s.year}`,age:s.age,txt:out.slice(0,2).join(' ')});localStorage.setItem(LKEY,JSON.stringify(l.slice(0,30)))}catch(e){}}
 
 /* ================= 시작 ================= */
-function start(fresh,o){$('#title').hidden=true;$('#end').hidden=true;$('#log').innerHTML='';shown=0;sheetClose();
-  if(fresh){s=newState(o);birth()}else{flushLog()}
-  render();refreshSide();running=true;busy=false;frac=0;setPaused(false);save()}
+function start(fresh,o){$('#title').hidden=true;$('#end').hidden=true;sheetClose();
+  if(fresh){s=newState(o);rebuildLog();birth()}else rebuildLog();
+  render();running=true;busy=false;frac=0;setPaused(false);save();
+  try{if(!localStorage.getItem(KEY+'_hint')){$('#hint').hidden=false;localStorage.setItem(KEY+'_hint','1');setTimeout(()=>{$('#hint').hidden=true},7000)}}catch(e){}}
 function showNameForm(){const f=$('#nameForm');f.hidden=false;
+  $('#inYear').innerHTML='<option value="">무작위 (1750~1790)</option>'+Array.from({length:41},(_,i)=>1750+i).map(y=>`<option value="${y}">${y}년</option>`).join('');
   const est=$('#inEst');est.innerHTML='<option value="">무작위 (역사 비율)</option>'+Object.entries(ESTATES).map(([k,v])=>`<option value="${k}">${v.n} (${v.w}%)</option>`).join('');
   const reg=$('#inReg');reg.innerHTML='<option value="">무작위</option>'+Object.entries(REGIONS).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join('');
   const rg=()=>{const sx=$('#inSex').value==='F'?'F':'M';$('#inGiven').value=pick(sx==='M'?M_NAMES:F_NAMES)[0]};const rs=()=>{const e=$('#inEst').value;$('#inSur').value=(e&&ESTATES[e].noble?pick(NOBLE_SURS):pick(SURS))[0]};
   $('#rGiven').onclick=rg;$('#rSur').onclick=rs;$('#inSex').onchange=()=>{$('#inGiven').value=''};$('#inEst').onchange=()=>{$('#inSur').value=''};
-  $('#goB').onclick=()=>{const sex=$('#inSex').value==='R'?(R()<.5?'M':'F'):$('#inSex').value;start(true,{sex,estate:$('#inEst').value||null,region:$('#inReg').value||null,given:$('#inGiven').value.trim()||null,sur:$('#inSur').value.trim()||null,hard:$('#inHard').checked})};
+  $('#goB').onclick=()=>{const sex=$('#inSex').value==='R'?(R()<.5?'M':'F'):$('#inSex').value;start(true,{sex,year:+$('#inYear').value||null,estate:$('#inEst').value||null,region:$('#inReg').value||null,given:$('#inGiven').value.trim()||null,sur:$('#inSur').value.trim()||null,hard:$('#inHard').checked})};
   f.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})}
 
 /* ================= 부고 ================= */
+function eraColor(){return `var(--${era().c})`}
 function epithet(){const d=s.death||{},c=d.cause;
   if(s.age<5)return '세례 명부의 짧은 이름';
   if(c==='guillotine')return deputy()||s.flags.wasDeputy?'국민공회의 희생자':noble()?'단두대에 오른 귀족':'단두대의 이슬';
@@ -1745,6 +2020,7 @@ function epithet(){const d=s.death||{},c=d.cause;
   if(c==='battle'&&(s.best.army||0)>=6)return '전장에 쓰러진 장군';if(c==='battle')return `${d.detail||'전장'}의 전사자`;
   if(c==='deported')return '기아나의 유형수';if(c==='drowned')return '강물에 잠긴 이';
   if((s.best.army||0)>=7)return '제국의 원수';if((s.best.army||0)>=6)return T()<1804?'공화국의 장군':'제국의 장군';
+  if(s.party&&s.prank>=3)return `${FAC[s.party].n}의 지도자`;
   if(s.flags.regicide)return '국왕 시해자';if(s.flags.bastille)return '바스티유의 정복자';if(s.flags.marche)return '베르사유로 간 여인';
   if(s.flags.wasDeputy)return '인민의 대표';if(s.best.church>=5)return '주교 각하';if(s.flags.refractory)return '숲 속의 사제';
   if(s.cond==='emigre')return '돌아오지 못한 망명객';if(s.cnt.emigre)return '돌아온 망명객';
@@ -1755,49 +2031,45 @@ function epithet(){const d=s.death||{},c=d.cause;
 function obituary(){const d=s.death,nm=`${s.given[0]} ${s.sur[0]}`,out=[];
   const bestH=s.hist.reduce((b,h)=>{const p=POST[h.id];return !b||p.t>POST[b.id].t?h:b},null);
   const ttl=s.job?pname(job()):bestH?`전 ${bestH.n}`:'';
-  out.push(`${d.year}년 ${d.season}, ${ttl?ttl+' ':''}${jo(nm,'이','가')} ${s.age}세로 숨을 거두었다. 사인은 ${d.cause==='ill'?d.detail:CAUSE[d.cause]}.`);
-  out.push(`1750년 ${REGIONS[s.region].n}의 ${ESTATES[s.estate].n} 집안에서 ${isM()?'아들':'딸'}로 태어났다.${s.faithKind==='protestant'?' 위그노였다.':s.faithKind==='jewish'?' 유대인이었다.':''}${lit()||s.age<8?'':' 평생 글을 몰랐다.'}`);
+  out.push(`${d.year}년 ${s.month+1}월, ${ttl?ttl+' ':''}${jo(nm,'이','가')} ${s.age}세로 숨을 거두었다. 사인은 ${d.cause==='ill'?d.detail:CAUSE[d.cause]}.`);
+  out.push(`${s.by}년 ${REGIONS[s.region].n}의 ${ESTATES[s.estate].n} 집안에서 ${isM()?'아들':'딸'}로 태어났다.${s.faithKind==='protestant'?' 위그노였다.':s.faithKind==='jewish'?' 유대인이었다.':''}${lit()||s.age<8?'':' 평생 글을 몰랐다.'}`);
   if(s.age<14){out.push(s.age<2?'세례를 받은 것이 생의 거의 전부였다. 그 시절 프랑스 아이 넷 중 하나가 그렇게 갔다.':'어른이 되기 전에 세상을 떠났다.');return out}
   if(s.hist.length){const seq=s.hist.map(h=>h.n);out.push(`${[...new Set(seq)].join(', ')}${bat(seq[seq.length-1])?'을':'를'} 거쳤다.`)}
   const ex=[];if(s.flags.bastille)ex.push('1789년 7월 14일 바스티유를 공격했다');if(s.flags.marche)ex.push('빵을 달라며 베르사유까지 행진했다');if(s.flags.constituent)ex.push('삼부회 대표로 뽑혀 테니스코트의 방에 있었다');else if(s.flags.wasDeputy)ex.push('국민의 대표로 의사당에 앉았다');
-  if(s.flags.regicide)ex.push('왕의 사형에 표를 던졌다');if(s.flags.refractory)ex.push('헌법 선서를 거부했다');if(s.flags.juror)ex.push('헌법에 선서했다');if(s.flags.club)ex.push('자코뱅 클럽에 드나들었다');if(s.flags.vendeen)ex.push('방데의 왕당군에 들었다');
-  if(s.cnt.emigre)ex.push(`${s.emiPlace||'국외'}로 망명했다`);if(s.cnt.arrest)ex.push(`${s.cnt.arrest}번 체포되었다`);if(s.flags.russia===false&&s.flags.pow)ex.push('러시아에서 포로가 되었다');if(s.cnt.battle)ex.push(`${s.cnt.battle}번의 전투에 나섰다`);
+  if(s.flags.regicide)ex.push('왕의 사형에 표를 던졌다');if(s.flags.refractory)ex.push('헌법 선서를 거부했다');if(s.flags.juror)ex.push('헌법에 선서했다');if(s.flags.vendeen)ex.push('방데의 왕당군에 들었다');
+  if(s.cnt.emigre)ex.push(`${s.emiPlace||'국외'}로 망명했다`);if(s.cnt.arrest)ex.push(`${s.cnt.arrest}번 체포되었다`);if(s.cnt.battle)ex.push(`${s.cnt.battle}번의 전투에 나섰다`);
   if(ex.length)out.push(ex.join(', ')+'.');
+  out.push(`정치적으로는 ${polLabel(s.pol)}(${s.pol>0?'+':''}${s.pol})였다.${s.party?` 마지막으로 ${FAC[s.party].n}의 ${PRANK[s.prank]}였다.`:''}`);
   const hon=[];if(s.flags.legion)hon.push('레지옹 도뇌르를 받았다');if(s.flags.title)hon.push('제국 작위를 받았다');if(s.flags.book)hon.push('책을 남겼다');if(hon.length)out.push(hon.join(', ')+'.');
   if(s.met&&s.met.length)out.push(`생전에 ${s.met.join(', ')}${bat(s.met[s.met.length-1])?'을':'를'} 직접 보았다.`);
   const k=s.kids.length,ka=adultKids();out.push(s.spouse?`${jo(s.spouse.n,'과','와')} 혼인하여 자녀 ${k}명을 두었고, 그 가운데 ${ka}명이 어른이 되었다.`:'혼인하지 않았다.');
   out.push(`남긴 재산은 ${fmt(s.money)} ${money()}${s.land?`, 해마다 ${fmt(s.land)}의 지대가 나오는 땅`:''}.`);
   return out}
 function showEnd(){const out=obituary(),ep=epithet();recordLife(out,ep);try{localStorage.removeItem(KEY)}catch(e){}
-  const card=$('#card');card.innerHTML='';document.documentElement.style.setProperty('--era',eraColor());
-  card.appendChild(el('div','meta','부고 — nécrologie'));card.appendChild(el('div','ep disp',ep));
-  card.appendChild(el('div','who',`${s.given[0]} ${s.sur[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''} · 1750–${s.year} · 향년 ${s.age}세${s.goal?` · 평생의 뜻 ${s.goal} (${s.goalDone?'이룸':'못 이룸'})`:''}`));
+  const card=$('#card');card.innerHTML='';
+  card.appendChild(el('div','mut','부고 — nécrologie'));card.appendChild(el('div','ep',ep));
+  card.appendChild(el('div','who',`${s.given[0]} ${s.sur[0]} · ${s.by}–${s.year} · 향년 ${s.age}세${s.goal?` · 평생의 뜻 ${s.goal} (${s.goalDone?'이룸':'못 이룸'})`:''}`));
   out.forEach(t=>card.appendChild(el('p',null,t)));
-  const sa={guillotine:'“시민들이여, 나는 공화국의 적이 아니었다.”',battle:'“앞으로!” 그것이 마지막 말이었다.',cold:'눈은 모든 것을 덮었다.',childbirth:'아이는 살았다.'}[s.death.cause]||(s.age>=75?'혁명과 제국과 왕정복고를 모두 겪은 사람이었다.':'');
-  if(sa)card.appendChild(el('p','sa',sa));
-  const eg=$('#endlog');eg.innerHTML='';eg.appendChild(el('h3','disp','평생의 기록'));s.log.forEach((e,i)=>eg.appendChild(logNode(e,s.log[i-1])));
+  if((s.polHist||[]).length>1){const w=el('div','sk');w.innerHTML=`<span class="mut">평생의 정치 성향</span>${polSpark(300,40)}`;card.appendChild(w)}
+  const eg=$('#endlog');eg.innerHTML='';eg.appendChild(el('h2',null,'평생의 기록'));s.log.slice().reverse().forEach(e=>eg.appendChild(entryNode(e)));
   $('#end').hidden=false;$('#end').scrollTop=0;$('#copyB').textContent='부고 복사';
   $('#copyB').onclick=async()=>{const txt=`【${ep}】\n${out.join('\n')}\n\n— 1789 한 시민의 일생`;try{await navigator.clipboard.writeText(txt);$('#copyB').textContent='복사됨'}catch(e){const ta=el('textarea');ta.value=txt;ta.style.width='100%';ta.rows=8;card.appendChild(ta);ta.select();$('#copyB').textContent='아래 글을 선택해 복사하세요'}}}
-function showLives(){const pin=$('#pin');pin.innerHTML='';$('#panel').hidden=false;if(running)setPaused(true,true);pin.appendChild(el('h2','disp','지난 인생'));
-  const l=loadLives();if(!l.length)pin.appendChild(el('p','meta','아직 기록이 없다.'));const ul=el('ul','lives');
-  l.forEach(x=>{const li=el('li');li.appendChild(el('b',null,`${x.ep}`));li.appendChild(document.createTextNode(` — ${x.n}, ${x.y}, ${x.age}세`));li.appendChild(el('p',null,x.txt));ul.appendChild(li)});pin.appendChild(ul)}
 
 /* ================= 연결 ================= */
-function boot(){
-  try{const v=+localStorage.getItem(KEY+'_spd');if([1,4,8,12,16].includes(v))speed=v}catch(e){}setSpeed(speed);
+function boot(){logBox=$('#log');
+  try{const v=+localStorage.getItem(KEY+'_spd');if([1,2,4,8,12,16].includes(v))speed=v}catch(e){}setSpeed(speed);
   const saved=load();if(saved){$('#contB').hidden=false;$('#contB').onclick=()=>{s=saved;start(false)}}
-  if(loadLives().length){$('#livesB').hidden=false}
-  $('#newB').onclick=showNameForm;$('#livesB').onclick=showLives;$('#livesB2').onclick=showLives;$('#dLives').onclick=showLives;
+  if(loadLives().length)$('#livesB').hidden=false;
+  $('#newB').onclick=showNameForm;$('#livesB').onclick=showLives;$('#livesB2').onclick=showLives;
   $('#againB').onclick=()=>{$('#end').hidden=true;$('#title').hidden=false;s=null;$('#contB').hidden=true;$('#livesB').hidden=false;showNameForm()};
   $('#pClose').onclick=closePanel;
-  $('#pp').onclick=()=>{if(running)setPaused(!paused)};$('#autoB').onclick=()=>setAuto(!autoMode);
+  $('#pp').onclick=()=>{if(running)setPaused(!paused)};
   document.querySelectorAll('#spd button').forEach(b=>b.onclick=()=>setSpeed(+b.dataset.s));
-  $('#ab').onclick=showActs;$('#hb').onclick=showPanel;
-  document.querySelectorAll('#dtabs button').forEach(b=>b.onclick=()=>{deskTab=b.dataset.t;refreshSide()});
-  $('#shMin').onclick=()=>sheetMin(true);$('#shRet').onclick=()=>sheetMin(false);
-  $('#toBottom').onclick=()=>{const b=$('#log');b.scrollTop=b.scrollHeight;$('#toBottom').hidden=true};
-  $('#log').addEventListener('scroll',()=>{const b=$('#log');if(b.scrollHeight-b.scrollTop-b.clientHeight<60)$('#toBottom').hidden=true});
-  DQ.addEventListener('change',()=>{render();refreshSide()});
+  $('#nextB').onclick=()=>{if(!running||busy||sheetLive)return;clearTimeout(timer);ticking=false;frac=0;step()};
+  $('#moreB').onclick=e=>{e.stopPropagation();$('#menu').hidden=!$('#menu').hidden};document.addEventListener('click',()=>{$('#menu').hidden=true});
+  $('#mHist').onclick=showHist;$('#mHelp').onclick=showHelp;$('#mLives').onclick=showLives;$('#mPol').onclick=showPolitics;$('#autoT').onclick=()=>setAuto(!autoMode);
+  $('#mNew').onclick=()=>{if(!s)return;running=false;freeze();save();$('#title').hidden=false;$('#contB').hidden=!load();showNameForm()};
+  $('#actB').onclick=showActs;$('#hint').onclick=()=>{$('#hint').hidden=true};
   $('#pp').innerHTML=PAUSE;
 }
 boot();
