@@ -5,6 +5,7 @@ const R=Math.random, ri=(a,b)=>a+Math.floor(R()*(b-a+1)), pick=a=>a[Math.floor(R
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const KEY='fr1789_life_v1', LKEY='fr1789_lives_v1';
 const SEASON=['봄','여름','가을','겨울'];
+const SEASON_FR=['printemps','été','automne','hiver'];
 function wpick(list){const t=list.reduce((a,x)=>a+x[1],0);let r=R()*t;for(const x of list){r-=x[1];if(r<=0)return x[0]}return list[list.length-1][0]}
 function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
 /* 한국어 조사 */
@@ -86,16 +87,16 @@ function polLabel(p){return p<=-60?'절대왕정파':p<=-25?'왕당파':p<=8?'�
 /* ================= 시대 ================= */
 // t = 연도 + 계절/4. 봄=3~5월, 여름=6~8월, 가을=9~11월, 겨울=12~2월.
 const ERAS=[
-  {k:'ancien',a:1750,b:1789.25,n:'구체제',c:'roi'},
-  {k:'constit',a:1789.25,b:1792.5,n:'입헌왕정',c:'or'},
-  {k:'republic',a:1792.5,b:1794.5,n:'국민공회',c:'rouge'},
-  {k:'directory',a:1794.5,b:1799.75,n:'테르미도르·총재정부',c:'gris'},
-  {k:'consulate',a:1799.75,b:1804.25,n:'통령정부',c:'vert'},
-  {k:'empire',a:1804.25,b:1814,n:'제1제국',c:'vert'},
-  {k:'restoration',a:1814,b:1830.5,n:'복고왕정',c:'roi'},
-  {k:'july',a:1830.5,b:1848,n:'7월 왕정',c:'or'},
-  {k:'republic2',a:1848,b:1852,n:'제2공화국',c:'rouge'},
-  {k:'empire2',a:1852,b:1900,n:'제2제국',c:'vert'}
+  {k:'ancien',a:1750,b:1789.25,n:'구체제',c:'roi',h:'De par le Roi',em:'lis'},
+  {k:'constit',a:1789.25,b:1792.5,n:'입헌왕정',c:'or',h:'La Nation, la Loi, le Roi',em:'cocarde'},
+  {k:'republic',a:1792.5,b:1794.5,n:'국민공회',c:'rouge',h:'République française, une et indivisible',em:'bonnet'},
+  {k:'directory',a:1794.5,b:1799.75,n:'테르미도르·총재정부',c:'gris',h:'République française · Directoire exécutif',em:'cocarde'},
+  {k:'consulate',a:1799.75,b:1804.25,n:'통령정부',c:'vert',h:'Bonaparte, Premier Consul de la République',em:'laurel'},
+  {k:'empire',a:1804.25,b:1814,n:'제1제국',c:'vert',h:'Napoléon, Empereur des Français',em:'N'},
+  {k:'restoration',a:1814,b:1830.5,n:'복고왕정',c:'roi',h:'De par le Roi · Charte constitutionnelle',em:'lis'},
+  {k:'july',a:1830.5,b:1848,n:'7월 왕정',c:'or',h:'Louis-Philippe, Roi des Français',em:'cocarde'},
+  {k:'republic2',a:1848,b:1852,n:'제2공화국',c:'rouge',h:'République française',em:'bonnet'},
+  {k:'empire2',a:1852,b:1900,n:'제2제국',c:'vert',h:'Empire français',em:'N'}
 ];
 function T(){return s.year+s.season/4}
 function era(t=T()){if(t>=1815&&t<1815.25)return ERAS[5];return ERAS.find(e=>t>=e.a&&t<e.b)||ERAS[ERAS.length-1]}

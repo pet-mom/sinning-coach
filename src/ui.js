@@ -1,7 +1,7 @@
 /* ================= 기록 화면 ================= */
 function logNode(e,prev){const d=el('div','le '+e.k);
-  if(e.k==='yr'){d.textContent=e.t;return d}
-  const showSe=!prev||prev.k==='yr'||prev.se!==e.se;d.appendChild(el('span','se',showSe?SEASON[e.se]:''));
+  if(e.k==='yr'){const m=e.t.match(/^(\d+)년(?: · (.*))?$/);if(m){d.append(m[1]);d.appendChild(el('small',null,m[2]?`${m[2]} · ${repFr(+m[1])}`:''))}else d.textContent=e.t;return d}
+  const showSe=!prev||prev.k==='yr'||prev.se!==e.se;d.appendChild(el('span','se',showSe?SEASON_FR[e.se]:''));
   let txt=e.t,fxs=null;const m=txt.match(/^(.*?)\s?\(([^()]*(?:[+-]\s?[\d,]+)[^()]*)\)(\.?)$/);if(m&&e.k!=='sys'){txt=m[1]+m[3];fxs=m[2].split(', ')}
   const p=el('p',null,txt);
   if(e.d&&e.d.f){const c=el('span','chips');const ci=e.d.f.indexOf(e.d.v);e.d.f.forEach((f,i)=>c.appendChild(el('span','chip'+(i===ci?' on':''),String(f))));p.prepend(c)}
@@ -13,7 +13,7 @@ function flushLog(){const box=$('#log');if(!box)return;const near=box.scrollHeig
   if(near)box.scrollTop=box.scrollHeight;else if(added)$('#toBottom').hidden=false}
 
 /* ================= 사건 창 ================= */
-function sheetOpen(t,fr){$('#shT').innerHTML='';$('#shT').append(t);if(fr){$('#shT').appendChild(el('span','fr',fr))}$('#shB').innerHTML='';$('#sheet').hidden=false;$('#sheet').classList.remove('min');$('#shRet').hidden=true;sheetLive=true}
+function sheetOpen(t,fr){$('#shDecree').textContent=s?era().h:'';$('#shT').innerHTML='';$('#shT').append(t);if(fr){$('#shT').appendChild(el('span','fr',fr))}$('#shB').innerHTML='';$('#sheet').hidden=false;$('#sheet').classList.remove('min');$('#shRet').hidden=true;sheetLive=true}
 function sheetClose(){$('#sheet').hidden=true;$('#sheet').classList.remove('min');$('#shRet').hidden=true;sheetLive=false}
 function sheetMin(on){$('#sheet').classList.toggle('min',on);$('#shRet').hidden=!on;if(on){const b=$('#log');b.scrollTop=b.scrollHeight;$('#shRet').focus()}else{const f=$('#shB').querySelector('button:not(:disabled)');if(f)f.focus()}}
 function shScroll(){const sh=$('.sh');sh.scrollTop=sh.scrollHeight}
@@ -52,16 +52,25 @@ function shDraw(p,hit,label,why){return new Promise(res=>{const box=el('div','di
     if(RM){fin();return}let t=0;const iv=setInterval(()=>{mk.style.left=(R()*100)+'%';if((t+=70)>=630){clearInterval(iv);fin()}},70)}})}
 
 /* ================= 화면 ================= */
+// 시대 문장: 백합(왕정), 삼색 모표(입헌·총재), 프리기아 모자(공화), 월계관(통령), N(제국)
+const EMB={
+ lis:'<svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 2c-2.6 3.4-3.6 6.6-1.6 10.4-3-.6-5.6-3.6-8.6-1.6-2.4 1.6-1.4 5.4 1.6 5.8-1.6-1.6-.6-3.6 1.2-3.2 2.6.6 4.4 3.4 5.6 5.4H9v2h4.6c-.8 2.6-2.6 4.4-4.6 5.2 2.8.4 5.2-1 7-3.6 1.8 2.6 4.2 4 7 3.6-2-.8-3.8-2.6-4.6-5.2H23v-2h-5.2c1.2-2 3-4.8 5.6-5.4 1.8-.4 2.8 1.6 1.2 3.2 3-.4 4-4.2 1.6-5.8-3-2-5.6 1-8.6 1.6C19.6 8.6 18.6 5.4 16 2z"/></svg>',
+ cocarde:'<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="var(--rouge)"/><circle cx="16" cy="16" r="10" fill="var(--sheet)"/><circle cx="16" cy="16" r="5.5" fill="var(--roi)"/></svg>',
+ bonnet:'<svg viewBox="0 0 32 32"><path fill="var(--rouge)" d="M6 25c0-8 2-15 9-18 4-1.6 9-.6 11 3-3-.4-5 .6-5.4 2.6 2.4 1.6 4.4 5.8 4.4 12.4z"/><rect x="5" y="24" width="21" height="4" fill="currentColor"/><circle cx="20" cy="26" r="2.6" fill="var(--sheet)" stroke="var(--roi)" stroke-width="1.6"/></svg>',
+ laurel:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 27C4 22 3 13 8 6M22 27c6-5 7-14 2-21"/><path fill="currentColor" stroke="none" d="M7 22l-3-1 3-1zM6 17l-3-2 3-.5zM6.5 12l-2.5-2.5 3 .2zM8.5 8l-1.6-3 2.4 1.6zM25 22l3-1-3-1zM26 17l3-2-3-.5zM25.5 12l2.5-2.5-3 .2zM23.5 8l1.6-3-2.4 1.6z"/></svg>',
+ N:'<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="16" r="11.5" fill="none" stroke="currentColor" stroke-width=".6"/><text x="16" y="22.5" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="900" font-style="italic" font-size="17" fill="currentColor">N</text></svg>'
+};
+function repFr(y){return y>=1793&&y<=1805?`an ${['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'][y-1792]} de la République`:''}
 function eraColor(){return `var(--${era().c})`}
 function statusText(){if(child())return [s.age<7?'어린아이':'아이',s.literate?'글을 깨쳤다':''];
   const c={prison:'수감 중',hiding:s.flags.refractaire?'징집 기피자로 숨어 지냄':'은신 중',emigre:`망명 중 · ${s.emiPlace||''}`}[s.cond];if(c)return [c,job()?`전 ${pname(job())}`:''];
   const j=job();if(j)return [pname(j),`${j.fr} · ${TRACKS[j.tr]} · ${s.year-s.jobSince}년째`];
   return [s.flags.retired?'은퇴':noble()&&s.land?'지대로 사는 지주':'일 없음',s.prevJob?`전 ${pname(POST[s.prevJob])}`:''] }
 function famText(){const a=[];if(s.spouse&&s.spouse.alive)a.push(isM()?'아내 있음':'남편 있음');else if(s.widowed)a.push(isM()?'홀아비':'과부');const k=kidsAlive().length;if(k)a.push(`자녀 ${k}`);return a.join(' · ')}
-function render(){if(!s)return;document.documentElement.style.setProperty('--era',eraColor());
+function render(){if(!s)return;document.documentElement.style.setProperty('--era',eraColor());const E=era();for(const id of ['#decree','#ddecree'])$(id).textContent=E.h;$('#demb').innerHTML=EMB[E.em]||'';
   const nm=$('#nm');nm.innerHTML='';nm.append(`${s.given[0]} ${s.sur[0]}`);if(s.given[1])nm.appendChild(el('span','frn',`${s.given[1]} ${s.sur[1]}`));
   $('#meta').textContent=`${REGIONS[loc()].n}${s.loc&&s.loc!==s.region?` (고향 ${REGIONS[s.region].n})`:''} · ${ESTATES[s.estate].n}${s.faithKind==='protestant'?' · 신교도':s.faithKind==='jewish'?' · 유대교':''}${s.trait?` · 성품 ${s.trait}`:''}${!child()?` · 방침 ${s.plan}`:''}`;
-  const w=`${yl()} ${SEASON[s.season]}`;$('#age').textContent=s.age+'세';$('#when').textContent=w;$('#dwhen').textContent=w;$('#dage').textContent=s.age+'세';$('#druler').textContent=`${era().n} · ${ruler()}`;
+  const w=`${yl()} ${SEASON[s.season]}`;$('#age').textContent=s.age+'세';$('#when').textContent=w;$('#dwhen').textContent=w;$('#dage').textContent=s.age+'세';$('#druler').textContent=era().n===ruler()?era().n:`${era().n} · ${ruler()}`;
   const [a,b]=statusText();$('#post').textContent=a;$('#postk').textContent=b;$('#fam').textContent=famText();
   const st=$('#stats');if(!st.children.length)STATS.forEach(([k,n])=>{const d=el('div','st');d.innerHTML=`${n}<b data-k="${k}"></b><s><u data-u="${k}"></u></s>`;st.appendChild(d)});
   STATS.forEach(([k])=>{st.querySelector(`[data-k="${k}"]`).textContent=s.st[k];st.querySelector(`[data-u="${k}"]`).style.width=s.st[k]+'%'});
