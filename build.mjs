@@ -1,10 +1,11 @@
 // src/ 의 조각들을 하나의 HTML로 묶는다.
 //  - docs/index.html : GitHub Pages(docs/ 폴더)에 그대로 올라가는 완전한 HTML 문서
 //  - dist/artifact.html : Claude 아티팩트용 조각(doctype·head 없이). 저장소에는 올리지 않는다.
-import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,readdirSync} from 'node:fs';
 const here=p=>new URL('./'+p,import.meta.url);
 const r=f=>readFileSync(here('src/'+f),'utf8');
-const js=['core.js','life.js','engine.js','history.js','events.js','stories.js','politics.js','scene.js','ui.js'].map(r).join('\n');
+const art=['art/common.js',...readdirSync(here('src/art')).filter(f=>f.endsWith('.js')&&f!=='common.js').sort().map(f=>'art/'+f)];
+const js=['core.js','life.js','engine.js','history.js','events.js','stories.js','politics.js','scene.js',...art,'ui.js'].map(r).join('\n');
 const frag=r('index.template.html').replace('/*@@CSS@@*/',()=>r('style.css')).replace('/*@@JS@@*/',()=>js);
 const cut=frag.indexOf('<div id="app">');
 const head=frag.slice(0,cut).trim(),body=frag.slice(cut).trim();
