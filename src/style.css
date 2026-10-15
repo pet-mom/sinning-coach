@@ -65,7 +65,7 @@ main{display:grid;gap:14px;margin-top:14px}
 .pill:hover{border-color:var(--mut)}
 .pill.pri{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700}
 .scene{padding:0;overflow:hidden}
-#cv{display:block;width:100%;height:auto;aspect-ratio:192/72;image-rendering:pixelated;image-rendering:crisp-edges;background:#0b1230}
+#cv{display:block;width:100%;height:auto;aspect-ratio:256/96;image-rendering:pixelated;image-rendering:crisp-edges;background:#0b1230}
 .sc-t{padding:12px 18px 14px}
 .where{font-size:1.08rem;font-weight:500}
 .era{margin-top:2px}
