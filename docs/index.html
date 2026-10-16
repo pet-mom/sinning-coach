@@ -1558,6 +1558,7 @@ const gentry=()=>free()&&(noble()||rich());
 let ev2P=null,ev2N='';
 const skN=k=>(SKILLS.find(x=>x[0]===k)||[k,k])[1];
 const ev2Who=r=>`${r.role} ${r.n}`;
+const ev2He=r=>r.sex==='F'?'그녀':'그';
 
 const EV=[
  // ---------- 어린 시절 ----------
@@ -1685,17 +1686,17 @@ const EV=[
    {l:'문을 걸어 잠근다',s:'',a:'safe',f:()=>say('창 너머로 고함 소리를 들었다.'+fx({vord:1}))}]),
  // 벗의 부탁: 관계 인물이 실제로 도움을 청한다
  C('ev2_friend',()=>free()&&relsAlive().some(r=>['친구','동료'].includes(r.role)&&r.close>=40),.8,3,'벗의 부탁','un service',()=>{ev2P=pick(relsAlive().filter(r=>['친구','동료'].includes(r.role)&&r.close>=40));
-   const r=ev2P;return `${ev2Who(r)}${bat(r.n)?'이':'가'} 찾아왔다. ${!urban()?'비가 오기 전에 밀단을 거둬들여야 하는데 일손이 모자란다고 한다.':R()<.5?'셋방에서 쫓겨나 오늘 안에 짐을 옮겨야 한다고 한다.':'빚쟁이에게 몰려 집기를 압류당하게 생겼다고 한다.'} 그의 눈빛이 간절하다.`},()=>{const r=ev2P;return [
+   const r=ev2P;return `${ev2Who(r)}${bat(r.n)?'이':'가'} 찾아왔다. ${!urban()?'비가 오기 전에 밀단을 거둬들여야 하는데 일손이 모자란다고 한다.':R()<.5?'셋방에서 쫓겨나 오늘 안에 짐을 옮겨야 한다고 한다.':'빚쟁이에게 몰려 집기를 압류당하게 생겼다고 한다.'} ${ev2He(r)}의 눈빛이 간절하다.`},()=>{const r=ev2P;return [
    {l:'팔을 걷어붙이고 거든다',s:'체력 판정',a:'family work',f:async()=>{const {m,why}=md([[s.st.str>=50,1,'체력'],[!urban()&&s.sk.farm>=30,1,'농사 솜씨'],[s.st.str<30,-1,'힘 부족'],[s.age>=55,-1,'나이']]);const r2=await roll(m,{label:'일손 거들기',why});
-     if(r2.v>=3)say(`해 질 녘까지 ${r.n}${bat(r.n)?'과':'와'} 함께 일을 끝냈다. 그는 그대 손을 오래 붙잡았다.`+fx({str:1,rloc:1})+relFx(r,{close:10,trust:6}));else say('짐을 들다 허리를 삐끗했다. 그래도 그는 고마워했다.'+fx({hp:-3})+relFx(r,{close:6,trust:3}))}},
+     if(r2.v>=3)say(`해 질 녘까지 ${r.n}${bat(r.n)?'과':'와'} 함께 일을 끝냈다. ${ev2He(r)}는 그대 손을 오래 붙잡았다.`+fx({str:1,rloc:1})+relFx(r,{close:10,trust:6}));else say(`짐을 들다 허리를 삐끗했다. 그래도 ${ev2He(r)}는 고마워했다.`+fx({hp:-3})+relFx(r,{close:6,trust:3}))}},
    {l:'돈을 보탠다',s:'재산 -40',a:'social',dis:s.money<40,f:()=>say(`${r.n}에게 40 ${money()}을 쥐여 주었다.`+fx({money:-40})+relFx(r,{trust:6,close:4}))},
    {l:'바쁘다며 돌려보낸다',s:'',a:'safe greedy',f:()=>say(`${r.n}${bat(r.n)?'은':'는'} 말없이 돌아갔다.`+fx({rloc:-1})+relFx(r,{close:-12,trust:-8}))}]}),
  // 스승: 숙련을 기르는 길. 이미 스승이 있으면 그에게서 배운다
  C('ev2_mentor',()=>free()&&s.age>=14&&s.age<40&&!rich()&&(!!job()||['artisan','peasant'].includes(s.estate)),.8,6,'솜씨를 물려받다','le tour de main',()=>{const k=mainSkill();ev2P=relsAlive().find(r=>r.role==='스승')||null;ev2N=ev2P?ev2P.n:person();
-   const j=job(),who=ev2P?'스승 ':({army:'고참 하사관 ',church:'노신부 ',law:'노련한 선배 ',med:'늙은 외과의 ',farm:'늙은 농부 ',letters:'나이 든 문필가 ',pol:'노련한 선배 '}[j&&j.tr]||(s.estate==='peasant'?'늙은 농부 ':'늙은 장인 '));return `${who}${ev2N}${bat(ev2N)?'이':'가'} 그대의 ${skN(k)} 솜씨를 눈여겨보았다. 저녁마다 손수 요령을 가르쳐 주겠다고 한다. 대신 그의 일을 거들어야 한다.`},()=>{const k=mainSkill(),r=ev2P,n=ev2N;return [
+   const j=job(),who=ev2P?'스승 ':({army:'고참 하사관 ',church:'노신부 ',law:'노련한 선배 ',med:'늙은 외과의 ',farm:'늙은 농부 ',letters:'나이 든 문필가 ',pol:'노련한 선배 '}[j&&j.tr]||(s.estate==='peasant'?'늙은 농부 ':'늙은 장인 '));return `${who}${ev2N}${bat(ev2N)?'이':'가'} 그대의 ${skN(k)} 솜씨를 눈여겨보았다. 저녁마다 손수 요령을 가르쳐 주겠다고 한다. 대신 ${ev2P?ev2He(ev2P):'그'}의 일을 거들어야 한다.`},()=>{const k=mainSkill(),r=ev2P,n=ev2N;return [
    {l:'배운다',s:'기술 판정',a:'study work',f:async()=>{const {m,why}=md([[s.st.dex>=45,1,'손재주'],[(s.sk[k]||0)>=30,1,'기초가 있음'],[s.st.edu>=50,1,'배움이 빠름'],[s.st.dex<25,-1,'둔한 손']]);const r2=await roll(m,{label:'수련',why});
      const g=r2.v>=5?7:r2.v>=3?5:2;let rel='';if(r)rel=relFx(r,{resp:6,close:5});else{const nr=addRel('스승',{n,close:55,resp:60,sex:'M'});if(nr)rel=` (${n}${bat(n)?'을':'를'} 스승으로 모시게 되었다)`}
-     say((r2.v>=5?'몇 해 걸릴 요령을 한 겨울에 익혔다.':r2.v>=3?'손끝에 새 요령이 붙었다.':'꾸중만 실컷 들었다. 그래도 조금은 늘었다.')+fx({[k]:g,dex:1})+rel)}},
+     say((r2.v>=5?'몇 해 걸릴 요령을 한 철 만에 익혔다.':r2.v>=3?'손끝에 새 요령이 붙었다.':'꾸중만 실컷 들었다. 그래도 조금은 늘었다.')+fx({[k]:g,dex:1})+rel)}},
    {l:'사양한다',s:'',a:'safe',f:()=>say('저녁은 쉬고 싶었다.'+(r?relFx(r,{close:-5}):''))}]}),
  // 맞수의 모함
  C('ev2_rival',()=>free()&&!!rival(),.8,3,'맞수의 모함','calomnie',()=>{ev2P=rival();const r=ev2P;
@@ -1703,23 +1704,23 @@ const EV=[
    {l:'솜씨로 보여 준다',s:'숙련 판정',a:'work bold',f:async()=>{const {m,why}=md([[(s.sk[k]||0)>=40,1,skN(k)],[s.st.dex>=55,1,'기술'],[s.rep.rguild>=60,1,'동업자들의 신뢰'],[(s.sk[k]||0)<15,-1,'솜씨 부족']]);const r2=await roll(m,{label:'솜씨 겨루기',why});
      if(r2.v>=4)say(`동업자들 앞에서 일을 해 보였다. 아무도 ${r.n}의 말을 믿지 않게 되었다.`+fx({rguild:5,[k]:1,sus:terror()?-3:0})+relFx(r,{riv:5,resp:8}));else say('하필 그날 손이 떨렸다. 뒷말이 더 커졌다.'+fx({rguild:-4,sus:terror()?6:0})+relFx(r,{riv:3}))}},
    {l:'사람들 앞에서 따져 묻는다',s:'웅변 판정',a:'social bold',f:async()=>{const {m,why}=md([[s.sk.orat>=35,1,'웅변'],[s.st.soc>=55,1,'사교'],[s.rep.rloc>=60,1,'이웃의 신망']]);const r2=await roll(m,{label:'말싸움',why});
-     if(r2.v>=4)say(`${r.n}의 거짓말을 하나하나 짚었다. 그는 얼굴을 붉히고 자리를 떴다.`+fx({rloc:2,rguild:2,orat:1,sus:terror()?-3:0})+relFx(r,{riv:6}));else say('언성만 높아졌다. 둘 다 체면을 잃었다.'+fx({rloc:-2,orat:1})+relFx(r,{riv:4}))}},
-   {l:'같은 수로 갚아 준다',s:'',a:'greedy',f:()=>say(`${r.n}의 빚 이야기를 술집에 흘렸다. 그도 한동안 고개를 들지 못했다.`+fx({rguild:1,rloc:-2,vhon:-2})+relFx(r,{riv:10,close:-10}))}]}),
+     if(r2.v>=4)say(`${r.n}의 거짓말을 하나하나 짚었다. ${ev2He(r)}는 얼굴을 붉히고 자리를 떴다.`+fx({rloc:2,rguild:2,orat:1,sus:terror()?-3:0})+relFx(r,{riv:6}));else say('언성만 높아졌다. 둘 다 체면을 잃었다.'+fx({rloc:-2,orat:1})+relFx(r,{riv:4}))}},
+   {l:'같은 수로 갚아 준다',s:'',a:'greedy',f:()=>say(`${r.n}의 빚 이야기를 술집에 흘렸다. ${ev2He(r)}도 한동안 고개를 들지 못했다.`+fx({rguild:1,rloc:-2,vhon:-2})+relFx(r,{riv:10,close:-10}))}]}),
  // 후원자의 손길: 영향력을 얻는 대신 그의 편이 된다
  C('ev2_patron',()=>free()&&!!patron(),.8,4,'후원자의 만찬','protection',()=>{ev2P=patron();const r=ev2P;const f=r.fac&&FAC[r.fac]&&activeFactions().some(x=>x.id===r.fac)?FAC[r.fac]:null;
-   return `후원자 ${r.n}${bat(r.n)?'이':'가'} 그의 집 만찬에 그대를 불렀다. 쓸모 있는 사람들을 소개해 주겠다고 한다. ${f?`그는 ${f.n} 사람이다. 식탁에서 그대가 어느 편인지 모두가 알게 될 것이다.`:'대신 그의 일에 그대의 이름을 빌려 달라고 한다.'}`},()=>{const r=ev2P;const f=r.fac&&FAC[r.fac]&&activeFactions().some(x=>x.id===r.fac)?r.fac:null;return [
-   {l:'그의 사람이 된다',s:'영향력 +',a:'social greedy',f:()=>{let x='';if(f){frelAdd(f,8);if(s.party&&s.party!==f&&facPair(s.party,f)<=-40){frelAdd(s.party,-8);x=` ${FAC[s.party].n}의 동지들이 그대를 곱지 않게 보았다.`}}
+   return `후원자 ${r.n}${bat(r.n)?'이':'가'} ${ev2He(r)}의 집 만찬에 그대를 불렀다. 쓸모 있는 사람들을 소개해 주겠다고 한다. ${f?`${ev2He(r)}는 ${f.n} 사람이다. 식탁에서 그대가 어느 편인지 모두가 알게 될 것이다.`:'대신 그의 일에 그대의 이름을 빌려 달라고 한다.'}`},()=>{const r=ev2P;const f=r.fac&&FAC[r.fac]&&activeFactions().some(x=>x.id===r.fac)?r.fac:null;return [
+   {l:`${ev2He(r)}의 사람이 된다`,s:'영향력 +',a:'social greedy',f:()=>{let x='';if(f){frelAdd(f,8);if(s.party&&s.party!==f&&facPair(s.party,f)<=-40){frelAdd(s.party,-8);x=` ${FAC[s.party].n}의 동지들이 그대를 곱지 않게 보았다.`}}
      say(`만찬에서 ${jo(pick(T()<1790?['재무관','고등법원 판사','징세청부인','지방 감독관의 비서']:T()<1800?['의원','은행가','군납업자','구 위원']:['도지사','은행가','국사원 위원','의원']),'과','와')} 인사를 나누었다.`+x+fx({inf:4,relite:3,soc:1})+relFx(r,{trust:8,close:5}))}},
    {l:'만찬에는 가되 약속은 하지 않는다',s:'',a:'safe social',f:()=>say('정중히 웃으며 술잔만 비웠다.'+fx({inf:1,relite:1})+relFx(r,{trust:-3}))},
-   {l:'남의 그늘에 서지 않겠다며 사양한다',s:'',a:'bold',f:()=>say('홀로 서겠다고 말했다. 그는 서운한 기색이었다.'+fx({vlib:2,vhon:1})+relFx(r,{close:-8,trust:-5}))}]}),
+   {l:'남의 그늘에 서지 않겠다며 사양한다',s:'',a:'bold',f:()=>say(`홀로 서겠다고 말했다. ${ev2He(r)}는 서운한 기색이었다.`+fx({vlib:2,vhon:1})+relFx(r,{close:-8,trust:-5}))}]}),
  // 몸으로 하는 일: 체력
- S('ev2_body',()=>free()&&s.age<60&&(peas()||wageEarner()||soldier()),1,1,[
+ S('ev2_body',()=>free()&&s.age<60&&(peas()||wageEarner()||soldier()),1,2,[
    ['장정 둘이 드는 밀 자루를 혼자 짊어지고 방앗간까지 걸었다.',{str:1,rloc:1},()=>s.st.str>=60&&!urban()],
    ['큰 낫으로 하루 종일 풀을 베었다. 저녁엔 팔이 올라가지 않았다.',{str:1,farm:1,hp:-1},()=>!urban()],
    ['쟁기를 끌던 소가 멈춰 섰다. 손잡이를 붙든 채 한 고랑을 끝까지 갈았다.',{farm:2,str:1},()=>peas()],
    ['짐을 지다 허리를 삐끗해 사흘을 누웠다.',{hp:-3,money:-10},()=>s.st.str<35],
    ['센 강 하역장에서 장작 뗏목을 끌어올렸다.',{str:2,money:8},()=>inParis()&&wageEarner()&&isM()],
-   ['빨래터에서 젖은 빨래 바구니를 이고 언덕을 올랐다.',{str:1},()=>!isM()],
+   ['빨래터에서 젖은 빨래 바구니를 이고 언덕을 올랐다.',{str:1},()=>!isM()&&!urban()],['강가 빨래배에서 남의 빨래를 두드려 품삯을 받았다. 저녁엔 손이 갈라졌다.',{str:1,money:5,hp:-1},()=>!isM()&&urban()&&wageEarner()],['물장수가 오지 않아 우물물을 길어 다락방까지 여섯 층을 올랐다.',{str:1},()=>urban()&&!rich()],['장작 한 짐을 지고 장터에서 돌아왔다.',{str:1},()=>!rich()],
    ['품팔이 장(그레브 광장)에서 체격이 좋다며 맨 먼저 뽑혔다.',{money:12},()=>inParis()&&wageEarner()&&s.st.str>=55],
    ['품팔이 장에서 해가 질 때까지 아무도 불러 주지 않았다.',{money:-5},()=>wageEarner()&&(s.st.str<35||econ().jobs<45)],
    ['행군 중 쓰러진 동료의 배낭을 대신 졌다.',{str:1,rguild:2},()=>soldier()&&s.st.str>=45],['진지 공사로 하루 종일 참호를 팠다.',{str:1,hp:-1},()=>soldier()],['행군 대열에서 뒤처져 하사관에게 욕을 먹었다.',{rguild:-1},()=>soldier()&&s.st.str<40],
@@ -1769,10 +1770,10 @@ const EV=[
    {l:'일이 바쁘다며 사양한다',s:'',a:'safe',f:()=>say('다른 사람이 뽑혔다.'+fx({rguild:-1}))}]),
  // 정치가 우정을 가를 때: 사람 사이와 파벌 사이
  C('ev2_split',()=>free()&&!!s.party&&relsAlive().some(r=>r.fac&&FAC[r.fac]&&r.fac!==s.party&&facPair(s.party,r.fac)<=-40&&r.close>=40),1,3,'갈라진 식탁','la politique et l’amitié',()=>{ev2P=relsAlive().find(r=>r.fac&&FAC[r.fac]&&r.fac!==s.party&&facPair(s.party,r.fac)<=-40&&r.close>=40);const r=ev2P;
-   return `${ev2Who(r)}${bat(r.n)?'은':'는'} ${FAC[r.fac].n} 사람이다. ${FAC[s.party].n}의 동지들은 그와 어울리지 말라고 한다. 오늘 저녁 그가 늘 하던 대로 식사를 하자고 청해 왔다.`},()=>{const r=ev2P;return [
+   return `${ev2Who(r)}${bat(r.n)?'은':'는'} ${FAC[r.fac].n} 사람이다. ${FAC[s.party].n}의 동지들은 ${ev2He(r)}와 어울리지 말라고 한다. 오늘 저녁 ${ev2He(r)}가 늘 하던 대로 식사를 하자고 청해 왔다.`},()=>{const r=ev2P;return [
    {l:'정치보다 벗이 먼저다',s:'파벌 신뢰 -',a:'family',f:()=>{frelAdd(s.party,-4);say(`${r.n}${bat(r.n)?'과':'와'} 정치 이야기는 빼고 밤늦도록 마셨다.`+fx({vfam:1,sus:inTerror()?4:0})+relFx(r,{close:8,trust:6}))}},
    {l:'당분간 만나지 않는다',s:'',a:'safe',f:()=>{frelAdd(s.party,3);say('핑계를 대고 가지 않았다.'+relFx(r,{close:-10}))}},
-   {l:'식탁에서 그를 설득해 본다',s:'웅변 판정',a:'radical social',f:async()=>{const r2=await roll(md([[s.sk.orat>=40,1,'웅변'],[r.trust>=60,1,'그의 신뢰']]).m,{label:'설득'});if(r2.v>=5){r.fac=s.party;say(`${r.n}${bat(r.n)?'이':'가'} 그대 쪽으로 마음을 돌렸다.`+fx({orat:2,inf:1})+relFx(r,{resp:8}))}else say('언성이 높아졌다. 둘 다 말을 아끼게 되었다.'+fx({orat:1})+relFx(r,{close:-8,riv:6}))}}]}),
+   {l:`식탁에서 ${ev2He(r)}를 설득해 본다`,s:'웅변 판정',a:'radical social',f:async()=>{const r2=await roll(md([[s.sk.orat>=40,1,'웅변'],[r.trust>=60,1,'벗의 신뢰']]).m,{label:'설득'});if(r2.v>=5){r.fac=s.party;say(`${r.n}${bat(r.n)?'이':'가'} 그대 쪽으로 마음을 돌렸다.`+fx({orat:2,inf:1})+relFx(r,{resp:8}))}else say('언성이 높아졌다. 둘 다 말을 아끼게 되었다.'+fx({orat:1})+relFx(r,{close:-8,riv:6}))}}]}),
  // 비싼 해의 수확: 자영농은 흉년에 벌고, 이웃은 굶는다
  C('ev2_sell',()=>free()&&onTrack('farm')&&job().t>=3&&econ().price>=1.25,1.2,2,'곡물 값','le prix du blé',()=>`곡물 값이 평년의 ${econ().price}배다. 곳간의 밀을 시장에 내면 큰돈이 된다. 그러나 품팔이 이웃들은 빵을 사지 못해 쩔쩔맨다.`,()=>{const e=econ();const g=Math.round(job().t*60*(e.price-1)*2);return [
    {l:'시장값에 판다',s:`재산 +${g}`,a:'greedy',f:()=>say('도시 곡물상에게 밀을 넘겼다. 마을에서는 매점꾼이라는 말이 나왔다.'+fx({money:g,trade:1,rloc:-3,rpeople:-3}))},
@@ -2491,8 +2492,6 @@ const nRel=(role,o)=>(o.n&&relsAlive().find(x=>x.n===o.n))||addRel(role,o);
 const nRF=(r,o)=>r?relFx(r,o):'';
 const nFac=(ids,n)=>activeFactions().filter(f=>ids.includes(f.id)).forEach(f=>frelAdd(f.id,n));
 const nLady=t=>`${pick(NOBLE_SURS)[0]} ${t||pick(['공작부인','후작부인','백작부인'])}`;
-// 평판은 무대마다 다르다: 궁정·사교계 relite, 영지 마을 rloc, 혁명기의 거리 rpeople
-const nRepK=()=>tt(1789.5,1795)?'rpeople':(!urban()&&!s.flags.presented)?'rloc':'relite';
 
 EV.push(
  /* ---------------- 어린 시절과 수녀원 ---------------- */
@@ -2995,6 +2994,92 @@ EV.push(
      else say('손님은 남편의 거래처 사람들뿐이었다.'+fx({soc:1}))}},
    {l:'그만둔다',s:'',a:'safe',f:()=>say('조용한 저녁을 택했다.')}])
 );
+/* ---------------- 손끝과 몸가짐, 줄과 맞수 (nob2_) ----------------
+   악기·그림·자수(music·draw·sew·dex), 승마(ride·str), 사교·웅변(soc·orat), 편지(pen), 살림(trade).
+   평판은 무대마다 다르다: 궁정 relite, 영지 rloc, 혁명기 rpeople. 연인·경쟁자·후원자는 addRel로 남긴다. */
+EV.push(
+ C('nob2_concert',()=>(nfa()||bl())&&s.age>=15&&s.age<=60&&(urban()||s.flags.presented||epee()),1,3,'음악회','le concert de salon',()=>`${T()<1790?'저녁 음악회에서 안주인이 그대에게 한 곡을 청하였다.':T()<1815?'살롱 음악회에서 로망스 한 곡을 청받았다.':'저녁 모임에서 피아노 앞에 앉아 달라는 청을 받았다.'} ${T()<1795?(s.year>=1770?'하프는 왕비 덕분에 귀부인들의 악기가 되었다. 클라브생도 뚜껑이 열려 있다.':'클라브생 뚜껑이 열려 있다.'):'에라르 공방의 새 피아노가 놓여 있다.'} 손님들의 눈이 그대 손끝에 모였다.`,()=>[
+   {l:T()<1795&&s.year>=1770?'하프를 탄다':T()<1795?'클라브생을 친다':'피아노를 친다',s:'기술·악기 판정',a:'social study',f:async()=>{const m=md([[s.sk.music>=40,1,'악기 솜씨'],[s.st.dex>=50,1,'손끝'],[s.sk.music<15,-1,'연습 부족'],[s.st.soc>=55,1,'사람들 앞의 여유']]);const r=await roll(m.m,{label:'연주',why:m.why});
+     if(r.v>=5)say('마지막 화음이 사라지자 잠깐 정적이 흐르고 박수가 터졌다. 이튿날 여기저기서 초대장이 왔다.'+fx({music:2,relite:5,fame:2,soc:1}));
+     else if(r.v>=3)say('틀린 데 없이 끝까지 쳤다. 노부인들이 점잖게 부채를 접었다 폈다.'+fx({music:2,relite:1}));
+     else say('줄이 끊어지고 박자가 엉켰다. 안주인이 서둘러 다음 사람을 불렀다.'+fx({music:1,relite:-3}))}},
+   {l:'노래로 대신한다',s:'',a:'social',f:()=>say(`${T()<1800?'그레트리의 아리에트':'로망스'}를 한 곡 불렀다.`+fx({soc:1,music:1,relite:1}))},
+   {l:'사양한다',s:'',a:'safe',f:()=>say('손가락을 다쳤다며 사양하였다.'+fx({relite:-1}))}]),
+ C('nob2_draw',()=>(nfa()||bl())&&s.age>=14&&s.age<=55&&lit(),.7,4,'그림','le pastel',()=>`${T()<1790?'파스텔과 수채 물감 상자를 샀다. 귀부인이 그림을 그리는 것은 미덕이지만, 왕립 회화 아카데미는 여자 회원을 넷까지만 받는다.':T()<1816?'1791년부터 살롱전은 아카데미 회원이 아닌 화가에게도 열렸다. 여자 화가들도 그림을 건다.':'수채화가 유행이다. 앨범에 꽃 그림을 그려 주고받는다.'} 정원의 장미, 아이들의 얼굴, 영지의 풍경이 그대 앞에 있다.`,()=>[
+   {l:'아이들의 초상을 그린다',s:'기술·그림 판정',a:'study family',f:async()=>{const m=md([[s.sk.draw>=35,1,'그림 솜씨'],[s.st.dex>=50,1,'손재주'],[s.sk.draw<10,-1,'배운 적이 거의 없음']]);const r=await roll(m.m,{label:'그림',why:m.why});
+     if(r.v>=5)say(T()>=1791&&T()<1816?'초상을 살롱전에 냈다. 비평가가 ‘귀부인의 손이라 믿기 어려운 필치’라고 썼다.'+fx({draw:3,fame:3,relite:2}):'파스텔 초상이 살롱에서 돌려 보였다. 화가 선생이 칭찬하였다.'+fx({draw:3,relite:2,vfam:1}));
+     else if(r.v>=3)say('아이 얼굴이 제법 닮게 나왔다. 서재 벽에 걸었다.'+fx({draw:2,vfam:1}));
+     else say('코가 비뚤어진 그림을 보고 아이들이 웃었다.'+fx({draw:1}))}},
+   {l:'화가의 화실에서 수업을 받는다',s:'재산 -150',a:'study',f:()=>say(`${T()<1790?'라비유귀아르 부인의 화실에서 여제자들 틈에 앉았다.':'이름난 화가의 화실에 일주일에 두 번 나갔다.'}`+fx({money:-150,draw:3,dex:1}))},
+   {l:'붓을 놓는다',s:'',a:'safe',f:()=>say('물감 상자를 딸에게 물려주었다.')}]),
+ C('nob2_embroid',()=>(nfa()||bl())&&s.age>=16,.8,3,'자수틀','le métier à broder',()=>`${s.year>=1770&&T()<1790?'요즘 귀부인들은 낡은 금실 장식을 풀어 금을 파는 ‘파르필라주(parfilage)’에 빠져 있다. ':''}수틀에 비단을 메웠다. ${hob()||!urban()?'영지 성당의 제단보가 해졌다.':'남편의 조끼에 놓을 꽃무늬 도안이 왔다.'}`,()=>{const o=[
+   {l:hob()||!urban()?'성당 제단보를 수놓아 바친다':'조끼에 꽃무늬를 수놓는다',s:'기술·바느질 판정',a:'pious family',f:async()=>{const m=md([[s.sk.sew>=40,1,'바느질 솜씨'],[s.st.dex>=50,1,'손재주'],[s.age>=55,-1,'눈이 침침함']]);const r=await roll(m.m,{label:'자수',why:m.why});
+     if(r.v>=4)say(hob()||!urban()?'성모 축일 미사에 새 제단보가 걸렸다. 신부가 강론에서 부인 마님의 손을 칭찬하였다.'+fx({sew:2,dex:1,faith:2,rloc:4}):'조끼를 입은 남편이 무도회에서 그 무늬를 자랑하였다.'+fx({sew:2,dex:1,relite:2,vfam:1}));
+     else say('바늘땀이 고르지 않아 몇 번이나 뜯어냈다.'+fx({sew:1}))}}];
+   if(s.year>=1770&&T()<1790)o.push({l:'파르필라주를 한다',s:'금실을 팔아 용돈을 번다',a:'greedy social',f:()=>say('낡은 견장의 금실을 풀어 금 세공사에게 팔았다. 남자 손님들은 빼앗길까 봐 금단추를 감추었다.'+fx({money:60,dex:1,relite:1}))});
+   o.push({l:'하녀에게 맡긴다',s:'',a:'safe',f:()=>say('수틀을 하녀 방으로 보냈다.')});return o}),
+ C('nob2_hunt',()=>nfa()&&s.age>=16&&s.age<=55&&(T()<1789.5||T()>=1800),.8,3,'몰이사냥','la chasse à courre',()=>`${s.flags.presented&&T()<1789.5?'왕의 사냥에 귀부인들도 말을 타고 따른다. 젊은 왕비는 남자처럼 걸터앉아 탄다는 소문이다.':'이웃 영주가 사슴 몰이사냥에 초대하였다.'} 사냥개 떼와 뿔나팔 소리가 숲을 울린다. 부인들은 대개 마차로 따라가지만, 옆안장(selle d’amazone)에 앉아 말을 몰 줄 아는 이는 사냥을 앞에서 본다.`,[
+   {l:'말을 타고 사냥개 뒤를 따른다',s:'승마·체력 판정',a:'bold social',f:async()=>{const m=md([[s.sk.ride>=35,1,'승마 솜씨'],[s.st.str>=40,1,'체력'],[s.sk.ride<10,-1,'말을 잘 못 탐'],[s.st.cour>=50,1,'의지']]);const r=await roll(m.m,{label:'사냥',why:m.why});
+     if(r.v>=5)say('도랑을 뛰어넘어 사슴이 쓰러지는 자리에 남자들보다 먼저 닿았다. 사냥 주인이 사슴의 앞발을 그대에게 바쳤다.'+fx({ride:3,str:1,relite:4,fame:1}));
+     else if(r.v>=2)say('하루 종일 숲길을 달렸다. 치맛자락이 진흙투성이였다.'+fx({ride:2,hp:-1}));
+     else say('말이 도랑 앞에서 멈춰 서는 바람에 떨어졌다. 어깨를 다쳐 몇 주를 누워 지냈다.'+fx({hp:-7,ride:1}),'dark')}},
+   {l:'마차를 타고 구경한다',s:'',a:'safe social',f:()=>say('마차 안에서 부인들과 사냥 소문을 나누었다.'+fx({soc:1,relite:1}))}]),
+ C('nob2_rival',()=>(nfa()||bl())&&s.age>=20&&(urban()||s.flags.presented)&&(T()<1792||T()>=1795),.8,4,'사교계의 맞수','la rivale',()=>{const rv=relsAlive().find(r=>r.role==='경쟁자'&&r.sex==='F');s.flags.nobRv=rv?rv.n:(noble()?nLady():woman()+' 부인');return `${s.flags.nobRv}${bat(s.flags.nobRv)?'이':'가'} 그대 이야기를 퍼뜨린다는 말이 들렸다. ${pick(['그대의 드레스가 두 해 지난 유행이라고','그대 집안 지참금이 아직 다 치러지지 않았다고','그대가 남편 친구와 너무 가깝다고'])} 하였다는 것이다. 오늘 밤 같은 응접실에서 마주친다.`},()=>[
+   {l:'재치로 되받아친다',s:'사교·웅변 판정',a:'bold social',f:async()=>{const rv=nRel('경쟁자',{n:s.flags.nobRv,sex:'F',v:'vhon',inf:35,riv:60,w:'사교계 맞수'});const m=md([[s.st.soc>=55,1,'사교'],[s.sk.orat>=30,1,'말재간'],[s.rep.relite>=60,1,'평판'],[s.rep.relite<35,-1,'평판이 나쁨']]);const r=await roll(m.m,{label:'말의 결투',why:m.why});
+     if(r.v>=4)say('그대의 한마디가 이튿날 여러 응접실에서 되풀이되었다. 맞수는 한 철 동안 얼굴을 내밀지 않았다.'+fx({orat:2,relite:4,fame:1})+nRF(rv,{riv:8,resp:6}));
+     else say('맞수가 더 날카로운 말로 응수하였다. 웃음은 그쪽에서 났다.'+fx({orat:1,relite:-3})+nRF(rv,{riv:5}))}},
+   {l:'먼저 다가가 손을 내민다',s:'',a:'social safe',f:()=>{const rv=nRel('경쟁자',{n:s.flags.nobRv,sex:'F',v:'vhon',inf:35,riv:60,w:'사교계 맞수'});say('부채를 접고 먼저 인사를 건넸다. 맞수는 놀란 얼굴로 답례하였다.'+fx({soc:1,relite:1})+nRF(rv,{riv:-15,close:10}))}},
+   {l:'못 들은 척한다',s:'',a:'safe',f:()=>say('소문은 한 달쯤 돌다 잦아들었다.'+fx({relite:-1}))}]),
+ C('nob2_protect',()=>nfa()&&(s.flags.presented||s.flags.dame||s.flags.restCourt)&&(T()<1789.5||tt(1804,1830.5))&&s.age>=22&&(hus()||kidsAt(15,25).some(k=>k.sex==='M')),1,5,'궁정의 줄','la protection',()=>{const p=patron();return `${hus()?hn()+'에게 연대':'아들에게 장교 자리'}를 얻어 주려면 궁정에 줄이 있어야 한다. ${p?`${p.n}${bat(p.n)?'이':'가'} 도와줄지도 모른다.`:`${T()<1790?'왕비의 측근':'궁정 시녀장'} 곁의 귀부인에게 줄을 대야 한다.`} 청원 편지 한 장, 방문 한 번이 몇 해의 운을 가른다.`},()=>[
+   {l:'정성껏 청원 편지를 쓰고 찾아간다',s:'글씨·사교 판정',a:'social family',f:async()=>{const p=patron()||nRel('후원자',{n:nLady(),sex:'F',v:'vhon',inf:60,w:'궁정의 후원자'});const m=md([[s.sk.pen>=35,1,'편지 솜씨'],[s.st.soc>=55,1,'사교'],[s.rep.relite>=60,1,'궁정의 평판'],[!!p&&p.close>=60,1,'후원자와 가까움']]);const r=await roll(m.m,{label:'청원',why:m.why});
+     if(r.v>=4){say(`${hus()?hn()+'의 연대장 임명장':'아들의 임관 증서'}이 내려왔다. 후원자에게 세브르 도자기 한 벌을 보냈다.`+fx({pen:2,inf:5,relite:3,money:-300,vfam:2})+nRF(p,{close:6,trust:5}),'big');if(hus()&&s.spouse.pay)s.spouse.pay=Math.round(s.spouse.pay*1.2)}
+     else say('정중한 답장만 왔다. “때가 오면 기억하겠습니다.”'+fx({pen:1})+nRF(p,{close:2}))}},
+   {l:'궁정의 청탁 놀음에는 끼지 않는다',s:'',a:'safe',f:()=>say('줄을 대는 대신 영지에서 아이들을 가르쳤다.'+fx({vhon:2,relite:-1}))}]),
+ C('nob2_steward',()=>(wife()||blw()||nfa()&&widow())&&s.age>=20,.8,3,'살림 셈','l’économie domestique',()=>{const e=econ();return `집사가 이달 장부를 올렸다. ${e.price>=1.3?'빵과 장작값이 뛰어 부엌 지출이 지난해보다 훨씬 많다.':e.price<=.95?'올해는 곡식이 싸서 부엌 살림에 여유가 있다.':'지출은 여느 해와 비슷하다.'}${e.cur<.5?' 지폐로 받은 지대는 휴지가 되었고 상인들은 금화만 달라고 한다.':''} 하인들의 급료와 제복, 마구간 귀리가 줄지어 적혀 있다.`},()=>{const e=econ();return [
+   {l:'직접 장부를 맞추고 지출을 줄인다',s:'장사·셈 판정',a:'work study',f:async()=>{const m=md([[s.sk.trade>=30,1,'셈이 밝음'],[s.st.edu>=50,1,'학식'],[e.price>=1.3,-1,'물가가 높은 해']]);const r=await roll(m.m,{label:'살림',why:m.why});
+     if(r.v>=4)say('마부 하나를 내보내고 밀랍 초를 수지 초로 바꾸었다. 한 해 지출이 눈에 띄게 줄었다.'+fx({money:Math.round(200*e.price),trade:2}));
+     else say('줄인 만큼 하인들이 뒤에서 빼돌렸다.'+fx({trade:1,money:-Math.round(50*e.price)}))}},
+   {l:'집사에게 맡긴다',s:'',a:'safe',f:()=>say('장부를 덮고 서명만 하였다.'+fx({money:-Math.round(150*Math.max(0,e.price-.9))}))},
+   {l:'하인들 급료를 올려 준다',s:'',a:'pious family',dis:e.price<1.2,f:()=>say('물가가 뛰어 하인들 급료를 조금 올려 주었다. 하인들이 마님을 위해 미사를 드렸다.'+fx({money:-Math.round(120*e.price),rloc:2,vjus:2}))}]}),
+ C('nob2_tenants',()=>nfa()&&!urban()&&(hus()||widow())&&s.land>0&&(T()<1789.5||T()>=1800),1,3,'영지의 소작인들','les tenanciers',()=>{const e=econ();return `${e.price>=1.3?'흉년이다. ':''}소작인 대표들이 성 마당에 모자를 쥐고 서 있다. ${T()<1789.5?'영주 공납과 소작료를':'지대를'} ${e.price>=1.3?'올해만 미뤄 달라고 한다.':'예전대로 내겠으니 방앗간 삯만은 내려 달라고 한다.'} 관리인은 한 푼도 깎아 주지 말라고 귀띔한다.`},()=>[
+   {l:'청을 들어주고 곳간을 연다',s:'재산 -, 마을의 평판 +',a:'pious social',f:()=>say('곡식 몇 말과 지대 반 해 치를 깎아 주었다. 일요일 미사 뒤 아낙들이 부인 마님의 손에 입을 맞추었다.'+fx({money:-Math.round(150+s.land*.15),rloc:7,faith:1,bor:2}))},
+   {l:'관리인 말대로 다 받는다',s:'',a:'greedy',f:()=>say('관리인이 장부대로 다 걷었다. 마을 카바레에서 부인 마님을 욕하는 노래가 불렸다.'+fx({money:Math.round(80+s.land*.1),rloc:-7,bor:-2}))},
+   {l:'직접 농가를 돌며 사정을 듣는다',s:'사교·승마 판정',a:'work',f:async()=>{const m=md([[s.st.soc>=50,1,'사교'],[s.sk.ride>=25,1,'말을 타고 돎'],[s.sk.trade>=30,1,'셈이 밝음']]);const r=await roll(m.m,{label:'영지 순회',why:m.why});
+     if(r.v>=4)say('형편이 어려운 집만 골라 미뤄 주고 나머지는 받았다. 관리인도 소작인도 불만이 없었다.'+fx({money:Math.round(30+s.land*.05),rloc:4,trade:1,ride:1}));
+     else say('사정이 다 딱해 보여 결국 모두 미뤄 주었다.'+fx({money:-Math.round(100+s.land*.1),rloc:5}))}}]),
+ C('nob2_lady',()=>nfa()&&epee()&&s.flags.presented&&T()<1789.5&&s.age>=20&&s.age<=50&&!s.flags.nobLady,.8,99,'왕녀의 수행 귀부인','dame pour accompagner',()=>`${s.year<1774?'왕의 딸들(메담)':s.year>=1779?'왕의 누이 엘리자베트 공주':'왕의 고모들(메담)'}의 수행 귀부인(dame pour accompagner) 자리 하나가 비었다. 한 주씩 돌아가며 시중들고 연금이 나온다. 무엇보다 왕족의 귀에 말 한마디 넣을 수 있는 자리다. 노리는 부인이 여럿이다.`,()=>[
+   {l:'자리를 청한다',s:'사교·평판 판정',a:'social royal',f:async()=>{s.flags.nobLady=1;const p=patron();const m=md([[s.rep.relite>=60,1,'궁정의 평판'],[s.st.soc>=55,1,'사교'],[!!p,1,'후원자'],[s.sk.music>=40,1,'저녁 연주 솜씨'],[s.rep.relite<40,-1,'평판이 모자람']]);const r=await roll(m.m,{label:'수행 귀부인',why:m.why});
+     if(r.v>=4){s.dues=(s.dues||0)+2000;say('자리를 얻었다. 왕족의 산책과 미사와 카드놀이를 한 주씩 따라다녔다. 그대 집 응접실에 청탁하는 이들이 줄을 섰다. (연금 +2,000)'+fx({inf:10,relite:5,fame:3})+nRF(p,{close:5}),'big')}
+     else{const rv=nRel('경쟁자',{n:nLady(),sex:'F',v:'vhon',inf:45,riv:65,w:'궁정 자리의 맞수'});say('자리는 다른 부인에게 돌아갔다. 그 부인은 그대를 보며 부채 뒤로 웃었다.'+fx({relite:-2})+nRF(rv,{riv:6}))}}},
+   {l:'궁정살이는 사양한다',s:'',a:'safe family',f:()=>{s.flags.nobLady=1;say('아이들 곁에 머물기로 하였다.'+fx({vfam:3}))}}]),
+ C('nob2_feder',()=>(nfa()||bl())&&loc()==='paris'&&tt(tm(1790,6),tm(1790,8))&&!s.flags.nobFeder,5,99,'샹드마르스의 손수레','la Fête de la Fédération','7월 14일 연맹제를 앞두고 샹드마르스에 관중석 둑을 쌓을 일손이 모자란다. 파리 사람들이 신분을 가리지 않고 삽을 든다. 비단옷 차림의 귀부인들이 손수레를 미는 모습이 판화로 팔린다.',[
+   {l:'손수레를 밀러 간다',s:'체력, 민중의 평판',a:'radical social',f:()=>{s.flags.nobFeder=1;const ok=s.st.str>=35;say((ok?'장갑을 끼고 흙을 가득 실은 손수레를 밀었다. 숯장수와 수도사와 후작부인이 나란히 ‘사 이라(Ça ira)’를 불렀다.':'손수레 두 번에 팔이 떨어질 듯하였다. 그래도 사람들이 박수를 쳐 주었다.')+fx({str:1,rpeople:ok?6:4,relite:-2,brg:4,bor:3,pol:3}));nFac(['patriote','jacobin'],4)}},
+   {l:'마차를 세우고 구경한다',s:'',a:'safe',f:()=>{s.flags.nobFeder=1;say('구경꾼들이 ‘귀족 마님 손은 희기도 하다’며 놀렸다.'+fx({rpeople:-2}))}},
+   {l:'광대놀음이라 비웃는다',s:'',a:'royal',f:()=>{s.flags.nobFeder=1;say('응접실에서 연맹제를 비웃는 농담을 하였다. 하인들이 그 말을 밖으로 옮겼다.'+fx({rpeople:-4,relite:2,brg:-3}));nFac(['absolutist'],4)}}]),
+ C('nob2_emisend',()=>nfa()&&s.flags.husEmi&&tt(1791.5,1797)&&s.money>=300&&!s.flags.nobEmiSend,2,99,'국경 너머의 편지','lettre de Coblence',()=>`${s.flags.husEmi2||hn()}의 편지가 스위스 상인의 손을 거쳐 왔다. 망명지에서 돈이 떨어졌다고 한다. ${T()>=1792.6?'망명자에게 돈을 보내는 것은 이제 사형까지 받을 수 있는 죄다.':'망명자에게 돈을 보내면 의심을 산다.'}`,()=>[
+   {l:'은화와 보석을 몰래 보낸다',s:'혐의 +',a:'family royal bold',f:async()=>{s.flags.nobEmiSend=1;const a=Math.round(s.money*.3);
+     if(await chance(inTerror()?.2:.08,'발각','망명자 송금으로 고발된 사례')){say('송금이 들통났다. 구 감시위원회가 그대를 망명자의 공범으로 적었다.'+fx({money:-a,sus:20,vfam:3,vhon:2}),'dark');nFac(['jacobin'],-8)}
+     else{say(`${fmt(a)} ${money()}어치 은화를 레이스 꾸러미에 숨겨 보냈다. 답장에는 고맙다는 말과 왕제들 곁의 소식이 적혀 있었다.`+fx({money:-a,sus:6,vfam:4,vhon:2}));nFac(['royalist','absolutist'],6)}}},
+   {l:'답장만 쓰고 돈은 보내지 않는다',s:'',a:'safe',f:()=>{s.flags.nobEmiSend=1;say('아이들 이야기만 적어 보냈다. 이 땅을 지키는 것도 집안을 지키는 일이었다.'+fx({vfam:1,vord:2,pen:1}))}},
+   {l:'편지를 구청에 내보인다',s:'혐의 -, 남편과는 끝',a:'radical',f:()=>{s.flags.nobEmiSend=1;say('편지를 구청에 가져가 공화국에 대한 충성을 보였다. 위원들이 그대를 다른 눈으로 보았다.'+fx({sus:-10,rpeople:4,vfam:-6,vhon:-4,pol:4}),'big');nFac(['jacobin'],6)}}]),
+ C('nob2_civism',()=>(nfa()||bl())&&tt(tm(1793,9),tm(1794,8))&&!s.flags.nobCiv,3,99,'공민 증명서','certificat de civisme',()=>`혐의자법이 내렸다. 구 감시위원회에서 공민 증명서를 받지 못하면 연금도 여권도 없고, 혐의자 명단에 오른다. 위원들은 이웃의 증언을 듣는다. ${s.rep.rpeople>=60?'구민들은 그대를 ‘착한 시민 부인’이라 부른다.':s.rep.rpeople<35?'구민들은 그대를 아직도 ‘마님’이라 부르며 눈을 흘긴다.':''}`,()=>[
+   {l:'이웃 증인을 세워 신청한다',s:'민중의 평판 판정',a:'safe social',f:async()=>{s.flags.nobCiv=1;const m=md([[s.rep.rpeople>=60,1,'구민들의 증언'],[s.rep.rpeople<35,-1,'구민들의 미움'],[s.pol>=20,1,'애국 헌금 기록'],[epee(),-1,'대귀족 집안'],[s.sus>=30,-1,'혐의']]);const r=await roll(m.m,{label:'공민 증명서',why:m.why});
+     if(r.v>=4){say('구두장이와 물장수가 그대를 위해 증언하였다. 증명서에 붉은 도장이 찍혔다.'+fx({sus:-10,rpeople:3}));nFac(['jacobin'],3)}
+     else say(`위원 하나가 “${noble()?'옛 귀족의 아내':'부자 상인의 아내'}에게 공민 정신이 있을 리 없다”며 서류를 밀어냈다.`+fx({sus:8,vord:-2}))}},
+   {l:'위원에게 선물을 보낸다',s:'재산 -400',a:'greedy',f:()=>{s.flags.nobCiv=1;s.money=Math.max(0,s.money-400);say('위원의 아내에게 옷감을 보냈다. 증명서는 나왔지만 언제든 다시 빼앗길 수 있었다.'+fx({sus:-5,vjus:-2}))}},
+   {l:'신청하지 않고 숨어 지낸다',s:'',a:'bold',f:()=>{s.flags.nobCiv=1;say('외출을 끊고 덧문을 닫았다.'+fx({sus:5,hp:-1,vhon:2}))}}]),
+ C('nob2_hostess',()=>(nfa()||bl())&&s.flags.salon&&(T()<1792.5||T()>=1795),1,3,'살롱의 청탁','le crédit d’une salonnière',()=>`${pick(['젊은 시인','가난한 학자','지방에서 올라온 법률가'])} 하나가 그대 살롱에 드나든 지 한 해다. ${T()<1793||T()>=1803?'아카데미 회원 자리':T()<1815?'도청의 자리':'관보의 편집 자리'}를 얻게 힘써 달라고 한다. 살롱 안주인의 말 한마디가 장관의 서명보다 빠를 때가 있다.`,()=>[
+   {l:'손님들에게 그를 밀어 준다',s:'영향력·웅변 판정',a:'social',f:async()=>{const iv=influence().v;const m=md([[iv>=30,1,'영향력'],[s.sk.orat>=35,1,'대화를 이끄는 솜씨'],[s.rep.relite>=65,1,'사교계의 평판'],[relsAlive().some(r=>r.role==='경쟁자'&&r.w==='살롱 맞수'&&r.riv>=60),-1,'맞수 살롱의 방해']]);const r=await roll(m.m,{label:'청탁',why:m.why});const cl=nRel('친구',{n:person(),sex:'M',v:'vlib',w:'살롱의 피후견인'});
+     if(r.v>=4)say('그가 자리를 얻었다. 사람들은 그 자리를 그대 살롱이 만들었다고 말하였다.'+fx({inf:6,relite:3,orat:1,fame:1})+nRF(cl,{close:10,trust:10,resp:10}));
+     else say('다른 살롱이 민 사람이 자리를 가져갔다.'+fx({inf:-2,orat:1})+nRF(cl,{close:-4}))}},
+   {l:'살롱은 대화를 위한 곳이라며 거절한다',s:'',a:'safe',f:()=>say('정중히 거절하였다. 그는 다음 주부터 오지 않았다.'+fx({vhon:1}))}]),
+ C('nob2_bl_title',()=>bl()&&hus()&&(tt(1808.2,1814)||tt(1815,1830.5))&&s.money>=30000&&!s.flags.anobli&&!s.flags.nobTitle,1,99,'칭호를 청하다','majorat / lettres de noblesse',()=>T()<1814?'1808년 황제가 제국 귀족을 만들었다. 연 수입 1만 5천 프랑이 나오는 세습 재산(majorat)을 묶어 두면 남편이 남작 칭호를 받을 수 있다. 칭호와 문장을 내리는 인장국(Conseil du sceau)에 줄을 대야 한다.':'왕이 돌아오자 은행가와 공장주들이 국왕의 귀족 서임장(lettres de noblesse)을 청한다. 생제르맹 구역의 귀부인들이 그대 집안을 어떻게 보느냐가 서임 못지않게 중요하다.',()=>[
+   {l:'칭호를 청원하고 사교계에 줄을 댄다',s:'재산 -20,000, 상류사회 평판 판정',a:'greedy social',f:async()=>{s.flags.nobTitle=1;s.money-=20000;const m=md([[s.rep.relite>=60,1,'사교계의 평판'],[s.rep.relite<40,-1,'벼락부자라는 평판'],[!!patron(),1,'후원자'],[s.sk.pen>=35,1,'청원서 솜씨']]);const r=await roll(m.m,{label:'서임',why:m.why});
+     if(r.v>=4){s.flags.anobli=true;say(`${T()<1814?'남편이 제국 남작이 되었다. 마차 문에 새 문장을 그렸다.':'국왕의 서임장이 나왔다. 그대는 이제 남작부인이다.'} (재산 -20,000)`+fx({fame:4,relite:6,inf:3}),'big')}
+     else say('서류는 인장국 서랍에서 잠들었다. 옛 귀부인들이 그 소문을 듣고 웃었다. (재산 -20,000)'+fx({relite:-4}))}},
+   {l:'돈은 공장과 땅에 쓴다',s:'',a:'safe',f:()=>{s.flags.nobTitle=1;say('“칭호로 빵을 굽지는 못하오.” 남편이 웃었다.'+fx({vlib:1}))}}])
+);
+
 }
 
 /* ================= 농민의 삶 (pea_) =================
@@ -3377,12 +3462,12 @@ EV.push(
      else say(`${T()>=1790.9?'치안판사':'영주 재판소'}가 일꾼들의 담합은 금지된 일이라며 주동자들에게 벌금을 물렸다.`+fx({money:-3,orat:1,bor:3,sus:rev()?3:0}))}},
    {l:'주는 대로 받고 일한다',s:'',a:'safe work',f:()=>say('말없이 허리를 굽혀 낫질을 하였다.'+fx({money:peaWage(6),farm:1,str:1}))},
    {l:'더 주는 이웃 마을로 간다',s:'',a:'greedy',f:()=>say('새벽에 이웃 마을 큰 농장으로 넘어갔다. 배신자라는 말이 뒤따랐다.'+fx({money:peaWage(8),rloc:-2,str:1}))}]}),
- C('pea2_cahier',()=>peaCom()&&isM()&&s.age>=25&&peaYr(tm(1789,2),tm(1789,5))&&!s.flags.peaCahier,4,99,'진정서','le cahier de doléances','왕이 삼부회를 불렀다. 일요일 미사 뒤 교회에서 스물다섯 살 넘은 납세자들이 모여 마을의 진정서(cahier de doléances)를 쓴다. 읍내 공증인이 다른 마을에서 쓴 본보기를 들고 왔다. 무엇을 적을지, 누구를 바이아주 회의에 대표로 보낼지 정해야 한다.',[
-   {l:'일어나 영주의 공조와 십일조부터 적으라고 한다',s:'웅변·평판 판정',a:'radical social',f:async()=>{s.flags.peaCahier=1;const m=md([[s.sk.orat>=25,1,'말솜씨'],[s.rep.rloc>=60,1,'이웃의 신망'],[s.st.soc>=50,1,'사교'],[s.rep.rloc<35,-1,'평판이 나쁨']]);const r=await roll(m.m,{label:'주민 회의',why:m.why});
-     if(r.v>=4){s.flags.peaSyndic=1;say('그대가 부른 대로 영주의 방앗간, 비둘기장, 사냥권, 십일조의 폐해가 첫머리에 적혔다. 주민들이 그대를 바이아주 회의에 보낼 대표로 뽑았다.'+fx({orat:3,rloc:5,inf:5,bor:5,brl:2,pol:4}),'big')}
-     else say('공증인이 매끄럽게 다듬은 문장이 적혔다. 그대 말은 끝에 한 줄로 남았다.'+fx({orat:1,bor:3,pol:2}))}},
-   {l:'전하께서 굽어살피시리라 믿고 소금세와 타유세만 적는다',s:'',a:'royal safe',f:()=>{s.flags.peaCahier=1;say('“전하의 충성스러운 백성들은…” 하는 문장으로 진정서가 시작되었다.'+fx({rloc:1,bor:1,brg:-2}))}},
-   {l:'뒷줄에서 듣기만 한다',s:'',a:'safe',f:()=>{s.flags.peaCahier=1;say(lit()?'맨 끝에 이름을 써 넣었다.':'글을 몰라 진정서 끝에 십자 표시를 하였다.')}}]),
+ C('pea2_assembly',()=>peaCom()&&isM()&&s.age>=25&&(pre89()||T()>=1800),.4,6,'주민 회의','l’assemblée des habitants',()=>`종탑이 갈라지고 마을 우물이 무너졌다. 고치는 돈을 집집마다 나눠 낼 일을 두고 일요일 미사 뒤 교회 앞에서 회의가 열렸다. ${pre89()?'회의가 정한 분담금도 지방 감독관의 하위 관리(subdélégué)가 허락해야 걷을 수 있다.':'면 의회가 정해도 도지사가 승인해야 한다.'} 부농들은 머릿수로, 가난한 집들은 땅 크기로 나누자고 한다.`,[
+   {l:'땅 크기대로 나누자고 일어선다',s:'웅변·평판 판정',a:'social radical',f:async()=>{const m=md([[s.sk.orat>=25,1,'말솜씨'],[s.rep.rloc>=60,1,'이웃의 신망'],[s.st.soc>=50,1,'사교'],[s.rep.rloc<35,-1,'평판이 나쁨']]);const r=await roll(m.m,{label:'주민 회의',why:m.why});
+     if(r.v>=4)say('그대 말대로 정해졌다. 가난한 집들이 그대에게 고개를 숙였다. 그런데 승인서는 석 달이 지나서야 내려왔다.'+fx({orat:2,rloc:4,money:peaT()>=3?-peaV(6):-2,bpw:3,inf:2}));
+     else say('부농들 뜻대로 머릿수로 나뉘었다. 승인서를 기다리는 사이 겨울이 왔다.'+fx({orat:1,money:-3,bpw:2}))}},
+   {l:'머릿수로 나누자는 쪽에 선다',s:'',a:'greedy safe',f:()=>say('분담금은 정해졌다. 날품팔이들이 그대를 흘겨보았다.'+fx({money:-3,rloc:-3,bor:-1}))},
+   {l:'돈 대신 일손을 내놓겠다고 한다',s:'',a:'work social',f:()=>say('사흘 동안 돌을 나르고 석회를 개었다.'+fx({str:1,craft:1,rloc:3,hp:-1}))}]),
  C('pea2_cure',()=>peaCom()&&(T()<1791.3||T()>=1802),.4,6,'본당 신부','monsieur le curé',()=>`${peaCure()}가 집에 들렀다. 성당 지붕을 고칠 일손과 돈이 모자란다고 한다. ${T()<1790?'십일조는 먼 수도원으로 가고 신부는 쥐꼬리만 한 몫(portion congrue)으로 산다.':'신부의 봉급은 나라가 준다지만 늘 늦는다.'} 신부는 마을 일에 그대의 힘을 빌리고 싶어 한다.`,[
    {l:'주일마다 일손을 보탠다',s:'',a:'pious work',f:()=>{const r=peaRel('후원자',peaCure(),{v:'vfam',inf:20,close:55,trust:55});say('주일 오후마다 돌을 나르고 석회를 개었다. 신부가 강론에서 그대 이름을 불렀다.'+fx({faith:3,rloc:3,str:1,craft:1})+peaRF(r,{close:8,trust:6}))}},
    {l:'돈만 조금 보낸다',s:'',a:'safe',f:()=>{const r=peaRel('후원자',peaCure(),{v:'vfam',inf:20});say('은화 한 닢을 보냈다.'+fx({money:-peaV(3),faith:1})+peaRF(r,{close:2}))}},
@@ -4655,7 +4740,7 @@ EV.push(
   {l:'기꺼이 찾아간다',s:'학식·스승',a:'study',f:()=>say(`${s.flags.sch2T}의 방에서 ${SCH().st==='univ'?'아직 강의하지 않은 논문들':SCH().st==='convent'?'역사책과 세비녜 부인의 편지':'타키투스와 파스칼'}을 읽었다. 선생은 틀린 데를 하나하나 짚어 주었다.`+fx({edu:3,pen:1})+addGrade(3)+schRel('스승',s.flags.sch2T,{close:60,resp:70,trust:55,inf:ri(10,35),sex:SCH().st==='convent'?'F':'M',v:pick(['vord','vjus','vlib'])}))},
   {l:'동무들 눈이 신경 쓰여 사양한다',s:'',a:'safe social',f:()=>say('"선생님 강아지"라는 말을 듣기 싫었다.'+fx({soc:1}))}]),
  C('sch2_rival',()=>schOK()&&inSchool(['college','convent','univ'])&&s.age>=11&&!schRelOf('경쟁자'),.8,99,'1등 다툼','la rivalité',()=>{s.flags.sch2R=isM()?person():woman();return `${jo(s.flags.sch2R,'이','가')} 들어온 뒤로 작문 1등 자리가 매달 바뀐다. ${jo(s.flags.sch2R,'은','는')} 그대 답안을 흘끗 보고 코웃음을 쳤다. 선생은 둘을 일부러 맞붙인다.`},[
-  {l:'이를 악물고 겨룬다',s:'맞수가 생긴다',a:'bold study',f:async()=>{const r=await roll(s.st.edu>=55?1:0,{label:'작문 다툼'});say((r.v>=4?`다음 달 작문에서 ${jo(s.flags.sch2R,'을','를')} 제쳤다.`+addGrade(4):`${s.flags.sch2R}에게 또 한 점 차로 졌다.`+addGrade(1))+fx({edu:2})+schRel('경쟁자',s.flags.sch2R,{riv:ri(60,75),resp:ri(40,60)}))}},
+  {l:'이를 악물고 겨룬다',s:'맞수가 생긴다',a:'bold study',f:async()=>{const r=await roll(s.st.edu>=55?1:0,{label:'작문 다툼'});say((r.v>=4?`다음 달 작문에서 ${jo(s.flags.sch2R,'을','를')} 제쳤다.`+fx({edu:2})+addGrade(4):`${s.flags.sch2R}에게 또 한 점 차로 졌다.`+fx({edu:2})+addGrade(1))+schRel('경쟁자',s.flags.sch2R,{riv:ri(60,75),resp:ri(40,60)}))}},
   {l:'손을 내밀어 함께 공부하자고 한다',s:'친구가 생긴다',a:'social',f:()=>say(`${jo(s.flags.sch2R,'은','는')} 잠시 머뭇거리더니 손을 잡았다. 둘은 서로 답안을 고쳐 주었다.`+fx({soc:2,edu:1})+addGrade(2)+schRel('친구',s.flags.sch2R,{close:55,riv:30}))},
   {l:'신경 쓰지 않는다',s:'',a:'safe',f:()=>say('1등은 그 아이 차지가 되었다.'+addGrade(-1))}]),
  C('sch2_read',()=>schOK()&&inSchool(['college','convent','univ'])&&s.age>=14&&lit(),.9,3,'밤의 독서','lectures',()=>`${SCH().st==='convent'?'면회 온 사촌':SCH().st==='univ'?'하숙집 아래층 책방 주인':'도서실 담당 신부'}이 책 몇 권을 건넸다. 어느 책을 먼저 펴겠는가.`,()=>{const o=[];

@@ -378,12 +378,12 @@ EV.push(
      else say(`${T()>=1790.9?'치안판사':'영주 재판소'}가 일꾼들의 담합은 금지된 일이라며 주동자들에게 벌금을 물렸다.`+fx({money:-3,orat:1,bor:3,sus:rev()?3:0}))}},
    {l:'주는 대로 받고 일한다',s:'',a:'safe work',f:()=>say('말없이 허리를 굽혀 낫질을 하였다.'+fx({money:peaWage(6),farm:1,str:1}))},
    {l:'더 주는 이웃 마을로 간다',s:'',a:'greedy',f:()=>say('새벽에 이웃 마을 큰 농장으로 넘어갔다. 배신자라는 말이 뒤따랐다.'+fx({money:peaWage(8),rloc:-2,str:1}))}]}),
- C('pea2_cahier',()=>peaCom()&&isM()&&s.age>=25&&peaYr(tm(1789,2),tm(1789,5))&&!s.flags.peaCahier,4,99,'진정서','le cahier de doléances','왕이 삼부회를 불렀다. 일요일 미사 뒤 교회에서 스물다섯 살 넘은 납세자들이 모여 마을의 진정서(cahier de doléances)를 쓴다. 읍내 공증인이 다른 마을에서 쓴 본보기를 들고 왔다. 무엇을 적을지, 누구를 바이아주 회의에 대표로 보낼지 정해야 한다.',[
-   {l:'일어나 영주의 공조와 십일조부터 적으라고 한다',s:'웅변·평판 판정',a:'radical social',f:async()=>{s.flags.peaCahier=1;const m=md([[s.sk.orat>=25,1,'말솜씨'],[s.rep.rloc>=60,1,'이웃의 신망'],[s.st.soc>=50,1,'사교'],[s.rep.rloc<35,-1,'평판이 나쁨']]);const r=await roll(m.m,{label:'주민 회의',why:m.why});
-     if(r.v>=4){s.flags.peaSyndic=1;say('그대가 부른 대로 영주의 방앗간, 비둘기장, 사냥권, 십일조의 폐해가 첫머리에 적혔다. 주민들이 그대를 바이아주 회의에 보낼 대표로 뽑았다.'+fx({orat:3,rloc:5,inf:5,bor:5,brl:2,pol:4}),'big')}
-     else say('공증인이 매끄럽게 다듬은 문장이 적혔다. 그대 말은 끝에 한 줄로 남았다.'+fx({orat:1,bor:3,pol:2}))}},
-   {l:'전하께서 굽어살피시리라 믿고 소금세와 타유세만 적는다',s:'',a:'royal safe',f:()=>{s.flags.peaCahier=1;say('“전하의 충성스러운 백성들은…” 하는 문장으로 진정서가 시작되었다.'+fx({rloc:1,bor:1,brg:-2}))}},
-   {l:'뒷줄에서 듣기만 한다',s:'',a:'safe',f:()=>{s.flags.peaCahier=1;say(lit()?'맨 끝에 이름을 써 넣었다.':'글을 몰라 진정서 끝에 십자 표시를 하였다.')}}]),
+ C('pea2_assembly',()=>peaCom()&&isM()&&s.age>=25&&(pre89()||T()>=1800),.4,6,'주민 회의','l’assemblée des habitants',()=>`종탑이 갈라지고 마을 우물이 무너졌다. 고치는 돈을 집집마다 나눠 낼 일을 두고 일요일 미사 뒤 교회 앞에서 회의가 열렸다. ${pre89()?'회의가 정한 분담금도 지방 감독관의 하위 관리(subdélégué)가 허락해야 걷을 수 있다.':'면 의회가 정해도 도지사가 승인해야 한다.'} 부농들은 머릿수로, 가난한 집들은 땅 크기로 나누자고 한다.`,[
+   {l:'땅 크기대로 나누자고 일어선다',s:'웅변·평판 판정',a:'social radical',f:async()=>{const m=md([[s.sk.orat>=25,1,'말솜씨'],[s.rep.rloc>=60,1,'이웃의 신망'],[s.st.soc>=50,1,'사교'],[s.rep.rloc<35,-1,'평판이 나쁨']]);const r=await roll(m.m,{label:'주민 회의',why:m.why});
+     if(r.v>=4)say('그대 말대로 정해졌다. 가난한 집들이 그대에게 고개를 숙였다. 그런데 승인서는 석 달이 지나서야 내려왔다.'+fx({orat:2,rloc:4,money:peaT()>=3?-peaV(6):-2,bpw:3,inf:2}));
+     else say('부농들 뜻대로 머릿수로 나뉘었다. 승인서를 기다리는 사이 겨울이 왔다.'+fx({orat:1,money:-3,bpw:2}))}},
+   {l:'머릿수로 나누자는 쪽에 선다',s:'',a:'greedy safe',f:()=>say('분담금은 정해졌다. 날품팔이들이 그대를 흘겨보았다.'+fx({money:-3,rloc:-3,bor:-1}))},
+   {l:'돈 대신 일손을 내놓겠다고 한다',s:'',a:'work social',f:()=>say('사흘 동안 돌을 나르고 석회를 개었다.'+fx({str:1,craft:1,rloc:3,hp:-1}))}]),
  C('pea2_cure',()=>peaCom()&&(T()<1791.3||T()>=1802),.4,6,'본당 신부','monsieur le curé',()=>`${peaCure()}가 집에 들렀다. 성당 지붕을 고칠 일손과 돈이 모자란다고 한다. ${T()<1790?'십일조는 먼 수도원으로 가고 신부는 쥐꼬리만 한 몫(portion congrue)으로 산다.':'신부의 봉급은 나라가 준다지만 늘 늦는다.'} 신부는 마을 일에 그대의 힘을 빌리고 싶어 한다.`,[
    {l:'주일마다 일손을 보탠다',s:'',a:'pious work',f:()=>{const r=peaRel('후원자',peaCure(),{v:'vfam',inf:20,close:55,trust:55});say('주일 오후마다 돌을 나르고 석회를 개었다. 신부가 강론에서 그대 이름을 불렀다.'+fx({faith:3,rloc:3,str:1,craft:1})+peaRF(r,{close:8,trust:6}))}},
    {l:'돈만 조금 보낸다',s:'',a:'safe',f:()=>{const r=peaRel('후원자',peaCure(),{v:'vfam',inf:20});say('은화 한 닢을 보냈다.'+fx({money:-peaV(3),faith:1})+peaRF(r,{close:2}))}},
