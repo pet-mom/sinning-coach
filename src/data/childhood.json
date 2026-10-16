@@ -3170,8 +3170,7 @@
    ],
    "region": [
     "normandie"
-   ],
-   "fa": true
+   ]
   },
   "w": 0.6,
   "once": false,
@@ -4020,8 +4019,7 @@
    "age": [
     1,
     16
-   ],
-   "fa": true
+   ]
   },
   "w": 0.8,
   "once": true,
@@ -4080,9 +4078,7 @@
    "age": [
     3,
     15
-   ],
-   "fa": true,
-   "mo": true
+   ]
   },
   "w": 0.6,
   "once": true,
@@ -4643,8 +4639,7 @@
    "age": [
     1,
     12
-   ],
-   "mo": true
+   ]
   },
   "w": 0.8,
   "once": true,
