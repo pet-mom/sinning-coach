@@ -904,11 +904,11 @@
   },
   "who": {
    "urban": true,
-   "married": true,
    "age": [
     18,
     45
-   ]
+   ],
+   "lostBaby": true
   },
   "w": 1.2,
   "once": false,
@@ -3726,11 +3726,11 @@
   },
   "who": {
    "sex": "F",
-   "married": true,
    "age": [
     25,
     80
-   ]
+   ],
+   "widow": true
   },
   "w": 0.4,
   "once": true,
