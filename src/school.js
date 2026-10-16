@@ -96,7 +96,7 @@ function enterCollege(o={}){const x=SCH(),t=T(),e=colEra(t);x.st='college';x.y0=
   const mil=['milit','brienne'].includes(x.school);
   if(e<0)return say(`콜레주들이 문을 닫아 집에서 ${x.tutor||'가정교사'}에게 라틴어와 수학을 계속 배웠다.`+fx({edu:3}));
   if(mil)return say(`${nm}에 들어갔다. 부계 4대 귀족 증명서와 가난 증명서를 내고 왕의 장학생이 되었다. 파란 제복을 입고 북소리에 맞추어 일어났다.`+fx({edu:3,cour:2,vord:2}),'big');
-  if(x.ext)return say(`${jo(nm,'에','에')} 통학생(엑스테른)으로 다니기 시작하였다. ${e===2?'기숙사도 정해진 학년도 없이 강의를 골라 들었다.':'날마다 책가방을 메고 생트주느비에브 언덕길을 올랐다.'}`+fx({edu:4,soc:1}));
+  if(x.ext)return say(`${nm}에 통학생(엑스테른)으로 다니기 시작하였다. ${e===2?'기숙사도 정해진 학년도 없이 강의를 골라 들었다.':'날마다 책가방을 메고 생트주느비에브 언덕길을 올랐다.'}`+fx({edu:4,soc:1}));
   say(`${nm}에 기숙생(팡시오네르)으로 들어가 ${e===2?'수학과 고전어 반':'라틴어 문법반(제6반)'}부터 시작하였다.${noble()&&e<=1&&s.estate==='epee'?' 가정교사가 따라와 학교 안 개인 방(샹브르)을 함께 썼다.':''}`+fx({edu:4,soc:1}))}
 function pickConvent(){const t=T(),E=s.estate;
   if(t<1792.6)return wpk(E==='epee'?[['abbaye',2],['pentemont',2],['visit',1]]:E==='robe'?[['visit',2],['ursul',1],['pentemont',1],['abbaye',.8]]:E==='hobereau'?[['ursul',2],['visit',1]]:[['ursul',3],['visit',1]]);
