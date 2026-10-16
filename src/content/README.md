@@ -62,3 +62,27 @@
   - price·wage는 배율(1 = 평년), jobs·supply는 0~100, cur는 지폐 가치(1 = 정화).
   - `wageEarner()`는 품삯으로 사는 사람인지 알려 준다.
 - **판정 예**: `md([[s.st.dex>=55,1,'기술'],[s.sk.sew>=40,1,'바느질 솜씨'],[s.st.str<30,-1,'힘 부족'],[s.rep.rloc>=65,1,'이웃의 신망']])`.
+
+## 추가 규칙 (2차 개편)
+
+- **관계는 실존 인물만**
+  - `addRel(role)`은 지금 시기·장소·처지에 맞는 실존 인물을 src/data/people.json에서 골라 붙인다. 맞는 사람이 없으면 null을 돌려준다.
+  - `addRel(role,{pid:'desmoulins'})`처럼 특정 인물을 지정할 수 있다.
+  - 지어낸 이름(`{n:'아무개'}`)을 넘기면 관계를 만들지 않고 null을 돌려준다. 그 사람은 이야기 속 인물로만 남는다.
+  - 실존 인물의 파벌·영향력·사망은 역사를 따르므로 장면에서 바꾸지 않는다(`relSync`).
+- **학식 분야** `s.kn[k]`: klat 라틴어·고전 · ktheo 신학 · klaw 법학 · kmed 의학 지식 · ksci 수학·자연과학 · kphil 철학·사상 · khist 역사·지리 · klang 외국어 · klett 문학. fx 키로 바로 쓴다.
+- **숙련 추가**: wood 목공 · metal 금속 세공 · weave 직조 · cook 제빵·요리 · manner 예법·몸가짐. 수공업자의 전문 분야는 `pickSpec()`(s.spec)에 있다.
+- **신앙생활**
+  - `FAITHM`, `faithModeNow()`, `setFaithMode(k)`: devout · custom · conflict · secret · reason · supreme · theo · doubt.
+  - 신앙 수치는 고른 신앙생활 쪽으로 해마다 다가간다.
+- **병**
+  - src/health.js의 `DISEASES` 표에 병을 더한다. 항목은 `{k,n,fr,inc:()=>연간 발병률,cfr:()=>치사율,sev,mo,chronic,after}`.
+  - 건강이 낮을수록(`illMult`) 잘 걸린다.
+- **정치**
+  - `spectrum()`, `polLabel(p)`: 시대별 성향 이름.
+  - `ISSUES`: 항목마다 `a,b` 기간과 `fp`(파벌별 입장)를 둔다. `activeIssues()`로 지금 쟁점만 쓴다.
+  - `pubPol()`: 공개 입장. `conduct()`는 open·adapt·silent. 위험을 따질 때는 `s.pol` 대신 `pubPol()`을 쓴다.
+- **직업·진로·행동 등록부**
+  - 직업: `defineTrack(k,이름,{key:['dex',45],p:.06,lit:false,sk:{cook:3,main:'cook'}})`, `defineJob(id,tr,t,n,nf,fr,pay,need,ok)`.
+  - 진로: `defineEntry(id,설명,조건)`.
+  - 행동: `defineAct({k,n,s,g,cost,c,f|inter})`. g는 body · learn · social · faith · money · politics · risk · life.
