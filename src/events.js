@@ -121,7 +121,10 @@ const EV=[
    {l:'지난 일은 묻어 둔다',s:'',a:'safe',f:()=>say('지난 일은 말하지 않았다.')}])
 ];
 async function randomEvent(p=.72){if(s.dead||s.cond==='prison'||s.cond==='emigre')return;if(R()>p)return;
-  s.cd=s.cd||{};const pool=EV.filter(e=>{try{return e.c()&&!(s.cd[e.id]>s.year)}catch(x){return false}});if(!pool.length)return;
+  s.cd=s.cd||{};
+  // 생활사 데이터(학술 자료 근거)를 60% 확률로 먼저 고른다
+  if(R()<.6){const dp=dataPool();if(dp.length){const tot=dp.reduce((a,e)=>a+e.w,0);let r=R()*tot;for(const e of dp){r-=e.w;if(r<=0){await runData(e);return}}await runData(dp[dp.length-1]);return}}
+  const pool=EV.filter(e=>{try{return e.c()&&!(s.cd[e.id]>s.year)}catch(x){return false}});if(!pool.length)return;
   const tot=pool.reduce((a,e)=>a+e.w,0);let r=R()*tot,e=pool[0];for(const x of pool){r-=x.w;if(r<=0){e=x;break}}
   if(e.cd)s.cd[e.id]=s.year+e.cd;await e.run()}
 

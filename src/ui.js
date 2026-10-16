@@ -2,9 +2,10 @@
 let logBox=null;
 function entryNode(e){
   if(e.k==='yr'){const d=el('div','le yr');const m=e.t.match(/^(\d+)년(?: · (.*))?$/);d.appendChild(el('b',null,m?m[1]+'년':e.t));if(m&&m[2])d.appendChild(el('span','mut',m[2]));return d}
-  const d=el('div','le '+e.k);d.appendChild(el('span','ag',e.a!=null?e.a+'세':''));
+  const d=el('div','le '+(e.k==='fact'?'dice fact':e.k));d.appendChild(el('span','ag',e.a!=null?e.a+'세':''));
   const body=el('div','lb');
   if(e.k==='dice'){body.appendChild(el('span','tag data','자료'));body.appendChild(el('span','mono',e.t))}
+  else if(e.k==='fact'){body.appendChild(el('span','tag data','자료'));body.appendChild(el('span','mono',e.t+' '));(e.d&&e.d.src||[]).forEach(i=>{const a=el('a','cite',srcShort(i));a.href=LIFE_SRC[i].u;a.target='_blank';a.rel='noopener';body.appendChild(a)})}
   else{let txt=e.t,fxs=null;const m=txt.match(/^(.*?)\s?\(([^()]*(?:[+-]\s?[\d,]+)[^()]*)\)(\.?)$/);if(m&&e.k!=='sys'){txt=m[1]+m[3];fxs=m[2].split(', ')}
     if(e.k==='hist'){body.appendChild(el('span','tag hist',`${e.m!=null?e.m+1+'월':''} 역사`.trim()));body.appendChild(document.createTextNode(' '))}
     body.appendChild(el('span','tx',txt));
@@ -132,6 +133,9 @@ function showHelp(){const pin=openPanel('설명');const g=el('div','gloss');
   [['진행','1789년 전에는 계절 단위, 1789년 1월부터는 한 달 단위로 흐릅니다. 중요한 결정이 오면 시간이 멈춰요. 고르면 바로 이어집니다.'],['건강','낮으면 병사 확률이 크게 오릅니다. 쉰 살부터 해마다 줄어듭니다.'],['학식','글과 교양. 문맹이면 25를 넘지 못합니다. 법조·교회·문필, 연설과 논설에 쓰입니다.'],['처세','사람을 다루는 솜씨. 승진, 선거, 항변, 당내 지위에 쓰입니다.'],['담력','위험한 선택에 쓰입니다. 전투, 도주, 시위, 결투.'],
    ['정치 성향','-100(절대왕정)에서 +100(급진 상퀼로트)까지. 강령 표명, 사건 선택, 파벌 활동으로 움직이고 해마다 기록됩니다. 시대마다 위험한 쪽이 바뀝니다.'],['파벌','그 시기에 실제로 있던 파벌만 나타납니다. 친밀도는 성향과 강령이 얼마나 맞는지입니다. 파벌이 몰락하면 지위가 높을수록 위험합니다.'],
    ['혐의','공포정치(1793~94) 때 체포 확률을 높입니다. 귀족 출신, 선서 거부, 왕당파 성향, 부유함, 반란 지역도 위험합니다.'],['자료','기록의 ‘자료’ 줄은 판정 주사위와 당대 통계에서 뽑은 확률을 보여 줍니다.']].forEach(([k,v])=>{const d=el('div');d.appendChild(el('b',null,k));d.appendChild(el('p',null,v));g.appendChild(d)});pin.appendChild(g)}
+function showSources(){const pin=openPanel('참고 문헌');if(typeof LIFE_SRC==='undefined'||!LIFE_SRC.length){pin.appendChild(el('p','mut','아직 자료가 없습니다.'));return}
+  pin.appendChild(el('p','mut',`게임 속 생활사 장면 ${LIFE_DATA.length}건의 근거가 된 학술 자료 ${LIFE_SRC.length}개입니다. 기록의 ‘자료’ 줄에서도 바로 열 수 있습니다.`));
+  const ul=el('ol','srcs');LIFE_SRC.map((x,i)=>[x,i]).sort((a,b)=>a[0].c.localeCompare(b[0].c)).forEach(([x])=>{const li=el('li');const a=el('a',null,x.c);a.href=x.u;a.target='_blank';a.rel='noopener';li.appendChild(a);li.appendChild(el('small',null,` · 장면 ${x.n}건`));ul.appendChild(li)});pin.appendChild(ul)}
 function showLives(){const pin=openPanel('지난 인생');const l=loadLives();if(!l.length)pin.appendChild(el('p','mut','아직 기록이 없습니다.'));const ul=el('ul','lives');
   l.forEach(x=>{const li=el('li');li.appendChild(el('b',null,x.ep));li.appendChild(document.createTextNode(` — ${x.n}, ${x.y}, ${x.age}세`));li.appendChild(el('p',null,x.txt));ul.appendChild(li)});pin.appendChild(ul)}
 
@@ -228,7 +232,7 @@ function boot(){logBox=$('#log');$('#logMore').onclick=()=>{logLimit+=LOG_STEP;f
   document.querySelectorAll('#spd button').forEach(b=>b.onclick=()=>setSpeed(+b.dataset.s));
   $('#nextB').onclick=()=>{if(!running||busy||sheetLive)return;clearTimeout(timer);ticking=false;frac=0;step()};
   $('#moreB').onclick=e=>{e.stopPropagation();$('#menu').hidden=!$('#menu').hidden};document.addEventListener('click',()=>{$('#menu').hidden=true});
-  $('#mHist').onclick=showHist;$('#mHelp').onclick=showHelp;$('#mLives').onclick=showLives;$('#mPol').onclick=showPolitics;$('#autoT').onclick=()=>setAuto(!autoMode);
+  $('#mHist').onclick=showHist;$('#mHelp').onclick=showHelp;$('#mLives').onclick=showLives;$('#mSrc').onclick=showSources;$('#mPol').onclick=showPolitics;$('#autoT').onclick=()=>setAuto(!autoMode);
   $('#mNew').onclick=()=>{if(!s)return;running=false;freeze();save();$('#title').hidden=false;$('#contB').hidden=!load();showNameForm()};
   $('#actB').onclick=showActs;$('#hint').onclick=()=>{$('#hint').hidden=true};
   $('#pp').innerHTML=PAUSE;
