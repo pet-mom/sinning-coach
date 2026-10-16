@@ -1,0 +1,3865 @@
+[
+ {
+  "id": "epi-001",
+  "cat": "epidemic",
+  "text": "마을에 천연두가 돌아 이웃집 아이 둘이 한 달 사이에 묻혔다.",
+  "when": {
+   "from": 1750,
+   "to": 1805
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 초 프랑스에서 천연두는 사망 열 건 중 한 건꼴의 원인이었다.",
+  "src": [
+   {
+    "cite": "Jacques Momot (2006), 「La variole en Seine-Inférieure」, Études normandes 55(3): 57-66",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_2006_num_55_3_1644"
+   }
+  ]
+ },
+ {
+  "id": "epi-002",
+  "cat": "epidemic",
+  "text": "천연두를 앓고 살아났으나 뺨과 코에 곰보 자국이 깊게 남았다.",
+  "fx": {
+   "hp": -3,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1820
+  },
+  "who": {
+   "age": [
+    1,
+    30
+   ]
+  },
+  "w": 1.2,
+  "once": true,
+  "fact": "18세기 프랑스에서는 해마다 약 5만~8만 명이 천연두로 죽었고, 치명률은 20~45%에 이르렀다.",
+  "src": [
+   {
+    "cite": "Andreas G. Nerlich, Antonio Perciaccante, Simon T. Donell, Raffaella Bianucci (2025), 「The Pockmarked Face of the Comte de Mirabeau」, Emerging Infectious Diseases 31(8): 1684-1686",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12309750/"
+   }
+  ]
+ },
+ {
+  "id": "epi-003",
+  "cat": "epidemic",
+  "text": "초상화가가 얼굴의 곰보 자국을 슬쩍 지우고 그려 주었다.",
+  "fx": {
+   "fame": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "epee",
+    "robe",
+    "bourgeois"
+   ],
+   "age": [
+    16,
+    70
+   ]
+  },
+  "w": 0.4,
+  "once": false,
+  "fact": "1789년 보즈가 그린 미라보 초상에는 곰보 자국이 없지만, 1791년 우동의 흉상에는 턱·뺨·코의 흉터가 그대로 새겨졌다.",
+  "src": [
+   {
+    "cite": "Andreas G. Nerlich, Antonio Perciaccante, Simon T. Donell, Raffaella Bianucci (2025), 「The Pockmarked Face of the Comte de Mirabeau」, Emerging Infectious Diseases 31(8): 1684-1686",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12309750/"
+   }
+  ]
+ },
+ {
+  "id": "epi-004",
+  "cat": "epidemic",
+  "text": "얼굴이 얽은 늙은 하녀가 '난 한 번 앓았으니 다시는 안 걸린다'며 앓는 아이 곁을 지켰다.",
+  "when": {
+   "from": 1750,
+   "to": 1810
+  },
+  "w": 1,
+  "once": false,
+  "fact": "두 번 잇달아 천연두가 돈 도시에서 첫 유행을 앓아 얼굴이 얽은 생존자들은 다시 걸리지 않는다는 사실이 16세기부터 알려져 있었다.",
+  "src": [
+   {
+    "cite": "Jacques Momot (2006), 「La variole en Seine-Inférieure」, Études normandes 55(3): 57-66",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_2006_num_55_3_1644"
+   }
+  ]
+ },
+ {
+  "id": "epi-005",
+  "cat": "epidemic",
+  "text": "생말로 골목으로 또 천연두에 죽은 아이의 작은 관이 지나갔다.",
+  "when": {
+   "from": 1770,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1770~1790년 생말로에서는 천연두로 해마다 약 40명, 20년간 600~700명이 죽었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-006",
+  "cat": "epidemic",
+  "text": "여섯 살도 안 된 막냇동생이 천연두로 열흘 만에 숨졌다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1810
+  },
+  "who": {
+   "age": [
+    6,
+    40
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 프랑스에서 천연두는 한 세대의 15세 미만 아이 10~15%를 죽였고, 사망은 여섯 살 이전에 가장 많았다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-007",
+  "cat": "epidemic",
+  "text": "왕이 천연두로 죽었다는 소식이 전해지고 성당마다 조종이 울렸다.",
+  "when": {
+   "from": 1774,
+   "to": 1774,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "w": 3,
+  "once": true,
+  "fact": "루이 15세는 1774년 5월 10일 천연두로 죽었고, 한 달 뒤 세 손자가 마를리에서 인두접종을 받았다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Un fauteur de l'inoculation」, Un médecin des Lumières, Presses universitaires de Rennes: 179-186",
+    "url": "https://books.openedition.org/pur/111408"
+   }
+  ]
+ },
+ {
+  "id": "epi-008",
+  "cat": "epidemic",
+  "text": "살롱에서 라 콩다민의 인두접종 논문을 두고 언쟁이 붙었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1754,
+   "to": 1770
+  },
+  "who": {
+   "literate": true,
+   "estate": [
+    "epee",
+    "robe",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "라 콩다민은 1754년 4월 24일 왕립과학아카데미에서 「인두접종 논고」를 낭독해 프랑스의 접종 논쟁에 불을 붙였다.",
+  "src": [
+   {
+    "cite": "Paul-M. Bondois (1937), 「L'inoculation de la petite vérole (1754)」, Revue d'histoire de la pharmacie 25(98): 108-109",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1937_num_25_98_11089"
+   }
+  ]
+ },
+ {
+  "id": "epi-009",
+  "cat": "epidemic",
+  "text": "인두접종이 얀센파 싸움만큼 시끄러운 당파 문제가 됐다는 말을 들었다.",
+  "when": {
+   "from": 1760,
+   "to": 1775
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "달랑베르는 인두접종 문제가 프랑스에서 '거의 얀센주의 논쟁만큼 격렬한' 당파 싸움이 되었다고 썼다.",
+  "src": [
+   {
+    "cite": "Jean-Claude David (1985), 「La querelle de l'inoculation en 1763. Trois lettres inédites de Suard et du chevalier d'Éon」, Dix-huitième siècle 17: 271-284",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1985_num_17_1_1554"
+   }
+  ]
+ },
+ {
+  "id": "epi-010",
+  "cat": "epidemic",
+  "text": "법관들이 인두접종 뒤 아이가 죽으면 시술자를 처벌해야 하느냐로 다퉜다.",
+  "when": {
+   "from": 1754,
+   "to": 1770
+  },
+  "who": {
+   "job": [
+    "law"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1754년 12월 낭시 최고법원 검찰총장은 접종받은 이가 죽으면 시술자를 기소해야 하는지 파리 검찰총장에게 문의했다.",
+  "src": [
+   {
+    "cite": "Paul-M. Bondois (1937), 「L'inoculation de la petite vérole (1754)」, Revue d'histoire de la pharmacie 25(98): 108-109",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1937_num_25_98_11089"
+   }
+  ]
+ },
+ {
+  "id": "epi-011",
+  "cat": "epidemic",
+  "text": "마르세유의 한 의사가 제 아들부터 인두접종했다는 말이 돌았다.",
+  "when": {
+   "from": 1759,
+   "to": 1770
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "마르세유 의사 드 보는 1759년 가을 아들에게 첫 접종을 했고, 1761년 봄까지 21개월 동안 프로방스에서 85명이 접종받았다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Un fauteur de l'inoculation」, Un médecin des Lumières, Presses universitaires de Rennes: 179-186",
+    "url": "https://books.openedition.org/pur/111408"
+   }
+  ]
+ },
+ {
+  "id": "epi-012",
+  "cat": "epidemic",
+  "text": "부모가 큰돈을 들여 인두접종을 시켰다. 열이 오르고 고름집 몇 개가 돋았다가 가라앉았다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1759,
+   "to": 1800
+  },
+  "who": {
+   "estate": [
+    "epee",
+    "robe"
+   ],
+   "age": [
+    2,
+    16
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "아를의 의사 폼은 1759~1764년 4~22세 21명을 접종했는데 대부분 귀족이었다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Un fauteur de l'inoculation」, Un médecin des Lumières, Presses universitaires de Rennes: 179-186",
+    "url": "https://books.openedition.org/pur/111408"
+   }
+  ]
+ },
+ {
+  "id": "epi-013",
+  "cat": "epidemic",
+  "text": "인두접종은 도시 나리들 얘기일 뿐, 마을에선 아무도 받지 않았다.",
+  "when": {
+   "from": 1755,
+   "to": 1800
+  },
+  "who": {
+   "estate": [
+    "peasant",
+    "artisan"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 프랑스의 인두접종은 대체로 귀족과 부유층에 머물렀고 농촌은 거의 손대지 않은 채 남았다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Un fauteur de l'inoculation」, Un médecin des Lumières, Presses universitaires de Rennes: 179-186",
+    "url": "https://books.openedition.org/pur/111408"
+   }
+  ]
+ },
+ {
+  "id": "epi-014",
+  "cat": "epidemic",
+  "text": "파리에서 우두를 놓는 '바친' 접종이 시작됐다는 기사를 읽었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1802
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "제너의 접종법은 1800년 5월 파리에 자리 잡았고, 1799~1801년 천연두가 어린아이들을 수백 명씩 앗아가 부모들이 매달렸다.",
+  "src": [
+   {
+    "cite": "Yves-Marie Bercé (1983), 「Le clergé et la diffusion de la vaccination」, Revue d'histoire de l'Église de France 69(182): 87-106",
+    "url": "https://www.persee.fr/doc/rhef_0300-9505_1983_num_69_182_3298"
+   }
+  ]
+ },
+ {
+  "id": "epi-015",
+  "cat": "epidemic",
+  "text": "주임신부가 미사 끝에 아이들 우두 접종을 권했다.",
+  "when": {
+   "from": 1801,
+   "to": 1830
+  },
+  "who": {
+   "faith": "catholic",
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1800년 무렵 백신은 당대인들이 '접종 열풍', '발견의 충격'이라 부를 만큼 열광적으로 받아들여졌다.",
+  "src": [
+   {
+    "cite": "Yves-Marie Bercé (1983), 「Le clergé et la diffusion de la vaccination」, Revue d'histoire de l'Église de France 69(182): 87-106",
+    "url": "https://www.persee.fr/doc/rhef_0300-9505_1983_num_69_182_3298"
+   }
+  ]
+ },
+ {
+  "id": "epi-016",
+  "cat": "epidemic",
+  "text": "로슈포르의 의사가 공개 접종을 한다는 소식이 면사무소에 붙었다.",
+  "when": {
+   "from": 1800,
+   "to": 1802
+  },
+  "who": {
+   "region": [
+    "vendee",
+    "nantes",
+    "bordeaux"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "로슈포르의 보브모로는 1800년 3월 28일 제네바에서 온 우두 묻은 실을 받아 곧바로 접종을 시작했다.",
+  "src": [
+   {
+    "cite": "Jean-Noël Biraben (1979), 「La diffusion de la vaccination en France au XIXe siècle」, Annales de Bretagne et des pays de l'Ouest 86(2): 265-276",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1979_num_86_2_2981"
+   }
+  ]
+ },
+ {
+  "id": "epi-017",
+  "cat": "epidemic",
+  "text": "영국 의사가 소의 마마로 천연두를 막는다는 이야기가 제네바 잡지에 실렸다고 들었다.",
+  "when": {
+   "from": 1798,
+   "to": 1800
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "제너는 1798년 6월 연구를 발표했고, 대륙에서의 첫 언급은 1798년 10월 제네바의 한 잡지였다.",
+  "src": [
+   {
+    "cite": "Jean-Noël Biraben (1979), 「La diffusion de la vaccination en France au XIXe siècle」, Annales de Bretagne et des pays de l'Ouest 86(2): 265-276",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1979_num_86_2_2981"
+   }
+  ]
+ },
+ {
+  "id": "epi-018",
+  "cat": "epidemic",
+  "text": "면장이 마을 아이들을 성당 앞에 모아 우두를 맞혔다.",
+  "when": {
+   "from": 1804,
+   "to": 1830
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1804년 4월 샤프탈 회람으로 백신 사업이 국가 업무가 되었고, 1805년까지 프랑스에서 적어도 40만 명이 접종받았다.",
+  "src": [
+   {
+    "cite": "Jean-Baptiste Fressoz (2011), 「Le vaccin et ses simulacres : instaurer un être pour gérer une population, 1800-1865」, Tracés 21: 77-108",
+    "url": "https://journals.openedition.org/traces/5368"
+   }
+  ]
+ },
+ {
+  "id": "epi-019",
+  "cat": "epidemic",
+  "text": "팔에 우두를 맞았다. 며칠 뒤 작은 물집이 잡혔다가 딱지가 앉았다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1802,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    0,
+    12
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "리옹 지역 부모들은 아이 접종을 첫돌 이후나 이가 다 난 뒤로 미루는 일이 흔했다.",
+  "src": [
+   {
+    "cite": "Olivier Faure (2015), 「La vaccination dans la région lyonnaise au début du XIXe siècle」, Aux marges de la médecine, Presses universitaires de Provence: 297-313",
+    "url": "https://books.openedition.org/pup/27545"
+   }
+  ]
+ },
+ {
+  "id": "epi-020",
+  "cat": "epidemic",
+  "text": "산파가 바늘로 아이들 팔에 직접 우두를 놓아 주었다.",
+  "when": {
+   "from": 1807,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "론 도에서 1807~1852년 확인된 비(非)의사 접종 63건 가운데 51건을 여성이, 21건을 산파가 시행했다.",
+  "src": [
+   {
+    "cite": "Olivier Faure (2015), 「La vaccination dans la région lyonnaise au début du XIXe siècle」, Aux marges de la médecine, Presses universitaires de Provence: 297-313",
+    "url": "https://books.openedition.org/pup/27545"
+   }
+  ]
+ },
+ {
+  "id": "epi-021",
+  "cat": "epidemic",
+  "text": "이웃 엄마가 제 아이 팔에서 우두 고름을 떠 가는 것을 한사코 막았다.",
+  "when": {
+   "from": 1805,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "부모들은 아이 팔에서 백신을 채취하는 것을 거부하기 일쑤였고, 아픈 아이의 우두는 그 병까지 옮긴다고 믿기도 했다.",
+  "src": [
+   {
+    "cite": "Olivier Faure (2015), 「La vaccination dans la région lyonnaise au début du XIXe siècle」, Aux marges de la médecine, Presses universitaires de Provence: 297-313",
+    "url": "https://books.openedition.org/pup/27545"
+   }
+  ]
+ },
+ {
+  "id": "epi-022",
+  "cat": "epidemic",
+  "text": "의사가 우두 한 번에 2~3프랑을 달라고 해 접종을 미뤘다.",
+  "when": {
+   "from": 1810,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹 지역의 일부 의사는 접종 한 번에 2~3프랑을 요구했고, 론 도 접종의는 1836년 이후 8년간 연 60프랑 정액을 받았다.",
+  "src": [
+   {
+    "cite": "Olivier Faure (2015), 「La vaccination dans la région lyonnaise au début du XIXe siècle」, Aux marges de la médecine, Presses universitaires de Provence: 297-313",
+    "url": "https://books.openedition.org/pup/27545"
+   }
+  ]
+ },
+ {
+  "id": "epi-023",
+  "cat": "epidemic",
+  "text": "이웃 마을에 천연두가 나자 미루던 엄마들이 아이를 안고 접종소로 몰려갔다.",
+  "when": {
+   "from": 1805,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹 지역에서 접종이 가장 잘 받아들여진 때는 유행이 눈앞에 닥쳤을 때였다—'눈앞의 병만이 예방약을 쓰게 한다.'",
+  "src": [
+   {
+    "cite": "Olivier Faure (2015), 「La vaccination dans la région lyonnaise au début du XIXe siècle」, Aux marges de la médecine, Presses universitaires de Provence: 297-313",
+    "url": "https://books.openedition.org/pup/27545"
+   }
+  ]
+ },
+ {
+  "id": "epi-024",
+  "cat": "epidemic",
+  "text": "디종 구빈원 아이가 팔의 우두를 옮겨 주러 마을에 왔다.",
+  "when": {
+   "from": 1810,
+   "to": 1847
+  },
+  "who": {
+   "region": [
+    "bourgogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "디종에서는 1818년까지 약 2만 4천 명이 접종받았고, 버려진 아이들이 '백신 운반자'로 동원되었다.",
+  "src": [
+   {
+    "cite": "Laurent-Henri Vignaud (2021), 「Les enfants trouvés à l'avant-garde des politiques vaccinales de l'époque romantique : le cas dijonnais (1801-1847)」, Prévenir, accueillir, guérir, Presses universitaires du Septentrion: 113-132",
+    "url": "https://books.openedition.org/septentrion/126267"
+   }
+  ]
+ },
+ {
+  "id": "epi-025",
+  "cat": "epidemic",
+  "text": "구빈원 아이를 키우던 유모가 아이를 도시로 데려가 우두를 맞혔다. 안 그러면 삯이 끊긴다고 했다.",
+  "when": {
+   "from": 1810,
+   "to": 1847
+  },
+  "who": {
+   "region": [
+    "bourgogne"
+   ],
+   "sex": "F",
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "디종 백신위원회는 1809년부터 유모가 맡은 버려진 아이를 데려와 접종받게 하지 않으면 삯을 주지 말자고 했고, 농촌 의사에겐 접종 1명당 1프랑을 주었다.",
+  "src": [
+   {
+    "cite": "Laurent-Henri Vignaud (2021), 「Les enfants trouvés à l'avant-garde des politiques vaccinales de l'époque romantique : le cas dijonnais (1801-1847)」, Prévenir, accueillir, guérir, Presses universitaires du Septentrion: 113-132",
+    "url": "https://books.openedition.org/septentrion/126267"
+   }
+  ]
+ },
+ {
+  "id": "epi-026",
+  "cat": "epidemic",
+  "text": "낭트 구빈원 신생아들이 접종 뒤 줄줄이 죽었다는 소문이 돌았다.",
+  "when": {
+   "from": 1812,
+   "to": 1815
+  },
+  "who": {
+   "region": [
+    "nantes",
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1812년 낭트 구빈원에서 발토 의사가 접종한 신생아 32명 중 22명이 한 달 안에 죽었다.",
+  "src": [
+   {
+    "cite": "Jean-Baptiste Fressoz (2011), 「Le vaccin et ses simulacres : instaurer un être pour gérer une population, 1800-1865」, Tracés 21: 77-108",
+    "url": "https://journals.openedition.org/traces/5368"
+   }
+  ]
+ },
+ {
+  "id": "epi-027",
+  "cat": "epidemic",
+  "text": "고아원 아이 백여 명에게 일부러 천연두를 접종해 우두 효과를 시험했다는 기사를 읽었다.",
+  "when": {
+   "from": 1801,
+   "to": 1803
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1801년 11월 백신위원회는 미리 우두를 맞힌 버려진 아이 102명에게 천연두를 접종하는 공개 시험을 했다.",
+  "src": [
+   {
+    "cite": "Jean-Baptiste Fressoz (2011), 「Le vaccin et ses simulacres : instaurer un être pour gérer une population, 1800-1865」, Tracés 21: 77-108",
+    "url": "https://journals.openedition.org/traces/5368"
+   }
+  ]
+ },
+ {
+  "id": "epi-028",
+  "cat": "epidemic",
+  "text": "우두를 맞은 아이가 그래도 천연두에 걸렸다는 이야기에 엄마들이 술렁였다.",
+  "when": {
+   "from": 1803,
+   "to": 1830
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1803년 샤퐁은 접종 뒤 천연두 207건, 사망 39건, 각종 사고 115건을 집계했다.",
+  "src": [
+   {
+    "cite": "Jean-Baptiste Fressoz (2011), 「Le vaccin et ses simulacres : instaurer un être pour gérer une population, 1800-1865」, Tracés 21: 77-108",
+    "url": "https://journals.openedition.org/traces/5368"
+   }
+  ]
+ },
+ {
+  "id": "epi-029",
+  "cat": "epidemic",
+  "text": "가을 들어 마을에 피똥 설사가 돌아 장례 종이 날마다 울렸다.",
+  "when": {
+   "from": 1779,
+   "to": 1779,
+   "months": [
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "vendee",
+    "normandie",
+    "picardie",
+    "nantes"
+   ]
+  },
+  "w": 3,
+  "once": true,
+  "fact": "1779년은 1770~1782년 중 유일하게 사망이 출생을 앞선 해로, 사망 966,467명 대 세례 956,667명이었다.",
+  "src": [
+   {
+    "cite": "François Lebrun (1973), 「Une grande épidémie en France au XVIIIe siècle : la dysenterie de 1779」, Annales de démographie historique 1973: 403-415",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_hos_1973_1_1152"
+   }
+  ]
+ },
+ {
+  "id": "epi-030",
+  "cat": "epidemic",
+  "text": "이질에 걸려 열흘 동안 피 섞인 설사를 했다. 겨우 자리에서 일어났다.",
+  "fx": {
+   "hp": -6
+  },
+  "when": {
+   "from": 1779,
+   "to": 1779,
+   "months": [
+    9,
+    10,
+    11
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "vendee",
+    "normandie",
+    "picardie"
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1779년 가을 이질은 브르타뉴·푸아투·앙주·멘·노르망디·피카르디·플랑드르의 고을들을 통째로 휩쓸었다.",
+  "src": [
+   {
+    "cite": "François Lebrun (1973), 「Une grande épidémie en France au XVIIIe siècle : la dysenterie de 1779」, Annales de démographie historique 1973: 403-415",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_hos_1973_1_1152"
+   }
+  ]
+ },
+ {
+  "id": "epi-031",
+  "cat": "epidemic",
+  "text": "클로푸레 마을마다 이질 환자가 생겨 관이 줄지어 나갔다.",
+  "when": {
+   "from": 1779,
+   "to": 1779,
+   "months": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1779년 이질의 치사율은 클로푸레에서 약 17%, 내륙에서는 17~37%에 달했다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-032",
+  "cat": "epidemic",
+  "text": "의사가 '내 구역에만 환자가 육백이 넘는다'며 한숨을 쉬었다.",
+  "when": {
+   "from": 1779,
+   "to": 1779,
+   "months": [
+    9,
+    10,
+    11
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1779년 9월 21일 의사 시폴리오는 '내 구역에만 600명 넘는 환자가 있다'고 썼고, 그의 외과의 셋이 이 유행에서 죽었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-033",
+  "cat": "epidemic",
+  "text": "그해 생말로 묘지에 새 무덤이 평년보다 훨씬 많이 생겼다.",
+  "when": {
+   "from": 1779,
+   "to": 1780
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1779년 생말로 사망자는 582명으로 연평균 약 350명을 크게 넘었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-034",
+  "cat": "epidemic",
+  "text": "브르타뉴에선 태어나는 아이보다 묻히는 사람이 더 많다는 푸념을 들었다.",
+  "when": {
+   "from": 1770,
+   "to": 1787
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1770~1787년 브르타뉴 전체의 사망은 출생보다 10만 명 남짓 많았다.",
+  "src": [
+   {
+    "cite": "François Lebrun (1977), 「Les épidémies en Haute-Bretagne à la fin de l'Ancien Régime (1770-1789)」, Annales de démographie historique 1977: 181-206",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1977_num_1977_1_1348"
+   }
+  ]
+ },
+ {
+  "id": "epi-035",
+  "cat": "epidemic",
+  "text": "옆 교구가 또 열병으로 반쯤 비었다는 소문이 들렸다.",
+  "when": {
+   "from": 1770,
+   "to": 1787
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1770~1784년 브르타뉴는 사망이 세례보다 81,409명 많아 15년간 인구의 3.7%를 잃었지만, 왕국 전체는 약 6% 늘었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (1969), 「Le phénomène épidémique en Bretagne à la fin du XVIIIe siècle (1770-1787)」, Annales. ESC 24(6): 1562-1588",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1969_num_24_6_422188"
+   }
+  ]
+ },
+ {
+  "id": "epi-036",
+  "cat": "epidemic",
+  "text": "렌 주교구에선 왜 이리 장례가 잦으냐고 장터 사람들이 수군댔다.",
+  "when": {
+   "from": 1770,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브르타뉴 인구는 1770년경 230만 명에 이르렀다가 이후 20년간 3.5% 줄었으나 같은 기간 왕국은 6% 늘었다.",
+  "src": [
+   {
+    "cite": "Christine Nougaret-Chapalain (1982), 「La lutte contre les épidémies dans le diocèse de Rennes au XVIIIe siècle」, Bibliothèque de l'École des chartes 140(2): 215-233",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1982_num_140_2_450268"
+   }
+  ]
+ },
+ {
+  "id": "epi-037",
+  "cat": "epidemic",
+  "text": "지사관이 보낸 '왕의 약상자'가 사제관에 도착해 신부가 가루약을 나눠 주었다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "앙시앵 레짐의 '엘베시우스 약'이라 불린 구휼 약상자는 1804년(공화력 13년) 법령으로 부활해 도청·군청에 비축되었다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-038",
+  "cat": "epidemic",
+  "text": "삼을 담그는 웅덩이 근처 집들에서 이질과 썩은 열이 먼저 터졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1800,
+   "months": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "who": {
+   "region": [
+    "auvergne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1771년 5월 부르보네의 가나에서 이질과 '썩은 열'이 돌았을 때 의사들은 삼을 물에 담그는 일을 원인으로 꼽았다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-039",
+  "cat": "epidemic",
+  "text": "행군 중 부대에 이질이 번져 길가에 주저앉는 병사가 늘었다.",
+  "fx": {
+   "hp": -3
+  },
+  "when": {
+   "from": 1756,
+   "to": 1815
+  },
+  "who": {
+   "job": [
+    "army"
+   ],
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "이질은 18세기~19세기 초 군의서에서 '군대의 가장 흔하고 가장 치명적인 병 가운데 하나'로 꼽혔다.",
+  "src": [
+   {
+    "cite": "Roger Darquenne (1970), 「La « dysentrie » en Belgique à la fin de l'Empire」, Revue du Nord 52(206): 367-373",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1970_num_52_206_3075"
+   }
+  ]
+ },
+ {
+  "id": "epi-040",
+  "cat": "epidemic",
+  "text": "의사가 이번 열을 '악성 썩은 열'이라 부르며 수첩에 적어 갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "J.-P. 페테르는 18세기 의사들이 쓴 '열'의 이름을 128가지나 헤아렸다.",
+  "src": [
+   {
+    "cite": "Roger Darquenne (1970), 「La « dysentrie » en Belgique à la fin de l'Empire」, Revue du Nord 52(206): 367-373",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1970_num_52_206_3075"
+   }
+  ]
+ },
+ {
+  "id": "epi-041",
+  "cat": "epidemic",
+  "text": "블루아 근처 마을에서 갈퀴콩 가루 빵을 먹은 이들이 다리가 마비되었다는 소문을 들었다.",
+  "when": {
+   "from": 1829,
+   "to": 1830
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1829년 블루아 북쪽 쉬에브르 일대에서 '푸아 코르뉘' 가루를 섞은 빵을 먹은 농민들이 마비를 일으켜 5월 21일 도지사가 조사를 명했다.",
+  "src": [
+   {
+    "cite": "Frédéric Bonté, Nicole Fiot (1999), 「Deux épidémies en Blésois au XIXe siècle et leur traitement pharmacologique」, Revue d'histoire de la pharmacie 87(322): 193-198",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1999_num_87_322_4739"
+   }
+  ]
+ },
+ {
+  "id": "epi-042",
+  "cat": "epidemic",
+  "text": "그해 장례가 평년의 두 배를 넘자 신부가 장부 여백에 '죽음의 해'라고 적었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "피에르 구베르는 한 해 사망자가 평년의 두 배에 이르면 '위기'로 볼 것을 제안했다.",
+  "src": [
+   {
+    "cite": "François Lebrun (1980), 「Les crises démographiques en France aux XVIIe et XVIIIe siècles」, Annales. ESC 35(2): 205-234",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1980_num_35_2_282626"
+   }
+  ]
+ },
+ {
+  "id": "epi-043",
+  "cat": "epidemic",
+  "text": "포위된 스트라스부르에서 집집마다 염소 연기를 피웠다.",
+  "when": {
+   "from": 1814,
+   "to": 1814,
+   "months": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "alsace"
+   ]
+  },
+  "w": 3,
+  "once": false,
+  "fact": "1814년 1월 첫 20일 스트라스부르 사망자는 전년 101명에서 340명으로 늘었고 절반가량이 '신경열'이었다; 도지사는 하루 두 번 공공장소 훈증을 명했다.",
+  "src": [
+   {
+    "cite": "Pierre Bachoffner (1977), 「Les fumigations de chlore contre le typhus à Strasbourg, en 1814」, Revue d'histoire de la pharmacie 65(235): 285-287",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1977_num_65_235_1821"
+   }
+  ]
+ },
+ {
+  "id": "epi-044",
+  "cat": "epidemic",
+  "text": "집에 묵은 퇴각병이 열에 들떠 헛소리를 하더니 며칠 뒤 온 식구가 앓아누웠다.",
+  "fx": {
+   "hp": -5
+  },
+  "when": {
+   "from": 1813,
+   "to": 1814,
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "alsace",
+    "champagne"
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1814년 스트라스부르의 티푸스는 독일·마인츠에서 퇴각해 민가에 묵은 나폴레옹 군 병사들이 퍼뜨렸다.",
+  "src": [
+   {
+    "cite": "Pierre Bachoffner (1977), 「Les fumigations de chlore contre le typhus à Strasbourg, en 1814」, Revue d'histoire de la pharmacie 65(235): 285-287",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1977_num_65_235_1821"
+   }
+  ]
+ },
+ {
+  "id": "epi-045",
+  "cat": "epidemic",
+  "text": "숙영 병사들이 떠난 뒤 마을에 티푸스가 돌아 신부까지 쓰러졌다.",
+  "when": {
+   "from": 1813,
+   "to": 1814,
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "champagne",
+    "alsace"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1813년 말~1814년 초 뫼르트 도의 티푸스 유행에 대해 투브넬은 468쪽짜리 보고서를 1814년에 펴냈다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-046",
+  "cat": "epidemic",
+  "text": "흉년 끝에 이웃 마을에 티푸스가 돌아 클레르몽에서 의사가 왔다.",
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "who": {
+   "region": [
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "왕정복고기 클레르몽 의학교 의사들은 나다야의 '썩은 악성열'(1815~1816)과 베르테종의 티푸스(1816~1817)를 보고했다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-047",
+  "cat": "epidemic",
+  "text": "함대가 돌아온 뒤 브레스트 해군병원에 열병 환자가 넘쳐 났다.",
+  "when": {
+   "from": 1757,
+   "to": 1760
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브레스트에서는 1758년처럼 함대가 귀항한 뒤 티푸스가 나타나곤 했다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-048",
+  "cat": "epidemic",
+  "text": "북방 항구에 페스트가 돈다는 소문에 배들의 입항이 막혔다.",
+  "when": {
+   "from": 1770,
+   "to": 1771
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "nantes",
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1770년 프랑스 서부 항구들은 페스트 공포 때문에 북방 나라들과의 교역을 중단했다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (1974), 「Environnement et épidémies : Brest au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 81(4): 733-743",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1974_num_81_4_2753"
+   }
+  ]
+ },
+ {
+  "id": "epi-049",
+  "cat": "epidemic",
+  "text": "항구의 수병 막사에 열병이 돌자 사람들이 그쪽 길로 다니지 않았다.",
+  "when": {
+   "from": 1775,
+   "to": 1785
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "nantes"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "구베르에 따르면 페스트와 콜레라 사이(1720~1830) 서부의 유행병 공포는 1740~45년과 1775~85년에 특히 컸다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (1974), 「Environnement et épidémies : Brest au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 81(4): 733-743",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1974_num_81_4_2753"
+   }
+  ]
+ },
+ {
+  "id": "epi-050",
+  "cat": "epidemic",
+  "text": "됭케르크에서 사람을 혼수에 빠뜨리는 열병이 돈다는 소식이 들렸다.",
+  "when": {
+   "from": 1772,
+   "to": 1784
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "됭케르크의 의사 티보는 1772년 '혼수성 티푸스' 유행과 1780~1784년의 두 차례 재유행을 보고했다.",
+  "src": [
+   {
+    "cite": "Olivier Ryckebusch (2017), 「De la charité aux soins hospitaliers」, Les hôpitaux généraux du Nord au siècle des Lumières (1737-1789), Presses universitaires du Septentrion: 135-152",
+    "url": "https://books.openedition.org/septentrion/17074"
+   }
+  ]
+ },
+ {
+  "id": "epi-051",
+  "cat": "epidemic",
+  "text": "마을 절반이 악성 열에 누웠지만 공동체가 약을 공짜로 나눠 주어 죽은 이는 많지 않았다.",
+  "when": {
+   "from": 1755,
+   "to": 1756
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1755년 생세제르에서는 6개월 동안 '악성·역병성 열' 환자가 500명을 넘었지만 다를뤽은 '스무 명도 잃지 않았다'고 썼다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-052",
+  "cat": "epidemic",
+  "text": "의사가 거리의 거름 더미를 강제로 치우게 했다. 농부들은 투덜댔다.",
+  "when": {
+   "from": 1760,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "다를뤽은 1768년 바르주몽의 악성 카타르열 때 거리의 거름을 강제로 치우게 했고, 1761년 르바르에서는 거리 청소와 깊은 매장이 시행되었다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-053",
+  "cat": "epidemic",
+  "text": "썩은 열을 앓던 이웃 여자가 벌레를 수백 마리 쏟았다는 소문이 돌았다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "다를뤽은 그리모의 '썩은 벌레열'(1748) 때 한 여자가 21일 동안 500마리 넘는 벌레를 쏟았다고 기록했다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-054",
+  "cat": "epidemic",
+  "text": "늑막염 환자에게 이발사가 피를 연거푸 뽑았다. 환자는 엿새째 숨졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1751년 로크브륀의 괴저성 늑막염 환자들은 3~6일째 죽어 갔고, 다를뤽은 지나친 사혈을 비판했다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-055",
+  "cat": "epidemic",
+  "text": "의사가 딱총나무와 카모마일 달인 물에 패랭이꽃 시럽을 타 마시게 했다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "w": 1,
+  "once": false,
+  "fact": "다를뤽은 딱총나무·체꽃·카모마일·엉겅퀴 달인 물에 패랭이꽃 시럽을 섞어 처방하곤 했다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-056",
+  "cat": "epidemic",
+  "text": "군청에서 보낸 의사가 늦게 도착했을 땐 이미 여럿이 묻힌 뒤였다.",
+  "when": {
+   "from": 1815,
+   "to": 1819
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1815~1819년 아미앵·둘랑 일대 49개 마을에서 트라누아가 본 환자 4,933명 중 376명이 죽었는데, 의사 도착 전 사망률은 18.5%, 도착 뒤는 2.7%였다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-057",
+  "cat": "epidemic",
+  "text": "환자가 평소보다 늘자 면장이 군수에게 의사를 보내 달라는 편지를 썼다.",
+  "when": {
+   "from": 1805,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "공화력 13년 지침은 한 코뮌의 환자가 평소보다 늘어 유행의 기미가 보이면 면장이 군수에게 알리고 군수가 군 의사를 보내도록 했다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-058",
+  "cat": "epidemic",
+  "text": "구호소에서 열병 앓는 집에 빵과 고기를 날라 왔다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1797,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "유행병 때의 식량 구호는 주로 빵과 고기였고, 자선·병원 기관이 있는 도시 환자는 대상에서 빠졌다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-059",
+  "cat": "epidemic",
+  "text": "도지사가 우리 군의 '유행병 의사'로 동네 개업의를 임명했다.",
+  "when": {
+   "from": 1805,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "유행병 의사는 공화력 13년 플로레알 12일(1805년 5월 5일) 법으로 생겨 도지사가 군마다 임명했으며, 공무원이 아닌 개업 의사였다.",
+  "src": [
+   {
+    "cite": "Chantal Beauchamp (1993), 「La maladie et son double. La suette miliaire et son traitement au XIXe siècle」, Annales. ESC 48(1): 203-225",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1993_num_48_1_279125"
+   }
+  ]
+ },
+ {
+  "id": "epi-060",
+  "cat": "epidemic",
+  "text": "도청 서기가 유행병 보고서가 서고에 산더미처럼 쌓였다고 했다.",
+  "when": {
+   "from": 1825,
+   "to": 1850
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1833년 유행병 위원회 보고서는 1771~1830년 72개 도 1,370개 코뮌에 관한 1,164건의 보고를 모았고, 그중 22%가 솜 도의 것이었다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-061",
+  "cat": "epidemic",
+  "text": "온몸이 땀에 젖고 좁쌀 같은 발진이 돋는 '땀병'이 이웃 마을에 돌았다.",
+  "when": {
+   "from": 1821,
+   "to": 1821,
+   "months": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "region": [
+    "picardie",
+    "ile",
+    "paris"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1821년 우아즈 도의 땀병은 3월에 시작해 여름에 정점을 찍고 9월에 끝났으며, 파리제가 이끄는 의사단이 파견되었다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-062",
+  "cat": "epidemic",
+  "text": "땀병 환자를 이불로 꽁꽁 싸매고 방을 덥혀 땀을 빼게 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "picardie",
+    "normandie",
+    "ile",
+    "champagne"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "'좁쌀열'과 '피카르디 땀병'은 1712년 몽벨리아르 유행부터 1870년대 말까지 프랑스에서 거듭 돌았다.",
+  "src": [
+   {
+    "cite": "Chantal Beauchamp (1998), 「La crise salutaire. Stratégies de la guérison dans la suette miliaire, XVIIIe-XXe siècles」, Revue d'histoire moderne et contemporaine 45(4): 807-821",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1998_num_45_4_1938"
+   }
+  ]
+ },
+ {
+  "id": "epi-063",
+  "cat": "epidemic",
+  "text": "땀병 유행을 보고 온 의사가 신문에 긴 보고서를 실었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1805,
+   "to": 1850
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "19세기 유행병 보고서는 대개 군마다 도지사가 임명한 유행병 의사들이 썼고, 학술원에서 낭독되기도 했다.",
+  "src": [
+   {
+    "cite": "Chantal Beauchamp (1993), 「La maladie et son double. La suette miliaire et son traitement au XIXe siècle」, Annales. ESC 48(1): 203-225",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1993_num_48_1_279125"
+   }
+  ]
+ },
+ {
+  "id": "epi-064",
+  "cat": "epidemic",
+  "text": "솔로뉴에서 온 일꾼은 누렇게 뜬 얼굴로 '거기선 다들 열을 앓는다'고 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 학자들은 솔로뉴를 '솔로뉴 열', '솔로뉴 사람의 괴저', 양을 죽이는 '솔로뉴 병'처럼 그 이름이 붙은 병들로 알았다.",
+  "src": [
+   {
+    "cite": "Christian Poitou (1976), 「Ergotisme, ergot de seigle et épidémies en Sologne au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 23(3): 354-368",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1976_num_23_3_2426"
+   }
+  ]
+ },
+ {
+  "id": "epi-065",
+  "cat": "epidemic",
+  "text": "늪지 마을에 사흘거리 열이 돌아 한여름 일손이 모자랐다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "프로방스의 주요 말라리아 지대는 론 평야, 카마르그 삼각주, 베르 호숫가, 마르세유~니스 해안이었고 18세기부터 19세기 후반까지 퍼졌다.",
+  "src": [
+   {
+    "cite": "Émeline Roucaute (2007), 「Une condition répulsive dans les rapports société/marais : l'exemple du paludisme en Provence (1550-1850)」, Annales du Midi 119(257): 41-55",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_2007_num_119_257_7164"
+   }
+  ]
+ },
+ {
+  "id": "epi-066",
+  "cat": "epidemic",
+  "text": "아를 근처 늪에서 일하다 학질에 걸려 이틀 걸러 오한이 났다.",
+  "fx": {
+   "hp": -4
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "urban": false,
+   "age": [
+    10,
+    70
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "아를에서는 이미 1544년부터 말라리아 환자 기록이 나타난다.",
+  "src": [
+   {
+    "cite": "Émeline Roucaute (2007), 「Une condition répulsive dans les rapports société/marais : l'exemple du paludisme en Provence (1550-1850)」, Annales du Midi 119(257): 41-55",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_2007_num_119_257_7164"
+   }
+  ]
+ },
+ {
+  "id": "epi-067",
+  "cat": "epidemic",
+  "text": "약방에서 키니네 환약을 샀다. 값이 만만치 않았다.",
+  "fx": {
+   "money": -6,
+   "hp": 2
+  },
+  "when": {
+   "from": 1825,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "19세기 랑드에선 누구나 '평생 한 번은 열병에 세금을 낸다'고 할 만큼 간헐열이 흔해, 닥스 약사들은 황산키니네를 2~3킬로그램씩 사들였다.",
+  "src": [
+   {
+    "cite": "Guy Devaux (2000), 「Le traitement des fièvres dans les Landes au XIXe siècle」, Revue d'histoire de la pharmacie 88(325): 133-134",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_2000_num_88_325_5052"
+   }
+  ]
+ },
+ {
+  "id": "epi-068",
+  "cat": "epidemic",
+  "text": "곰을 끌고 온 떠돌이 재주꾼들이 열병 고치는 비방을 판다며 마을을 돌았다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1820,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "gascogne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "레베유는 19세기 랑드에서 키니네 말고도 곰을 끌고 다니는 떠돌이(대개 아리에주 출신)의 '비합리적' 요법이 열병 환자들을 끌었다고 기록했다.",
+  "src": [
+   {
+    "cite": "Guy Devaux (2000), 「Le traitement des fièvres dans les Landes au XIXe siècle」, Revue d'histoire de la pharmacie 88(325): 133-134",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_2000_num_88_325_5052"
+   }
+  ]
+ },
+ {
+  "id": "epi-069",
+  "cat": "epidemic",
+  "text": "송진 작업장 감독이 열에 떠는 일꾼들에게 환약을 나눠 주었다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1820,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "gascogne"
+   ],
+   "job": [
+    "farm",
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "그랑드 랑드의 600~1,000명 규모 작업장 책임자들은 열병 환자에게 줄 환약을 늘 갖춰 두었다.",
+  "src": [
+   {
+    "cite": "Guy Devaux (2000), 「Le traitement des fièvres dans les Landes au XIXe siècle」, Revue d'histoire de la pharmacie 88(325): 133-134",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_2000_num_88_325_5052"
+   }
+  ]
+ },
+ {
+  "id": "epi-070",
+  "cat": "epidemic",
+  "text": "학질이 사흘마다 도졌지만 '죽을 병은 아니다'라며 다들 견뎠다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프랑스 본토 말라리아는 대개 양성 삼일열을 일으키는 P. vivax였고, 사일열의 P. malariae는 드물었다.",
+  "src": [
+   {
+    "cite": "J. Callot (1947), 「Un problème complexe : la régression du paludisme en France」, Annales. ESC 2(3): 328-335",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1947_num_2_3_3308"
+   }
+  ]
+ },
+ {
+  "id": "epi-071",
+  "cat": "epidemic",
+  "text": "론 강 물길이 바뀐 뒤 강가 마을에 열병이 크게 돌았다.",
+  "when": {
+   "from": 1776,
+   "to": 1777
+  },
+  "who": {
+   "region": [
+    "languedoc",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1776년 빌뇌브레자비뇽의 말라리아성 유행은 론 강의 물길 변화 탓으로 여겨졌다.",
+  "src": [
+   {
+    "cite": "Patrick Fournier (2009), 「Épidémies et médicalisation des territoires ruraux (vers 1770-vers 1830)」, Siècles 30: 61-83",
+    "url": "https://journals.openedition.org/siecles/136"
+   }
+  ]
+ },
+ {
+  "id": "epi-072",
+  "cat": "epidemic",
+  "text": "도블 숲의 웅덩이 마을 사람들은 해마다 열병에 시달렸다.",
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bordeaux",
+    "gascogne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 전반 페리고르의 도블(약 5만 ha)은 버려진 연못이 늪이 되어 주민들이 늘 말라리아에 시달려 '페리고르의 작은 솔로뉴'라 불렸다.",
+  "src": [
+   {
+    "cite": "Corinne Marache (2007), 「Assainir la terre pour soigner les hommes. Quatre médecins au service d'une région humide au XIXe siècle : la Double en Périgord」, Annales du Midi 119(257): 71-83",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_2007_num_119_257_7166"
+   }
+  ]
+ },
+ {
+  "id": "epi-073",
+  "cat": "epidemic",
+  "text": "동브의 연못 둑길을 지나며 '여긴 열병 동네'라는 말을 들었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 동브에서는 토지의 약 20%가 양어 연못으로 물에 잠겼고, 수면은 1만 헥타르에 달했다.",
+  "src": [
+   {
+    "cite": "Laurence Bérard (1985), 「La culture par inondation en Dombes. Effets idéologiques et incidences sociales」, Le Monde alpin et rhodanien 13(4): 175-184",
+    "url": "https://www.persee.fr/doc/mar_0758-4431_1985_num_13_4_1293"
+   }
+  ]
+ },
+ {
+  "id": "epi-074",
+  "cat": "epidemic",
+  "text": "연못 가까운 집 아이들이 유난히 많이 죽는다고 이웃들이 수군댔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "비도·브뤼네·데보는 1730~1869년 생트리비에앙동브의 아동 사망률을 연못과의 거리, 식수의 질에 따라 비교했다.",
+  "src": [
+   {
+    "cite": "Alain Bideau, Guy Brunet, Roger Desbos (1978), 「Variations locales de la mortalité des enfants : l'exemple de la Châtellenie de Saint-Trivier-en-Dombes (1730-1869)」, Annales de démographie historique 1978: 7-29",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1978_num_1978_1_1376"
+   }
+  ]
+ },
+ {
+  "id": "epi-075",
+  "cat": "epidemic",
+  "text": "샤토뇌프 늪가 마을에서는 간헐열이 떠날 줄을 몰랐다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 말 생말로 근처 클로푸레의 샤토뇌프 주변에는 간헐열이 풍토병으로 자리 잡고 있었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-076",
+  "cat": "epidemic",
+  "text": "여름 내내 사흘거리 열과 이틀거리 열이 번갈아 돌았다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1784,
+   "to": 1784,
+   "months": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1784년 여름 생말로에는 삼일열·이중삼일열과 '담즙성 썩은 열'이 돌아 특히 9월에 많은 이가 죽었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-077",
+  "cat": "epidemic",
+  "text": "간헐열이 낫지 않자 라녤레의 '나티비테 수녀' 무덤에 빌러 갔다.",
+  "fx": {
+   "faith": 2,
+   "hp": 1
+  },
+  "when": {
+   "from": 1799,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ],
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1798년 8월 성녀로 불리며 죽은 라녤레의 나티비테 수녀는 간헐열을 낫게 해 준다고 기도의 대상이 되었다.",
+  "src": [
+   {
+    "cite": "Michel Lagrée (2003), 「Piété populaire et Révolution en Bretagne : l'exemple des canonisations spontanées (1793-1815)」, Religion et modernité, Presses universitaires de Rennes: 105-120",
+    "url": "https://books.openedition.org/pur/11095"
+   }
+  ]
+ },
+ {
+  "id": "epi-078",
+  "cat": "epidemic",
+  "text": "순례지 무덤의 흙을 조금 떠다 앓는 아이 목에 걸어 주었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ],
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "생탄도레에서는 1815년 올빼미당에게 죽은 제국 병사의 무덤 흙을 떠다 열병 환자 목에 걸었다.",
+  "src": [
+   {
+    "cite": "Michel Lagrée (2003), 「Piété populaire et Révolution en Bretagne : l'exemple des canonisations spontanées (1793-1815)」, Religion et modernité, Presses universitaires de Rennes: 105-120",
+    "url": "https://books.openedition.org/pur/11095"
+   }
+  ]
+ },
+ {
+  "id": "epi-079",
+  "cat": "epidemic",
+  "text": "식민지에서 열병을 얻어 온 사촌이 '보놈 무덤' 옆 시냇물을 떠 마셨다.",
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "일에빌렌의 르테유에서는 공포정치 때 죽은 장드롱의 무덤 옆 시냇물이 특히 식민지에서 얻어 온 열병을 낫게 한다고 믿었다.",
+  "src": [
+   {
+    "cite": "Michel Lagrée (2003), 「Piété populaire et Révolution en Bretagne : l'exemple des canonisations spontanées (1793-1815)」, Religion et modernité, Presses universitaires de Rennes: 105-120",
+    "url": "https://books.openedition.org/pur/11095"
+   }
+  ]
+ },
+ {
+  "id": "epi-080",
+  "cat": "epidemic",
+  "text": "흉년에 검은 이삭 섞인 호밀로 빵을 구웠다. 이웃 노인의 발가락이 검게 썩어 들어갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false,
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "거의 호밀만 키우던 솔로뉴에서 맥각 호밀이 일으키는 '솔로뉴 사람의 괴저'는 18세기 내내 의학자들의 논쟁거리였다.",
+  "src": [
+   {
+    "cite": "Christian Poitou (1976), 「Ergotisme, ergot de seigle et épidémies en Sologne au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 23(3): 354-368",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1976_num_23_3_2426"
+   }
+  ]
+ },
+ {
+  "id": "epi-081",
+  "cat": "epidemic",
+  "text": "의사가 호밀 이삭의 검은 뿔을 보여 주며 이걸 골라내라고 했다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1778,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "살랑은 1778년 3월 6일 왕립의학회에서 맥각과 연관된 경련성 유행병에 관한 논문을 낭독했다.",
+  "src": [
+   {
+    "cite": "Christian Poitou (1976), 「Ergotisme, ergot de seigle et épidémies en Sologne au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 23(3): 354-368",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1976_num_23_3_2426"
+   }
+  ]
+ },
+ {
+  "id": "epi-082",
+  "cat": "epidemic",
+  "text": "옥수수죽만 먹던 이웃의 얼굴과 손등이 붉게 갈라지더니 정신이 흐려졌다.",
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 초 아모 박사는 보르도 남서쪽 랑드에서 펠라그라를 기술했는데, 얼굴·목·팔뚝·손이 붉게 굳어 벗겨지다 정신착란과 쇠약사로 이어지는 병이었다.",
+  "src": [
+   {
+    "cite": "L. Genevois (1961), 「Le maïs et la pellagre」, Journal d'agriculture tropicale et de botanique appliquée 8(6-7): 221-228",
+    "url": "https://www.persee.fr/doc/jatba_0021-7662_1961_num_8_6_6802"
+   }
+  ]
+ },
+ {
+  "id": "epi-083",
+  "cat": "epidemic",
+  "text": "봄볕에 손등이 붉게 트고 벗겨졌다. 옥수수죽만 먹은 탓이라고들 했다.",
+  "fx": {
+   "hp": -3
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850,
+   "months": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "gascogne"
+   ],
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "펠라그라는 고기와 유제품 없이 옥수수에 의존하던 가난한 지역에서 돌았다.",
+  "src": [
+   {
+    "cite": "L. Genevois (1961), 「Le maïs et la pellagre」, Journal d'agriculture tropicale et de botanique appliquée 8(6-7): 221-228",
+    "url": "https://www.persee.fr/doc/jatba_0021-7662_1961_num_8_6_6802"
+   }
+  ]
+ },
+ {
+  "id": "epi-084",
+  "cat": "epidemic",
+  "text": "기침이 심한 돌림감기가 마을을 한 바퀴 돌았다. 사람들은 '그리프'라 불렀다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1775,
+   "to": 1776,
+   "months": [
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1776년 1월 20일 샤토루의 의사 셀르롱은 기침으로 사람을 몹시 지치게 하는 '그리프'라는 유행병이 돈다고 증명서를 썼다.",
+  "src": [
+   {
+    "cite": "Paul-M. Bondois (1933), 「La « grippe » au XVIIIe siècle」, Revue d'histoire de la pharmacie 21(81): 64",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1933_num_21_81_10000"
+   }
+  ]
+ },
+ {
+  "id": "epi-085",
+  "cat": "epidemic",
+  "text": "돌림감기가 돌아 젊은 일꾼들까지 줄줄이 몸져누웠다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1782,
+   "to": 1782,
+   "months": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1781년 가을 중국에서 시작된 인플루엔자 범유행은 8개월에 걸쳐 러시아와 유럽으로 번졌고 젊은 성인의 발병률이 특히 높았다.",
+  "src": [
+   {
+    "cite": "Patrick R. Saunders-Hastings, Daniel Krewski (2016), 「Reviewing the History of Pandemic Influenza: Understanding Patterns of Emergence and Transmission」, Pathogens 5(4): 66",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5198166/"
+   }
+  ]
+ },
+ {
+  "id": "epi-086",
+  "cat": "epidemic",
+  "text": "돌림감기로 온 식구가 앓아누웠지만 다행히 모두 일어났다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1831,
+   "to": 1833
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1830년 겨울 중국에서 시작된 범유행은 1831년까지 유럽에 이르렀는데 발병률은 높았으나 사망률은 낮았다.",
+  "src": [
+   {
+    "cite": "Patrick R. Saunders-Hastings, Daniel Krewski (2016), 「Reviewing the History of Pandemic Influenza: Understanding Patterns of Emergence and Transmission」, Pathogens 5(4): 66",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5198166/"
+   }
+  ]
+ },
+ {
+  "id": "epi-087",
+  "cat": "epidemic",
+  "text": "겨울 카타르열이 돌아 미사 내내 기침 소리가 그치지 않았다.",
+  "when": {
+   "from": 1762,
+   "to": 1762,
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "유행성 카타르열, 곧 인플루엔자는 18세기 서유럽에서 1743년과 1762년 등에 크게 돌았다.",
+  "src": [
+   {
+    "cite": "Roger Darquenne (1970), 「La « dysentrie » en Belgique à la fin de l'Empire」, Revue du Nord 52(206): 367-373",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1970_num_52_206_3075"
+   }
+  ]
+ },
+ {
+  "id": "epi-088",
+  "cat": "epidemic",
+  "text": "아이 목에 하얀 막이 끼더니 숨을 못 쉬고 사흘 만에 죽었다. '악성 앙긴'이라 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 디프테리아는 '목 조르는 병', '역병성 앙긴', '괴저성 인후통', '악성 앙긴', '썩은 앙긴' 등 여러 이름으로 불렸다.",
+  "src": [
+   {
+    "cite": "Jean-Noël Biraben (1973), 「Le médecin et l'enfant au XVIIIe siècle. Aperçu sur la pédiatrie au XVIIIe siècle」, Annales de démographie historique 1973: 215-223",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1191"
+   }
+  ]
+ },
+ {
+  "id": "epi-089",
+  "cat": "epidemic",
+  "text": "목이 붓고 쉰 기침에 숨이 막혔다. 의사가 '크루'라 했다. 간신히 살아났다.",
+  "fx": {
+   "hp": -6
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    1,
+    10
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "비라방은 18세기 디프테리아 연구에서 크루와 괴저성 앙긴이 같은 병임을 보인 관찰을 소개하며, '소아과'라는 말은 1872년에야 생겼다고 적었다.",
+  "src": [
+   {
+    "cite": "Jean-Noël Biraben (1973), 「Le médecin et l'enfant au XVIIIe siècle. Aperçu sur la pédiatrie au XVIIIe siècle」, Annales de démographie historique 1973: 215-223",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1191"
+   }
+  ]
+ },
+ {
+  "id": "epi-090",
+  "cat": "epidemic",
+  "text": "홍역이 돌아 다섯 달 동안 동네 아이들이 차례로 열꽃을 피웠다.",
+  "when": {
+   "from": 1783,
+   "to": 1785
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "생말로에서 홍역은 1783년과 1785년에 각각 약 다섯 달씩 돌았고, 1784년 1월 병원의 홍역 사망자는 없었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-091",
+  "cat": "epidemic",
+  "text": "막내가 밤마다 숨넘어갈 듯한 기침을 해 온 집이 잠을 설쳤다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 말 생말로 의사들이 기록한 병에는 앙긴, 디프테리아, 백일해, 독감, 폐결핵, 폐렴, 늑막염, 이질이 있었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-092",
+  "cat": "epidemic",
+  "text": "겨울엔 기침병, 여름엔 배앓이—노인들은 계절마다 도는 병을 꼽았다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 말 생말로에서는 12~2월 사망이 월평균보다 약 3% 많고 6~9월은 5.3% 적었으며, 여름엔 소화기 병, 겨울엔 호흡기 병이 주를 이뤘다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (2013), 「La morbidité et son impact」, Malades et médecins à Saint-Malo, Presses universitaires de Rennes: 91-100",
+    "url": "https://books.openedition.org/pur/111899"
+   }
+  ]
+ },
+ {
+  "id": "epi-093",
+  "cat": "epidemic",
+  "text": "아기가 첫돌을 넘기지 못했다. 이웃들은 흔한 일이라며 위로했다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "married": true,
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 프랑스의 영아사망률은 약 1,000명당 250명이었고, 출생 시 기대수명은 남아 27세 미만, 여아 28세 남짓이었다.",
+  "src": [
+   {
+    "cite": "Jacqueline Hecht (1992), 「Le Siècle des Lumières et la conservation des petits enfants」, Population 47(6): 1589-1620",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1992_num_47_6_3941"
+   }
+  ]
+ },
+ {
+  "id": "epi-094",
+  "cat": "epidemic",
+  "text": "앓는 아이를 새로 문을 연 '병든 아이 병원'에 데려갔다.",
+  "when": {
+   "from": 1802,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1802년 파리에 문을 연 '앙팡 말라드(병든 아이) 병원'은 이런 종류의 첫 전문 시설이었다.",
+  "src": [
+   {
+    "cite": "Scarlett Beauvalet-Boutouyrie (2003), 「La mise en place des hôpitaux pour enfants malades à Paris (fin XVIIIe-début XIXe siècle)」, Histoire, économie & société 22(4): 487-498",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2003_num_22_4_2334"
+   }
+  ]
+ },
+ {
+  "id": "epi-095",
+  "cat": "epidemic",
+  "text": "리옹에서 맡겨진 젖먹이를 키우던 이웃 유모의 집에서 또 작은 관이 나갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹 오텔디외가 맡은 버려진 아이는 18세기 초 연 500명에서 말 1,400명으로 늘었고, 18세기 중엽 브레스·뷔제 등 300여 교구에 유모로 보내졌다.",
+  "src": [
+   {
+    "cite": "Alain Bideau, Guy Brunet, Michel Floquet (1994), 「Mortalité différentielle des enfants indigènes et des enfants en nourrice. L'exemple de Druillat (Ain) au XVIIIe siècle」, Annales de démographie historique 1994: 151-168",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1994_num_1994_1_1864"
+   }
+  ]
+ },
+ {
+  "id": "epi-096",
+  "cat": "epidemic",
+  "text": "긴 항해에서 돌아온 선원의 잇몸이 붓고 피가 났다. '바다의 페스트'라 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence",
+    "bretagne",
+    "nantes",
+    "bordeaux"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "괴혈병은 16세기 말 리처드 호킨스 이래 '바다의 페스트'로 불렸고, 18세기 초 마르세유 배들의 혼곶 너머 항해에서도 나타났다.",
+  "src": [
+   {
+    "cite": "Gilbert Buti (2005), 「Marins provençaux et scorbut. Vaincre la « peste de mer » à Toulon au XVIIIe siècle」, Provence historique 55(221): 327-343",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_2005_num_55_221_2240"
+   }
+  ]
+ },
+ {
+  "id": "epi-097",
+  "cat": "epidemic",
+  "text": "오랜 수은 치료 끝에 병사의 잇몸이 무르고 다리에 멍이 번졌다.",
+  "when": {
+   "from": 1775,
+   "to": 1790
+  },
+  "who": {
+   "job": [
+    "army"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "군의 마조는 괴혈병 증세가 매독의 긴 치료와 오랜 입원의 결과라고 보았다.",
+  "src": [
+   {
+    "cite": "Émilie Dosquet, 「Réformer le service de santé des armées françaises dans la seconde moitié du XVIIIe siècle」, Les lumières de la guerre, vol. 1, Éditions de la Sorbonne: 391-453",
+    "url": "https://books.openedition.org/psorbonne/91965"
+   }
+  ]
+ },
+ {
+  "id": "epi-098",
+  "cat": "epidemic",
+  "text": "미친 늑대가 밤새 마을을 돌며 열댓 명을 물었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1751년 6월 22일 퓌제에서 미친 암늑대가 적어도 15명을 물었고, 다를뤽을 찾은 네 명 가운데 셋이 죽었다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-099",
+  "cat": "epidemic",
+  "text": "개에게 물린 상처를 째고 수은 연고를 하루 두 번 발랐다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 1,
+  "once": true,
+  "fact": "다를뤽은 1749년 작은 개에게 물리자 상처를 째고 하루 두 번 수은 연고를 바르며 광물성 투르빗을 먹었다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-100",
+  "cat": "epidemic",
+  "text": "물린 뒤 의사를 찾지 않은 이웃은 물을 보면 경련을 일으키다 사흘째 죽었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1747년 코골랭에서 미친 암늑대에게 물린 여남은 명 가운데 다를뤽이 치료한 이는 셋뿐이었고, 그를 찾지 않은 둘은 발병 사흘째 죽었다.",
+  "src": [
+   {
+    "cite": "Alain Collomp (2011), 「Médecin de campagne」, Un médecin des Lumières, Presses universitaires de Rennes: 49-76",
+    "url": "https://books.openedition.org/pur/111378"
+   }
+  ]
+ },
+ {
+  "id": "epi-101",
+  "cat": "epidemic",
+  "text": "미친 개에게 물린 이웃이 성 위베르 순례를 떠났다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "아르덴의 생튀베르 수도원에서 성 위베르는 수백 년 동안 사람과 짐승의 광견병을 막고 고치는 성인으로 기도받았다.",
+  "src": [
+   {
+    "cite": "Hervé Bazin (2007), 「Saint Hubert, guérisseur de la rage de l'homme et des animaux」, Bulletin de la Société française d'histoire de la médecine et des sciences vétérinaires 7: 104-126",
+    "url": "https://www.persee.fr/doc/bhsv_1633-0749_2007_num_7_1_957"
+   }
+  ]
+ },
+ {
+  "id": "epi-102",
+  "cat": "epidemic",
+  "text": "왕립의학회가 광견병 치료법 현상 공모를 했다는 소식을 읽었다.",
+  "when": {
+   "from": 1776,
+   "to": 1793
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 광견병에 관한 글이 쏟아졌으나 처방은 전혀 효과가 없었고, 달랑베르도 그 치료 문제로 왕립의학회에 편지를 보냈다.",
+  "src": [
+   {
+    "cite": "Jean Théodoridès (1976), 「D'Alembert : cinq lettres inédites. Le traitement de la rage et la Société royale de médecine」, Dix-huitième siècle 8: 323-332",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1976_num_8_1_2828"
+   }
+  ]
+ },
+ {
+  "id": "epi-103",
+  "cat": "epidemic",
+  "text": "사부아에서 내려온 행상의 목에 주먹만 한 혹이 달려 있었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "부댕은 1851년 프랑스의 갑상선종 환자를 약 24만 9천 명으로 추정했으나 인구조사에 기록된 수는 42,224명에 불과했다.",
+  "src": [
+   {
+    "cite": "Pauline Hervois (2019), 「Des difficultés de quantifier les populations infirmes en France au XIXe siècle」, Histoire, médecine et santé 15: 29-47",
+    "url": "https://journals.openedition.org/hms/1913"
+   }
+  ]
+ },
+ {
+  "id": "epi-104",
+  "cat": "epidemic",
+  "text": "징병 검사장에서 평소 감추던 목의 혹을 일부러 드러내는 청년을 보았다.",
+  "when": {
+   "from": 1818,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    25
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "당대인들은 사람들이 인구조사원에게는 장애를 숨기지만 징병 심사에서는 드러낸다고 지적했다.",
+  "src": [
+   {
+    "cite": "Pauline Hervois (2019), 「Des difficultés de quantifier les populations infirmes en France au XIXe siècle」, Histoire, médecine et santé 15: 29-47",
+    "url": "https://journals.openedition.org/hms/1913"
+   }
+  ]
+ },
+ {
+  "id": "epi-105",
+  "cat": "epidemic",
+  "text": "연대 병사 절반이 '그 병'에 걸렸다는 군의관의 과장 섞인 말이 돌았다.",
+  "when": {
+   "from": 1775,
+   "to": 1790
+  },
+  "who": {
+   "job": [
+    "army"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "군의 마조는 '군대의 절반이 감염되었고' 병원에는 성병 환자가 늘 2,000명 넘게 있다고 주장했다.",
+  "src": [
+   {
+    "cite": "Émilie Dosquet, 「Réformer le service de santé des armées françaises dans la seconde moitié du XVIIIe siècle」, Les lumières de la guerre, vol. 1, Éditions de la Sorbonne: 391-453",
+    "url": "https://books.openedition.org/psorbonne/91965"
+   }
+  ]
+ },
+ {
+  "id": "epi-106",
+  "cat": "epidemic",
+  "text": "성병에 걸려 군 병원에서 72일 동안 수은 치료를 받았다.",
+  "fx": {
+   "hp": -4,
+   "soc": -1
+  },
+  "when": {
+   "from": 1781,
+   "to": 1815
+  },
+  "who": {
+   "job": [
+    "army"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1781년 규정은 성병을 군 병원에서 치료하게 했고, 마조는 하루 20수짜리 72일 치료에 72리브르가 든다고 계산했다.",
+  "src": [
+   {
+    "cite": "Émilie Dosquet, 「Réformer le service de santé des armées françaises dans la seconde moitié du XVIIIe siècle」, Les lumières de la guerre, vol. 1, Éditions de la Sorbonne: 391-453",
+    "url": "https://books.openedition.org/psorbonne/91965"
+   }
+  ]
+ },
+ {
+  "id": "epi-107",
+  "cat": "epidemic",
+  "text": "성병은 방탕에 내린 하느님의 벌이라는 설교를 들었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "케텔에 따르면 매독은 15세기 말 등장 이래 죄와 동일시되어 광기·알코올중독·결핵보다 먼저 '사회적 질병'의 원형이 되었다.",
+  "src": [
+   {
+    "cite": "Claude Quétel (1984), 「Syphilis et politiques de santé à l'époque moderne」, Histoire, économie & société 3(4): 543-556",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1984_num_3_4_1374"
+   }
+  ]
+ },
+ {
+  "id": "epi-108",
+  "cat": "epidemic",
+  "text": "골목 약장수가 '항성병 시럽'을 몰래 팔고 다녔다.",
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris",
+    "lyon",
+    "bordeaux",
+    "marseille"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "마조는 사탕정, 승홍, 이른바 '항성병' 시럽 같은 엉터리 약이 성병 환자를 오히려 늘린다고 비난했다.",
+  "src": [
+   {
+    "cite": "Émilie Dosquet, 「Réformer le service de santé des armées françaises dans la seconde moitié du XVIIIe siècle」, Les lumières de la guerre, vol. 1, Éditions de la Sorbonne: 391-453",
+    "url": "https://books.openedition.org/psorbonne/91965"
+   }
+  ]
+ },
+ {
+  "id": "epi-109",
+  "cat": "epidemic",
+  "text": "피 섞인 기침을 하던 사촌 누이가 스물셋에 '폐병'으로 죽었다.",
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "19세기에 결핵은 '프티지'라 불렸고, 세기말 프랑스의 결핵 사망은 연 8만 명 안팎으로 추정된다.",
+  "src": [
+   {
+    "cite": "Stéphane Henry (2013), 「Introduction. La tuberculose, entre hier et demain」, Vaincre la tuberculose (1879-1939), Presses universitaires de Rouen et du Havre: 13-22",
+    "url": "https://books.openedition.org/purh/5521"
+   }
+  ]
+ },
+ {
+  "id": "epi-110",
+  "cat": "epidemic",
+  "text": "몇 달째 마른기침이 그치지 않고 살이 쭉 빠졌다.",
+  "fx": {
+   "hp": -4
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    15,
+    60
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "19세기 의사들은 결핵 사망을 연 15만 명으로 말했지만 실제 통계는 불확실해 오늘날엔 연 8만 명 안팎으로 본다.",
+  "src": [
+   {
+    "cite": "Stéphane Henry (2013), 「Introduction. La tuberculose, entre hier et demain」, Vaincre la tuberculose (1879-1939), Presses universitaires de Rouen et du Havre: 13-22",
+    "url": "https://books.openedition.org/purh/5521"
+   }
+  ]
+ },
+ {
+  "id": "epi-111",
+  "cat": "epidemic",
+  "text": "구청에 위생위원회가 생겼다는 공고가 붙었다.",
+  "when": {
+   "from": 1831,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프랑스의 위생·공중보건 위원회는 1831년에 생기고 1849년에 확대되었으나 활동은 산발적이었다.",
+  "src": [
+   {
+    "cite": "Stéphane Henry (2013), 「Introduction. La tuberculose, entre hier et demain」, Vaincre la tuberculose (1879-1939), Presses universitaires de Rouen et du Havre: 13-22",
+    "url": "https://books.openedition.org/purh/5521"
+   }
+  ]
+ },
+ {
+  "id": "epi-112",
+  "cat": "epidemic",
+  "text": "마자린 거리에서 남자 하나가 콜레라로 죽었다는 소문이 퍼졌다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 3,
+  "once": true,
+  "fact": "1832년 3월 27일 마자린 거리의 첫 콜레라 사망 소문이 돌았고, 이튿날 오텔디외에 들어온 9명 중 4명이 저녁 6시 전에 죽었다.",
+  "src": [
+   {
+    "cite": "Gabriel Vauthier (1928), 「Le Choléra à Paris en 1832」, La Révolution de 1848 et les révolutions du XIXe siècle 25(127): 234-241",
+    "url": "https://www.persee.fr/doc/r1848_1155-8806_1928_num_25_127_1138"
+   }
+  ]
+ },
+ {
+  "id": "epi-113",
+  "cat": "epidemic",
+  "text": "사순절 중간 가장행렬에 녹색 탈을 쓴 '콜레라 아저씨'가 나왔다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1832년 3월 미카렘 가장행렬에서 녹색 탈을 쓴 '콜레라 아저씨'가 파리 거리를 행진했다.",
+  "src": [
+   {
+    "cite": "René Garguilo (1989), 「Mythologie du choléra」, Littérature et pathologie, Presses universitaires de Vincennes: 149-165",
+    "url": "https://books.openedition.org/puv/1249"
+   }
+  ]
+ },
+ {
+  "id": "epi-114",
+  "cat": "epidemic",
+  "text": "우물에 독을 탔다는 낯선 사내가 군중에게 몰매를 맞았다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    4,
+    5
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1832년 파리에선 우물과 포도주 단지에 비소를 탄다는 소문이 돌아, 우물가에서 눈에 띈 낯선 사람이 맞아 죽을 위험에 처했다.",
+  "src": [
+   {
+    "cite": "René Garguilo (1989), 「Mythologie du choléra」, Littérature et pathologie, Presses universitaires de Vincennes: 149-165",
+    "url": "https://books.openedition.org/puv/1249"
+   }
+  ]
+ },
+ {
+  "id": "epi-115",
+  "cat": "epidemic",
+  "text": "오한과 설사 끝에 입술과 손끝이 푸르게 변했다. 기적처럼 살아났다.",
+  "fx": {
+   "hp": -8
+  },
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "콜레라 환자의 얼굴은 초록빛을 거쳐 푸르스름해졌고, '푸른 공포(peur bleue)'라는 말이 이 병에서 생겼다.",
+  "src": [
+   {
+    "cite": "René Garguilo (1989), 「Mythologie du choléra」, Littérature et pathologie, Presses universitaires de Vincennes: 149-165",
+    "url": "https://books.openedition.org/puv/1249"
+   },
+   {
+    "cite": "Alain Becchia (1990), 「Des villes épargnées ? L'épidémie de choléra de 1832 à Elbeuf」, Annales de démographie historique 1990: 53-70",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1990_num_1990_1_1758"
+   }
+  ]
+ },
+ {
+  "id": "epi-116",
+  "cat": "epidemic",
+  "text": "총리 카지미르 페리에가 콜레라로 죽었다는 소식이 전해졌다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "총리 카지미르 페리에는 콜레라 환자들을 방문한 뒤 1832년 5월 16일 콜레라로 죽었다.",
+  "src": [
+   {
+    "cite": "René Garguilo (1989), 「Mythologie du choléra」, Littérature et pathologie, Presses universitaires de Vincennes: 149-165",
+    "url": "https://books.openedition.org/puv/1249"
+   }
+  ]
+ },
+ {
+  "id": "epi-117",
+  "cat": "epidemic",
+  "text": "온 나라에 콜레라가 번져 신문마다 사망자 수가 실렸다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1832년 프랑스의 콜레라 사망자는 10만 2천 명에 이르렀다.",
+  "src": [
+   {
+    "cite": "Alain Becchia (1990), 「Des villes épargnées ? L'épidémie de choléra de 1832 à Elbeuf」, Annales de démographie historique 1990: 53-70",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1990_num_1990_1_1758"
+   }
+  ]
+ },
+ {
+  "id": "epi-118",
+  "cat": "epidemic",
+  "text": "센앵페리외르의 마을 백오십여 곳에 콜레라가 닿았다는 공고가 나붙었다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1832년 센앵페리외르 도에서는 159개 코뮌이 콜레라에 걸렸다.",
+  "src": [
+   {
+    "cite": "Alain Becchia (1990), 「Des villes épargnées ? L'épidémie de choléra de 1832 à Elbeuf」, Annales de démographie historique 1990: 53-70",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1990_num_1990_1_1758"
+   }
+  ]
+ },
+ {
+  "id": "epi-119",
+  "cat": "epidemic",
+  "text": "시테 섬 셋방 골목에서 하루에도 여러 구의 시신이 실려 나갔다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "르 메는 1832년과 1849년 파리 콜레라가 비위생 셋집이 몰린 서민 구역을 집중적으로 덮쳤음을 보였다.",
+  "src": [
+   {
+    "cite": "René Le Mée (1998), 「Le choléra et la question des logements insalubres à Paris (1832-1849)」, Population 53(1-2): 379-397",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1_6861"
+   }
+  ]
+ },
+ {
+  "id": "epi-120",
+  "cat": "epidemic",
+  "text": "다시 콜레라가 돌았다. 헐린 옛 골목 대신 변두리 셋집에서 장례가 잦았다.",
+  "when": {
+   "from": 1849,
+   "to": 1849,
+   "months": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1849년 파리의 첫 콜레라 '자택 사망'은 3월 7일 옛 중심가 7구에서 기록되었고, 비위생 건물을 헐어 낸 역사 중심부에서는 초과 사망이 줄었다.",
+  "src": [
+   {
+    "cite": "René Le Mée (1998), 「Le choléra et la question des logements insalubres à Paris (1832-1849)」, Population 53(1-2): 379-397",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1_6861"
+   }
+  ]
+ },
+ {
+  "id": "epi-121",
+  "cat": "epidemic",
+  "text": "의사들끼리 콜레라가 옮는 병이냐 독기냐로 언성을 높였다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1831,
+   "to": 1850
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1830년 콜레라가 유럽에 나타나자 의사들은 격리를 주장한 '전염'파와 독기의 진원 제거를 주장한 '감염'파로 갈라졌다.",
+  "src": [
+   {
+    "cite": "René Le Mée (1998), 「Le choléra et la question des logements insalubres à Paris (1832-1849)」, Population 53(1-2): 379-397",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1_6861"
+   }
+  ]
+ },
+ {
+  "id": "epi-122",
+  "cat": "epidemic",
+  "text": "콜레라가 도에서 도로 번져 온다는 소식에 장터가 술렁였다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "부르들레 등은 1832년과 1854년 유행을 가장 치명적이고 전형적인 콜레라로 보고 프랑스 전역의 확산을 월별 초과 사망으로 추적했다.",
+  "src": [
+   {
+    "cite": "Patrice Bourdelais, Michel Demonet, Jean-Yves Raulot (1978), 「La marche du choléra en France : 1832-1854」, Annales. ESC 33(1): 125-142",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1978_num_33_1_293912"
+   }
+  ]
+ },
+ {
+  "id": "epi-123",
+  "cat": "epidemic",
+  "text": "구토와 설사 끝에 몸이 얼음장처럼 식었다. 사흘을 앓고 일어났다.",
+  "fx": {
+   "hp": -8
+  },
+  "when": {
+   "from": 1849,
+   "to": 1849,
+   "months": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "당대 의사들은 구토·설사와 말기의 '체온 저하(algidité)'로 콜레라를 알아보았다.",
+  "src": [
+   {
+    "cite": "Patrice Bourdelais, Michel Demonet, Jean-Yves Raulot (1978), 「La marche du choléra en France : 1832-1854」, Annales. ESC 33(1): 125-142",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1978_num_33_1_293912"
+   }
+  ]
+ },
+ {
+  "id": "epi-124",
+  "cat": "epidemic",
+  "text": "엑스에 콜레라가 돌자 돈 있는 집들은 시골로 몸을 피했다.",
+  "when": {
+   "from": 1835,
+   "to": 1835,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "region": [
+    "provence",
+    "marseille"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1835년 7월부터 6주 동안 콜레라는 엑스 주민 22,575명 가운데 560명을 덮쳐 333명을 죽였고, 도주와 공포가 뒤따랐다.",
+  "src": [
+   {
+    "cite": "Daniel Panzac (1974), 「Aix-en-Provence et le choléra en 1835」, Annales du Midi 86(119): 419-444",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1974_num_86_119_4887"
+   }
+  ]
+ },
+ {
+  "id": "epi-125",
+  "cat": "epidemic",
+  "text": "켕페르에서 선원 하나가 콜레라로 하룻밤 새 죽었다.",
+  "when": {
+   "from": 1832,
+   "to": 1832,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1832년 브르타뉴의 첫 콜레라 환자는 5월 10일 켕페르의 선원 카텔로, 이튿날 죽었다.",
+  "src": [
+   {
+    "cite": "Jean-Christophe Fichou (2017), 「Les cités sardinières, portes ouvertes aux épidémies de choléra (1852-1914)」, Annales de Bretagne et des Pays de l'Ouest 124(4): 133-153",
+    "url": "https://journals.openedition.org/abpo/3727"
+   }
+  ]
+ },
+ {
+  "id": "epi-126",
+  "cat": "epidemic",
+  "text": "카마레에서는 일곱 명에 한 명꼴로 콜레라에 죽었다는 소식이 들렸다.",
+  "when": {
+   "from": 1834,
+   "to": 1835
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1834년 카마레에서는 콜레라로 356명, 주민의 약 7분의 1이 죽었다.",
+  "src": [
+   {
+    "cite": "Jean-Christophe Fichou (2017), 「Les cités sardinières, portes ouvertes aux épidémies de choléra (1852-1914)」, Annales de Bretagne et des Pays de l'Ouest 124(4): 133-153",
+    "url": "https://journals.openedition.org/abpo/3727"
+   }
+  ]
+ },
+ {
+  "id": "epi-127",
+  "cat": "epidemic",
+  "text": "정어리 철에 모여든 어부들 사이로 콜레라가 번졌다.",
+  "when": {
+   "from": 1849,
+   "to": 1849,
+   "months": [
+    9,
+    10,
+    11
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1849년 9월 26일 콜레라는 정어리 철로 사람이 몰린 두아르느네에 닿았고, 그해 로리앙에서는 365명이 죽었다.",
+  "src": [
+   {
+    "cite": "Jean-Christophe Fichou (2017), 「Les cités sardinières, portes ouvertes aux épidémies de choléra (1852-1914)」, Annales de Bretagne et des Pays de l'Ouest 124(4): 133-153",
+    "url": "https://journals.openedition.org/abpo/3727"
+   }
+  ]
+ },
+ {
+  "id": "epi-128",
+  "cat": "epidemic",
+  "text": "콜레라 예방 수칙이 프랑스어와 브르통어로 나란히 인쇄되어 돌았다.",
+  "when": {
+   "from": 1832,
+   "to": 1832
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1831~1832년 브르타뉴 당국은 수칙을 프랑스어와 브르통어로 인쇄했고 켕페르 주교는 대신학교를 병원으로 내놓았다.",
+  "src": [
+   {
+    "cite": "Jean-Christophe Fichou (2017), 「Les cités sardinières, portes ouvertes aux épidémies de choléra (1852-1914)」, Annales de Bretagne et des Pays de l'Ouest 124(4): 133-153",
+    "url": "https://journals.openedition.org/abpo/3727"
+   }
+  ]
+ },
+ {
+  "id": "epi-129",
+  "cat": "epidemic",
+  "text": "생도맹그에 상륙한 지 몇 주 만에 동료들이 황열로 누렇게 떠 죽어 갔다.",
+  "fx": {
+   "hp": -4,
+   "cour": 1
+  },
+  "when": {
+   "from": 1802,
+   "to": 1803
+  },
+  "who": {
+   "job": [
+    "army"
+   ],
+   "sex": "M",
+   "age": [
+    17,
+    45
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1802년 4월 말 생도맹그에서 터진 황열로, 파견된 약 3만 5천 명 가운데 적어도 1만 5천 명이 1802년 11월까지 죽었다.",
+  "src": [
+   {
+    "cite": "Pierre Nobi (2016), 「Officiers de santé et soignantes créoles face à la fièvre jaune」, Histoire, médecine et santé 10: 45-61",
+    "url": "https://journals.openedition.org/hms/1025"
+   }
+  ]
+ },
+ {
+  "id": "epi-130",
+  "cat": "epidemic",
+  "text": "크레올 간호부가 레몬 조각으로 몸을 문지르고 시원한 레모네이드를 먹였다.",
+  "fx": {
+   "hp": 2
+  },
+  "when": {
+   "from": 1802,
+   "to": 1803
+  },
+  "who": {
+   "job": [
+    "army"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "생도맹그의 크레올 여성 치료자들은 레모네이드·유청 같은 시원한 음료, 목욕, 레몬 조각 마찰, 가벼운 하제를 썼다.",
+  "src": [
+   {
+    "cite": "Pierre Nobi (2016), 「Officiers de santé et soignantes créoles face à la fièvre jaune」, Histoire, médecine et santé 10: 45-61",
+    "url": "https://journals.openedition.org/hms/1025"
+   }
+  ]
+ },
+ {
+  "id": "epi-131",
+  "cat": "epidemic",
+  "text": "생도맹그에서 돌아온 병사가 '그곳 병원은 죽으러 가는 곳'이라며 몸서리쳤다.",
+  "when": {
+   "from": 1802,
+   "to": 1806
+  },
+  "who": {
+   "region": [
+    "nantes",
+    "bordeaux",
+    "bretagne",
+    "rouen"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "생도맹그 원정 때 병원들은 침대·리넨·약이 모두 모자라 '죽음의 장소'로 불렸다.",
+  "src": [
+   {
+    "cite": "Pierre Nobi (2016), 「Officiers de santé et soignantes créoles face à la fièvre jaune」, Histoire, médecine et santé 10: 45-61",
+    "url": "https://journals.openedition.org/hms/1025"
+   }
+  ]
+ },
+ {
+  "id": "epi-132",
+  "cat": "epidemic",
+  "text": "할머니가 1720년 페스트 때 하루 천 명씩 죽었다던 이야기를 또 꺼냈다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1720년 8월 마르세유에서는 하루 천 명 넘게 죽었고, 몇 달 만에 성 밖까지 합쳐 인구의 절반가량인 약 5만 명이 죽었다.",
+  "src": [
+   {
+    "cite": "Fleur Beauvieux (2021), 「Quarantaine, lazarets et hôpitaux : les enfermements sanitaires à Marseille pendant la peste de 1720」, Revue d'histoire culturelle 3",
+    "url": "https://journals.openedition.org/rhc/648"
+   }
+  ]
+ },
+ {
+  "id": "epi-133",
+  "cat": "epidemic",
+  "text": "아랑 격리소 앞에 레반트에서 온 배가 닻을 내리고 격리 기간을 기다렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1663년 도시 서쪽으로 옮겨진 생마르탱다랑 격리소는 거의 두 세기 동안 운영되었고, 1720년 생존자들은 약 40일을 관찰 격리된 뒤에야 가족에게 돌아갔다.",
+  "src": [
+   {
+    "cite": "R. Barbieri, M. Drancourt (2018), 「Two thousand years of epidemics in Marseille and the Mediterranean Basin」, New Microbes and New Infections 26: S4-S9",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6205573/"
+   },
+   {
+    "cite": "Fleur Beauvieux (2021), 「Quarantaine, lazarets et hôpitaux : les enfermements sanitaires à Marseille pendant la peste de 1720」, Revue d'histoire culturelle 3",
+    "url": "https://journals.openedition.org/rhc/648"
+   }
+  ]
+ },
+ {
+  "id": "epi-134",
+  "cat": "epidemic",
+  "text": "부두 사람들은 '그랑생앙투안호처럼 격리를 줄였다간 큰일 난다'고 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1720년 그랑생앙투안호 선원의 격리가 단축되고 화물이 규정을 어기고 내려진 것이 페스트 유입의 원인이 되었다.",
+  "src": [
+   {
+    "cite": "Fleur Beauvieux (2021), 「Quarantaine, lazarets et hôpitaux : les enfermements sanitaires à Marseille pendant la peste de 1720」, Revue d'histoire culturelle 3",
+    "url": "https://journals.openedition.org/rhc/648"
+   }
+  ]
+ },
+ {
+  "id": "epi-135",
+  "cat": "epidemic",
+  "text": "레반트 배가 들어왔다는 말에 항구 사람들이 바짝 긴장했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "마르세유는 건설 이래 22차례 페스트를 겪었고, 1720년 5월 25일 레바논에서 온 감염선이 들어와 최악의 유행이 시작되었다.",
+  "src": [
+   {
+    "cite": "R. Barbieri, M. Drancourt (2018), 「Two thousand years of epidemics in Marseille and the Mediterranean Basin」, New Microbes and New Infections 26: S4-S9",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6205573/"
+   }
+  ]
+ },
+ {
+  "id": "epi-136",
+  "cat": "epidemic",
+  "text": "툴롱 노인들은 페스트 뒤 인구가 돌아오는 데 40년이 걸렸다고 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1770
+  },
+  "who": {
+   "region": [
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1720~1721년 툴롱 페스트 뒤 주민 2만 5천 명 가운데 약 1만 명만 살아남았고, 인구 회복에 40년이 걸렸다.",
+  "src": [
+   {
+    "cite": "Michel Vergé-Franceschi (2007), 「1720-1721 : la peste ravage Toulon」, Annales de Bretagne et des Pays de l'Ouest 114(4): 57-71",
+    "url": "https://journals.openedition.org/abpo/461"
+   }
+  ]
+ },
+ {
+  "id": "epi-137",
+  "cat": "epidemic",
+  "text": "툴롱을 예수 성심에 바친 옛 서원을 기리는 미사에 참석했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1720~1721년 페스트 때 툴롱 주교는 도시를 예수 성심에 봉헌했고, 1721년 1월 28일 '전면 격리'로 주민들은 집에 갇혔다.",
+  "src": [
+   {
+    "cite": "Michel Vergé-Franceschi (2007), 「1720-1721 : la peste ravage Toulon」, Annales de Bretagne et des Pays de l'Ouest 114(4): 57-71",
+    "url": "https://journals.openedition.org/abpo/461"
+   }
+  ]
+ },
+ {
+  "id": "epi-138",
+  "cat": "epidemic",
+  "text": "역병 소문이 돌자 아버지는 식초 적신 해면을 코에 대고 다녔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1720년 마르세유 격리 병원 직원들은 식초 적신 해면을 들고 식초로 손을 씻었으며, 밀랍 먹인 천옷을 입고 긴 집게로 가래톳을 다뤘다.",
+  "src": [
+   {
+    "cite": "Fleur Beauvieux (2021), 「Quarantaine, lazarets et hôpitaux : les enfermements sanitaires à Marseille pendant la peste de 1720」, Revue d'histoire culturelle 3",
+    "url": "https://journals.openedition.org/rhc/648"
+   }
+  ]
+ },
+ {
+  "id": "epi-139",
+  "cat": "epidemic",
+  "text": "소 돌림병이 바욘에서 올라와 이웃 외양간의 소가 모두 쓰러졌다.",
+  "fx": {
+   "money": -30
+  },
+  "when": {
+   "from": 1774,
+   "to": 1775
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux",
+    "languedoc"
+   ],
+   "urban": false
+  },
+  "w": 3,
+  "once": true,
+  "fact": "1774년 5월 바욘에서 시작된 우역은 7개월 만에 남서부를 휩쓸어 8월 오슈, 9월 보르도, 10월 툴루즈에 이르렀다.",
+  "src": [
+   {
+    "cite": "François Vallat (2005), 「La propagation des épizooties aux XVIIIe et XIXe siècles : un indicateur des mouvements du cheptel ?」, Les animaux malades, Presses universitaires du Midi: 203-214",
+    "url": "https://books.openedition.org/pumi/8533"
+   }
+  ]
+ },
+ {
+  "id": "epi-140",
+  "cat": "epidemic",
+  "text": "우역으로 마을 소를 거의 다 잃어 사람이 쟁기를 끌었다.",
+  "fx": {
+   "money": -20,
+   "hp": -1
+  },
+  "when": {
+   "from": 1775,
+   "to": 1776
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux",
+    "languedoc"
+   ],
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1774~1776년 남서부 우역으로 소 약 15만 마리가 죽었고, 비크 다지르가 진압을 위임받았다.",
+  "src": [
+   {
+    "cite": "Gérard Orth (2012), 「Du Siècle des Lumières et de la création des Écoles vétérinaires à nos jours : 250 ans de lutte contre les épizooties」, Comptes Rendus Biologies 335(5): 323-324",
+    "url": "https://comptes-rendus.academie-sciences.fr/biologies/item/10.1016/j.crvi.2012.04.001/"
+   }
+  ]
+ },
+ {
+  "id": "epi-141",
+  "cat": "epidemic",
+  "text": "생쥐스탱 장터에서 사 온 소가 병을 옮겼다는 원망이 쏟아졌다.",
+  "when": {
+   "from": 1774,
+   "to": 1775
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1774년 우역은 생마르탱다르베루·생쥐스탱·공드랭 등 장터를 통해 퍼졌고, 군대 차단선은 '너무 일시적'이었다.",
+  "src": [
+   {
+    "cite": "François Vallat (2005), 「La propagation des épizooties aux XVIIIe et XIXe siècles : un indicateur des mouvements du cheptel ?」, Les animaux malades, Presses universitaires du Midi: 203-214",
+    "url": "https://books.openedition.org/pumi/8533"
+   }
+  ]
+ },
+ {
+  "id": "epi-142",
+  "cat": "epidemic",
+  "text": "파리에서 학자 비크 다지르가 소 돌림병을 살피러 내려왔다.",
+  "when": {
+   "from": 1774,
+   "to": 1775,
+   "months": [
+    12,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux",
+    "languedoc"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1774년 12월 튀르고의 요청으로 과학아카데미가 비크 다지르를 남서부로 보냈고, 그는 1776년 『치료·예방 수단 개요』를 펴냈다.",
+  "src": [
+   {
+    "cite": "François Vallat (2005), 「La propagation des épizooties aux XVIIIe et XIXe siècles : un indicateur des mouvements du cheptel ?」, Les animaux malades, Presses universitaires du Midi: 203-214",
+    "url": "https://books.openedition.org/pumi/8533"
+   }
+  ]
+ },
+ {
+  "id": "epi-143",
+  "cat": "epidemic",
+  "text": "보르도 고등법원이 피레네 양 떼의 겨울 랑드 방목을 막았다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1774,
+   "to": 1775
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1774년 9월 보르도 고등법원은 피레네 양 떼의 전통적 랑드 겨울 방목을 금지했다.",
+  "src": [
+   {
+    "cite": "François Vallat (2005), 「La propagation des épizooties aux XVIIIe et XIXe siècles : un indicateur des mouvements du cheptel ?」, Les animaux malades, Presses universitaires du Midi: 203-214",
+    "url": "https://books.openedition.org/pumi/8533"
+   }
+  ]
+ },
+ {
+  "id": "epi-144",
+  "cat": "epidemic",
+  "text": "노인들이 소 돌림병 때 지사관 명령으로 병든 소를 따로 가뒀던 일을 회상했다.",
+  "when": {
+   "from": 1750,
+   "to": 1770
+  },
+  "who": {
+   "region": [
+    "champagne",
+    "alsace"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1743년 11월 18일 메스 지사관 드 크레유는 소 돌림병 칙령을 내려 병든 소 치료를 마을 참사와 기마헌병대가 감독하게 했다.",
+  "src": [
+   {
+    "cite": "Francis Trépardoux (1990), 「Une ordonnance de l'intendant de Metz en 1743 sur l'épizootie bovine」, Revue d'histoire de la pharmacie 78(286): 315-325",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1990_num_78_286_3419"
+   }
+  ]
+ },
+ {
+  "id": "epi-145",
+  "cat": "epidemic",
+  "text": "리옹 수의학교 학생들이 가축 돌림병을 살피러 마을에 왔다.",
+  "when": {
+   "from": 1762,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon",
+    "ile",
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "부르줄라는 가축 돌림병에 맞서려고 1761년 리옹, 1766년 알포르에 수의학교를 세웠다.",
+  "src": [
+   {
+    "cite": "Gérard Orth (2012), 「Du Siècle des Lumières et de la création des Écoles vétérinaires à nos jours : 250 ans de lutte contre les épizooties」, Comptes Rendus Biologies 335(5): 323-324",
+    "url": "https://comptes-rendus.academie-sciences.fr/biologies/item/10.1016/j.crvi.2012.04.001/"
+   }
+  ]
+ },
+ {
+  "id": "epi-146",
+  "cat": "epidemic",
+  "text": "왕립의학회가 지방 의사들에게 날씨와 병을 적어 보내라는 서한을 돌렸다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1776,
+   "to": 1790
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1776년 4월 29일 국무회의 판결로 지방 의사들과 유행병·가축병에 관해 서신을 나누는 의학위원회가 생겼고 비크 다지르가 총서기가 되었다.",
+  "src": [
+   {
+    "cite": "Jean Meyer (1966), 「Une enquête de l'Académie de médecine sur les épidémies (1774-1794)」, Annales. ESC 21(4): 729-749",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1966_num_21_4_421417"
+   }
+  ]
+ },
+ {
+  "id": "epi-147",
+  "cat": "epidemic",
+  "text": "동네 의사가 매일 아침 온도계를 읽어 파리로 보낼 기록을 적었다.",
+  "when": {
+   "from": 1776,
+   "to": 1793
+  },
+  "w": 1,
+  "once": false,
+  "fact": "약 150명의 의사가 비크 다지르와 정기적으로 서신을 주고받으며 기상 관측, 지역 질병, 치료와 결과를 보냈다.",
+  "src": [
+   {
+    "cite": "Olivier Ryckebusch (2017), 「De la charité aux soins hospitaliers」, Les hôpitaux généraux du Nord au siècle des Lumières (1737-1789), Presses universitaires du Septentrion: 135-152",
+    "url": "https://books.openedition.org/septentrion/17074"
+   }
+  ]
+ },
+ {
+  "id": "epi-148",
+  "cat": "epidemic",
+  "text": "의사가 왕국의 '의학 지형도'를 만든다며 마을 우물과 늪을 꼼꼼히 적어 갔다.",
+  "when": {
+   "from": 1778,
+   "to": 1790
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1778년 10월 조사는 '프랑스 지형·의학 지도'를 목표로 의사들에게 담당 지역 기술을 요청해 130건 넘는 답을 받았다.",
+  "src": [
+   {
+    "cite": "Olivier Ryckebusch (2017), 「De la charité aux soins hospitaliers」, Les hôpitaux généraux du Nord au siècle des Lumières (1737-1789), Presses universitaires du Septentrion: 135-152",
+    "url": "https://books.openedition.org/septentrion/17074"
+   }
+  ]
+ },
+ {
+  "id": "epi-149",
+  "cat": "epidemic",
+  "text": "왕립의학회 통신원으로 뽑힌 의사가 동네에서 어깨를 으쓱댔다.",
+  "when": {
+   "from": 1776,
+   "to": 1790
+  },
+  "w": 1,
+  "once": false,
+  "fact": "유행병 조사 서신은 비크 다지르, 쥐시외, 파울레, 투레 등 일곱 명의 통신 담당자에게 모였고, 편지는 재무총감 봉투로 보내야 했다.",
+  "src": [
+   {
+    "cite": "Jean Meyer (1969), 「L'enquête de l'Académie de Médecine sur les épidémies, 1774-1794」, Études rurales 34: 7-69",
+    "url": "https://www.persee.fr/doc/rural_0014-2182_1969_num_34_1_1449"
+   }
+  ]
+ },
+ {
+  "id": "epi-150",
+  "cat": "epidemic",
+  "text": "지사관 서기가 '왕국 최대의 조사'라며 의사 보고서를 묶었다.",
+  "when": {
+   "from": 1776,
+   "to": 1790
+  },
+  "who": {
+   "job": [
+    "law",
+    "pol"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "메예르는 1776년 시작된 유행병 조사를 '18세기 모든 행정 조사 가운데 가장 중요한 것'이라 평했다.",
+  "src": [
+   {
+    "cite": "Jean Meyer (1966), 「Une enquête de l'Académie de médecine sur les épidémies (1774-1794)」, Annales. ESC 21(4): 729-749",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1966_num_21_4_421417"
+   }
+  ]
+ },
+ {
+  "id": "epi-151",
+  "cat": "epidemic",
+  "text": "오텔디외에 실려 간 이웃이 끝내 돌아오지 못했다. '거긴 넷 중 하나가 죽어 나온대.'",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 중엽 샤무세는 파리 오텔디외에서 환자 네 명 중 한 명이 죽는다고 했는데, 다른 큰 병원은 8분의 1~14분의 1이었다.",
+  "src": [
+   {
+    "cite": "Christian Cheminade (1993), 「Architecture et médecine à la fin du XVIIIe siècle : la ventilation des hôpitaux, de l'Encyclopédie au débat sur l'Hôtel-Dieu de Paris」, Recherches sur Diderot et sur l'Encyclopédie 14: 85-109",
+    "url": "https://www.persee.fr/doc/rde_0769-0886_1993_num_14_1_1207"
+   }
+  ]
+ },
+ {
+  "id": "epi-152",
+  "cat": "epidemic",
+  "text": "오텔디외 큰 병실의 퀴퀴한 공기 속에 열흘을 누워 있었다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "18세기 말 오텔디외의 악명 높은 사망률은 병원 환기를 둘러싼 건축·의학 논쟁으로 이어졌다.",
+  "src": [
+   {
+    "cite": "Christian Cheminade (1993), 「Architecture et médecine à la fin du XVIIIe siècle : la ventilation des hôpitaux, de l'Encyclopédie au débat sur l'Hôtel-Dieu de Paris」, Recherches sur Diderot et sur l'Encyclopédie 14: 85-109",
+    "url": "https://www.persee.fr/doc/rde_0769-0886_1993_num_14_1_1207"
+   }
+  ]
+ },
+ {
+  "id": "epi-153",
+  "cat": "epidemic",
+  "text": "병원이 포도주세로 꾸려진다는 말에 술값이 아깝지 않다고 농담했다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 오텔디외와 종합구빈원은 하루 1만~1만 5천 명을 돌보았고, 재원은 주로 포도주와 공연에 매긴 세금이었다.",
+  "src": [
+   {
+    "cite": "Laurence Marcoult (2016), 「L'Hospitalité en observation : les grands hôpitaux parisiens au XVIIIe siècle, Hôtel-Dieu, Hôpital Général」, L'Atelier du Centre de recherches historiques",
+    "url": "https://journals.openedition.org/acrh/7719"
+   }
+  ]
+ },
+ {
+  "id": "epi-154",
+  "cat": "epidemic",
+  "text": "구빈원에 맡겨진 아기들은 거의 살아 나오지 못한다는 말이 돌았다.",
+  "when": {
+   "from": 1816,
+   "to": 1840
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1816~1837년 파리 구빈원에 들어온 버려진 아이 11만 2천 명 가운데 76%가 12세 전에 죽었는데, 부모가 키운 아이는 28%였다.",
+  "src": [
+   {
+    "cite": "Laurent-Henri Vignaud (2021), 「Les enfants trouvés à l'avant-garde des politiques vaccinales de l'époque romantique : le cas dijonnais (1801-1847)」, Prévenir, accueillir, guérir, Presses universitaires du Septentrion: 113-132",
+    "url": "https://books.openedition.org/septentrion/126267"
+   }
+  ]
+ }
+]

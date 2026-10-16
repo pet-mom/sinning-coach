@@ -52,8 +52,8 @@ async function universityChoice(){const x=SCH(),g=x.grade;
   if(!o.f){x.st='done';await done();await careerChoice(true);return}
   if(o.f==='mil'){x.st='done';say(`${T()<1789?'파리 사관학교':'생시르 특별사관학교'}에 들어가 2년을 보낸 뒤 소위로 임관하였다.`+fx({cour:4,soc:2}),'big');takeJob('a3');await done();return}
   x.st=o.f==='theo'?'seminary':'univ';x.fac=o.f;x.y0=s.year;x.dur=o.f==='law'?3:o.f==='med'?4:Math.max(5,24-s.age);
-  if(o.f==='law'){s.money-=600;say(`${pick(['파리','툴루즈','렌','엑스','디종','푸아티에'])} 법학부에 등록하였다. 로마법과 교회법, 프랑스 관습법을 배운다.`+fx({edu:3}),'big')}
-  if(o.f==='med'){s.money-=900;say(`${pick(['파리','몽펠리에','스트라스부르'])} 의학부에 등록하였다. 해부학 강의실의 냄새에 처음엔 구역질이 났다.`+fx({edu:3,hp:-1}),'big')}
+  if(o.f==='law'){s.money-=600;const c=pick(['파리','툴루즈','렌','엑스','디종','푸아티에']);s.flags.schCity=c;say(`${c} 법학부에 등록하였다. 로마법과 교회법, 프랑스 관습법을 배운다.`+fx({edu:3}),'big')}
+  if(o.f==='med'){s.money-=900;const c=pick(['파리','몽펠리에','스트라스부르']);s.flags.schCity=c;say(`${c} 의학부에 등록하였다. 해부학 강의실의 냄새에 처음엔 구역질이 났다.`+fx({edu:3,hp:-1}),'big')}
   if(o.f==='theo'){takeJob('r1','신학교에 들어가 ');say('검은 수단을 입고 삭발례를 받았다.'+fx({faith:5}))}
   await done()}
 async function graduate(){const x=SCH(),g=x.grade;
