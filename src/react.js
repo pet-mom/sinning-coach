@@ -233,7 +233,7 @@ function reactYearSync(){if(!s||s.dead||child()||s.age<16||s.cond!=='normal')ret
   // 공포정치 때 감시위원이었던 사람: 1795년 봄 ‘테러리스트’ 무장 해제
   if(s.flags.rxSurv&&!s.flags.rxSurv2&&T()>=tm(1795,4)){s.flags.rxSurv2=true;const hit=R()<.35;L(`옛 감시위원 무장 해제 35% → ${hit?'일어났다':'피했다'} · 제르미날 21일 법으로 공포정치기 위원들이 무장 해제된 비율`,'dice');
     if(hit){const jail=R()<.3;notes.push([9,`옛 감시위원회 일로 ‘테러리스트’ 명단에 올라 총을 빼앗겼다.${jail?' 이어 체포되었다.':''}`+fx({sus:12,rloc:-3,inf:-3})]);if(jail){s.cnt.arrest++;s.cond='prison';s.prisonKind='plain';s.condSince=T()}}}
-  if(!notes.length)return;notes.sort((a,b)=>b[0]-a[0]);say(notes[0][1])}
+  if(!notes.length)return;notes.sort((a,b)=>b[0]-a[0]);const key=notes[0][1].replace(/ \(.*\)$/,'');if(key===X.lastY&&notes[0][0]<5)return;X.lastY=key;say(notes[0][1])}
 async function reactYear(){reactYearSync()}
 // conductYear(politics.js)는 해마다 한 번 불린다. 그 뒤에 이어 붙인다.
 const rxConductYear0=conductYear;conductYear=function(){rxConductYear0();try{reactYearSync()}catch(e){console.error(e)}};

@@ -49,7 +49,7 @@ async function advanceSeason(){
   if(s.dead)return;
   const f=s.tick/12; // 이번 진행 길이(년)
   // 사망
-  if(R()<deathP(s.age)*f*(s.age>=1?(s.age<14?.5:.5):1)){die(s.age>=60?'old':'ill');return}
+  if(R()<deathP(s.age)*f*(s.age>=1?(s.age<60?.5:s.age<75?.8:1):1)*(s.age>=95?2:1)){die(s.age>=60?'old':'ill');return}
   await illnessTick();if(s.dead)return;
   // 역사: 지난 진행 구간 안의 사건을 모두 처리
   await runHistory(prev,nx);if(s.dead)return;

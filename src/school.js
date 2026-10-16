@@ -49,7 +49,7 @@ function schoolStatus(){const x=SCH();if(!inSchool())return '';return `${schoolN
 const wpk=a=>wpick(a.filter(x=>x[1]>0));
 
 /* ---------- 성적의 바탕: 재능 · 학식 · 그 과목 지식 · 노력 · 건강 · 운 ---------- */
-function examKey(){const x=SCH(),t=T();if(x.st==='petite')return x.home?'klat':'pen';
+function examKey(){const x=SCH(),t=T();if(x.st==='petite')return x.pk==='tutor'?'klat':x.pk==='gouv'?'klett':'pen';
   if(x.st==='college'){if(s.age>=16&&colEra(t)!==2)return 'kphil';const e=colEra(t);return e===2?(R()<.5?'ksci':'khist'):e===3&&R()<.4?'ksci':'klat'}
   if(x.st==='convent')return R()<.6?'klett':'klang';if(x.st==='seminary')return 'ktheo';return x.fac==='med'?'kmed':x.fac==='law'?'klaw':'klat'}
 const SUBJ_N={klat:'라틴어',kphil:'철학',ksci:'수학',khist:'역사',klett:'프랑스어 작문',klang:'이탈리아어',ktheo:'신학',kmed:'해부학',klaw:'로마법',pen:'글씨'};
@@ -57,11 +57,12 @@ function effort(){return (s.plan==='학업'?12:s.plan==='근면'?4:s.plan==='수
 // perf: 이번 시험에서 보인 실력. 성적은 이 실력 쪽으로 움직인다.
 function examPerf(k){const kn=k?((s.kn&&s.kn[k])||(s.sk&&s.sk[k])||0):0,tal=s.talent||50,ef=effort(),hp=s.st.hp<35?-10:s.st.hp<50?-3:0,gift=k&&s.gift===k?8:0,luck=ri(-15,15);
   return {v:tal*.4+s.st.edu*.3+kn*.3+ef+hp+gift+luck,tal,ef,hp,gift,luck}}
-function examWhy(p,d){if(p.hp<=-10)return '병치레로 시험 준비를 제대로 못 했다.';if(p.gift&&d>=0)return '';
-  if(p.luck>=11)return '운 좋게 아는 문제만 나왔다.';if(p.luck<=-11)return '시험날 머리가 하얘져 아는 것도 틀렸다.';
-  if(p.tal>=70&&p.ef<=4)return '타고난 머리가 빛났다. 크게 애쓰지 않고도 앞줄에 섰다.';if(p.tal>=70)return '타고난 머리에 노력까지 더해졌다.';
-  if(p.tal<45&&p.ef>=10)return d>=0?'머리는 남만 못해도 노력으로 따라붙었다.':'밤새 외웠지만 머리가 따라 주지 않았다.';
-  if(p.tal<40)return '아무리 외워도 머리에 잘 들어오지 않았다.';if(p.ef<0)return '놀러 다니느라 책을 덜 펼쳤다.';return ''}
+function examWhy(p,d){if(p.hp<=-10)return pick(['병치레로 시험 준비를 제대로 못 했다.','열이 내리지 않은 채 시험장에 앉았다.']);if(p.gift&&d>=0)return '';
+  if(p.luck>=11)return pick(['운 좋게 아는 문제만 나왔다.','마침 전날 밤 외운 대목이 나왔다.']);if(p.luck<=-11)return pick(['시험날 머리가 하얘져 아는 것도 틀렸다.','답안에 잉크를 엎질러 반을 다시 썼다.','하필 건너뛴 대목에서 문제가 나왔다.']);
+  if(R()<.35)return '';
+  if(p.tal>=70&&p.ef<=4)return pick(['타고난 머리가 빛났다. 크게 애쓰지 않고도 앞줄에 섰다.','한 번 읽은 것을 잊지 않는 머리였다.','선생은 게으르지만 영리한 아이라고 적었다.']);if(p.tal>=70)return pick(['타고난 머리에 노력까지 더해졌다.','재능과 끈기를 함께 갖췄다는 평을 들었다.']);
+  if(p.tal<45&&p.ef>=10)return d>=0?pick(['머리는 남만 못해도 노력으로 따라붙었다.','밤마다 촛불 아래 외운 것이 빛을 보았다.']):'밤새 외웠지만 머리가 따라 주지 않았다.';
+  if(p.tal<40)return pick(['아무리 외워도 머리에 잘 들어오지 않았다.','선생은 성실하지만 이해가 더디다고 적었다.','동사 변화표가 머릿속에서 자꾸 엉켰다.']);if(p.ef<0)return pick(['놀러 다니느라 책을 덜 펼쳤다.','친구들과 어울리느라 숙제를 자주 걸렀다.']);return ''}
 function initGrade(k){return clamp(Math.round(15+(s.talent||50)*.45+s.st.edu*.4+(k?((s.kn&&s.kn[k])||0)*.2:0)+ri(-10,10)),8,92)}
 
 /* ---------- 일곱 살: 첫 배움터(엔진의 문해 판정 뒤 호출) ---------- */

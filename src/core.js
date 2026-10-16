@@ -116,7 +116,7 @@ const INFL={1791:.06,1792:.15,1793:.25,1794:.2,1795:.6,1796:.45};
 
 /* ================= 사망률 ================= */
 // 18세기 프랑스 생명표(INED)를 단순화한 연간 사망 확률.
-function baseMort(a){return a<1?.21:a<5?.045:a<10?.012:a<20?.006:a<30?.009:a<40?.011:a<50?.014:a<60?.022:a<70?.042:a<80?.09:a<90?.19:.3}
+function baseMort(a){return a<1?.21:a<5?.045:a<10?.012:a<20?.006:a<30?.009:a<40?.011:a<50?.014:a<60?.022:a<70?.042:a<80?.09:a<90?.19:a<100?.32:.55}
 function deathP(a){let p=baseMort(a);if(!s.hard&&a<10)p*=.35;
   const e=s.estate;p*=e==='epee'||e==='robe'?.72:e==='hobereau'||e==='bourgeois'?.85:e==='peasant'?1.08:1;
   if(REGIONS[s.region].urban)p*=1.12;
