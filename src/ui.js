@@ -48,7 +48,7 @@ function toast(t){const b=$('#toast');b.textContent=t;b.hidden=false;clearTimeou
 /* ================= 화면 ================= */
 const STATC={hp:'var(--green)',edu:'var(--teal)',soc:'var(--pink)',cour:'var(--yellow)'};
 const STATORD=[['hp','건강'],['edu','학식'],['soc','처세'],['cour','담력']];
-function statusText(){if(child())return s.age<7?'어린아이':'아이';
+function statusText(){if(inSchool()&&s.cond==='normal')return schoolStatus();if(child())return s.age<7?'어린아이':'아이';
   const c={prison:'수감 중',hiding:s.flags.refractaire?'징집 기피자로 숨어 지냄':'은신 중',emigre:`망명 중 · ${s.emiPlace||''}`}[s.cond];if(c)return c;
   const j=job();if(j)return pname(j);return s.flags.retired?'은퇴':noble()&&s.land?'지대로 사는 지주':'일 없음'}
 function render(){if(!s)return;document.documentElement.style.setProperty('--era',eraColor());$('#decree').textContent=era().h||'';

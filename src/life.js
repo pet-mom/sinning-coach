@@ -26,7 +26,7 @@ const adultKids=()=>s.kids.filter(k=>k.alive&&s.year-k.y>=20).length;
 
 /* ================= 직업 ================= */
 // tr: 트랙, t: 단계, n/nf: 남/녀 명칭(nf가 null이면 남성만), pay: 연 수입(리브르), ok: 그 시대·신분에 그 자리가 있는가, need: 진입 조건
-const TRACKS={farm:'농업',craft:'수공업·상업',law:'법조·행정',church:'교회',army:'군대',pol:'정치',letters:'문필'};
+const TRACKS={farm:'농업',craft:'수공업·상업',law:'법조·행정',church:'교회',med:'의학',army:'군대',pol:'정치',letters:'문필'};
 const PL=[
  ['f1','farm',1,'날품팔이 농군','날품팔이 아낙','journalier',160],
  ['f2','farm',2,'소작농','소작농','métayer',300],
@@ -68,6 +68,11 @@ const PL=[
  ['w1','letters',1,'가정교사','가정교사','précepteur / gouvernante',400,{edu:40}],
  ['w2','letters',2,'문필가','살롱 안주인','homme de lettres / salonnière',600,{edu:50}],
  ['w3','letters',3,'신문 발행인',null,'journaliste',2500,{edu:55,fame:15},()=>T()>=1789.25],
+ ['m1','med',1,'의학생','산파 수련생','étudiant en médecine / élève sage-femme',0,{edu:35}],
+ ['m2','med',2,'외과의','산파','chirurgien / sage-femme',800,{edu:40}],
+ ['m3','med',3,'의사',null,'docteur en médecine',2500,{edu:60}],
+ ['m4','med',4,'병원 의사·의학 교수',null,'médecin des hôpitaux / professeur',6000,{edu:65,fame:30}],
+ ['m5','med',5,'궁정 시의',null,'premier médecin du Roi / de l’Empereur',20000,{edu:70,fame:55,soc:50}],
  ['w4','letters',4,'아카데미 회원',null,'académicien',3000,{edu:70,fame:45},()=>T()<1793.5||T()>=1795.75]
 ];
 const POST={};PL.forEach(([id,tr,t,n,nf,fr,pay,need,ok])=>POST[id]={id,tr,t,n,nf,fr,pay,need:need||{},ok:ok||(()=>true)});
