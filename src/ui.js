@@ -10,10 +10,16 @@ function entryNode(e){
     body.appendChild(el('span','tx',txt));
     if(fxs){const w=el('span','fxs');fxs.forEach(x=>{const lab=x.split(' ')[0];const neg=/\s-\s?\d/.test(x);const bad=BAD.has(lab)?!neg:neg;w.appendChild(el('span','fx '+(lab==='급진'||lab==='보수'?'':bad?'dn':'up'),x))});body.appendChild(w)}}
   d.appendChild(body);return d}
+// 최근 항목 LOG_STEP개만 보이고, '더 보기'를 누를 때마다 LOG_STEP개씩 더 펼친다
+const LOG_STEP=5;let logLimit=LOG_STEP;
 function flushLog(){const box=logBox||$('#log');if(!box||!s)return;
   for(;shown<s.log.length;shown++)box.prepend(entryNode(s.log[shown]));
-  while(box.childElementCount>360)box.lastElementChild.remove()}
-function rebuildLog(){const box=$('#log');box.innerHTML='';shown=Math.max(0,s.log.length-360);flushLog()}
+  while(box.childElementCount>360)box.lastElementChild.remove();foldLog()}
+function foldLog(){const box=logBox||$('#log');if(!box)return;let n=0,total=0;
+  for(const c of box.children){const item=!c.classList.contains('yr')&&!c.classList.contains('dice');c.hidden=n>=logLimit;if(item){n++;total++}}
+  const rest=Math.max(0,total-logLimit),more=$('#logMore'),less=$('#logLess');if(!more)return;
+  more.hidden=rest===0;more.textContent=`이전 기록 ${Math.min(LOG_STEP,rest)}개 더 보기 · 남은 ${rest}개`;less.hidden=logLimit<=LOG_STEP}
+function rebuildLog(){const box=$('#log');box.innerHTML='';logLimit=LOG_STEP;shown=Math.max(0,s.log.length-360);flushLog()}
 
 /* ================= 결정 창 ================= */
 let sheetMark=0;
@@ -211,7 +217,7 @@ function showEnd(){const out=obituary(),ep=epithet();recordLife(out,ep);try{loca
   $('#copyB').onclick=async()=>{const txt=`【${ep}】\n${out.join('\n')}\n\n— 1789 한 시민의 일생`;try{await navigator.clipboard.writeText(txt);$('#copyB').textContent='복사됨'}catch(e){const ta=el('textarea');ta.value=txt;ta.style.width='100%';ta.rows=8;card.appendChild(ta);ta.select();$('#copyB').textContent='아래 글을 선택해 복사하세요'}}}
 
 /* ================= 연결 ================= */
-function boot(){logBox=$('#log');
+function boot(){logBox=$('#log');$('#logMore').onclick=()=>{logLimit+=LOG_STEP;foldLog()};$('#logLess').onclick=()=>{logLimit=LOG_STEP;foldLog();$('.logc').scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})};
   try{const v=+localStorage.getItem(KEY+'_spd');if([1,2,4,8,12,16].includes(v))speed=v}catch(e){}setSpeed(speed);
   const saved=load();if(saved){$('#contB').hidden=false;$('#contB').onclick=()=>{s=saved;start(false)}}
   if(loadLives().length)$('#livesB').hidden=false;

@@ -145,6 +145,8 @@ main{display:grid;gap:16px;margin-top:16px}
 
 /* life record */
 #log{display:grid}
+.logmore{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.logmore:has(#logMore[hidden]):has(#logLess[hidden]){display:none}
 .le{display:grid;grid-template-columns:3.6em 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
 .le:first-child{border-top:0}
 .le .ag{font-family:var(--fd);font-style:italic;color:var(--mut);font-size:.9rem;padding-top:2px}
@@ -214,10 +216,10 @@ main{display:grid;gap:16px;margin-top:16px}
 .kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;font-size:.95rem}
 .kv dt{color:var(--mut)}
 .kv dd{margin:0;min-width:0}
-.hist{list-style:none;padding:0;margin:6px 0;border-left:1px solid var(--ink)}
-.hist li{padding:5px 0 5px 14px;position:relative}
-.hist li::before{content:'';position:absolute;left:-4px;top:14px;width:7px;height:7px;transform:rotate(45deg);background:var(--era)}
-.hist li small{color:var(--mut);font-style:italic}
+ul.hist{list-style:none;padding:0;margin:6px 0;border-left:1px solid var(--ink)}
+ul.hist li{padding:5px 0 5px 14px;position:relative}
+ul.hist li::before{content:'';position:absolute;left:-4px;top:14px;width:7px;height:7px;transform:rotate(45deg);background:var(--era)}
+ul.hist li small{color:var(--mut);font-style:italic}
 .gloss{display:grid;gap:12px}
 .gloss b{font-family:var(--fd)}
 .gloss p{margin:2px 0 0;color:var(--mut)}
