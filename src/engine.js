@@ -39,7 +39,7 @@ function msPer(){return monthly()?4200:9000}
 function secPerYear(){return Math.round(msPer()*(12/tickMonths())/speed/1000)}
 function ageNow(){return s.year-s.by-(s.month<s.bm?1:0)}
 async function advanceSeason(){
-  const k=tickMonths();const prev=MI();
+  const k=tickMonths();const prev=MI();const tPrev=T();
   // 1788년 12월 다음은 1789년 1월(월 단위 진입)
   let nx=prev+k;if(prev<REV_START&&nx>REV_START)nx=REV_START;
   const oldYear=s.year;s.year=Math.floor(nx/12);s.month=nx%12;s.season=seasonOf(s.month);s.tick=(nx-prev);
@@ -48,9 +48,11 @@ async function advanceSeason(){
   if(s.dead)return;
   const f=s.tick/12; // 이번 진행 길이(년)
   // 사망
-  if(R()<deathP(s.age)*f){die(s.age>=60?'old':'ill');return}
+  if(R()<deathP(s.age)*f*(s.age>=1?(s.age<14?.5:.5):1)){die(s.age>=60?'old':'ill');return}
+  await illnessTick();if(s.dead)return;
   // 역사: 지난 진행 구간 안의 사건을 모두 처리
   await runHistory(prev,nx);if(s.dead)return;
+  await regimeTurn(tPrev,T());if(s.dead)return;
   await partyTick();if(s.dead)return;
   // 개인 처지 (계절마다)
   if(quarter()){
@@ -76,7 +78,7 @@ function newYear(){s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
   const ry=repYear(s.year);L(`${yl()}${ry?' · '+ry:''}`,'yr');
   s.polHist=s.polHist||[];s.polHist.push([s.year,s.pol]);s.pol=Math.round(s.pol*.96);
   s.sus=Math.max(0,s.sus-(inTerror()?0:3));
-  attrsYear(s.plan);
+  attrsYear(s.plan);illYear();conductYear();
   if(child())return;
   if(trait('경건'))s.faith=clamp(s.faith+1,0,100);if(trait('열정'))s.st.cour=clamp(s.st.cour+1,0,100);
   // 방침
@@ -90,7 +92,7 @@ function newYear(){s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
     L(`${s.year<=1796?'아시냐':'지폐'} 가치가 떨어져 모아 둔 돈이 녹아내렸다. (재산 -${fmt(loss)})`,'sys')}
 }
 function economy(pl,ptxt){const j=job();const away=s.cond!=='normal';
-  const E=econ();let pay=j&&!away?j.pay:0;if(pl==='근면')pay*=1.25;let slack='';
+  const E=econ();let pay=j&&!away?j.pay:0;if(pay&&s.illLoss){pay*=Math.max(.3,1-s.illLoss/12*.7)}s.illLoss=0;if(pl==='근면')pay*=1.25;let slack='';
   if(pay&&wageEarner()){pay*=E.wage;if(E.jobs<45){pay*=.5+E.jobs/90;slack=' 일감이 줄어 벌이가 깎였다.'}}
   if(pay&&j.tr==='craft'&&j.t>=3)pay*=1+(s.sk.trade+s.sk.craft-60)/400;if(j&&j.tr==='farm'&&s.year>=1790)pay*=1.12;
   const sp=s.spouse&&s.spouse.alive?s.spouse.pay:0;
@@ -110,7 +112,7 @@ const CAUSE={ill:'병',old:'노환',guillotine:'단두대',battle:'전사',massa
 function die(cause,detail){if(s.dead)return;s.dead=true;closeJob();
   if(cause==='ill')detail=detail||(s.age<5?pick(['천연두','홍역','이질','디프테리아']):s.age<60?pick(['폐결핵','장티푸스','늑막염','열병','이질']):pick(['뇌졸중','폐렴','수종']));
   s.death={cause,detail,year:s.year,season:SEASON[s.season],age:s.age};
-  const txt={ill:`${detail}으로 세상을 떠났다.`,old:'자리에 누운 지 며칠 만에 조용히 숨을 거두었다.',guillotine:'혁명 광장의 단두대에서 처형되었다.',battle:detail?`${detail}에서 전사하였다.`:'전장에서 쓰러졌다.',massacre:'감옥에 들이닥친 군중에게 살해되었다.',famine:'굶주림 끝에 숨을 거두었다.',childbirth:'아이를 낳다가 숨을 거두었다.',duel:'결투에서 치명상을 입고 죽었다.',executed:detail||'처형되었다.',drowned:'루아르 강의 익사형으로 죽었다.',deported:'기아나 유형지의 열병으로 죽었다.',murdered:detail||'원한을 품은 자들에게 살해되었다.',cholera:'콜레라에 걸려 하루 만에 죽었다.',smallpox:'천연두로 죽었다.',riot:detail||'봉기 중에 총탄을 맞고 쓰러졌다.',shot:detail||'총살되었다.',cold:detail||'혹한 속에 얼어 죽었다.'}[cause];
+  const txt={ill:`${jo(detail,'으로')} 세상을 떠났다.`,old:'자리에 누운 지 며칠 만에 조용히 숨을 거두었다.',guillotine:'혁명 광장의 단두대에서 처형되었다.',battle:detail?`${detail}에서 전사하였다.`:'전장에서 쓰러졌다.',massacre:'감옥에 들이닥친 군중에게 살해되었다.',famine:'굶주림 끝에 숨을 거두었다.',childbirth:'아이를 낳다가 숨을 거두었다.',duel:'결투에서 치명상을 입고 죽었다.',executed:detail||'처형되었다.',drowned:'루아르 강의 익사형으로 죽었다.',deported:'기아나 유형지의 열병으로 죽었다.',murdered:detail||'원한을 품은 자들에게 살해되었다.',cholera:'콜레라에 걸려 하루 만에 죽었다.',smallpox:'천연두로 죽었다.',riot:detail||'봉기 중에 총탄을 맞고 쓰러졌다.',shot:detail||'총살되었다.',cold:detail||'혹한 속에 얼어 죽었다.'}[cause];
   say(txt,'dark')}
 
 /* ================= 유년 ================= */
@@ -144,7 +146,9 @@ function entryOptions(first){const E=s.estate,o=[];const add=(id,why)=>{if(POST[
   if(E==='bourgeois'){add('l1','법률사무소 서기로 들어가 법을 익힌다');add('c2','가업을 거들며 장사를 배운다');add('w1','귀족 집안의 가정교사가 된다');add('r1',isM()?'신학교에 들어간다':'수녀원에 들어간다')}
   if(noble()){if(isM()){add('a3','왕의 군대에 소위로 임관한다');add('r1','교회에 들어간다. 주교관을 노린다')}else add('r1','수녀원에 들어간다');
     if(E==='robe'&&isM())add('l2','법학을 마치고 변호사로 등록한다. 고등법원 자리를 이을 준비를 한다');add('w2',isM()?'문필과 학문에 몸을 바친다':'살롱을 열 준비를 한다')}
+  for(const e of ENTRIES){try{if((first||!e.firstOnly)&&e.c()&&!o.some(x=>x.id===e.id)&&e.id!==s.job)add(e.id,e.why)}catch(err){}}
   if(!first){for(const id of ['f2','f3','f4','c2','c3','c4','c5','l1','l2','w1','w2','w3','r1','a1','p1','p2'])if(!o.some(x=>x.id===id)&&id!==s.job)add(id,'')}
+  if(o.length>12){const keep=o.slice(0,6),rest=o.slice(6).sort(()=>R()-.5).slice(0,6);return keep.concat(rest)}
   return o}
 async function careerChoice(first){const opts=entryOptions(first);
   sheetOpen(first?'앞날을 정한다':'진로를 바꾼다','état');
@@ -161,11 +165,11 @@ async function promoCheck(){const j=job();if(!j||j.tr==='pol'&&j.t>=3)return;con
   const war=atWar()&&j.tr==='army',purge=j.tr==='army'&&T()>=1791.5&&T()<1795;
   if(yrs<(war?1:2))return;
   const next=PL.filter(x=>x[1]===j.tr&&x[2]===j.t+1).map(x=>POST[x[0]]).filter(p=>meets(p));if(!next.length)return;
-  let p={farm:.05,craft:.07,law:.07,church:.06,army:.05,pol:.08,letters:.05,med:.06}[j.tr];
+  let p=PROMO_P[j.tr]||.06;
   if(war)p=.14;if(purge)p=.3;if(trait('야심'))p*=1.4;if(trait('신중'))p*=.8;if(s.plan==='근면')p*=1.3;
   if(R()>=p)return;const n=pick(next);
-  const key={farm:['soc',40],craft:['soc',45],law:['edu',60],church:['edu',50],army:['cour',50],pol:['soc',50],letters:['edu',60],med:['edu',60]}[j.tr];
-  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
+  const key=PROMO_KEY[j.tr]||['soc',45];
+  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[(j.tr==='law'&&s.kn.klaw>=50)||(j.tr==='med'&&s.kn.kmed>=50)||(j.tr==='church'&&s.kn.ktheo>=45)||(j.tr==='letters'&&s.kn.klett>=50),1,'전문 지식'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
   const r=await roll(m,{label:`${pname(n)} 승진`,why});
   if(r.v>=4){takeJob(n.id,purge?'귀족 장교들이 떠난 자리를 메우며 ':'');if(n.tr==='army')fx({fame:2})}}
 
@@ -222,7 +226,8 @@ function arrestP(){let p=.0045;const why=[];
   if(s.flags.refractory){p*=7;why.push('선서 거부 사제')}
   if(nun()||s.flags.exNun){p*=2}
   if(s.flags.emigreKin){p*=2;why.push('망명자 가족')}
-  if(s.pol<-25){p*=2.2;why.push('왕당파 성향')}else if(s.pol>=40&&s.flags.club){p*=.3;why.push('클럽 회원(감)')}
+  const pp=pubPol();if(pp<-25){p*=2.2;why.push('왕당파로 알려짐')}else if(pp>=40&&s.flags.club){p*=.3;why.push('클럽 회원(감)')}
+  if(conduct()==='silent')p*=.8;
   if(s.flags.girondin){p*=4;why.push('지롱드파')}
   if(inParis())p*=1.4;if(['lyon','nantes','vendee','marseille'].includes(loc())){p*=1.8;why.push('반란 지역')}
   if(rich()){p*=1.5;why.push('부유함')}

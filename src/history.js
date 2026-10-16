@@ -510,7 +510,7 @@ H(1849,1,'루이 나폴레옹 보나파르트가 대통령에 뽑혔다.');
 H(1852,1,'12월 2일, 대통령 루이 나폴레옹이 친위 쿠데타를 일으켰다.');
 
 /* 선거 */
-async function election(name,base){const {m,why}=md([[s.fame>=60,1,'명성'],[s.st.soc>=55,1,'사교'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!!s.party&&partyFit()>0,1,'당의 지지'],[s.prank>=2,1,'당 지도부'],[s.flags.bastille||s.flags.dix,1,'혁명의 공'],[s.sk.orat>=50,1,'웅변'],[s.rep.rpeople>=65,1,'민중의 지지'],[s.rep.relite>=65,1,'명사들의 지지'],[s.rep.rloc>=70,1,'고을의 신망'],[s.rep.rpeople<=30,-1,'민중의 반감'],[influence().v>=40,1,'영향력'],[s.pol<0,-1,'온건']]);
+async function election(name,base){const {m,why}=md([[s.fame>=60,1,'명성'],[s.st.soc>=55,1,'사교'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!!s.party&&partyFit()>0,1,'당의 지지'],[s.prank>=2,1,'당 지도부'],[s.flags.bastille||s.flags.dix,1,'혁명의 공'],[s.sk.orat>=50,1,'웅변'],[s.rep.rpeople>=65,1,'민중의 지지'],[s.rep.relite>=65,1,'명사들의 지지'],[s.rep.rloc>=70,1,'고을의 신망'],[s.rep.rpeople<=30,-1,'민중의 반감'],[influence().v>=40,1,'영향력'],[pubPol()<0,-1,'온건'],[conduct()==='silent',-1,'침묵']]);
   const i=await Q(name,'élections','선거인 회의가 열린다. 출마하겠는가?',[{l:'출마한다',s:'사교·명성 판정',a:'social radical'},{l:'나서지 않는다',s:'',a:'safe'}]);
   if(i===1){await done();return}
   const r=await roll(m,{label:name,why});

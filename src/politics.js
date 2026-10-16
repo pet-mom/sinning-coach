@@ -30,20 +30,20 @@ const FACTIONS=[
 ];
 const FAC={};FACTIONS.forEach(f=>FAC[f.id]=f);
 const ISSUES=[
- {id:'crown',n:'왕정',fr:'Le Roi',opts:[['절대왕정',-80],['입헌군주정',-15],['공화정',50]]},
- {id:'vote',n:'참정권',fr:'Le suffrage',opts:[['신분별 투표',-70],['납세자 선거',-10],['남성 보통선거',55],['혁명정부(선거 중단)',75]]},
- {id:'prop',n:'재산권',fr:'La propriété',opts:[['영주권 보호',-75],['사유재산 보호',-10],['국유재산 매각',25],['농지 분배',85]]},
- {id:'church',n:'교회',fr:'L’Église',opts:[['가톨릭 국교',-60],['성직자 시민헌법',20],['비기독교화',80],['신앙의 자유',30]]},
- {id:'econ',n:'경제',fr:'Les subsistances',opts:[['곡물 자유 거래',-5],['최고가격제',70]]},
- {id:'justice',n:'혁명 사법',fr:'La justice',opts:[['관용',-20],['공정한 재판',10],['공포와 처형',80]]},
- {id:'war',n:'전쟁',fr:'La guerre',opts:[['평화',-10],['방어전',15],['혁명 수출',40]]}
+ {id:'crown',a:1788.7,b:1804.4,n:'왕정',fr:'Le Roi',opts:[['절대왕정',-80],['입헌군주정',-15],['공화정',50]]},
+ {id:'vote',a:1788.7,b:1799.9,n:'참정권',fr:'Le suffrage',opts:[['신분별 투표',-70],['납세자 선거',-10],['남성 보통선거',55],['혁명정부(선거 중단)',75]]},
+ {id:'prop',a:1789.3,b:1799.9,n:'재산권',fr:'La propriété',opts:[['영주권 보호',-75],['사유재산 보호',-10],['국유재산 매각',25],['농지 분배',85]]},
+ {id:'church',a:1789.6,b:1801.6,n:'교회',fr:'L’Église',opts:[['가톨릭 국교',-60],['성직자 시민헌법',20],['비기독교화',80],['신앙의 자유',30]]},
+ {id:'econ',a:1792.6,b:1797,n:'경제',fr:'Les subsistances',opts:[['곡물 자유 거래',-5],['최고가격제',70]]},
+ {id:'justice',a:1792.6,b:1795.5,n:'혁명 사법',fr:'La justice',opts:[['관용',-20],['공정한 재판',10],['공포와 처형',80]]},
+ {id:'war',a:1791.9,b:1802.3,n:'전쟁',fr:'La guerre',opts:[['평화',-10],['방어전',15],['혁명 수출',40]]}
 ];
 const PRANK=['지지자','회원','연사','지도부'];
 const politic=()=>!!s.party||s.plan==='정치'||((lit()||urban())&&s.age>=18&&R()<.7);
 function activeFactions(t=T()){return FACTIONS.filter(f=>t>=f.a&&t<f.b)}
 function party(){return s.party?FAC[s.party]:null}
 function affinity(f){let a=100-Math.abs(s.pol-f.pol)*.9;
-  ISSUES.forEach((iss,k)=>{const mine=s.stance[iss.id],theirs=f.st[k];if(mine==null||theirs<0)return;a+=mine===theirs?7:-5});
+  ISSUES.forEach((iss,k)=>{const mine=s.stance[iss.id];const theirs=iss.fp?iss.fp[f.id]:f.st[k];if(mine==null||theirs==null||theirs<0)return;if(!issueOn(iss))return;a+=mine===theirs?7:-5});
   if(s.party===f.id)a+=10;a+=frelOf(f.id)*.15;return clamp(Math.round(a),0,100)}
 // 소속 파벌이 지금 권력과 얼마나 맞는가(선거·위험에 쓰인다)
 const RULING=t=>t<tm(1789,5)?['devot','parlement']:t<tm(1791,7)?['patriote']:t<tm(1791,10)?['feuillant','jacobin']:t<tm(1793,6)?['girondin','jacobin']:t<tm(1794,8)?['jacobin']:t<tm(1797,4)?['thermidor','plaine']:t<tm(1797,9)?['clichy','thermidor']:t<tm(1799,11)?['thermidor','neojacobin']:t<tm(1814,4)?['bonapartist']:t<tm(1830,8)?['ultra','doctrinaire']:t<tm(1848,2)?['doctrinaire']:['republican'];
@@ -117,3 +117,60 @@ const PACTS=[
  {k:'run',n:'선거에 나선다',s:'의원이 될 수 있다',c:()=>isM()&&s.age>=25&&lit()&&!deputy()&&s.fame>=30&&[1791,1792,1795,1797,1798,1799].includes(s.year),inter:async()=>{await election('보궐 선거',.08)}},
  {k:'leave',n:'파벌을 떠난다',s:'',c:()=>!!s.party,f:()=>leaveParty()}
 ];
+
+/* ================= 시대에 맞는 정치 성향 =================
+   1) 시대마다 성향 눈금의 이름이 바뀐다(1789년의 ‘애국파’와 1830년의 ‘운동파’는 다르다).
+   2) 쟁점도 시대마다 바뀐다. 지난 시대의 입장은 기록으로 남는다.
+   3) 속마음(s.pol)과 공개 입장(pubPol())을 따로 본다. 처신(s.conduct): 소신 · 시류 · 침묵.
+      위험(체포·숙청)은 공개 입장을 따르고, 속마음과의 차이가 크면 들통날 수 있다.
+   4) 정권이 바뀔 때마다 지조를 지킬지, 새 정권에 맞출지 고른다. 여러 번 바꾼 이름난 사람은
+      1815년 『풍향계 사전(Dictionnaire des girouettes)』에 오를 수 있다. */
+const SPECTRA=[
+ {a:1750,b:tm(1788,9),n:'구체제',l:[[-55,'신앙파 보수'],[-20,'전통 왕정'],[12,'온건 개혁'],[45,'계몽 개혁'],[101,'급진 철학']]},
+ {a:tm(1788,9),b:tm(1791,7),n:'제헌의회',l:[[-55,'귀족파(검은 당)'],[-22,'군주제파'],[18,'입헌 애국파'],[50,'민주파'],[101,'급진 민주파']]},
+ {a:tm(1791,7),b:tm(1792,9),n:'입법의회',l:[[-50,'반혁명 왕당'],[-5,'푀양(입헌군주)'],[30,'지롱드'],[62,'자코뱅'],[101,'코르들리에']]},
+ {a:tm(1792,9),b:tm(1794,8),n:'국민공회',l:[[-35,'왕당파'],[15,'지롱드'],[35,'평원파'],[70,'산악파'],[101,'에베르파·앙라제']]},
+ {a:tm(1794,8),b:tm(1799,11),n:'총재정부',l:[[-50,'왕당파'],[-15,'클리시파'],[30,'테르미도르 공화파'],[75,'신자코뱅'],[101,'평등파']]},
+ {a:tm(1799,11),b:tm(1814,4),n:'통령·제국',l:[[-50,'왕당파'],[-15,'보수 명사'],[22,'보나파르트 지지'],[50,'자유파(이데올로그)'],[101,'공화 잔당']]},
+ {a:tm(1814,4),b:tm(1830,8),n:'복고왕정',l:[[-55,'극우 왕당(울트라)'],[-20,'입헌 왕당'],[10,'독트리네르'],[45,'자유파'],[101,'공화·보나파르트파']]},
+ {a:tm(1830,8),b:1900,n:'7월 왕정',l:[[-45,'정통왕조파'],[-5,'저항파(질서)'],[25,'운동파(개혁)'],[60,'공화파'],[101,'사회주의']]}];
+function spectrum(t=T()){return SPECTRA.find(x=>t>=x.a&&t<x.b)||SPECTRA[SPECTRA.length-1]}
+function polLabel(p,t){const S=spectrum(t);for(const [mx,n] of S.l)if(p<mx)return n;return S.l[S.l.length-1][1]}
+// 시대마다 새로 생기는 쟁점. fp: 파벌별 입장(선택지 번호).
+ISSUES.push(
+ {id:'conc',a:1799.9,b:1814.3,n:'정교협약',fr:'Le Concordat',opts:[['교황과의 화해 환영',-30],['국가가 교회를 다스린다',10],['세속 공화국을 지킨다',50]],fp:{bonapartist:1,royalist:0,ideologue:2}},
+ {id:'emp',a:1802.3,b:1814.3,n:'제정',fr:'L’Empire',opts:[['부르봉 왕가의 복위',-60],['황제와 제국',5],['공화국의 자유',50]],fp:{bonapartist:1,royalist:0,ideologue:2}},
+ {id:'consc',a:1798.7,b:1814.3,n:'징병',fr:'La conscription',opts:[['징병 반대',-20],['대리 복무 허용',-5],['모든 시민의 병역',35]],fp:{bonapartist:2,royalist:0,ideologue:1}},
+ {id:'charte',a:1814.3,b:1830.6,n:'헌장',fr:'La Charte',opts:[['왕의 은혜일 뿐',-70],['헌장 엄수',-5],['헌장을 넘어선 자유',45]],fp:{ultra:0,doctrinaire:1,ideologue:2,bonapartist:2}},
+ {id:'press',a:1814.3,b:1848,n:'언론 자유',fr:'La presse',opts:[['검열',-50],['보증금 붙은 자유',-5],['완전한 언론 자유',45]],fp:{ultra:0,doctrinaire:1,ideologue:2,republican:2,legitimist:0}},
+ {id:'milliard',a:1824.7,b:1826,n:'망명자 보상',fr:'Le milliard des émigrés',opts:[['10억 프랑 보상 찬성',-55],['반대',35]],fp:{ultra:0,doctrinaire:1,ideologue:1}},
+ {id:'sacri',a:1825,b:1830.6,n:'신성모독법',fr:'Loi du sacrilège',opts:[['찬성',-65],['반대',30]],fp:{ultra:0,doctrinaire:1,ideologue:1}},
+ {id:'cens',a:1830.6,b:1848,n:'선거권',fr:'Le cens',opts:[['납세 200프랑 유지',-10],['선거권 확대',30],['보통선거',65]],fp:{doctrinaire:0,republican:2,legitimist:0}},
+ {id:'ouvr',a:1831,b:1848,n:'노동 문제',fr:'La question sociale',opts:[['자유방임',-15],['자선과 후원',-30],['노동자 결사의 자유',55]],fp:{doctrinaire:0,legitimist:1,republican:2}});
+function issueOn(iss,t=T()){return t>=(iss.a||0)&&t<(iss.b||9999)}
+const activeIssues=()=>ISSUES.filter(x=>issueOn(x));
+// 지금 권력을 쥔 쪽의 성향
+function rulingPol(){const r=RULING(T());const fs=r.map(id=>FAC[id]).filter(Boolean);return fs.length?Math.round(fs.reduce((a,f)=>a+f.pol,0)/fs.length):0}
+const CONDUCT=[{k:'open',n:'소신대로 밝힌다',s:'공개 입장 = 속마음. 명예와 신뢰를 얻지만 시대가 바뀌면 위험하다'},{k:'adapt',n:'시류에 맞춘다',s:'공개 입장은 집권 세력 쪽으로. 안전하지만 명예를 잃고 들통날 수 있다'},{k:'silent',n:'침묵한다',s:'입장을 드러내지 않는다. 위험도, 영향력도 줄어든다'}];
+function conduct(){return s.conduct||'open'}
+function pubPol(){const c=conduct();if(c==='adapt')return Math.round(rulingPol()*.8+s.pol*.2);if(c==='silent')return Math.round(s.pol*.3);return s.pol}
+function setConduct(k){if(s.acts.conduct===s.year||!CONDUCT.find(x=>x.k===k))return;s.acts.conduct=s.year;const was=conduct();s.conduct=k;
+  say(`처신을 바꾸었다: ${CONDUCT.find(x=>x.k===k).n}.`+fx(k==='adapt'?{vhon:-2}:k==='open'?{vhon:1}:{}),'sys')}
+// 해마다: 속마음과 겉의 차이
+function conductYear(){if(child()||s.age<16)return;const c=conduct(),gap=Math.abs(pubPol()-s.pol);
+  if(c==='adapt'){fxAttr('vhon',-1);if(gap>=40&&R()<gap/500){say(`${pick(['옛 편지가 돌았다','술자리에서 속내를 털어놓은 말이 퍼졌다','옛 동지가 그대의 과거를 폭로했다'])}. 겉으로 내세우던 입장이 거짓이었다는 소문이 났다.`+fx({sus:10,rloc:-4,relite:-2,fame:2}),'big')}}
+  if(c==='silent'&&(s.inf0||0)>0)s.inf0=Math.max(0,s.inf0-2);
+  if(c==='open'&&gap===0&&s.fame>=20&&R()<.3)fxAttr('rpeople',s.pol>=30?1:0)}
+// 정권 교체 앞에서
+const REGIMES=[[tm(1789,7),'바스티유 이후','국민의회가 권력을 잡았다'],[tm(1792,8),'왕정의 몰락','8월 10일 왕정이 무너지고 공화국이 섰다'],[tm(1794,7),'테르미도르','로베스피에르가 쓰러지고 공포정치가 끝났다'],[tm(1799,11),'브뤼메르','보나파르트가 권력을 잡았다'],[tm(1804,5),'제정','공화국이 제국이 되었다'],[tm(1814,4),'복고','황제가 물러나고 부르봉 왕가가 돌아왔다'],[tm(1815,3),'백일천하','엘바섬에서 돌아온 황제가 파리에 들어왔다'],[tm(1815,7),'두 번째 복고','워털루 뒤 왕이 다시 돌아왔다'],[tm(1830,8),'7월 혁명','샤를 10세가 쫓겨나고 루이 필리프가 왕이 되었다']];
+async function regimeTurn(t0,t1){for(const [t,n,d] of REGIMES){if(!(t>=t0&&t<t1))continue;
+  if(child()||s.age<18||s.cond!=='normal'||s.dead)continue;const visible=s.fame>=15||s.party||(job()&&job().t>=3)||deputy();if(!visible)continue;
+  const rp=rulingPol(),gap=Math.abs(rp-s.pol);
+  const i=await Q(n,'changement de régime',`${d}. 새 정권 앞에서 그대는 어떻게 처신할 것인가. (새 정권 쪽 성향 ${rp>0?'+':''}${rp}, 그대의 속마음 ${s.pol>0?'+':''}${s.pol})`,[
+    {l:'지조를 지킨다',s:gap>=40?'위험하다. 명예와 옛 동지의 신뢰':'명예',a:'bold'},{l:'새 정권에 충성을 맹세한다',s:'안전과 자리. 변절의 오명',a:'safe greedy'},{l:'고향으로 물러나 몸을 낮춘다',s:'영향력을 잃는다',a:'safe family'}]);
+  if(i===0){s.conduct='open';say('입장을 바꾸지 않았다.'+fx({vhon:3,sus:gap>=40?Math.round(gap/5):0,rpeople:s.pol>=30?2:0,relite:s.pol<=-30?2:0}))}
+  else if(i===1){s.conduct='adapt';s.turns=(s.turns||0)+1;RULING(T()).forEach(id=>frelAdd(id,15));say('새 정권에 충성을 맹세하였다.'+fx({inf:4,sus:-Math.round(gap/6),vhon:-4,rloc:-1}));if(s.party&&!RULING(T()).includes(s.party))leaveParty('옛 파벌과 갈라섰다.')}
+  else{s.conduct='silent';say('공직에서 물러나 조용히 지냈다.'+fx({inf:-6,sus:-5,rfam:2}))}
+  await done()}
+  // 1815년 『풍향계 사전』
+  if(tm(1815,8)>=t0&&tm(1815,8)<t1&&(s.turns||0)>=3&&s.fame>=25&&!s.flags.girouette){s.flags.girouette=true;say(`알렉시 에메리가 펴낸 『풍향계 사전』에 그대의 이름이 올랐다. 정권마다 충성을 맹세한 사람들의 목록이다. 이름 옆에 풍향계가 ${Math.min(s.turns,6)}개 그려져 있었다.`+fx({fame:4,vhon:-3,relite:-3}),'big')}}
