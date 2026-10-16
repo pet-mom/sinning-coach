@@ -243,14 +243,15 @@ async function relEvent(r){const j=relJudge(r);const roleS=`${r.role} ${r.n}`;
       else say(`${r.n}의 아이 세례식에 ${isM()?'대부':'대모'}로 섰다.`+fx({rloc:1})+relFx(r,{close:8,trust:4}))}];
   pick(pool)()}
 // 아는 사람의 파벌이 몰락할 때: 숨겨 줄 것인가
-async function relPurge(id){const r=relsAlive().find(x=>x.fac===id&&x.close>=45);if(!r||s.cond!=='normal'||child()||s.party===id)return;
+async function relPurge(id){const r=relsAlive().find(x=>x.fac===id&&x.close>=45&&(x.kind!=='fic'||x.cond==='normal'));if(!r||s.cond!=='normal'||child()||s.party===id)return;
   const i=await Q('숨겨 달라는 부탁',`asile`,`${FAC[id].n}${bat(FAC[id].n)?'이':'가'} 무너지자 ${r.role} ${r.n}${bat(r.n)?'이':'가'} 밤중에 찾아왔다. 며칠만 숨겨 달라고 한다.`,[
     {l:'다락에 숨겨 준다',s:'혐의 +, 친밀·신뢰 크게 +',a:'bold family'},{l:'돈을 쥐여 보내고 문을 닫는다',s:'재산 -60',a:'safe'},{l:'구 위원회에 알린다',s:'혐의 -, 관계 끝',a:'radical'}]);
+  r.pg={id,i,y:s.year}; // 가상의 벗(src/npc.js)이 이 선택에 따라 숙청을 피하거나 붙잡힌다
   if(i===0){const caught=await chance(inTerror()?.15:.06,'발각','숨겨 준 사람이 들킨 비율');
     if(caught){say(`가택 수색이 들이닥쳐 ${r.n}${bat(r.n)?'은':'는'} 지붕을 타고 달아났다. 그대는 공범으로 의심받는다.`+fx({sus:20,rloc:-3})+relFx(r,{trust:10}),'big')}
     else say(`${r.n}${bat(r.n)?'은':'는'} 열흘 뒤 몰래 길을 떠났다. 평생 이 일을 잊지 않을 것이다.`+fx({sus:5})+relFx(r,{close:25,trust:30,resp:15}),'big')}
   else if(i===1){say(`${r.n}에게 돈을 쥐여 보냈다.`+fx({money:-60})+relFx(r,{close:-10,trust:-5}))}
-  else{say(`${r.n}${bat(r.n)?'을':'를'} 고발하였다. 이웃들은 그대를 다른 눈으로 본다.`+fx({sus:-10,rloc:-6,pol:4}),'dark');r.close=0;r.trust=0;r.role='경쟁자'}
+  else{say(`${r.n}${bat(r.n)?'을':'를'} 고발하였다. 이웃들은 그대를 다른 눈으로 본다.`+fx({sus:-10,rloc:-6,pol:4}),'dark');r.close=0;r.trust=0;r.role='경쟁자';if(r.kind==='fic')r.hate=Math.max(r.hate||0,60)}
   await done()}
 
 /* ---------- 지역 경제 ---------- */
