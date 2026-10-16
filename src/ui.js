@@ -37,11 +37,12 @@ function autoPick(opts,btns){let best=-1e9,bi=0;opts.forEach((o,i)=>{if(btns[i].
 function setAuto(on){autoMode=on;$('#autoT').setAttribute('aria-pressed',String(on));$('#autoT').textContent=on?'자동 선택 켜짐':'자동 선택 꺼짐';if(on&&pend)setTimeout(()=>{if(autoMode&&pend)pend()},ad())}
 function shButtons(opts){return new Promise(res=>{const box=el('div','opts');
   opts.forEach((o,i)=>{const b=el('button','opt');b.type='button';b.appendChild(el('span','ol',o.l));if(o.s)b.appendChild(el('small',null,o.s));if(o.dis)b.disabled=true;
-    b.onclick=()=>{pend=null;box.querySelectorAll('button').forEach(x=>x.disabled=true);b.classList.add('chosen');res(i)};box.appendChild(b)});
+    b.onclick=()=>{pend=null;lastPick=o;box.querySelectorAll('button').forEach(x=>x.disabled=true);b.classList.add('chosen');res(i)};box.appendChild(b)});
   $('#shB').appendChild(box);arm(()=>{const btns=[...box.querySelectorAll('button')];btns[autoPick(opts,btns)].click()});const f=box.querySelector('button:not(:disabled)');if(f)f.focus({preventScroll:true})})}
 async function shContinue(){}
 // 선택 뒤 바로 닫고, 그사이 생긴 결과를 잠깐 띄운다
-async function done(){if(!sheetLive)return;const news=s.log.slice(sheetMark).filter(e=>['ev','big','dark'].includes(e.k)).map(e=>e.t);sheetClose();if(news.length)toast(news.slice(-2).join(' '))}
+let lastPick=null;
+async function done(){if(!sheetLive)return;if(lastPick&&typeof reactAfter==='function'){try{reactAfter(lastPick)}catch(e){console.error(e)}}lastPick=null;const news=s.log.slice(sheetMark).filter(e=>['ev','big','dark'].includes(e.k)).map(e=>e.t);sheetClose();if(news.length)toast(news.slice(-2).join(' '))}
 let toastT=null;
 function toast(t){const b=$('#toast');b.textContent=t;b.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{b.hidden=true},Math.max(1600,4200/Math.sqrt(speed)))}
 

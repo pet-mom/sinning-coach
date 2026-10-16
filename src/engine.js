@@ -52,6 +52,7 @@ async function advanceSeason(){
   await illnessTick();if(s.dead)return;
   // 역사: 지난 진행 구간 안의 사건을 모두 처리
   await runHistory(prev,nx);if(s.dead)return;
+  if(typeof npcMonth==='function'){await npcMonth(tPrev,T());if(s.dead)return}
   await regimeTurn(tPrev,T());if(s.dead)return;
   await partyTick();if(s.dead)return;
   // 개인 처지 (계절마다)
@@ -71,7 +72,7 @@ async function advanceSeason(){
   if(s.age>=14&&!s.flags.adult)await comingOfAge();
   if(s.dead)return;
   await randomEvent(monthly()?.42:.72);if(s.dead)return;
-  if(s.month===11){await family();if(s.dead)return;await relTick();if(s.dead)return;await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
+  if(s.month===11){await family();if(s.dead)return;await relTick();if(s.dead)return;if(typeof npcYear==='function'){await npcYear();if(s.dead)return}await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
 }
 function birthday(){if(s.age>=50)s.st.hp=clamp(s.st.hp-(s.age>=65?2:1),0,100);else if(s.st.hp<50)s.st.hp+=2;else if(s.st.hp<60)s.st.hp+=1}
 function newYear(){s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
