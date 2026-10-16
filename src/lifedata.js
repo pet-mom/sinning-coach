@@ -22,6 +22,7 @@ function dataOk(e){const w=e.wh||{},o=e.who||{};
   // 배우자를 여읜 뒤(최근 2년), 아기를 잃은 뒤(최근 1년, 두 살 아래)의 장면
   if(o.widow&&!(s.spouse&&!s.spouse.alive&&!s.divorced&&s.spouse.dy>=s.year-2))return false;
   if(o.lostBaby&&!s.kids.some(k=>!k.alive&&k.dy>=s.year-1&&k.dy-k.y<2))return false;
+  if(o.school&&!o.school.includes(SCH().st))return false;
   if(e.k)for(const k of e.k)if(s[k].alive||!(s[k].dy>=s.year-2))return false;
   return true}
 function dataPool(){if(typeof LIFE_DATA==='undefined')return [];s.cd=s.cd||{};

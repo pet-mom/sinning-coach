@@ -37,11 +37,12 @@ function autoPick(opts,btns){let best=-1e9,bi=0;opts.forEach((o,i)=>{if(btns[i].
 function setAuto(on){autoMode=on;$('#autoT').setAttribute('aria-pressed',String(on));$('#autoT').textContent=on?'자동 선택 켜짐':'자동 선택 꺼짐';if(on&&pend)setTimeout(()=>{if(autoMode&&pend)pend()},ad())}
 function shButtons(opts){return new Promise(res=>{const box=el('div','opts');
   opts.forEach((o,i)=>{const b=el('button','opt');b.type='button';b.appendChild(el('span','ol',o.l));if(o.s)b.appendChild(el('small',null,o.s));if(o.dis)b.disabled=true;
-    b.onclick=()=>{pend=null;box.querySelectorAll('button').forEach(x=>x.disabled=true);b.classList.add('chosen');res(i)};box.appendChild(b)});
+    b.onclick=()=>{pend=null;lastPick=o;box.querySelectorAll('button').forEach(x=>x.disabled=true);b.classList.add('chosen');res(i)};box.appendChild(b)});
   $('#shB').appendChild(box);arm(()=>{const btns=[...box.querySelectorAll('button')];btns[autoPick(opts,btns)].click()});const f=box.querySelector('button:not(:disabled)');if(f)f.focus({preventScroll:true})})}
 async function shContinue(){}
 // 선택 뒤 바로 닫고, 그사이 생긴 결과를 잠깐 띄운다
-async function done(){if(!sheetLive)return;const news=s.log.slice(sheetMark).filter(e=>['ev','big','dark'].includes(e.k)).map(e=>e.t);sheetClose();if(news.length)toast(news.slice(-2).join(' '))}
+let lastPick=null;
+async function done(){if(!sheetLive)return;if(lastPick&&typeof reactAfter==='function'){try{reactAfter(lastPick)}catch(e){console.error(e)}}lastPick=null;const news=s.log.slice(sheetMark).filter(e=>['ev','big','dark'].includes(e.k)).map(e=>e.t);sheetClose();if(news.length)toast(news.slice(-2).join(' '))}
 let toastT=null;
 function toast(t){const b=$('#toast');b.textContent=t;b.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{b.hidden=true},Math.max(1600,4200/Math.sqrt(speed)))}
 
@@ -53,15 +54,12 @@ function statusText(){if(inSchool()&&s.cond==='normal')return schoolStatus();if(
   const j=job();if(j)return pname(j);return s.flags.retired?'은퇴':noble()&&s.land?'지대로 사는 지주':'일 없음'}
 function render(){if(!s)return;document.documentElement.style.setProperty('--era',eraColor());$('#decree').textContent=era().h||'';
   $('#age').textContent=s.age;const nm=`${s.given[0]} ${s.sur[0]}`;
-  $('#subline').textContent=`${ym()} · ${nm} · 1년 ≈ ${secPerYear()}초`;
+  $('#subline').innerHTML=`<b>${nm}</b> · ${ym()} · <span class="mut">1년 ≈ ${secPerYear()}초</span>`;
   $('#where').innerHTML='';$('#where').append(s.cond==='emigre'?`${s.emiPlace||'국외'} (망명) · ${homeLabel().replace(/ · .*/,'')} · ${companions()}`:`${REGIONS[loc()].n}, 프랑스 · ${homeLabel()} · ${companions()}`);
   $('#famAges').textContent=familyAges();
   $('#era').textContent=era().n===ruler()?era().n:`${era().n} · ${ruler()}`;
   drawScene($('#cv'));
-  const st=$('#stats');if(!st.children.length)STATORD.forEach(([k,n,ab])=>{const d=el('div','st');d.innerHTML=`<span>${n} <i>${ab}</i></span><b data-k="${k}"></b><s><u data-u="${k}" style="background:${STATC[k]}"></u></s>`;st.appendChild(d)});
-  STATORD.forEach(([k])=>{st.querySelector(`[data-k="${k}"]`).textContent=s.st[k];st.querySelector(`[data-u="${k}"]`).style.width=s.st[k]+'%'});
-  $('#sub2').innerHTML=`<span>재산 <b>${fmt(s.money)}</b> ${money()}</span>${s.land?`<span>지대 <b>${fmt(s.land)}</b>/년</span>`:''}<span class="${s.sus>=30?'warn':''}">혐의 <b>${s.sus}</b></span>`;
-  renderChar();renderPolCard();renderRel();renderEcon();drawProg(0)}
+  renderProfile();renderPolCard();renderRel();renderEcon();drawProg(0)}
 function polPos(p){return (p+100)/2}
 function polSpark(w,h){const pts=(s.polHist||[]).slice(-40).concat([[s.year,s.pol]]);if(pts.length<2)return '';const n=pts.length;
   return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="${w}" y1="${h/2}" y2="${h/2}" stroke="var(--line)" stroke-width="1"/><polyline fill="none" stroke="var(--fg)" stroke-width="1.5" points="${pts.map((p,i)=>`${(i/(n-1)*w).toFixed(1)},${(h/2-p[1]/100*(h/2-2)).toFixed(1)}`).join(' ')}"/><circle cx="${w}" cy="${(h/2-s.pol/100*(h/2-2)).toFixed(1)}" r="2.5" fill="var(--pink)"/></svg>`}
@@ -74,15 +72,10 @@ function facCard(f,big){const a=affinity(f),mem=s.party===f.id;const c=el('butto
   c.onclick=()=>showPolitics();return c}
 function specLabels(){const S=spectrum();return S.l.map(x=>x[1])}
 function renderPolCard(){const C=$('#polCard');C.innerHTML='';const pp=pubPol(),S=spectrum();
-  const h=el('div','ch');h.innerHTML=`<h2>정치 성향 <span class="mut small">${S.n}</span></h2><span class="score" style="color:${s.pol<=-25?'var(--roy)':s.pol>=35?'var(--rad)':'var(--fg)'}">속마음 ${s.pol>0?'+':''}${s.pol} · ${polLabel(s.pol)}</span>`;C.appendChild(h);
-  const sp=el('div','spec');const prev=(s.polHist&&s.polHist.length)?s.polHist[s.polHist.length-1][1]:s.pol;
-  sp.innerHTML=`<div class="bar"><i class="ghost" style="left:${polPos(prev)}%"></i>${pp!==s.pol?`<i class="pub" style="left:${polPos(pp)}%" title="공개 입장"></i>`:''}<i class="mk" style="left:${polPos(s.pol)}%" title="속마음"></i></div><div class="lbl">${specLabels().map(x=>`<span>${x}</span>`).join('')}</div>`;C.appendChild(sp);
-  if(pp!==s.pol)C.appendChild(el('p','small mut',`공개 입장 ${pp>0?'+':''}${pp} · ${polLabel(pp)} — 사람들은 그대를 이렇게 안다.`));
-  const sk=el('div','sk');sk.innerHTML=`<span class="mut">성향의 변화</span>${polSpark(220,30)}`;C.appendChild(sk);
-  const cw=el('div','fopts cond');CONDUCT.forEach(c=>{const b=el('button','fopt');b.type='button';b.textContent=c.n;b.title=c.s;b.setAttribute('aria-pressed',String(conduct()===c.k));b.disabled=child()||s.age<16||s.acts.conduct===s.year;b.onclick=()=>{setConduct(c.k);render();save()};cw.appendChild(b)});
-  const cl=el('div','mut small');cl.textContent='처신';C.appendChild(cl);C.appendChild(cw);
-  const fs=activeFactions();if(fs.length){const row=el('div','facs');fs.slice().sort((a,b)=>a.pol-b.pol).forEach(f=>row.appendChild(facCard(f)));C.appendChild(row)}
-  const ai=activeIssues();if(ai.length){const ch=el('div','chips');ai.forEach(iss=>{const v=s.stance[iss.id];ch.appendChild(el('span','chip'+(v!=null?' on':''),`${iss.n} · ${v!=null?iss.opts[v][0]:'미정'}`))});C.appendChild(ch)}
+  const h=el('div','ch');h.innerHTML=`<h2>정치 성향</h2><span class="mut small">${S.n}</span>`;C.appendChild(h);
+  const lab=el('div','pol-lab');lab.innerHTML=`<b style="color:${s.pol<=-25?'var(--roy)':s.pol>=35?'var(--rad)':'var(--fg)'}">${polLabel(s.pol)}</b> <span class="mut">${s.pol>0?'+':''}${s.pol}</span>${pp!==s.pol?` <span class="mut small">· 겉으로는 ${polLabel(pp)}</span>`:''}`;C.appendChild(lab);
+  const sp=el('div','spec');sp.innerHTML=`<div class="bar">${pp!==s.pol?`<i class="pub" style="left:${polPos(pp)}%"></i>`:''}<i class="mk" style="left:${polPos(s.pol)}%"></i></div><div class="lbl">${specLabels().map(x=>`<span>${x}</span>`).join('')}</div>`;C.appendChild(sp);
+  const info=el('p','small');info.innerHTML=`${s.party?`<b>${FAC[s.party].n}</b> ${PRANK[s.prank]}`:'<span class="mut">무소속</span>'} · <span class="mut">처신</span> ${CONDUCT.find(x=>x.k===conduct()).n}`;C.appendChild(info);
   const b=el('button','pill','정치 활동 ›');b.type='button';b.onclick=()=>showPolitics();C.appendChild(b)}
 function planBox(){const W=el('div','planw');W.appendChild(el('h3',null,'한 해의 방침'));
   W.appendChild(el('p','mut',`해가 바뀔 때 이 방침대로 지표가 자랍니다.${s.goal?` 평생의 뜻은 ‘${s.goal}’${s.goalDone?'(이룸)':''}.`:''}`));
@@ -159,7 +152,7 @@ async function pickGoal(){busy=true;sheetOpen('평생의 뜻','vocation');shText
   const i=await shButtons(GOALS.map(g=>({l:g.k,s:g.s,a:{부:'greedy',명예:'social',자유:'radical',신앙:'pious',장수:'safe',가문:'family',학문:'study',무공:'bold'}[g.k]})));s.goal=GOALS[i].k;say(`평생의 뜻을 ‘${s.goal}’에 두었다.`);await done();busy=false;render();save()}
 const PLAY='<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>',PAUSE='<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="3" y="2" width="3.4" height="12" rx="1" fill="currentColor"/><rect x="9.6" y="2" width="3.4" height="12" rx="1" fill="currentColor"/></svg>';
 function setPaused(p){paused=p;$('#pp').innerHTML=p?PLAY:PAUSE;$('#pp').setAttribute('aria-label',p?'재생':'일시정지');if(p)freeze();else schedule()}
-function setSpeed(v){speed=v;document.querySelectorAll('#spd button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.s===v)));if(s)$('#subline').textContent=`${ym()} · ${s.given[0]} ${s.sur[0]} · 1년 ≈ ${secPerYear()}초`;if(running&&!paused&&!busy){freeze();schedule()}try{localStorage.setItem(KEY+'_spd',v)}catch(e){}}
+function setSpeed(v){speed=v;document.querySelectorAll('#spd button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.s===v)));if(s)$('#subline').innerHTML=`<b>${s.given[0]} ${s.sur[0]}</b> · ${ym()} · <span class="mut">1년 ≈ ${secPerYear()}초</span>`;if(running&&!paused&&!busy){freeze();schedule()}try{localStorage.setItem(KEY+'_spd',v)}catch(e){}}
 
 /* ================= 저장 ================= */
 function save(){try{if(s&&!s.dead)localStorage.setItem(KEY,JSON.stringify(s));else localStorage.removeItem(KEY)}catch(e){}}
@@ -217,22 +210,44 @@ function obituary(){const d=s.death,nm=`${s.given[0]} ${s.sur[0]}`,out=[];
   out.push(`남긴 재산은 ${fmt(s.money)} ${money()}${s.land?`, 해마다 ${fmt(s.land)}의 지대가 나오는 땅`:''}.`);
   return out}
 function showEnd(){const out=obituary(),ep=epithet();recordLife(out,ep);try{localStorage.removeItem(KEY)}catch(e){}
-  const card=$('#card');card.innerHTML='';
-  card.appendChild(el('div','mut','부고 — nécrologie'));card.appendChild(el('div','ep',ep));
-  card.appendChild(el('div','who',`${s.given[0]} ${s.sur[0]} · ${s.by}–${s.year} · 향년 ${s.age}세${s.goal?` · 평생의 뜻 ${s.goal} (${s.goalDone?'이룸':'못 이룸'})`:''}`));
-  out.forEach(t=>card.appendChild(el('p',null,t)));
-  if((s.polHist||[]).length>1){const w=el('div','sk');w.innerHTML=`<span class="mut">평생의 정치 성향</span>${polSpark(300,40)}`;card.appendChild(w)}
-  const eg=$('#endlog');eg.innerHTML='';eg.appendChild(el('h2',null,'평생의 기록'));s.log.slice().reverse().forEach(e=>eg.appendChild(entryNode(e)));
-  $('#end').hidden=false;$('#end').scrollTop=0;$('#copyB').textContent='부고 복사';
-  $('#copyB').onclick=async()=>{const txt=`【${ep}】\n${out.join('\n')}\n\n— 1789 한 시민의 일생`;try{await navigator.clipboard.writeText(txt);$('#copyB').textContent='복사됨'}catch(e){const ta=el('textarea');ta.value=txt;ta.style.width='100%';ta.rows=8;card.appendChild(ta);ta.select();$('#copyB').textContent='아래 글을 선택해 복사하세요'}}}
-
+  $('#obName').innerHTML=`${s.given[0]} ${s.sur[0]}${s.given[1]?`<small>${s.given[1]} ${s.sur[1]}</small>`:''}`;
+  $('#obYears').textContent=`${s.by} – ${s.year}`;
+  $('#obWill').textContent=`“${willLine()}”`;
+  $('#end').hidden=false;$('#end').scrollTop=0}
+// 마지막 한마디: 성품·가치·정치 성향·신앙·평생의 뜻·죽음의 방식에서 고른다
+function willLine(){const d=s.death||{},c=d.cause,p=s.pol,tv=topValues(1)[0],fm=faithModeNow(),k=kidsAlive().length,tr=s.trait;
+  if(s.age<7)return pick(['엄마…','따뜻하다.','빵 한 조각만…']);
+  if(s.age<14)return pick(['아버지처럼 큰 사람이 되고 싶었는데.','내일은 강가에 가자고 약속했잖아.','무섭지 않아요. 신부님이 천국이 있다고 했어요.']);
+  const L=[];const add=(w,txt)=>L.push([txt,w]);
+  if(c==='guillotine')add(6,p>=30?'공화국 만세. 내 머리는 가져가도 내 신념은 못 가져간다.':noble()?'왕과 신 앞에 부끄러움은 없다. 아이들에게 내 이름을 숨기지 말라고 전해 다오.':'나는 죄 없이 죽는다. 그대들의 공화국이 언젠가 이 피를 기억하기를.');
+  if(c==='battle'||c==='cold')add(6,T()>=1804?'황제 폐하 만세… 고향의 포도밭이 보고 싶다.':'조국이 위기에 처했을 때 나는 달아나지 않았다.');
+  if(c==='childbirth')add(6,'아이 이름은… 아이를 부탁해요.');
+  if(c==='massacre'||c==='shot'||c==='executed')add(5,'내 이웃들이여, 언젠가 부끄러워할 날이 올 것이다.');
+  if(s.flags.girouette||(s.turns||0)>=3)add(4,'바람이 바뀔 때마다 돛을 고쳐 달았을 뿐이다. 살아남는 것도 재주다.');
+  if(p>=60)add(3,'빵과 자유를. 내가 못 본 공화국을 너희는 보아라.');
+  if(p<=-50)add(3,'왕좌와 제단이 다시 서는 것을 보았으니 여한이 없다.');
+  if(s.flags.bastille)add(3,'7월 14일의 그 아침, 나는 거기 있었다. 그것으로 충분하다.');
+  if(s.flags.regicide)add(3,'왕의 목에 표를 던진 손이다. 역사가 나를 판단하겠지.');
+  if(fm==='devout'||fm==='secret')add(3,'주님, 이 죄 많은 영혼을 받아 주소서. 미사는 꼭 올려 다오.');
+  if(fm==='doubt')add(2,'신부는 부르지 마라. 볼테르처럼, 조용히 가겠다.');
+  if(fm==='conflict')add(2,'교회에는 한 푼도 남기지 마라. 가난한 이웃에게 나눠 주어라.');
+  if(s.goal&&s.goalDone)add(3,{부:'금고 열쇠는 맏이에게. 돈은 피보다 진하지 않다는 걸 잊지 마라.',명예:'훈장은 관에 넣지 말고 손자에게 물려주어라.',자유:'의사당 연단에서 외친 말들, 하나도 후회하지 않는다.',신앙:'평생 하느님을 떠나지 않았다. 이제 그분께 간다.',장수:'왕 셋과 황제 하나를 보았다. 이만하면 오래 살았다.',가문:'너희가 내 재산이다. 서로 다투지 마라.',학문:'내 책은 서가 맨 위 칸에. 누군가 읽어 주기를.',무공:'칼은 녹슬어도 내 이름은 연대 깃발에 남았다.'}[s.goal]);
+  if(s.goal&&!s.goalDone)add(2,`${s.goal}${bat(s.goal)?'을':'를'} 이루지 못했다. 너희가 대신 이뤄 다오.`);
+  if(k>=3)add(2,'아이들아, 서로 미워하지 말고 집을 지켜라.');
+  if(s.widowed&&!(s.spouse&&s.spouse.alive))add(2,`${s.spouse&&s.spouse.n?s.spouse.n:'그 사람'} 곁에 묻어 다오.`);
+  const fr=(s.rel||[]).filter(r=>r.alive&&relBond(r)==='친우')[0];if(fr)add(2,`${fr.n}에게 전해 다오. 그대 같은 벗이 있어 견딜 수 있었다고.`);
+  const foe=(s.rel||[]).filter(r=>relBond(r)==='혐오')[0];if(foe)add(1,`${jo(foe.n,'은','는')} 용서하지 않겠다. 아니, 이제는 다 부질없다.`);
+  if(tr==='열정')add(2,'뜨겁게 살았다. 미지근한 삶보다는 나았다.');if(tr==='신중')add(2,'조심스럽게 살았기에 여기까지 왔다. 너희도 그렇게 살아라.');if(tr==='야심')add(2,'조금만 더 시간이 있었다면 더 높이 올라갔을 텐데.');if(tr==='쾌활')add(2,'포도주 한 잔 따라 다오. 장례는 시끌벅적하게.');if(tr==='계몽')add(2,'빛을 보았다. 미신과 무지를 물리쳐라.');if(tr==='경건')add(2,'내 묵주를 손에 쥐여 다오.');
+  add(1,{vlib:'누구에게도 무릎 꿇지 마라.',veq:'왕이든 짐꾼이든 묘지에서는 같다.',vhon:'이름에 먹칠하지 마라. 그것만 지켜라.',vfam:'식구끼리 밥상에 함께 앉거라. 그게 전부다.',vord:'법과 질서를 지켜라. 혼란은 모두를 삼킨다.',vjus:'빚진 사람에게 다 갚았다. 떳떳하게 간다.'}[tv]);
+  if(s.money<50)add(1,'남길 것은 없다. 이름 하나뿐.');if(rich())add(1,'공증인을 불러라. 한 푼도 허투루 나누지 마라.');
+  return wpick(L)}
 /* ================= 연결 ================= */
 function boot(){logBox=$('#log');$('#logMore').onclick=()=>{logLimit+=LOG_STEP;foldLog()};$('#logLess').onclick=()=>{logLimit=LOG_STEP;foldLog();$('.logc').scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})};
   try{const v=+localStorage.getItem(KEY+'_spd');if([1,2,4,8,12,16].includes(v))speed=v}catch(e){}setSpeed(speed);
-  const saved=load();if(saved){$('#contB').hidden=false;$('#contB').onclick=()=>{s=saved;start(false)}}
-  if(loadLives().length)$('#livesB').hidden=false;
-  $('#newB').onclick=showNameForm;$('#livesB').onclick=showLives;$('#livesB2').onclick=showLives;
-  $('#againB').onclick=()=>{$('#end').hidden=true;$('#title').hidden=false;s=null;$('#contB').hidden=true;$('#livesB').hidden=false;showNameForm()};
+  const saved=load();if(saved){$('#contB').hidden=false;$('#contB').onclick=()=>{s=load()||saved;start(false)}}
+  $('#newB').onclick=()=>start(true,{hard:true});
+  $('#againB').onclick=()=>start(true,{hard:true});
+  $('#homeB').onclick=()=>{$('#end').hidden=true;$('#title').hidden=false;s=null;$('#contB').hidden=!load()};
   $('#pClose').onclick=closePanel;
   $('#pp').onclick=()=>{if(running)setPaused(!paused)};
   document.querySelectorAll('#spd button').forEach(b=>b.onclick=()=>setSpeed(+b.dataset.s));
@@ -241,8 +256,7 @@ function boot(){logBox=$('#log');$('#logMore').onclick=()=>{logLimit+=LOG_STEP;f
   $('#mHist').onclick=showHist;$('#mHelp').onclick=showHelp;$('#mLives').onclick=showLives;$('#mSrc').onclick=showSources;$('#mPol').onclick=showPolitics;$('#mInfo').onclick=showInfo;
   try{if(localStorage.getItem(KEY+'_data')==='1')document.body.classList.add('showdata')}catch(e){}$('#dataT').setAttribute('aria-pressed',String(document.body.classList.contains('showdata')));
   $('#dataT').onclick=()=>{const on=document.body.classList.toggle('showdata');$('#dataT').setAttribute('aria-pressed',String(on));$('#dataT').textContent=on?'자료 가리기':'자료 보기';try{localStorage.setItem(KEY+'_data',on?'1':'0')}catch(e){}};$('#autoT').onclick=()=>setAuto(!autoMode);
-  $('#mNew').onclick=()=>{if(!s)return;running=false;freeze();save();$('#title').hidden=false;$('#contB').hidden=!load();showNameForm()};
-  $('#actB').onclick=showActs;$('#hint').onclick=()=>{$('#hint').hidden=true};
+  $('#mNew').onclick=()=>{if(!s)return;running=false;freeze();save();$('#menu').hidden=true;$('#title').hidden=false;$('#contB').hidden=!load()};$('#hint').onclick=()=>{$('#hint').hidden=true};
   $('#pp').innerHTML=PAUSE;
 }
 boot();
@@ -255,19 +269,28 @@ function faithBox(compact){const W=el('div','faithw');W.appendChild(el('div','la
     b.disabled=child()||s.acts.faithMode===s.year||s.cond==='prison';b.title=m.s;b.onclick=()=>{setFaithMode(m.k);render();save();if(!compact)showInfo()};row.appendChild(b)});
   W.appendChild(row);if(s.acts.faithMode===s.year)W.appendChild(el('small','mut','올해는 이미 신앙생활을 바꾸었다.'));return W}
 function skillGroups(min=0){return SKG.map(([base,gn,keys])=>{const src=base==='edu'?(s.kn||{}):s.sk;const ks=keys.filter(k=>(src[k]||0)>min).sort((a,b)=>src[b]-src[a]);return [base,gn,ks,src]})}
-function renderChar(){const C=$('#charCard');if(!C)return;C.innerHTML='';
-  const inf=influence();const h=el('div','ch');h.innerHTML=`<h2>인물</h2><span class="mut">신앙 · 명성 · 평판 · 영향력 · 의지</span>`;C.appendChild(h);
+// 초상: 장면과 같은 픽셀 인물을 한 사람만 크게
+function drawPortrait(cv){if(!cv||typeof makeG!=='function'||typeof drawPeople!=='function')return;const W=256,H=96;const off=document.createElement('canvas');off.width=W;off.height=H;const c=off.getContext('2d');
+  const g=makeG(c,{seed:s.by*31+7,t:T(),era:era().k,season:s.season,loc:loc()});c.fillStyle='rgba(0,0,0,0)';c.clearRect(0,0,W,H);
+  drawPeople(g,[{sex:s.sex,age:s.age,me:false,estate:s.estate,role:sceneRole(),pol:s.pol}]);
+  const pc=cv.getContext('2d');pc.imageSmoothingEnabled=false;pc.clearRect(0,0,cv.width,cv.height);
+  const sw=26,sh=32,sx=W/2-sw/2,sy=GY+3-sh;pc.drawImage(off,sx,sy,sw,sh,0,0,cv.width,cv.height)}
+function statusLine(){const j=job();return [ESTATES[s.estate].n,child()?(inSchool()?schoolStatus():s.age<7?'어린아이':'아이'):statusText()].filter(Boolean).join(' · ')}
+function docTitle(){const t=T();return t<1792.6?['세례 증서','Extrait baptistaire']:t<1795.8?['시민증','Carte de civisme']:t<1814.3?['신분증','Carte de sûreté']:['여권','Passeport']}
+function renderProfile(){const C=$('#profCard');if(!C)return;C.innerHTML='';const inf=influence(),[dt,dtf]=docTitle();
+  const top=el('div','pf-top');top.innerHTML=`<div class="pf-doc"><span>${dt}</span><i>${dtf}</i></div>`;C.appendChild(top);
+  const id=el('div','pf-id');const cv=el('canvas','pf-por');cv.width=72;cv.height=88;cv.setAttribute('aria-hidden','true');id.appendChild(cv);
+  const who=el('div','pf-who');who.innerHTML=`<div class="pf-n">${s.given[0]} ${s.sur[0]}</div><div class="pf-fr">${[s.given[1],s.sur[1]].filter(Boolean).join(' ')}</div>`+
+   `<div class="pf-l">${s.age}세 · ${isM()?'남':'여'} · ${statusLine()}</div><div class="pf-l mut">${REGIONS[loc()].n} · ${homeLabel()}</div><div class="pf-l mut">${familyAges().replace(/^나 \d+세( · )?/,'')||'혼자'}</div>`;
+  id.appendChild(who);C.appendChild(id);drawPortrait(cv);
+  const bd=el('div','pf-badges');
+  bd.innerHTML=[['명성',s.fame,s.fame>=60?'나라 안에 이름이 났다':s.fame>=30?'고장의 유명인':s.fame>=10?'아는 사람만 안다':'이름 없는 사람','fame'],['영향력',inf.v,inf.b.filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,1).map(x=>x[0])[0]||'없음','inf'],['재산',fmt(s.money),money()+(s.land?` · 지대 ${fmt(s.land)}`:''),'money'],['혐의',s.sus,s.sus>=50?'위험':s.sus>=25?'주목받음':'깨끗함','sus']]
+   .map(([n,v,sm,k])=>`<div class="bdg ${k}${k==='sus'&&s.sus>=30?' warn':''}"><span>${n}</span><b>${v}</b><small>${sm}</small></div>`).join('');C.appendChild(bd);
+  const st=el('div','pf-stats');st.innerHTML=STATS.map(([k,n,ab])=>`<div class="ps"><span>${n}<i>${ab}</i></span><s><u style="width:${s.st[k]}%;background:${STATC[k]}"></u></s><b>${s.st[k]}</b></div>`).join('');C.appendChild(st);
+  const tl=el('p','pf-tal small');tl.innerHTML=`<span class="mut">재능</span> <b>${s.talent||50}</b>${s.gift?` · <span class="mut">타고난 소질</span> ${giftName()}`:''}${s.trait?` · <span class="mut">성품</span> ${s.trait}`:''}${s.goal?` · <span class="mut">뜻</span> ${s.goal}`:''}`;C.appendChild(tl);
   C.appendChild(faithBox(true));
-  const g=el('div','cgrid');
-  g.innerHTML=`<div><span class="lab">명성</span><b>${s.fame}</b>${bar(s.fame,0,100,'var(--yellow)')}<small>${s.fame>=60?'나라 안에 이름이 났다':s.fame>=30?'고장에서 알려진 인물':s.fame>=10?'아는 사람만 안다':'이름 없는 사람'}</small></div>`+
-   `<div><span class="lab">영향력</span><b>${inf.v}</b>${bar(inf.v,0,100,'var(--pink)')}<small>${inf.b.filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0]).join(' · ')||'없음'}${inf.b.some(x=>x[1]<0)?` · 불리: ${inf.b.filter(x=>x[1]<0).map(x=>x[0]).join(', ')}`:''}</small></div>`+
-   `<div><span class="lab">의지</span><b>${s.st.cour}</b>${bar(s.st.cour,0,100,'var(--rad)')}<small>중히 여기는 가치: ${topValues().join(', ')}</small></div>`;
-  C.appendChild(g);
-  const rl=el('div','mut small');rl.textContent='평판';C.appendChild(rl);
-  const rp=el('div','chips reps');REPG.forEach(([k,n])=>{const v=s.rep[k];const w=repWord(k);rp.appendChild(el('span','chip'+(v>=65?' on':'')+(v<=35?' bad':''),`${n} ${v}${w&&w!=='—'?' · '+w:''}`))});C.appendChild(rp);
-  const sl=el('div','skl');skillGroups(4).forEach(([base,gn,ks,src])=>{if(!ks.length)return;const p=el('p','small');p.innerHTML=`<span class="mut">${gn}</span> ${ks.slice(0,4).map(k=>`${FXN[k]} <b>${src[k]}</b>`).join(' · ')}`;sl.appendChild(p)});
-  if(!sl.children.length)sl.appendChild(el('p','mut small','아직 익힌 분야가 없다.'));C.appendChild(sl);
-  const b=el('button','pill','자세히 ›');b.type='button';b.onclick=()=>showInfo();C.appendChild(b)}
+  const rp=el('div','chips reps');REPG.forEach(([k,n])=>{const v=s.rep[k];if(v>=40&&v<=60)return;const w=repWord(k);rp.appendChild(el('span','chip'+(v>=65?' on':'')+(v<=35?' bad':''),`${n} ${w&&w!=='—'?w:v}`))});if(rp.children.length)C.appendChild(rp);
+  const row=el('div','pf-btns');const a=el('button','pill pri','행동');a.type='button';a.onclick=showActs;const d=el('button','pill','세부 정보');d.type='button';d.onclick=showInfo;row.append(a,d);C.appendChild(row)}
 function famLine(){const o=[];if(s.fa.alive)o.push(`아버지 ${s.fa.age}세`);if(s.mo.alive)o.push(`어머니 ${s.mo.age}세`);if(s.spouse&&s.spouse.alive)o.push(`${isM()?'아내':'남편'} ${s.spouse.n||''}`.trim());const k=kidsAlive().length;if(k)o.push(`자녀 ${k}`);return o.join(' · ')||'가족이 없다'}
 function relRow(r,full){const d=el('div','rel');const f=r.fac&&FAC[r.fac];const P=perOf(r);
   d.innerHTML=`<div class="rh"><b>${r.n}</b>${P?`<span class="mut small">${P.fr} · ${P.b}~${P.d}</span>`:''}<span class="tag">${r.role}</span>${f?`<span class="tag f" style="--fc:${facColor(f)}">${f.n}</span>`:''}</div>`+
@@ -278,16 +301,13 @@ function renderRel(){const C=$('#relCard');if(!C)return;C.innerHTML='';const h=e
   const box=el('div','rels');rl.forEach(r=>box.appendChild(relRow(r)));C.appendChild(box);
   if(s.party&&FAC[s.party]){const my=FAC[s.party];const fs=activeFactions().filter(f=>f.id!==my.id).map(f=>[f,facPair(my.id,f.id)]).filter(x=>Math.abs(x[1])>=40);
     if(fs.length){const p=el('p','mut small');p.innerHTML=`${my.n}의 동맹: ${fs.filter(x=>x[1]>0).map(x=>x[0].n).join(', ')||'없음'} · 적: ${fs.filter(x=>x[1]<0).map(x=>x[0].n).join(', ')||'없음'}`;C.appendChild(p)}}}
-function renderEcon(){const C=$('#econCard');if(!C)return;C.innerHTML='';const E=econ(),P=s.econPrev&&s.econPrev.a===E.a?s.econPrev:null;
-  const h=el('div','ch');h.innerHTML=`<h2>그 시절의 경제</h2><span class="mut">${REGIONS[loc()].n} · ${AREAN[E.a]} · ${s.year}년</span>`;C.appendChild(h);
-  const arrow=(k,good)=>{if(!P)return '';const d=E[k]-P[k];if(Math.abs(d)<.03)return '<i class="eq">→</i>';const up=d>0;return `<i class="${up===good?'gd':'bd'}">${up?'▲':'▼'}</i>`};
-  const g=el('div','egrid two');g.innerHTML=`<div><span class="lab">물가</span><b>×${E.price.toFixed(2)}${arrow('price',false)}</b><small>평년 대비 · ${econWord('price',E.price)}</small></div><div><span class="lab">화폐 가치</span><b>${Math.round(E.cur*100)}%${arrow('cur',true)}</b><small>${econWord('cur',E.cur)}</small></div>`;C.appendChild(g);
-  const ul=el('ul','basket');basket().forEach(([n,v,u])=>{const li=el('li');li.innerHTML=`<span>${n}</span><b>${priceTxt(v,u)}</b>`;ul.appendChild(li)});C.appendChild(ul);
-  C.appendChild(el('p','mut small',curNote()))}
+function renderEcon(){const C=$('#econCard');if(!C)return;const E=econ();const bk=basket();
+  C.innerHTML=`<span class="ec-i"><span class="mut">빵 4리브르</span> <b>${priceTxt(bk[0][1],bk[0][2])}</b></span><span class="ec-i"><span class="mut">물가</span> <b>×${E.price.toFixed(2)}</b> ${econWord('price',E.price)}</span><span class="ec-i"><span class="mut">화폐 가치</span> <b>${Math.round(E.cur*100)}%</b></span>`;C.title=curNote()}
 function showInfo(){if(!s)return;const pin=openPanel('인물');
   pin.appendChild(el('h3',null,'핵심 능력치'));const t=el('div','cgrid');t.innerHTML=STATS.map(([k,n,ab])=>`<div><span class="lab">${n} <i>${ab}</i></span><b>${s.st[k]}</b>${bar(s.st[k],0,100,STATC[k])}</div>`).join('');pin.appendChild(t);
+  pin.appendChild(el('p','small',`의지 ${s.st.cour} · 재능 ${s.talent||50}${s.gift?` · 타고난 소질: ${giftName()}`:''}`));
   if(s.ill)pin.appendChild(el('p','warn',`지금 앓는 병: ${illName()}`));
-  skillGroups(-1).forEach(([base,gn,ks,src])=>{pin.appendChild(el('h3',null,`${gn} (${FXN[base]})`));const g=el('div','cgrid');g.innerHTML=ks.map(k=>`<div><span class="lab">${FXN[k]}</span><b>${src[k]||0}</b>${bar(src[k]||0)}</div>`).join('');pin.appendChild(g)});
+  skillGroups(-1).forEach(([base,gn,ks,src])=>{pin.appendChild(el('h3',null,`${gn} 분야`));const g=el('div','cgrid');g.innerHTML=ks.map(k=>`<div><span class="lab">${FXN[k]}</span><b>${src[k]||0}</b>${bar(src[k]||0)}</div>`).join('');pin.appendChild(g)});
   pin.appendChild(el('h3',null,'재산과 혐의'));pin.appendChild(el('p',null,`재산 ${fmt(s.money)} ${money()}${s.land?` · 지대 ${fmt(s.land)}/년`:''}${s.dues?` · 영주 공납 ${fmt(s.dues)}/년`:''} · 혐의 ${s.sus}`));
   pin.appendChild(el('h3',null,'신앙'));pin.appendChild(faithBox(false));
   pin.appendChild(el('h3',null,'명성'));pin.appendChild(el('p',null,`명성 ${s.fame}`));
@@ -296,5 +316,6 @@ function showInfo(){if(!s)return;const pin=openPanel('인물');
   pin.appendChild(el('h3',null,'가치와 의지'));const vv=el('div','cgrid');vv.innerHTML=VALUES.map(([k,n])=>`<div><span class="lab">${n}</span><b>${s.val[k]}</b>${bar(s.val[k],0,100,'var(--teal)')}</div>`).join('')+`<div><span class="lab">의지</span><b>${s.st.cour}</b>${bar(s.st.cour,0,100,'var(--rad)')}</div>`;pin.appendChild(vv);
   pin.appendChild(el('h3',null,'사람들'));const rl=relsAlive();if(!rl.length)pin.appendChild(el('p','mut','아직 가까운 사람이 없다.'));const box=el('div','rels');rl.forEach(r=>box.appendChild(relRow(r,true)));pin.appendChild(box);
   const gone=(s.rel||[]).filter(r=>!r.alive);if(gone.length)pin.appendChild(el('p','mut small',`떠난 사람들: ${gone.map(r=>`${r.n}${r.dead?` (${r.dead}년 사망)`:''}`).join(', ')}`));
+  const E=econ();pin.appendChild(el('h3',null,`그 시절의 경제 · ${REGIONS[loc()].n}`));const bu=el('ul','basket');basket().forEach(([n,v,u])=>{const li=el('li');li.innerHTML=`<span>${n}</span><b>${priceTxt(v,u)}</b>`;bu.appendChild(li)});pin.appendChild(bu);pin.appendChild(el('p','mut small',`물가 ×${E.price.toFixed(2)} · 화폐 가치 ${Math.round(E.cur*100)}% — ${curNote()}`));
   pin.appendChild(el('h3',null,'파벌과의 관계'));const fs=activeFactions();if(!fs.length)pin.appendChild(el('p','mut','아직 뚜렷한 파벌이 없다.'));
   const fl=el('ul','infl');fs.forEach(f=>fl.appendChild(el('li',null,`${f.n} — ${s.party===f.id?`소속 · ${PRANK[s.prank]} · `:''}${frelWord(frelOf(f.id))} ${frelOf(f.id)} · 성향 친밀도 ${affinity(f)}%`)));pin.appendChild(fl)}
