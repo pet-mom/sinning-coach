@@ -19,7 +19,7 @@ function schoolStart7(){const x=SCH();if(lit()&&x.st==='none'){x.st='petite';x.g
 async function schoolAt10(){const x=SCH();if(x.st!=='petite')return;
   if(isM()&&(noble()||s.estate==='bourgeois')){x.st='college';x.y0=s.year;say(`${collegeName()}에 들어가 라틴어 문법반부터 시작하였다.`+fx({edu:4,soc:1}));return}
   if(!isM()&&(noble()||s.estate==='bourgeois')){x.st='convent';x.y0=s.year;say(`${noble()?'우르술라회':'성모방문회'} 수녀원 기숙학교에 맡겨졌다. 교리와 바느질, 예법과 셈을 배운다.`+fx({edu:3,faith:4}));return}
-  if(isM()&&x.grade>=72&&R()<.4){sheetOpen('장학생','boursier');shText(`본당 신부가 아버지를 찾아왔다. 머리가 좋은 아이니 ${collegeName()}의 장학금 자리를 알아보겠다고 한다.`,'q');
+  if(isM()&&x.grade>=72&&R()<.4){sheetOpen('장학생','boursier');shText(`본당 신부가 ${s.fa.alive?'아버지':s.mo.alive?'어머니':'후견인'}를 찾아왔다. 머리가 좋은 아이니 ${collegeName()}의 장학금 자리를 알아보겠다고 한다.`,'q');
     const i=await shButtons([{l:'콜레주에 보낸다',s:'집안 일손을 잃는다',a:'study'},{l:'집안일을 거들게 한다',s:'',a:'safe family'}]);
     if(i===0){x.st='college';x.scholar=true;x.y0=s.year;say('장학생으로 콜레주에 들어갔다. 부잣집 아이들 사이에서 낡은 옷이 눈에 띄었다.'+fx({edu:5,soc:-1}),'big')}else{x.st='done';say('학교를 그만두고 집안일을 거들었다.')}await done();return}
 }

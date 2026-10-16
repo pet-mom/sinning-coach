@@ -770,7 +770,8 @@
     30
    ],
    "married": false,
-   "urban": false
+   "urban": false,
+   "fa": true
   },
   "w": 1,
   "once": false,
@@ -861,7 +862,8 @@
     25,
     30
    ],
-   "married": false
+   "married": false,
+   "fa": true
   },
   "w": 0.8,
   "once": true,
@@ -889,7 +891,8 @@
    "age": [
     40,
     70
-   ]
+   ],
+   "fa": true
   },
   "w": 0.6,
   "once": false,
@@ -946,7 +949,8 @@
     25,
     30
    ],
-   "married": false
+   "married": false,
+   "fa": true
   },
   "w": 0.6,
   "once": false,
@@ -1334,7 +1338,8 @@
    "age": [
     18,
     35
-   ]
+   ],
+   "fa": true
   },
   "w": 0.8,
   "once": false,
@@ -1362,7 +1367,8 @@
     "vendee",
     "bretagne",
     "nantes"
-   ]
+   ],
+   "fa": true
   },
   "w": 0.8,
   "once": false,
@@ -1427,7 +1433,8 @@
    "estate": [
     "peasant",
     "hobereau"
-   ]
+   ],
+   "fa": false
   },
   "w": 1,
   "once": false,
@@ -1516,7 +1523,9 @@
     "languedoc",
     "auvergne"
    ],
-   "urban": false
+   "urban": false,
+   "fa": true,
+   "mo": true
   },
   "w": 1.2,
   "once": false,
@@ -1556,7 +1565,8 @@
    "age": [
     20,
     35
-   ]
+   ],
+   "parent": true
   },
   "w": 1.2,
   "once": false,
@@ -1584,7 +1594,8 @@
     "normandie",
     "rouen",
     "bretagne"
-   ]
+   ],
+   "fa": false
   },
   "w": 0.8,
   "once": false,
@@ -4081,7 +4092,8 @@
     22,
     40
    ],
-   "married": false
+   "married": false,
+   "fa": true
   },
   "w": 0.8,
   "once": false,
@@ -4731,7 +4743,10 @@
     "cite": "Desan, S. (2004), The Family on Trial in Revolutionary France, University of California Press",
     "url": "https://doi.org/10.1525/9780520939769"
    }
-  ]
+  ],
+  "who": {
+   "fa": false
+  }
  },
  {
   "id": "mar-166",
@@ -4814,7 +4829,8 @@
    "age": [
     40,
     65
-   ]
+   ],
+   "sex": "F"
   },
   "w": 0.8,
   "once": false,
@@ -5082,7 +5098,8 @@
     "peasant"
    ],
    "urban": false,
-   "married": false
+   "married": false,
+   "fa": true
   },
   "w": 0.8,
   "once": false,
@@ -5329,7 +5346,8 @@
     20,
     30
    ],
-   "married": false
+   "married": false,
+   "fa": true
   },
   "w": 0.5,
   "once": false,

@@ -141,8 +141,8 @@ async function comingOfAge(){s.flags.adult=true;
 }
 function entryOptions(first){const E=s.estate,o=[];const add=(id,why)=>{if(POST[id]&&meets(POST[id]))o.push({id,why})};
   if(!isM()&&lit()&&['peasant','artisan','bourgeois'].includes(E)&&T()>=1759)add('m1','산파 강습을 받는다(뒤 쿠드레 부인의 순회 강습)');
-  if(E==='peasant'){add('f1','부모 곁에서 남의 밭일을 거든다');add('f2','소작지를 얻어 반타작 농사를 짓는다');add('c1',isM()?'도시로 나가 견습공이 된다':'도시로 나가 남의 집 하녀가 된다');if(isM())add('a1','군에 지원한다. 밥은 굶지 않는다')}
-  if(E==='artisan'){add('c1',isM()?'아버지 공방의 견습공이 된다':'부잣집 하녀로 들어간다');add('c2',isM()?'직인이 되어 프랑스 일주(투르 드 프랑스)를 떠난다':'재봉사로 일한다');if(isM())add('a1','군에 지원한다')}
+  if(E==='peasant'){add('f1',s.fa.alive||s.mo.alive?'부모 곁에서 남의 밭일을 거든다':'남의 밭일을 거들며 품삯을 번다');add('f2','소작지를 얻어 반타작 농사를 짓는다');add('c1',isM()?'도시로 나가 견습공이 된다':'도시로 나가 남의 집 하녀가 된다');if(isM())add('a1','군에 지원한다. 밥은 굶지 않는다')}
+  if(E==='artisan'){add('c1',isM()?(s.fa.alive?'아버지 공방의 견습공이 된다':'이웃 장인의 공방에 견습공으로 들어간다'):'부잣집 하녀로 들어간다');add('c2',isM()?'직인이 되어 프랑스 일주(투르 드 프랑스)를 떠난다':'재봉사로 일한다');if(isM())add('a1','군에 지원한다')}
   if(E==='bourgeois'){add('l1','법률사무소 서기로 들어가 법을 익힌다');add('c2','가업을 거들며 장사를 배운다');add('w1','귀족 집안의 가정교사가 된다');add('r1',isM()?'신학교에 들어간다':'수녀원에 들어간다')}
   if(noble()){if(isM()){add('a3','왕의 군대에 소위로 임관한다');add('r1','교회에 들어간다. 주교관을 노린다')}else add('r1','수녀원에 들어간다');
     if(E==='robe'&&isM())add('l2','법학을 마치고 변호사로 등록한다. 고등법원 자리를 이을 준비를 한다');add('w2',isM()?'문필과 학문에 몸을 바친다':'살롱을 열 준비를 한다')}
@@ -174,16 +174,19 @@ async function promoCheck(){const j=job();if(!j||j.tr==='pol'&&j.t>=3)return;con
   if(r.v>=4){takeJob(n.id,purge?'귀족 장교들이 떠난 자리를 메우며 ':'');if(n.tr==='army')fx({fame:2})}}
 
 /* ================= 가족 ================= */
-async function family(){
-  for(const [k,who] of [['fa','아버지'],['mo','어머니']]){const P=s[k];if(!P.alive)continue;
-    if(R()<baseMort(P.age)*.95){P.alive=false;
+// 부모의 죽음은 여기서만 처리한다(유산 포함). txt를 주면 그 문장으로 알린다. 이미 돌아가셨으면 아무 일도 없다.
+function parentDies(k,txt){const P=s[k];if(!P||!P.alive)return false;P.alive=false;P.dy=s.year;const who=k==='fa'?'아버지':'어머니';
+
       if(k==='fa'){const base={peasant:60,artisan:250,bourgeois:9000,hobereau:20000,robe:60000,epee:160000}[s.estate];
         const eldestNoble=noble()&&isM()&&s.eldest&&s.year<1791;let share=eldestNoble?.7:1/(1+s.sibs*.8);if(s.flags.disowned)share=0;
         const amt=Math.round(base*share),landAdd=noble()?Math.round({hobereau:500,robe:2000,epee:7000}[s.estate]*share):0;
         if(child()){s.inherit+=amt;say(`${who}가 ${P.age}세로 세상을 떠났다.`,'big')}
         else{s.money+=amt;s.land+=landAdd;if(eldestNoble)s.dues+=Math.round(s.dues*.5);
           say(`${who}가 ${P.age}세로 세상을 떠났다. 유산 ${fmt(amt)} ${money()}${landAdd?`과 땅(지대 +${fmt(landAdd)})`:''}을 물려받았다.`+(eldestNoble?' 장자 상속의 관습에 따라 몫이 컸다.':'')+fx({hp:-2}),'big')}}
-      else say(`${who}가 ${P.age}세로 세상을 떠났다.`+(child()?'':fx({hp:-2})),'big')}}
+      else say(`${who}가 ${P.age}세로 세상을 떠났다.`+(child()?'':fx({hp:-2})),'big')
+  if(txt)L(txt,'sys');return true}
+async function family(){
+  for(const k of ['fa','mo']){const P=s[k];if(!P.alive)continue;if(R()<baseMort(P.age)*.95)parentDies(k)}
   if(child())return;
   // 배우자
   if(s.spouse&&s.spouse.alive&&R()<baseMort(s.spouse.age)*.9){s.spouse.alive=false;s.widowed++;say(`${isM()?'아내':'남편'} ${jo(s.spouse.n,'이','가')} 병으로 세상을 떠났다.`+fx({hp:-5}),'big')}

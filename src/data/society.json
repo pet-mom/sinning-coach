@@ -3240,7 +3240,8 @@
    "to": 1850
   },
   "who": {
-   "urban": false
+   "urban": false,
+   "mo": true
   },
   "w": 1,
   "once": false,
@@ -4058,7 +4059,8 @@
     "hobereau",
     "robe",
     "epee"
-   ]
+   ],
+   "fa": true
   },
   "w": 1,
   "once": false,
