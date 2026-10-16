@@ -3422,7 +3422,7 @@ function npLife(r){const a=npAge(r),y=s.year,t=T();if(!r.alive)return;
   if(r.cond!=='normal')return;
   // 혼인·자식
   if(!r.mar&&a>=18&&a<=40&&!(r.cler&&!(t>=1793.6&&t<1795))&&R()<(npM(r)?.11:.14)){r.mar=npM(r)?woman():person();r.marY=y;if(r.cler)r.cler=false;npEv(r,`${jo(r.mar,'과','와')} 혼인하였다.`)}
-  else if(r.mar&&a<(npM(r)?55:44)&&R()<(r.kids<2?.3:r.kids<4?.18:.08)){r.kids=(r.kids||0)+1;r.kidY=y;if(!npM(r)&&R()<.012){npDie(r,'childbirth','아이를 낳다가 숨을 거두었다.');return}if(r.kids===1||r.close>=55)npFate(r,`${r.kids}번째 아이를 얻었다.`)}
+  else if(r.mar&&a<(npM(r)?55:44)&&R()<(r.kids<2?.3:r.kids<4?.18:.08)){r.kids=(r.kids||0)+1;r.kidY=y;if(!npM(r)&&R()<.012){npDie(r,'childbirth','아이를 낳다가 숨을 거두었다.');return}if(r.kids===1||r.close>=55)npFate(r,r.kids===1?'첫아이를 얻었다.':`${r.kids}번째 아이를 얻었다.`)}
   // 일
   if(r.job&&NP_UP[r.job]&&a>=22&&R()<.1){const nj=NP_UP[r.job];r.job=nj;npEv(r,`${jo(nj,'이','가')} 되었다.`);if(!child()&&r.tr==='야심')r.riv=clamp(r.riv+5,0,100)}
   if(r.job&&/궁정|근위|고등법원/.test(r.job)&&t>=(/고등법원/.test(r.job)?1790.75:1792.6)&&!/^옛 /.test(r.job))r.job='옛 '+r.job;
