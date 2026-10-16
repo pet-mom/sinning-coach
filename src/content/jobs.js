@@ -23,23 +23,23 @@ defineTrack('peuple','도시 품팔이·행상',{key:['soc',35],p:.04,lit:false,
 Object.assign(OFFICE,{serv:[0,0,0,1,2],sea:[0,0,0,1,2,6],art:[0,0,1,3,6],state:[0,1,3,6,10,15],peuple:[0,0,0,1]});
 
 /* ---------- 하인·가사 ---------- */
-defineJob('sv1','serv',1,'제복 하인(라케)','집안 하녀','laquais / fille de service',110,{});
+defineJob('sv1','serv',1,'제복 하인','집안 하녀','laquais / fille de service',110,{});
 defineJob('sv1n','serv',1,'유모','유모','nourrice',90,{hp:45},()=>jbF()&&s.married&&s.age>=18&&s.age<42&&!urban());
 defineJob('sv2','serv',2,'요리사','여자 요리사','cuisinier / cuisinière',300,{dex:25,sk:{cook:20}});
-defineJob('sv2b','serv',2,'시종(발레 드 샹브르)','몸종(팜 드 샹브르)','valet de chambre / femme de chambre',250,{soc:30,sk:{manner:20}});
-defineJob('sv3','serv',3,'집사장(메트르 도텔)','살림 총괄 가정부','maître d’hôtel / gouvernante de maison',700,{soc:35,sk:{manner:30,trade:15}});
+defineJob('sv2b','serv',2,'시종','몸종','valet de chambre / femme de chambre',250,{soc:30,sk:{manner:20}});
+defineJob('sv3','serv',3,'집사장','살림 총괄 가정부','maître d’hôtel / gouvernante de maison',700,{soc:35,sk:{manner:30,trade:15}});
 defineJob('sv4','serv',4,'영지·저택 관리인',null,'intendant de maison / régisseur',2000,{edu:35,soc:40,sk:{trade:30}});
 
 /* ---------- 바다·항구 ---------- */
-defineJob('se1','sea',1,'수습 선원(무스)',null,'mousse',40,{},()=>jbPort()&&isM());
+defineJob('se1','sea',1,'수습 선원',null,'mousse',40,{},()=>jbPort()&&isM());
 defineJob('se2','sea',2,'선원',null,'matelot',240,{str:35},()=>jbPort()&&isM());
 defineJob('se3','sea',3,'갑판장',null,'maître d’équipage',500,{str:40,cour:35},()=>jbPort()&&isM());
 defineJob('se4','sea',4,'상선 선장',null,'capitaine marchand',2000,{edu:35,cour:40,kn:{ksci:20}},()=>jbPort()&&isM());
-defineJob('se5','sea',5,'선주(아르마퇴르)','선주(아르마퇴르)','armateur',10000,{money:30000,soc:45,sk:{trade:40}},()=>jbPort());
+defineJob('se5','sea',5,'선주','선주','armateur',10000,{money:30000,soc:45,sk:{trade:40}},()=>jbPort());
 
 /* ---------- 예술·공연 ---------- */
 defineJob('ar1','art',1,'화실 제자','화실 제자','élève d’atelier',0,{dex:20,cost:100},()=>urban());
-defineJob('ar1m','art',1,'성가대 학교 학생(메트리즈)',null,'enfant de la maîtrise',30,{},()=>isM()&&s.age<19&&jbCult()&&s.faithKind==='catholic');
+defineJob('ar1m','art',1,'성가대 학교 학생',null,'enfant de la maîtrise',30,{},()=>isM()&&s.age<19&&jbCult()&&s.faithKind==='catholic');
 defineJob('ar2p','art',2,'화가','화가','peintre',800,{dex:40,sk:{draw:35}},()=>urban());
 defineJob('ar2m','art',2,'세밀화가','세밀화가','miniaturiste',700,{dex:45,sk:{draw:30}},()=>urban());
 defineJob('ar2o','art',2,'악단 연주자','악단 연주자','musicien d’orchestre',600,{dex:35,sk:{music:35}},()=>urban()&&(isM()||T()>=1795.8));
@@ -47,14 +47,14 @@ defineJob('ar2c','art',2,'배우','여배우','comédien / comédienne',1200,{so
 defineJob('ar2s','art',2,'오페라 가수','오페라 가수','chanteur / chanteuse de l’Opéra',1500,{soc:35,sk:{music:40}},()=>inParis());
 defineJob('ar3','art',3,'코메디프랑세즈 정단원','코메디프랑세즈 정단원','sociétaire de la Comédie-Française',6000,{fame:30,sk:{orat:45}},()=>inParis()&&(T()<1793.67||T()>=1799.4));
 defineJob('ar3p','art',3,'아카데미 준회원 화가','아카데미 준회원 화가','agréé de l’Académie royale de peinture',2000,{fame:20,sk:{draw:55}},()=>T()<1793.6);
-defineJob('ar3o','art',3,'악장(악단장)',null,'maître de musique / chef d’orchestre',2000,{soc:35,sk:{music:55}},()=>urban());
+defineJob('ar3o','art',3,'악단장',null,'maître de musique / chef d’orchestre',2000,{soc:35,sk:{music:55}},()=>urban());
 defineJob('ar4','art',4,'미술 아카데미 회원','미술 아카데미 여성 회원','académicien (peinture) / membre de l’Institut',4000,{fame:40,sk:{draw:65}},()=>T()<1793.6||(T()>=1795.8&&isM()));
 
 /* ---------- 관리·기술직 ---------- */
 defineJob('st1f','state',1,'징세 청부 사무원',null,'commis des Fermes',450,{edu:30},()=>T()<1791.2&&isM());
-defineJob('st1g','state',1,'소금세 감시원(가블루)',null,'garde des gabelles (gabelou)',250,{str:30,cour:25},()=>T()<1790.2&&isM());
+defineJob('st1g','state',1,'소금세 감시원',null,'garde des gabelles (gabelou)',250,{str:30,cour:25},()=>T()<1790.2&&isM());
 defineJob('st1d','state',1,'세관원',null,'préposé des douanes',350,{str:30},()=>T()>=1791.3&&isM());
-defineJob('st1m','state',1,'기마경찰대원(마레쇼세)',null,'cavalier de la maréchaussée',300,{str:40,cour:35,sk:{ride:20}},()=>T()<1791.1&&isM());
+defineJob('st1m','state',1,'기마경찰대원',null,'cavalier de la maréchaussée',300,{str:40,cour:35,sk:{ride:20}},()=>T()<1791.1&&isM());
 defineJob('st1e','state',1,'헌병',null,'gendarme',500,{str:40,cour:35,sk:{ride:20}},()=>T()>=1791.1&&isM());
 defineJob('st1b','state',1,'관청 사무원',null,'commis de bureau',500,{edu:35,sk:{pen:20}},()=>isM());
 defineJob('st1t','state',1,'담배 판매소 주인','담배 판매소 여주인','débitant / débitante de tabac',300,{sk:{trade:10}},()=>T()<1791.1||T()>=1811);
@@ -62,7 +62,7 @@ defineJob('st2x','state',2,'이공과 학교 학생',null,'élève de l’École
 Object.defineProperty(POST.st2x,'pay',{get(){return T()<1805?1200:0}}); // 1805년부터 봉급 대신 학비를 냈다
 defineJob('st2r','state',2,'징수관',null,'receveur des tailles / des contributions',1800,{edu:40,cost:4000,sk:{trade:25}},()=>isM());
 defineJob('st2e','state',2,'중앙 부처 직원',null,'employé de ministère',1500,{edu:45,sk:{pen:35}},()=>isM());
-defineJob('st2b','state',2,'헌병 반장',null,'brigadier (maréchaussée / gendarmerie)',600,{cour:40,str:40},()=>isM());
+defineJob('st2b','state',2,'헌병 반장',null,'brigadier (maréchaussée / gendarmerie)',600,{cour:40,str:40,sk:{ride:25}},()=>isM());
 defineJob('st3i','state',3,'토목 기사',null,'ingénieur des Ponts et Chaussées',2400,{edu:55,kn:{get ksci(){return T()>=1795?50:40}}},()=>isM());
 defineJob('st3n','state',3,'세무 감독관',null,'inspecteur des contributions / de l’enregistrement',3000,{edu:50,soc:35},()=>isM());
 defineJob('st4','state',4,'수석 기사',null,'ingénieur en chef des Ponts et Chaussées',5000,{edu:60,fame:15,kn:{ksci:55}},()=>isM());
@@ -75,23 +75,23 @@ defineJob('pe1c','peuple',1,'짐꾼',null,'crocheteur / portefaix',170,{str:40},
 defineJob('pe1b','peuple',1,'세탁부','세탁부','blanchisseuse',150,{str:20},()=>jbF()&&(urban()||loc()==='ile'));
 defineJob('pe1f','peuple',1,'실 잣는 여인','실 잣는 여인','fileuse',70,{},()=>jbF()&&T()<1830);
 defineJob('pe1r','peuple',1,'등짐장수','길거리 채소 장수','colporteur / marchande des quatre-saisons',160,{});
-defineJob('pe2f','peuple',2,'중앙시장 짐꾼(포르 데 알)',null,'fort des Halles',450,{str:55},()=>isM()&&inParis());
+defineJob('pe2f','peuple',2,'중앙시장 짐꾼',null,'fort des Halles',450,{str:55},()=>isM()&&inParis());
 defineJob('pe2p','peuple',2,'중앙시장 생선 장수','중앙시장 생선 장수','poissarde / dame de la Halle',350,{soc:25,sk:{trade:15}},()=>jbF()&&inParis());
 defineJob('pe2v','peuple',2,'헌옷 장수','헌옷 장수','fripier / revendeuse à la toilette',300,{sk:{trade:20}},()=>urban());
 defineJob('pe3a','peuple',3,'선술집 주인','선술집 안주인','cabaretier / cabaretière',700,{cost:600,soc:30,sk:{trade:20}});
 defineJob('pe3i','peuple',3,'여관 주인','여관 안주인','aubergiste',1200,{cost:1500,soc:35,sk:{cook:20,trade:25}});
 
 /* ---------- 수공업·상업: 전문 직인과 장인 ---------- */
-defineJob('c2t','craft',2,'인쇄 직인(식자공)',null,'compagnon imprimeur / compositeur',450,{dex:30,sk:{print:20}},()=>isM()&&lit()&&urban());
+defineJob('c2t','craft',2,'인쇄 식자공',null,'compagnon imprimeur / compositeur',450,{dex:30,sk:{print:20}},()=>isM()&&lit()&&urban());
 defineJob('c2c','craft',2,'제빵 직인',null,'garçon boulanger / geindre',300,{str:30,sk:{cook:20}},()=>isM());
-defineJob('c2k','craft',2,'견직공(카뉘)','견직 여공','ouvrier en soie (canut) / ouvrière en soie',300,{sk:{weave:20}},()=>loc()==='lyon');
-defineJob('c2l','craft',2,null,'속옷 재봉사(랭제르)','lingère',280,{dex:25,sk:{sew:30}},()=>jbF());
+defineJob('c2k','craft',2,'견직공','견직 여공','ouvrier en soie (canut) / ouvrière en soie',300,{sk:{weave:20}},()=>loc()==='lyon');
+defineJob('c2l','craft',2,null,'속옷 재봉사','lingère',280,{dex:25,sk:{sew:30}},()=>jbF());
 defineJob('c3p','craft',3,'인쇄 출판업자','인쇄소 여주인','imprimeur-libraire',2200,{cost:3000,soc:30,sk:{print:35}},()=>lit()&&urban());
 defineJob('c3b','craft',3,'제빵 장인','빵집 안주인','maître boulanger / boulangère',800,{cost:400,sk:{cook:35}});
-defineJob('c3m','craft',3,'가구 장인(에베니스트)',null,'maître menuisier-ébéniste',1000,{cost:500,dex:45,sk:{wood:40}},()=>isM());
+defineJob('c3m','craft',3,'가구 장인',null,'maître menuisier-ébéniste',1000,{cost:500,dex:45,sk:{wood:40}},()=>isM());
 defineJob('c3h','craft',3,'시계 장인',null,'maître horloger',1200,{cost:600,dex:50,sk:{metal:45}},()=>isM()&&urban());
 defineJob('c3l','craft',3,'자물쇠 장인',null,'maître serrurier',800,{cost:400,sk:{metal:35}},()=>isM());
-defineJob('c3s','craft',3,'견직물 제조업자(파브리캉)','견직물 제조업자(파브리캉)','fabricant de soieries',2000,{cost:2000,soc:30,sk:{weave:40,trade:20}},()=>loc()==='lyon');
+defineJob('c3s','craft',3,'견직물 제조업자','견직물 제조업자','fabricant de soieries',2000,{cost:2000,soc:30,sk:{weave:40,trade:20}},()=>loc()==='lyon');
 defineJob('c3t','craft',3,'재단 장인','재봉 장인','maître tailleur / maîtresse couturière',900,{cost:400,sk:{sew:40}});
 // 여성 전용 직업은 n을 nf와 같게 둔다(성별은 ok가 거른다)
 POST.c2l.n=POST.c2l.nf;PL.find(x=>x[0]==='c2l')[3]=POST.c2l.nf;

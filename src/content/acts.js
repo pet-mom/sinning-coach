@@ -136,7 +136,7 @@ defineAct({k:'epargne',g:'money',n:'저축 금고를 쓴다',s:'연 4% 이자. �
   const cur=acSavNow(),cap=T()>=1845.5?1500:T()>=1835.5?3000:1e9,room=Math.max(0,cap-cur),q=Math.min(room,Math.round(s.money/4));
   const o=[];if(s.money>=50&&room>=50)o.push({l:'50 맡긴다',s:'',a:'safe',v:50});if(q>50)o.push({l:`${fmt(q)} 맡긴다`,s:'재산의 4분의 1',a:'safe greedy',v:q});if(cur>0)o.push({l:`모두 찾는다`,s:`${acM(cur)}`,a:'',v:-cur});o.push({l:'그만둔다',s:'',a:'',v:0});
   const i=await Q('저축 금고','Caisse d’épargne',`${inParis()?'1818년 들레세르가 세운 파리 저축 금고':'저축 금고'}가 일요일에도 문을 연다. 날품팔이와 하녀도 몇 프랑씩 맡긴다. 맡긴 돈 ${acM(cur)}.${cap<1e9?` 한도는 ${fmt(cap)}프랑이다.`:''}`,o);const v=o[i].v;
-  if(v>0){s.money-=v;s.flags.epargne={a:cur+v,y:s.year};say(`저축 금고 통장에 ${acM(v)}을 적었다.`+fx({vord:1,vfam:1}))}else if(v<0){s.money+=-v;s.flags.epargne=null;say(`저축 금고에서 ${acM(-v)}을 찾았다.`)}await done()}});
+  if(v>0){s.money-=v;s.flags.epargne={a:cur+v,y:s.year};say(`저축 금고 통장에 ${jo(acM(v),'을','를')} 적었다.`+fx({vord:1,vfam:1}))}else if(v<0){s.money+=-v;s.flags.epargne=null;say(`저축 금고에서 ${jo(acM(-v),'을','를')} 찾았다.`)}await done()}});
 function acRentP(){const t=T();return t<1789?.9:t<1797.75?Math.max(.25,econ().cur*.8):t<1800?.15:t<1802?.45:t<1814.25?.8:t<1816?.6:t<1830.5?.9:1.05}
 function acRent(){const r=s.flags.rente;if(!r)return null;if(r.t0<1797.75&&T()>=1797.75&&!r.cut){r.cut=1;r.p=Math.round(r.p/3);say('1797년 9월, ‘3분의 2 파산’으로 국채의 3분의 2가 휴지 같은 증권으로 바뀌었다. 남은 것은 ‘3분의 1 확정 국채’뿐이다.','big')}return r}
 defineAct({k:'rente',g:'money',n:'국채(연금)를 사고판다',s:'액면의 5% 이자. 나라가 갚지 못할 수도',c:()=>free()&&s.age>=18&&(s.money>=500||!!s.flags.rente)&&!(T()>=1793.5&&T()<1795),inter:async()=>{
@@ -147,7 +147,7 @@ defineAct({k:'rente',g:'money',n:'국채(연금)를 사고판다',s:'액면의 5
   const nm=T()<1789?'시청 연금(랑트 쉬르 로텔 드 빌)':T()<1797.75?'공채 대장(그랑 리브르)의 국채':'5% 확정 국채';
   const i=await Q('국채','rentes',`${nm}. 액면 100의 국채가 지금 ${Math.round(pr*100)}에 거래된다.${r?` 지닌 국채는 액면 ${acM(r.p)}.`:''}`,o);const v=o[i].v;
   if(v==='i'){r.y=s.year;say('이자 증서를 끊어 금고 창구에서 돈을 받았다.'+fx({money:due}))}
-  else if(v==='b'){const p=Math.round(amt/pr);s.money-=amt;if(r){if(r.y<s.year&&due>0){fx({money:due})}r.p+=p;r.y=s.year;if(T()>=1797.75)r.cut=1}else s.flags.rente={p,y:s.year,t0:T(),cut:T()>=1797.75?1:0};say(`${acM(amt)}로 액면 ${acM(p)}의 국채를 샀다.`+fx({trade:1}))}
+  else if(v==='b'){const p=Math.round(amt/pr);s.money-=amt;if(r){if(r.y<s.year&&due>0){fx({money:due})}r.p+=p;r.y=s.year;if(T()>=1797.75)r.cut=1}else s.flags.rente={p,y:s.year,t0:T(),cut:T()>=1797.75?1:0};say(`${jo(acM(amt),'으로')} 액면 ${acM(p)}의 국채를 샀다.`+fx({trade:1}))}
   else if(v==='s'){const g=Math.round(r.p*pr)+due;s.flags.rente=null;say('증권 중개인에게 국채를 넘겼다.'+fx({money:g,trade:1}))}await done()}});
 defineAct({k:'shop',g:'money',n:'가게를 연다',s:'조건을 갖춘 가게 자리로 옮긴다',c:()=>acTown()&&s.age>=20&&s.age<60&&s.money>=400&&!(job()&&job().t>=4)&&!soldier()&&!deputy(),inter:async()=>{
   const ids=['pe3a','pe3i','c3b','c3p','c3t','c3s','c3','c4','pe2v'].filter(id=>POST[id]&&id!==s.job&&meets(POST[id]));

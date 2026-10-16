@@ -179,7 +179,7 @@ function ctxOk(c,role){const t=T();if(t<c.y[0]||t>=c.y[1])return false;if(role&&
   if(w.estate&&!w.estate.includes(s.estate))return false;if(w.sex&&w.sex!==s.sex)return false;
   if(w.track&&!(job()&&w.track.includes(job().tr)))return false;if(w.school&&!(inSchool()&&SCH().st===w.school||(Array.isArray(w.school)&&w.school.includes(SCH().st))))return false;
   const pf=w.party||w.fac;if(pf&&!(s.party&&pf.includes(s.party)))return false;if(w.lit&&!lit())return false;if(w.urban&&!urban())return false;
-  if(w.age&&(s.age<w.age[0]||s.age>w.age[1]))return false;if(w.faith&&w.faith!==s.faithKind)return false;return true}
+  if(w.age&&(s.age<w.age[0]||s.age>w.age[1]))return false;if(!w.age&&!w.school&&s.age<16)return false;if(child()&&!w.school)return false;if(w.faith&&w.faith!==s.faithKind)return false;return true}
 function realCands(role){const t=T(),known=new Set((s.rel||[]).map(r=>r.pid));const out=[];
   for(const p of PEOPLE){if(known.has(p.id))continue;if(s.year<p.b+12||s.year>=p.d)continue;if(role==='연인'&&p.sex===s.sex)continue;
     for(const c of p.ctx||[])if(ctxOk(c,role)){out.push([p,c]);break}}return out}
