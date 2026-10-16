@@ -79,11 +79,13 @@ const POST={};PL.forEach(([id,tr,t,n,nf,fr,pay,need,ok])=>POST[id]={id,tr,t,n,nf
 function pname(p){return (isM()||!p.nf)?p.n:p.nf}
 function canSex(p){return isM()||!!p.nf}
 function meets(p,quiet){const n=p.need;if(!canSex(p)||!p.ok())return false;
-  if(p.tr==='law'&&!isM())return false;if(p.tr!=='farm'&&p.tr!=='craft'&&p.tr!=='army'&&!lit())return false;
+  if(p.tr==='law'&&!isM())return false;if(!NOLIT.has(p.tr)&&!lit())return false;
   if(s.faithKind!=='catholic'&&(p.tr==='church'||(T()<1789.5&&(p.tr==='law'||(p.tr==='army'&&p.t>=3)))))return false;
   for(const k of ['edu','soc','dex','str','cour','faith','fame'])if(n[k]&&(k in s.st?s.st[k]:s[k])<n[k])return false;
+  if(n.sk)for(const k in n.sk)if((s.sk[k]||0)<n.sk[k])return false;if(n.kn)for(const k in n.kn)if(((s.kn||{})[k]||0)<n.kn[k])return false;
   if(n.money&&s.money<n.money)return false;if(n.cost&&s.money<n.cost)return false;if(n.land&&s.land<n.land)return false;return true}
 function needText(p){const n=p.need,o=[];for(const k of ['edu','soc','dex','str','cour','faith','fame'])if(n[k])o.push(`${FXN[k]} ${n[k]}`);
+  if(n.sk)for(const k in n.sk)o.push(`${FXN[k]||k} ${n.sk[k]}`);if(n.kn)for(const k in n.kn)o.push(`${FXN[k]||k} ${n.kn[k]}`);
   if(n.cost)o.push(`비용 ${fmt(n.cost)}`);if(n.money)o.push(`재산 ${fmt(n.money)}`);if(n.land)o.push(`지대 수입 ${fmt(n.land)}`);return o.join(', ')}
 function takeJob(id,pre=''){const p=POST[id];if(s.job)closeJob();if(p.need.cost)s.money-=p.need.cost;s.job=id;s.jobSince=s.year;
   s.hist.push({id,n:pname(p),y0:s.year,y1:null,age:s.age});s.best[p.tr]=Math.max(s.best[p.tr]||0,p.t);
@@ -127,3 +129,17 @@ async function roll(mod,o={}){let m=mod,why=o.why||'';
 // 역사 통계에 따른 확률 추첨. true = 그 일이 일어난다.
 async function chance(p,label,why){p=clamp(p,0,1);const hit=R()<p;
   L(`${label} ${Math.round(p*1000)/10}% → ${hit?'일어났다':'피했다'}${why?` · ${why}`:''}`,'dice');return hit}
+
+/* ---------- 직업 등록부 ----------
+   새 직업은 defineJob(id,tr,t,n,nf,fr,pay,need,ok)로, 새 직업 트랙은 defineTrack(k,이름)으로 더한다.
+   need: {edu,soc,dex,str,cour,faith,fame,cost,money,land, sk:{숙련:값}, kn:{학식분야:값}}. ok(): 그 시대·신분에 그 자리가 있는가.
+   같은 트랙 안에서 t(단계)가 하나 높은 자리로 승진한다. */
+function defineTrack(k,n,o={}){TRACKS[k]=n;if(o.key)PROMO_KEY[k]=o.key;if(o.p)PROMO_P[k]=o.p;if(o.lit===false)NOLIT.add(k);if(o.sk)TRACK_SK_EXTRA[k]=o.sk}
+function defineJob(id,tr,t,n,nf,fr,pay,need,ok){const row=[id,tr,t,n,nf,fr,pay,need,ok];const i=PL.findIndex(x=>x[0]===id);if(i>=0)PL[i]=row;else PL.push(row);POST[id]={id,tr,t,n,nf,fr,pay,need:need||{},ok:ok||(()=>true)};return POST[id]}
+const PROMO_KEY={farm:['str',40],craft:['dex',45],law:['edu',60],church:['edu',50],army:['cour',50],pol:['soc',50],letters:['edu',60],med:['edu',60]};
+const PROMO_P={farm:.05,craft:.07,law:.07,church:.06,army:.05,pol:.08,letters:.05,med:.06};
+const NOLIT=new Set(['farm','craft','army']);const TRACK_SK_EXTRA={};
+/* ---------- 진로 등록부 ----------
+   defineEntry(직업id, 설명, ()=>조건, {firstOnly}) — 열네 살 진로 고르기와 ‘진로를 바꾼다’에 나타난다. */
+const ENTRIES=[];
+function defineEntry(id,why,c,o={}){ENTRIES.push({id,why,c:c||(()=>true),firstOnly:!!o.firstOnly})}

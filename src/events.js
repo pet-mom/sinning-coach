@@ -242,7 +242,7 @@ async function randomEvent(p=.72){if(s.dead||s.cond==='prison'||s.cond==='emigre
 
 /* ================= 행동 ================= */
 const ACTS=[
- {k:'read',n:'계몽 서적을 읽는다',s:'학식 +3, 급진 성향',c:()=>free()&&lit(),f:()=>say(pick(['볼테르의 『철학 서간』을 읽었다.','몽테스키외의 『법의 정신』을 읽었다.','루소의 『신엘로이즈』를 밤새 읽었다.','『백과전서』의 한 권을 빌려 읽었다.'])+fx({edu:3,pol:2,bch:1,brl:1}))},
+ {k:'read',n:'계몽 서적을 읽는다',s:'학식 +3, 급진 성향',c:()=>free()&&lit(),f:()=>say(pick(['볼테르의 『철학 서간』을 읽었다.','몽테스키외의 『법의 정신』을 읽었다.','루소의 『신엘로이즈』를 밤새 읽었다.','『백과전서』의 한 권을 빌려 읽었다.'])+fx({edu:3,pol:2,bch:1,brl:1,kphil:2}))},
  {k:'learn',n:'글을 배운다',s:'재산 40. 학식 판정',cost:40,c:()=>free()&&!lit(),inter:async()=>{const r=await roll(s.age<30?0:-1,{label:'글 배우기'});s.money-=40;if(r.v>=3){s.literate=true;say('떠듬떠듬 글을 읽을 수 있게 되었다.'+fx({edu:4}),'big')}else say('밤마다 촛불 아래 철자를 익혔지만 아직은 어렵다.'+fx({edu:1}))}},
  {k:'mass',n:'미사와 고해에 나간다',s:'신앙 +3. 1793~94년엔 혐의',c:()=>free()&&s.faithKind==='catholic',f:()=>{const t=T()>=1793.75&&T()<1795;say((t?'숲 속 헛간에서 선서 거부 사제의 비밀 미사를 드렸다.':'미사에 나가 고해성사를 보았다.')+fx({faith:3,sus:t?4:0,rloc:t?0:1}))}},
  {k:'salon',n:'살롱과 카페에 드나든다',s:'재산 40. 사교 +3',cost:40,c:()=>free()&&(urban()||noble()||s.estate==='bourgeois'),f:()=>say(pick(['조프랭 부인의 살롱에서 철학자들과 마주 앉았다.','카페 드 라 레장스에서 체스를 두었다.','팔레루아얄 회랑의 카페를 돌았다.'])+fx({money:-40,soc:3,relite:2,orat:1}))},
@@ -251,7 +251,7 @@ const ACTS=[
  {k:'labor',n:'몸을 단련한다',s:'체력 +3, 건강 +1',c:()=>free()&&s.age<60,f:()=>say(pick(['새벽마다 장작을 패고 물을 길었다.','들판을 달리고 강에서 헤엄쳤다.','무거운 짐을 지고 언덕길을 오르내렸다.'])+fx({str:3,hp:1}))},
  {k:'orat',n:'웅변을 연습한다',s:'웅변 숙련 +4, 사교 +1',c:()=>free()&&lit()&&s.age>=16,f:()=>say(pick(['키케로의 연설문을 소리 내어 외웠다.','거울 앞에서 몸짓과 목소리를 다듬었다.','토론 모임에서 반대편을 맡아 논박했다.'])+fx({orat:4,soc:1}))},
  {k:'visit',n:'친지와 지인을 찾아다닌다',s:'가장 가까운 이와 친밀 +, 가족 평판 +',c:()=>free()&&relsAlive().length>0,f:()=>{const r=relsAlive().sort((a,b)=>b.close-a.close)[0];say(`${r.n}의 집에 들러 저녁을 함께 먹었다.`+fx({rfam:2})+relFx(r,{close:8,trust:3}))}},
- {k:'study',n:'대학에서 법학을 공부한다',s:'재산 300. 학식 +5',cost:300,c:()=>free()&&lit()&&isM()&&s.age<35,f:()=>say('법학부 강의를 들으며 로마법을 익혔다. 모의 변론에서 목청을 틔웠다.'+fx({money:-300,edu:5,pen:2,orat:1}))},
+ {k:'study',n:'대학에서 법학을 공부한다',s:'재산 300. 학식 +5',cost:300,c:()=>free()&&lit()&&isM()&&s.age<35,f:()=>say('법학부 강의를 들으며 로마법을 익혔다. 모의 변론에서 목청을 틔웠다.'+fx({money:-300,edu:5,pen:2,orat:1,klaw:5}))},
  {k:'spa',n:'온천에서 요양한다',s:'재산 150. 건강 +6',cost:150,c:()=>free(),f:()=>say(pick(['플롱비에르의 온천에서 한 철을 보냈다.','비시 온천에서 몸을 추슬렀다.','바레주의 유황 온천을 찾았다.'])+fx({money:-150,hp:6,relite:1}))},
  {k:'charity',n:'가난한 이웃을 돕는다',s:'재산 60. 명성 +2',cost:60,c:()=>free(),f:()=>{s.seeds.push({t:'saved',n:person(),y:s.year});const e=econ(),hard=e.price>=1.3||e.supply<50;say((hard?'빵값이 치솟은 해, 이웃들에게 빵과 장작을 나누었다. 문 앞에 줄이 늘어섰다.':'가난한 이웃들에게 빵과 장작을 나누었다.')+fx({money:-60,fame:2,faith:1,rloc:hard?5:3,rpeople:hard?4:2,vjus:1}))}},
  {k:'club',hide:1,n:'자코뱅 클럽에 가입한다',s:'급진 +10, 명성 +2. 공포정치기 혐의 감소',c:()=>free()&&T()>=1790&&T()<1794.75&&!s.flags.club&&(lit()||urban())&&isM(),f:()=>{s.flags.club=true;frelAdd('jacobin',8);say('헌우회(자코뱅 클럽) 회원증을 받았다. 저녁마다 생토노레 거리의 옛 수도원 회합에 나갔다.'+fx({pol:10,fame:2,sus:-6,rpeople:2,relite:-2,inf:2,brg:3}))}},
@@ -277,3 +277,11 @@ async function forceMarriage(){const a=s.age;
   const pay=isM()?{peasant:60,artisan:150}[sameEst]||0:Math.round(POST[pick(['f2','c2','c3','l2','c4'])].pay*({peasant:.5,artisan:.9,bourgeois:1.4,hobereau:2,robe:3,epee:5}[sameEst]));
   const i=await Q('혼담','mariage',`중매쟁이가 ${ESTATES[sameEst].n} 집안의 ${nm}(${age}세)${bat(nm)?'을':'를'} 소개하였다.${dowry?` 지참금은 ${fmt(dowry)} ${money()}.`:''}`,[{l:'혼인한다',s:'',a:'family social'},{l:'다음 기회를 본다',s:'',a:'safe'}]);
   if(i===0){s.married=true;s.spouse={n:nm,age,alive:true,pay,estate:sameEst};s.money+=dowry;say(`${jo(nm,'과','와')} 혼인하였다.`+fx({soc:2}),'big')}else say('혼담을 미뤘다.');await done()}
+
+/* ---------- 행동 등록부 ----------
+   새 행동은 어느 파일에서든 defineAct({k,n,s,g,cost,c,f|inter})로 더한다. g는 아래 묶음 가운데 하나.
+   k가 같으면 덮어쓴다. c()가 false면 보이지 않는다. 한 해에 한 번씩 할 수 있다. */
+const ACT_GROUPS=[['body','몸과 마음'],['learn','배움과 솜씨'],['social','사람과 사교'],['faith','신앙'],['money','돈과 땅'],['politics','정치와 시민'],['risk','위험한 선택'],['life','삶의 큰 결정']];
+const ACT_G={read:'learn',learn:'learn',study:'learn',skill:'learn',orat:'learn',mass:'faith',salon:'social',visit:'social',charity:'social',gamble:'money',land:'money',buy:'money',train:'body',labor:'body',spa:'body',club:'politics',cert:'politics',pamph:'politics',hide:'risk',emig:'risk',career:'life',match:'life',retire:'life'};
+function actGroup(a){return ACT_G[a.k]||'life'}
+function defineAct(a){const i=ACTS.findIndex(x=>x.k===a.k);if(i>=0)ACTS[i]=a;else ACTS.push(a);return a}

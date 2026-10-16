@@ -6,15 +6,24 @@
    신념  brg 정치 체제 · bor 사회 질서 · bch 변화의 방식 · bpw 권력 구조 · brl 종교와 국가   (-100~+100)
    가치  vlib 자유 · veq 평등 · vhon 명예 · vfam 가족 · vord 질서 · vjus 정의   (0~100)
    영향력 inf (쌓아 온 영향력. 공직·파벌·인맥·재산·대중의 지지·정권과의 관계와 합쳐 계산한다) */
-const SKILLS=[['orat','웅변','soc'],['pen','글씨·문서','dex'],['craft','수공 솜씨','dex'],['sew','바느질·재봉','dex'],['draw','그림','dex'],['music','악기','dex'],['print','인쇄','dex'],['heal','외과 손기술','dex'],['trade','장사·셈','soc'],['farm','농사일','str'],['arms','무예','str'],['ride','승마','str']];
+// 숙련: 기술(DEX)·사교(CHA)·체력(STR)의 하위 분야. 셋째 칸이 어느 능력치에 딸렸는지.
+const SKILLS=[['pen','글씨·문서','dex'],['craft','수공 일반','dex'],['wood','목공','dex'],['metal','금속 세공','dex'],['weave','직조','dex'],['sew','바느질·재봉','dex'],['cook','제빵·요리','dex'],['draw','그림','dex'],['music','악기','dex'],['print','인쇄','dex'],['heal','외과 손기술','dex'],
+ ['orat','웅변','soc'],['trade','장사·셈','soc'],['manner','예법·몸가짐','soc'],['farm','농사일','str'],['arms','무예','str'],['ride','승마','str']];
+// 학식(INT)의 분야
+const KNOW=[['klat','라틴어·고전'],['ktheo','신학'],['klaw','법학'],['kmed','의학 지식'],['ksci','수학·자연과학'],['kphil','철학·사상'],['khist','역사·지리'],['klang','외국어'],['klett','문학']];
+const SKG=[['edu','학식 분야',KNOW.map(x=>x[0])],['dex','기술 분야',SKILLS.filter(x=>x[2]==='dex').map(x=>x[0])],['soc','사교 분야',SKILLS.filter(x=>x[2]==='soc').map(x=>x[0])],['str','체력 분야',SKILLS.filter(x=>x[2]==='str').map(x=>x[0])]];
+// 수공업 전문 분야(처음 수공업에 들 때 정한다)
+const SPECS={wood:'목수·소목장',metal:'대장장이·자물쇠장이',weave:'직조공',sew:'재봉사',cook:'제빵사·요리사',print:'인쇄공',craft:'잡역 장인'};
+function pickSpec(){if(s.spec)return s.spec;const L0=loc();let w=isM()?[['wood',3],['metal',3],['weave',L0==='lyon'||L0==='rouen'?6:2],['cook',2],['print',urban()?1.5:.2],['sew',1],['craft',2]]:[['sew',5],['weave',L0==='lyon'||L0==='rouen'?6:3],['cook',2],['craft',1]];s.spec=wpick(w);return s.spec}
 const REPG=[['rfam','가족'],['rloc','이웃·고을'],['rguild','동업자'],['rpeople','민중'],['relite','상류사회']];
 const BELIEF=[['brg','정치 체제','왕정','공화정'],['bor','사회 질서','신분 특권','법적 평등'],['bch','변화의 방식','점진 개혁','급진 변화'],['bpw','권력 구조','중앙집권','지방 자치'],['brl','종교와 국가','긴밀한 결합','분리']];
 const VALUES=[['vlib','자유'],['veq','평등'],['vhon','명예'],['vfam','가족'],['vord','질서'],['vjus','정의']];
-SKILLS.forEach(([k,n])=>FXN[k]=n);REPG.forEach(([k,n])=>FXN[k]='평판('+n+')');BELIEF.forEach(([k,n])=>FXN[k]=n);VALUES.forEach(([k,n])=>FXN[k]='가치('+n+')');
-const SKK=new Set(SKILLS.map(x=>x[0])),REPK=new Set(REPG.map(x=>x[0])),BELK=new Set(BELIEF.map(x=>x[0])),VALK=new Set(VALUES.map(x=>x[0]));
+SKILLS.forEach(([k,n])=>FXN[k]=n);KNOW.forEach(([k,n])=>FXN[k]=n);REPG.forEach(([k,n])=>FXN[k]='평판('+n+')');BELIEF.forEach(([k,n])=>FXN[k]=n);VALUES.forEach(([k,n])=>FXN[k]='가치('+n+')');
+const SKK=new Set(SKILLS.map(x=>x[0])),KNK=new Set(KNOW.map(x=>x[0])),REPK=new Set(REPG.map(x=>x[0])),BELK=new Set(BELIEF.map(x=>x[0])),VALK=new Set(VALUES.map(x=>x[0]));
 // fx()가 부르는 확장 키 처리. 처리했으면 실제 바뀐 양, 아니면 null.
 function fxAttr(k,n){
   if(SKK.has(k)){const v=s.sk[k]||0;if(n>0){const g=n*(1-v/120);n=Math.max(1,Math.floor(g)+(R()<g%1?1:0))}const nv=clamp(v+n,0,100);n=nv-v;s.sk[k]=nv;return n}
+  if(KNK.has(k)){s.kn=s.kn||{};const v=s.kn[k]||0;if(n>0){const g=n*(1-v/120);n=Math.max(1,Math.floor(g)+(R()<g%1?1:0))}if(n>0&&!lit())n=Math.min(n,Math.max(0,15-v));const nv=clamp(v+n,0,100);s.kn[k]=nv;return nv-v}
   if(REPK.has(k)){const v=s.rep[k];const nv=clamp(v+n,0,100);s.rep[k]=nv;return nv-v}
   if(BELK.has(k)){const v=s.bel[k];const nv=clamp(v+n,-100,100);s.bel[k]=nv;return nv-v}
   if(VALK.has(k)){const v=s.val[k];const nv=clamp(v+n,0,100);s.val[k]=nv;return nv-v}
@@ -24,7 +33,7 @@ function fxAttr(k,n){
 /* ---------- 새 인생 · 옛 저장 맞추기 ---------- */
 function attrsInit(o){const E=o.estate,nb=ESTATES[E].noble;
   o.st.dex=ri(4,10);o.st.str=ri(6,14);
-  o.sk={};SKILLS.forEach(([k])=>o.sk[k]=0);
+  o.sk={};SKILLS.forEach(([k])=>o.sk[k]=0);o.kn={};KNOW.forEach(([k])=>o.kn[k]=0);o.faithMode=null;
   o.rep={rfam:60,rloc:50,rguild:50,rpeople:50,relite:nb?55:E==='bourgeois'?45:35};
   const p=o.pol;
   o.bel={brg:clamp(p-30+ri(-10,10),-100,100),bor:clamp((nb?-55:E==='bourgeois'?15:E==='artisan'?10:0)+ri(-12,12),-100,100),bch:clamp(Math.round(p*.8)+ri(-15,15),-100,100),
@@ -39,23 +48,33 @@ function attrsInit(o){const E=o.estate,nb=ESTATES[E].noble;
 function attrsMigrate(o){if(!o)return o;if(o.sk&&o.rep&&o.bel)return o;
   const base={estate:o.estate,region:o.region,pol:o.pol,faith:o.faith,faithKind:o.faithKind,st:o.st};attrsInit(base);
   o.st.dex=o.st.dex??clamp(base.st.dex+Math.min(o.age,18)*1.5,0,100);o.st.str=o.st.str??clamp(base.st.str+Math.min(o.age,18)*2.4,0,100);
-  for(const k of ['sk','rep','bel','val','rel','frel','inf0','econ','econPrev'])if(o[k]==null)o[k]=base[k];return o}
+  for(const k of ['sk','kn','rep','bel','val','rel','frel','inf0','econ','econPrev'])if(o[k]==null)o[k]=base[k];SKILLS.forEach(([k])=>{if(o.sk[k]==null)o.sk[k]=0});o.rel=(o.rel||[]).filter(r=>r.pid);return o}
 
 /* ---------- 해마다 ---------- */
 // 직업 트랙이 기르는 숙련
-const TRACK_SK={farm:{farm:3,str:1},craft:{craft:3,dex:1},law:{pen:3,orat:2},church:{orat:2,pen:1},med:{heal:3,dex:1},army:{arms:3,str:1},pol:{orat:3},letters:{pen:3}};
-function mainSkill(){const j=job();if(j){if(j.tr==='craft'&&j.t>=4)return 'trade';if(j.tr==='craft'&&!isM()&&j.t<=3)return 'sew';const t=TRACK_SK[j.tr];if(t)return Object.keys(t).find(k=>SKK.has(k))}
+const TRACK_SK={farm:{farm:3,str:1},craft:{dex:1},law:{pen:3,orat:2,klaw:2},church:{orat:2,pen:1,ktheo:2,klat:1},med:{heal:3,dex:1,kmed:2,ksci:1},army:{arms:3,str:1},pol:{orat:3,khist:1},letters:{pen:3,klett:2,kphil:1}};
+function mainSkill(){const j=job();if(j){if(j.tr==='craft'&&j.t>=4)return 'trade';if(j.tr==='craft')return pickSpec();const t=TRACK_SK[j.tr]||TRACK_SK_EXTRA[j.tr];if(t&&t.main)return t.main;if(t)return Object.keys(t).find(k=>SKK.has(k))}
   let best='craft',bv=-1;for(const [k] of SKILLS)if(s.sk[k]>bv){bv=s.sk[k];best=k}return best}
-function grow(k,n){if(k in s.st)s.st[k]=clamp(s.st[k]+n,0,100);else if(SKK.has(k))s.sk[k]=clamp((s.sk[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.sk[k]||0)/120))),0,100)}
+function grow(k,n){if(KNK.has(k)){s.kn[k]=clamp((s.kn[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.kn[k]||0)/120))),0,lit()?100:15);return}if(k in s.st)s.st[k]=clamp(s.st[k]+n,0,100);else if(SKK.has(k))s.sk[k]=clamp((s.sk[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.sk[k]||0)/120))),0,100)}
 function childGrowth(){const a=s.age,f=isM()?1:.8;
   if(a>=2&&a<=18){grow('str',Math.round((ri(2,3)+(a>=8&&['peasant','artisan'].includes(s.estate)?1:0))*f));grow('dex',ri(0,2))}
   if(a>=7&&a<14){if(s.estate==='peasant')grow('farm',ri(2,4));if(s.estate==='artisan')grow('craft',ri(1,3));if(!isM())grow('sew',ri(2,4));
     if(noble()&&a>=10){if(isM()){grow('ride',ri(2,4));grow('arms',ri(2,4))}else{grow('music',ri(2,4));grow('draw',ri(1,3))}}
     if(lit())grow('pen',ri(1,3))}}
-function attrsYear(pl){if(child()){childGrowth();return}
+// 학교에서 자라는 학식 분야
+function schoolKnow(){if(!s.kn)return;const x=SCH(),T0=T();if(!inSchool())return;
+  const g=(k,n)=>grow(k,n);
+  if(x.st==='petite'){g('khist',ri(0,1))}
+  if(x.st==='college'){const mod=T0>=1795.75;g('klat',mod?2:3);g('khist',1);if(mod)g('ksci',2);else if(R()<.5)g('ksci',1);if(s.age>=15)g('kphil',T0>=1795.75&&T0<1802.5?1:2);if(R()<.3)g('klett',1)}
+  if(x.st==='convent'){g('klett',2);g('khist',1);if(R()<.5)g('klang',1);grow('manner',2);grow('music',1)}
+  if(x.st==='univ'){if(x.fac==='law'){g('klaw',5);g('klat',1)}if(x.fac==='med'){g('kmed',5);g('ksci',2)}}
+  if(x.st==='seminary'){g('ktheo',5);g('klat',2);g('kphil',1)}
+  if(noble()&&s.age>=8&&s.age<16){g('klang',1);grow('manner',2)}}
+function attrsYear(pl){schoolKnow();if(child()){childGrowth();return}
+  if(s.faithMode)faithYear();
   const away=s.cond!=='normal';const j=job();
-  if(j&&!away){const t=TRACK_SK[j.tr]||{};for(const k in t)if(R()<.75)grow(k,t[k]);
-    if(j.tr==='craft'&&j.t>=4)grow('trade',2);if(j.tr==='craft'&&!isM()&&j.t<=3)grow('sew',2);if(j.tr==='army'&&j.t>=3)grow('ride',2);if(j.tr==='med'&&j.t>=3)grow('orat',1)}
+  if(j&&!away){const t=TRACK_SK[j.tr]||TRACK_SK_EXTRA[j.tr]||{};for(const k in t)if(k!=='main'&&R()<.75)grow(k,t[k]);
+    if(j.tr==='craft'){grow(pickSpec(),3);if(j.t>=4)grow('trade',2)}if(noble()||j.t>=4)grow('manner',1);if(j.tr==='army'&&j.t>=3)grow('ride',2);if(j.tr==='med'&&j.t>=3)grow('orat',1)}
   if(s.age>=14&&s.age<20&&!away)grow('str',isM()?ri(0,2):ri(0,1));
   if(pl==='수련'){grow('dex',2);grow(mainSkill(),3)}
   if(pl==='단련'){grow('str',3);grow('hp',1)}
@@ -66,8 +85,28 @@ function attrsYear(pl){if(child()){childGrowth();return}
   if(s.sus>=50)s.rep.rloc=clamp(s.rep.rloc-2,0,100);
   s.inf0=Math.round((s.inf0||0)*.9)}
 
+/* ---------- 신앙: 상태가 아니라 신앙생활의 선택 ----------
+   tgt: 해마다 신앙 수치가 다가가는 값. ok(): 고를 수 있는 시기·처지. 한 해에 한 번 바꿀 수 있다. */
+const FAITHM=[
+ {k:'devout',n:'독실하게 믿는다',s:'미사·고해·순례를 빠뜨리지 않는다. 공포정치기엔 혐의를 산다',tgt:82,ok:()=>true},
+ {k:'custom',n:'관습대로 따른다',s:'세례·혼인·장례와 부활절 영성체만 지킨다',tgt:52,ok:()=>true},
+ {k:'conflict',n:'성직자와 갈등한다',s:'십일조와 사제의 간섭에 맞선다. 신앙은 지키되 교회와 거리를 둔다',tgt:40,ok:()=>s.faithKind==='catholic'},
+ {k:'secret',n:'몰래 옛 신앙을 지킨다',s:'선서 거부 사제의 비밀 미사에 나간다',tgt:75,ok:()=>s.faithKind==='catholic'&&T()>=1791.3&&T()<1801.6},
+ {k:'reason',n:'이성의 축제에 나간다',s:'비기독교화 운동에 함께한다',tgt:12,ok:()=>T()>=1793.8&&T()<1794.4},
+ {k:'supreme',n:'최고 존재를 섬긴다',s:'로베스피에르의 시민 종교',tgt:30,ok:()=>T()>=1794.3&&T()<1794.6},
+ {k:'theo',n:'경신박애교 모임에 나간다',s:'총재정부기의 자연 종교 모임',tgt:30,ok:()=>T()>=1796.9&&T()<1801.9},
+ {k:'doubt',n:'의심하고 멀리한다',s:'볼테르처럼 회의하거나 그냥 무관심하다',tgt:15,ok:()=>true}];
+function faithModeNow(){return s.faithMode||(s.faith>=70?'devout':s.faith>=35?'custom':'doubt')}
+function setFaithMode(k){const m=FAITHM.find(x=>x.k===k);if(!m||!m.ok())return;if(s.acts.faithMode===s.year)return;s.acts.faithMode=s.year;const was=faithModeNow();s.faithMode=k;
+  s.flags.anticler=k==='conflict';if(k==='secret')s.flags.secretMass=true;
+  const fxo={devout:{vord:1,rloc:west()?2:0},conflict:{brl:4,vlib:1},secret:{vord:1,sus:inTerror()?4:0},reason:{brl:8,bch:3,rloc:west()?-6:0,rpeople:inParis()?2:0},supreme:{brl:4},theo:{brl:4,vlib:1},doubt:{brl:3,kphil:1},custom:{}}[k]||{};
+  say(`신앙생활을 바꾸었다: ${m.n}.`+fx(fxo),'sys')}
+function faithYear(){const m=FAITHM.find(x=>x.k===faithModeNow());if(!m)return;if(!m.ok()){s.faithMode=s.faithKind==='catholic'?'custom':'custom'}
+  const t=(FAITHM.find(x=>x.k===faithModeNow())||m).tgt;s.faith=clamp(Math.round(s.faith+(t-s.faith)*.2),0,100);
+  if(inTerror()&&['devout','secret'].includes(faithModeNow())&&s.faithKind==='catholic')s.sus=clamp(s.sus+3,0,100)}
+
 /* ---------- 신앙 ---------- */
-function faithLabel(){const k={catholic:'가톨릭',protestant:'개신교(위그노)',jewish:'유대교'}[s.faithKind]||'가톨릭';const f=s.faith;
+function faithLabel(){const k={catholic:'가톨릭',protestant:'개신교(위그노)',jewish:'유대교'}[s.faithKind]||'가톨릭';const f=s.faith;const fm=s.faithMode&&FAITHM.find(x=>x.k===s.faithMode);if(fm&&!priest()&&!nun())return `${k} · ${fm.n}`;
   let m=f>=70?'독실한 신자':f>=40?'관습을 따르는 신자':f>=20?'신앙이 식은 신자':'믿음을 잃은 사람';
   if(s.faithKind==='catholic'&&f>=35&&(s.flags.anticler||s.bel.brl>=45))m='성직자와 갈등하는 신자';
   if(priest()||nun())m=f>=50?(s.flags.refractory?'선서 거부 성직자':s.flags.juror?'선서 성직자':'성직자'):'흔들리는 성직자';
@@ -125,23 +164,43 @@ function frelWord(v){return v>=50?'깊은 신뢰':v>=20?'신뢰':v<=-50?'적대'
 function frelJoin(id){frelAdd(id,30);activeFactions().forEach(f=>{if(f.id!==id)frelAdd(f.id,facPair(id,f.id)*.2)});
   const fp=FAC[id].pol;if(fp>=45){fxAttr('rpeople',4);fxAttr('relite',-4)}else if(fp<=-40){fxAttr('relite',4);fxAttr('rpeople',-4)}
   (s.rel||[]).filter(r=>r.alive&&r.fac&&r.fac!==id&&facPair(id,r.fac)<=-50).forEach(r=>{r.close=clamp(r.close-10,0,100);L(`${r.n}${bat(r.n)?'은':'는'} ${FAC[r.fac].n} 사람이다. 사이가 서먹해졌다.`,'sys')})}
-function frelStance(id,v){activeFactions().forEach(f=>{const k=ISSUES.findIndex(x=>x.id===id);const th=f.st[k];if(th==null||th<0)return;frelAdd(f.id,ISSUES[k].opts[th][1]===v?3:-2)})}
+function frelStance(id,v){activeFactions().forEach(f=>{const k=ISSUES.findIndex(x=>x.id===id);const th=ISSUES[k].fp?ISSUES[k].fp[f.id]:f.st[k];if(th==null||th<0)return;frelAdd(f.id,ISSUES[k].opts[th][1]===v?3:-2)})}
 
 /* ---------- 사람 사이의 관계 ---------- */
 // r = {n 이름, role 관계, sex, fac 소속 파벌, close 친밀도, trust 신뢰, resp 존경, riv 경쟁심, y 만난 해, alive, v 그가 중히 여기는 가치, inf 그의 영향력, tr 직업 트랙}
 const ROLEN=['친구','스승','동료','후원자','연인','경쟁자'];
 const relsAlive=()=>(s.rel||[]).filter(r=>r.alive);
+// 관계는 실존 인물(PEOPLE, src/data/people.json)만. 지어낸 이름(o.n)으로는 관계를 만들지 않는다.
+const PBY={};(typeof PEOPLE!=='undefined'?PEOPLE:[]).forEach(p=>PBY[p.id]=p);
+const perOf=r=>r&&r.pid?PBY[r.pid]:null;
+const at=(tab,t=T())=>{for(const x of tab||[])if(t>=x[0]&&t<x[1])return x[2];return null};
+function ctxOk(c,role){const t=T();if(t<c.y[0]||t>=c.y[1])return false;if(role&&!c.role.includes(role))return false;
+  if(c.reg&&!c.reg.includes('any')&&!c.reg.includes(loc()))return false;const w=c.who||{};
+  if(w.estate&&!w.estate.includes(s.estate))return false;if(w.sex&&w.sex!==s.sex)return false;
+  if(w.track&&!(job()&&w.track.includes(job().tr)))return false;if(w.school&&!(inSchool()&&SCH().st===w.school||(Array.isArray(w.school)&&w.school.includes(SCH().st))))return false;
+  const pf=w.party||w.fac;if(pf&&!(s.party&&pf.includes(s.party)))return false;if(w.lit&&!lit())return false;if(w.urban&&!urban())return false;
+  if(w.age&&(s.age<w.age[0]||s.age>w.age[1]))return false;if(w.faith&&w.faith!==s.faithKind)return false;return true}
+function realCands(role){const t=T(),known=new Set((s.rel||[]).map(r=>r.pid));const out=[];
+  for(const p of PEOPLE){if(known.has(p.id))continue;if(s.year<p.b+12||s.year>=p.d)continue;if(role==='연인'&&p.sex===s.sex)continue;
+    for(const c of p.ctx||[])if(ctxOk(c,role)){out.push([p,c]);break}}return out}
 function addRel(role,o={}){s.rel=s.rel||[];if(relsAlive().length>=12)return null;
-  const sex=o.sex||(role==='연인'?(isM()?'F':'M'):(role==='친구'&&!isM()?(R()<.8?'F':'M'):R()<.8?'M':'F'));const n=o.n||(sex==='M'?person():woman());
-  const r={n,role,sex,fac:o.fac||null,close:o.close??ri(40,60),trust:o.trust??ri(35,60),resp:o.resp??ri(30,60),riv:o.riv??(role==='경쟁자'?ri(50,75):ri(0,15)),y:s.year,alive:true,
-    v:o.v||pick(VALUES)[0],inf:o.inf??(role==='후원자'?ri(30,70):ri(0,25)),tr:o.tr||(job()?job().tr:null),w:o.w||''};
-  s.rel.push(r);return r}
+  let p=o.pid?PBY[o.pid]:null,c=null;
+  if(!p&&o.n){p=PEOPLE.find(x=>x.n===o.n||x.fr===o.n);if(!p)return null}
+  if(!p){const cs=realCands(role);if(!cs.length)return null;[p,c]=pick(cs)}
+  if((s.rel||[]).some(r=>r.pid===p.id))return null;
+  const r={pid:p.id,n:p.n,role,sex:p.sex,fac:at(p.fac),close:o.close??ri(40,60),trust:o.trust??ri(35,60),resp:o.resp??ri(35,65)+Math.round((at(p.inf)||0)/5),riv:o.riv??(role==='경쟁자'?ri(50,75):ri(0,15)),y:s.year,alive:true,
+    v:p.v||'vjus',inf:at(p.inf)||0,tr:o.tr||(job()?job().tr:null),w:(c&&c.w)||o.w||''};
+  r.resp=clamp(r.resp,0,100);s.rel.push(r);return r}
+// 실존 인물의 소속 파벌·영향력·죽음은 역사를 따른다
+function relSync(){for(const r of s.rel||[]){const p=perOf(r);if(!p){r.alive=false;continue}
+  if(r.alive){r.fac=at(p.fac);r.inf=at(p.inf)||0;
+    if(s.year>p.d||(s.year===p.d&&s.month+1>=(p.dm||7))){r.alive=false;r.dead=p.d;L(`${r.role} ${p.n}${bat(p.n)?'이':'가'} ${p.d}년 ${p.dc==='노환'||p.dc==='병'?`${p.d-p.b}세로 세상을 떠났다`:p.dc==='단두대'?'단두대에서 처형되었다':p.dc==='전사'?'전사하였다':`세상을 떠났다 (${p.dc})`}.`,r.close>=55?'ev':'sys');if(r.close>=60&&!child())fx({hp:-1})}}}}
 function relFx(r,o){const parts=[];for(const [k,lab] of [['close','친밀'],['trust','신뢰'],['resp','존경'],['riv','경쟁심']])if(o[k]){r[k]=clamp(r[k]+o[k],0,100);parts.push(`${lab} ${o[k]>0?'+':''}${o[k]}`)}return parts.length?` (${r.n}: ${parts.join(', ')})`:''}
 const patron=()=>relsAlive().find(r=>r.role==='후원자'&&r.close>=55&&r.trust>=50);
 const rival=()=>relsAlive().find(r=>r.role==='경쟁자'&&r.riv>=60&&(!r.tr||!job()||r.tr===job().tr));
 // 그의 가치관에 내 처신이 맞는가: -1 · 0 · +1
 function relJudge(r){const b=s.bel;return r.v==='vord'?(b.bch>=40||s.sus>=40?-1:b.bch<=-10?1:0):r.v==='veq'?(b.bor>=30?1:b.bor<=-30?-1:0):r.v==='vlib'?(b.brl>=20||b.brg>=20?1:0):r.v==='vhon'?(s.rep.relite>=60?1:s.rep.relite<=30?-1:0):r.v==='vfam'?(s.married?1:0):r.v==='vjus'?(s.rep.rloc>=60?1:0):0}
-async function relTick(){if(child()||s.cond==='prison')return;const rl=relsAlive();
+async function relTick(){if((child()&&!(s.age>=9&&inSchool()))||s.cond==='prison')return;const rl=relsAlive();
   // 새로 만나는 사람
   const ctx=[];
   if(inSchool(['college','univ','seminary','convent']))ctx.push(['친구',.35,'동창'],['스승',.15,'선생']);
@@ -149,15 +208,11 @@ async function relTick(){if(child()||s.cond==='prison')return;const rl=relsAlive
   if(s.party)ctx.push(['동료',.25,'파벌']);
   if(!s.married&&s.age>=16&&s.age<=32&&!priest()&&!nun())ctx.push(['연인',.12+(s.st.soc>=50?.05:0),'']);
   if(!rl.some(r=>r.role==='친구'))ctx.push(['친구',.3,'이웃']);
-  for(const [role,p,w] of ctx){if(rl.filter(r=>r.role===role).length>=(role==='동료'?3:2))continue;if(R()<p){const r=addRel(role,{w,fac:w==='파벌'?s.party:null});if(r)L(`${w==='파벌'?FAC[s.party].n+'에서 ':w==='동창'?'학교에서 ':w==='선생'?'':w==='윗사람'?'':w==='일터'?'일터에서 ':''}${r.n}${bat(r.n)?'과':'와'} ${role==='연인'?'가까워졌다':role==='경쟁자'?'맞수가 되었다':role==='후원자'?'연이 닿아 그가 뒤를 봐주기로 했다':role==='스승'?'스승으로 모시게 되었다':'알게 되었다'}.`,'sys');break}}
-  // 정치의 계절: 지인들도 파벌을 고른다
-  if(T()>=1789.5)relsAlive().filter(r=>!r.fac&&R()<.25).forEach(r=>{const fs=activeFactions();if(fs.length)r.fac=pick(fs).id});
-  relsAlive().forEach(r=>{if(r.fac&&FAC[r.fac]&&T()>=FAC[r.fac].b)r.fac=SUCC[r.fac]||null});
-  // 죽음과 멀어짐
-  for(const r of relsAlive()){if(R()<(r.role==='스승'||r.role==='후원자'?.05:.025)){r.alive=false;L(`${r.role} ${r.n}${bat(r.n)?'이':'가'} 세상을 떠났다.`,r.close>=60?'ev':'sys');if(r.close>=60)fx({hp:-1})}
-    else if(r.close<15&&r.role!=='경쟁자'&&R()<.5){r.alive=false;L(`${r.n}${bat(r.n)?'과':'와'}는 연락이 끊겼다.`,'sys')}}
+  for(const [role,p,w] of ctx){if(rl.filter(r=>r.role===role).length>=(role==='동료'?3:2))continue;if(R()<p){const r=addRel(role);if(r){const P=perOf(r);L(`${r.w||'알게 되었다'} — ${P.n}(${P.fr}, ${P.b}~${P.d}). ${P.bio}`,'ev');break}}}
+  relSync();
+  for(const r of relsAlive())if(r.close<15&&r.role!=='경쟁자'&&R()<.5){r.alive=false;r.lost=1;L(`${r.n}${bat(r.n)?'과':'와'}는 연락이 끊겼다.`,'sys')}
   // 한 해의 사귐
-  const live=relsAlive();if(live.length&&R()<.7)await relEvent(pick(live))}
+  const live=relsAlive();if(!child()&&live.length&&R()<.7)await relEvent(pick(live))}
 async function relEvent(r){const j=relJudge(r);const roleS=`${r.role} ${r.n}`;
   if(r.role==='경쟁자'){if(R()<.5){say(`맞수 ${r.n}${bat(r.n)?'이':'가'} 뒤에서 험담을 퍼뜨렸다.`+fx({rguild:-3})+relFx(r,{riv:4}))}
     else{const i=await Q('맞수',`rivalité`,`${r.n}${bat(r.n)?'과':'와'} 같은 자리를 두고 겨루게 되었다.`,[{l:'정면으로 겨룬다',s:'기술·사교 판정',a:'bold work'},{l:'손을 내밀어 화해한다',s:'',a:'social safe'}]);
@@ -184,10 +239,10 @@ async function relPurge(id){const r=relsAlive().find(x=>x.fac===id&&x.close>=45)
   const i=await Q('숨겨 달라는 부탁',`asile`,`${FAC[id].n}${bat(FAC[id].n)?'이':'가'} 무너지자 ${r.role} ${r.n}${bat(r.n)?'이':'가'} 밤중에 찾아왔다. 며칠만 숨겨 달라고 한다.`,[
     {l:'다락에 숨겨 준다',s:'혐의 +, 친밀·신뢰 크게 +',a:'bold family'},{l:'돈을 쥐여 보내고 문을 닫는다',s:'재산 -60',a:'safe'},{l:'구 위원회에 알린다',s:'혐의 -, 관계 끝',a:'radical'}]);
   if(i===0){const caught=await chance(inTerror()?.15:.06,'발각','숨겨 준 사람이 들킨 비율');
-    if(caught){say(`가택 수색에서 ${r.n}${bat(r.n)?'이':'가'} 붙잡혔다. 그대도 공범으로 의심받는다.`+fx({sus:20,rloc:-3}),'big');r.alive=R()<.5}
+    if(caught){say(`가택 수색이 들이닥쳐 ${r.n}${bat(r.n)?'은':'는'} 지붕을 타고 달아났다. 그대는 공범으로 의심받는다.`+fx({sus:20,rloc:-3})+relFx(r,{trust:10}),'big')}
     else say(`${r.n}${bat(r.n)?'은':'는'} 열흘 뒤 몰래 길을 떠났다. 평생 이 일을 잊지 않을 것이다.`+fx({sus:5})+relFx(r,{close:25,trust:30,resp:15}),'big')}
   else if(i===1){say(`${r.n}에게 돈을 쥐여 보냈다.`+fx({money:-60})+relFx(r,{close:-10,trust:-5}))}
-  else{say(`${r.n}${bat(r.n)?'을':'를'} 고발하였다. 이웃들은 그대를 다른 눈으로 본다.`+fx({sus:-10,rloc:-6,pol:4}),'dark');r.alive=R()<.3;r.close=0;r.trust=0;r.role='경쟁자'}
+  else{say(`${r.n}${bat(r.n)?'을':'를'} 고발하였다. 이웃들은 그대를 다른 눈으로 본다.`+fx({sus:-10,rloc:-6,pol:4}),'dark');r.close=0;r.trust=0;r.role='경쟁자'}
   await done()}
 
 /* ---------- 지역 경제 ---------- */
@@ -209,3 +264,17 @@ function econCalc(a,y){const pr=price(y);
 function econ(){const a=AREA();if(!s.econ||s.econ.y!==s.year||s.econ.a!==a){if(s.econ&&s.econ.y!==s.year)s.econPrev=s.econ;s.econ=econCalc(a,s.year)}return s.econ}
 const wageEarner=()=>{const j=job();return !!j&&((j.tr==='farm'&&j.t<=2)||(j.tr==='craft'&&j.t<=2))};
 function econWord(k,v){if(k==='price')return v>=1.6?'폭등':v>=1.3?'높음':v>=1.1?'조금 높음':v<=.9?'쌈':'보통';if(k==='wage')return v>=1.2?'좋음':v<=.95?'나쁨':'보통';if(k==='cur')return v>=.95?'안정':v>=.5?'하락':v>=.1?'폭락':'휴지 조각';return v>=75?'넉넉':v>=55?'보통':v>=35?'모자람':'심각'}
+// 그 시절의 물가와 화폐: 장바구니 값과 돈의 가치
+// 파리 빵 4리브르(약 2kg) 한 덩이: 평년 8~9수, 1789년 7월 14.5수(Rudé), 1793~94년 최고가격제로 12수 상한. 혁명 뒤 오랜 물가 상승을 반영한다.
+function secular(y){return y<1790?1:y<1797?1.15:y<1815?1.4:1.35}
+function basket(){const E=econ(),y=s.year,a=E.a,pr=price(y),sec=secular(y);
+  let bread=8*pr*sec*(a==='rural'?.85:a==='city'?.95:1);if(y>=1793&&y<=1794&&a!=='rural')bread=Math.min(bread,12);
+  const meat=9*Math.sqrt(pr)*sec*(a==='rural'?.8:1),wine=(a==='paris'?10:a==='city'?6:4)*sec,wood=(a==='paris'?30:a==='city'?20:8)*sec*Math.sqrt(pr),rent=(a==='paris'?120:a==='city'?60:20)*sec;
+  return [['빵 4리브르 한 덩이',bread,'sou'],['쇠고기 1리브르',meat,'sou'],['포도주 1팽트',wine,'sou'],['장작 한 짐',wood,'sou'],['셋방 한 해',rent,'liv']]}
+function priceTxt(v,u){const fr=T()>=1795.5;if(u==='liv')return `${fmt(v)} ${fr?'프랑':'리브르'}`;return fr?`${Math.round(v*5)}상팀`:`${Math.round(v*10)/10}수`}
+function curNote(){const t=T(),E=econ();
+  if(t<1790)return '리브르 투르누아. 1리브르 = 20수 = 240드니에. 루이 금화 = 24리브르, 에퀴 은화 = 6리브르.';
+  if(t<1796.2)return `아시냐 지폐와 금속 화폐가 함께 돈다. 지폐 100리브르로 은화 ${Math.round(E.cur*100)}리브르어치를 산다.`;
+  if(t<1797.1)return `아시냐를 거두고 토지 증권(만다)을 냈으나 곧 휴지가 되었다. 지폐 100으로 은화 ${Math.max(1,Math.round(E.cur*100))}어치.`;
+  if(t<1803.3)return '지폐가 폐지되고 금속 화폐로 돌아왔다. 셈은 프랑(1프랑 = 100상팀, 옛 1수 = 5상팀).';
+  return '제르미날 프랑(1803년 법, 은 4.5g). 나폴레옹 금화 한 닢이 20프랑.'}
