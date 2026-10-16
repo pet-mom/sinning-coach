@@ -596,7 +596,8 @@
    "age": [
     7,
     12
-   ]
+   ],
+   "fa": true
   },
   "w": 0.7,
   "once": true,
@@ -1172,7 +1173,8 @@
    "estate": [
     "peasant",
     "artisan"
-   ]
+   ],
+   "mo": true
   },
   "w": 1,
   "once": false,
@@ -2865,7 +2867,8 @@
     10,
     15
    ],
-   "sex": "M"
+   "sex": "M",
+   "fa": true
   },
   "w": 1.5,
   "once": true,
@@ -2902,7 +2905,8 @@
    "estate": [
     "artisan",
     "peasant"
-   ]
+   ],
+   "fa": true
   },
   "w": 1,
   "once": true,
@@ -3166,7 +3170,8 @@
    ],
    "region": [
     "normandie"
-   ]
+   ],
+   "fa": true
   },
   "w": 0.6,
   "once": false,
@@ -3176,6 +3181,9 @@
     "cite": "Désert, G. (1969), 「Les mémoires d'un travailleur bas-normand (Première moitié du XIXe siècle)」, Annales de Normandie 19(1): 59-77",
     "url": "https://www.persee.fr/doc/annor_0003-4134_1969_num_19_1_5009"
    }
+  ],
+  "kill": [
+   "fa"
   ]
  },
  {
@@ -3389,7 +3397,8 @@
     "robe",
     "epee"
    ],
-   "urban": true
+   "urban": true,
+   "mo": true
   },
   "w": 1,
   "once": true,
@@ -3455,7 +3464,8 @@
    "estate": [
     "artisan",
     "bourgeois"
-   ]
+   ],
+   "mo": true
   },
   "w": 1,
   "once": true,
@@ -3544,7 +3554,8 @@
     "robe",
     "hobereau",
     "epee"
-   ]
+   ],
+   "fa": true
   },
   "w": 1,
   "once": false,
@@ -3862,7 +3873,9 @@
    "estate": [
     "peasant",
     "artisan"
-   ]
+   ],
+   "fa": true,
+   "mo": true
   },
   "w": 1,
   "once": true,
@@ -4007,7 +4020,8 @@
    "age": [
     1,
     16
-   ]
+   ],
+   "fa": true
   },
   "w": 0.8,
   "once": true,
@@ -4017,6 +4031,9 @@
     "cite": "Perrier, S. (1995), 「Rôle des réseaux de parenté dans l'éducation des mineurs orphelins selon les comptes de tutelle parisiens (XVIIe-XVIIIe siècles)」, Annales de démographie historique 1995: 125-135",
     "url": "https://www.persee.fr/doc/adh_0066-2062_1995_num_1995_1_1892"
    }
+  ],
+  "kill": [
+   "fa"
   ]
  },
  {
@@ -4034,7 +4051,9 @@
    "age": [
     2,
     15
-   ]
+   ],
+   "fa": false,
+   "mo": true
   },
   "w": 0.8,
   "once": true,
@@ -4061,7 +4080,9 @@
    "age": [
     3,
     15
-   ]
+   ],
+   "fa": true,
+   "mo": true
   },
   "w": 0.6,
   "once": true,
@@ -4075,6 +4096,10 @@
     "cite": "Perrier, S. (1995), 「Rôle des réseaux de parenté dans l'éducation des mineurs orphelins selon les comptes de tutelle parisiens (XVIIe-XVIIIe siècles)」, Annales de démographie historique 1995: 125-135",
     "url": "https://www.persee.fr/doc/adh_0066-2062_1995_num_1995_1_1892"
    }
+  ],
+  "kill": [
+   "fa",
+   "mo"
   ]
  },
  {
@@ -4195,7 +4220,8 @@
    ],
    "estate": [
     "peasant"
-   ]
+   ],
+   "fa": true
   },
   "w": 1,
   "once": false,
@@ -4560,7 +4586,8 @@
    "estate": [
     "artisan",
     "bourgeois"
-   ]
+   ],
+   "fa": true
   },
   "w": 1,
   "once": false,
@@ -4616,7 +4643,8 @@
    "age": [
     1,
     12
-   ]
+   ],
+   "mo": true
   },
   "w": 0.8,
   "once": true,
@@ -4626,6 +4654,9 @@
     "cite": "Robin-Romero, I. (1998), 「Les établissements pour orphelins à Paris aux XVIe-XVIIIe siècles」, Histoire, économie et société 17(3): 441-453",
     "url": "https://www.persee.fr/doc/hes_0752-5702_1998_num_17_3_1996"
    }
+  ],
+  "kill": [
+   "mo"
   ]
  },
  {

@@ -2462,7 +2462,8 @@
    "to": 1800
   },
   "who": {
-   "urban": false
+   "urban": false,
+   "fa": true
   },
   "w": 2,
   "once": false,
@@ -3584,7 +3585,8 @@
   "who": {
    "region": [
     "bretagne"
-   ]
+   ],
+   "fa": false
   },
   "w": 1,
   "once": false,
@@ -3664,7 +3666,10 @@
     "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
     "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
    }
-  ]
+  ],
+  "who": {
+   "fa": false
+  }
  },
  {
   "id": "dth-154",

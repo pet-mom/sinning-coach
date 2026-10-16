@@ -1,7 +1,11 @@
 /* ================= 무작위 사건 ================= */
-const S=(id,c,w,cd,lines,k)=>({id,c,w,cd,run:async()=>{let ls=lines.filter(l=>(!l[2]||l[2]())&&!(l[3]&&s.done['L:'+l[0]]));if(ls.length>1)ls=ls.filter(l=>l[0]!==s.lastLine);if(!ls.length)return;const x=pick(ls);s.lastLine=x[0];if(x[3])s.done['L:'+x[0]]=1;say(x[0]+fx(typeof x[1]==='function'?x[1]():x[1]||{}),k)}});
-const C=(id,c,w,cd,title,fr,text,opts)=>({id,c,w,cd,run:async()=>{const T0=typeof text==='function'?text():text,os=typeof opts==='function'?opts():opts;
-  const i=await Q(title,fr,T0,os.map(o=>({l:o.l,s:o.s,a:o.a,dis:o.dis})));await os[i].f();await done()}});
+// 부모가 나오는 장면은 그 부모가 살아 있을 때만 (장면 글에서 자동으로 알아낸다)
+const PAR_RE={fa:/(?<!(친정|시|할|외할|의붓|새|신부 |신랑 |상대 |아이 |아기 |그 |남의 ))아버지(?!\s*미상|들)/,mo:/(?<!(친정|시|할|외할|의붓|새|신부 |신랑 |상대 |남의 |‘))어머니(?!들|로서|’|가 되었)/,par:/(?<!(학|상대 |기피자의 |조))부모(?!들)/};
+function parNeed(src){src=String(src);const n={};if(PAR_RE.fa.test(src))n.fa=1;if(PAR_RE.mo.test(src))n.mo=1;if(!n.fa&&!n.mo&&PAR_RE.par.test(src))n.par=1;return n}
+function parOk(n){return !n||((!n.fa||s.fa.alive)&&(!n.mo||s.mo.alive)&&(!n.par||s.fa.alive||s.mo.alive))}
+const S=(id,c,w,cd,lines,k)=>({id,c,w,cd,run:async()=>{let ls=lines.filter(l=>(!l[2]||l[2]())&&parOk(l.pn||(l.pn=parNeed(l[0])))&&!(l[3]&&s.done['L:'+l[0]]));if(ls.length>1)ls=ls.filter(l=>l[0]!==s.lastLine);if(!ls.length)return;const x=pick(ls);s.lastLine=x[0];if(x[3])s.done['L:'+x[0]]=1;say(x[0]+fx(typeof x[1]==='function'?x[1]():x[1]||{}),k)}});
+const C=(id,c,w,cd,title,fr,text,opts)=>{const pn=parNeed(title+String(text)+(Array.isArray(opts)?opts.map(o=>(o.l||'')+(o.s||'')+String(o.f||'')).join(' '):String(opts)));const c0=c;if(pn.fa||pn.mo||pn.par)c=()=>parOk(pn)&&c0();return {id,c,w,cd,run:async()=>{const T0=typeof text==='function'?text():text,os=typeof opts==='function'?opts():opts;
+  const i=await Q(title,fr,T0,os.map(o=>({l:o.l,s:o.s,a:o.a,dis:o.dis})));await os[i].f();await done()}}};
 const pre89=()=>T()<1789.25, rev=()=>T()>=1789.25&&T()<1799.75, terror=()=>inTerror(), imp=()=>T()>=1799.75&&T()<1814;
 const peas=()=>free()&&(s.estate==='peasant'||onTrack('farm'))&&!urban();
 const town=()=>free()&&urban();

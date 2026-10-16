@@ -2861,7 +2861,8 @@
    "sex": "M",
    "job": [
     "army"
-   ]
+   ],
+   "mo": true
   },
   "w": 1.5,
   "once": false,

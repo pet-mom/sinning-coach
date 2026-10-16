@@ -3861,7 +3861,8 @@
    "estate": [
     "peasant"
    ],
-   "urban": false
+   "urban": false,
+   "fa": false
   },
   "w": 1,
   "once": false,
