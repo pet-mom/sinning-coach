@@ -1,0 +1,3821 @@
+[
+ {
+  "id": "dth-001",
+  "cat": "death",
+  "text": "이웃집 갓난아이가 첫돌을 넘기지 못하고 죽어, 작은 관이 교회 마당으로 나갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "INED 표본조사에 따르면 1740~1789년 프랑스 영아사망률은 출생 1,000명당 약 280명이었다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-002",
+  "cat": "death",
+  "text": "두 돌 무렵 열병에 걸린 아이가 숨져, 부부가 말없이 장례를 치렀다.",
+  "fx": {
+   "hp": -2,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "married": true,
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "혁명 이전 수십 년 동안 프랑스에서 태어난 아이의 절반은 10.5세가 되기 전에 사망했다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-003",
+  "cat": "death",
+  "text": "세례 잔치에서 마을 노인이 요즘은 아이들이 예전만큼 죽지 않는다고 말했다.",
+  "when": {
+   "from": 1815,
+   "to": 1835
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프랑스 영아사망률은 1820~1829년 1,000명당 180명으로, 40년 사이 3분의 1 넘게 줄었다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-004",
+  "cat": "death",
+  "text": "마흔을 넘긴 이웃이 마을에서 벌써 어른 대접을 받았다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1740~1789년 프랑스의 출생 시 기대수명은 남자 27년 미만, 여자 28년을 조금 넘는 수준이었다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-005",
+  "cat": "death",
+  "text": "혁명 뒤로 교구 장례 행렬이 눈에 띄게 줄었다는 이야기가 장터에서 오갔다.",
+  "when": {
+   "from": 1795,
+   "to": 1830
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1790년대부터 출생 시 기대수명은 해마다 남자 0.32년, 여자 0.24년씩 꾸준히 늘었다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-006",
+  "cat": "death",
+  "text": "어린 시절 함께 뛰놀던 친구들이 아직 여럿 살아 있다는 것을 문득 깨달았다.",
+  "when": {
+   "from": 1820,
+   "to": 1840
+  },
+  "who": {
+   "age": [
+    30,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "태어난 아이의 절반이 살아남는 나이는 혁명 전 10.5세였지만 1820~1829년에는 42세가 되었다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-007",
+  "cat": "death",
+  "text": "의사 하나 없는 마을인데도 아이들이 덜 죽는다며 신부가 미사에서 감사 기도를 올렸다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1829
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1790년 이후 영아사망률 하락은 시골에 예방의학, 특히 종두가 보급되기 전에 이미 시작되었다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-008",
+  "cat": "death",
+  "text": "묘지를 거닐다 젊은 아낙들의 무덤이 유난히 많다는 것을 알아차렸다.",
+  "when": {
+   "from": 1760,
+   "to": 1829
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1760년대 이후 위기 시기를 빼면 20~45세 여성의 사망률이 남성보다 3% 가까이 높았다.",
+  "src": [
+   {
+    "cite": "Yves Blayo (1975), 「La mortalité en France de 1740 à 1829」, Population 30(1): 123-142",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1975_hos_30_1_15697"
+   }
+  ]
+ },
+ {
+  "id": "dth-009",
+  "cat": "death",
+  "text": "세례받은 지 며칠 만에 아기가 숨져, 산파가 고개를 떨구고 돌아갔다.",
+  "when": {
+   "from": 1774,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1774~1794년 파리 남부 교외에서 첫돌 전 사망의 47.1%가 생후 첫 달에, 76%가 첫 6개월 안에 일어났다.",
+  "src": [
+   {
+    "cite": "Paul Galliano (1966), 「La mortalité infantile (indigènes et nourrissons) dans la banlieue Sud de Paris à la fin du XVIIIe siècle (1774-1794)」, Annales de démographie historique 1966: 139-177",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1967_num_1966_1_928"
+   }
+  ]
+ },
+ {
+  "id": "dth-010",
+  "cat": "death",
+  "text": "한여름 더위 속에 마을 젖먹이들이 설사로 잇따라 죽어 나갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "파리 남부 교외에서 영아 사망의 3분의 1이 7·8·9월에 몰렸고, 겨울은 23%에 그쳤다(1774~1794).",
+  "src": [
+   {
+    "cite": "Paul Galliano (1966), 「La mortalité infantile (indigènes et nourrissons) dans la banlieue Sud de Paris à la fin du XVIIIe siècle (1774-1794)」, Annales de démographie historique 1966: 139-177",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1967_num_1966_1_928"
+   }
+  ]
+ },
+ {
+  "id": "dth-011",
+  "cat": "death",
+  "text": "쌍둥이 가운데 사내아이가 먼저 떠나자, 산모가 사내애가 더 약하다는 말을 되뇌었다.",
+  "when": {
+   "from": 1774,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1774~1794년 파리 남부 교외 기록은 생후 첫해 남아의 사망률이 여아보다 높았음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Paul Galliano (1966), 「La mortalité infantile (indigènes et nourrissons) dans la banlieue Sud de Paris à la fin du XVIIIe siècle (1774-1794)」, Annales de démographie historique 1966: 139-177",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1967_num_1966_1_928"
+   }
+  ]
+ },
+ {
+  "id": "dth-012",
+  "cat": "death",
+  "text": "유행병이 돈 해, 교외 마을 장부에 아기들의 이름이 평소보다 길게 이어졌다.",
+  "when": {
+   "from": 1781,
+   "to": 1787
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 남부 교외의 영아사망률은 1781~1787년 유행병으로 1,000명당 190명까지 올랐다가 1788~1794년 160명으로 내려갔다.",
+  "src": [
+   {
+    "cite": "Paul Galliano (1966), 「La mortalité infantile (indigènes et nourrissons) dans la banlieue Sud de Paris à la fin du XVIIIe siècle (1774-1794)」, Annales de démographie historique 1966: 139-177",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1967_num_1966_1_928"
+   }
+  ]
+ },
+ {
+  "id": "dth-013",
+  "cat": "death",
+  "text": "건넛집은 아이 여섯을 하나도 잃지 않고 키워 마을의 부러움을 샀다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bourgogne",
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 앵 지방 드뤼야의 출산 가정 178곳 가운데 85곳(47%)은 아이를 하나도 잃지 않았다.",
+  "src": [
+   {
+    "cite": "Alain Bideau·Guy Brunet·Michel Floquet (1994), 「Mortalité différentielle des enfants indigènes et des enfants en nourrice. L'exemple de Druillat (Ain) au XVIIIe siècle」, Annales de démographie historique 1994: 151-168",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1994_num_1994_1_1864"
+   }
+  ]
+ },
+ {
+  "id": "dth-014",
+  "cat": "death",
+  "text": "센 강변 셋방에서 또 이웃 아기가 죽었다는 소식이 들려왔다.",
+  "when": {
+   "from": 1816,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "센 도의 영아사망률은 1816~1820년부터 1880년대 초까지 1,000명당 190~200명 수준에서 거의 변하지 않았다(여아 기준).",
+  "src": [
+   {
+    "cite": "Etienne van de Walle·Samuel H. Preston (1974), 「Mortalité de l'enfance au XIXe siècle à Paris et dans le département de la Seine」, Population 29(1): 89-107",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1974_num_29_1_16186"
+   }
+  ]
+ },
+ {
+  "id": "dth-015",
+  "cat": "death",
+  "text": "이웃 아낙이 무사히 첫돌을 넘긴 아이를 안고 성당에 감사 초를 바쳤다.",
+  "when": {
+   "from": 1840,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프랑스 영아사망률은 1835~1845년 빠르게 떨어져 1845년 1,000명당 144명으로 19세기 최저를 기록했다.",
+  "src": [
+   {
+    "cite": "France Meslé·Jacques Vallin (1989), 「Reconstitution de tables annuelles de mortalité pour la France au XIXe siècle」, Population 44(6): 1121-1158",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1989_num_44_6_3528"
+   }
+  ]
+ },
+ {
+  "id": "dth-016",
+  "cat": "death",
+  "text": "콜레라가 돈 해, 교구 사망 대장에 이름이 끝없이 이어졌다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1832,
+   "to": 1832
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1832년 콜레라 유행으로 프랑스 출생 시 기대수명은 남자 34.8년, 여자 36.2년으로 떨어졌다.",
+  "src": [
+   {
+    "cite": "France Meslé·Jacques Vallin (1989), 「Reconstitution de tables annuelles de mortalité pour la France au XIXe siècle」, Population 44(6): 1121-1158",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1989_num_44_6_3528"
+   }
+  ]
+ },
+ {
+  "id": "dth-017",
+  "cat": "death",
+  "text": "독감이 번진 겨울, 이웃 노인 둘이 한 주 사이에 묻혔다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1834,
+   "to": 1834,
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1834년 독감 대유행으로 프랑스 기대수명은 남자 34.0년, 여자 35.5년으로 내려갔다.",
+  "src": [
+   {
+    "cite": "France Meslé·Jacques Vallin (1989), 「Reconstitution de tables annuelles de mortalité pour la France au XIXe siècle」, Population 44(6): 1121-1158",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1989_num_44_6_3528"
+   }
+  ]
+ },
+ {
+  "id": "dth-018",
+  "cat": "death",
+  "text": "러시아 원정에 끌려간 이웃 청년의 전사 통지가 마을에 도착했다.",
+  "when": {
+   "from": 1812,
+   "to": 1814
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1812~1814년 러시아·독일·프랑스 원정 동안 프랑스 남성의 출생 시 기대수명은 25년 아래로 떨어졌다.",
+  "src": [
+   {
+    "cite": "France Meslé·Jacques Vallin (1989), 「Reconstitution de tables annuelles de mortalité pour la France au XIXe siècle」, Population 44(6): 1121-1158",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1989_num_44_6_3528"
+   }
+  ]
+ },
+ {
+  "id": "dth-019",
+  "cat": "death",
+  "text": "에스파냐로 간 아들이 돌아오지 못한다는 편지에 이웃 어머니가 주저앉았다.",
+  "when": {
+   "from": 1808,
+   "to": 1810
+  },
+  "w": 1,
+  "once": false,
+  "fact": "에스파냐 전쟁이 한창이던 1808~1809년 프랑스 남성의 출생 시 기대수명은 31.2년에 머물렀다.",
+  "src": [
+   {
+    "cite": "France Meslé·Jacques Vallin (1989), 「Reconstitution de tables annuelles de mortalité pour la France au XIXe siècle」, Population 44(6): 1121-1158",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1989_num_44_6_3528"
+   }
+  ]
+ },
+ {
+  "id": "dth-020",
+  "cat": "death",
+  "text": "이웃 아낙이 해산 뒤 열이 올라 열흘 만에 숨졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1829
+  },
+  "w": 2,
+  "once": false,
+  "fact": "INED 39개 마을 가족 복원에 따르면 18세기 농촌 프랑스의 모성사망은 출생 1,000건당 11.5명이었다.",
+  "src": [
+   {
+    "cite": "Héctor Gutiérrez·Jacques Houdaille (1983), 「La mortalité maternelle en France au XVIIIe siècle」, Population 38(6): 975-994",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1983_num_38_6_17819"
+   }
+  ]
+ },
+ {
+  "id": "dth-021",
+  "cat": "death",
+  "text": "해산 날이 다가오자 혹시 몰라 남편에게 당부의 말을 미리 해 두었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "F",
+   "married": true,
+   "age": [
+    18,
+    44
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 모성사망은 북부가 남부보다 높았고, 지역 간 차이가 시기별 차이보다 컸다.",
+  "src": [
+   {
+    "cite": "Héctor Gutiérrez·Jacques Houdaille (1983), 「La mortalité maternelle en France au XVIIIe siècle」, Population 38(6): 975-994",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1983_num_38_6_17819"
+   }
+  ]
+ },
+ {
+  "id": "dth-022",
+  "cat": "death",
+  "text": "루앙의 산파가 이번 달에만 산모 둘을 잃었다며 한숨을 쉬었다.",
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1650~1792년 루앙에서는 출산 38,228건에 산모 사망 417건, 1,000건당 10.9명이 관찰되었다.",
+  "src": [
+   {
+    "cite": "Héctor Gutiérrez·Jacques Houdaille (1983), 「La mortalité maternelle en France au XVIIIe siècle」, Population 38(6): 975-994",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1983_num_38_6_17819"
+   }
+  ]
+ },
+ {
+  "id": "dth-023",
+  "cat": "death",
+  "text": "사산아를 낳은 젊은 아낙이 며칠 뒤 아기를 따라갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1829
+  },
+  "w": 1,
+  "once": false,
+  "fact": "39개 마을 조사에서 확인된 산모 사망은 1,347건이었으며, 기록되지 않은 사산아 출산 뒤의 사망까지 보정해야 했다.",
+  "src": [
+   {
+    "cite": "Héctor Gutiérrez·Jacques Houdaille (1983), 「La mortalité maternelle en France au XVIIIe siècle」, Population 38(6): 975-994",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1983_num_38_6_17819"
+   }
+  ]
+ },
+ {
+  "id": "dth-024",
+  "cat": "medicine",
+  "text": "교육받은 새 산파가 오자 마을 아낙들이 늙은 산파 대신 그녀를 부르기 시작했다.",
+  "when": {
+   "from": 1777,
+   "to": 1807
+  },
+  "who": {
+   "region": [
+    "normandie",
+    "rouen"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1777~1807년 노르망디에서 모성사망률은 무자격 산파가 받은 출산 1,000건당 8.69명, 교육받은 산파는 5.38명이었다(42일 기준).",
+  "src": [
+   {
+    "cite": "Scarlett Beauvalet-Boutouyrie·Jacques Renard (1994), 「Des sages-femmes qui sauvent les mères ?」, Histoire, économie & société 13(2): 269-290",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1994_num_13_2_1697"
+   }
+  ]
+ },
+ {
+  "id": "dth-025",
+  "cat": "death",
+  "text": "본당 신부가 해마다 해산으로 죽는 여인이 너무 많다고 강론했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1775,
+   "to": 1789
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1781년경 의사 이카르는 프랑스에서 해마다 약 3만 명의 산모가 산후에 죽는다고 추산했다.",
+  "src": [
+   {
+    "cite": "Scarlett Beauvalet-Boutouyrie·Jacques Renard (1994), 「Des sages-femmes qui sauvent les mères ?」, Histoire, économie & société 13(2): 269-290",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1994_num_13_2_1697"
+   }
+  ]
+ },
+ {
+  "id": "dth-026",
+  "cat": "medicine",
+  "text": "마을 해산은 여전히 글 모르는 이웃 할머니가 맡았다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1786년 노르망디 조사에서 무자격 산파의 90%는 농촌에, 자격 있는 산파의 61%는 도시에 있었다.",
+  "src": [
+   {
+    "cite": "Scarlett Beauvalet-Boutouyrie·Jacques Renard (1994), 「Des sages-femmes qui sauvent les mères ?」, Histoire, économie & société 13(2): 269-290",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1994_num_13_2_1697"
+   }
+  ]
+ },
+ {
+  "id": "dth-027",
+  "cat": "medicine",
+  "text": "산파 강습이 생긴 뒤 첫 주 안에 죽는 산모가 줄었다는 말을 들었다.",
+  "when": {
+   "from": 1780,
+   "to": 1807
+  },
+  "who": {
+   "region": [
+    "normandie",
+    "rouen"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "노르망디에서 산후 첫 주 모성사망은 교육받은 산파 1,000건당 1.5명, 마트론 4.5명이었다.",
+  "src": [
+   {
+    "cite": "Scarlett Beauvalet-Boutouyrie·Jacques Renard (1994), 「Des sages-femmes qui sauvent les mères ?」, Histoire, économie & société 13(2): 269-290",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1994_num_13_2_1697"
+   }
+  ]
+ },
+ {
+  "id": "dth-028",
+  "cat": "death",
+  "text": "난산 끝에 산파가 쇠갈고리를 꺼내자 방 안 여자들이 비명을 질렀다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "18세기 기록에서 머리가 걸린 난산을 맞은 마트론은 갈고리나 숟가락, 부삽 같은 도구에 의지하곤 했다.",
+  "src": [
+   {
+    "cite": "Jacques Gélis (1977), 「Sages-femmes et accoucheurs : l'obstétrique populaire aux XVIIe et XVIIIe siècles」, Annales ESC 32(5): 927-957",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293872"
+   }
+  ]
+ },
+ {
+  "id": "dth-029",
+  "cat": "death",
+  "text": "골반이 좁은 젊은 산모가 사흘 진통 끝에 아기와 함께 숨졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "젤리스에 따르면 구루병 등으로 인한 골반 기형이 옛 난산의 주된 원인 가운데 하나였다.",
+  "src": [
+   {
+    "cite": "Jacques Gélis (1977), 「Sages-femmes et accoucheurs : l'obstétrique populaire aux XVIIe et XVIIIe siècles」, Annales ESC 32(5): 927-957",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293872"
+   }
+  ]
+ },
+ {
+  "id": "dth-030",
+  "cat": "medicine",
+  "text": "읍내 외과의가 지사에게 산파의 무지로 산모가 죽었다는 보고서를 써 보냈다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1750~1760년대부터 외과의와 사제들이 난산 사고를 지사와 보좌관에게 보고하며 마트론의 무지를 고발했다.",
+  "src": [
+   {
+    "cite": "Jacques Gélis (1977), 「Sages-femmes et accoucheurs : l'obstétrique populaire aux XVIIe et XVIIIe siècles」, Annales ESC 32(5): 927-957",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293872"
+   }
+  ]
+ },
+ {
+  "id": "dth-031",
+  "cat": "medicine",
+  "text": "부잣집 산모가 이제 산파 대신 남자 산과의를 불렀다는 소문이 돌았다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "17세기 말부터 남자 산과의가 산파의 독점을 깨뜨렸고, 18세기 후반 산파학교 설립으로 출산은 의사의 통제 아래 들어갔다.",
+  "src": [
+   {
+    "cite": "Jacques Gélis (1977), 「Sages-femmes et accoucheurs : l'obstétrique populaire aux XVIIe et XVIIIe siècles」, Annales ESC 32(5): 927-957",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293872"
+   }
+  ]
+ },
+ {
+  "id": "dth-032",
+  "cat": "medicine",
+  "text": "왕의 허가장을 지닌 산파 선생이 천 인형을 들고 와 강습을 열었다.",
+  "when": {
+   "from": 1760,
+   "to": 1783
+  },
+  "w": 1.2,
+  "once": true,
+  "fact": "뒤 쿠드레 부인은 1757년 왕국 전역 강습 허가를 받아 25년간 순회하며 진짜 골반뼈를 넣은 리넨 분만 인형으로 가르쳤다.",
+  "src": [
+   {
+    "cite": "Jérôme van Wijland (2012), 「Enluminer les accouchements, éclairer l'enseignement : les planches de l'Abbrégé de l'Art des Accouchemens de Madame du Coudray」, Histoire des sciences médicales 46(4): 403-414",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2012x046x004/HSMx2012x046x004x0403.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-033",
+  "cat": "medicine",
+  "text": "이웃 여자 몇이 쿠드레 부인의 산파 강습을 마치고 마을로 돌아왔다.",
+  "when": {
+   "from": 1760,
+   "to": 1783
+  },
+  "who": {
+   "region": [
+    "bourgogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "디종 지사에 따르면 쿠드레 부인은 부르고뉴에서 400명의 산파를 길렀고, 그 체류 비용은 월 300리브르였다.",
+  "src": [
+   {
+    "cite": "Alain Contis (2009), 「Madame du Coudray et Madame Coutanceau. La création des cours d'accouchement en Aquitaine après 1760」, Revue historique de Bordeaux et du département de la Gironde 15: 77-99",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_2009_num_15_1_1069"
+   }
+  ]
+ },
+ {
+  "id": "dth-034",
+  "cat": "medicine",
+  "text": "보르도 외과의들이 순회 산파 선생의 강습을 막았다는 소문이 돌았다.",
+  "when": {
+   "from": 1763,
+   "to": 1770
+  },
+  "who": {
+   "region": [
+    "bordeaux",
+    "gascogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1763년 4월 8일 기옌 지사청은 보르도 외과의들의 반대 속에 쿠드레 부인의 강습 제안을 거절했다.",
+  "src": [
+   {
+    "cite": "Alain Contis (2009), 「Madame du Coudray et Madame Coutanceau. La création des cours d'accouchement en Aquitaine après 1760」, Revue historique de Bordeaux et du département de la Gironde 15: 77-99",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_2009_num_15_1_1069"
+   }
+  ]
+ },
+ {
+  "id": "dth-035",
+  "cat": "medicine",
+  "text": "산파 교본 한 권을 사서 그림을 손가락으로 짚어 가며 들여다보았다.",
+  "fx": {
+   "edu": 1,
+   "money": -3
+  },
+  "when": {
+   "from": 1759,
+   "to": 1789
+  },
+  "who": {
+   "sex": "F",
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "쿠드레 부인의 산파술 교본 초판(1759)은 50수였고, 컬러 도판 26장을 넣은 1769년판은 6리브르였다.",
+  "src": [
+   {
+    "cite": "Jérôme van Wijland (2012), 「Enluminer les accouchements, éclairer l'enseignement : les planches de l'Abbrégé de l'Art des Accouchemens de Madame du Coudray」, Histoire des sciences médicales 46(4): 403-414",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2012x046x004/HSMx2012x046x004x0403.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-036",
+  "cat": "medicine",
+  "text": "파리 시립병원 분만실에서 석 달 수련을 마친 산파가 동네에 문패를 걸었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 시립병원 산파 과정은 수백 건의 분만을 지켜보는 3개월 수련이었고, 해마다 스무 명 남짓만 배출되었다.",
+  "src": [
+   {
+    "cite": "Alain Contis (2009), 「Madame du Coudray et Madame Coutanceau. La création des cours d'accouchement en Aquitaine après 1760」, Revue historique de Bordeaux et du département de la Gironde 15: 77-99",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_2009_num_15_1_1069"
+   }
+  ]
+ },
+ {
+  "id": "dth-037",
+  "cat": "medicine",
+  "text": "지사의 명으로 본당 신부가 마을 산파의 나이와 자격을 적어 올려 보냈다.",
+  "when": {
+   "from": 1786,
+   "to": 1787
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1786년 산파 조사에서 자격 있는 산파는 다섯 중 하나가 40세 미만이었으나, 마트론은 다섯 중 하나만 50세 미만이었다.",
+  "src": [
+   {
+    "cite": "Jacques Gélis (1980), 「L'enquête de 1786 sur les « sages-femmes du royaume »」, Annales de démographie historique 1980: 299-343",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1980_num_1980_1_1471"
+   }
+  ]
+ },
+ {
+  "id": "dth-038",
+  "cat": "medicine",
+  "text": "강습을 마친 산파들 가운데 과부와 처녀도 섞여 있다는 사실에 놀랐다.",
+  "when": {
+   "from": 1780,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "비르·발로뉴 보좌관구에서 강습을 받은 산파 46명은 처녀 15명, 기혼 22명, 과부 9명이었다.",
+  "src": [
+   {
+    "cite": "Jacques Gélis (1980), 「L'enquête de 1786 sur les « sages-femmes du royaume »」, Annales de démographie historique 1980: 299-343",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1980_num_1980_1_1471"
+   }
+  ]
+ },
+ {
+  "id": "dth-039",
+  "cat": "death",
+  "text": "시립병원 분만실에 들어간 미혼 여공이 산욕열로 죽었다는 소식이 들렸다.",
+  "when": {
+   "from": 1832,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1832~1874년 마르세유 시립병원 분만 5,884건은 대부분 가난한 기혼녀와 미혼모의 출산이었고, 1848년에는 산욕열이 유행처럼 번졌다.",
+  "src": [
+   {
+    "cite": "Gilles Boëtsch·Emma Rabino-Massa·Silvia Bello (1998), 「Accouchements et mortalité maternelle à l'Hôtel-Dieu de Marseille au milieu du XIXe siècle」, Bulletins et mémoires de la Société d'anthropologie de Paris 10(3-4): 425-441",
+    "url": "https://www.persee.fr/doc/bmsap_0037-8984_1998_num_10_3_2527"
+   }
+  ]
+ },
+ {
+  "id": "dth-040",
+  "cat": "death",
+  "text": "갓난아이를 시골 유모에게 보내려고 승합마차에 실어 떠나보냈다.",
+  "fx": {
+   "money": -10
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": true,
+   "married": true,
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 말 파리의 연간 출생 약 2만 1천 명 가운데 친모가 젖을 먹인 아이는 1천 명 정도였고, 1만 5천 명은 먼 시골 유모에게 보내졌다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   },
+   {
+    "cite": "Paul Galliano (1966), 「La mortalité infantile (indigènes et nourrissons) dans la banlieue Sud de Paris à la fin du XVIIIe siècle (1774-1794)」, Annales de démographie historique 1966: 139-177",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1967_num_1966_1_928"
+   }
+  ]
+ },
+ {
+  "id": "dth-041",
+  "cat": "death",
+  "text": "유모에게 보낸 아기가 석 달 만에 죽었다는 신부의 편지가 도착했다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": true,
+   "married": true,
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1786년 부르고뉴·샹파뉴·피카르디·노르망디에 유모로 보낸 아이 1,000명 중 257명이 첫해 안에 죽었다.",
+  "src": [
+   {
+    "cite": "Antoinette Fauve-Chamoux (1973), 「Mise en nourrice et mortalité des enfants légitimes」, Annales de démographie historique 1973: 418-422",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1219"
+   }
+  ]
+ },
+ {
+  "id": "dth-042",
+  "cat": "death",
+  "text": "유모 사무소의 소개인을 통해 피카르디 시골 유모를 소개받았다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1769,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "테농은 파리 유모 사무소가 수공업자·하인 자녀를 위해 해마다 1만 명의 유모를 모집한다고 추산했다.",
+  "src": [
+   {
+    "cite": "Antoinette Fauve-Chamoux (1973), 「Mise en nourrice et mortalité des enfants légitimes」, Annales de démographie historique 1973: 418-422",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1219"
+   }
+  ]
+ },
+ {
+  "id": "dth-043",
+  "cat": "death",
+  "text": "유모 품삯이 한 달 8리브르, 젖 뗀 아이를 맡는 이는 6리브르라고 들었다.",
+  "fx": {
+   "money": -8
+  },
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ],
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 말 파리 근교에서 유모는 한 달 8리브르, 젖 뗀 아이를 돌보는 '스뵈즈'는 6리브르를 받았다.",
+  "src": [
+   {
+    "cite": "Marie-France Morel (1976), 「Théories et pratiques de l'allaitement en France au XVIIIe siècle」, Annales de démographie historique 1976: 393-427",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1976_num_1976_1_1322"
+   }
+  ]
+ },
+ {
+  "id": "dth-044",
+  "cat": "death",
+  "text": "이웃 여인이 제 아이를 일곱 달 만에 젖 떼고 남의 집 유모로 들어갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "w": 1,
+  "once": false,
+  "fact": "부잣집 아이는 스무 달 넘게 젖을 먹었지만, 일하는 어머니나 유모로 나가려는 여자의 아이는 6~7개월에 젖을 뗐다.",
+  "src": [
+   {
+    "cite": "Marie-France Morel (1976), 「Théories et pratiques de l'allaitement en France au XVIIIe siècle」, Annales de démographie historique 1976: 393-427",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1976_num_1976_1_1322"
+   }
+  ]
+ },
+ {
+  "id": "dth-045",
+  "cat": "death",
+  "text": "도시 아기를 맡아 키운 유모비로 겨울 빵값을 메웠다.",
+  "fx": {
+   "money": 30
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "F",
+   "married": true,
+   "urban": false,
+   "age": [
+    18,
+    40
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "가르댕에 따르면 리옹 근교 일부 지역에서는 유모 가정의 80%가 포도 재배농이었다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   }
+  ]
+ },
+ {
+  "id": "dth-046",
+  "cat": "death",
+  "text": "맡은 아기들을 연달아 잃은 유모 집이 마을에서 수군거림을 샀다.",
+  "when": {
+   "from": 1780,
+   "to": 1792
+  },
+  "who": {
+   "region": [
+    "normandie",
+    "rouen",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1789년 루앙 근처 한 유모는 아기 19명을 받아 17명을 잃었고, 롤부아즈의 한 유모는 30개월 동안 31명을 잃었다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   }
+  ]
+ },
+ {
+  "id": "dth-047",
+  "cat": "death",
+  "text": "추수철 유모가 밭에 나간 사이 맡겨진 젖먹이가 탈진해 숨졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1800,
+   "months": [
+    8,
+    9
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "갈리아노는 파리 근교 유모 젖먹이의 사망이 8~9월에 치솟는다고 보았고, 들일에 지친 여자들의 '젖이 상한다'는 당대 설명도 전한다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   },
+   {
+    "cite": "Paul Galliano (1966), 「La mortalité infantile (indigènes et nourrissons) dans la banlieue Sud de Paris à la fin du XVIIIe siècle (1774-1794)」, Annales de démographie historique 1966: 139-177",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1967_num_1966_1_928"
+   }
+  ]
+ },
+ {
+  "id": "dth-048",
+  "cat": "death",
+  "text": "자기 아이들 틈에서 리옹에서 온 병원 젖먹이 둘을 함께 키우는 집을 보았다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bourgogne",
+    "lyon"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 드뤼야 유모 가정에서 자란 아이의 43.3%가 주로 리옹 시립병원이 맡긴 바깥 젖먹이였다.",
+  "src": [
+   {
+    "cite": "Alain Bideau·Guy Brunet·Michel Floquet (1994), 「Mortalité différentielle des enfants indigènes et des enfants en nourrice. L'exemple de Druillat (Ain) au XVIIIe siècle」, Annales de démographie historique 1994: 151-168",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1994_num_1994_1_1864"
+   }
+  ]
+ },
+ {
+  "id": "dth-049",
+  "cat": "death",
+  "text": "유모 검사장에 줄 선 시골 아낙들 사이로 아기를 안은 남편들이 오갔다.",
+  "when": {
+   "from": 1810,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 초 파리 아이의 3분의 2가 유모에게 보내졌다는 당대 추정이 있으며, 1817년 센 지사도 '상당수'의 아이가 시골 유모 집에 있다고 적었다.",
+  "src": [
+   {
+    "cite": "Etienne van de Walle·Samuel H. Preston (1974), 「Mortalité de l'enfance au XIXe siècle à Paris et dans le département de la Seine」, Population 29(1): 89-107",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1974_num_29_1_16186"
+   }
+  ]
+ },
+ {
+  "id": "dth-050",
+  "cat": "death",
+  "text": "파리 사람들이 유모에게 보낸 아이가 해마다 수천씩 죽는다고 수군거렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 중엽 드파르시외는 해마다 9,000명의 파리 아이가 유모 집에서 죽는다고 추정했다.",
+  "src": [
+   {
+    "cite": "Etienne van de Walle·Samuel H. Preston (1974), 「Mortalité de l'enfance au XIXe siècle à Paris et dans le département de la Seine」, Population 29(1): 89-107",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1974_num_29_1_16186"
+   }
+  ]
+ },
+ {
+  "id": "dth-051",
+  "cat": "death",
+  "text": "귀부인이 루소를 읽고 제 젖으로 아이를 키우겠다고 선언했다.",
+  "when": {
+   "from": 1762,
+   "to": 1789
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "epee",
+    "robe",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "계몽사상가들의 모유 수유 예찬은 실제로는 일부 파리 상류층의 일시적 유행에 그쳤다.",
+  "src": [
+   {
+    "cite": "Marie-France Morel (1976), 「Théories et pratiques de l'allaitement en France au XVIIIe siècle」, Annales de démographie historique 1976: 393-427",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1976_num_1976_1_1322"
+   }
+  ]
+ },
+ {
+  "id": "dth-052",
+  "cat": "medicine",
+  "text": "의사가 어미 젖이 최고라며 아이를 유모에게 보내지 말라고 타일렀다.",
+  "when": {
+   "from": 1760,
+   "to": 1850
+  },
+  "who": {
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 의사들은 어머니가 키운 아이는 4분의 1, 유모에게 보낸 아이는 3분의 2가 죽는다고 주장했다.",
+  "src": [
+   {
+    "cite": "Marie-France Morel (1976), 「Théories et pratiques de l'allaitement en France au XVIIIe siècle」, Annales de démographie historique 1976: 393-427",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1976_num_1976_1_1322"
+   }
+  ]
+ },
+ {
+  "id": "dth-053",
+  "cat": "death",
+  "text": "유모 집에서 돌아온 아이의 다리에 화상 자국이 있었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "urban": true,
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1786년 노르망디에 보낸 젖먹이 250명 가운데 7명이 '나쁜 상태'로 돌아왔고, 그중 하나는 다리에 화상을 입었다.",
+  "src": [
+   {
+    "cite": "Antoinette Fauve-Chamoux (1973), 「Mise en nourrice et mortalité des enfants légitimes」, Annales de démographie historique 1973: 418-422",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1219"
+   }
+  ]
+ },
+ {
+  "id": "dth-054",
+  "cat": "death",
+  "text": "새벽 성당 계단에서 포대기에 싸인 갓난아기가 발견되었다.",
+  "when": {
+   "from": 1750,
+   "to": 1780
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "파리 길거리에서 발견된 버려진 아이는 1690년 1,504명에서 1751년 3,583명으로 늘었다.",
+  "src": [
+   {
+    "cite": "Isabelle Robin·Agnès Walch (1987), 「Géographie des enfants trouvés de Paris aux XVIIe et XVIIIe siècles」, Histoire, économie & société 6(3): 343-360",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1456"
+   }
+  ]
+ },
+ {
+  "id": "dth-055",
+  "cat": "death",
+  "text": "기아원 문 앞에 아기를 두고 돌아서는 젊은 여자를 보았다.",
+  "when": {
+   "from": 1765,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1772년 파리에서 버려진 아이의 62%는 사람이 직접 기아원(라 쿠슈)으로 데려왔다.",
+  "src": [
+   {
+    "cite": "Isabelle Robin·Agnès Walch (1987), 「Géographie des enfants trouvés de Paris aux XVIIe et XVIIIe siècles」, Histoire, économie & société 6(3): 343-360",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1456"
+   }
+  ]
+ },
+ {
+  "id": "dth-056",
+  "cat": "death",
+  "text": "시립병원에서 해산한 이웃 하녀가 아기를 병원에 남겨 두고 나왔다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1751년 파리 시립병원에서 태어난 아이 1,365명 가운데 1,150명(84.3%)이 기아원으로 보내졌다.",
+  "src": [
+   {
+    "cite": "Isabelle Robin·Agnès Walch (1987), 「Géographie des enfants trouvés de Paris aux XVIIe et XVIIIe siècles」, Histoire, économie & société 6(3): 343-360",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1456"
+   }
+  ]
+ },
+ {
+  "id": "dth-057",
+  "cat": "death",
+  "text": "기아원에 맡긴 아이 소식을 물었다가 이미 죽었다는 답을 들었다.",
+  "fx": {
+   "hp": -1,
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 기아원에 들어간 아이의 70~80%는 성년에 이르지 못했다.",
+  "src": [
+   {
+    "cite": "Isabelle Robin·Agnès Walch (1987), 「Géographie des enfants trouvés de Paris aux XVIIe et XVIIIe siècles」, Histoire, économie & société 6(3): 343-360",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1456"
+   }
+  ]
+ },
+ {
+  "id": "dth-058",
+  "cat": "death",
+  "text": "파리에서 태어나는 아이 넷 중 하나가 혼외자이거나 버려진다는 말에 신부가 혀를 찼다.",
+  "when": {
+   "from": 1765,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 출생 기록 중 혼외(기아 포함) 비율은 1713~1722년 8.6%에서 1765~1774년 24.9%로 올랐다.",
+  "src": [
+   {
+    "cite": "Antoinette Fauve-Chamoux (1973), 「Enfants illégitimes et enfants trouvés」, Annales de démographie historique 1973: 422-429",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1220"
+   }
+  ]
+ },
+ {
+  "id": "dth-059",
+  "cat": "death",
+  "text": "수도원 앞 회전통이 막히고, 버려진 아이는 병원으로 데려가라는 공고가 붙었다.",
+  "when": {
+   "from": 1779,
+   "to": 1785
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1779년 국왕 참사회 결정은 버려진 아이를 회전통에 두지 말고 병원으로 데려가도록 명했다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   }
+  ]
+ },
+ {
+  "id": "dth-060",
+  "cat": "death",
+  "text": "탯줄도 마르지 않은 갓난아기가 기아원으로 실려 가는 것을 보았다.",
+  "when": {
+   "from": 1775,
+   "to": 1800
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "버려진 아이 중 출생 직후 버려진 비율은 1700년경 66%에서 1785년경 90%로 높아졌다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   }
+  ]
+ },
+ {
+  "id": "dth-061",
+  "cat": "death",
+  "text": "루앙 병원에 버려진 아기들은 거의 다 첫해를 넘기지 못한다는 말을 들었다.",
+  "when": {
+   "from": 1780,
+   "to": 1792
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1783~1789년 루앙에서 버려진 아기 833명 중 90.8%가 첫돌 전에 죽었다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   }
+  ]
+ },
+ {
+  "id": "dth-062",
+  "cat": "death",
+  "text": "리옹 자선병원 아이들을 받은 마을 묘지에 작은 무덤이 늘었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "가르댕에 따르면 리옹에서 버려진 신생아의 61.5%가 7세 전에 죽었다.",
+  "src": [
+   {
+    "cite": "Emmanuel Le Roy Ladurie (1979), 「L'allaitement mercenaire en France au XVIIIe siècle」, Communications 31: 15-21",
+    "url": "https://www.persee.fr/doc/comm_0588-8018_1979_num_31_1_1466"
+   }
+  ]
+ },
+ {
+  "id": "dth-063",
+  "cat": "death",
+  "text": "앵 지방 마을에서 병원 아이의 세례명이 사망 장부에 줄줄이 적혀 있었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bourgogne",
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 드뤼야에서 버려진 아이의 영아사망률은 1,000명당 430명, 마을 토박이 아이는 191명이었다.",
+  "src": [
+   {
+    "cite": "Alain Bideau·Guy Brunet (1991), 「La mortalité des enfants trouvés dans le département de l'Ain aux XVIIIe et XIXe siècles」, Publications de l'École française de Rome 140: 219-248",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4454"
+   }
+  ]
+ },
+ {
+  "id": "dth-064",
+  "cat": "death",
+  "text": "리옹에서 온 '병원 아이'가 이웃집 아이들 틈에서 소를 몰고 있었다.",
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bourgogne",
+    "lyon"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1845년 리옹 병원이 맡은 12세 미만 아이 8,433명 중 4,363명(52%)이 앵 도에 있었다.",
+  "src": [
+   {
+    "cite": "Alain Bideau·Guy Brunet (1991), 「La mortalité des enfants trouvés dans le département de l'Ain aux XVIIIe et XIXe siècles」, Publications de l'École française de Rome 140: 219-248",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4454"
+   }
+  ]
+ },
+ {
+  "id": "dth-065",
+  "cat": "death",
+  "text": "밤마다 구빈원 회전통 앞을 경찰이 지켜 서 있었다.",
+  "when": {
+   "from": 1836,
+   "to": 1845
+  },
+  "who": {
+   "region": [
+    "bourgogne",
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1841년 부르의 회전통을 경찰이 밤새 감시하자 4~12월 버려진 아이가 124명에서 83명으로 줄었다.",
+  "src": [
+   {
+    "cite": "Alain Bideau·Guy Brunet (1991), 「La mortalité des enfants trouvés dans le département de l'Ain aux XVIIIe et XIXe siècles」, Publications de l'École française de Rome 140: 219-248",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4454"
+   }
+  ]
+ },
+ {
+  "id": "dth-066",
+  "cat": "death",
+  "text": "남편이 국경으로 떠난 여공이 갓난아기를 기아원에 맡겼다.",
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 파리 기아원에 들어온 4,230명 중 1,029명(24.3%)이 시립병원 출신이었고, 이들 중 살아남은 아이는 4~5%뿐이었다.",
+  "src": [
+   {
+    "cite": "Claude Delasselle (1991), 「Les enfants abandonnés de l'Hôtel-Dieu de Paris : l'année 1793」, Publications de l'École française de Rome 140: 503-512",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4465"
+   }
+  ]
+ },
+ {
+  "id": "dth-067",
+  "cat": "death",
+  "text": "해마다 3만 5천 명의 아이가 버려진다는 통계를 신문에서 읽었다.",
+  "when": {
+   "from": 1831,
+   "to": 1850
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1831년 프랑스에서 버려진 아이는 연 35,363명이었고, 나라가 맡아 기르는 아이는 130,945명이었다.",
+  "src": [
+   {
+    "cite": "Muriel Jeorger (1991), 「L'évolution des courbes de l'abandon de la Restauration à la première Guerre mondiale (1815-1913)」, Publications de l'École française de Rome 140: 703-740",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4474"
+   }
+  ]
+ },
+ {
+  "id": "dth-068",
+  "cat": "death",
+  "text": "모르방 산골 집집마다 '느베르 아이'를 맡아 키우고 있었다.",
+  "when": {
+   "from": 1820,
+   "to": 1835
+  },
+  "who": {
+   "region": [
+    "bourgogne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1820년대 느베르 구빈원에는 해마다 300명 넘는 아이가 버려졌고, 1822~1831년에는 80%가 모르방 등지 유모에게 보내졌다.",
+  "src": [
+   {
+    "cite": "Guy Florenty (1991), 「Les abandons d'enfants à Nevers à la veille de la Révolution et dans les années 1820」, Publications de l'École française de Rome 140: 609-634",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4470"
+   }
+  ]
+ },
+ {
+  "id": "dth-069",
+  "cat": "death",
+  "text": "센 강 나룻배에서 뱃사공이 발을 헛디뎌 물에 빠진 뒤 떠오르지 않았다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 센 강 하류 27개 교구의 익사자는 주로 뱃사공·어부·도선 승객·세관원 같은 강에서 일하는 사람이었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Derouard (1987), 「La noyade en Seine au XVIIIe siècle dans 27 paroisses riveraines de la Seine-Maritime」, Annales de Normandie 37(4): 297-313",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1987_num_37_4_1767"
+   }
+  ]
+ },
+ {
+  "id": "dth-070",
+  "cat": "death",
+  "text": "짐을 너무 실은 코드벡 나룻배가 뒤집혀 수십 명이 물에 잠겼다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1792,
+   "to": 1792,
+   "months": [
+    1
+   ]
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1792년 1월 14일 코드벡 나룻배 침몰로 62명이 죽었다고 전해지나, 인근 교구 기록에는 익사 매장 6건만 남아 있다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Derouard (1987), 「La noyade en Seine au XVIIIe siècle dans 27 paroisses riveraines de la Seine-Maritime」, Annales de Normandie 37(4): 297-313",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1987_num_37_4_1767"
+   }
+  ]
+ },
+ {
+  "id": "dth-071",
+  "cat": "death",
+  "text": "강에서 건진 낯선 시신을 판사가 올 때까지 버드나무에 묶어 두었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "익사자는 당국의 명령 없이는 묻힐 수 없었고, 조사 때까지 시신을 말뚝이나 버드나무, 배에 묶어 두었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Derouard (1987), 「La noyade en Seine au XVIIIe siècle dans 27 paroisses riveraines de la Seine-Maritime」, Annales de Normandie 37(4): 297-313",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1987_num_37_4_1767"
+   }
+  ]
+ },
+ {
+  "id": "dth-072",
+  "cat": "death",
+  "text": "물에 빠져 죽은 이웃이 종부성사를 받지 못해 가족이 더 서럽게 울었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "w": 1,
+  "once": false,
+  "fact": "익사는 다른 사고사와 마찬가지로 종부성사를 받을 수 없어, 사람들은 익사자가 천국의 몫 일부를 잃는다고 여겼다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Derouard (1987), 「La noyade en Seine au XVIIIe siècle dans 27 paroisses riveraines de la Seine-Maritime」, Annales de Normandie 37(4): 297-313",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1987_num_37_4_1767"
+   }
+  ]
+ },
+ {
+  "id": "dth-073",
+  "cat": "death",
+  "text": "폭풍에 흔들린 참나무를 베던 이웃 농부가 나무에 깔려 죽었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1788년 2월 오르베크 관할에서 55세 농부 폴 푸크가 벌목 중 돌풍에 쓰러진 전나무에 깔려 죽었다.",
+  "src": [
+   {
+    "cite": "Monique Lemière (1981), 「Morts violentes, morts subites dans le bailliage d'Orbec au XVIIIe siècle」, Cahier des Annales de Normandie 13: 81-115",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1981_hos_13_1_3862"
+   }
+  ]
+ },
+ {
+  "id": "dth-074",
+  "cat": "death",
+  "text": "이회토 구덩이의 밧줄이 풀려 일꾼이 바닥으로 떨어졌다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 노르망디 급사 조서에는 벌목 사슬 파손, 이회토 구덩이 윈치 고장, 썩은 울타리 붕괴로 인한 죽음이 자주 나온다.",
+  "src": [
+   {
+    "cite": "Monique Lemière (1981), 「Morts violentes, morts subites dans le bailliage d'Orbec au XVIIIe siècle」, Cahier des Annales de Normandie 13: 81-115",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1981_hos_13_1_3862"
+   }
+  ]
+ },
+ {
+  "id": "dth-075",
+  "cat": "death",
+  "text": "사과술 통을 실은 수레가 바큇자국에 기울어 마부가 깔렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "오르베크 조서에서 뒤집히는 수레와 날뛰는 말은 농촌 사고사의 흔한 원인으로 나타난다.",
+  "src": [
+   {
+    "cite": "Monique Lemière (1981), 「Morts violentes, morts subites dans le bailliage d'Orbec au XVIIIe siècle」, Cahier des Annales de Normandie 13: 81-115",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1981_hos_13_1_3862"
+   }
+  ]
+ },
+ {
+  "id": "dth-076",
+  "cat": "death",
+  "text": "길가에서 급사한 이웃의 검시 비용으로 유족이 수십 리브르를 물었다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1712년 국왕 선언 이후 발견된 시신은 외과의 2명의 검시를 받아야 했고, 1767년 한 익사 사건 재판비는 72리브르였다.",
+  "src": [
+   {
+    "cite": "Monique Lemière (1981), 「Morts violentes, morts subites dans le bailliage d'Orbec au XVIIIe siècle」, Cahier des Annales de Normandie 13: 81-115",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1981_hos_13_1_3862"
+   }
+  ]
+ },
+ {
+  "id": "dth-077",
+  "cat": "death",
+  "text": "장날 술에 취해 젖은 옷으로 돌아가던 사내가 길가에서 얼어 죽었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "오르베크 조서에는 술기운에 젖은 옷차림으로 추위 속을 걷다 쓰러져 죽은 사례가 기록되어 있다.",
+  "src": [
+   {
+    "cite": "Monique Lemière (1981), 「Morts violentes, morts subites dans le bailliage d'Orbec au XVIIIe siècle」, Cahier des Annales de Normandie 13: 81-115",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1981_hos_13_1_3862"
+   }
+  ]
+ },
+ {
+  "id": "dth-078",
+  "cat": "death",
+  "text": "새로 닦은 길에서 승합마차에 치인 사람이 늘었다는 이야기가 오갔다.",
+  "when": {
+   "from": 1826,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "법무부 통계상 사고 사망률은 1826~1865년 꾸준히 올라 1865년 인구 10만 명당 32.5명, 1826~1830년의 2.5배가 되었다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Chesnais (1974), 「La mortalité par accidents en France depuis 1826」, Population 29(6): 1097-1136",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1974_num_29_6_16395"
+   }
+  ]
+ },
+ {
+  "id": "dth-079",
+  "cat": "death",
+  "text": "공사판 비계에서 떨어진 동료를 업고 외과의에게 달려갔다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1826,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "job": [
+    "craft"
+   ],
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1860년 무렵 남성의 사고 사망률은 여성의 거의 5배였다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Chesnais (1974), 「La mortalité par accidents en France depuis 1826」, Population 29(6): 1097-1136",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1974_num_29_6_16395"
+   }
+  ]
+ },
+ {
+  "id": "dth-080",
+  "cat": "death",
+  "text": "늑대가 양치기 아이를 물어 갔다는 소식에 온 마을이 몰이사냥에 나섰다.",
+  "fx": {
+   "cour": 1
+  },
+  "when": {
+   "from": 1797,
+   "to": 1817
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "auvergne",
+    "languedoc"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1797~1817년 아르데슈·로제르 등 6개 도의 늑대 공격 사망 35건 중 27건이 3~14세 아이였고, 대부분 가축을 지키던 아이였다.",
+  "src": [
+   {
+    "cite": "Alain Molinier·Nicole Molinier-Meyer (1981), 「Environnement et histoire : les loups et l'homme en France」, Revue d'histoire moderne et contemporaine 28(2): 225-245",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_2_1140"
+   }
+  ]
+ },
+ {
+  "id": "dth-081",
+  "cat": "death",
+  "text": "제보당의 짐승이 또 아이를 해쳤다는 소문에 밤마다 문을 걸어 잠갔다.",
+  "when": {
+   "from": 1764,
+   "to": 1767
+  },
+  "who": {
+   "region": [
+    "auvergne",
+    "languedoc"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1764년 메르쿠아르 숲에 나타난 '제보당의 짐승'(실은 늑대 무리)은 15개월 동안 83명을 잡아먹고 30여 명을 다치게 했다.",
+  "src": [
+   {
+    "cite": "Alain Molinier·Nicole Molinier-Meyer (1981), 「Environnement et histoire : les loups et l'homme en France」, Revue d'histoire moderne et contemporaine 28(2): 225-245",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_2_1140"
+   }
+  ]
+ },
+ {
+  "id": "dth-082",
+  "cat": "death",
+  "text": "숲 가장자리 마을에서 늑대에 물려 죽은 아이의 장례가 열렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 왕국 전체에서 해마다 평균 50명가량이 늑대에게 잡아먹혔다고 추정된다.",
+  "src": [
+   {
+    "cite": "Alain Molinier·Nicole Molinier-Meyer (1981), 「Environnement et histoire : les loups et l'homme en France」, Revue d'histoire moderne et contemporaine 28(2): 225-245",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_2_1140"
+   }
+  ]
+ },
+ {
+  "id": "dth-083",
+  "cat": "death",
+  "text": "늑대 머리를 자루에 담아 보좌관 사무소에 가져가 상금을 받았다.",
+  "fx": {
+   "money": 18,
+   "cour": 1
+  },
+  "when": {
+   "from": 1775,
+   "to": 1790
+  },
+  "who": {
+   "sex": "M",
+   "urban": false,
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1775년 프랑슈콩테 지사는 늙은 늑대 18리브르, 새끼 6리브르, 암늑대 24리브르의 포상금을 약속했다.",
+  "src": [
+   {
+    "cite": "Christian Dugas de la Boissony (1991), 「Une nécessité de la sécurité des campagnes. La destruction des loups en Franche-Comté (XVIIIe siècle)」, Histoire, économie & société 10(1): 113-126",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1991_num_10_1_1597"
+   }
+  ]
+ },
+ {
+  "id": "dth-084",
+  "cat": "death",
+  "text": "늑대를 잡아 시청에 신고하고 40프랑 포상금을 받았다.",
+  "fx": {
+   "money": 40,
+   "cour": 1
+  },
+  "when": {
+   "from": 1797,
+   "to": 1815
+  },
+  "who": {
+   "sex": "M",
+   "urban": false,
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "혁명력 5년 수확월 10일 법은 늑대 한 마리에 성체 40프랑, 새끼 밴 암컷 50프랑, 새끼 20프랑, 미친 늑대 150프랑을 지급하게 했다.",
+  "src": [
+   {
+    "cite": "Alain Molinier·Nicole Molinier-Meyer (1981), 「Environnement et histoire : les loups et l'homme en France」, Revue d'histoire moderne et contemporaine 28(2): 225-245",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_2_1140"
+   }
+  ]
+ },
+ {
+  "id": "dth-085",
+  "cat": "death",
+  "text": "미친 늑대에 물린 이웃이 몇 주 뒤 발작하다 숨졌다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1817
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "6개 도 통계에서 미친 늑대는 잡힌 늑대의 약 1.4%였지만 늑대 공격 사망자의 22.8%를 냈다.",
+  "src": [
+   {
+    "cite": "Alain Molinier·Nicole Molinier-Meyer (1981), 「Environnement et histoire : les loups et l'homme en France」, Revue d'histoire moderne et contemporaine 28(2): 225-245",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_2_1140"
+   }
+  ]
+ },
+ {
+  "id": "dth-086",
+  "cat": "death",
+  "text": "캉 광장에서 동료를 죽인 척탄병이 수레바퀴형에 처해지는 것을 군중 틈에서 보았다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1760,
+   "months": [
+    3
+   ]
+  },
+  "who": {
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1760년 3월 22일 캉에서 동료를 죽인 병사 장 코르블레는 산 채로 뼈가 부서져 한 시간 동안 수레바퀴 위에 놓였다.",
+  "src": [
+   {
+    "cite": "Michel Bée (1983), 「Le spectacle de l'exécution dans la France d'Ancien Régime」, Annales ESC 38(4): 843-862",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1983_num_38_4_410964"
+   }
+  ]
+ },
+ {
+  "id": "dth-087",
+  "cat": "death",
+  "text": "장날 정오, 교수대 둘레로 시골 사람들이 구름처럼 몰려들었다.",
+  "when": {
+   "from": 1750,
+   "to": 1791
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "지방에서는 시골 사람들이 몰려드는 장날 아침이나 정오에 처형을 집행하곤 했다.",
+  "src": [
+   {
+    "cite": "Michel Bée (1983), 「Le spectacle de l'exécution dans la France d'Ancien Régime」, Annales ESC 38(4): 843-862",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1983_num_38_4_410964"
+   }
+  ]
+ },
+ {
+  "id": "dth-088",
+  "cat": "death",
+  "text": "빚에 몰린 신사가 스스로 목숨을 끊었다는 소식이 살롱을 돌았다.",
+  "when": {
+   "from": 1779,
+   "to": 1785
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1779년 3월 30일 왕실 검열관 피당사 드 메로베르는 파리 고등법원의 공개 견책 사흘 뒤 자살했다.",
+  "src": [
+   {
+    "cite": "Jeffrey Merrick (2003), 「Le suicide de Pidansat de Mairobert」, Dix-huitième siècle 35: 331-340",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_2003_num_35_1_2555"
+   }
+  ]
+ },
+ {
+  "id": "dth-089",
+  "cat": "death",
+  "text": "요즘 파리에 자살하는 사람이 늘었다는 소식지 기사를 읽었다.",
+  "when": {
+   "from": 1770,
+   "to": 1789
+  },
+  "who": {
+   "literate": true,
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "피당사 드 메로베르는 『비밀 회고록』에서 당대 자살의 증가를 거듭 개탄했다.",
+  "src": [
+   {
+    "cite": "Jeffrey Merrick (2003), 「Le suicide de Pidansat de Mairobert」, Dix-huitième siècle 35: 331-340",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_2003_num_35_1_2555"
+   }
+  ]
+ },
+ {
+  "id": "dth-090",
+  "cat": "death",
+  "text": "목을 맨 이웃을 두고 신부가 교회 묘지 매장을 머뭇거렸다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 노르망디 급사 조사에서 교회식 매장은 거의 언제나 허락되었지만 자살은 예외였다.",
+  "src": [
+   {
+    "cite": "Monique Lemière (1981), 「Morts violentes, morts subites dans le bailliage d'Orbec au XVIIIe siècle」, Cahier des Annales de Normandie 13: 81-115",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1981_hos_13_1_3862"
+   }
+  ]
+ },
+ {
+  "id": "dth-091",
+  "cat": "death",
+  "text": "병자가 종부성사를 받으면 죽음이 앞당겨진다며 신부를 부르지 말자고 했다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "오르베크 조서에 따르면 사람들은 '어리석지만 끈질긴 속설'대로 종부성사가 죽음을 재촉한다고 두려워했다.",
+  "src": [
+   {
+    "cite": "Monique Lemière (1981), 「Morts violentes, morts subites dans le bailliage d'Orbec au XVIIIe siècle」, Cahier des Annales de Normandie 13: 81-115",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1981_hos_13_1_3862"
+   }
+  ]
+ },
+ {
+  "id": "dth-092",
+  "cat": "death",
+  "text": "임종 침상에 둘러앉은 가족 앞에서 고해를 마친 노인이 마지막 성사를 받았다.",
+  "fx": {
+   "faith": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 노르망디에서 바람직한 죽음은 가족에 둘러싸여 고해한 뒤 교회의 마지막 성사를 받는 것이었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Derouard (1987), 「La noyade en Seine au XVIIIe siècle dans 27 paroisses riveraines de la Seine-Maritime」, Annales de Normandie 37(4): 297-313",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1987_num_37_4_1767"
+   }
+  ]
+ },
+ {
+  "id": "dth-093",
+  "cat": "death",
+  "text": "흑빵마저 떨어진 겨울, 루앙 빈민가에서 하루에도 장례가 몇 번씩 지나갔다.",
+  "fx": {
+   "hp": -3
+  },
+  "when": {
+   "from": 1795,
+   "to": 1796
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "루앙의 사망은 혁명력 3년에 평년의 거의 2배, 4년에는 거의 3배에 이르렀다.",
+  "src": [
+   {
+    "cite": "Richard Cobb (1956), 「Disette et mortalité. La crise de l'an III et de l'an IV à Rouen」, Annales de Normandie 6(3-4): 267-291",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1956_num_6_3_4320"
+   }
+  ]
+ },
+ {
+  "id": "dth-094",
+  "cat": "death",
+  "text": "굶주린 근교 사람들이 루앙 구빈원으로 몰려들었다가 그곳에서 죽어 갔다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1795,
+   "to": 1796,
+   "months": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "혁명력 4년 초 몇 달 동안 루앙의 월간 사망은 다른 해 같은 시기의 아홉 배에 달했다.",
+  "src": [
+   {
+    "cite": "Richard Cobb (1956), 「Disette et mortalité. La crise de l'an III et de l'an IV à Rouen」, Annales de Normandie 6(3-4): 267-291",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1956_num_6_3_4320"
+   }
+  ]
+ },
+ {
+  "id": "dth-095",
+  "cat": "death",
+  "text": "구빈원 계단에 밤마다 죽은 갓난아이가 놓여 있었다.",
+  "when": {
+   "from": 1795,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "rouen"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "혁명력 3년 루앙 구빈원 계단에는 밤마다 사산아가 놓여 있었다.",
+  "src": [
+   {
+    "cite": "Richard Cobb (1956), 「Disette et mortalité. La crise de l'an III et de l'an IV à Rouen」, Annales de Normandie 6(3-4): 267-291",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1956_num_6_3_4320"
+   }
+  ]
+ },
+ {
+  "id": "dth-096",
+  "cat": "death",
+  "text": "밀값이 네 배로 뛰자 귀리와 감자를 섞어 빵을 구웠다.",
+  "fx": {
+   "hp": -2,
+   "money": -20
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1816년 7월부터 1817년 6월까지 뫼르트 도에서 빵값은 3배, 밀값은 4배, 감자값은 6배로 뛰었다.",
+  "src": [
+   {
+    "cite": "Paul Leuilliot (1957), 「De la disette de 1816-1817 à la famine du coton (1867)」, Annales ESC 12(2): 317-325",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1957_num_12_2_2641"
+   }
+  ]
+ },
+ {
+  "id": "dth-097",
+  "cat": "death",
+  "text": "1816년 겨울, 마을 아기와 노인들이 잇따라 묻혔다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817,
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "champagne",
+    "alsace",
+    "bourgogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1816년 말 영아 사망이 늘었고 1816~1817년 겨울에는 전체 사망이 크게 늘었으며 1817~1818년 출생은 눈에 띄게 줄었다.",
+  "src": [
+   {
+    "cite": "Paul Leuilliot (1957), 「De la disette de 1816-1817 à la famine du coton (1867)」, Annales ESC 12(2): 317-325",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1957_num_12_2_2641"
+   }
+  ]
+ },
+ {
+  "id": "dth-098",
+  "cat": "death",
+  "text": "흉년 이듬해 겨울, 정체 모를 열병으로 장례가 줄을 이었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1803,
+   "to": 1804
+  },
+  "w": 1,
+  "once": false,
+  "fact": "혁명력 12년(1803~1804) 프랑스 사망은 90만 명에 육박해 전년보다 109,834명 많았다.",
+  "src": [
+   {
+    "cite": "Catherine Rollet (1970), 「L'effet des crises économiques du début du XIXe siècle sur la population」, Revue d'histoire moderne et contemporaine 17(3): 391-410",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1970_num_17_3_2081"
+   }
+  ]
+ },
+ {
+  "id": "dth-099",
+  "cat": "death",
+  "text": "빵값은 내렸는데도 봄이 되자 다시 장례가 늘어 사람들이 고개를 갸웃했다.",
+  "when": {
+   "from": 1802,
+   "to": 1804
+  },
+  "who": {
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "롤레는 1802~1804년 칼바도스에서 밀값 정점과 사망 증가 시기가 어긋나, 그 사망 위기가 농업 위기와 직접 연결되지 않음을 보였다.",
+  "src": [
+   {
+    "cite": "Catherine Rollet (1970), 「L'effet des crises économiques du début du XIXe siècle sur la population」, Revue d'histoire moderne et contemporaine 17(3): 391-410",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1970_num_17_3_2081"
+   }
+  ]
+ },
+ {
+  "id": "dth-100",
+  "cat": "death",
+  "text": "땔감도 없는 오두막에서 늙은 이웃이 혹한에 얼어 죽었다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1788,
+   "to": 1789,
+   "months": [
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "앙주에서는 1782년 흉작, 1785년 가뭄, 1788년 장마, 1789년 혹한이 이어지며 앙시앵레짐 말기 사망을 키웠다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-101",
+  "cat": "death",
+  "text": "1771년 흉작으로 빵값이 오르자 노인들이 대혹한 이야기를 꺼냈다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1773
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "앙주에서는 1771·1772·1773년 연달아 수확이 시원치 않았다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-102",
+  "cat": "death",
+  "text": "가을 이질이 돌아 이웃의 열 살, 열네 살 아이가 함께 묻혔다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1779,
+   "to": 1779,
+   "months": [
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "who": {
+   "region": [
+    "vendee",
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1779년 앙주의 이질은 1707년보다 희생자가 3분의 1 수준이었지만 주로 5~20세 아이와 청소년을 죽였다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-103",
+  "cat": "death",
+  "text": "브르타뉴 교구 장부에 세례보다 장례가 더 많이 적혔다.",
+  "when": {
+   "from": 1770,
+   "to": 1784
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1770~1784년 브르타뉴 징세구는 15년 동안 인구의 3.7%, 해마다 평균 5,427명을 잃었다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-104",
+  "cat": "medicine",
+  "text": "앓아누운 아버지를 위해 십 리 밖 외과의를 부르러 진창길을 달렸다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1786년 앙주에는 의사 45명과 외과의 287명, 곧 인구 1만 명당 의사 1명과 외과의 6명이 있었다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-105",
+  "cat": "medicine",
+  "text": "읍내 외과의가 오전엔 수염을 깎고 오후엔 사혈을 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "루이 15세의 궁정인 뤼네 공은 왕국의 '이발사 겸 외과의'를 3만~4만 명으로 추산했다.",
+  "src": [
+   {
+    "cite": "Toby Gelfand (1980), 「Deux cultures, une profession : les chirurgiens français au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 27(3): 468-484",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1980_num_27_3_1109"
+   }
+  ]
+ },
+ {
+  "id": "dth-106",
+  "cat": "medicine",
+  "text": "외과의가 팔을 째고 피를 한 대야 받아냈다.",
+  "fx": {
+   "hp": -1,
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 외과의의 일상 업무는 무엇보다 사혈이었고, 그다음이 종기 절개와 상처·피부병 치료였다.",
+  "src": [
+   {
+    "cite": "Toby Gelfand (1980), 「Deux cultures, une profession : les chirurgiens français au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 27(3): 468-484",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1980_num_27_3_1109"
+   }
+  ]
+ },
+ {
+  "id": "dth-107",
+  "cat": "medicine",
+  "text": "파리 외과의가 시골 외과의들을 '이발사'라고 깔보았다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리는 1743년 외과의 공동체에서 이발사를 떼어냈지만, 18세기 말까지 이를 따른 대도시는 리옹·보르도 정도였다.",
+  "src": [
+   {
+    "cite": "Toby Gelfand (1980), 「Deux cultures, une profession : les chirurgiens français au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 27(3): 468-484",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1980_num_27_3_1109"
+   }
+  ]
+ },
+ {
+  "id": "dth-108",
+  "cat": "medicine",
+  "text": "면허를 갓 받은 젊은 시골 외과의가 마을 어귀에 정착했다.",
+  "when": {
+   "from": 1770,
+   "to": 1790
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "물랭의 수석외과의 대리관은 400여 교구를 관할하며 1770~1790년 시골 외과의 48명을 받아들였다.",
+  "src": [
+   {
+    "cite": "Toby Gelfand (1980), 「Deux cultures, une profession : les chirurgiens français au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 27(3): 468-484",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1980_num_27_3_1109"
+   }
+  ]
+ },
+ {
+  "id": "dth-109",
+  "cat": "medicine",
+  "text": "장터 약장수가 만병통치약을 팔며 기적 같은 치유담을 떠벌렸다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1790년 보건위원회 조사에서 외과의 대표들은 떠돌이 의술가를 '인류의 재앙', '독한 무리'라고 불렀다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (1977), 「L'art de guérir. Médecine savante et médecine populaire dans la France de 1790」, Annales ESC 32(5): 908-926",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293871"
+   }
+  ]
+ },
+ {
+  "id": "dth-110",
+  "cat": "medicine",
+  "text": "편자공이 소변 병을 들여다보더니 방앗간 아낙이 저주에 걸렸다고 했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "보장시 인근의 한 편자공은 소변을 보고 방앗간 주인의 아내가 저주에 걸렸다며 치료비 100에퀴를 받았다(1790년 보고).",
+  "src": [
+   {
+    "cite": "Jean-Pierre Goubert (1977), 「L'art de guérir. Médecine savante et médecine populaire dans la France de 1790」, Annales ESC 32(5): 908-926",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293871"
+   }
+  ]
+ },
+ {
+  "id": "dth-111",
+  "cat": "medicine",
+  "text": "떠돌이 돌팔이가 준 독한 하제를 먹은 머슴이 사흘을 앓았다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "당대 의사들은 돌팔이의 하제와 독한 외용약이 '날마다 많은 농부와 가장을 앗아 간다'고 비판했다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-112",
+  "cat": "medicine",
+  "text": "열병이 낫지 않아 비싼 키나 가루를 사 먹었다.",
+  "fx": {
+   "money": -6,
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "'예수회 약'이라 불린 키나는 1690년부터 프랑스에 자리 잡아 18세기 앙주에서 널리 쓰였다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-113",
+  "cat": "medicine",
+  "text": "지사가 보낸 약 상자가 도착해 신부가 병자들에게 나눠 주었다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 초부터 왕은 엘베티우스에게 253회분이 든 약 상자를 만들게 해 지사와 보좌관을 거쳐 마을에 나눠 주었다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-114",
+  "cat": "medicine",
+  "text": "유행병 담당 의사가 마을에 와서 식이요법을 정하고 외과의 하나를 남겨 두었다.",
+  "when": {
+   "from": 1766,
+   "to": 1789
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1766년 투르 의사협회장 뒤피샤르가 투르 징세구의 '유행병 통신 의사'로 임명되었다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-115",
+  "cat": "medicine",
+  "text": "이질에 걸린 아이에게 의사가 토근 가루를 처방했다.",
+  "fx": {
+   "hp": 1,
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "앙주 의사들에게 토근(이페카쿠아나)은 이질에 맞서는 가장 좋은 무기였다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-116",
+  "cat": "medicine",
+  "text": "도시 의사가 그달의 날씨와 유행병을 적어 파리 학회로 보냈다.",
+  "when": {
+   "from": 1776,
+   "to": 1793
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1776년 4월 29일 국무회의 결정으로 지방 의사들과 유행병에 관해 서신을 주고받는 파리 의학위원회가 세워졌다.",
+  "src": [
+   {
+    "cite": "Jean Meyer (1966), 「Une enquête de l'Académie de médecine sur les épidémies (1774-1794)」, Annales ESC 21(4): 729-749",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1966_num_21_4_421417"
+   }
+  ]
+ },
+ {
+  "id": "dth-117",
+  "cat": "medicine",
+  "text": "의사가 이웃의 병을 '악성 부패열'이라 불렀지만 무슨 뜻인지 아무도 몰랐다.",
+  "when": {
+   "from": 1776,
+   "to": 1800
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "왕립의학회 보고서는 간헐열, 부패열, 흉부 울혈 같은 증상 중심 병명으로 그 시대의 병과 사인을 적었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Peter (1967), 「Une enquête de la Société royale de médecine : malades et maladies à la fin du XVIIIe siècle」, Annales ESC 22(4): 711-751",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1967_num_22_4_421567"
+   }
+  ]
+ },
+ {
+  "id": "dth-118",
+  "cat": "death",
+  "text": "홍역이 지나간 뒤에 오히려 설사로 아이들이 더 많이 죽었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1783,
+   "to": 1783,
+   "months": [
+    9,
+    10
+   ]
+  },
+  "who": {
+   "region": [
+    "provence",
+    "marseille"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1783년 9월 아를의 의사 브레는 아이들이 홍역 자체보다 그 뒤의 설사·이질로 죽었다고 보고했다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Peter (1967), 「Une enquête de la Société royale de médecine : malades et maladies à la fin du XVIIIe siècle」, Annales ESC 22(4): 711-751",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1967_num_22_4_421567"
+   }
+  ]
+ },
+ {
+  "id": "dth-119",
+  "cat": "medicine",
+  "text": "새로 온 의사가 사혈은 하지 않겠다고 해 노인들이 의아해했다.",
+  "when": {
+   "from": 1776,
+   "to": 1800
+  },
+  "w": 1,
+  "once": false,
+  "fact": "왕립의학회 통신원 가운데는 '경험이 사혈을 완전히 금하게 했다'고 쓴 의사도 있었다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Peter (1967), 「Une enquête de la Société royale de médecine : malades et maladies à la fin du XVIIIe siècle」, Annales ESC 22(4): 711-751",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1967_num_22_4_421567"
+   }
+  ]
+ },
+ {
+  "id": "dth-120",
+  "cat": "medicine",
+  "text": "의사의 처방전에 하제와 사혈, 목욕, 시골 공기와 절제가 차례로 적혀 있었다.",
+  "fx": {
+   "money": -4
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "literate": true,
+   "estate": [
+    "bourgeois",
+    "robe",
+    "epee",
+    "hobereau"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 처방전의 생활 지침은 하제·사혈·목욕·운동·시골 공기·온도 조절·절제를 권했다.",
+  "src": [
+   {
+    "cite": "Pascale Gramain-Kibleur (2001), 「Le rôle des prescriptions médicamenteuses dans la société française du XVIIIe siècle」, Histoire, économie & société 20(3): 321-337",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2001_num_20_3_2229"
+   }
+  ]
+ },
+ {
+  "id": "dth-121",
+  "cat": "medicine",
+  "text": "약방이 이제 식료품상과 갈라져 '약학 장인'이라는 간판을 달았다.",
+  "when": {
+   "from": 1777,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1777년 4월 25일 국왕 선언은 파리 약사들을 '약학 장인' 단일 조합으로 묶고 식료품상과 분리해 약 제조·판매 독점을 주었다.",
+  "src": [
+   {
+    "cite": "Claude Viel (2003), 「Antoine-François de Fourcroy (1755-1809), promoteur de la loi de Germinal an XI」, Revue d'histoire de la pharmacie 91(339): 377-394",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_2003_num_91_339_6295"
+   }
+  ]
+ },
+ {
+  "id": "dth-122",
+  "cat": "medicine",
+  "text": "시립병원에 실려 갔던 이웃이 한 침대에 넷이 누워 있었다고 전했다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "『백과전서』는 파리 시립병원이 한 침대에 3~6명을 눕혀 산 자 곁에 죽어 가는 이와 죽은 이가 있다고 고발했다.",
+  "src": [
+   {
+    "cite": "Christian Cheminade (1993), 「Architecture et médecine à la fin du XVIIIe siècle : la ventilation des hôpitaux, de l'Encyclopédie au débat sur l'Hôtel-Dieu de Paris」, Recherches sur Diderot et sur l'Encyclopédie 14: 85-109",
+    "url": "https://www.persee.fr/doc/rde_0769-0886_1993_num_14_1_1207"
+   }
+  ]
+ },
+ {
+  "id": "dth-123",
+  "cat": "medicine",
+  "text": "시립병원에 들어가면 넷 중 하나는 살아 나오지 못한다고들 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 중엽 샤무세는 파리 시립병원에서 환자 넷 중 하나가 죽고, 다른 큰 병원은 8~14명 중 하나가 죽는다고 했다.",
+  "src": [
+   {
+    "cite": "Christian Cheminade (1993), 「Architecture et médecine à la fin du XVIIIe siècle : la ventilation des hôpitaux, de l'Encyclopédie au débat sur l'Hôtel-Dieu de Paris」, Recherches sur Diderot et sur l'Encyclopédie 14: 85-109",
+    "url": "https://www.persee.fr/doc/rde_0769-0886_1993_num_14_1_1207"
+   }
+  ]
+ },
+ {
+  "id": "dth-124",
+  "cat": "medicine",
+  "text": "한밤중 시립병원에 불이 나 환자들이 연기 속에 업혀 나왔다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1772,
+   "to": 1772,
+   "months": [
+    12
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1772년 12월 29~30일 밤 파리 시립병원이 다시 큰 화재에 휩싸였다.",
+  "src": [
+   {
+    "cite": "Marie-Claude Dinet-Lecomte (2000), 「Jacques Tenon, Mémoires sur les hôpitaux de Paris (compte rendu)」, Histoire, économie & société 19(3): 435-436",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2000_num_19_3_2127_t1_0435_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "dth-125",
+  "cat": "medicine",
+  "text": "테농의 병원 보고서를 두고 카페에서 시립병원 이전 논쟁이 벌어졌다.",
+  "when": {
+   "from": 1788,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "외과의 테농(1724~1816)은 1788년 『파리 병원에 관한 보고서』를 펴내 병원 실태를 고발하고 개혁안을 냈다.",
+  "src": [
+   {
+    "cite": "Marie-Claude Dinet-Lecomte (2000), 「Jacques Tenon, Mémoires sur les hôpitaux de Paris (compte rendu)」, Histoire, économie & société 19(3): 435-436",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2000_num_19_3_2127_t1_0435_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "dth-126",
+  "cat": "medicine",
+  "text": "환기가 잘되게 지어야 병자가 낫는다는 새 병원 설계 이야기를 들었다.",
+  "when": {
+   "from": 1773,
+   "to": 1800
+  },
+  "who": {
+   "urban": true,
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1773~1789년 개혁가들은 병실을 '환자를 치료하는 기계'로 보고 병원을 거대한 환기 장치처럼 설계하려 했다.",
+  "src": [
+   {
+    "cite": "Christian Cheminade (1993), 「Architecture et médecine à la fin du XVIIIe siècle : la ventilation des hôpitaux, de l'Encyclopédie au débat sur l'Hôtel-Dieu de Paris」, Recherches sur Diderot et sur l'Encyclopédie 14: 85-109",
+    "url": "https://www.persee.fr/doc/rde_0769-0886_1993_num_14_1_1207"
+   }
+  ]
+ },
+ {
+  "id": "dth-127",
+  "cat": "death",
+  "text": "홀로 된 노파가 구빈원 입소 대기 명단에 이름을 올렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "age": [
+    55,
+    90
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 블루아 구빈원 노인의 절반 이상이 65~75세에 들어왔고, 여성은 75세 넘어서도 많이 들어와 남성보다 늦게 죽었다.",
+  "src": [
+   {
+    "cite": "Marie-Claude Dinet-Lecomte (1985), 「Vieillir et mourir à l'hôpital de Blois au XVIIIe siècle」, Annales de démographie historique 1985: 85-101",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1986_num_1985_1_1624"
+   }
+  ]
+ },
+ {
+  "id": "dth-128",
+  "cat": "death",
+  "text": "기침이 깊어진 겨울, 마지막이 머지않았음을 몸으로 느꼈다.",
+  "fx": {
+   "hp": -3,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "age": [
+    65,
+    95
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "블루아 시립병원 입원자 중 노인은 7%뿐이었고, 가난한 노인은 주로 구빈원에서 생을 마쳤다.",
+  "src": [
+   {
+    "cite": "Marie-Claude Dinet-Lecomte (1985), 「Vieillir et mourir à l'hôpital de Blois au XVIIIe siècle」, Annales de démographie historique 1985: 85-101",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1986_num_1985_1_1624"
+   }
+  ]
+ },
+ {
+  "id": "dth-129",
+  "cat": "medicine",
+  "text": "징집 대신 보건학교에 들어가 군의관 수련을 시작했다.",
+  "fx": {
+   "edu": 3
+  },
+  "when": {
+   "from": 1795,
+   "to": 1802
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    16,
+    26
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1794년 12월 4일(혁명력 3년 서리월 14일) 파리·몽펠리에·스트라스부르에 보건학교 세 곳이 세워졌다.",
+  "src": [
+   {
+    "cite": "Laurence Brockliss·Rebecca Rogers (1989), 「L'enseignement médical et la Révolution. Essai de réévaluation」, Histoire de l'éducation 42: 79-110",
+    "url": "https://www.persee.fr/doc/hedu_0221-6280_1989_num_42_1_3343"
+   },
+   {
+    "cite": "Jean Legaye (2014), 「L'enseignement de la médecine sous la Révolution et l'Empire」, Histoire des sciences médicales 48(3): 397-404",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2014x048x003/HSMx2014x048x003x0397.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-130",
+  "cat": "medicine",
+  "text": "의사 면허가 사라지자 아무나 의사 간판을 내걸었다.",
+  "when": {
+   "from": 1791,
+   "to": 1802
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1791년 3월 17일 법령으로 누구나 원하는 직업을 자유롭게 하게 되었고, 1792년 8월 법은 모든 교육 단체와 의과대학을 없앴다.",
+  "src": [
+   {
+    "cite": "Jean Legaye (2014), 「L'enseignement de la médecine sous la Révolution et l'Empire」, Histoire des sciences médicales 48(3): 397-404",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2014x048x003/HSMx2014x048x003x0397.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-131",
+  "cat": "medicine",
+  "text": "도 심사위원회 시험을 통과한 보건관이 마을에 진료소를 열었다.",
+  "when": {
+   "from": 1803,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1803년 3월 10일(혁명력 11년 풍월 19일) 법으로 박사와 보건관 두 등급이 생겼고, 보건관은 자신을 받은 도에서만 개업할 수 있었다.",
+  "src": [
+   {
+    "cite": "Bernard Hœrni (1998), 「La loi du 30 novembre 1892」, Histoire des sciences médicales 32(1): 63-68",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx1998x032x001/HSMx1998x032x001x0063.pdf"
+   },
+   {
+    "cite": "Jean Legaye (2014), 「L'enseignement de la médecine sous la Révolution et l'Empire」, Histoire des sciences médicales 48(3): 397-404",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2014x048x003/HSMx2014x048x003x0397.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-132",
+  "cat": "medicine",
+  "text": "보건관이 이건 도시 박사에게 가야 한다며 손을 놓았다.",
+  "when": {
+   "from": 1803,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 의학교 초대 학장 투레는 1803년 보건관에 대해 '그들의 주된 학문은 손대지 말아야 할 경우를 아는 것'이라 했다.",
+  "src": [
+   {
+    "cite": "Bernard Hœrni (1998), 「La loi du 30 novembre 1892」, Histoire des sciences médicales 32(1): 63-68",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx1998x032x001/HSMx1998x032x001x0063.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-133",
+  "cat": "medicine",
+  "text": "도시 박사는 부자를, 시골 보건관은 가난한 농민을 맡는다는 말이 돌았다.",
+  "when": {
+   "from": 1830,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1850년 무렵 보건관은 의료인 전체의 약 50%였고, 이후 그 비율은 빠르게 줄었다.",
+  "src": [
+   {
+    "cite": "Laurence Brockliss·Rebecca Rogers (1989), 「L'enseignement médical et la Révolution. Essai de réévaluation」, Histoire de l'éducation 42: 79-110",
+    "url": "https://www.persee.fr/doc/hedu_0221-6280_1989_num_42_1_3343"
+   }
+  ]
+ },
+ {
+  "id": "dth-134",
+  "cat": "medicine",
+  "text": "병원 인턴 시험에 도전했지만 경쟁이 몹시 치열했다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1802,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    30
+   ],
+   "literate": true,
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1802년 인턴 시험은 지원자 약 40명 가운데 24명을 뽑았고, 1812년에는 120명이 18자리를 두고 겨뤘다.",
+  "src": [
+   {
+    "cite": "Jean Legaye (2014), 「L'enseignement de la médecine sous la Révolution et l'Empire」, Histoire des sciences médicales 48(3): 397-404",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2014x048x003/HSMx2014x048x003x0397.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-135",
+  "cat": "medicine",
+  "text": "라탱 구역 하숙집마다 의대생들로 북적였다.",
+  "when": {
+   "from": 1800,
+   "to": 1835
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 의학교 학생 수는 1800년 1,000명, 1820년대 2,000명이었다.",
+  "src": [
+   {
+    "cite": "Laurence Brockliss·Rebecca Rogers (1989), 「L'enseignement médical et la Révolution. Essai de réévaluation」, Histoire de l'éducation 42: 79-110",
+    "url": "https://www.persee.fr/doc/hedu_0221-6280_1989_num_42_1_3343"
+   }
+  ]
+ },
+ {
+  "id": "dth-136",
+  "cat": "medicine",
+  "text": "의학교 등록금 125프랑을 마련하느라 집에 손을 벌렸다.",
+  "fx": {
+   "money": -125,
+   "edu": 2
+  },
+  "when": {
+   "from": 1803,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    28
+   ],
+   "literate": true,
+   "estate": [
+    "bourgeois",
+    "robe"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1803년 풍월법은 의학교 학생에게 해마다 125프랑의 수업료를 내게 했다.",
+  "src": [
+   {
+    "cite": "Laurence Brockliss·Rebecca Rogers (1989), 「L'enseignement médical et la Révolution. Essai de réévaluation」, Histoire de l'éducation 42: 79-110",
+    "url": "https://www.persee.fr/doc/hedu_0221-6280_1989_num_42_1_3343"
+   }
+  ]
+ },
+ {
+  "id": "dth-137",
+  "cat": "medicine",
+  "text": "해부학 강의에서 시신 대신 밀랍 모형으로 수업을 들었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1806,
+   "to": 1820
+  },
+  "who": {
+   "sex": "M",
+   "literate": true,
+   "age": [
+    17,
+    30
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1806년 5월 29일 칙령으로 루앙에 밀랍 해부 모형 학교가 세워져 1807~1810년 운영되었다.",
+  "src": [
+   {
+    "cite": "Jean Legaye (2014), 「L'enseignement de la médecine sous la Révolution et l'Empire」, Histoire des sciences médicales 48(3): 397-404",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2014x048x003/HSMx2014x048x003x0397.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-138",
+  "cat": "medicine",
+  "text": "1794년 학교에서는 내과와 외과를 한 교실에서 함께 가르쳤다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1810
+  },
+  "who": {
+   "literate": true,
+   "age": [
+    16,
+    30
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1794년 보건학교는 무상 교육, 실습 중심 교육, 내과·외과 통합, 전국 공통 학위를 원칙으로 삼았다.",
+  "src": [
+   {
+    "cite": "Jean Legaye (2014), 「L'enseignement de la médecine sous la Révolution et l'Empire」, Histoire des sciences médicales 48(3): 397-404",
+    "url": "https://numerabilis.u-paris.fr/ressources/pdf/sfhm/hsm/HSMx2014x048x003/HSMx2014x048x003x0397.pdf"
+   }
+  ]
+ },
+ {
+  "id": "dth-139",
+  "cat": "death",
+  "text": "레 알 근처 지하실에서 촛불이 꺼지고 사람들이 숨이 막혔다는 소문이 돌았다.",
+  "when": {
+   "from": 1780,
+   "to": 1780
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1780년 무고한 성인 묘지 옆 공동 구덩이 근처 지하실에서 촛불이 꺼지고 술통장이들이 질식하자, 같은 해 11월 묘지가 폐쇄되었다.",
+  "src": [
+   {
+    "cite": "Owen Hannaway·Caroline Hannaway (1977), 「La fermeture du cimetière des Innocents」, Dix-huitième siècle 9: 181-192",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1977_num_9_1_1124"
+   }
+  ]
+ },
+ {
+  "id": "dth-140",
+  "cat": "death",
+  "text": "횃불 아래 무고한 성인 묘지의 뼈를 수레에 싣는 밤 작업을 구경했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1785,
+   "to": 1787,
+   "months": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "왕립의학회 감독 아래 1785년 10월 시작된 무고한 성인 묘지 발굴은 1787년까지 겨울밤마다 이어졌다.",
+  "src": [
+   {
+    "cite": "Owen Hannaway·Caroline Hannaway (1977), 「La fermeture du cimetière des Innocents」, Dix-huitième siècle 9: 181-192",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1977_num_9_1_1124"
+   }
+  ]
+ },
+ {
+  "id": "dth-141",
+  "cat": "death",
+  "text": "몽루주 쪽 옛 채석장이 파리의 거대한 뼈 창고가 되었다고 들었다.",
+  "when": {
+   "from": 1786,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1786년 4월부터 1859년까지 여러 묘지에서 약 600만 명의 유골이 파리 지하 납골당(카타콤)으로 옮겨졌다.",
+  "src": [
+   {
+    "cite": "Ania Guini-Skliar (2011), 「Le temps à travers les inscriptions des catacombes de Paris」, Actes des congrès nationaux des sociétés historiques et scientifiques 129(5): 191-199",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2011_act_129_5_1908"
+   }
+  ]
+ },
+ {
+  "id": "dth-142",
+  "cat": "death",
+  "text": "카타콤 벽에 새긴 라틴어 경구를 읽으며 등불을 따라 걸었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1811,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1810~1811년 카타콤을 정비한 에리카르 드 튀리는 시간과 죽음을 다룬 경구 80여 개를 돌에 새겼다.",
+  "src": [
+   {
+    "cite": "Ania Guini-Skliar (2011), 「Le temps à travers les inscriptions des catacombes de Paris」, Actes des congrès nationaux des sociétés historiques et scientifiques 129(5): 191-199",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2011_act_129_5_1908"
+   }
+  ]
+ },
+ {
+  "id": "dth-143",
+  "cat": "death",
+  "text": "길이 꺼지며 집 한 채가 옛 채석장 구멍으로 내려앉았다.",
+  "when": {
+   "from": 1774,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 말 잇단 함몰 사고 뒤 1777년 4월 4일 파리 채석장 감독국이 세워졌다.",
+  "src": [
+   {
+    "cite": "Nathalie Vanara·Gilles Thomas (2017), 「Carrières et catacombes de Paris」, Karstologia 70: 33-42",
+    "url": "https://www.persee.fr/doc/karst_0751-7688_2017_num_70_1_3123"
+   }
+  ]
+ },
+ {
+  "id": "dth-144",
+  "cat": "death",
+  "text": "교회 바닥 가족 묘에 묻히지 못하고 마을 밖 새 묘지로 운구되었다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1776,
+   "to": 1800
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1776년 3월 10일 왕령은 교회 안 매장을 금지하고 묘지를 주거지와 성벽 밖으로 옮기도록 권고했다.",
+  "src": [
+   {
+    "cite": "Madeleine Lasserre (1991), 「La loi et les morts : la difficile création du cimetière général de Tours au XIXe siècle」, Annales de Bretagne et des pays de l'Ouest 98(3): 303-312",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1991_num_98_3_3399"
+   }
+  ]
+ },
+ {
+  "id": "dth-145",
+  "cat": "death",
+  "text": "왕령이 나온 지 오래인데도 시내 교회 묘지가 여전히 쓰이고 있었다.",
+  "when": {
+   "from": 1776,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1776년 왕령 뒤에도 보르도·리옹에서는 논의만 길어졌고, 투르는 1859년에야 이를 실행했다.",
+  "src": [
+   {
+    "cite": "Madeleine Lasserre (1991), 「La loi et les morts : la difficile création du cimetière général de Tours au XIXe siècle」, Annales de Bretagne et des pays de l'Ouest 98(3): 303-312",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1991_num_98_3_3399"
+   }
+  ]
+ },
+ {
+  "id": "dth-146",
+  "cat": "death",
+  "text": "아를 성벽 밖 새 공동묘지 축성식에 사람들이 구름처럼 모였다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1786,
+   "to": 1786,
+   "months": [
+    5
+   ]
+  },
+  "who": {
+   "region": [
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "아를은 1786년 5월 28일 성 밖 단일 묘지를 축성하는 드문 결단을 내렸다.",
+  "src": [
+   {
+    "cite": "Madeleine Lasserre (1991), 「La loi et les morts : la difficile création du cimetière général de Tours au XIXe siècle」, Annales de Bretagne et des pays de l'Ouest 98(3): 303-312",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1991_num_98_3_3399"
+   }
+  ]
+ },
+ {
+  "id": "dth-147",
+  "cat": "death",
+  "text": "교회 공동 납골실이 가득 차자 오래된 유해를 꺼내 납골당으로 옮겼다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "marseille",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "마르세유 교회의 공동 납골실은 차면 '비우기'를 해 유해를 성당 납골실이나 지붕 밑, 묘지 납골당으로 옮겼다.",
+  "src": [
+   {
+    "cite": "Régis Bertrand (1973), 「Cimetières marseillais aux XVIIIe et XIXe siècles」, Provence historique 23(92): 217-246",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_1973_num_23_92_3255"
+   }
+  ]
+ },
+ {
+  "id": "dth-148",
+  "cat": "death",
+  "text": "공동묘지 구덩이에 시신이 층층이 쌓이고 아이들은 그 틈새에 묻혔다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "marseille"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 마르세유 묘지 보고서에 따르면 구덩이 하나에 시신 15구를 3층으로 묻고, 아이들은 틈새에 흙 두 손가락 두께로 덮었다.",
+  "src": [
+   {
+    "cite": "Régis Bertrand (1973), 「Cimetières marseillais aux XVIIIe et XIXe siècles」, Provence historique 23(92): 217-246",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_1973_num_23_92_3255"
+   }
+  ]
+ },
+ {
+  "id": "dth-149",
+  "cat": "death",
+  "text": "교회 바닥에 묻히길 바란 노인의 소원이 금령 때문에 이루어지지 못했다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브르타뉴 고등법원은 1719년 8월 16일 렌의 성홍열 유행을 계기로 교회 안 매장을 금지했다.",
+  "src": [
+   {
+    "cite": "Alain J. Lemaitre (1983), 「Espace sacré et territoire vital au XVIIIe siècle : la régulation des lieux d'inhumation en Bretagne」, Annales de Bretagne et des pays de l'Ouest 90(2): 249-259",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1983_num_90_2_3126"
+   }
+  ]
+ },
+ {
+  "id": "dth-150",
+  "cat": "death",
+  "text": "아버지의 유언장에 묻힐 자리에 관한 말이 한 줄도 없었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 브르타뉴 유언장에서는 프로방스·앙주·파리처럼 매장 장소 지정 조항이 점차 사라졌다.",
+  "src": [
+   {
+    "cite": "Alain J. Lemaitre (1983), 「Espace sacré et territoire vital au XVIIIe siècle : la régulation des lieux d'inhumation en Bretagne」, Annales de Bretagne et des pays de l'Ouest 90(2): 249-259",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1983_num_90_2_3126"
+   }
+  ]
+ },
+ {
+  "id": "dth-151",
+  "cat": "death",
+  "text": "공증인을 불러 유언장을 쓰고 사후 미사 봉헌금을 정했다.",
+  "fx": {
+   "faith": 2,
+   "money": -20
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    40,
+    95
+   ]
+  },
+  "w": 1.2,
+  "once": true,
+  "fact": "18세기 오트노르망디 농촌 공증인 앞 유언장 400건 가운데 70건(17%)이 사제의 것이었고, 세기가 흐르며 평신도 유언이 늘었다.",
+  "src": [
+   {
+    "cite": "Philippe Goujard (1979), 「Discours et attitudes devant la mort : l'exemple des prêtres ruraux de Haute-Normandie au XVIIIe siècle」, Études normandes 28(1): 81-102",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1979_num_28_1_2442"
+   }
+  ]
+ },
+ {
+  "id": "dth-152",
+  "cat": "death",
+  "text": "이웃 본당 신부가 유언으로 사후 한 해 동안 매주 미사 세 대를 청했다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "normandie",
+    "rouen"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "벤느토 본당 신부 트랑샤르는 사후 1년간 매주 미사 세 대를 청했지만, 촛불을 요구한 유언은 대체로 30%를 넘지 않았다.",
+  "src": [
+   {
+    "cite": "Philippe Goujard (1979), 「Discours et attitudes devant la mort : l'exemple des prêtres ruraux de Haute-Normandie au XVIIIe siècle」, Études normandes 28(1): 81-102",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1979_num_28_1_2442"
+   }
+  ]
+ },
+ {
+  "id": "dth-153",
+  "cat": "death",
+  "text": "아버지의 유언장에는 긴 기도문 대신 짧은 문구만 적혀 있었다.",
+  "when": {
+   "from": 1760,
+   "to": 1800
+  },
+  "w": 1,
+  "once": false,
+  "fact": "앙시앵레짐 말 유언장은 경건한 문구가 짧아지고 미사 기금과 종교 유증이 드물어졌다.",
+  "src": [
+   {
+    "cite": "Jean Delumeau (1972), 「Démographie et mentalités : la mort en Anjou (XVIIe-XVIIIe siècle)」, Annales ESC 27(6): 1389-1399",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1972_num_27_6_422553"
+   }
+  ]
+ },
+ {
+  "id": "dth-154",
+  "cat": "death",
+  "text": "마노스크 공증인 사무소에서 이웃의 유언 낭독을 들었다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "보벨은 살롱드프로방스 500건, 마노스크 3,000건, 바르셀로네트 2,000건의 유언장으로 죽음에 대한 태도를 분석했다.",
+  "src": [
+   {
+    "cite": "Philippe Goujard (1979), 「Discours et attitudes devant la mort : l'exemple des prêtres ruraux de Haute-Normandie au XVIIIe siècle」, Études normandes 28(1): 81-102",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1979_num_28_1_2442"
+   }
+  ]
+ },
+ {
+  "id": "dth-155",
+  "cat": "death",
+  "text": "남편을 잃은 이웃 과부에게 상속인들이 상복을 지어 보냈다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "관습법상 과부는 남편이 죽은 집에서 40일 동안 쫓겨나지 않았고, 상속인은 상복을 마련해 줄 의무가 있었다.",
+  "src": [
+   {
+    "cite": "Brigitte Maillard (1999), 「Les veuves dans la société rurale au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 106(1): 211-230",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1999_num_106_1_4023"
+   }
+  ]
+ },
+ {
+  "id": "dth-156",
+  "cat": "death",
+  "text": "남편 장례를 치르고, 40일 안에 어디서 살지 정해야 했다.",
+  "fx": {
+   "money": -10,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "F",
+   "married": true,
+   "age": [
+    25,
+    80
+   ]
+  },
+  "w": 0.4,
+  "once": true,
+  "fact": "1744~1752년 시농 염창 관할의 '이사 신고' 가운데 29.5%가 과부의 것이었다.",
+  "src": [
+   {
+    "cite": "Brigitte Maillard (1999), 「Les veuves dans la société rurale au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 106(1): 211-230",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1999_num_106_1_4023"
+   }
+  ]
+ },
+ {
+  "id": "dth-157",
+  "cat": "death",
+  "text": "마을에 혼자 사는 과부가 유난히 많다는 것을 세금 명부에서 보았다.",
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "엑스필리에 따르면 1778년 성인 중 과부는 8.8%, 홀아비는 5%였고, 앙부아즈 관할에서는 1788년 가구주의 12.8%가 과부였다.",
+  "src": [
+   {
+    "cite": "Brigitte Maillard (1999), 「Les veuves dans la société rurale au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 106(1): 211-230",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1999_num_106_1_4023"
+   }
+  ]
+ },
+ {
+  "id": "dth-158",
+  "cat": "death",
+  "text": "아내를 잃은 이웃 홀아비가 두 해도 안 되어 재혼했다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 아네에서 자녀 있는 홀아비는 평균 19.9개월, 자녀 있는 과부는 50.4개월 만에 재혼했다.",
+  "src": [
+   {
+    "cite": "Guy Cabourdin (1978), 「Le remariage」, Annales de démographie historique 1978: 305-336",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1978_num_1978_1_1393"
+   }
+  ]
+ },
+ {
+  "id": "dth-159",
+  "cat": "death",
+  "text": "젊은 과부가 아이들 생각에 재혼 이야기를 몇 해째 미루었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "F"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "투루브르에서 30세 미만 과부의 재혼 간격은 52개월로, 같은 나이 홀아비(26개월)의 두 배였다.",
+  "src": [
+   {
+    "cite": "Guy Cabourdin (1978), 「Le remariage」, Annales de démographie historique 1978: 305-336",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1978_num_1978_1_1393"
+   }
+  ]
+ },
+ {
+  "id": "dth-160",
+  "cat": "death",
+  "text": "인구조사표에 과부로 적힌 여자가 홀아비보다 두 배는 많았다.",
+  "when": {
+   "from": 1840,
+   "to": 1850
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1846년 한 번이라도 결혼한 사람 가운데 남자는 10%가 홀아비, 여자는 19.3%가 과부였다.",
+  "src": [
+   {
+    "cite": "Brigitte Maillard (1999), 「Les veuves dans la société rurale au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 106(1): 211-230",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1999_num_106_1_4023"
+   }
+  ]
+ }
+]
