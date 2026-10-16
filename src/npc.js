@@ -81,7 +81,7 @@ function npcMeet(ctx){const a=s.age,E0=noble()?s.estate:s.estate;let role='친�
     w=pick(noble()?['오페라 무도회에서 만난 사람','튈르리 정원 산책길에서 만난 사람','사촌의 혼례식에서 만난 사람']:['성당 미사에서 눈이 마주친 사람','이웃 공방의 사람','성 요한 축일 밤 모닥불 곁에서 만난 사람','강변 선술집 무도회에서 만난 사람'])}
   else if(ctx==='exile'){o.estate=pick(['epee','robe']);o.age=a+ri(-10,15);o.cond='emigre';role=R()<.3?'후원자':'친구';w=`망명지 ${s.emiPlace||'코블렌츠'}에서 만난 프랑스 사람`}
   else{o.estate=R()<.6?s.estate:pick(['artisan','bourgeois']);o.age=a+ri(-10,10);role=R()<.15?'경쟁자':'친구';w=pick(['단골 카페에서 알게 된 사람','같은 셋집에 든 사람','본당 형제회에서 만난 사람','장터에서 시비 끝에 친해진 사람'])}
-  o.sex=sx;o.w=w;if(o.age<3)o.age=3;
+  o.sex=sx;o.w=w;if(o.age<3)o.age=3;if(['street','salon','club','work','love','exile','prison'].includes(ctx)&&o.age<16)o.age=16;
   if(role==='연인'&&(s.married||priest()||nun()))role='친구';
   const r=addFic(role,o);if(!r)return null;
   if(r.cond==='army')r.ay=s.year;if(r.cond==='prison')r.py=s.year;if(r.cond==='emigre')r.emi=s.emiPlace||'코블렌츠';
@@ -169,7 +169,7 @@ function npReact(r){if(child()||!npIn(r))return;const g=npGap(r);
 function npBondNote(r){const b=relBond(r);if(b===r.bd)return;const was=r.bd;r.bd=b;
   if(b==='혐오'&&!['경쟁자'].includes(r.role))r.role='경쟁자';
   const m={친우:`${npWith(r)}는 이제 서로 목숨을 맡길 만한 친우가 되었다.`,라이벌:`${npTop(r)} 이제 그대의 라이벌이다.`,존경:`${r.n}${bat(r.n)?'을':'를'} 마음 깊이 존경하게 되었다.`,혐오:`${r.n}${bat(r.n)?'이라면':'라면'} 이름만 들어도 이가 갈린다.`}[b];
-  if(m)L(m,'ev');else if(was==='친우')L(`${npWith(r)}의 사이가 예전 같지 않다.`,'sys')}
+  r.bs=r.bs||{};if(m&&!r.bs[b]){r.bs[b]=1;L(m,'ev')}else if(was==='친우')L(`${npWith(r)}의 사이가 예전 같지 않다.`,'sys')}
 /* ---------- 한 해의 장면 ---------- */
 const NP_TAV=r=>{const t=T(),E=npEst(r);return E==='noble'?pick(t<1789?['오페라 무도회','롱샹 산책길','튈르리 정원']:t<1815?['튈르리 정원','팔레루아얄 회랑','레카미에 부인의 살롱']:['오페라 무도회','불로뉴 숲 산책길','그랑 불바르의 카페']):E==='bourgeois'?pick(t<1784?['카페 프로코프','카페 드 라 레장스','뤽상부르 정원']:t<1830?['카페 프로코프','팔레루아얄 회랑의 카페 드 푸아','팔레루아얄 회랑']:['그랑 불바르의 카페','카페 프로코프','뤽상부르 정원']):pick(t<1830?['라 쿠르티유 문밖의 선술집','센 강 부두의 술집','생앙투안 거리의 선술집','시 문밖 갱게트(술집)']:['벨빌의 갱게트','생앙투안 거리의 선술집','센 강 부두의 술집'])};
 const npDuelOk=r=>isM()&&npM(r)&&s.age>=16&&(noble()||soldier()||npNob(r)||r.cond==='army'||inSchool('univ')||s.estate==='bourgeois');

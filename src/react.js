@@ -223,8 +223,8 @@ function reactAfter(opt,force){if(!s||s.dead||!opt||s.age<6)return;const tags=St
 function reactYearSync(){if(!s||s.dead||child()||s.age<16||s.cond!=='normal')return;const X=rxInit(),E=rxE(),pp=pubPol(),c=conduct();
   const w=(E==='o'?.5:1)*(c==='silent'?.5:1),notes=[];
   for(const r of relsAlive()){const rp=rxRelPol(r);if(rp==null)continue;const d=Math.abs(pp-rp);
-    if(d>=55&&r.close>15&&R()<.6){const n=-Math.max(1,Math.min(4,Math.round((d-40)/15*w)));const t=relFx(r,{close:n});if(R()<.5)notes.push([Math.abs(n),`${jo(r.n,'과','와')}는 정치 이야기만 나오면 말이 엇갈렸다. 사이가 조금 멀어졌다.`+t])}
-    else if(d<=15&&r.close<90&&E!=='o'){const t=relFx(r,{close:1});if(R()<.3)notes.push([.5,`${jo(r.n,'과','와')}는 시국을 보는 눈이 같아 더 가까워졌다.`+t])}}
+    if(d>=55&&r.close>15&&R()<.6){const n=-Math.max(1,Math.min(4,Math.round((d-40)/15*w)));const t=relFx(r,{close:n});if(R()<.5)notes.push([Math.abs(n),`${rxj(r.n,'과','와')}는 정치 이야기만 나오면 말이 엇갈렸다. 사이가 조금 멀어졌다.`+t])}
+    else if(d<=15&&r.close<90&&E!=='o'){const t=relFx(r,{close:1});if(R()<.3)notes.push([.5,`${rxj(r.n,'과','와')}는 시국을 보는 눈이 같아 더 가까워졌다.`+t])}}
   const q=rxQ(),m=rxMood(),d=Math.abs(pp-m);let n=E==='o'?0:d<=25?(s.rep.rloc<65&&R()<.35?1:0):d>=80?-3:d>=60?-2:d>=45?-1:0;if(n<0)n=Math.min(-1,Math.round(n*w));if(c==='silent'&&n>0)n=0;
   if(n){const sus=E==='t'&&n<=-2&&m>=50&&R()<.4?3:0;const nm=inParis()&&T()>=tm(1790,6)&&T()<tm(1795,10)?`${q.sec} 구 사람들`:`${q.n} 이웃들`;
     const t=n>0?pick([`${jo(nm,'은','는')} 그대를 ‘우리 편’으로 여겼다.`,`${jo(nm,'은','는')} 시국 이야기를 할 때 그대 말을 먼저 들었다.`]):E==='t'?`${jo(nm,'이','가')} 그대의 공개 입장을 두고 수군거렸다. 감시위원회 문턱이 가까워 보였다.`:E==='b'&&pp>=30?`${jo(nm,'은','는')} 그대를 ‘자유파 불평꾼’이라 불렀다.`:E==='b'||E==='d'?`${jo(nm,'은','는')} 그대 앞에서 정치 이야기를 꺼리게 되었다.`:`${jo(nm,'과','와')} 정치 이야기를 하면 분위기가 싸늘해졌다.`;
