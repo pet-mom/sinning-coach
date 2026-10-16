@@ -271,3 +271,8 @@ ul.hist li small{color:var(--mut);font-style:italic}
   .card{padding:16px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.cite{font-family:var(--fr);font-style:italic;font-size:.82rem;color:var(--era);text-decoration:underline;text-underline-offset:2px;margin-left:4px}
+.srcs{padding-left:1.4em;display:grid;gap:8px;font-size:.92rem}
+.srcs a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.srcs small{color:var(--mut)}

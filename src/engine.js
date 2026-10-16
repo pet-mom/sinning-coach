@@ -15,7 +15,7 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,
   if(['bretagne','vendee'].includes(region))faith+=15;if(region==='paris')faith-=12;if(fk!=='catholic')faith=ri(50,80);
   return {v:2,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
     st,money:0,land:0,dues:0,fame,sus:0,pol,faith:clamp(faith,0,100),literate:false,
-    age:0,year:by,month:bm,season:seasonOf(bm),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
+    age:0,year:by,month:bm-(bm%3)+2,season:seasonOf(bm-(bm%3)+2),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
     job:null,jobSince:0,prevJob:null,best:{},hist:[],cond:'normal',condSince:0,
     fa:{alive:true,age:ri(24,40)},mo:{alive:true,age:ri(19,34)},sibs:ri(1,6),eldest:R()<.35,inherit:0,
     spouse:null,married:false,kids:[],widowed:0,divorced:false,
@@ -63,8 +63,9 @@ async function advanceSeason(){
     if(soldier()&&atWar()){await warSeason(f*4);if(s.dead)return}
     if(s.job&&quarter()&&(s.season===1||s.season===3))await promoCheck();
   }
-  if(quarter()&&s.cond==='normal'&&!child()&&!s.job&&!s.flags.retired&&s.flags.adult&&s.age<55&&s.season===0&&!(noble()&&s.land>=300)&&R()<.6)await careerChoice(false);
+  if(quarter()&&s.cond==='normal'&&!child()&&!s.job&&!inSchool()&&!s.flags.retired&&s.flags.adult&&s.age<55&&s.season===0&&!(noble()&&s.land>=300)&&R()<.6)await careerChoice(false);
   if(child()&&quarter())await childhood();
+  await schoolTick();if(s.dead)return;
   if(s.age>=14&&!s.flags.adult)await comingOfAge();
   if(s.dead)return;
   await randomEvent(monthly()?.42:.72);if(s.dead)return;
@@ -114,10 +115,8 @@ async function childhood(){
     const north=['paris','picardie','champagne','normandie','alsace','ile','rouen','bourgogne'].includes(s.region);
     let p=noble()?1:s.estate==='bourgeois'?.95:s.estate==='artisan'?.62:north?.48:.28;if(!isM()&&!noble())p*=s.estate==='bourgeois'?.9:.55;
     if(R()<p){s.literate=true;say(noble()?'가정교사에게 읽기와 쓰기를 배우기 시작하였다.'+fx({edu:4}):'본당 신부가 여는 작은 학교에서 글을 깨쳤다.'+fx({edu:3}))}
-    else say(s.estate==='peasant'?'학교에 갈 형편이 못 되어 양떼를 몰았다. 글은 깨치지 못했다.'+fx({hp:2}):'일손을 거들어야 해서 글을 배우지 못했다.')}
-  if(s.age===10&&s.season===2&&!s.flags.college&&lit()&&(noble()||s.estate==='bourgeois')&&isM()){s.flags.college=true;
-    say(pick(['예수회','오라토리오회','베네딕도회'])+' 학교(콜레주)에 들어가 라틴어와 수사학을 배웠다.'+fx({edu:6,soc:2}))}
-  if(s.age===10&&s.season===2&&!isM()&&(noble()||s.estate==='bourgeois')&&!s.flags.convEd){s.flags.convEd=true;say('수녀원 기숙학교에 맡겨져 교리와 바느질, 예법을 배웠다.'+fx({edu:3,faith:4}))}
+    else say(s.estate==='peasant'?'학교에 갈 형편이 못 되어 양떼를 몰았다. 글은 깨치지 못했다.'+fx({hp:2}):'일손을 거들어야 해서 글을 배우지 못했다.');schoolStart7()}
+  if(s.age===10&&s.season===2&&!s.flags.at10){s.flags.at10=true;await schoolAt10()}
 }
 async function comingOfAge(){s.flags.adult=true;
   const E=s.estate;s.money={peasant:15,artisan:30,bourgeois:1200,hobereau:2500,robe:9000,epee:25000}[E];
@@ -131,9 +130,11 @@ async function comingOfAge(){s.flags.adult=true;
   const i=await shButtons(TRAITS.map(t=>({l:t.k,s:t.s,a:''})));s.trait=TRAITS[i].k;
   say(`사람들은 ${jo(s.given[0],'이','가')} ${{열정:'불같은',신중:'조심스러운',경건:'신심 깊은',계몽:'책을 좋아하는',야심:'야망이 큰',쾌활:'잘 웃고 사람 좋은'}[s.trait]} 아이라고 하였다.`);
   await shContinue();sheetClose();
+  if(inSchool(['college','convent','univ','seminary'])){say(SCH().st==='convent'?'기숙학교에서 몇 해를 더 보내게 되었다.':'학업을 계속하였다.','sys');return}
   await careerChoice(true);
 }
 function entryOptions(first){const E=s.estate,o=[];const add=(id,why)=>{if(POST[id]&&meets(POST[id]))o.push({id,why})};
+  if(!isM()&&lit()&&['peasant','artisan','bourgeois'].includes(E)&&T()>=1759)add('m1','산파 강습을 받는다(뒤 쿠드레 부인의 순회 강습)');
   if(E==='peasant'){add('f1','부모 곁에서 남의 밭일을 거든다');add('f2','소작지를 얻어 반타작 농사를 짓는다');add('c1',isM()?'도시로 나가 견습공이 된다':'도시로 나가 남의 집 하녀가 된다');if(isM())add('a1','군에 지원한다. 밥은 굶지 않는다')}
   if(E==='artisan'){add('c1',isM()?'아버지 공방의 견습공이 된다':'부잣집 하녀로 들어간다');add('c2',isM()?'직인이 되어 프랑스 일주(투르 드 프랑스)를 떠난다':'재봉사로 일한다');if(isM())add('a1','군에 지원한다')}
   if(E==='bourgeois'){add('l1','법률사무소 서기로 들어가 법을 익힌다');add('c2','가업을 거들며 장사를 배운다');add('w1','귀족 집안의 가정교사가 된다');add('r1',isM()?'신학교에 들어간다':'수녀원에 들어간다')}
@@ -156,11 +157,11 @@ async function promoCheck(){const j=job();if(!j||j.tr==='pol'&&j.t>=3)return;con
   const war=atWar()&&j.tr==='army',purge=j.tr==='army'&&T()>=1791.5&&T()<1795;
   if(yrs<(war?1:2))return;
   const next=PL.filter(x=>x[1]===j.tr&&x[2]===j.t+1).map(x=>POST[x[0]]).filter(p=>meets(p));if(!next.length)return;
-  let p={farm:.05,craft:.07,law:.07,church:.06,army:.05,pol:.08,letters:.05}[j.tr];
+  let p={farm:.05,craft:.07,law:.07,church:.06,army:.05,pol:.08,letters:.05,med:.06}[j.tr];
   if(war)p=.14;if(purge)p=.3;if(trait('야심'))p*=1.4;if(trait('신중'))p*=.8;if(s.plan==='근면')p*=1.3;
   if(R()>=p)return;const n=pick(next);
-  const key={farm:['soc',40],craft:['soc',45],law:['edu',60],church:['edu',50],army:['cour',50],pol:['soc',50],letters:['edu',60]}[j.tr];
-  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족']]);
+  const key={farm:['soc',40],craft:['soc',45],law:['edu',60],church:['edu',50],army:['cour',50],pol:['soc',50],letters:['edu',60],med:['edu',60]}[j.tr];
+  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적']]);
   const r=await roll(m,{label:`${pname(n)} 승진`,why});
   if(r.v>=4){takeJob(n.id,purge?'귀족 장교들이 떠난 자리를 메우며 ':'');if(n.tr==='army')fx({fame:2})}}
 

@@ -1,0 +1,4502 @@
+[
+ {
+  "id": "rev-001",
+  "cat": "economy",
+  "text": "새벽 네 시부터 빵집 앞 줄에 섰다가 해가 높이 뜬 뒤에야 하루치 빵을 받았다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "보르도는 1793년 빵 배급 카드를 파리보다 두 달 넘게 먼저 시행했고, 파리 코뮌 총평의회는 1793년 12월 11일(공화력 2년 프리메르 21일) 빵 카드 관련 결정을 내렸다.",
+  "src": [
+   {
+    "cite": "Ducaunnès-Duval, G. (1917), 「Les cartes de pain à Bordeaux en 1793」, Revue historique de Bordeaux et du département de la Gironde 10(3): 164-169",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1917_num_10_3_3114"
+   }
+  ]
+ },
+ {
+  "id": "rev-002",
+  "cat": "economy",
+  "text": "구역 위원회에서 식구 수가 적힌 빵 카드를 받아 잃어버릴세라 품속에 넣고 다녔다.",
+  "when": {
+   "from": 1794,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1793~1795년 파리 코뮌은 빵집에 밀가루와 땔감을 대고 빵값을 고정한 뒤 그 손실을 보상했으며, 빵 카드로 배급을 조직했다.",
+  "src": [
+   {
+    "cite": "Balois-Proyart, J.-C. (2024), 「La lutte pour le contrôle du marché du travail dans la boulangerie parisienne (printemps 1793-hiver 1795)」, Annales historiques de la Révolution française 417: 83-106",
+    "url": "https://shs.cairn.info/revue-annales-historiques-de-la-revolution-francaise-2024-3-page-83?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-003",
+  "cat": "economy",
+  "text": "빵집 일꾼들이 품삯을 올려 달라며 화덕 앞을 떠나자 구역 전체가 술렁였다.",
+  "fx": {
+   "money": 5,
+   "sus": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "M",
+   "job": [
+    "craft"
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1793년 봄부터 1795년 겨울까지 파리 코뮌과 제빵 장인·직인 사이에서는 제빵 노동시장의 통제권을 둘러싼 다툼이 이어졌다.",
+  "src": [
+   {
+    "cite": "Balois-Proyart, J.-C. (2024), 「La lutte pour le contrôle du marché du travail dans la boulangerie parisienne (printemps 1793-hiver 1795)」, Annales historiques de la Révolution française 417: 83-106",
+    "url": "https://shs.cairn.info/revue-annales-historiques-de-la-revolution-francaise-2024-3-page-83?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-004",
+  "cat": "economy",
+  "text": "시청에서 나눠 준 빵 카드를 들고 정해진 빵집 앞에서 차례를 기다렸다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "보르도의 빵 카드 제도는 1793년에 시행되었고, 파리에서 카드가 실제로 쓰이기 시작한 것은 그보다 두 달 넘게 뒤였다.",
+  "src": [
+   {
+    "cite": "Ducaunnès-Duval, G. (1917), 「Les cartes de pain à Bordeaux en 1793」, Revue historique de Bordeaux et du département de la Gironde 10(3): 164-169",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1917_num_10_3_3114"
+   }
+  ]
+ },
+ {
+  "id": "rev-005",
+  "cat": "economy",
+  "text": "설탕과 비누 값이 치솟자 이웃 여자들과 식료품점에 몰려가 값을 깎아 사 왔다.",
+  "fx": {
+   "money": 3,
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1793,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "F"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 2~3월 파리에서는 생필품 값 폭등으로 소요가 일어났고, 식량 문제는 여성 군중이 움직인 핵심 동기였다.",
+  "src": [
+   {
+    "cite": "Genty, M. (2006), 「Haim Burstin, Une révolution à l'œuvre. Le faubourg Saint-Marcel (1789-1794)」(서평), Annales historiques de la Révolution française 343: 216-219",
+    "url": "https://journals.openedition.org/ahrf/10242"
+   },
+   {
+    "cite": "Lapied, M. (2008), 「Dominique Godineau, Citoyennes tricoteuses」(서평), Annales historiques de la Révolution française 354: 231-233",
+    "url": "https://journals.openedition.org/ahrf/10954"
+   }
+  ]
+ },
+ {
+  "id": "rev-006",
+  "cat": "economy",
+  "text": "새 최고가격표가 가게 문에 나붙자 주인은 좋은 물건을 슬그머니 안쪽으로 치웠다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 2,
+  "once": false,
+  "fact": "국민공회는 1793년 9월 3일 곡물·밀가루 일반 최고가격을, 이튿날 생필품 최고가격 원칙을 표결했고 이는 9월 29일 법이 되었다.",
+  "src": [
+   {
+    "cite": "Ladjouzi, D. (2000), 「Les journées des 4 et 5 septembre 1793 à Paris」, Annales historiques de la Révolution française 321: 27-44",
+    "url": "https://journals.openedition.org/ahrf/178"
+   }
+  ]
+ },
+ {
+  "id": "rev-007",
+  "cat": "economy",
+  "text": "최고가격대로 팔면 밑지는 장사라 가게 덧문을 반쯤 내려 두고 단골에게만 물건을 내주었다.",
+  "fx": {
+   "money": -15,
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": true,
+   "job": [
+    "craft"
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 여름·가을 국민공회는 군대 보급과 시장 혼란 때문에 대다수 의원이 믿던 자유경제 원칙과 어긋나는 최고가격제와 징발에 기댔다.",
+  "src": [
+   {
+    "cite": "Rothiot, J.-P. (2007), 「Les représentants en mission face au dilemme, de ravitailler les armées ou la population civile (l'exemple des Vosges en 1793)」, Annales historiques de la Révolution française 347: 47-66",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2007_num_347_1_3018"
+   }
+  ]
+ },
+ {
+  "id": "rev-008",
+  "cat": "revolution",
+  "text": "파리에서 온 혁명군 분견대가 곳간을 뒤져 숨겨 둔 밀 자루를 찾아냈다.",
+  "fx": {
+   "money": -20,
+   "sus": 3
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ],
+   "urban": false,
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1793년 10월 엔 도(Aisne) 랑으로 파견된 파리 혁명군 제6대대 분견대는 200명으로, 수도로 갈 식량을 지키고 최고가격·징발법 집행을 다그쳤다.",
+  "src": [
+   {
+    "cite": "Cobb, R. (1952), 「L'Armée révolutionnaire dans l'Aisne (Octobre 1793 — Germinal an II)」, Revue du Nord 34(133): 51-70",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1952_num_34_133_2040"
+   }
+  ]
+ },
+ {
+  "id": "rev-009",
+  "cat": "revolution",
+  "text": "혁명군 병사들이 마을에 묵으며 최고가격을 어긴 농부를 고발하고 성당 종을 떼어 갔다.",
+  "fx": {
+   "faith": -2,
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 4월부터 공화력 2년 플로레알까지 각 도에 꾸려진 혁명군은 식량 징발과 탈기독교화를 밀어붙인 공포정치의 도구였다.",
+  "src": [
+   {
+    "cite": "Reinhard, M. (1964), 「Les armées révolutionnaires étudiées par Richard Cobb」, Annales historiques de la Révolution française 178: 489-497",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1964_num_178_1_3696"
+   }
+  ]
+ },
+ {
+  "id": "rev-010",
+  "cat": "economy",
+  "text": "최고가격제가 없어지자 장바구니 물가가 하루가 다르게 뛰었다.",
+  "fx": {
+   "money": -10,
+   "hp": -1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795,
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "국민공회가 1794년 12월 최고가격법을 폐지한 뒤 아시냐 가치는 급락해 1795년 가을에는 액면가의 1%에 불과했다.",
+  "src": [
+   {
+    "cite": "Miller, J. A. (2008), 「Des contrats sous tension : rétablir la propriété après la Terreur」, Annales historiques de la Révolution française 352: 241-262",
+    "url": "https://journals.openedition.org/ahrf/11134"
+   }
+  ]
+ },
+ {
+  "id": "rev-011",
+  "cat": "economy",
+  "text": "장사꾼이 아시냐 지폐는 반값으로만 쳐 주겠다며 은화를 요구했다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1792,
+   "to": 1795
+  },
+  "w": 2,
+  "once": false,
+  "fact": "적자를 지폐 발행으로 메운 아시냐는 두 차례 세계대전 뒤의 초인플레이션에 견줄 만큼 폭락했다.",
+  "src": [
+   {
+    "cite": "Aubin, C. (1991), 「Les assignats sous la Révolution française : un exemple d'hyperinflation」, Revue économique 42(4): 745-762",
+    "url": "https://www.persee.fr/doc/reco_0035-2764_1991_num_42_4_409303"
+   }
+  ]
+ },
+ {
+  "id": "rev-012",
+  "cat": "economy",
+  "text": "장롱 속 루이 금화를 쓰고 싶었지만 정화 사용이 금지되어 이웃 눈이 무서웠다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "w": 1,
+  "once": false,
+  "fact": "국민공회는 1793년 4월 앙시앵 레짐을 떠올리게 하는 루이 금화와 에퀴 은화의 사용을 불법으로 선언했다.",
+  "src": [
+   {
+    "cite": "Miller, J. A. (2008), 「Des contrats sous tension : rétablir la propriété après la Terreur」, Annales historiques de la Révolution française 352: 241-262",
+    "url": "https://journals.openedition.org/ahrf/11134"
+   }
+  ]
+ },
+ {
+  "id": "rev-013",
+  "cat": "economy",
+  "text": "몇 해 전 금화로 빌려준 돈을 채무자가 휴지 같은 아시냐 다발로 갚으러 왔다.",
+  "fx": {
+   "money": -40
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795,
+   "months": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "who": {
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1795년 여름 채무자들이 폭락한 지폐로 빚과 연금을 청산하자, 의회는 공화력 3년 메시도르 25일 법으로 모든 상환을 동결했다.",
+  "src": [
+   {
+    "cite": "Miller, J. A. (2008), 「Des contrats sous tension : rétablir la propriété après la Terreur」, Annales historiques de la Révolution française 352: 241-262",
+    "url": "https://journals.openedition.org/ahrf/11134"
+   }
+  ]
+ },
+ {
+  "id": "rev-014",
+  "cat": "economy",
+  "text": "빵 한 덩이 값이 혁명 전의 몇 배가 되어 한 주 품삯이 사흘 만에 바닥났다.",
+  "fx": {
+   "money": -10,
+   "hp": -2
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "1795년 빵 한 덩이 값은 1790년의 아홉 배로, 임금 상승을 훨씬 웃돌았다.",
+  "src": [
+   {
+    "cite": "Miller, J. A. (2008), 「Des contrats sous tension : rétablir la propriété après la Terreur」, Annales historiques de la Révolution française 352: 241-262",
+    "url": "https://journals.openedition.org/ahrf/11134"
+   }
+  ]
+ },
+ {
+  "id": "rev-015",
+  "cat": "economy",
+  "text": "연 5푼 이자로 꾸려 가던 연금이 아시냐로 지급되어 살림이 한순간에 무너졌다.",
+  "fx": {
+   "money": -30
+  },
+  "when": {
+   "from": 1795,
+   "to": 1796
+  },
+  "who": {
+   "estate": [
+    "bourgeois",
+    "robe"
+   ],
+   "age": [
+    45,
+    90
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1770년대 부르주아 가정이 믿었던 연 5% 지대 수익 계산은 1790년대 중반 초인플레이션으로 처참하게 빗나갔다.",
+  "src": [
+   {
+    "cite": "Miller, J. A. (2008), 「Des contrats sous tension : rétablir la propriété après la Terreur」, Annales historiques de la Révolution française 352: 241-262",
+    "url": "https://journals.openedition.org/ahrf/11134"
+   }
+  ]
+ },
+ {
+  "id": "rev-016",
+  "cat": "economy",
+  "text": "아시냐로 헐값에 넘긴 집을 되찾으려 ‘반값 이하 손해’ 취소 소송을 걸었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1797
+  },
+  "who": {
+   "estate": [
+    "bourgeois",
+    "peasant",
+    "artisan"
+   ],
+   "age": [
+    25,
+    80
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "1795년 이후 지폐로 대금을 받은 매도인들은 ‘절반 넘는 손해로 인한 계약 취소 소송(lésion d'outre-moitié)’을 내 매매를 무효로 돌리려 했다.",
+  "src": [
+   {
+    "cite": "Miller, J. A. (2008), 「Des contrats sous tension : rétablir la propriété après la Terreur」, Annales historiques de la Révolution française 352: 241-262",
+    "url": "https://journals.openedition.org/ahrf/11134"
+   }
+  ]
+ },
+ {
+  "id": "rev-017",
+  "cat": "economy",
+  "text": "새로 나온 토지 증서도 몇 달 만에 값이 떨어져 장터에서 아무도 받으려 하지 않았다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1796,
+   "to": 1797
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "아시냐는 1796년 3월 폐지되고 토지 증서(mandat territorial)로 바뀌었으나 이 역시 1797년에 폐기되었다.",
+  "src": [
+   {
+    "cite": "Davies, H. M. (2012), 「Une correspondance sépharade : 1794-96」, Annales historiques de la Révolution française 370: 191-211",
+    "url": "https://journals.openedition.org/ahrf/12533"
+   }
+  ]
+ },
+ {
+  "id": "rev-018",
+  "cat": "economy",
+  "text": "보르도 상인 수백 명이 잡혀가고 벌금이 매겨져 부두 상점이 줄줄이 문을 닫았다.",
+  "fx": {
+   "money": -30,
+   "sus": 3
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "estate": [
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 10월 이후 보르도의 군사위원회는 1794년 5월 폐지 전까지 299명에게 사형을 선고했고, 상인 약 200명이 체포되었다.",
+  "src": [
+   {
+    "cite": "Davies, H. M. (2012), 「Une correspondance sépharade : 1794-96」, Annales historiques de la Révolution française 370: 191-211",
+    "url": "https://journals.openedition.org/ahrf/12533"
+   }
+  ]
+ },
+ {
+  "id": "rev-019",
+  "cat": "economy",
+  "text": "미국 배들이 다시 항구에 들어오자 부두 짐꾼 일감이 조금씩 늘었다.",
+  "fx": {
+   "money": 10
+  },
+  "when": {
+   "from": 1795,
+   "to": 1796
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1795년부터 미국 선박이 보르도 항에 다시 드나들며 침체한 경제가 일부 숨통을 텄지만, 아시냐의 불안정한 구매력이 회복을 막았다.",
+  "src": [
+   {
+    "cite": "Davies, H. M. (2012), 「Une correspondance sépharade : 1794-96」, Annales historiques de la Révolution française 370: 191-211",
+    "url": "https://journals.openedition.org/ahrf/12533"
+   }
+  ]
+ },
+ {
+  "id": "rev-020",
+  "cat": "revolution",
+  "text": "강이 얼어붙고 땔감이 떨어져 이불을 뒤집어쓴 채 낮을 버텼다.",
+  "fx": {
+   "hp": -3
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795,
+   "months": [
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 2,
+  "once": false,
+  "fact": "공화력 3년(1794~95년) 겨울은 1709년의 대한파 이후 서유럽에서 가장 혹독한 겨울이었다.",
+  "src": [
+   {
+    "cite": "Cobb, R. (1955), 「Politique et subsistances en l'an III. L'exemple du Havre」, Annales de Normandie 5(2): 135-159",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1955_num_5_2_6505"
+   }
+  ]
+ },
+ {
+  "id": "rev-021",
+  "cat": "revolution",
+  "text": "‘빵을 달라!’ 외치는 여자들 틈에 섞여 곡물 창고 앞으로 몰려갔다.",
+  "fx": {
+   "sus": 3,
+   "hp": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795,
+   "months": [
+    3,
+    4,
+    5
+   ]
+  },
+  "who": {
+   "region": [
+    "normandie",
+    "rouen"
+   ],
+   "urban": true,
+   "sex": "F"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "공화력 3년 늦겨울과 봄, 르아브르 등지의 식량 폭동에서는 도시 여성과 농촌 날품팔이가 ‘빵을!’ 외치며 곡물 창고를 털었다.",
+  "src": [
+   {
+    "cite": "Cobb, R. (1955), 「Politique et subsistances en l'an III. L'exemple du Havre」, Annales de Normandie 5(2): 135-159",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1955_num_5_2_6505"
+   }
+  ]
+ },
+ {
+  "id": "rev-022",
+  "cat": "revolution",
+  "text": "옆집 노인 둘이 같은 주에 굶주림 끝에 숨을 거두었다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1795,
+   "to": 1796
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ],
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "공화력 3·4년(1795~96년) 파리 보급권과 북부 프랑스 전역은 식량 부족과 파국적 물가 상승을 겪었고, 루앙에서는 면직 위기를 겪은 동부 직조 구역 사망률이 가장 높았다.",
+  "src": [
+   {
+    "cite": "Cobb, R. (1956), 「Disette et mortalité. La crise de l'an III et de l'an IV à Rouen」, Annales de Normandie 6(3-4): 267-291",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1956_num_6_3_4320"
+   }
+  ]
+ },
+ {
+  "id": "rev-023",
+  "cat": "revolution",
+  "text": "지방에서 곡물 수송대가 들어왔다는 소식에 빵집 앞 줄이 잠시 짧아졌다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "공화력 3년 파견의원들은 파리 식량 공급을 위해 강제 징발과 자유 거래 사이를 오가며 곡물을 끌어모았다.",
+  "src": [
+   {
+    "cite": "Biard, M. (2005), 「Contrainte ou liberté économique ? Les représentants du peuple en mission et le ravitaillement de Paris en l'an III」, Annales historiques de la Révolution française 339: 35-53",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2005_num_339_1_2751"
+   }
+  ]
+ },
+ {
+  "id": "rev-024",
+  "cat": "revolution",
+  "text": "겨울 내내 닫혀 있던 성당 문을 마을 사람들이 스스로 열고 종을 쳤다.",
+  "fx": {
+   "faith": 3
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795,
+   "months": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "who": {
+   "urban": false,
+   "faith": "catholic"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "콩피에뉴 지구에서 공화력 3년의 예배 복귀는 마을에서 겨울에 시작해 1795년 여름 도시까지 번진 자발적 민중 운동이었다.",
+  "src": [
+   {
+    "cite": "Bernet, J. (1998), 「Les limites de la déchristianisation de l'an II éclairées par le retour au culte de l'an III : l'exemple du district de Compiègne」, Annales historiques de la Révolution française 312: 285-299",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1998_num_312_1_2178"
+   }
+  ]
+ },
+ {
+  "id": "rev-025",
+  "cat": "revolution",
+  "text": "구역 총회에 나가면 40수를 준다기에 일을 마치고 저녁 회의에 참석했다.",
+  "fx": {
+   "money": 2,
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "M",
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 9월 가난한 시민이 구역 총회에 나올 수 있도록 회의 참석 수당 40수가 지급되면서 구역 정치가 급진화했다.",
+  "src": [
+   {
+    "cite": "Genty, M. (2006), 「Haim Burstin, Une révolution à l'œuvre. Le faubourg Saint-Marcel (1789-1794)」(서평), Annales historiques de la Révolution française 343: 216-219",
+    "url": "https://journals.openedition.org/ahrf/10242"
+   }
+  ]
+ },
+ {
+  "id": "rev-026",
+  "cat": "revolution",
+  "text": "총회가 없는 날 저녁이면 구역 민중협회에 나가 신문 낭독과 토론을 들었다.",
+  "fx": {
+   "pol": 2,
+   "edu": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793~94년 파리 48개 구역마다 민중협회가 있었고, 협회는 구역 총회가 열리지 않는 날 모였다.",
+  "src": [
+   {
+    "cite": "Godineau, D. (1996), 「« Privées par notre sexe du droit honorable de donner notre suffrage... »」, Les cahiers du CEDREF HS 2: 199-211",
+    "url": "https://journals.openedition.org/cedref/1701"
+   }
+  ]
+ },
+ {
+  "id": "rev-027",
+  "cat": "revolution",
+  "text": "구역 상설 회의가 주 2회로 줄자 이웃들이 따로 민중협회를 차렸다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1793,
+   "months": [
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 9월 구역 회의의 상설 개최가 폐지되자 파리 민중협회의 절반이 그해 가을에 생겨났고, 공화력 2년 초에는 모든 구역에 협회가 생겼다.",
+  "src": [
+   {
+    "cite": "Monnier, R. (1989), 「Les sociétés populaires dans le département de Paris sous la Révolution」, Annales historiques de la Révolution française 278: 356-373",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1989_num_278_1_1278"
+   }
+  ]
+ },
+ {
+  "id": "rev-028",
+  "cat": "revolution",
+  "text": "자코뱅의 압박 속에 우리 구역 민중협회가 스스로 해산을 결의했다.",
+  "fx": {
+   "pol": -2
+  },
+  "when": {
+   "from": 1794,
+   "to": 1794,
+   "months": [
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력 2년 제르미날 27일부터 프레리알 18일까지 두 달이 안 되는 사이 파리 37개 협회가 해산하거나 회의를 중단해, 구역의 77%가 영향을 받았다.",
+  "src": [
+   {
+    "cite": "Monnier, R. (1987), 「La dissolution des Sociétés Populaires parisiennes au printemps de l'an II」, Annales historiques de la Révolution française 268: 176-191",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1987_num_268_1_4574"
+   }
+  ]
+ },
+ {
+  "id": "rev-029",
+  "cat": "revolution",
+  "text": "마을 협회에서 회원끼리 ‘형제’라 부르며 새 회원의 애국심을 심사했다.",
+  "fx": {
+   "pol": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "퓌드돔 도에는 76개 민중협회가 있었으며, 협회는 1795년 8월 23일(공화력 3년 프뤽티도르 6일) 해산되었다.",
+  "src": [
+   {
+    "cite": "Bourdin, P. (1992), 「Le recrutement des Sociétés Populaires du Puy-de-Dôme」, Annales historiques de la Révolution française 290: 491-516",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1992_num_290_1_1522"
+   }
+  ]
+ },
+ {
+  "id": "rev-030",
+  "cat": "revolution",
+  "text": "읍내에 생긴 헌법의 벗 협회가 장날마다 법령을 소리 내어 읽어 주었다.",
+  "fx": {
+   "pol": 1,
+   "edu": 1
+  },
+  "when": {
+   "from": 1790,
+   "to": 1795
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1789년부터 공화력 3년까지의 정치 협회 전국 조사는 클럽망이 대도시를 넘어 소읍과 마을까지 촘촘히 퍼졌음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Boutier, J. et Boutry, P. (1989), 「Les sociétés politiques en France de 1789 à l'an III : « une machine » ?」, Revue d'histoire moderne et contemporaine 36(1): 29-67",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1989_num_36_1_1480"
+   }
+  ]
+ },
+ {
+  "id": "rev-031",
+  "cat": "revolution",
+  "text": "여성 회원들이 공민증을 받으러 온 남자를 회의장에서 꼬치꼬치 캐물었다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "F"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793~94년 파리 여러 구역에서 여성 투사들은 구역 관리를 감시하고 원래 총회가 내주던 공민증(certificat de civisme) 발급에까지 관여했다.",
+  "src": [
+   {
+    "cite": "Godineau, D. (1996), 「« Privées par notre sexe du droit honorable de donner notre suffrage... »」, Les cahiers du CEDREF HS 2: 199-211",
+    "url": "https://journals.openedition.org/cedref/1701"
+   }
+  ]
+ },
+ {
+  "id": "rev-032",
+  "cat": "revolution",
+  "text": "협회 모금함에 셔츠 두 벌과 붕대용 헌 천을 내놓았다.",
+  "fx": {
+   "money": -5,
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "공화력 2년 애국심의 한가운데에는 기부 관행이 있었으며, 기부 총량을 집계한 자료는 남아 있지 않다.",
+  "src": [
+   {
+    "cite": "Alzas, N. (2002), 「Don, patriotisme et sociétés populaires en l'an II」, Annales historiques de la Révolution française 329: 41-65",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2002_num_329_1_2597"
+   }
+  ]
+ },
+ {
+  "id": "rev-033",
+  "cat": "revolution",
+  "text": "석공·목수들이 구역 총회에서 ‘상퀼로트’를 자처하며 부자들의 사치를 성토했다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "M",
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력 2년 ‘상퀼로트’라는 정치적 형상은 18세기 수공업 작업장의 실제보다 노동에 관한 혁명적 언어가 만든 은유에 가까웠다.",
+  "src": [
+   {
+    "cite": "Sonenscher, M. (1985), 「Les sans-culottes de l'an II : repenser le langage du travail dans la France révolutionnaire」, Annales ESC 40(5): 1087-1108",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1985_num_40_5_283223"
+   }
+  ]
+ },
+ {
+  "id": "rev-034",
+  "cat": "revolution",
+  "text": "공민증이 없으면 자리를 잃는다는 말에 구역 위원회 앞에 줄을 섰다.",
+  "fx": {
+   "sus": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": true,
+   "job": [
+    "craft",
+    "law",
+    "letters",
+    "pol"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 3월 21일 법령으로 세워진 감시위원회는 처음에 외지인 등록과 공민증 발급·확인을 맡았다.",
+  "src": [
+   {
+    "cite": "Duclos, C. (2009), 「Les activités et le rôle des comités de surveillance dans le district de Montivilliers」, Annales de Normandie 59(1): 85-108",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_2009_num_59_1_6236"
+   }
+  ]
+ },
+ {
+  "id": "rev-035",
+  "cat": "revolution",
+  "text": "감시위원회 사람들이 이웃의 밀고를 듣고 와 집을 뒤져 편지 묶음을 가져갔다.",
+  "fx": {
+   "sus": 4
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 3월 21일 법은 코뮌마다 12명으로 된 감시위원회를 두게 했고, 위원회는 혐의자 명단 작성과 체포영장 발부 권한을 얻었다.",
+  "src": [
+   {
+    "cite": "Lapied, M. (2002), 「Le rôle des comités de surveillance dans la circulation de l'information, à partir de l'étude des comités du Sud-Est」, Annales historiques de la Révolution française 330: 29-39",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2002_num_330_1_2614"
+   }
+  ]
+ },
+ {
+  "id": "rev-036",
+  "cat": "revolution",
+  "text": "선술집에서 국민공회를 욕한 한마디가 다음 날 위원회 장부에 적혔다.",
+  "fx": {
+   "sus": 3
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 9월 17일 혐의자법으로 감시위원회는 혐의자 명단을 작성했고, 데카드마다 지구 행정에 활동을 보고해야 했다.",
+  "src": [
+   {
+    "cite": "Duclos, C. (2009), 「Les activités et le rôle des comités de surveillance dans le district de Montivilliers」, Annales de Normandie 59(1): 85-108",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_2009_num_59_1_6236"
+   }
+  ]
+ },
+ {
+  "id": "rev-037",
+  "cat": "revolution",
+  "text": "파견의원의 횡포를 적은 고발장에 마을 사람들과 함께 이름을 올렸다.",
+  "fx": {
+   "pol": 2,
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "literate": true
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "국민공회 의원을 겨냥한 고발 편지는 1793년 2월 이전에는 드물었고, 공화력 2년 브뤼메르부터 본격적으로 쏟아졌다.",
+  "src": [
+   {
+    "cite": "Legoff, J.-B. (2013), 「Dénoncer les conventionnels pendant la Terreur et la Réaction thermidorienne」, Annales historiques de la Révolution française 372: 81-104",
+    "url": "https://journals.openedition.org/ahrf/12779"
+   }
+  ]
+ },
+ {
+  "id": "rev-038",
+  "cat": "revolution",
+  "text": "작은 산골 마을에도 감시위원회가 생겨 이웃이 이웃의 이름을 적어 냈다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력 2년 프랑슈콩테 퐁타를리에 지구에서는 거의 모든 코뮌에 감시위원회가 설치되었다.",
+  "src": [
+   {
+    "cite": "Pingué, D. (2007), 「La réception du calendrier républicain dans les campagnes du Haut-Doubs. Quels enseignements ?」, Annales historiques de la Révolution française 349: 79-86",
+    "url": "https://journals.openedition.org/ahrf/11221"
+   }
+  ]
+ },
+ {
+  "id": "rev-039",
+  "cat": "revolution",
+  "text": "카페에서 왕비 험담을 하다 구역 순찰에게 붙잡혀 훈계를 듣고 풀려났다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1789,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1789~90년 파리 생로크 구역 경찰 사건의 70% 이상이 크고 작은 정치적 사건이었고, 이 ‘말의 단속’은 ‘음모’ 강박을 보여 준다.",
+  "src": [
+   {
+    "cite": "Biard, M. (2010), 「Bernard Gainot et Vincent Denis (dir.), Un siècle d'ordre public en Révolution」(서평), Annales historiques de la Révolution française 361: 211-212",
+    "url": "https://journals.openedition.org/ahrf/11749"
+   }
+  ]
+ },
+ {
+  "id": "rev-040",
+  "cat": "revolution",
+  "text": "갓난 딸의 이름을 ‘리베르테’로 올리자 서기가 만족스럽게 고개를 끄덕였다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 1.2,
+  "once": true,
+  "fact": "혁명식 이름은 공화력 2년에 절정이었고, 파리 출생 기록에는 ‘리베르테’, ‘콩콩브르(오이)’ 같은 이름이 남아 있다.",
+  "src": [
+   {
+    "cite": "Bange, R. (1994), 「Recherches sur les prénoms révolutionnaires à Paris」, Annales historiques de la Révolution française 295: 39-65",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1994_num_295_1_1602"
+   }
+  ]
+ },
+ {
+  "id": "rev-041",
+  "cat": "revolution",
+  "text": "서기가 혁명식 이름을 권했지만 아이에게 할아버지 세례명을 그대로 물려주었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "오두 지역 36개 코뮌에서 1793년 1월부터 공화력 2년 말까지 태어난 666명 가운데 단절형 혁명 이름은 0명, 절충형은 4명(0.6%)뿐이었다.",
+  "src": [
+   {
+    "cite": "Pingué, D. (2007), 「La réception du calendrier républicain dans les campagnes du Haut-Doubs. Quels enseignements ?」, Annales historiques de la Révolution française 349: 79-86",
+    "url": "https://journals.openedition.org/ahrf/11221"
+   }
+  ]
+ },
+ {
+  "id": "rev-042",
+  "cat": "revolution",
+  "text": "이웃집 아기가 달 이름 ‘브뤼메르’를 받았다는 얘기에 우물가 여자들이 웃음을 터뜨렸다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1796
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년부터 공화력 4년까지 도마다 적어도 한 대도시의 출생 기록을 조사한 결과, 혁명식 이름의 동기는 장소와 시기마다 달랐다.",
+  "src": [
+   {
+    "cite": "Billy, P.-H. (2000), 「Des prénoms révolutionnaires en France」, Annales historiques de la Révolution française 322: 39-60",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2000_num_322_1_2352"
+   }
+  ]
+ },
+ {
+  "id": "rev-043",
+  "cat": "revolution",
+  "text": "가게 손님이 ‘무슈’ 대신 ‘시민’이라 부르며 거리낌 없이 반말을 했다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1790년 12월 ‘C.B.’라는 필자는 ‘vous’와 ‘무슈·마담’을 없애고 모두가 ‘tu’를 쓰자고 제안했고, 이 관행은 혁명기에 요란하지만 짧게 퍼졌다.",
+  "src": [
+   {
+    "cite": "Geffroy, A. (1989), 「Égalité et distinction(s) : trois textes de 1790 sur le tutoiement」, Histoire Épistémologie Langage, Archives et documents 1: 45-51",
+    "url": "https://www.persee.fr/doc/hel_0247-8897_1989_num_1_1_3419"
+   }
+  ]
+ },
+ {
+  "id": "rev-044",
+  "cat": "revolution",
+  "text": "하인이 대놓고 ‘너’라고 부르며 대들었지만 고발이 두려워 꾸짖지 못했다.",
+  "fx": {
+   "sus": 1,
+   "soc": -2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "estate": [
+    "epee",
+    "hobereau",
+    "robe"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "옛 호칭 체계에서 귀족과 부르주아는 ‘vous’로, 하인과 아랫사람은 ‘tu’로 불렸기에 혁명의 반말은 신분 질서를 정면으로 겨눴다.",
+  "src": [
+   {
+    "cite": "Geffroy, A. (1989), 「Égalité et distinction(s) : trois textes de 1790 sur le tutoiement」, Histoire Épistémologie Langage, Archives et documents 1: 45-51",
+    "url": "https://www.persee.fr/doc/hel_0247-8897_1989_num_1_1_3419"
+   }
+  ]
+ },
+ {
+  "id": "rev-045",
+  "cat": "revolution",
+  "text": "들판에 세운 조국의 제단 앞에서 국민방위대와 함께 헌법에 충성을 맹세했다.",
+  "fx": {
+   "pol": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1790,
+   "to": 1790,
+   "months": [
+    6,
+    7
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1790년 7월 14일 파리 연맹제에는 비가 오는데도 약 40만 명이 모였다.",
+  "src": [
+   {
+    "cite": "Grijzenhout, F. (2001), 「La fête révolutionnaire aux Pays-Bas (1780-1806). De l'utopie à l'indifférence」, Annales historiques de la Révolution française 326: 107-116",
+    "url": "https://journals.openedition.org/ahrf/500"
+   }
+  ]
+ },
+ {
+  "id": "rev-046",
+  "cat": "revolution",
+  "text": "데카디에만 혼례를 올릴 수 있다 하여 구청 집회장에서 예식을 치렀다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1798,
+   "to": 1799
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "age": [
+    18,
+    40
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "공화력 6년 프뤽티도르 13일 법은 혼인을 데카디에 집회 장소에서만 올리게 했고, 보르도 북부 행정은 공화력 7년 방데미에르 12일 생루이 성당을 집회장으로 골랐다.",
+  "src": [
+   {
+    "cite": "Ducaunnès-Duval, G. (1923), 「Les fêtes décadaires à Bordeaux」, Revue historique de Bordeaux et du département de la Gironde 16(1): 37-42",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1923_num_16_1_2465"
+   }
+  ]
+ },
+ {
+  "id": "rev-047",
+  "cat": "revolution",
+  "text": "선생님이 아이들을 줄 세워 데카디 집회에 데려가 법령 낭독을 듣게 했다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1798,
+   "to": 1799
+  },
+  "who": {
+   "age": [
+    7,
+    13
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1798년 8월 30일(공화력 6년 프뤽티도르 13일) 법은 데카드마다 법령을 낭독하는 시민 집회를 열고 교사들이 학생을 데려오도록 했다.",
+  "src": [
+   {
+    "cite": "Ducaunnès-Duval, G. (1923), 「Les fêtes décadaires à Bordeaux」, Revue historique de Bordeaux et du département de la Gironde 16(1): 37-42",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1923_num_16_1_2465"
+   }
+  ]
+ },
+ {
+  "id": "rev-048",
+  "cat": "revolution",
+  "text": "꽃바구니를 든 행렬을 따라 최고존재 축제가 열리는 광장까지 걸었다.",
+  "fx": {
+   "pol": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1794,
+   "to": 1794,
+   "months": [
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1794년 6월 8일(공화력 2년 프레리알 20일) 최고존재 축제는 혁명 축제 가운데 가장 화려한 축제의 하나였다.",
+  "src": [
+   {
+    "cite": "Monnier, R. (1987), 「La dissolution des Sociétés Populaires parisiennes au printemps de l'an II」, Annales historiques de la Révolution française 268: 176-191",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1987_num_268_1_4574"
+   }
+  ]
+ },
+ {
+  "id": "rev-049",
+  "cat": "revolution",
+  "text": "노예제 폐지를 기리는 축제 행렬이 마을 광장을 돌며 애국가를 불렀다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1794,
+   "to": 1794,
+   "months": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "1794년 2월 4일 노예제 폐지령 뒤 2~7월에 프랑스에서 확인된 기념 축제는 37건이며, 그 가운데 7건이 외르·칼바도스·센앵페리외르에 몰려 있었다.",
+  "src": [
+   {
+    "cite": "Crouin, C. (2005), 「Étude scénographique des fêtes en faveur de l'abolition de l'esclavage en France (février-juillet 1794)」, Annales historiques de la Révolution française 339: 55-77",
+    "url": "https://journals.openedition.org/ahrf/2123"
+   }
+  ]
+ },
+ {
+  "id": "rev-050",
+  "cat": "revolution",
+  "text": "데카디에 쉬라는 포고가 있었지만 밭에 나가 일하고 일요일에 쉬었다.",
+  "fx": {
+   "faith": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1794,
+   "to": 1795
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1794년 5월 퐁타를리에 지구 91개 코뮌 조사에서 데카디 휴일을 지킨다는 코뮌은 5분의 1도 안 되었고 4분의 3가량은 ‘아니오’라고 답했다.",
+  "src": [
+   {
+    "cite": "Pingué, D. (2007), 「La réception du calendrier républicain dans les campagnes du Haut-Doubs. Quels enseignements ?」, Annales historiques de la Révolution française 349: 79-86",
+    "url": "https://journals.openedition.org/ahrf/11221"
+   }
+  ]
+ },
+ {
+  "id": "rev-051",
+  "cat": "revolution",
+  "text": "데카디인데 베틀을 돌렸다고 면 관리에게 호된 꾸중을 들었다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1794,
+   "to": 1794,
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "who": {
+   "urban": false,
+   "sex": "F"
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "부자이유 마을의 직조공 프랑수아즈 드로즈는 1794년 1월 9일(공화력 2년 니보즈 20일) 데카디에 일했다는 이유로 질책을 받았다.",
+  "src": [
+   {
+    "cite": "Pingué, D. (2007), 「La réception du calendrier républicain dans les campagnes du Haut-Doubs. Quels enseignements ?」, Annales historiques de la Révolution française 349: 79-86",
+    "url": "https://journals.openedition.org/ahrf/11221"
+   }
+  ]
+ },
+ {
+  "id": "rev-052",
+  "cat": "revolution",
+  "text": "공증 문서에 새 달력 날짜를 적다가 몇 번이나 지우고 다시 썼다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "literate": true,
+   "job": [
+    "law",
+    "letters",
+    "pol"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력은 1793년 10월 5일 채택되고 1793년 11월 24일 의무화되었으며, 오두에서는 니보즈에 코뮌 절반, 플뤼비오즈에 4분의 3이 새 날짜를 썼다.",
+  "src": [
+   {
+    "cite": "Pingué, D. (2007), 「La réception du calendrier républicain dans les campagnes du Haut-Doubs. Quels enseignements ?」, Annales historiques de la Révolution française 349: 79-86",
+    "url": "https://journals.openedition.org/ahrf/11221"
+   }
+  ]
+ },
+ {
+  "id": "rev-053",
+  "cat": "revolution",
+  "text": "장날을 데카디에 맞추라는 명령에 장꾼들이 투덜대며 짐을 꾸렸다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1798,
+   "to": 1799
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "공화력 6년 프뤽티도르 쿠데타 뒤 정부는 데카디 의식과 공화력을 전 국민에게 강제하려는 가혹한 법을 잇달아 냈고, 서부는 대체로 거부했다.",
+  "src": [
+   {
+    "cite": "Bianchi, S. (2010), 「Essai de synthèse sur l'étude du calendrier républicain en l'an II et l'an VI」, Actes des congrès nationaux des sociétés historiques et scientifiques 129: 141-163",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2010_act_129_4_1688"
+   }
+  ]
+ },
+ {
+  "id": "rev-054",
+  "cat": "revolution",
+  "text": "관청 문서는 새 날짜로 쓰였지만 장터 셈과 소작 계약은 옛 달력을 따랐다.",
+  "when": {
+   "from": 1794,
+   "to": 1799
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "로렌에서 공화력은 공문서·회의일·장날·임대 계약 같은 실무에는 적용되었으나, 휴일과 예배 같은 종교적 측면에서는 저항에 부딪혔다.",
+  "src": [
+   {
+    "cite": "Rothiot, J.-P. (2010), 「Le calendrier républicain dans une région patriote, la Lorraine」, Actes des congrès nationaux des sociétés historiques et scientifiques 129: 165-184",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2010_act_129_4_1689"
+   }
+  ]
+ },
+ {
+  "id": "rev-055",
+  "cat": "revolution",
+  "text": "새해 첫날이 다시 1월 1일로 돌아와 벽에 옛 달력을 걸었다.",
+  "when": {
+   "from": 1806,
+   "to": 1806,
+   "months": [
+    1
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1806년 3월 12일 제국 법령이 나올 무렵 공화력은 이미 폐지되어 그레고리력이 다시 쓰이고 있었다.",
+  "src": [
+   {
+    "cite": "Lebrun, M. (2006), 「Révolution, Empire et mauvais soldats」, Revue historique des armées 244: 112-123",
+    "url": "https://journals.openedition.org/rha/6032"
+   }
+  ]
+ },
+ {
+  "id": "rev-056",
+  "cat": "economy",
+  "text": "약방에 새 그램 저울을 들였지만 손님들은 여전히 온스로 약을 주문했다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1815
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "옛 파리 ‘마르 무게’ 1리브르는 489.506g, 1온스는 30.594g으로, 1799년 새 킬로그램은 18,827.15그랭으로 환산되었다.",
+  "src": [
+   {
+    "cite": "Marquet, L. (1990), 「La création du système métrique décimal et les pharmaciens」, Revue d'histoire de la pharmacie 78(287): 425-442",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1990_num_78_287_3452"
+   }
+  ]
+ },
+ {
+  "id": "rev-057",
+  "cat": "economy",
+  "text": "장터에서 새 미터 자 대신 옛 온(aune) 자로 천을 재다 단속관에게 들켰다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1800,
+   "to": 1839
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "미터법은 1795년 법으로 도입되었지만 실제 정착은 더뎠고, 1837년 7월 4일 법이 1840년 1월 1일부터 미터법만 쓰도록 벌금과 함께 못 박았다.",
+  "src": [
+   {
+    "cite": "「Métrologie et citoyenneté」, Les Cahiers du numérique 2020/2: 27 이하",
+    "url": "https://shs.cairn.info/revue-les-cahiers-du-numerique-2020-2-page-27?tab=texte-integral"
+   }
+  ]
+ },
+ {
+  "id": "rev-058",
+  "cat": "economy",
+  "text": "새해부터 옛 단위를 쓰면 벌금이라 하여 저울과 되를 새로 장만했다.",
+  "fx": {
+   "money": -10
+  },
+  "when": {
+   "from": 1840,
+   "to": 1840,
+   "months": [
+    1,
+    2,
+    3
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1837년 7월 4일 법에 따라 1840년 1월 1일부터 옛 도량형 사용은 벌금 대상이 되었다.",
+  "src": [
+   {
+    "cite": "「Métrologie et citoyenneté」, Les Cahiers du numérique 2020/2: 27 이하",
+    "url": "https://shs.cairn.info/revue-les-cahiers-du-numerique-2020-2-page-27?tab=texte-integral"
+   }
+  ]
+ },
+ {
+  "id": "rev-059",
+  "cat": "economy",
+  "text": "구리 동전 열 닢을 내밀어도 장사꾼은 1프랑으로 쳐 주지 않았다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1800,
+   "to": 1848
+  },
+  "who": {
+   "region": [
+    "gascogne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 전반 도르도뉴에서는 10상팀 동전 10개가 실제로는 1프랑 대접을 받지 못했다.",
+  "src": [
+   {
+    "cite": "Confavreux, J. (2000), 「Usages sociaux et politiques de la monnaie en Dordogne dans la première moitié du XIXe siècle」, Ruralia 7",
+    "url": "https://journals.openedition.org/ruralia/174"
+   }
+  ]
+ },
+ {
+  "id": "rev-060",
+  "cat": "economy",
+  "text": "1726년 이전 은화가 통용 금지되어 장롱 속 옛 동전을 바꾸러 읍에 갔다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1804,
+   "to": 1806
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "공화력 12년 테르미도르 25일(1804년) 법령은 1726년 이전에 주조된 은화와 외국 은화를 통용 금지했다.",
+  "src": [
+   {
+    "cite": "Confavreux, J. (2000), 「Usages sociaux et politiques de la monnaie en Dordogne dans la première moitié du XIXe siècle」, Ruralia 7",
+    "url": "https://journals.openedition.org/ruralia/174"
+   }
+  ]
+ },
+ {
+  "id": "rev-061",
+  "cat": "economy",
+  "text": "수도원 초지가 경매에 나오자 마을 농민들이 돈을 모아 공동 입찰했다.",
+  "fx": {
+   "money": -40,
+   "soc": 2
+  },
+  "when": {
+   "from": 1791,
+   "to": 1796
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "농민들은 때로 담합해 경매를 막고 도시 입찰자를 쫓아냈지만, 제1기원(교회) 국유재산에서 차지한 몫은 20~30%에 그쳤다.",
+  "src": [
+   {
+    "cite": "Béaur, G. (2008), 「Révolution et redistribution des richesses dans les campagnes : mythe ou réalité ?」, Annales historiques de la Révolution française 352: 209-239",
+    "url": "https://journals.openedition.org/ahrf/11151"
+   }
+  ]
+ },
+ {
+  "id": "rev-062",
+  "cat": "economy",
+  "text": "읍내 공증인이 수도원 농장을 통째로 낙찰받았다는 소문이 장터에 돌았다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1795
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "혁명기 국유재산으로 주인이 바뀐 땅은 국토의 10%에 조금 못 미쳤고, 그 가운데 교회 재산은 6%에 약간 못 미쳤다.",
+  "src": [
+   {
+    "cite": "Béaur, G. (2008), 「Révolution et redistribution des richesses dans les campagnes : mythe ou réalité ?」, Annales historiques de la Révolution française 352: 209-239",
+    "url": "https://journals.openedition.org/ahrf/11151"
+   },
+   {
+    "cite": "Bodinier, B. (1999), 「La vente des biens nationaux : essai de synthèse」, Annales historiques de la Révolution française 315: 7-19",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1999_num_315_1_2219"
+   }
+  ]
+ },
+ {
+  "id": "rev-063",
+  "cat": "economy",
+  "text": "국유재산 경매에서 옛 수도원 포도밭 한 필지를 아시냐로 사들였다.",
+  "fx": {
+   "money": -150,
+   "pol": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1796
+  },
+  "who": {
+   "estate": [
+    "bourgeois",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "농민은 매각된 국유재산의 약 3분의 1, 곧 150만 ha가량을 얻어 토지 보유 비중이 40~45%에서 43~48%로 늘었다.",
+  "src": [
+   {
+    "cite": "Béaur, G. (2008), 「Révolution et redistribution des richesses dans les campagnes : mythe ou réalité ?」, Annales historiques de la Révolution française 352: 209-239",
+    "url": "https://journals.openedition.org/ahrf/11151"
+   }
+  ]
+ },
+ {
+  "id": "rev-064",
+  "cat": "economy",
+  "text": "허수아비 명의를 내세운 투기꾼들이 국유재산을 싸게 사서 되판다는 말이 돌았다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 아비뇽에서는 선출직과 공무원들이 허수아비 명의로 국유재산을 투기한 사건이 드러났고, 한 농부는 대리인으로 다섯 필지를 샀다.",
+  "src": [
+   {
+    "cite": "Peyrard, C. (1996), 「La spéculation sur la vente des biens nationaux dans le Vaucluse」, Provence historique 46(185): 385-418",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_1996_num_46_185_2543"
+   }
+  ]
+ },
+ {
+  "id": "rev-065",
+  "cat": "economy",
+  "text": "국유재산을 산 이웃집 헛간이 밤사이 슈앙들 손에 불탔다.",
+  "fx": {
+   "sus": 2,
+   "hp": -1
+  },
+  "when": {
+   "from": 1794,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "normandie",
+    "bretagne"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1791~1822년 국유재산 매각이 진행된 동프롱 지역 100개 코뮌에서 슈앙들은 매수자에게 말과 주먹으로 폭력을 가했다.",
+  "src": [
+   {
+    "cite": "Martin, J.-C. (1989), 「Acquéreurs de Biens nationaux et Chouans dans le Domfrontais pendant la Révolution française」, Annales de Normandie 39(3): 265-284",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1989_num_39_3_1850"
+   }
+  ]
+ },
+ {
+  "id": "rev-066",
+  "cat": "economy",
+  "text": "옛 영주 집안이 돌아오자 사 둔 땅을 빼앗길까 밤잠을 설쳤다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1825
+  },
+  "who": {
+   "estate": [
+    "peasant",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력 3년부터 1814년까지 국유재산 취득자는 한 번도 마음 놓고 땅을 누리지 못했고, 1802년 망명자 대사면 뒤 처지가 더 불안해졌다.",
+  "src": [
+   {
+    "cite": "Gain, A. (1929), 「La Restauration et les biens des émigrés」, Revue d'histoire moderne 4(24): 431-434",
+    "url": "https://www.persee.fr/doc/rhmc_0996-2727_1929_num_4_24_3580"
+   }
+  ]
+ },
+ {
+  "id": "rev-067",
+  "cat": "economy",
+  "text": "마을에서 경매에 나온 땅은 몇 필지뿐이라 대부분 구경만 하고 돌아왔다.",
+  "when": {
+   "from": 1791,
+   "to": 1796
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "캉브레 지구처럼 주교령 하나가 땅의 40%를 내놓은 곳도 있었으나, 대부분 지역에서 매각된 땅은 1%, 많아야 2~3%였다.",
+  "src": [
+   {
+    "cite": "Béaur, G. (2008), 「Révolution et redistribution des richesses dans les campagnes : mythe ou réalité ?」, Annales historiques de la Révolution française 352: 209-239",
+    "url": "https://journals.openedition.org/ahrf/11151"
+   }
+  ]
+ },
+ {
+  "id": "rev-068",
+  "cat": "revolution",
+  "text": "맏아들이 국경을 넘자 집에 봉인이 붙고 아버지는 ‘망명자의 아비’로 감시받았다.",
+  "fx": {
+   "sus": 4,
+   "money": -30
+  },
+  "when": {
+   "from": 1792,
+   "to": 1795
+  },
+  "who": {
+   "estate": [
+    "robe",
+    "bourgeois",
+    "hobereau"
+   ],
+   "age": [
+    40,
+    80
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "라발의 부유한 변호사 르네 아르디는 1792년 맏아들의 망명 뒤 1805년까지 연이은 불행을 겪었다.",
+  "src": [
+   {
+    "cite": "Pitou, F. (2001), 「Aristocrate malgré lui, ou les mésaventures d'un père d'émigré (1792-1805)」, Annales historiques de la Révolution française 323: 35-55",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2001_num_323_1_2633"
+   }
+  ]
+ },
+ {
+  "id": "rev-069",
+  "cat": "revolution",
+  "text": "망명자 명단에 이름이 잘못 올라 해명서를 들고 군청을 몇 번이나 오갔다.",
+  "fx": {
+   "sus": 3,
+   "money": -10
+  },
+  "when": {
+   "from": 1793,
+   "to": 1800
+  },
+  "who": {
+   "estate": [
+    "epee",
+    "hobereau",
+    "robe"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "망명자는 인구의 약 0.6%로, 1800년 마감된 망명자 명단에도 14만 5천 명의 이름이 남아 있었다.",
+  "src": [
+   {
+    "cite": "Darricau-Lugat, C. (2001), 「L'émigration en pays basque pendant la Révolution française : une question spécifique ?」, Histoire, économie & société 20(2): 231-255",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2001_num_20_2_2224"
+   }
+  ]
+ },
+ {
+  "id": "rev-070",
+  "cat": "revolution",
+  "text": "망명한 남편과 서류상 이혼해 남은 재산과 아이들을 지키기로 했다.",
+  "fx": {
+   "money": 20,
+   "soc": -2
+  },
+  "when": {
+   "from": 1792,
+   "to": 1797
+  },
+  "who": {
+   "sex": "F",
+   "married": true,
+   "estate": [
+    "epee",
+    "hobereau"
+   ]
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "1792년 9월 20일 이혼법은 배우자의 망명을 7가지 법정 이혼 사유의 하나로 인정했다.",
+  "src": [
+   {
+    "cite": "Phillips, R. (1979), 「Le divorce en France à la fin du XVIIIe siècle」, Annales ESC 34(2): 385-398",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1979_num_34_2_294052"
+   }
+  ]
+ },
+ {
+  "id": "rev-071",
+  "cat": "revolution",
+  "text": "전쟁 뒤 망명자 집안이라 하여 상이병을 집에 들여 먹이고 재우라는 명을 받았다.",
+  "fx": {
+   "money": -30
+  },
+  "when": {
+   "from": 1795,
+   "to": 1801
+  },
+  "who": {
+   "estate": [
+    "epee",
+    "hobereau"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "혁명 전쟁 뒤 망명자나 추방자 가족은 상이병을 맡아 그 생활을 책임지도록 강요받기도 했다.",
+  "src": [
+   {
+    "cite": "Bois, J.-P. (1990), 「Napoléon et les anciens soldats : le rêve et l'ordre」, Revue historique des armées 181: 73-81",
+    "url": "https://www.persee.fr/doc/rharm_0035-3299_1990_num_181_4_6921"
+   }
+  ]
+ },
+ {
+  "id": "rev-072",
+  "cat": "revolution",
+  "text": "망명자 보상법으로 옛 영지 값 일부를 3% 국채로 받게 되었다.",
+  "fx": {
+   "money": 80,
+   "pol": 1
+  },
+  "when": {
+   "from": 1825,
+   "to": 1830
+  },
+  "who": {
+   "estate": [
+    "epee",
+    "hobereau"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "망명자·피처형자·추방자에게 보상하는 법안은 1825년 1월 3일 의회에 제출되었다.",
+  "src": [
+   {
+    "cite": "Franke, A. (1997), 「La loi de l'indemnité de 1825 dans l'arrondissement de Bordeaux」, Annales du Midi 109(218): 223-245",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1997_num_109_218_3788"
+   }
+  ]
+ },
+ {
+  "id": "rev-073",
+  "cat": "revolution",
+  "text": "망명 귀족에게 10억 프랑을 준다는 소문에 국유재산을 산 농부들이 수군거렸다.",
+  "fx": {
+   "pol": -1
+  },
+  "when": {
+   "from": 1825,
+   "to": 1826
+  },
+  "who": {
+   "estate": [
+    "peasant",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1825년 보상법은 1814~1832년 내내 이어진 국유재산 취득자들의 불안을 다시 키웠다.",
+  "src": [
+   {
+    "cite": "Gain, A. (1929), 「La Restauration et les biens des émigrés」, Revue d'histoire moderne 4(24): 431-434",
+    "url": "https://www.persee.fr/doc/rhmc_0996-2727_1929_num_4_24_3580"
+   },
+   {
+    "cite": "Franke, A. (1997), 「La loi de l'indemnité de 1825 dans l'arrondissement de Bordeaux」, Annales du Midi 109(218): 223-245",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1997_num_109_218_3788"
+   }
+  ]
+ },
+ {
+  "id": "rev-074",
+  "cat": "revolution",
+  "text": "밤중에 헛간으로 숨어든 선서 거부 신부가 갓난아이에게 몰래 세례를 주었다.",
+  "fx": {
+   "faith": 3,
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1799
+  },
+  "who": {
+   "urban": false,
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1792년 10월 말~11월 초 본당 명부가 시민 관리에게 넘어간 뒤, 칼바도스의 선서 거부 신부들은 비밀 세례·혼인 기록을 따로 남겼다.",
+  "src": [
+   {
+    "cite": "Longuet, P. (1970), 「Une source pour l'étude de l'activité sacerdotale des prêtres réfractaires dans le Calvados」, Annales historiques de la Révolution française 200: 329-345",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1970_num_200_1_3906"
+   }
+  ]
+ },
+ {
+  "id": "rev-075",
+  "cat": "revolution",
+  "text": "면사무소 혼인과 따로 숲속 농가에서 거부 신부에게 혼배성사를 받았다.",
+  "fx": {
+   "faith": 3,
+   "sus": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "vendee",
+    "bretagne"
+   ],
+   "urban": false,
+   "age": [
+    18,
+    35
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "멘에루아르·방데·루아르앵페리외르 19개 본당의 비밀 가톨릭 명부는 혁명기 지하 교회의 세례와 혼인을 기록하고 있다.",
+  "src": [
+   {
+    "cite": "Lusson-Houdemon, P. (1985), 「La vie religieuse dans l'Ouest à travers les registres de catholicité clandestins」, Annales de Bretagne et des pays de l'Ouest 92(1): 45-62",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1985_num_92_1_3180"
+   }
+  ]
+ },
+ {
+  "id": "rev-076",
+  "cat": "revolution",
+  "text": "신부가 없어 학교 선생이 빈 제대 앞에서 미사 경문을 대신 읽었다.",
+  "fx": {
+   "faith": 2
+  },
+  "when": {
+   "from": 1794,
+   "to": 1801
+  },
+  "who": {
+   "urban": false,
+   "faith": "catholic"
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "사제가 사라진 혁명기 농촌에서는 평신도가 성무를 대신 이끄는 ‘흰 미사’ 같은 기초적 신앙 형태가 나타났다.",
+  "src": [
+   {
+    "cite": "Jones, P. (1987), 「Quelques formes élémentaires de la vie religieuse dans la France rurale (fin XVIIIe et XIXe siècles)」, Annales ESC 42(1): 91-115",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1987_num_42_1_283371"
+   }
+  ]
+ },
+ {
+  "id": "rev-077",
+  "cat": "revolution",
+  "text": "신도회 여인들이 쫓기는 신부를 이 다락방에서 저 다락방으로 옮겨 숨겼다.",
+  "fx": {
+   "faith": 3,
+   "sus": 3
+  },
+  "when": {
+   "from": 1793,
+   "to": 1801
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "sex": "F"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1792년 이후 리옹의 평신도 단체는 거의 전적으로 법 밖의 신부를 숨기는 일에 매달렸고, 콩코르다 때까지 지하 교회를 꾸렸다.",
+  "src": [
+   {
+    "cite": "Chopelin, P. (2009), 「Les militants laïcs de l'Église réfractaire : le cas lyonnais」, Annales historiques de la Révolution française 355: 159-182",
+    "url": "https://journals.openedition.org/ahrf/10745"
+   }
+  ]
+ },
+ {
+  "id": "rev-078",
+  "cat": "revolution",
+  "text": "십 년 넘게 미사가 없던 마을에 새 신부가 왔지만 아이들은 교리문답을 몰랐다.",
+  "fx": {
+   "faith": 2
+  },
+  "when": {
+   "from": 1802,
+   "to": 1825
+  },
+  "who": {
+   "region": [
+    "gascogne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1821년 로스탕주 주교가 부임했을 때 페리괴 교구의 현역 성직자 404명 가운데 250명이 60세를 넘었고, 사제관은 대부분 국유재산으로 팔린 뒤였다.",
+  "src": [
+   {
+    "cite": "Gibson, R. (1986), 「Missions paroissiales et rechristianisation en Dordogne au XIXe siècle」, Annales du Midi 98(174): 213-236",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1986_num_98_174_5711"
+   }
+  ]
+ },
+ {
+  "id": "rev-079",
+  "cat": "revolution",
+  "text": "신부 한 명이 이웃 세 마을을 돌아가며 맡아 한 달에 한 번 미사가 열렸다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1830
+  },
+  "who": {
+   "region": [
+    "gascogne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "도르도뉴의 현역 성직자는 1829년 340명으로 최저였다.",
+  "src": [
+   {
+    "cite": "Gibson, R. (1986), 「Missions paroissiales et rechristianisation en Dordogne au XIXe siècle」, Annales du Midi 98(174): 213-236",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1986_num_98_174_5711"
+   }
+  ]
+ },
+ {
+  "id": "rev-080",
+  "cat": "revolution",
+  "text": "선교사들이 3주 동안 설교한 뒤 광장에 커다란 선교 십자가를 세웠다.",
+  "fx": {
+   "faith": 3,
+   "soc": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1829
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1815~1830년 왕정복고기 국내 선교는 경찰·도지사 보고서와 선교사 서신에 기록된 대규모 재가톨릭화 운동이었다.",
+  "src": [
+   {
+    "cite": "「Les missions religieuses en France sous la Restauration (1815-1830)」(E. Sevrin 저서 서평), Annales ESC 17(2): 409-410",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1962_num_17_2_420839_t1_0409_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "rev-081",
+  "cat": "revolution",
+  "text": "구역 여자들과 함께 생필품 값 단속을 요구하는 청원서에 서명했다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1792,
+   "to": 1795
+  },
+  "who": {
+   "sex": "F",
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "혁명기 여성의 공적 발언은 진정서·선언·청원의 세 형태로 나타났다.",
+  "src": [
+   {
+    "cite": "Fauré, C. (2006), 「Doléances, déclarations et pétitions, trois formes de la parole publique des femmes sous la Révolution」, Annales historiques de la Révolution française 344: 5-25",
+    "url": "https://journals.openedition.org/ahrf/5823"
+   }
+  ]
+ },
+ {
+  "id": "rev-082",
+  "cat": "revolution",
+  "text": "빵집 앞 줄에서 시작된 여자들의 함성이 구역 회의장까지 번졌다.",
+  "fx": {
+   "pol": 2,
+   "sus": 2
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795,
+   "months": [
+    3,
+    4,
+    5
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "F"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "파리 민중 여성의 동원은 1789년 가을, 1793년 봄, 1795년에 정점을 이뤘고 식량 문제가 핵심 동기였다.",
+  "src": [
+   {
+    "cite": "Lapied, M. (2008), 「Dominique Godineau, Citoyennes tricoteuses」(서평), Annales historiques de la Révolution française 354: 231-233",
+    "url": "https://journals.openedition.org/ahrf/10954"
+   }
+  ]
+ },
+ {
+  "id": "rev-083",
+  "cat": "economy",
+  "text": "빈민 방적 작업장에서 하루 종일 실을 자아 몇 수를 받았다.",
+  "fx": {
+   "money": 3,
+   "hp": -1
+  },
+  "when": {
+   "from": 1790,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "F",
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1790년 5월 30일 법령으로 파리 빈민, 주로 여성에게 일감을 주는 방적 작업장 두 곳이 세워졌고 5년 뒤 테르미도르파 국민공회가 폐지했다.",
+  "src": [
+   {
+    "cite": "Fayolle, C. (2010), 「Lisa Dicaprio, The origins of the Welfare State. Women, work and the French Revolution」(서평), Annales historiques de la Révolution française 361: 213-214",
+    "url": "https://journals.openedition.org/ahrf/11754"
+   }
+  ]
+ },
+ {
+  "id": "rev-084",
+  "cat": "economy",
+  "text": "작업장 감독이 품삯을 깎자 방적 여공들이 구역 총회로 몰려갔다.",
+  "fx": {
+   "pol": 2,
+   "money": -2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "F"
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1793년 가을부터 1794년 봄까지 파리 방적 작업장 여공들의 항의가 잇따랐다.",
+  "src": [
+   {
+    "cite": "Fayolle, C. (2010), 「Lisa Dicaprio, The origins of the Welfare State. Women, work and the French Revolution」(서평), Annales historiques de la Révolution française 361: 213-214",
+    "url": "https://journals.openedition.org/ahrf/11754"
+   }
+  ]
+ },
+ {
+  "id": "rev-085",
+  "cat": "revolution",
+  "text": "공유지 분배를 묻는 주민 총회에 여자들도 나와 손을 들었다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    21,
+    90
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 6월 10일 공유지 분배법은 21세 이상 거주민 ‘모든 성별’이 참여하는 주민 총회에서 분배를 표결하게 했다.",
+  "src": [
+   {
+    "cite": "Aberdam, S. (2005), 「Deux occasions de participation féminine en 1793 : le vote sur la Constitution et le partage des biens communaux」, Annales historiques de la Révolution française 339: 17-34",
+    "url": "https://journals.openedition.org/ahrf/2098"
+   },
+   {
+    "cite": "Godineau, D. (1996), 「« Privées par notre sexe du droit honorable de donner notre suffrage... »」, Les cahiers du CEDREF HS 2: 199-211",
+    "url": "https://journals.openedition.org/cedref/1701"
+   }
+  ]
+ },
+ {
+  "id": "rev-086",
+  "cat": "revolution",
+  "text": "헌법 수락 투표 날 여자들끼리 따로 모여 찬성 의사를 회의록에 적게 했다.",
+  "fx": {
+   "pol": 3
+  },
+  "when": {
+   "from": 1793,
+   "to": 1793,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    18,
+    80
+   ]
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "1793년 헌법 국민투표 기록(국립문서고 B II)에는 여성들이 집단으로 수락 의사를 남긴 사례가 수십 건 있다.",
+  "src": [
+   {
+    "cite": "Aberdam, S. (2005), 「Deux occasions de participation féminine en 1793 : le vote sur la Constitution et le partage des biens communaux」, Annales historiques de la Révolution française 339: 17-34",
+    "url": "https://journals.openedition.org/ahrf/2098"
+   }
+  ]
+ },
+ {
+  "id": "rev-087",
+  "cat": "revolution",
+  "text": "구호 기관의 여성 위원이 집에 들러 과부 수당 대상인지 살폈다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "sex": "F",
+   "married": false,
+   "age": [
+    25,
+    80
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 6월 28일 법은 빈곤 가정·과부·노인·미혼모 구호를 조직하고, 코뮌마다 남녀 시민 한 명씩을 구호 기관 위원으로 뽑게 했다.",
+  "src": [
+   {
+    "cite": "Aberdam, S. (2005), 「Deux occasions de participation féminine en 1793 : le vote sur la Constitution et le partage des biens communaux」, Annales historiques de la Révolution française 339: 17-34",
+    "url": "https://journals.openedition.org/ahrf/2098"
+   }
+  ]
+ },
+ {
+  "id": "rev-088",
+  "cat": "revolution",
+  "text": "구역 총회 뒷줄에 선 여자들이 신호에 맞춰 손을 들고 고함을 질렀다.",
+  "fx": {
+   "pol": 2,
+   "sus": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1795,
+   "months": [
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "F"
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1795년 2월 파리 레퓌블리크 구역 총회 보고서는 뒤쪽 여성들이 신호에 맞춰 소리치고 표결 때 손을 들었다고 기록했다.",
+  "src": [
+   {
+    "cite": "Godineau, D. (1996), 「« Privées par notre sexe du droit honorable de donner notre suffrage... »」, Les cahiers du CEDREF HS 2: 199-211",
+    "url": "https://journals.openedition.org/cedref/1701"
+   }
+  ]
+ },
+ {
+  "id": "rev-089",
+  "cat": "revolution",
+  "text": "마을 여자들이 성당 열쇠를 내놓으라며 면사무소로 몰려갔다.",
+  "fx": {
+   "faith": 2,
+   "sus": 2
+  },
+  "when": {
+   "from": 1795,
+   "to": 1797
+  },
+  "who": {
+   "sex": "F",
+   "region": [
+    "provence",
+    "languedoc"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "남동부에서 여성의 목소리는 위기와 갈등 국면에 문서에 드러났는데, 18세기 자치회의가 닫힌 협의회로 바뀌어 평소에는 들리지 않았다.",
+  "src": [
+   {
+    "cite": "Lapied, M. (2006), 「Parole publique des femmes et conflictualité pendant la Révolution, dans le Sud-Est de la France」, Annales historiques de la Révolution française 344: 47-62",
+    "url": "https://journals.openedition.org/ahrf/5973"
+   }
+  ]
+ },
+ {
+  "id": "rev-090",
+  "cat": "revolution",
+  "text": "새 법에 따라 ‘성격 불일치’를 사유로 이혼을 신청했다.",
+  "fx": {
+   "soc": -2
+  },
+  "when": {
+   "from": 1792,
+   "to": 1797
+  },
+  "who": {
+   "married": true,
+   "urban": true
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "1792년 9월 20일 법은 합의, 성격 불일치, 7가지 법정 사유로 이혼을 허용했고 남녀에게 같은 권리를 주었다.",
+  "src": [
+   {
+    "cite": "Phillips, R. (1979), 「Le divorce en France à la fin du XVIIIe siècle」, Annales ESC 34(2): 385-398",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1979_num_34_2_294052"
+   }
+  ]
+ },
+ {
+  "id": "rev-091",
+  "cat": "revolution",
+  "text": "이혼 심리에 남편의 매질을 증언해 줄 이웃 여자를 데려갔다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1792,
+   "to": 1803
+  },
+  "who": {
+   "sex": "F",
+   "married": true,
+   "urban": true
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "1791~96년 이혼에서 합의 이혼은 약 20%에 그쳤고, 나머지 이혼은 대부분 아내가 먼저 청구했다.",
+  "src": [
+   {
+    "cite": "Tetaert, L. et al. (2021), 「Les femmes et le divorce révolutionnaire : de la réception à la construction de la loi (1791-1796)」, Genre & Histoire 28",
+    "url": "https://journals.openedition.org/genrehistoire/6763"
+   }
+  ]
+ },
+ {
+  "id": "rev-092",
+  "cat": "revolution",
+  "text": "같은 층 이웃 부부가 시청에서 이혼 서류에 서명했다는 소식이 계단을 타고 퍼졌다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "혁명·제정기 이혼은 2만 5천~3만 건으로 추산되며 절반이 법 시행 첫 3년에 몰렸고, 파리가 전체의 절반에서 3분의 2를 차지했다.",
+  "src": [
+   {
+    "cite": "Tetaert, L. et al. (2021), 「Les femmes et le divorce révolutionnaire : de la réception à la construction de la loi (1791-1796)」, Genre & Histoire 28",
+    "url": "https://journals.openedition.org/genrehistoire/6763"
+   }
+  ]
+ },
+ {
+  "id": "rev-093",
+  "cat": "revolution",
+  "text": "몇 해째 따로 살던 부부가 이혼 등록으로 별거를 정리했다는 말을 들었다.",
+  "when": {
+   "from": 1792,
+   "to": 1796
+  },
+  "who": {
+   "region": [
+    "rouen"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1792년 전에는 별거 판결도 드물어 캉브레 교구에서 1737~74년 연평균 9건이 안 되었고, 루앙의 초기 이혼 상당수는 이미 깨진 결혼을 정리한 것이었다.",
+  "src": [
+   {
+    "cite": "Phillips, R. (1976), 「Demographic aspects of divorce in Rouen, 1792-1816」, Annales de démographie historique 1976: 429-441",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1976_num_1976_1_1323"
+   }
+  ]
+ },
+ {
+  "id": "rev-094",
+  "cat": "revolution",
+  "text": "이혼이 폐지된다는 소문에 서둘러 법원을 찾았지만 끝내 판결을 받지 못했다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1816,
+   "months": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "who": {
+   "married": true
+  },
+  "w": 0.7,
+  "once": true,
+  "fact": "왕정복고 정부는 1816년 5월 이혼을 폐지했다.",
+  "src": [
+   {
+    "cite": "Heuer, J. (2007), 「« Réduit à désirer la mort d'une femme qui peut-être lui a sauvé la vie » : la conscription et les liens du mariage sous Napoléon」, Annales historiques de la Révolution française 348: 25-40",
+    "url": "https://journals.openedition.org/ahrf/9013"
+   }
+  ]
+ },
+ {
+  "id": "rev-095",
+  "cat": "war",
+  "text": "징집을 피하려 늙은 과부와 서류상 혼인을 올렸다.",
+  "fx": {
+   "sus": 2,
+   "soc": -1
+  },
+  "when": {
+   "from": 1809,
+   "to": 1813
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    25
+   ],
+   "married": false
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "1809년 11월 노르 도지사는 젊은 남자와 나이 든 여자의 혼인이 18건가량 있었으며 신부 중 최고령은 99세라고 보고했다.",
+  "src": [
+   {
+    "cite": "Heuer, J. (2007), 「« Réduit à désirer la mort d'une femme qui peut-être lui a sauvé la vie » : la conscription et les liens du mariage sous Napoléon」, Annales historiques de la Révolution française 348: 25-40",
+    "url": "https://journals.openedition.org/ahrf/9013"
+   }
+  ]
+ },
+ {
+  "id": "rev-096",
+  "cat": "war",
+  "text": "징집 직전 이웃 처녀와 서둘러 혼례를 올렸지만 이번에는 혼인도 면제가 되지 않았다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1813,
+   "to": 1813,
+   "months": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    25
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1813년 2월 30만 명 징집 때부터 징병 심사회는 혼인을 병역 면제 사유로 인정하지 않았다.",
+  "src": [
+   {
+    "cite": "Heuer, J. (2007), 「« Réduit à désirer la mort d'une femme qui peut-être lui a sauvé la vie » : la conscription et les liens du mariage sous Napoléon」, Annales historiques de la Révolution française 348: 25-40",
+    "url": "https://journals.openedition.org/ahrf/9013"
+   }
+  ]
+ },
+ {
+  "id": "rev-097",
+  "cat": "war",
+  "text": "징집 때문에 맺은 허울뿐인 혼인을 풀어 달라고 국왕께 청원서를 올렸다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1814,
+   "to": 1819
+  },
+  "who": {
+   "married": true,
+   "age": [
+    19,
+    40
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "1814년 8월 한 공증인은 옛 피카르디에만 그런 위장 혼인이 1,200건 있다고 했고, 루아르 도지사는 최소 300명이라고 보고했다.",
+  "src": [
+   {
+    "cite": "Heuer, J. (2007), 「« Réduit à désirer la mort d'une femme qui peut-être lui a sauvé la vie » : la conscription et les liens du mariage sous Napoléon」, Annales historiques de la Révolution française 348: 25-40",
+    "url": "https://journals.openedition.org/ahrf/9013"
+   }
+  ]
+ },
+ {
+  "id": "rev-098",
+  "cat": "war",
+  "text": "의용병 대대에 자원했지만 군복과 장비는 제 돈으로 마련해야 했다.",
+  "fx": {
+   "money": -20,
+   "pol": 3
+  },
+  "when": {
+   "from": 1791,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    35
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1791년 9월 처음 꾸려진 의용병 대대원은 국민방위대원으로서 군복과 장비를 스스로 마련해야 했는데, 가난한 ‘수동 시민’에게는 불가능했다.",
+  "src": [
+   {
+    "cite": "Céleri, A. (2009), 「Habiller, équiper, armer les soldats de la Révolution, l'exemple de l'Eure」, Annales de Normandie 59(1): 109-132",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_2009_num_59_1_6237"
+   }
+  ]
+ },
+ {
+  "id": "rev-099",
+  "cat": "war",
+  "text": "두 번째 의용병 모집에 마을 청년들이 서로 눈치만 보며 나서지 않았다.",
+  "fx": {
+   "pol": -1
+  },
+  "when": {
+   "from": 1792,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    40
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1791년 첫 모집에는 지원자가 몰렸으나 이듬해 두 번째 모집은 크게 모자랐고, 1793년에는 자원 입대가 거의 사라졌다.",
+  "src": [
+   {
+    "cite": "Forrest, A. (2004), 「L'armée de l'an II : la levée en masse et la création d'un mythe républicain」, Annales historiques de la Révolution française 335: 111-130",
+    "url": "https://journals.openedition.org/ahrf/1385"
+   }
+  ]
+ },
+ {
+  "id": "rev-100",
+  "cat": "war",
+  "text": "30만 명 징모령이 내려 미혼 남자들이 광장에 모여 누가 갈지 정했다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1793,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    40
+   ],
+   "married": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1793년 2월 24일 30만 명 징모령은 18~40세 미혼 남자와 자녀 없는 홀아비를 상시 징발 대상으로 삼았다.",
+  "src": [
+   {
+    "cite": "Hippler, T. (2002), 「Service militaire et intégration nationale pendant la Révolution française」, Annales historiques de la Révolution française 329: 1-16",
+    "url": "https://journals.openedition.org/ahrf/662"
+   }
+  ]
+ },
+ {
+  "id": "rev-101",
+  "cat": "war",
+  "text": "총동원령에 여자들은 천막을 깁고 아이들은 헌 천을 풀어 붕대 솜을 만들었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "sex": "F"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 8월 총동원령은 청년은 전투, 기혼 남자는 무기 제조와 수송, 여자는 천막과 병원, 아이는 헌 천으로 붕대 솜을 만들게 했다.",
+  "src": [
+   {
+    "cite": "Forrest, A. (2004), 「L'armée de l'an II : la levée en masse et la création d'un mythe républicain」, Annales historiques de la Révolution française 335: 111-130",
+    "url": "https://journals.openedition.org/ahrf/1385"
+   }
+  ]
+ },
+ {
+  "id": "rev-102",
+  "cat": "war",
+  "text": "전선의 아들이 보낸 편지를 서기가 읽어 주었는데, 신발이 다 떨어졌다는 얘기뿐이었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1799
+  },
+  "who": {
+   "age": [
+    40,
+    75
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "리옴 가족들에게 온 공화력 2년 병사 편지 100통은 국민공회가 약속한 구호금을 받는 증빙으로 쓰였고, 일상의 걱정이 큰 비중을 차지한다.",
+  "src": [
+   {
+    "cite": "Ehrard, J. (1988), 「René Bouscayrol : Cent lettres des soldats de l'An II」(서평), Dix-huitième siècle 20: 498",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1988_num_20_1_2891_t1_0498_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "rev-103",
+  "cat": "war",
+  "text": "행군 중 쉬는 틈에 글 아는 동료에게 대필을 부탁해 고향 어머니께 편지를 보냈다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1792,
+   "to": 1815
+  },
+  "who": {
+   "sex": "M",
+   "job": [
+    "army"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "포레스트는 혁명·제정기 병사들이 그때그때 쓴 편지 약 1만 통을 바탕으로 ‘아래로부터’의 병사사를 썼다.",
+  "src": [
+   {
+    "cite": "Crépin, A. (2003), 「Alan Forrest, Napoleon's Men. The Soldiers of the Revolution and Empire」(서평), Annales historiques de la Révolution française 334: 201-203",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2003_num_334_1_2822_t1_0201_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "rev-104",
+  "cat": "war",
+  "text": "아들이 군대에 있다는 증명서를 내고 구청에서 군인 가족 구호금을 받았다.",
+  "fx": {
+   "money": 10
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "age": [
+    40,
+    75
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1793년 5월 4일 법령은 육군·해군 병사 가족에게 구호금을 주도록 했다.",
+  "src": [
+   {
+    "cite": "Hippler, T. (2006), 『Soldats et citoyens』 제4장 「État révolutionnaire et nation armée」, Paris, PUF: 125 이하",
+    "url": "https://shs.cairn.info/soldats-et-citoyens--9782130536970-page-125?lang=fr"
+   },
+   {
+    "cite": "Ehrard, J. (1988), 「René Bouscayrol : Cent lettres des soldats de l'An II」(서평), Dix-huitième siècle 20: 498",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1988_num_20_1_2891_t1_0498_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "rev-105",
+  "cat": "war",
+  "text": "군수품 수집관이 와서 집집마다 셔츠와 신발을 거둬 갔다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1792,
+   "to": 1794
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1792년 4월 20일 전쟁을 선포했을 때 프랑스는 병사들을 곧바로 입히고 무장시킬 능력이 없어 지방이 급히 피복과 장비를 모아야 했다.",
+  "src": [
+   {
+    "cite": "Céleri, A. (2009), 「Habiller, équiper, armer les soldats de la Révolution, l'exemple de l'Eure」, Annales de Normandie 59(1): 109-132",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_2009_num_59_1_6237"
+   }
+  ]
+ },
+ {
+  "id": "rev-106",
+  "cat": "war",
+  "text": "페르피냥 주둔 대대에서 달아난 고향 청년이 밤에 몰래 집으로 숨어들었다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1793
+  },
+  "who": {
+   "region": [
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 1월 캉탈 제1대대에서 탈영병이 75명 나왔고, 한 달 뒤 제2대대는 정원 800명 중 93명이 비었다.",
+  "src": [
+   {
+    "cite": "Vandeplas, B. (2002), 「Le problème de la conscription dans la première moitié du XIXe siècle : un refus de l'identité nationale ? L'exemple cantalien」, Annales historiques de la Révolution française 329: 17-40",
+    "url": "https://journals.openedition.org/ahrf/669"
+   }
+  ]
+ },
+ {
+  "id": "rev-107",
+  "cat": "war",
+  "text": "징집 통지가 오자 계절 이주 노동자 무리에 섞여 먼 지방으로 떠났다.",
+  "fx": {
+   "sus": 3
+  },
+  "when": {
+   "from": 1800,
+   "to": 1813
+  },
+  "who": {
+   "region": [
+    "auvergne",
+    "languedoc"
+   ],
+   "sex": "M",
+   "age": [
+    19,
+    25
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1800~1809년 캉탈 도의 탈영병은 858명, 징집 기피자는 2,510명이었고, 산악 지방 청년들은 계절 이주를 징집 회피 수단으로 썼다.",
+  "src": [
+   {
+    "cite": "Vandeplas, B. (2002), 「Le problème de la conscription dans la première moitié du XIXe siècle : un refus de l'identité nationale ? L'exemple cantalien」, Annales historiques de la Révolution française 329: 17-40",
+    "url": "https://journals.openedition.org/ahrf/669"
+   },
+   {
+    "cite": "Chatelain, A. (1972), 「Résistance à la conscription et migrations temporaires sous le Premier Empire」, Annales historiques de la Révolution française 210: 606-625",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1972_num_210_1_4684"
+   }
+  ]
+ },
+ {
+  "id": "rev-108",
+  "cat": "war",
+  "text": "탈영병 사면령이 내렸지만 숲에 숨은 마을 청년들은 끝내 내려오지 않았다.",
+  "when": {
+   "from": 1810,
+   "to": 1810,
+   "months": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "auvergne",
+    "languedoc",
+    "gascogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1810년 3월 25일 사면 뒤 돌아온 탈영병 비율은 전국 평균 12.76%였으나 캉탈은 5.84%에 그쳤다.",
+  "src": [
+   {
+    "cite": "Vandeplas, B. (2002), 「Le problème de la conscription dans la première moitié du XIXe siècle : un refus de l'identité nationale ? L'exemple cantalien」, Annales historiques de la Révolution française 329: 17-40",
+    "url": "https://journals.openedition.org/ahrf/669"
+   }
+  ]
+ },
+ {
+  "id": "rev-109",
+  "cat": "war",
+  "text": "기동대가 들이닥쳐 탈영병이 나올 때까지 집집마다 병사를 재웠다.",
+  "fx": {
+   "money": -15,
+   "sus": 2
+  },
+  "when": {
+   "from": 1805,
+   "to": 1813
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1811년 무렵 추적해야 할 징집 기피자의 90% 이상이 코탕탱에서 알프마리팀을 잇는 선 서쪽에 몰려 있었다.",
+  "src": [
+   {
+    "cite": "Vandeplas, B. (2002), 「Le problème de la conscription dans la première moitié du XIXe siècle : un refus de l'identité nationale ? L'exemple cantalien」, Annales historiques de la Révolution française 329: 17-40",
+    "url": "https://journals.openedition.org/ahrf/669"
+   }
+  ]
+ },
+ {
+  "id": "rev-110",
+  "cat": "war",
+  "text": "‘징집과 간접세 타도!’를 외치는 소리가 장터에 울려 퍼졌다.",
+  "fx": {
+   "pol": -1
+  },
+  "when": {
+   "from": 1814,
+   "to": 1814,
+   "months": [
+    3,
+    4,
+    5
+   ]
+  },
+  "who": {
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1814년 부르봉 지지자들은 ‘징집과 간접세 타도’라는 구호로 대중의 열광을 끌어냈으나 왕정은 두 제도를 유지했다.",
+  "src": [
+   {
+    "cite": "Vidalenc, J. (1959), 「La désertion dans le département du Calvados sous le premier Empire」, Revue d'histoire moderne et contemporaine 6(1): 60-72",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1959_num_6_1_2679"
+   }
+  ]
+ },
+ {
+  "id": "rev-111",
+  "cat": "war",
+  "text": "읍 청사에서 항아리 속 번호표를 뽑았는데 숫자가 작아 얼굴이 하얗게 질렸다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1804,
+   "to": 1830,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    19,
+    21
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1804년부터 제비뽑기로 병사를 정했고, 낮은 번호를 뽑으면 입대해야 했다.",
+  "src": [
+   {
+    "cite": "Denis, M.-N. (2012), 「Les souvenirs de conscription en Alsace : images d'un culte patriotique et domestique」, Actes des congrès nationaux des sociétés historiques et scientifiques 132: 173-179",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2012_act_132_10_2130"
+   },
+   {
+    "cite": "Choisel, F. (1981), 「Du tirage au sort au suffrage universel」, Revue historique des armées 8(2): 43-60",
+    "url": "https://www.persee.fr/doc/rharm_0035-3299_1981_num_8_2_7738"
+   }
+  ]
+ },
+ {
+  "id": "rev-112",
+  "cat": "war",
+  "text": "징병 검사장에서 키를 재고 이를 보인 뒤 군의관이 ‘복무 적합’을 외쳤다.",
+  "when": {
+   "from": 1804,
+   "to": 1830,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    19,
+    21
+   ]
+  },
+  "w": 1.2,
+  "once": true,
+  "fact": "제비뽑기는 3월에 하고, 1주~한 달 뒤 캉통 중심 읍의 청사에서 군의관·부지사·면장들이 모인 징병 심사회가 열렸다.",
+  "src": [
+   {
+    "cite": "Denis, M.-N. (2012), 「Les souvenirs de conscription en Alsace : images d'un culte patriotique et domestique」, Actes des congrès nationaux des sociétés historiques et scientifiques 132: 173-179",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2012_act_132_10_2130"
+   }
+  ]
+ },
+ {
+  "id": "rev-113",
+  "cat": "war",
+  "text": "징병 검사를 마치고 행상에게 리본 휘장을 사 모자에 꽂고 친구들과 마을을 돌았다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1811,
+   "to": 1850,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    19,
+    21
+   ],
+   "region": [
+    "alsace"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "알자스 행상들은 ‘복무 적합, 처녀에게도 적합’이라 적힌 휘장을 팔았고, 징병 검사는 혼인 자격을 주는 통과의례였다.",
+  "src": [
+   {
+    "cite": "Denis, M.-N. (2012), 「Les souvenirs de conscription en Alsace : images d'un culte patriotique et domestique」, Actes des congrès nationaux des sociétés historiques et scientifiques 132: 173-179",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2012_act_132_10_2130"
+   }
+  ]
+ },
+ {
+  "id": "rev-114",
+  "cat": "war",
+  "text": "공증인 앞에서 2천 프랑을 받기로 하고 남의 집 아들 대신 입대하는 계약에 손도장을 찍었다.",
+  "fx": {
+   "money": 120
+  },
+  "when": {
+   "from": 1805,
+   "to": 1813
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    20,
+    30
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ],
+   "literate": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1807년 루앙의 한 대리 복무 계약은 2년 복무 보증 뒤 2,000프랑, 매년 이자 100프랑과 밀가루 190kg, 출발 때 120프랑을 약속했다.",
+  "src": [
+   {
+    "cite": "Dubuc, A. (1960), 「Contrat de remplacement militaire en 1807」, Annales de Normandie 10(3): 280",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1960_num_10_3_6161"
+   }
+  ]
+ },
+ {
+  "id": "rev-115",
+  "cat": "war",
+  "text": "아들이 나쁜 번호를 뽑자 밭 한 뙈기를 팔아 대리 복무자를 샀다.",
+  "fx": {
+   "money": -200
+  },
+  "when": {
+   "from": 1804,
+   "to": 1813
+  },
+  "who": {
+   "married": true,
+   "age": [
+    40,
+    65
+   ],
+   "estate": [
+    "peasant",
+    "bourgeois",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1807년 노르망디의 대리 복무 대가는 2,000프랑에 해마다 이자와 밀가루까지 얹어야 했다.",
+  "src": [
+   {
+    "cite": "Dubuc, A. (1960), 「Contrat de remplacement militaire en 1807」, Annales de Normandie 10(3): 280",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1960_num_10_3_6161"
+   },
+   {
+    "cite": "Waquet, J. (1968), 「Le remplacement militaire au XIXe siècle」, Bibliothèque de l'École des chartes 126(2): 510-520",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1968_num_126_2_449806"
+   }
+  ]
+ },
+ {
+  "id": "rev-116",
+  "cat": "war",
+  "text": "징집 보험 대리인이 찾아와 나쁜 번호가 나오면 대리 복무자를 대 주겠다고 했다.",
+  "fx": {
+   "money": -50
+  },
+  "when": {
+   "from": 1818,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "bourgeois",
+    "peasant"
+   ],
+   "age": [
+    35,
+    65
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력 6년 징집법부터 1889년까지 이어진 제비뽑기는 대리 복무를 낳았고, 웃돈을 받고 대리인 비용을 보장하는 ‘사람 장사’ 보험업이 생겼다.",
+  "src": [
+   {
+    "cite": "Waquet, J. (1968), 「Le remplacement militaire au XIXe siècle」, Bibliothèque de l'École des chartes 126(2): 510-520",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1968_num_126_2_449806"
+   }
+  ]
+ },
+ {
+  "id": "rev-117",
+  "cat": "war",
+  "text": "대신 입대한 사내가 탈영했다가 잡혀 5년 쇠공형을 받았다는 소식이 왔다.",
+  "when": {
+   "from": 1803,
+   "to": 1814
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "공화력 12년 방데미에르 19일(1803년) 법령은 복무하지 않거나 탈영한 대리 복무자를 5년 쇠공형에 처했다.",
+  "src": [
+   {
+    "cite": "Lebrun, M. (2006), 「Révolution, Empire et mauvais soldats」, Revue historique des armées 244: 112-123",
+    "url": "https://journals.openedition.org/rha/6032"
+   }
+  ]
+ },
+ {
+  "id": "rev-118",
+  "cat": "war",
+  "text": "징집을 피하려 앞니를 부러뜨린 청년이 결국 공병 중대로 끌려갔다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1806,
+   "to": 1813
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    19,
+    25
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1806년 3월 12일 법령으로 스스로 몸을 다친 징집자들은 요새 공사에 쓰이는 공병 중대로 편성되었고, 1807년 1월부터는 5년간 복무했다.",
+  "src": [
+   {
+    "cite": "Lebrun, M. (2006), 「Révolution, Empire et mauvais soldats」, Revue historique des armées 244: 112-123",
+    "url": "https://journals.openedition.org/rha/6032"
+   }
+  ]
+ },
+ {
+  "id": "rev-119",
+  "cat": "war",
+  "text": "이 군에서만 한 해에 수백 명이 끌려가 밭일할 장정이 귀해졌다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1806,
+   "to": 1813
+  },
+  "who": {
+   "region": [
+    "normandie"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "망슈 도는 1800~1814년 징집병 30,604명을 냈고, 그중 26,593명이 제정기에 징집되었다.",
+  "src": [
+   {
+    "cite": "Lannoy, F. de (2000), 「Préfets et conscription dans la Manche sous le Consulat et l'Empire (1800-1814)」, Annales de Normandie 50(4): 511-522",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_2000_num_50_4_1277"
+   }
+  ]
+ },
+ {
+  "id": "rev-120",
+  "cat": "war",
+  "text": "캉통 징병 명부에 이름이 오르자 형도 조카도 차례로 불려 갔다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1806,
+   "to": 1814
+  },
+  "who": {
+   "region": [
+    "vendee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력 12년 니보즈 8일 법령으로 징집 단위가 코뮌에서 캉통으로 바뀌었고, 1791~1815년 동원된 인원은 250만 명 남짓으로 추정된다.",
+  "src": [
+   {
+    "cite": "Bois, J.-P. (1976), 「Conscrits du Maine-et-Loire sous l'Empire. Le poids de la conscription, 1806-1814」, Annales de Bretagne et des pays de l'Ouest 83(3): 467-493",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1976_num_83_3_2826"
+   }
+  ]
+ },
+ {
+  "id": "rev-121",
+  "cat": "war",
+  "text": "집 근처만 지킨다던 국민방위대 대대가 이듬해 정규 연대로 바뀌어 전선으로 보내졌다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1812,
+   "to": 1813
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    20,
+    26
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1812년 3월 국민방위대 제1반이 소집되었고, 1813년 1월 88개 대대가 정규 보병 22개 연대(제135~156연대)로 전환되었다.",
+  "src": [
+   {
+    "cite": "Brun, J.-F. (2014), 「Au crépuscule de l'Empire」, Revue historique des armées 273: 73-82",
+    "url": "https://journals.openedition.org/rha/7867"
+   }
+  ]
+ },
+ {
+  "id": "rev-122",
+  "cat": "war",
+  "text": "슐레지엔의 매복에 걸려 대열이 무너지고 동료 수십 명이 포로로 끌려갔다.",
+  "fx": {
+   "hp": -5
+  },
+  "when": {
+   "from": 1813,
+   "to": 1813,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "job": [
+    "army"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1813년 5월 26일 미헬스도르프에서 제151연대는 전사 44명, 부상 173명, 포로·실종 399명을 냈고 6월 초 병력은 1월의 5분의 1이었다.",
+  "src": [
+   {
+    "cite": "Brun, J.-F. (2014), 「Au crépuscule de l'Empire」, Revue historique des armées 273: 73-82",
+    "url": "https://journals.openedition.org/rha/7867"
+   }
+  ]
+ },
+ {
+  "id": "rev-123",
+  "cat": "war",
+  "text": "징발관이 마구간의 세 번째 쟁기말을 ‘사치용’이라며 끌고 갔다.",
+  "fx": {
+   "money": -60
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 3월 9일 법령은 농사에 쓰지 않는 말과 노새를 징발하고 보상금은 전문가 자문을 거쳐 코뮌 평의회가 정하게 했다.",
+  "src": [
+   {
+    "cite": "Biard, M. (2007), 「Contraintes de la Terreur ou pragmatisme ? À propos des réquisitions de chevaux en Seine-Inférieure (1793-1794)」, Annales de Normandie 57(3): 293-308",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_2007_num_57_3_1622"
+   }
+  ]
+ },
+ {
+  "id": "rev-124",
+  "cat": "war",
+  "text": "군대에 보낼 곡물 할당이 내려와 마을 곳간이 반쯤 비었다.",
+  "fx": {
+   "money": -20,
+   "hp": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1793년 보주에서 파견의원들은 군대 보급과 민간인 식량 사이의 딜레마 속에 최고가격제와 징발을 집행했다.",
+  "src": [
+   {
+    "cite": "Rothiot, J.-P. (2007), 「Les représentants en mission face au dilemme, de ravitailler les armées ou la population civile (l'exemple des Vosges en 1793)」, Annales historiques de la Révolution française 347: 47-66",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2007_num_347_1_3018"
+   }
+  ]
+ },
+ {
+  "id": "rev-125",
+  "cat": "war",
+  "text": "열병에 걸려 군병원으로 실려 갔는데, 옆 침상은 아침마다 하나씩 비어 갔다.",
+  "fx": {
+   "hp": -6
+  },
+  "when": {
+   "from": 1792,
+   "to": 1815
+  },
+  "who": {
+   "sex": "M",
+   "job": [
+    "army"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "제정기 군병원 사망률은 해와 장소에 따라 4~5%였고, 1811년 독일군 병원은 5.0%였다.",
+  "src": [
+   {
+    "cite": "「Un cas de micro-histoire」, Napoleonica. La Revue 2023/3: 205 이하",
+    "url": "https://shs.cairn.info/revue-napoleonica-la-revue-2023-3-page-205?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-126",
+  "cat": "war",
+  "text": "릴 군병원에서 외과의 한 명이 수십 명 부상병을 밤새 돌보았다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1792,
+   "to": 1815
+  },
+  "who": {
+   "sex": "M",
+   "job": [
+    "army"
+   ],
+   "region": [
+    "picardie"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "릴 군병원의 1789~1815년 의료진 명단은 문서가 사라져 뱅센 육군사료관의 개인 기록으로 복원되었다.",
+  "src": [
+   {
+    "cite": "Gérard, A. (1989), 「Le personnel médical de l'hôpital militaire de Lille, 1789-1815」, Revue du Nord 71(282-283): 807-823",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1989_num_71_282_4480"
+   }
+  ]
+ },
+ {
+  "id": "rev-127",
+  "cat": "war",
+  "text": "그르넬 화약 공장 폭발로 남편을 잃은 이웃이 국가 연금을 받게 되었다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1794,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1794년 8월 31일 그르넬 화약 공장 폭발 뒤 혁명 정부는 사상자를 치료하고 과부와 자녀에게 연금을 지급했다.",
+  "src": [
+   {
+    "cite": "「Grenelle 1794 : secourir, indemniser et soigner les victimes d'une catastrophe industrielle à l'heure révolutionnaire」, Le Mouvement social 2014/4: 41 이하",
+    "url": "https://shs.cairn.info/revue-le-mouvement-social1-2014-4-page-41?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-128",
+  "cat": "war",
+  "text": "전사한 남편의 복무 증명서를 들고 군인 과부 연금을 신청하러 군청에 갔다.",
+  "fx": {
+   "money": 10
+  },
+  "when": {
+   "from": 1794,
+   "to": 1815
+  },
+  "who": {
+   "sex": "F",
+   "married": false,
+   "age": [
+    20,
+    60
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1793년 5월 4일 법령으로 병사 가족 구호가 시작되었고, 공화력 6년에는 군인 과부와 고아 연금에 관한 보고서들이 의회에 제출되었다.",
+  "src": [
+   {
+    "cite": "Hippler, T. (2006), 『Soldats et citoyens』 제4장 「État révolutionnaire et nation armée」, Paris, PUF: 125 이하",
+    "url": "https://shs.cairn.info/soldats-et-citoyens--9782130536970-page-125?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-129",
+  "cat": "war",
+  "text": "다리를 잃고 돌아온 고참병이 1년에 227리브르 연금으로 겨우 버텼다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1799
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    30,
+    75
+   ],
+   "job": [
+    "army"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1791년 군인 연금은 사병 연 227리브르에서 중령 1,200리브르까지였다.",
+  "src": [
+   {
+    "cite": "「Woloch (Isser). The French Veteran from the Revolution to the Restoration」(서평), Revue belge de philologie et d'histoire 59(2): 441-443",
+    "url": "https://www.persee.fr/doc/rbph_0035-0818_1981_num_59_2_3330_t1_0441_0000_1"
+   }
+  ]
+ },
+ {
+  "id": "rev-130",
+  "cat": "war",
+  "text": "앵발리드에 자리를 얻은 늙은 상이병들이 식당에서 제1통령을 칭송했다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1804
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true,
+   "sex": "M",
+   "age": [
+    45,
+    90
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "상이병들은 브뤼메르 쿠데타를 지지했고, 1800년 다뤼가 앵발리드 연금 수혜자에 관한 보고서를 맡으면서 앵발리드는 보나파르트파의 거점이 되었다.",
+  "src": [
+   {
+    "cite": "Bois, J.-P. (1990), 「Napoléon et les anciens soldats : le rêve et l'ordre」, Revue historique des armées 181: 73-81",
+    "url": "https://www.persee.fr/doc/rharm_0035-3299_1990_num_181_4_6921"
+   }
+  ]
+ },
+ {
+  "id": "rev-131",
+  "cat": "revolution",
+  "text": "국민방위대 순번이 돌아와 밤새 시청 앞 초소를 지켰다.",
+  "fx": {
+   "hp": -1,
+   "pol": 1
+  },
+  "when": {
+   "from": 1789,
+   "to": 1795
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    55
+   ],
+   "urban": true
+  },
+  "w": 2,
+  "once": false,
+  "fact": "혁명 초 국민방위대 보초 근무는 너무 잦다는 불만을 샀고, 1791년에는 근무 거부가 늘었다.",
+  "src": [
+   {
+    "cite": "Biard, M. (2010), 「Bernard Gainot et Vincent Denis (dir.), Un siècle d'ordre public en Révolution」(서평), Annales historiques de la Révolution française 361: 211-212",
+    "url": "https://journals.openedition.org/ahrf/11749"
+   }
+  ]
+ },
+ {
+  "id": "rev-132",
+  "cat": "revolution",
+  "text": "가게를 비울 수 없어 이웃에게 몇 수를 주고 보초를 대신 서게 했다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1790,
+   "to": 1795
+  },
+  "who": {
+   "sex": "M",
+   "urban": true,
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1789년 결성된 국민방위대는 처음에 ‘능동 시민’만 받아들인 일종의 보조 경찰이었다.",
+  "src": [
+   {
+    "cite": "Hippler, T. (2002), 「Service militaire et intégration nationale pendant la Révolution française」, Annales historiques de la Révolution française 329: 1-16",
+    "url": "https://journals.openedition.org/ahrf/662"
+   }
+  ]
+ },
+ {
+  "id": "rev-133",
+  "cat": "revolution",
+  "text": "트루아 국민방위대가 곡물 단속을 한다며 마을에 들이닥쳤다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1789,
+   "to": 1793
+  },
+  "who": {
+   "region": [
+    "champagne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "오브 도에서는 공포정치 전부터 시 당국이 선거 패배를 받아들이기보다 국민방위대의 무력에 기대는 일이 잦았다.",
+  "src": [
+   {
+    "cite": "Horn, J. (2001), 「« Qui nous protégera de la garde nationale ? » : le conflit ruralo-urbain dans le département de l'Aube」, Annales historiques de la Révolution française 323: 57-68",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2001_num_323_1_2634"
+   }
+  ]
+ },
+ {
+  "id": "rev-134",
+  "cat": "revolution",
+  "text": "그라스 국민방위대에 편성되어 해안 포대 경계를 섰다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1790,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "sex": "M"
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "인구 1만 명의 그라스는 앙시앵 레짐 말 18~60세 해안 경비 민병 67명을 제비뽑기로 냈다.",
+  "src": [
+   {
+    "cite": "Carrot, G. (1977), 「Garde nationale et recrutement de l'armée à Grasse (1789-1871)」, Annales du Midi 89(131): 45-62",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1977_num_89_131_1662"
+   }
+  ]
+ },
+ {
+  "id": "rev-135",
+  "cat": "revolution",
+  "text": "국민방위대 행렬에 끼어 라파예트 장군의 백마를 구경했다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1789,
+   "to": 1791
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1789~1872년 국민방위대 역사에서 1789~1795년은 가장 큰 비중을 차지하는 시기다.",
+  "src": [
+   {
+    "cite": "Lignereux, A. (2011), 「Roger Dupuy, La Garde nationale, 1789-1872」(서평), Revue d'histoire du XIXe siècle 43: 159-161",
+    "url": "https://journals.openedition.org/rh19/4176"
+   }
+  ]
+ },
+ {
+  "id": "rev-136",
+  "cat": "war",
+  "text": "청군이 휩쓴 뒤 싸우러 나간 마을 장정 여든 가운데 셋만 돌아왔다.",
+  "fx": {
+   "hp": -3
+  },
+  "when": {
+   "from": 1793,
+   "to": 1796
+  },
+  "who": {
+   "region": [
+    "vendee"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "앙드레제는 1790년 주민 약 1,000명 가운데 400명이 전쟁으로 사라졌고, 무기를 든 80명 중 3명만 돌아왔다고 전한다.",
+  "src": [
+   {
+    "cite": "Martin, J.-C. (1991), 「Est-il possible de compter les morts de la Vendée ?」, Revue d'histoire moderne et contemporaine 38(1)",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1991_num_38_1_1580"
+   }
+  ]
+ },
+ {
+  "id": "rev-137",
+  "cat": "war",
+  "text": "본당 명부에 미처 다 적지 못할 만큼 장례가 이어졌다.",
+  "fx": {
+   "hp": -2,
+   "faith": 1
+  },
+  "when": {
+   "from": 1794,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "vendee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "르메쉬르에브르 구전은 전쟁 사망자를 1,900명으로 전하지만 1793~94년 등록된 사망은 555건뿐이다.",
+  "src": [
+   {
+    "cite": "Martin, J.-C. (1991), 「Est-il possible de compter les morts de la Vendée ?」, Revue d'histoire moderne et contemporaine 38(1)",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1991_num_38_1_1580"
+   }
+  ]
+ },
+ {
+  "id": "rev-138",
+  "cat": "war",
+  "text": "반액 봉급 장교가 된 이웃이 매주 헌병대에 출석 도장을 찍으러 갔다.",
+  "fx": {
+   "sus": 3,
+   "money": -50
+  },
+  "when": {
+   "from": 1815,
+   "to": 1822
+  },
+  "who": {
+   "sex": "M",
+   "job": [
+    "army"
+   ],
+   "age": [
+    25,
+    60
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1815년 이후 공화파·보나파르트파로 의심받은 장교 2만 명 이상이 강제 퇴역하거나 반액 봉급의 비현역으로 밀려났다.",
+  "src": [
+   {
+    "cite": "「Le parcours d'officiers issus de la Grande Armée : une redéfinition des cultures politiques dans la première moitié du XIXe siècle ?」, Histoire, économie & société 2008/2: 89 이하",
+    "url": "https://www.cairn.info/revue-histoire-economie-et-societe-2008-2-page-89.htm"
+   }
+  ]
+ },
+ {
+  "id": "rev-139",
+  "cat": "war",
+  "text": "제대한 장교들이 고향 읍내 카페에 모여 옛 전투 이야기만 했다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1830
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "왕정복고 초 반액 봉급 장교들은 대부분 고향으로 돌아갔고, 이들의 출신지는 국경 지방이 두드러졌다.",
+  "src": [
+   {
+    "cite": "Perrot, J.-C. (1955), 「J. Vidalenc, Les demi-soldes, étude d'une catégorie sociale」(서평), Annales de Normandie 5(3-4): 317-319",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1955_num_5_3_6520_t1_0317_0000_1"
+   }
+  ]
+ },
+ {
+  "id": "rev-140",
+  "cat": "war",
+  "text": "경찰이 반액 봉급 장교들을 음모 가담자로 의심해 하숙집을 뒤졌다.",
+  "fx": {
+   "sus": 3
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1816~17년 리옹에서 퇴역·반액 봉급 장교는 당국이 가장 두려워한 집단이었고, 생주니라발에 살던 우댕 대위는 단두대에서 처형되었다.",
+  "src": [
+   {
+    "cite": "「La ville, la haute police et la peur : Lyon entre le complot des subsistances et les manœuvres politiques en 1816-1817」, Histoire urbaine 2000/2: 131 이하",
+    "url": "https://shs.cairn.info/revue-histoire-urbaine-2000-2-page-131?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-141",
+  "cat": "revolution",
+  "text": "제비꽃을 단추 구멍에 꽂고 다니다 경찰 수첩에 보나파르트파로 적혔다.",
+  "fx": {
+   "sus": 3
+  },
+  "when": {
+   "from": 1814,
+   "to": 1816
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1814~16년 파리에서 삼색 휘장 같은 ‘반역 표지’로 단속된 사람 가운데 상당수가 반액 봉급 장교였다.",
+  "src": [
+   {
+    "cite": "「Police des signes, ordre et désordre urbains en temps de crise (1814-1816)」, Histoire urbaine 2015/2: 157 이하",
+    "url": "https://shs.cairn.info/revue-histoire-urbaine-2015-2-page-157?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-142",
+  "cat": "war",
+  "text": "워털루 뒤 해산된 군대에서 돌아온 이웃 청년이 다시 구두 수선대 앞에 앉았다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1814,
+   "to": 1816
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1814~15년 대규모 동원 해제로 인구의 3.7%인 약 100만 명의 제대 군인이 국가의 인정을 기다리게 되었다.",
+  "src": [
+   {
+    "cite": "Crépin, A. (2004), 「Natalie Petiteau, Lendemains d'Empire. Les soldats de Napoléon dans la France du XIXe siècle」(서평), Revue d'histoire du XIXe siècle 28: 179-183",
+    "url": "https://journals.openedition.org/rh19/631"
+   },
+   {
+    "cite": "Claerr-Stamm, G. (2010), 「Jost (Bertrand), Vicissitudes militaires…, t. 1 (1809-1815)」(서평), Revue d'Alsace 136: 526",
+    "url": "https://journals.openedition.org/alsace/366"
+   }
+  ]
+ },
+ {
+  "id": "rev-143",
+  "cat": "war",
+  "text": "옛 제국군 하사관이 그리스 독립군에 가담하겠다며 마르세유로 떠났다.",
+  "fx": {
+   "fame": 2
+  },
+  "when": {
+   "from": 1821,
+   "to": 1827
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    25,
+    50
+   ],
+   "job": [
+    "army"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "1821년 봄 그리스 봉기가 터지자 워털루 뒤 민간 생활로 돌아가지 못한 제국군 고참들이 지원병으로 몰려갔다.",
+  "src": [
+   {
+    "cite": "Mazurel, H. (2011), 「Les guerriers de l'Ailleurs」, Écrire l'histoire 7: 53-62",
+    "url": "https://journals.openedition.org/elh/376"
+   }
+  ]
+ },
+ {
+  "id": "rev-144",
+  "cat": "war",
+  "text": "마을 고참병이 연금 대신 시청의 일회성 구호금을 받으려 몇 번이고 청원서를 냈다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "urban": false,
+   "age": [
+    35,
+    90
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "앙수이 마을 고참병 74명 연구에 따르면 제대 군인 지원은 권리가 아닌 자선이었고, 이른바 ‘생텔렌 연금’은 1869년에야 지급되었다.",
+  "src": [
+   {
+    "cite": "Crépin, A. (2004), 「Natalie Petiteau, Lendemains d'Empire. Les soldats de Napoléon dans la France du XIXe siècle」(서평), Revue d'histoire du XIXe siècle 28: 179-183",
+    "url": "https://journals.openedition.org/rh19/631"
+   }
+  ]
+ },
+ {
+  "id": "rev-145",
+  "cat": "war",
+  "text": "제국군 승리를 담은 『승리와 정복』을 분책으로 사서 저녁마다 소리 내어 읽었다.",
+  "fx": {
+   "money": -20,
+   "pol": 1
+  },
+  "when": {
+   "from": 1817,
+   "to": 1825
+  },
+  "who": {
+   "literate": true,
+   "estate": [
+    "bourgeois",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1817~1820년 자유주의 분위기 속에서 혁명·제정의 전공을 기린 ‘종이 기념비’ 출판물이 크게 유행했다.",
+  "src": [
+   {
+    "cite": "Le Bloas, A. (2018), 「Les Victoires et conquêtes et autres « monuments de papier ». Enquête sur le marché de la gloire au temps de la Restauration」, La Révolution française 14",
+    "url": "https://journals.openedition.org/lrf/2037"
+   }
+  ]
+ },
+ {
+  "id": "rev-146",
+  "cat": "war",
+  "text": "동맹군이 들어온다는 소식에 은그릇을 마당에 묻고 숲으로 피했다.",
+  "fx": {
+   "money": -20,
+   "hp": -1
+  },
+  "when": {
+   "from": 1814,
+   "to": 1814,
+   "months": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "alsace",
+    "champagne",
+    "bourgogne",
+    "picardie"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1814년 봄 동맹군은 프랑스 국토의 3분의 1 이상을 침공해 점령했다.",
+  "src": [
+   {
+    "cite": "Thoral, M.-C. (2005), 「L'administration locale en temps de crise : le cas de l'Isère en 1814-1815」, Annales historiques de la Révolution française 339: 117-135",
+    "url": "https://journals.openedition.org/ahrf/2144"
+   }
+  ]
+ },
+ {
+  "id": "rev-147",
+  "cat": "war",
+  "text": "프로이센 병사들이 집에 묵으며 장작과 포도주를 마음대로 가져갔다.",
+  "fx": {
+   "money": -30
+  },
+  "when": {
+   "from": 1815,
+   "to": 1818
+  },
+  "who": {
+   "region": [
+    "alsace",
+    "champagne",
+    "picardie"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1815년 11월 2차 파리 조약으로 동맹군 15만 명이 북동부 18개 주둔 도시에 남았고, 프랑스는 배상금 7억 프랑과 연 1억 5천만 프랑의 주둔비를 떠안았다.",
+  "src": [
+   {
+    "cite": "Haynes, C. (2015), 「Des alliés aux ennemis : le rôle des forces de la Tierce Allemagne dans les occupations du territoire français (1814 et 1815-1818)」, Revue d'Allemagne et des pays de langue allemande 47(1): 163-175",
+    "url": "https://journals.openedition.org/allemagne/472"
+   }
+  ]
+ },
+ {
+  "id": "rev-148",
+  "cat": "war",
+  "text": "동네 사람들이 미친개를 ‘블뤼허’라 부르며 프로이센군을 욕했다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1830
+  },
+  "who": {
+   "region": [
+    "alsace",
+    "champagne",
+    "picardie"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "점령을 겪은 북동부 지방에서는 오래도록 미친개를 프로이센 원수의 이름을 따 ‘블뤼허’라 불렀다.",
+  "src": [
+   {
+    "cite": "Haynes, C. (2015), 「Des alliés aux ennemis : le rôle des forces de la Tierce Allemagne dans les occupations du territoire français (1814 et 1815-1818)」, Revue d'Allemagne et des pays de langue allemande 47(1): 163-175",
+    "url": "https://journals.openedition.org/allemagne/472"
+   }
+  ]
+ },
+ {
+  "id": "rev-149",
+  "cat": "revolution",
+  "text": "백일천하 때 바뀐 면장이 국왕 복귀 뒤 쫓겨나고 전 면장이 다시 돌아왔다.",
+  "fx": {
+   "pol": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1815,
+   "months": [
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1815년 7월 13일 이제르 행정위원회는 1814년 3월 1일 재직하던 면장과 의원을 모두 복직시키고 500명 미만 마을에 면장·부면장 57명을 새로 임명했다.",
+  "src": [
+   {
+    "cite": "Thoral, M.-C. (2005), 「L'administration locale en temps de crise : le cas de l'Isère en 1814-1815」, Annales historiques de la Révolution française 339: 117-135",
+    "url": "https://journals.openedition.org/ahrf/2144"
+   }
+  ]
+ },
+ {
+  "id": "rev-150",
+  "cat": "revolution",
+  "text": "옛 영주 집안이 성으로 돌아와 미사 때 성당 맨 앞자리를 되찾았다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1830
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1814년 헌장은 옛 귀족과 제정 귀족의 작위를 모두 보장했지만, 작위는 서열과 명예만 줄 뿐 특권은 아니었다.",
+  "src": [
+   {
+    "cite": "Daumard, A. (1989), 「Une enquête sur la noblesse à Paris au XIXe siècle」, Les Cahiers du Centre de recherches historiques 3",
+    "url": "https://journals.openedition.org/ccrh/2921"
+   }
+  ]
+ },
+ {
+  "id": "rev-151",
+  "cat": "revolution",
+  "text": "돌아온 귀족 집안 잔치에서 옛 작위로 불리며 혁명 전 세상이 돌아온 듯했다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1815,
+   "to": 1830
+  },
+  "who": {
+   "estate": [
+    "epee",
+    "hobereau"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1814년 헌장 아래 국왕은 ‘원하는 대로 귀족을 만들’ 수 있었다.",
+  "src": [
+   {
+    "cite": "Daumard, A. (1989), 「Une enquête sur la noblesse à Paris au XIXe siècle」, Les Cahiers du Centre de recherches historiques 3",
+    "url": "https://journals.openedition.org/ccrh/2921"
+   }
+  ]
+ },
+ {
+  "id": "rev-152",
+  "cat": "economy",
+  "text": "여름 내내 비가 그치지 않아 밀이 이삭째 밭에서 썩어 갔다.",
+  "fx": {
+   "money": -15
+  },
+  "when": {
+   "from": 1816,
+   "to": 1816,
+   "months": [
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1816년 농업 재난과 1816~17년 기근은 뫼르트·코트도르·브리 등 지방별로 연구되었다.",
+  "src": [
+   {
+    "cite": "Leuilliot, P. (1957), 「De la disette de 1816-1817 à la famine du coton (1867)」, Annales ESC 12(2): 317-325",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1957_num_12_2_2641"
+   }
+  ]
+ },
+ {
+  "id": "rev-153",
+  "cat": "economy",
+  "text": "장터에 밀이 없자 사람들이 부농 집 마당을 곡괭이로 파헤쳐 숨긴 밀을 찾아냈다.",
+  "fx": {
+   "sus": 3,
+   "hp": 1
+  },
+  "when": {
+   "from": 1817,
+   "to": 1817,
+   "months": [
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "champagne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1817년 5월 말 브리엔에서 400명 넘는 군중이 한 집 마당을 파헤쳐 300부아소의 밀을 찾아내고 1부아소 40수로 값을 매겼다.",
+  "src": [
+   {
+    "cite": "Bourguinat, N. (1997), 「L'État et les violences frumentaires en France sous la Restauration et la Monarchie de Juillet」, Ruralia 1",
+    "url": "https://journals.openedition.org/ruralia/2"
+   }
+  ]
+ },
+ {
+  "id": "rev-154",
+  "cat": "economy",
+  "text": "읍 밖으로 나가던 밀 수레 세 대를 주민들이 길에서 막아 세웠다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1816년 10월 31일 샤텔로 근교에서 밀 수레 세 대가 멈춰졌고, 군중은 밀을 1부아소 3프랑에 넘기라고 외쳤다.",
+  "src": [
+   {
+    "cite": "Bourguinat, N. (1997), 「L'État et les violences frumentaires en France sous la Restauration et la Monarchie de Juillet」, Ruralia 1",
+    "url": "https://journals.openedition.org/ruralia/2"
+   }
+  ]
+ },
+ {
+  "id": "rev-155",
+  "cat": "economy",
+  "text": "면장이 압수한 밀을 마을 회관 다락에 보관했다가 공정한 값에 나눠 팔았다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "왕정복고기 식량 소요에서 면장은 압수 곡물을 회관이나 공동 창고에 보관하며 군중의 ‘공정 가격’ 요구를 합법의 틀로 중재했다.",
+  "src": [
+   {
+    "cite": "Bourguinat, N. (1997), 「L'État et les violences frumentaires en France sous la Restauration et la Monarchie de Juillet」, Ruralia 1",
+    "url": "https://journals.openedition.org/ruralia/2"
+   }
+  ]
+ },
+ {
+  "id": "rev-156",
+  "cat": "economy",
+  "text": "빵값이 뛰고 견직 일감이 끊겨 끼니를 거르는 날이 늘었다.",
+  "fx": {
+   "hp": -2,
+   "money": -10
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "urban": true
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1816~17년 리옹은 식량 위기와 ‘식량 음모’ 소문, 정치 공작에 대한 공포가 뒤엉킨 도시였다.",
+  "src": [
+   {
+    "cite": "「La ville, la haute police et la peur : Lyon entre le complot des subsistances et les manœuvres politiques en 1816-1817」, Histoire urbaine 2000/2: 131 이하",
+    "url": "https://shs.cairn.info/revue-histoire-urbaine-2000-2-page-131?lang=fr"
+   }
+  ]
+ },
+ {
+  "id": "rev-157",
+  "cat": "economy",
+  "text": "흉년에 빵값 상한이 다시 매겨졌지만 빵집은 외상으로만 빵을 내주었다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1812,
+   "to": 1812,
+   "months": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1812년 짧게 ‘제국 최고가격제’가 시행되었고, 같은 해 카데 드 보는 빈민이 빵을 외상으로 살 수밖에 없다고 지적했다.",
+  "src": [
+   {
+    "cite": "Bourguinat, N. (1997), 「L'État et les violences frumentaires en France sous la Restauration et la Monarchie de Juillet」, Ruralia 1",
+    "url": "https://journals.openedition.org/ruralia/2"
+   },
+   {
+    "cite": "Cadet de Vaux, A.-A. / Thuillier, G. (1993), 「Le prix du pain en 1812」, Études et documents 5: 547-549",
+    "url": "https://www.persee.fr/doc/etudo_1241-3496_1993_num_5_1_1052"
+   }
+  ]
+ },
+ {
+  "id": "rev-158",
+  "cat": "economy",
+  "text": "릴 근교 방적 공장이 새 기계를 들여 일손을 더 구한다는 방이 붙었다.",
+  "fx": {
+   "money": 10
+  },
+  "when": {
+   "from": 1820,
+   "to": 1829
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ],
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1826년 릴 아롱디스망 인구는 약 25만 8천 명으로 둘 중 한 명이 도시에 살았고, 릴(6만 5천 명)에 섬유 산업이 몰려 있었다.",
+  "src": [
+   {
+    "cite": "Kasdi, M. et Terrier, D. (2008), 「Un processus continu de développement industriel : le textile dans la région lilloise (années 1770 - années 1820)」, Annales historiques de la Révolution française 352: 121-154",
+    "url": "https://journals.openedition.org/ahrf/11095"
+   }
+  ]
+ },
+ {
+  "id": "rev-159",
+  "cat": "economy",
+  "text": "농한기에 집에서 직조기를 돌려 상인에게 천을 넘겼다.",
+  "fx": {
+   "money": 8
+  },
+  "when": {
+   "from": 1800,
+   "to": 1830
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1781년 인구 약 8천 명의 루베에는 직조기 1,500대가 있었고 주변 마을의 직조공들도 상인에게 일감을 받았다.",
+  "src": [
+   {
+    "cite": "Kasdi, M. et Terrier, D. (2008), 「Un processus continu de développement industriel : le textile dans la région lilloise (années 1770 - années 1820)」, Annales historiques de la Révolution française 352: 121-154",
+    "url": "https://journals.openedition.org/ahrf/11095"
+   }
+  ]
+ },
+ {
+  "id": "rev-160",
+  "cat": "economy",
+  "text": "새로 찍은 구리 동전에서 혁명 문양 대신 국왕 얼굴을 보았다.",
+  "when": {
+   "from": 1828,
+   "to": 1830
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1828년 10월 20일 재무부 회람은 구리 동전 재주조로 국민이 바라는 국왕 초상을 동전에 새기자고 했다.",
+  "src": [
+   {
+    "cite": "Confavreux, J. (2000), 「Usages sociaux et politiques de la monnaie en Dordogne dans la première moitié du XIXe siècle」, Ruralia 7",
+    "url": "https://journals.openedition.org/ruralia/174"
+   }
+  ]
+ }
+]

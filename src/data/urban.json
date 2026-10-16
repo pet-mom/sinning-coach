@@ -1,0 +1,4678 @@
+[
+ {
+  "id": "urb-001",
+  "cat": "urban",
+  "text": "고향 사람이 운영하는 셋방에 짐을 풀고, 같은 지방 말을 쓰는 이웃들 틈에서 첫 밤을 보냈다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "age": [
+    14,
+    35
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1793년 시민증 표본 1만 2천 건을 보면 파리 이주민은 주로 북동부와 중부 출신이었고, 리무쟁은 석공, 오베르뉴는 물장수로 특화되어 있었다.",
+  "src": [
+   {
+    "cite": "Alain Blum, Jacques Houdaille (1986), 「12 000 Parisiens en 1793. Sondage dans les cartes de civisme」, Population 41(2): 259-302",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1986_num_41_2_17616"
+   }
+  ]
+ },
+ {
+  "id": "urb-002",
+  "cat": "urban",
+  "text": "구청에서 시민증을 발급받으려고 출생지와 파리에 온 해를 적어 냈다.",
+  "when": {
+   "from": 1792,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "M",
+   "age": [
+    15,
+    80
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1792년 9월 19일 법으로 파리의 15세 이상 남성은 시민증(이후 안전증)을 지녀야 했고, 그 발급 대장은 18세기 이주 연구의 핵심 사료가 되었다.",
+  "src": [
+   {
+    "cite": "Louis Henry, Daniel Courgeau (1971), 「Deux analyses de l'immigration à Paris au XVIIIe siècle」, Population 26(6): 1073-1092",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1971_num_26_6_5432"
+   }
+  ]
+ },
+ {
+  "id": "urb-003",
+  "cat": "urban",
+  "text": "길에서 만난 사람 절반이 지방 사투리를 썼다. 파리 토박이는 오히려 드물었다.",
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "19세기 전반 파리에서도 지방 출신 이주민이 인구의 다수를 차지했다는 것이 피에트와 래트클리프의 재평가다.",
+  "src": [
+   {
+    "cite": "Christine Piette, Barrie Ratcliffe (1993), 「Les migrants et la ville : un nouveau regard sur le Paris de la première moitié du XIXe siècle」, Annales de démographie historique 1993: 263-302",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1993_num_1993_1_1844"
+   }
+  ]
+ },
+ {
+  "id": "urb-004",
+  "cat": "urban",
+  "text": "새로 온 동향 청년이 '뿌리 뽑힌 자'라며 손가락질받았지만, 실은 사촌과 동업자들 사이에 금세 자리를 잡았다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "래트클리프는 1991년 슈발리에의 '노동계급=위험계급' 명제를 재검토해 19세기 전반 파리 이주민이 친족·동향 연결망 속에서 통합되었다고 보았다.",
+  "src": [
+   {
+    "cite": "Barrie M. Ratcliffe (1991), 「Classes laborieuses et classes dangereuses à Paris pendant la première moitié du XIXe siècle ? The Chevalier Thesis Reexamined」, French Historical Studies 17(2): 542-574",
+    "url": "https://doi.org/10.2307/286469"
+   }
+  ]
+ },
+ {
+  "id": "urb-005",
+  "cat": "urban",
+  "text": "캉탈에서 올라온 사촌이 물장수 조합에 끼워 달라며 찾아왔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1793년 시민증 자료에서 이미 파리–캉탈 이주 축이 뚜렷했으며, 물장수는 캉탈 출신이 많았다.",
+  "src": [
+   {
+    "cite": "Alain Blum, Jacques Houdaille (1986), 「12 000 Parisiens en 1793. Sondage dans les cartes de civisme」, Population 41(2): 259-302",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1986_num_41_2_17616"
+   }
+  ]
+ },
+ {
+  "id": "urb-006",
+  "cat": "urban",
+  "text": "보르도 부두에서 아일랜드 억양의 상인과 포도주 값을 흥정했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "보르도에는 12세기부터 영국·아일랜드와의 교역을 따라 앵글로·아일랜드계 상인과 이주민이 꾸준히 정착했다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Poussou (1974), 「Recherches sur l'immigration anglo-irlandaise à Bordeaux au XVIIIe siècle」, Revue historique de Bordeaux 23: 163-179",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1974_num_23_1_2037"
+   }
+  ]
+ },
+ {
+  "id": "urb-007",
+  "cat": "urban",
+  "text": "한 칸짜리 방 벽난로 앞에 온 식구가 모여 언 손을 녹였다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "다니엘 로슈에 따르면 18세기 파리에서 방 한 칸짜리 서민 주거의 98%에도 벽난로가 있었다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-008",
+  "cat": "economy",
+  "text": "땔감 값이 또 올라 장작 한 단을 사는 데 일당 절반이 들었다.",
+  "fx": {
+   "money": -6
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "18세기 파리의 장작 값은 시기에 따라 30~47% 올랐고, 소비량은 1730년대 약 28만 5천 부아에서 1782년 80만 부아 가까이로 늘었다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-009",
+  "cat": "urban",
+  "text": "지하 창고가 없어 장작을 계단참에 쌓아 두었다가 집주인과 다퉜다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리에서 지하 저장고를 쓸 수 있는 가구는 약 3분의 1뿐이었고, 부자만이 장작 1부아 이상을 비축했다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-010",
+  "cat": "urban",
+  "text": "양초 대신 냄새 나는 수지 초를 켜고 밤일을 했다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "urban": true
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 파리에서 수지 초는 리브르당 10~20수, 밀랍 초는 50~60수였다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-011",
+  "cat": "urban",
+  "text": "2층 부르주아 집에는 덧창과 큰 창이 있었지만, 다락방 창은 손바닥만 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 파리 건물에서 천장이 높고 창이 큰 '귀족층'은 1~2층이었고, 빈민의 위층 방은 천장이 낮고 창이 작았다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-012",
+  "cat": "urban",
+  "text": "셋방 하녀가 겨우 2미터 남짓한 골방에서 숨진 채 발견됐다는 소문이 돌았다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1764년 12월 파리의 한 셋방 하인은 '길이가 겨우 2미터인' 골방에서 숨졌다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-013",
+  "cat": "economy",
+  "text": "성 미카엘 축일이 다가오자 집세를 맞추느라 외투를 내다 팔 궁리를 했다.",
+  "fx": {
+   "money": -15
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    9,
+    10
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "파리의 집세는 17세기 초부터 명목·실질 모두 장기 상승 국면에 들어갔다는 것이 쿠페리와 르루아 라뒤리의 계열 분석이다.",
+  "src": [
+   {
+    "cite": "Pierre Couperie, Emmanuel Le Roy Ladurie (1970), 「Le mouvement des loyers parisiens de la fin du Moyen Âge au XVIIIe siècle」, Annales ESC 25(4): 1002-1023",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1970_num_25_4_422339"
+   }
+  ]
+ },
+ {
+  "id": "urb-014",
+  "cat": "urban",
+  "text": "구역 조사원이 집집이 다니며 거주자와 직업을 적어 갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "17~18세기 파리는 행정·경찰 단위로 구역(quartier)이 나뉘었고, 1702년 이후 20개 구역 체제가 유지되었다.",
+  "src": [
+   {
+    "cite": "René Pillorget, Jean de Viguerie (1970), 「Les quartiers de Paris aux XVIIe et XVIIIe siècles」, RHMC 17(2): 253-277",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1970_num_17_2_2072"
+   }
+  ]
+ },
+ {
+  "id": "urb-015",
+  "cat": "urban",
+  "text": "가구 딸린 셋방 주인에게 경찰 장부에 이름을 올려야 한다는 말을 들었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "age": [
+    14,
+    40
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리의 셋방 주인은 투숙객을 장부에 기록해 경찰에 보고해야 했고, 경찰은 이를 통해 유동 인구를 감시했다.",
+  "src": [
+   {
+    "cite": "Arlette Farge (1983), 「La répression à Paris au XVIIIe siècle」, L'Homme et la société 67-68: 51-57",
+    "url": "https://www.persee.fr/doc/homso_0018-4306_1983_num_67_1_2111"
+   }
+  ]
+ },
+ {
+  "id": "urb-016",
+  "cat": "urban",
+  "text": "물장수가 계단 7층까지 물통 두 개를 지고 올라와 한 통에 1수를 받아 갔다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "메르시에는 18세기 말 파리의 물장수를 2만 명 이상으로 추산했고, 부자는 물장수를, 부르주아는 하녀를 시켜 물을 길었다.",
+  "src": [
+   {
+    "cite": "Jacques Houdaille (1995), 「Les porteurs d'eau à Paris en 1793」, Population 50(4-5): 1245-1247",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1995_num_50_4_6038"
+   }
+  ]
+ },
+ {
+  "id": "urb-017",
+  "cat": "work",
+  "text": "어깨에 멍에를 지고 하루 서른 번 분수대와 계단을 오갔다.",
+  "fx": {
+   "hp": -1,
+   "money": 4
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "M",
+   "estate": [
+    "peasant",
+    "artisan"
+   ],
+   "age": [
+    16,
+    50
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리의 빈민은 공공 분수에서 직접 물을 길었고, 오베르뉴 출신 물장수가 위층 가정에 물을 배달했다.",
+  "src": [
+   {
+    "cite": "Jacques Houdaille (1995), 「Les porteurs d'eau à Paris en 1793」, Population 50(4-5): 1245-1247",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1995_num_50_4_6038"
+   },
+   {
+    "cite": "Alain Blum, Jacques Houdaille (1986), 「12 000 Parisiens en 1793. Sondage dans les cartes de civisme」, Population 41(2): 259-302",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1986_num_41_2_17616"
+   }
+  ]
+ },
+ {
+  "id": "urb-018",
+  "cat": "urban",
+  "text": "샤요 언덕의 증기 펌프가 센 강 물을 끌어올린다는 소식에 구경꾼이 몰렸다.",
+  "when": {
+   "from": 1781,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "페리에 형제의 샤요 '불 펌프(증기 양수기)'는 1781년 8월 8일 가동되어 센 강 물을 파리에 공급했다.",
+  "src": [
+   {
+    "cite": "Jacques Payen (1965), 「Documents relatifs à l'introduction en France de la machine à vapeur de Watt」, Revue d'histoire des sciences 18(3): 309-314",
+    "url": "https://www.persee.fr/doc/rhs_0048-7996_1965_num_18_3_2431"
+   }
+  ]
+ },
+ {
+  "id": "urb-019",
+  "cat": "urban",
+  "text": "새벽 분수대 앞 줄에서 하녀들끼리 주인 험담을 늘어놓았다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "F"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 파리의 주부와 하녀에게 분수대·세탁장은 물을 긷는 곳이자 여성 사교의 장이었다.",
+  "src": [
+   {
+    "cite": "Michelle Perrot (1980), 「La ménagère dans l'espace parisien au XIXe siècle」, Les Annales de la recherche urbaine 9: 3-22",
+    "url": "https://www.persee.fr/doc/aru_0180-930x_1980_num_9_1_2078"
+   },
+   {
+    "cite": "Jacques Houdaille (1995), 「Les porteurs d'eau à Paris en 1793」, Population 50(4-5): 1245-1247",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1995_num_50_4_6038"
+   }
+  ]
+ },
+ {
+  "id": "urb-020",
+  "cat": "urban",
+  "text": "비 온 뒤 거리 진흙이 발목까지 차서 구두와 양말을 버렸다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1780년 파리 거리에서는 하루 약 500대의 짐수레가 진흙을 실어 냈는데, 하루 750㎥, 한 해 27만㎥에 이르렀다.",
+  "src": [
+   {
+    "cite": "Pierre-Denis Boudriot (1986), 「Essai sur l'ordure en milieu urbain à l'époque pré-industrielle. Boues, immondices et gadoue à Paris au XVIIIe siècle」, Histoire, économie et société 5(4): 515-528",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1986_num_5_4_2346"
+   }
+  ]
+ },
+ {
+  "id": "urb-021",
+  "cat": "urban",
+  "text": "개천 건너는 판자를 놓아 준 소년에게 동전을 쥐여 주었다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "18세기 파리의 진흙 처리는 시정의 최우선 과제였고, 쓰레기 수레는 두 마리 말이 끌었다.",
+  "src": [
+   {
+    "cite": "Pierre-Denis Boudriot (1986), 「Essai sur l'ordure en milieu urbain à l'époque pré-industrielle. Boues, immondices et gadoue à Paris au XVIIIe siècle」, Histoire, économie et société 5(4): 515-528",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1986_num_5_4_2346"
+   }
+  ]
+ },
+ {
+  "id": "urb-022",
+  "cat": "urban",
+  "text": "가죽 무두질 공방의 악취와 폐수 때문에 이웃들이 경찰에 진정서를 냈다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리는 진흙과 생활 쓰레기뿐 아니라 무두질·염색 같은 수공업 폐기물도 처리해야 했다.",
+  "src": [
+   {
+    "cite": "Pierre-Denis Boudriot (1988), 「Essai sur l'ordure en milieu urbain à l'époque pré-industrielle」(déchets artisanaux), Histoire, économie et société 7(2): 261-281",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1988_num_7_2_1516"
+   }
+  ]
+ },
+ {
+  "id": "urb-023",
+  "cat": "urban",
+  "text": "새벽부터 행상들의 외침과 수레바퀴 소리에 잠을 설쳤다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "17~18세기 파리 경찰은 거리를 '깨끗하고 안전하게' 하라는 명령 아래 청소·통행·노점을 규율하는 거리 치안을 발전시켰다.",
+  "src": [
+   {
+    "cite": "Sophie Houdard (1983), 「La ville en propre. La police des rues à Paris aux XVIIe et XVIIIe siècles」, Cahiers de Fontenay 30-31: 61-74",
+    "url": "https://www.persee.fr/doc/cafon_0395-8418_1983_num_30_1_1263"
+   }
+  ]
+ },
+ {
+  "id": "urb-024",
+  "cat": "urban",
+  "text": "골목 하수구 옆 집에 콜레라가 돌자 집주인이 위생위원회의 경고를 받았다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1832,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1832년 이후 파리의 콜레라 사망률 분포는 비위생 주거 지도와 겹쳤고, 이는 도심 노후 주택 철거 논의로 이어졌다.",
+  "src": [
+   {
+    "cite": "René Le Mée (1998), 「Le choléra et la question des logements insalubres à Paris (1832-1849)」, Population 53(1-2): 379-397",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1_6861"
+   }
+  ]
+ },
+ {
+  "id": "urb-025",
+  "cat": "urban",
+  "text": "새 하수도 공사로 길이 파헤쳐져 한 달 내내 돌아서 다녔다.",
+  "when": {
+   "from": 1833,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 파리의 하수도는 콜레라 이후 위생 담론 속에서 '지옥'에서 근대 기반시설로 탈바꿈했다.",
+  "src": [
+   {
+    "cite": "Fabrice Laroulandie (1993), 「Les égouts de Paris au XIXe siècle : l'enfer vaincu et l'utopie dépassée」, Cahiers de Fontenay 69-70: 107-140",
+    "url": "https://www.persee.fr/doc/cafon_0395-8418_1993_num_69_1_1614"
+   }
+  ]
+ },
+ {
+  "id": "urb-026",
+  "cat": "urban",
+  "text": "골목 끝에 새 반사등이 걸리자 밤길이 대낮처럼 밝아졌다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1766,
+   "to": 1800
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "공공 조명은 1667년 파리, 1697년 주요 지방 도시에 도입되었고, 18세기 후반에는 반사등(réverbère)이 촛불 등을 대체했다.",
+  "src": [
+   {
+    "cite": "Sophie Reculin (2014), 「L'illumination publique dans le royaume de France : un instrument de l'ordre public ?」, Actes des congrès du CTHS 137(5): 81-92",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2014_act_137_5_2664"
+   }
+  ]
+ },
+ {
+  "id": "urb-027",
+  "cat": "urban",
+  "text": "이웃들과 돈을 모아 어두운 골목에도 반사등을 달아 달라고 청원했다.",
+  "fx": {
+   "soc": 1,
+   "money": -2
+  },
+  "when": {
+   "from": 1766,
+   "to": 1800
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 반사등은 먼저 유흥 장소 주변에 늘었고, 설비가 부족한 거리의 주민들은 당국에 설치를 청원했다.",
+  "src": [
+   {
+    "cite": "Sophie Reculin (2014), 「L'illumination publique dans le royaume de France : un instrument de l'ordre public ?」, Actes des congrès du CTHS 137(5): 81-92",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2014_act_137_5_2664"
+   }
+  ]
+ },
+ {
+  "id": "urb-028",
+  "cat": "urban",
+  "text": "등지기가 사다리를 메고 와서 반사등 기름을 채우자 내장 기름 냄새가 진동했다.",
+  "when": {
+   "from": 1763,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "사르틴은 1763년부터 파리의 등과 반사등에 쓸 내장 기름(huile de tripes) 정제를 조직했다.",
+  "src": [
+   {
+    "cite": "Guillaume Bourboulon (1993), 「Question CCXII : Bains de tripes」, Revue d'histoire de la pharmacie 297: 263",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1993_num_81_297_3743"
+   }
+  ]
+ },
+ {
+  "id": "urb-029",
+  "cat": "urban",
+  "text": "가스등이 켜진 거리를 처음 걸으며 그 하얀 빛에 놀랐다.",
+  "when": {
+   "from": 1825,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "파리의 가스 조명은 1820년대부터 확산되었고, 1839년에는 여섯 회사에 구역별 가스관 독점권이 주어졌다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Williot (1989), 「Naissance d'un réseau gazier à Paris au XIXe siècle : distribution gazière et éclairage」, Histoire, économie et société 8(4): 569-591",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1989_num_8_4_2374"
+   }
+  ]
+ },
+ {
+  "id": "urb-030",
+  "cat": "urban",
+  "text": "가게 앞 다툼에 구역 경찰 감독관이 불려 와 진술서를 받아 적었다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 파리에는 샤틀레 소속 경찰 감독관 48명이 구역마다 상주하며 분쟁 조정, 조서 작성, 봉인 등 일상 치안을 맡았다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1981), 「Note sur les commissaires de police de Paris au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 28(4): 669-686",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_4_1171"
+   }
+  ]
+ },
+ {
+  "id": "urb-031",
+  "cat": "urban",
+  "text": "감독관 사무실에 가서 도둑맞은 은수저를 신고했다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 말 파리 경찰 감독관 직은 매매되는 관직이었고 그 값은 10만 리브르에 이르렀다.",
+  "src": [
+   {
+    "cite": "Vincent Milliot (2020), 「Aimer et détester la police ?」, in Paris et ses peuples au XVIIIe siècle: 49-64",
+    "url": "https://books.openedition.org/psorbonne/104792"
+   }
+  ]
+ },
+ {
+  "id": "urb-032",
+  "cat": "urban",
+  "text": "카페 구석에서 왕을 흉보던 사람이 다음 날 끌려갔다. 옆자리 손님이 밀정이었다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 2사분기 파리 경찰의 '비밀경찰 소식지'(gazetins)는 카페·산책로에서 엿들은 말을 매일 기록해 16권으로 남았다.",
+  "src": [
+   {
+    "cite": "Gilles Malandain (1995), 「Les mouches de la police et le vol des mots」, Revue d'histoire moderne et contemporaine 42(3): 376-404",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1995_num_42_3_1777"
+   }
+  ]
+ },
+ {
+  "id": "urb-033",
+  "cat": "urban",
+  "text": "경찰총감의 새 명령문이 거리 모퉁이마다 나붙었다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 경찰총감직은 1667년에 창설되어 사법관과 부르주아로부터 도시 행정 권한을 넘겨받았다.",
+  "src": [
+   {
+    "cite": "Paolo Piasenza (1990), 「Juges, lieutenants de police et bourgeois à Paris aux XVIIe et XVIIIe siècles」, Annales ESC 45(5): 1189-1215",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1990_num_45_5_278898"
+   }
+  ]
+ },
+ {
+  "id": "urb-034",
+  "cat": "urban",
+  "text": "구걸하는 노인을 순찰대가 끌고 가는 것을 보고 고개를 돌렸다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1774,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1774년 8월 이후 경찰총감 르누아르는 파리에서 걸인 대단속을 벌였고, 1768~1789년 체포된 걸인은 매우 많았다.",
+  "src": [
+   {
+    "cite": "Christian Romon (1982), 「Mendiants et policiers à Paris au XVIIIe siècle」, Histoire, économie et société 1(2): 259-295",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1982_num_1_2_1292"
+   }
+  ]
+ },
+ {
+  "id": "urb-035",
+  "cat": "urban",
+  "text": "경찰총감 르누아르가 빵집과 시장을 직접 둘러본다는 소문이 돌았다.",
+  "when": {
+   "from": 1774,
+   "to": 1785
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "르누아르(1774~1785 재임)는 경찰을 처벌을 넘어 생활을 '개선'하는 행정으로 이해했다.",
+  "src": [
+   {
+    "cite": "Vincent Milliot (2005), 「Qu'est-ce qu'une police éclairée ? La police « amélioratrice » selon Jean-Charles-Pierre Lenoir」, Dix-huitième siècle 37: 117-130",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_2005_num_37_1_2659"
+   }
+  ]
+ },
+ {
+  "id": "urb-036",
+  "cat": "urban",
+  "text": "감독관이 순찰대를 이끌고 왔지만 구경꾼들이 돌을 던지며 체포를 막았다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1760
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1750년 봄 '아이 납치' 소문으로 폭동이 일었고, 1751~1752년 루브르 구역에서는 경찰 감독관에 대한 저항이 집중되었다.",
+  "src": [
+   {
+    "cite": "Vincent Milliot (2020), 「Aimer et détester la police ?」, in Paris et ses peuples au XVIIIe siècle: 49-64",
+    "url": "https://books.openedition.org/psorbonne/104792"
+   }
+  ]
+ },
+ {
+  "id": "urb-037",
+  "cat": "urban",
+  "text": "경찰은 자신을 '행복의 학문'이라 불렀지만, 골목 사람들은 감시의 눈으로 여겼다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "18세기 파리 경찰은 스스로를 '행복의 학문'으로 규정하며 도덕적·윤리적 성격을 내세웠다.",
+  "src": [
+   {
+    "cite": "Arlette Farge (1983), 「La répression à Paris au XVIIIe siècle」, L'Homme et la société 67-68: 51-57",
+    "url": "https://www.persee.fr/doc/homso_0018-4306_1983_num_67_1_2111"
+   }
+  ]
+ },
+ {
+  "id": "urb-038",
+  "cat": "urban",
+  "text": "경감과 감독관 사이 알력 때문에 신고가 일주일이나 처리되지 않았다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1740년 재편된 파리 경찰 경감단은 감독관과 업무를 두고 자주 갈등했다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1981), 「Note sur les commissaires de police de Paris au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 28(4): 669-686",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_4_1171"
+   },
+   {
+    "cite": "Vincent Milliot (2020), 「Aimer et détester la police ?」, in Paris et ses peuples au XVIIIe siècle: 49-64",
+    "url": "https://books.openedition.org/psorbonne/104792"
+   }
+  ]
+ },
+ {
+  "id": "urb-039",
+  "cat": "urban",
+  "text": "팔레루아얄 정원에서 경찰이 매춘부 단속을 벌여 구경꾼이 몰렸다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "18세기 파리 풍속 경찰의 감시와 단속은 주로 여성에게 가해졌고, 방탕의 장소는 지도로 그릴 수 있을 만큼 특정 구역에 몰려 있었다.",
+  "src": [
+   {
+    "cite": "Éliane Hensinger (1988), 「La prostitution et la police des mœurs au XVIIIe siècle à Paris」, Mappemonde 2: 40-44",
+    "url": "https://www.persee.fr/doc/mappe_0764-3470_1988_num_10_2_2444"
+   }
+  ]
+ },
+ {
+  "id": "urb-040",
+  "cat": "work",
+  "text": "작업장을 옮기려 하자 조합 직업소개소가 정해 준 공방으로 가라는 통지를 받았다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ],
+   "estate": [
+    "artisan"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 동업조합은 직업소개소로 노동시장을 통제하려 했고, 1739년 한 도금 직인은 지정된 공방에 들어가길 거부했다가 체포되었다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1989), 「La lutte pour le contrôle du marché du travail à Paris au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 36(3): 361-412",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1989_num_36_3_1501"
+   }
+  ]
+ },
+ {
+  "id": "urb-041",
+  "cat": "work",
+  "text": "주인 몰래 다른 공방으로 옮기려다 이직 증명서가 없어 붙잡혔다.",
+  "fx": {
+   "money": -5,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true,
+   "job": [
+    "craft"
+   ],
+   "sex": "M",
+   "age": [
+    16,
+    35
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리의 직인은 이전 고용주의 퇴직 증명 없이 새 일자리를 얻기 어려웠고, 동업조합과 경찰은 이를 통해 이동을 통제했다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1989), 「La lutte pour le contrôle du marché du travail à Paris au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 36(3): 361-412",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1989_num_36_3_1501"
+   },
+   {
+    "cite": "Jordan Goodman (1990), compte rendu de Michael Sonenscher, Work and Wages: Natural Law, Politics and the Eighteenth-Century French Trades, Economic History Review 43(2): 313",
+    "url": "https://doi.org/10.2307/2596810"
+   }
+  ]
+ },
+ {
+  "id": "urb-042",
+  "cat": "work",
+  "text": "튀르고의 칙령으로 조합이 폐지된다는 소식에 장인들이 술렁였다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1776,
+   "to": 1776
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1776년 튀르고는 동업조합 폐지를 시도했고, 파리 조합들은 고등법원에 반대 의견서를 쏟아냈으며 칙령은 같은 해 철회되었다.",
+  "src": [
+   {
+    "cite": "Fabrice Piwnica (1993), 「Les résistances à l'introduction du libéralisme en France. Le témoignage des mémoires des corporations en 1776」, RHMC 40(1): 30-48",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1993_num_40_1_1659"
+   },
+   {
+    "cite": "Vincent Milliot (2020), 「Aimer et détester la police ?」, in Paris et ses peuples au XVIIIe siècle: 49-64",
+    "url": "https://books.openedition.org/psorbonne/104792"
+   }
+  ]
+ },
+ {
+  "id": "urb-043",
+  "cat": "work",
+  "text": "투르 드 프랑스 길에 오른 직인이 보르도 숙소의 어머니 집에 짐을 풀었다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "job": [
+    "craft"
+   ],
+   "sex": "M",
+   "age": [
+    16,
+    30
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "보르도는 18세기 투르 드 프랑스의 주요 기착지였고, 건축업에 몰려든 직인들 사이에서 직인조합이 노동 투쟁의 조직이 되었다.",
+  "src": [
+   {
+    "cite": "Jean Cavignac (1968), 「Le compagnonnage dans les luttes ouvrières au XVIIIe siècle, l'exemple de Bordeaux」, Bibliothèque de l'École des chartes 126(2): 377-411",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1968_num_126_2_449797"
+   }
+  ]
+ },
+ {
+  "id": "urb-044",
+  "cat": "work",
+  "text": "다른 '의무파' 직인들과 거리에서 패싸움이 벌어져 몽둥이에 맞았다.",
+  "fx": {
+   "hp": -3,
+   "cour": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "job": [
+    "craft"
+   ],
+   "sex": "M",
+   "age": [
+    16,
+    30
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 직인조합(compagnonnage)은 상호부조와 투쟁의 결사였고, 경쟁 조합 간 폭력 충돌도 잦았다.",
+  "src": [
+   {
+    "cite": "Jean Cavignac (1968), 「Le compagnonnage dans les luttes ouvrières au XVIIIe siècle, l'exemple de Bordeaux」, Bibliothèque de l'École des chartes 126(2): 377-411",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1968_num_126_2_449797"
+   },
+   {
+    "cite": "David Garrioch, Michael Sonenscher (1986), 「Compagnonnages, Confraternities and Associations of Journeymen in Eighteenth-century Paris」, European History Quarterly 16(1): 25-45",
+    "url": "https://doi.org/10.1177/026569148601600102"
+   }
+  ]
+ },
+ {
+  "id": "urb-045",
+  "cat": "work",
+  "text": "형제회 미사 뒤 직인들끼리 돈을 걷어 병든 동료의 약값을 댔다.",
+  "fx": {
+   "soc": 1,
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리의 직인들은 직인조합뿐 아니라 신앙 형제회와 각종 결사를 통해 상호부조를 조직했다.",
+  "src": [
+   {
+    "cite": "David Garrioch, Michael Sonenscher (1986), 「Compagnonnages, Confraternities and Associations of Journeymen in Eighteenth-century Paris」, European History Quarterly 16(1): 25-45",
+    "url": "https://doi.org/10.1177/026569148601600102"
+   }
+  ]
+ },
+ {
+  "id": "urb-046",
+  "cat": "work",
+  "text": "다른 도시로 일을 찾아 떠났다가 반년 만에 다시 돌아왔다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "job": [
+    "craft"
+   ],
+   "sex": "M",
+   "age": [
+    16,
+    35
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "소넨셔에 따르면 18세기 프랑스 직인들은 도시 사이를 잦게 옮겨 다녔고, 작업장 구조도 이 이동성에 맞춰 짜였다.",
+  "src": [
+   {
+    "cite": "Michael Sonenscher (2019), 「Journeymen's Migrations and Workshop Organization in Eighteenth-Century France」, in Work in France, Cornell University Press: 74-96",
+    "url": "https://doi.org/10.7591/9781501711237-004"
+   }
+  ]
+ },
+ {
+  "id": "urb-047",
+  "cat": "work",
+  "text": "인쇄소 견습생들이 주인 부인의 고양이를 '재판'해 매달고 웃어 댔다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ],
+   "sex": "M",
+   "age": [
+    12,
+    22
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "단턴은 1730년대 파리 생세브랭 거리 인쇄소 견습생들의 '고양이 대학살'을 직인과 주인 사이 계급 긴장의 상징으로 읽었다.",
+  "src": [
+   {
+    "cite": "Robert Darnton (1998), 「Workers Revolt: The Great Cat Massacre of the Rue Saint-Séverin」, in Rethinking Popular Culture, University of California Press: 97-120",
+    "url": "https://doi.org/10.1525/9780520354647-004"
+   }
+  ]
+ },
+ {
+  "id": "urb-048",
+  "cat": "work",
+  "text": "남편이 죽자 조합 규정대로 가게를 이어받아 계속 장사를 했다.",
+  "fx": {
+   "money": 20,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1791
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "F",
+   "married": true,
+   "estate": [
+    "bourgeois",
+    "artisan"
+   ],
+   "age": [
+    25,
+    70
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 6대 상인단은 미혼 여성을 받지 않았지만 사망한 장인의 과부에게는 영업을 이어갈 권리를 주었다.",
+  "src": [
+   {
+    "cite": "Laurence Croq (2020), 「Au bonheur des dames : les veuves et les héritières des marchands parisiens」, in Paris et ses peuples au XVIIIe siècle: 27-38",
+    "url": "https://books.openedition.org/psorbonne/104782"
+   }
+  ]
+ },
+ {
+  "id": "urb-049",
+  "cat": "work",
+  "text": "잡화상 조합 가입금과 결혼 지참금을 맞추느라 일가친척에게 돈을 빌렸다.",
+  "fx": {
+   "money": -100,
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "bourgeois"
+   ],
+   "sex": "M",
+   "age": [
+    20,
+    40
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "파리 잡화상 조합은 1720년대에서 1770년대 사이 약 50% 늘어 3천 명이 넘었고, 신입 가운데 장인 아들은 4분의 1뿐이었다.",
+  "src": [
+   {
+    "cite": "Laurence Croq (2020), 「Au bonheur des dames : les veuves et les héritières des marchands parisiens」, in Paris et ses peuples au XVIIIe siècle: 27-38",
+    "url": "https://books.openedition.org/psorbonne/104782"
+   }
+  ]
+ },
+ {
+  "id": "urb-050",
+  "cat": "work",
+  "text": "부채 장인 한 사람이 골조, 도장, 판매까지 모두 맡아 바삐 움직였다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 파리의 사치·준사치품 장인 겸 상점주는 극단적 분업 속에서도 여러 기능을 동시에 수행했다.",
+  "src": [
+   {
+    "cite": "Natacha Coquery (2006), 「Spécialiste généraliste, novateur conservateur ? Les dissemblances du travail de l'artisan-boutiquier à Paris au XVIIIe siècle」, Actes des congrès du CTHS 127(7): 175-195",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2006_act_127_2_1098"
+   }
+  ]
+ },
+ {
+  "id": "urb-051",
+  "cat": "work",
+  "text": "조합이 폐지되자 누구나 영업세만 내면 가게를 열 수 있게 됐다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1791,
+   "to": 1800
+  },
+  "who": {
+   "urban": true,
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "동업조합은 1791년 혁명기 입법으로 폐지되었고, 1776년 이후 조합들이 지켜 온 특권적 노동 질서도 무너졌다.",
+  "src": [
+   {
+    "cite": "Fabrice Piwnica (1993), 「Les résistances à l'introduction du libéralisme en France. Le témoignage des mémoires des corporations en 1776」, RHMC 40(1): 30-48",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1993_num_40_1_1659"
+   },
+   {
+    "cite": "Jordan Goodman (1990), compte rendu de Michael Sonenscher, Work and Wages: Natural Law, Politics and the Eighteenth-Century French Trades, Economic History Review 43(2): 313",
+    "url": "https://doi.org/10.2307/2596810"
+   }
+  ]
+ },
+ {
+  "id": "urb-052",
+  "cat": "economy",
+  "text": "날품팔이로 하루 25수를 받았는데 그중 절반이 빵값으로 나갔다.",
+  "fx": {
+   "money": 3
+  },
+  "when": {
+   "from": 1775,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1780년대 파리의 날품팔이는 하루 25~30수를 벌었고, 가족 빵값이 수입의 절반가량을 차지했다.",
+  "src": [
+   {
+    "cite": "George Rudé (1973), 「Paris et Londres au XVIIIe siècle : société et conflits de classes」, Annales historiques de la Révolution française 214: 481-502",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1973_num_214_1_4144"
+   }
+  ]
+ },
+ {
+  "id": "urb-053",
+  "cat": "economy",
+  "text": "보석 세공 직인으로 일하며 빵값 걱정은 덜했지만 일감이 끊길까 늘 불안했다.",
+  "fx": {
+   "money": 6
+  },
+  "when": {
+   "from": 1775,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1780년대 파리에서 사치품 장인은 임금의 약 15%를 빵에 썼지만 날품팔이는 훨씬 큰 몫을 써야 했다.",
+  "src": [
+   {
+    "cite": "George Rudé (1973), 「Paris et Londres au XVIIIe siècle : société et conflits de classes」, Annales historiques de la Révolution française 214: 481-502",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1973_num_214_1_4144"
+   }
+  ]
+ },
+ {
+  "id": "urb-054",
+  "cat": "food",
+  "text": "빵집 앞에서 4리브르 빵 하나 값이 지난주보다 2수 올랐다는 말을 들었다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1765,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1776~1787년 파리의 빵은 대체로 리브르당 2수였지만, 흉년에는 런던보다 훨씬 가파르게 올랐다.",
+  "src": [
+   {
+    "cite": "George Rudé (1973), 「Paris et Londres au XVIIIe siècle : société et conflits de classes」, Annales historiques de la Révolution française 214: 481-502",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1973_num_214_1_4144"
+   }
+  ]
+ },
+ {
+  "id": "urb-055",
+  "cat": "food",
+  "text": "빵값이 4리브르에 14수를 넘자 시장의 여자들이 빵집 진열대를 둘러쌌다.",
+  "fx": {
+   "money": -4,
+   "pol": 1
+  },
+  "when": {
+   "from": 1789,
+   "to": 1789,
+   "months": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1789년 봄 파리의 4리브르 빵값은 14수 반까지 올라 18세기 최고 수준에 이르렀다.",
+  "src": [
+   {
+    "cite": "George Rudé (1973), 「Paris et Londres au XVIIIe siècle : société et conflits de classes」, Annales historiques de la Révolution française 214: 481-502",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1973_num_214_1_4144"
+   }
+  ]
+ },
+ {
+  "id": "urb-056",
+  "cat": "food",
+  "text": "빵 무게가 모자란다며 손님이 경찰을 불렀고, 빵집 주인이 벌금을 물었다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 파리 경찰은 빵의 무게·가격·공급을 상시 감시했고, 이 '빵 경찰'은 왕정 정당성의 핵심이었다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1996), The Bakers of Paris and the Bread Question, 1700-1775, Duke University Press",
+    "url": "https://doi.org/10.1215/9780822381983"
+   },
+   {
+    "cite": "Steven L. Kaplan (1976), Bread, Politics and Political Economy in the Reign of Louis XV, Martinus Nijhoff",
+    "url": "https://doi.org/10.1007/978-94-010-1404-5"
+   }
+  ]
+ },
+ {
+  "id": "urb-057",
+  "cat": "food",
+  "text": "토요일 시장에서 교외 빵장수의 커다란 빵을 조합 빵집보다 싸게 샀다.",
+  "fx": {
+   "money": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 시장에서는 교외에서 들어오는 '포랭' 빵장수의 영향력이 커져 조합 장인들과 경쟁했다.",
+  "src": [
+   {
+    "cite": "Maurice Garden (1998), 「Steven L. Kaplan, Le meilleur pain du monde. Les boulangers de Paris au XVIIIe siècle」(compte rendu), RHMC 45(3): 679-683",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1998_num_45_3_1930_t1_0679_0000_2"
+   },
+   {
+    "cite": "Steven L. Kaplan (1996), The Bakers of Paris and the Bread Question, 1700-1775, Duke University Press",
+    "url": "https://doi.org/10.1215/9780822381983"
+   }
+  ]
+ },
+ {
+  "id": "urb-058",
+  "cat": "work",
+  "text": "밤새 반죽을 치대고 새벽 4시에 화덕을 열었다. 손님 줄이 이미 늘어서 있었다.",
+  "fx": {
+   "hp": -1,
+   "money": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ],
+   "sex": "M",
+   "age": [
+    15,
+    45
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "캐플런은 18세기 파리 빵 직인들의 야간 노동과 빵 제조 공정을 재구성했다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1996), The Bakers of Paris and the Bread Question, 1700-1775, Duke University Press",
+    "url": "https://doi.org/10.1215/9780822381983"
+   }
+  ]
+ },
+ {
+  "id": "urb-059",
+  "cat": "economy",
+  "text": "빵집 주인이 밀가루 상인에게 진 빚이 쌓여 가게를 넘겨야 할 판이었다.",
+  "fx": {
+   "money": -30
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ],
+   "estate": [
+    "artisan"
+   ],
+   "age": [
+    25,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리의 빵집 주인들은 밀가루 상인과 고객 외상 사이에서 빚에 시달렸다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1996), The Bakers of Paris and the Bread Question, 1700-1775, Duke University Press",
+    "url": "https://doi.org/10.1215/9780822381983"
+   }
+  ]
+ },
+ {
+  "id": "urb-060",
+  "cat": "food",
+  "text": "자유화로 곡물값이 뛰자 이웃들이 '굶기려는 음모'라고 수군거렸다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1765,
+   "to": 1775
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1760년대 곡물 거래 자유화 뒤 가격이 오르자 파리 민중 사이에 '기근 음모' 소문이 퍼졌고, 왕정은 다시 온정주의 통제로 돌아섰다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1976), Bread, Politics and Political Economy in the Reign of Louis XV, Martinus Nijhoff",
+    "url": "https://doi.org/10.1007/978-94-010-1404-5"
+   }
+  ]
+ },
+ {
+  "id": "urb-061",
+  "cat": "food",
+  "text": "1812년 흉작에 빵값 상한이 정해졌지만 빵집 앞 줄은 줄지 않았다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1812,
+   "to": 1812
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1812년 식량 위기 때 제정은 파리의 빵값 결정을 두고 고심했고, 카데 드 보는 그 방식을 논했다.",
+  "src": [
+   {
+    "cite": "Antoine-Alexis Cadet de Vaux, Guy Thuillier (1993), 「Le prix du pain en 1812」, Études & documents 5: 547-549",
+    "url": "https://www.persee.fr/doc/etudo_1241-3496_1993_num_5_1_1052"
+   }
+  ]
+ },
+ {
+  "id": "urb-062",
+  "cat": "work",
+  "text": "성인 축일이라 공사장이 쉬어서 그 주에는 품삯이 이틀치 줄었다.",
+  "fx": {
+   "money": -4
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "M",
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 초 파리에서는 평일 축일이 연 38일에 달해 건축 노동자의 연간 노동일과 임금 수입을 크게 줄였다.",
+  "src": [
+   {
+    "cite": "Micheline Baulant (1971), 「Le salaire des ouvriers du bâtiment à Paris, de 1400 à 1726」, Annales ESC 26(2): 463-483",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1971_num_26_2_422372"
+   }
+  ]
+ },
+ {
+  "id": "urb-063",
+  "cat": "work",
+  "text": "석공 조수로 하루 일당을 받고 저녁이면 동향 리무쟁 사람들 셋방으로 돌아갔다.",
+  "fx": {
+   "money": 3,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "M",
+   "estate": [
+    "peasant",
+    "artisan"
+   ],
+   "age": [
+    16,
+    50
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 건축 노동자는 석공·조수로 나뉘었고, 리무쟁 출신이 석공의 큰 몫을 차지했다.",
+  "src": [
+   {
+    "cite": "Micheline Baulant (1971), 「Le salaire des ouvriers du bâtiment à Paris, de 1400 à 1726」, Annales ESC 26(2): 463-483",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1971_num_26_2_422372"
+   },
+   {
+    "cite": "Alain Blum, Jacques Houdaille (1986), 「12 000 Parisiens en 1793. Sondage dans les cartes de civisme」, Population 41(2): 259-302",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1986_num_41_2_17616"
+   }
+  ]
+ },
+ {
+  "id": "urb-064",
+  "cat": "work",
+  "text": "남편 없이 바느질과 세탁 품을 팔아 아이 둘을 먹였다.",
+  "fx": {
+   "money": 2,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "F",
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 말 파리에서 '홀로 사는 여성'은 나이와 처지에 상관없이 일해야 했고, 남성 중심 조합은 여성의 많은 업종 진입을 막았다.",
+  "src": [
+   {
+    "cite": "Sabine Juratic (1987), 「Solitude féminine et travail des femmes à Paris à la fin du XVIIIe siècle」, Mélanges de l'École française de Rome 99(2): 879-900",
+    "url": "https://www.persee.fr/doc/mefr_0223-5110_1987_num_99_2_2936"
+   }
+  ]
+ },
+ {
+  "id": "urb-065",
+  "cat": "work",
+  "text": "시골에서 갓 올라와 부르주아 집 하녀로 들어가 1년 품삯을 약속받았다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    14,
+    25
+   ],
+   "urban": true,
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "18세기 프랑스 도시는 여성 인구가 남성보다 많았고, 젊은 독신 여성은 흔히 농촌 출신 하녀였다.",
+  "src": [
+   {
+    "cite": "Antoinette Fauve-Chamoux (1998), 「Le surplus urbain des femmes en France préindustrielle et le rôle de la domesticité」, Population 53(1-2): 359-377",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1998_num_53_1_6860"
+   }
+  ]
+ },
+ {
+  "id": "urb-066",
+  "cat": "work",
+  "text": "일곱 달 만에 마님과 다투고 짐을 싸서 다른 집으로 옮겼다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "age": [
+    14,
+    40
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 리옹의 한 시참사 집안 하인 98명을 추적하면 한 주인 집에 머문 기간의 중앙값은 약 7개월 반이었다.",
+  "src": [
+   {
+    "cite": "Olivier Zeller (1992), 「Rapports ancillaires et mobilité des domestiques à Lyon au XVIIIe siècle」, Histoire, économie et société 11(2): 237-275",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1992_num_11_2_1634"
+   }
+  ]
+ },
+ {
+  "id": "urb-067",
+  "cat": "work",
+  "text": "하인이 은식기를 훔쳤다는 의심을 받자 주인은 곧바로 경찰을 불렀다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "peasant",
+    "artisan"
+   ],
+   "age": [
+    14,
+    45
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "페어칠즈는 앙시앵 레짐의 하인을 주인과 가장 가까우면서도 의심받는 '집안의 적'으로 분석했다.",
+  "src": [
+   {
+    "cite": "Olwen Hufton (1985), compte rendu de Cissie Fairchilds, Domestic Enemies: Servants and Their Masters in Old Regime France, Journal of Modern History 57(4): 746-748",
+    "url": "https://doi.org/10.1086/242920"
+   },
+   {
+    "cite": "Paul G. Spagnoli (1985), compte rendu de Cissie Fairchilds, Domestic Enemies, Journal of Interdisciplinary History 16(2): 323",
+    "url": "https://doi.org/10.2307/204191"
+   }
+  ]
+ },
+ {
+  "id": "urb-068",
+  "cat": "work",
+  "text": "제복을 입은 하인이라는 이유로 왕립 식물원 입구에서 돌려보내졌다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1729년 파리 왕립 식물원 규정은 '민중, 아이, 제복 입은 하인'의 출입을 금했다.",
+  "src": [
+   {
+    "cite": "Jan Synowiecki (2020), 「Paris côté jardins : nature urbaine, publics et sociabilités au XVIIIe siècle」, in Paris et ses peuples au XVIIIe siècle: 121-133",
+    "url": "https://books.openedition.org/psorbonne/104837"
+   }
+  ]
+ },
+ {
+  "id": "urb-069",
+  "cat": "work",
+  "text": "아기 젖먹이를 구하러 유모 사무소에 가니 시골 유모들이 대기실에 가득했다.",
+  "fx": {
+   "money": -8
+  },
+  "when": {
+   "from": 1769,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "married": true,
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1780년 르누아르의 추산으로 파리 출생아 2만 1천 명 가운데 1만 5천 명 이상이 시골 유모에게 보내졌다.",
+  "src": [
+   {
+    "cite": "Clyde Plumauzille (2020), 「L'allaitement nourricier des petits Parisiens : naissance d'un service public au XVIIIe siècle」, in Paris et ses peuples au XVIIIe siècle: 39-48",
+    "url": "https://books.openedition.org/psorbonne/104787"
+   }
+  ]
+ },
+ {
+  "id": "urb-070",
+  "cat": "economy",
+  "text": "밀린 유모 삯 때문에 경찰서 소환장을 받았다.",
+  "fx": {
+   "money": -20,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "married": true,
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1750~1760년대 파리에서는 유모 삯 미납으로 인한 소환이 해마다 1천 건이 넘었고, 빚은 대개 20~100리브르였다.",
+  "src": [
+   {
+    "cite": "Clyde Plumauzille (2020), 「L'allaitement nourricier des petits Parisiens : naissance d'un service public au XVIIIe siècle」, in Paris et ses peuples au XVIIIe siècle: 39-48",
+    "url": "https://books.openedition.org/psorbonne/104787"
+   }
+  ]
+ },
+ {
+  "id": "urb-071",
+  "cat": "urban",
+  "text": "샹파뉴로 보낸 아기가 첫 달을 넘기지 못했다는 편지가 왔다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1765,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "married": true
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "의사 테농에 따르면 샹파뉴로 보내진 파리 아기 250명 중 31명이 첫 달에 숨졌다.",
+  "src": [
+   {
+    "cite": "Antoinette Chamoux (1973), 「Mise en nourrice et mortalité des enfants légitimes」, Annales de démographie historique 1973: 418-422",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1219"
+   }
+  ]
+ },
+ {
+  "id": "urb-072",
+  "cat": "urban",
+  "text": "버려진 갓난아기를 감독관 사무실로 데려가자 기아원으로 보내졌다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "파리 기아원에 들어온 아이는 1670년 312명에서 1772년 7,676명으로 늘었다.",
+  "src": [
+   {
+    "cite": "Clyde Plumauzille (2020), 「L'allaitement nourricier des petits Parisiens : naissance d'un service public au XVIIIe siècle」, in Paris et ses peuples au XVIIIe siècle: 39-48",
+    "url": "https://books.openedition.org/psorbonne/104787"
+   },
+   {
+    "cite": "Isabelle Robin, Agnès Walch (1987), 「Géographie des enfants trouvés de Paris aux XVIIe et XVIIIe siècles」, Histoire, économie et société 6(3): 343-360",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1456"
+   }
+  ]
+ },
+ {
+  "id": "urb-073",
+  "cat": "work",
+  "text": "세탁선 위에서 하루 종일 방망이질을 하고 손이 갈라졌다.",
+  "fx": {
+   "hp": -1,
+   "money": 2
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "F",
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 파리 여성의 가사 노동은 물 긷기와 세탁 등 도시 공간과 밀접했다.",
+  "src": [
+   {
+    "cite": "Michelle Perrot (1980), 「La ménagère dans l'espace parisien au XIXe siècle」, Les Annales de la recherche urbaine 9: 3-22",
+    "url": "https://www.persee.fr/doc/aru_0180-930x_1980_num_9_1_2078"
+   }
+  ]
+ },
+ {
+  "id": "urb-074",
+  "cat": "work",
+  "text": "베틀 옆에서 아내는 실을 감고 딸은 줄을 당겼다. 집 전체가 작업장이었다.",
+  "fx": {
+   "money": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 리옹 견직업에서는 장인 직조공의 아내와 딸, 실감기공·날실공·줄당기기공 등 여성이 핵심 노동을 맡았다.",
+  "src": [
+   {
+    "cite": "Jean-François Budin (2006), 「Les ouvrières de la soie à Lyon au XVIIIe siècle」, Actes des congrès du CTHS 127(7): 117-126",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2006_act_127_2_1091"
+   }
+  ]
+ },
+ {
+  "id": "urb-075",
+  "cat": "work",
+  "text": "줄당기기 소녀로 하루 종일 베틀 위 끈을 당기다 허리가 굽었다.",
+  "fx": {
+   "hp": -2,
+   "money": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "sex": "F",
+   "age": [
+    10,
+    25
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹 견직의 무늬 직조에는 '줄당기기공'(tireuse de cordes)이 필요했고 주로 소녀와 여성이 맡았다.",
+  "src": [
+   {
+    "cite": "Jean-François Budin (2006), 「Les ouvrières de la soie à Lyon au XVIIIe siècle」, Actes des congrès du CTHS 127(7): 117-126",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2006_act_127_2_1091"
+   }
+  ]
+ },
+ {
+  "id": "urb-076",
+  "cat": "work",
+  "text": "자카르 직기가 들어오자 줄당기기 아이들이 일자리를 잃었다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1805,
+   "to": 1840
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "줄당기기공 없이 무늬를 짤 수 있는 자카르 직기는 리옹 견직업 한가운데서 태어나 19세기 초 퍼졌다.",
+  "src": [
+   {
+    "cite": "Bernard Hillau (1998), 「Progrès technique et acteurs du changement dans la soierie lyonnaise au XVIIIe siècle」, Formation Emploi 64: 5-24",
+    "url": "https://www.persee.fr/doc/forem_0759-6340_1998_num_64_1_2316"
+   }
+  ]
+ },
+ {
+  "id": "urb-077",
+  "cat": "economy",
+  "text": "상복 칙령으로 궁정이 검은 옷을 입자 리옹의 색색 비단 주문이 뚝 끊겼다.",
+  "fx": {
+   "money": -10
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "가르댕의 1970년 박사논문 『18세기 리옹과 리옹 사람들』(772쪽)은 견직 '파브리크'의 경기 변동과 노동자 생활을 총체적으로 분석했다.",
+  "src": [
+   {
+    "cite": "Roger Chartier (1972), compte rendu de Maurice Garden, Lyon et les Lyonnais au XVIIIe siècle, Dix-huitième siècle 4: 393-394",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1972_num_4_1_1019_t1_0393_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "urb-078",
+  "cat": "work",
+  "text": "견직공들이 도시 밖에 모여 품삯 인상을 요구한다는 소문이 돌았다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1786,
+   "to": 1786,
+   "months": [
+    8
+   ]
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "리옹의 마지막 대규모 견직공 봉기는 1786년 8월에 일어났고, 1744년에도 견직공 소요가 있었다.",
+  "src": [
+   {
+    "cite": "Olivier Zeller (1990), 「Géographie des troubles et découpage urbain à Lyon (XVIe-XVIIIe siècles)」, Actes du 114e Congrès national des sociétés savantes: 43-59",
+    "url": "https://www.persee.fr/doc/acths_0071-8440_1990_act_114_1_10190"
+   }
+  ]
+ },
+ {
+  "id": "urb-079",
+  "cat": "work",
+  "text": "크루아루스 언덕에서 '일하며 살거나 싸우다 죽자'라는 깃발을 든 행렬이 내려왔다.",
+  "fx": {
+   "pol": 3,
+   "cour": 2
+  },
+  "when": {
+   "from": 1831,
+   "to": 1831,
+   "months": [
+    11,
+    12
+   ]
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1831년 11월 리옹 견직공은 최저 공임표(tarif) 폐기에 맞서 봉기했고, '일하며 살거나 싸우다 죽자'를 구호로 내걸었다.",
+  "src": [
+   {
+    "cite": "Jean Bruhat (1947), compte rendu de Fernand Rude, Le mouvement ouvrier à Lyon de 1827 à 1832, 1848 et les révolutions du XIXe siècle 38(176): 52-55",
+    "url": "https://www.persee.fr/doc/r1848_1155-8792_1947_num_38_176_1417_t1_0052_0000_3"
+   },
+   {
+    "cite": "Fernand Rude (1938), 「L'insurrection ouvrière de Lyon en 1831 et le rôle de Pierre Charnier」, La Révolution de 1848 35(164): 18-49",
+    "url": "https://www.persee.fr/doc/r1848_1155-8806_1938_num_35_164_1314"
+   }
+  ]
+ },
+ {
+  "id": "urb-080",
+  "cat": "work",
+  "text": "작업장 장인들이 모여 공제조합을 만들자며 회비를 걷었다.",
+  "fx": {
+   "soc": 2,
+   "money": -2
+  },
+  "when": {
+   "from": 1828,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹의 작업장 장인 피에르 샤르니에는 1831년 봉기를 전후해 견직공 상호부조 운동을 이끌었다.",
+  "src": [
+   {
+    "cite": "Fernand Rude (1938), 「L'insurrection ouvrière de Lyon en 1831 et le rôle de Pierre Charnier」, La Révolution de 1848 35(164): 18-49",
+    "url": "https://www.persee.fr/doc/r1848_1155-8806_1938_num_35_164_1314"
+   }
+  ]
+ },
+ {
+  "id": "urb-081",
+  "cat": "economy",
+  "text": "취리히와 엘버펠트 비단이 싸게 들어오면서 주문 단가가 또 깎였다.",
+  "fx": {
+   "money": -6
+  },
+  "when": {
+   "from": 1830,
+   "to": 1848
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1830~1848년 리옹 견직업은 취리히·엘버펠트와의 경쟁과 농촌 직기 확산으로 공임 하락 압박을 받았다.",
+  "src": [
+   {
+    "cite": "Claude Levy (1947), 「La fabrique de soie lyonnaise (1830-1848)」, 1848 et les révolutions du XIXe siècle 38(177-178): 20-47",
+    "url": "https://www.persee.fr/doc/r1848_1155-8792_1947_num_38_177_1422"
+   }
+  ]
+ },
+ {
+  "id": "urb-082",
+  "cat": "economy",
+  "text": "노예무역선 의장에 지분을 넣었다가 항해가 끝나기만을 기다렸다.",
+  "fx": {
+   "money": -150
+  },
+  "when": {
+   "from": 1750,
+   "to": 1815
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "estate": [
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "보르도에서는 17세기 말 첫 노예무역선이 출항한 뒤 19세기까지 수백 건의 노예무역 항해가 이어졌다.",
+  "src": [
+   {
+    "cite": "Marguerite Figeac-Monthus (2011), 「Bordeaux et la traite」, Revue historique de Bordeaux et du département de la Gironde 17: 19-34",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_2011_num_17_1_1098"
+   }
+  ]
+ },
+ {
+  "id": "urb-083",
+  "cat": "economy",
+  "text": "부두에서 서인도행 배에 밀가루와 포도주를 싣는 일을 했다.",
+  "fx": {
+   "money": 4,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "sex": "M",
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "보르도의 그라디스 상사는 18세기에 식민지 교역과 정부 보급 계약으로 크게 성장했고, 1759년 보르도–캐나다 운임은 1천 리브르에 달했다.",
+  "src": [
+   {
+    "cite": "Silvia Marzagalli (2009), 「Opportunités et contraintes du commerce colonial dans l'Atlantique français au XVIIIe siècle : le cas de la maison Gradis de Bordeaux」, Outre-mers 96(362-363): 87-110",
+    "url": "https://www.persee.fr/doc/outre_1631-0438_2009_num_96_362_4383"
+   }
+  ]
+ },
+ {
+  "id": "urb-084",
+  "cat": "economy",
+  "text": "런던의 대리상에게서 어음 지급이 늦어진다는 편지를 받았다.",
+  "fx": {
+   "money": -20
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "estate": [
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 보르도 선주들은 런던의 위탁 대리상과 신용·보험 거래로 긴밀히 연결되어 있었다.",
+  "src": [
+   {
+    "cite": "Paul Butel (1974), 「Armateurs bordelais et commissionnaires londoniens au XVIIIe siècle」, Revue historique de Bordeaux et du département de la Gironde 23: 151-161",
+    "url": "https://doi.org/10.3406/rhbg.1974.2036"
+   }
+  ]
+ },
+ {
+  "id": "urb-085",
+  "cat": "economy",
+  "text": "발트해에서 돌아온 배가 러시아산 대마와 철을 부려 놓았다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "18세기 보르도는 포도주와 식민지 상품을 러시아에 보내고 대마·철 등을 들여왔다.",
+  "src": [
+   {
+    "cite": "Giliane Besset (1982), 「Les relations commerciales entre Bordeaux et la Russie au XVIIIe siècle」, Cahiers du monde russe 23(2): 197-219",
+    "url": "https://www.persee.fr/doc/cmr_0008-0160_1982_num_23_2_1944"
+   }
+  ]
+ },
+ {
+  "id": "urb-086",
+  "cat": "economy",
+  "text": "낭트 부두에서 노예선이 아프리카로 출항하는 것을 보았다. 선원들이 다시 돌아올지는 아무도 몰랐다.",
+  "when": {
+   "from": 1750,
+   "to": 1815
+  },
+  "who": {
+   "region": [
+    "nantes"
+   ]
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "낭트는 18세기 프랑스 최대 노예무역항이었고, 1802년 2월~1803년 3월에만 13척이 노예무역에 나섰다.",
+  "src": [
+   {
+    "cite": "Éric Saugera (1989), 「Pour une histoire de la traite française sous le Consulat et l'Empire」, Revue française d'histoire d'outre-mer 76(282-283): 203-229",
+    "url": "https://www.persee.fr/doc/outre_0300-9513_1989_num_76_282_2736"
+   },
+   {
+    "cite": "Jean Mettas (1973), 「Honfleur et la traite des Noirs au XVIIIe siècle」, Revue française d'histoire d'outre-mer 60(218): 5-26",
+    "url": "https://www.persee.fr/doc/outre_0300-9513_1973_num_60_218_1653"
+   }
+  ]
+ },
+ {
+  "id": "urb-087",
+  "cat": "work",
+  "text": "노예선 선원으로 계약했다가 열병으로 동료 셋을 잃고 돌아왔다.",
+  "fx": {
+   "hp": -4,
+   "money": 40
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "region": [
+    "nantes"
+   ],
+   "sex": "M",
+   "age": [
+    16,
+    40
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "프랑스 노예무역은 혁명 직전 정점에 이르렀고, 1784년부터는 운반 인원이 아니라 선박 톤수에 따라 장려금을 주었다.",
+  "src": [
+   {
+    "cite": "Jean Mettas (1973), 「Honfleur et la traite des Noirs au XVIIIe siècle」, Revue française d'histoire d'outre-mer 60(218): 5-26",
+    "url": "https://www.persee.fr/doc/outre_0300-9513_1973_num_60_218_1653"
+   }
+  ]
+ },
+ {
+  "id": "urb-088",
+  "cat": "work",
+  "text": "마르세유 짐꾼 조합에 들어가려고 큰돈을 내고 지분을 샀다.",
+  "fx": {
+   "money": -60,
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille"
+   ],
+   "sex": "M",
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "age": [
+    18,
+    45
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "마르세유 짐꾼 협회는 '부자 노동자'라는 전설을 낳을 만큼 폐쇄적인 조합이었고 내부에도 위계가 뚜렷했다.",
+  "src": [
+   {
+    "cite": "Roger Cornu (1974), 「Les portefaix et la transformation du port de Marseille」, Annales du Midi 86(117): 181-201",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1974_num_86_117_4866"
+   },
+   {
+    "cite": "Victor Nguyen (1962), 「Les Portefaix Marseillais」, Provence historique 12(50): 363-397",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_1962_num_12_50_3875"
+   }
+  ]
+ },
+ {
+  "id": "urb-089",
+  "cat": "work",
+  "text": "부두에서 짐을 나르는데 조합원이 아닌 '로베이롤'이라고 쫓겨났다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "marseille"
+   ],
+   "sex": "M",
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "마르세유 항구에서는 짐꾼 조합원과 비조합원 일꾼 사이 경쟁이 있었고, 19세기 항만 개조로 조합의 독점이 흔들렸다.",
+  "src": [
+   {
+    "cite": "Roger Cornu (1974), 「Les portefaix et la transformation du port de Marseille」, Annales du Midi 86(117): 181-201",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1974_num_86_117_4866"
+   }
+  ]
+ },
+ {
+  "id": "urb-090",
+  "cat": "work",
+  "text": "루앙의 날염 공장에서 나무판에 물감을 묻혀 면포에 무늬를 찍었다.",
+  "fx": {
+   "money": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "rouen"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "루앙은 18세기 뮐루즈 다음가는 프랑스 제2의 인도 사라사(indienne) 날염 중심지였다.",
+  "src": [
+   {
+    "cite": "Serge Chassagne (1996), 「Indiennes et indienneurs à Rouen」, Études normandes 45(3): 39-54",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1996_num_45_3_2262"
+   }
+  ]
+ },
+ {
+  "id": "urb-091",
+  "cat": "work",
+  "text": "강가 하역장에서 장작 뗏목을 풀어 쌓는 일을 했다.",
+  "fx": {
+   "money": 2,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "M",
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리는 센 강을 통해 장작을 공급받았고, 1782년 소비량은 80만 부아에 육박했다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   },
+   {
+    "cite": "Youri Carbonnier (2008), 「Paris et la Seine : le fleuve, l'architecture et l'urbanisme aux XVIIe et XVIIIe siècles」, Publications de l'École française de Rome 394: 229-243",
+    "url": "https://www.persee.fr/doc/efr_0223-5099_2008_act_394_1_9210"
+   }
+  ]
+ },
+ {
+  "id": "urb-092",
+  "cat": "economy",
+  "text": "루브르 열주랑 맞은편 헌옷 노점에서 조금 해진 웃옷을 흥정해 샀다.",
+  "fx": {
+   "money": -6,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1740년경 루브르 열주랑 맞은편에는 헌옷 노점이 약 25개 늘어서 있었다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   }
+  ]
+ },
+ {
+  "id": "urb-093",
+  "cat": "economy",
+  "text": "주인이 물려준 비단 조끼를 헌옷장수에게 팔아 한 달 집세를 마련했다.",
+  "fx": {
+   "money": 12
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "로슈는 18세기 파리에서 옷이 하인·서민 사이에서 활발히 유통·재판매되며 사회적 모방을 낳았다고 분석했다.",
+  "src": [
+   {
+    "cite": "Guy Boquet (1991), compte rendu de Daniel Roche, La culture des apparences. Une histoire du vêtement XVIIe-XVIIIe siècles, RHMC 38(4): 677-681",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1991_num_38_4_1614_t1_0677_0000_1"
+   }
+  ]
+ },
+ {
+  "id": "urb-094",
+  "cat": "urban",
+  "text": "일요일에 입을 옥양목 드레스를 장만하자 동네 여자들이 부러워했다.",
+  "fx": {
+   "soc": 2,
+   "money": -15
+  },
+  "when": {
+   "from": 1760,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "sex": "F"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "로슈의 『겉모습의 문화』(1989)는 17~18세기에 의복이 사회적 구분과 소비 확산의 핵심 영역이었음을 보였다.",
+  "src": [
+   {
+    "cite": "Guy Boquet (1991), compte rendu de Daniel Roche, La culture des apparences. Une histoire du vêtement XVIIe-XVIIIe siècles, RHMC 38(4): 677-681",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1991_num_38_4_1614_t1_0677_0000_1"
+   }
+  ]
+ },
+ {
+  "id": "urb-095",
+  "cat": "economy",
+  "text": "생제르맹 시장의 헌옷장수 가게에 쌓인 재고가 수천 리브르어치였다.",
+  "when": {
+   "from": 1775,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "1781년 생제르맹 시장에서는 최소 십여 명의 헌옷장수가 수천 리브르어치의 재고를 두고 영업했다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   }
+  ]
+ },
+ {
+  "id": "urb-096",
+  "cat": "urban",
+  "text": "템플 원형 상가가 문을 열었지만 손님은 생각보다 적었다.",
+  "when": {
+   "from": 1788,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "1788년 템플 원형 상가(Rotonde)는 약 40만 리브르를 들여 1층에 상점 44개를 갖추었지만, 1798년 입점 상인은 둘뿐이었다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   }
+  ]
+ },
+ {
+  "id": "urb-097",
+  "cat": "economy",
+  "text": "처음으로 은시계를 사서 조끼 주머니에 넣고 다녔다.",
+  "fx": {
+   "money": -30,
+   "soc": 2
+  },
+  "when": {
+   "from": 1760,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "로슈는 사후재산목록을 분석해 18세기 파리 임금노동자와 하인의 소유물에 시계 같은 새 물건이 늘었음을 보였다.",
+  "src": [
+   {
+    "cite": "Jean Quéniart (1982), compte rendu de Daniel Roche, Le Peuple de Paris. Essai sur la culture populaire au XVIIIe siècle, Annales de Bretagne et des pays de l'Ouest 89(3): 402-405",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1982_num_89_3_3101_t1_0402_0000_2"
+   },
+   {
+    "cite": "Michel Pertué (1982), compte rendu de Daniel Roche, Le peuple de Paris, Annales historiques de la Révolution française 249: 500-505",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1982_num_249_1_3890_t1_0500_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "urb-098",
+  "cat": "economy",
+  "text": "거울과 도자기 찻잔을 들여놓자 방이 한결 번듯해 보였다.",
+  "fx": {
+   "money": -10,
+   "soc": 1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "로슈의 『평범한 물건의 역사』(1997)는 17~19세기 물·불·빛과 일상 물건의 소비가 확산되는 과정을 다루었다.",
+  "src": [
+   {
+    "cite": "Jean Boissière (1998), compte rendu de Daniel Roche, Histoire des choses banales. Naissance de la consommation, Dix-huitième siècle 30: 602",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1998_num_30_1_2265_t1_0602_0000_3"
+   }
+  ]
+ },
+ {
+  "id": "urb-099",
+  "cat": "food",
+  "text": "아침마다 카페오레 한 잔에 빵을 적셔 먹는 버릇이 들었다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "17세기 말에서 18세기 말 사이 초콜릿·설탕·커피·담배는 사치품에서 일상 소비품으로 바뀌었다.",
+  "src": [
+   {
+    "cite": "Natacha Coquery (2020), 「Produits de luxe ou de première nécessité ?」, in Paris et ses peuples au XVIIIe siècle: 237-247",
+    "url": "https://books.openedition.org/psorbonne/104912"
+   }
+  ]
+ },
+ {
+  "id": "urb-100",
+  "cat": "food",
+  "text": "설탕값이 치솟자 식료품점 앞에서 여자들이 가게를 털었다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1792,
+   "to": 1793
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1792년 1월 생도맹그 봉기 여파로 설탕값이 오르자 파리에서 소요가 일었고, 1793년 2월 25~26일에도 설탕·커피 폭동이 있었다.",
+  "src": [
+   {
+    "cite": "Natacha Coquery (2020), 「Produits de luxe ou de première nécessité ?」, in Paris et ses peuples au XVIIIe siècle: 237-247",
+    "url": "https://books.openedition.org/psorbonne/104912"
+   }
+  ]
+ },
+ {
+  "id": "urb-101",
+  "cat": "food",
+  "text": "구역 회의에서 혁명이 끝날 때까지 설탕과 커피를 끊자는 맹세를 했다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1792,
+   "to": 1792
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1792년 1월 29일 크루아루주 구역은 설탕과 커피를 끊기로 결의했고, 의회는 이를 인쇄해 다른 47개 구역에 보냈다.",
+  "src": [
+   {
+    "cite": "Natacha Coquery (2020), 「Produits de luxe ou de première nécessité ?」, in Paris et ses peuples au XVIIIe siècle: 237-247",
+    "url": "https://books.openedition.org/psorbonne/104912"
+   }
+  ]
+ },
+ {
+  "id": "urb-102",
+  "cat": "economy",
+  "text": "1776년 파리에는 가게가 2만 개 가까이 된다는 말에 놀랐다.",
+  "when": {
+   "from": 1770,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1776년 파리 상점 수는 약 1만 9,981개로 추정된다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   }
+  ]
+ },
+ {
+  "id": "urb-103",
+  "cat": "urban",
+  "text": "팔레루아얄 회랑 상점가를 거닐며 진열장 구경으로 오후를 보냈다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1784,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "팔레루아얄은 1781년 정원 3분의 1을 떼어 상가를 지었고, 1830년경 상점이 약 400개로 정점에 이르렀다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   },
+   {
+    "cite": "Jan Synowiecki (2020), 「Paris côté jardins : nature urbaine, publics et sociabilités au XVIIIe siècle」, in Paris et ses peuples au XVIIIe siècle: 121-133",
+    "url": "https://books.openedition.org/psorbonne/104837"
+   }
+  ]
+ },
+ {
+  "id": "urb-104",
+  "cat": "food",
+  "text": "카페에서 신문을 돌려 읽으며 전쟁 소식을 두고 낯선 이들과 언쟁했다.",
+  "fx": {
+   "pol": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 내내 파리 카페는 수가 늘었고, 극장과 함께 엘리트 질서를 흔드는 말과 소문이 오가는 장소였다.",
+  "src": [
+   {
+    "cite": "Yves Jubinville (1996), 「Théâtre et cafés à Paris」, Dix-huitième siècle 28: 415-430",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1996_num_28_1_2127"
+   },
+   {
+    "cite": "Christian Raby (1987), 「La démesure de la parole : les discours des cafés au XVIIIe siècle」, Raison présente 81: 89-102",
+    "url": "https://www.persee.fr/doc/raipr_0033-9075_1987_num_81_1_2572"
+   }
+  ]
+ },
+ {
+  "id": "urb-105",
+  "cat": "food",
+  "text": "프로코프 카페에 처음 들어가 비싼 커피 한 잔을 시켰다.",
+  "fx": {
+   "money": -2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "epee"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "시칠리아 출신 프로코프는 1684년 귀화했고, 그의 카페는 파리 커피 문화의 상징이 되었다.",
+  "src": [
+   {
+    "cite": "Jean Leclant (1951), 「Le café et les cafés à Paris (1644-1693)」, Annales ESC 6(1): 1-14",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1951_num_6_1_1900"
+   }
+  ]
+ },
+ {
+  "id": "urb-106",
+  "cat": "food",
+  "text": "일요일 오후 성문 밖 길게트에서 세금 없는 싼 포도주를 마시며 춤을 췄다.",
+  "fx": {
+   "money": -2,
+   "soc": 2,
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 파리 서민은 입시세가 붙지 않는 시 경계 밖 길게트(guinguette)로 나가 싼 포도주를 마셨다.",
+  "src": [
+   {
+    "cite": "Thomas Brennan (1984), 「Beyond the Barriers: Popular Culture and Parisian Guinguettes」, Eighteenth-Century Studies 18(2): 153-169",
+    "url": "https://doi.org/10.2307/2738534"
+   },
+   {
+    "cite": "Étienne Chevalier (1790), 「Motion sur la suppression de divers droits d'aides」, Archives parlementaires 18: 32-37",
+    "url": "https://www.persee.fr/doc/arcpa_0000-0000_1884_num_18_1_7916_t1_0032_0000_3"
+   }
+  ]
+ },
+ {
+  "id": "urb-107",
+  "cat": "food",
+  "text": "월요일에도 공방에 나가지 않고 동료들과 카바레에서 하루를 보냈다.",
+  "fx": {
+   "money": -3,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 카바레 폭력은 노는 날인 일요일·월요일에 몰렸고, 특히 월요일이 두드러졌다.",
+  "src": [
+   {
+    "cite": "Arlette Farge, André Zysberg (1979), 「Les théâtres de la violence à Paris au XVIIIe siècle」, Annales ESC 34(5): 984-1015",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1979_num_34_5_294104"
+   }
+  ]
+ },
+ {
+  "id": "urb-108",
+  "cat": "food",
+  "text": "카바레에서 술값 시비가 붙어 의자가 날아다녔다.",
+  "fx": {
+   "hp": -2,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "M"
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "18세기 파리의 일상 폭력은 카바레·집·작업장·거리 같은 생활 공간에서 주로 이웃과 동료 사이에 벌어졌다.",
+  "src": [
+   {
+    "cite": "Arlette Farge, André Zysberg (1979), 「Les théâtres de la violence à Paris au XVIIIe siècle」, Annales ESC 34(5): 984-1015",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1979_num_34_5_294104"
+   },
+   {
+    "cite": "Thomas E. Brennan (1988), Public Drinking and Popular Culture in Eighteenth-Century Paris, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400859184"
+   }
+  ]
+ },
+ {
+  "id": "urb-109",
+  "cat": "food",
+  "text": "단골 카바레 주인이 외상을 장부에 적어 주며 다음 장날까지 기다려 주었다.",
+  "fx": {
+   "money": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브레넌은 18세기 파리 선술집이 단골·이웃·직업 연결망을 묶는 사교 공간이었다고 보았다.",
+  "src": [
+   {
+    "cite": "Thomas E. Brennan (1988), Public Drinking and Popular Culture in Eighteenth-Century Paris, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400859184"
+   }
+  ]
+ },
+ {
+  "id": "urb-110",
+  "cat": "food",
+  "text": "성문 입시세 때문에 시내 포도주가 너무 비싸다고 사람들이 투덜댔다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1785,
+   "to": 1791
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1790년 의원 슈발리에는 파리 입시세가 과도해 시내 포도주가 비싸고 성 밖 길게트로 손님이 몰린다고 지적했다.",
+  "src": [
+   {
+    "cite": "Étienne Chevalier (1790), 「Motion sur la suppression de divers droits d'aides」, Archives parlementaires 18: 32-37",
+    "url": "https://www.persee.fr/doc/arcpa_0000-0000_1884_num_18_1_7916_t1_0032_0000_3"
+   }
+  ]
+ },
+ {
+  "id": "urb-111",
+  "cat": "urban",
+  "text": "새 징세 청부인 성벽이 둘러쳐지자 성문마다 세관원이 짐을 뒤졌다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1785,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 입시세는 1791년 폐지되었다가 1798년 부활해 1943년까지 존속했다.",
+  "src": [
+   {
+    "cite": "Pierre-François Claustre (2000), 「L'octroi de Paris (1798-1943) : bilan historiographique et perspectives de recherche」, Recherches contemporaines 6: 299-316",
+    "url": "https://www.persee.fr/doc/bchfc_1251-2419_2000_num_6_1_1952"
+   }
+  ]
+ },
+ {
+  "id": "urb-112",
+  "cat": "urban",
+  "text": "무도회장에서 춤추는 여공과 학생들 틈에 섞여 밤늦게까지 놀았다.",
+  "fx": {
+   "soc": 2,
+   "money": -3
+  },
+  "when": {
+   "from": 1830,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "age": [
+    16,
+    35
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1830~1870년 파리 공공 무도회와 길게트는 노동자·학생·'로레트'가 어울리는 사교 무대였다.",
+  "src": [
+   {
+    "cite": "Jacques Bouillon (1987), compte rendu de François Gasnault, Guinguettes et lorettes. Bals publics et danse sociale à Paris, 1830-1870, RHMC 34(1): 169-171",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1987_num_34_1_1398_t1_0169_0000_3"
+   }
+  ]
+ },
+ {
+  "id": "urb-113",
+  "cat": "urban",
+  "text": "카페에서 노래와 촌극 공연이 열려 술값에 웃돈이 붙었다.",
+  "fx": {
+   "money": -2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1848,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1848~1881년 파리 행정은 카페 겸 공연장의 공연을 규제할 별도 법규를 만드느라 애썼다.",
+  "src": [
+   {
+    "cite": "Concetta Condemi (1991), 「Les spectacles dans les cafés à Paris entre 1848 et 1881」, Actes du 115e Congrès national des sociétés savantes: 303-311",
+    "url": "https://www.persee.fr/doc/acths_0071-8440_1991_act_115_1_3319"
+   }
+  ]
+ },
+ {
+  "id": "urb-114",
+  "cat": "urban",
+  "text": "탕플 대로의 줄타기 곡예와 소극을 보러 나갔다가 소매치기를 당했다.",
+  "fx": {
+   "money": -4,
+   "soc": 1
+  },
+  "when": {
+   "from": 1755,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "18세기 중엽 파리 탕플 대로에는 왕립 극장 독점 밖에서 대중 공연 기업들이 생겨났다.",
+  "src": [
+   {
+    "cite": "Laurent Turcot (2004), 「Directeurs, comédiens et police : relations de travail dans les spectacles populaires à Paris au XVIIIe siècle」, Histoire, économie et société 23(1): 97-119",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2004_num_23_1_2450"
+   },
+   {
+    "cite": "Camille Sallé (2014), 「Constitution de lieu et mise en ordre : le boulevard du Temple, un espace policé (1750-1788)」, Actes des congrès du CTHS 137(5): 93-101",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2014_act_137_5_2665"
+   }
+  ]
+ },
+ {
+  "id": "urb-115",
+  "cat": "work",
+  "text": "대로 극장 배우로 계약했는데 단장이 벌금 규정을 들이밀었다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1755,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "age": [
+    16,
+    40
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 대로 극장의 단장과 배우는 주인–하인이 아닌 기업가–피고용인 관계를 맺었고, 단장은 규율·벌금 제도로 통제했다.",
+  "src": [
+   {
+    "cite": "Laurent Turcot (2004), 「Directeurs, comédiens et police : relations de travail dans les spectacles populaires à Paris au XVIIIe siècle」, Histoire, économie et société 23(1): 97-119",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2004_num_23_1_2450"
+   }
+  ]
+ },
+ {
+  "id": "urb-116",
+  "cat": "urban",
+  "text": "대로 산책길에서 경비대가 마차 행렬을 정리하는 것을 구경했다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1750~1788년 탕플 대로의 질서는 경찰과 이용자 사이 협상을 거쳐 만들어졌다.",
+  "src": [
+   {
+    "cite": "Camille Sallé (2014), 「Constitution de lieu et mise en ordre : le boulevard du Temple, un espace policé (1750-1788)」, Actes des congrès du CTHS 137(5): 93-101",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2014_act_137_5_2665"
+   }
+  ]
+ },
+ {
+  "id": "urb-117",
+  "cat": "urban",
+  "text": "튀일리 정원 큰길에 차려입은 사람들이 몰려 서로를 구경했다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리의 산책로와 공원은 예의 바른 사교의 무대였고, 튀일리 중앙로 모델이 대로에도 옮겨졌다.",
+  "src": [
+   {
+    "cite": "Laurent Turcot (2009), 「Entre promenades et jardins publics : les loisirs parisiens et londoniens au XVIIIe siècle」, Revue belge de philologie et d'histoire 87(3-4): 645-663",
+    "url": "https://www.persee.fr/doc/rbph_0035-0818_2009_num_87_3_7697"
+   }
+  ]
+ },
+ {
+  "id": "urb-118",
+  "cat": "urban",
+  "text": "작업복 차림으로 뤽상부르 정원에 들어가려다 문지기에게 쫓겨났다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1745,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1745년 1월 15일 경찰 명령은 뤽상부르 정원에서 하층민을 배제하는 규정을 재확인했다.",
+  "src": [
+   {
+    "cite": "Jan Synowiecki (2020), 「Paris côté jardins : nature urbaine, publics et sociabilités au XVIIIe siècle」, in Paris et ses peuples au XVIIIe siècle: 121-133",
+    "url": "https://books.openedition.org/psorbonne/104837"
+   }
+  ]
+ },
+ {
+  "id": "urb-119",
+  "cat": "urban",
+  "text": "독서실에 월 회비를 내고 신문 수십 종과 새 소설을 마음껏 읽었다.",
+  "fx": {
+   "edu": 2,
+   "money": -3
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "literate": true
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "왕정복고기(1815~1830) 파리의 독서실(cabinet de lecture)은 신문·소설을 빌려주며 독서를 대중화했다.",
+  "src": [
+   {
+    "cite": "Françoise Parent (1979), 「Les cabinets de lecture dans Paris : pratiques culturelles et espace social sous la Restauration」, Annales ESC 34(5): 1016-1038",
+    "url": "https://doi.org/10.3406/ahess.1979.294105"
+   },
+   {
+    "cite": "Daniel Roche (1984), compte rendu de Françoise Parent-Lardeur, Lire à Paris au temps de Balzac. Les cabinets de lecture à Paris, 1815-1830, Annales ESC 39(1): 178-183",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1984_num_39_1_283046_t1_0178_0000_002"
+   }
+  ]
+ },
+ {
+  "id": "urb-120",
+  "cat": "urban",
+  "text": "독서실에서 빌린 소설을 밤새 읽고 다음 날 늦게 돌려주어 벌금을 물었다.",
+  "fx": {
+   "edu": 1,
+   "money": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "왕정복고기 파리의 독서실은 출판 시장의 마지막 유통 단계로서 신간 소설 판매를 떠받쳤다.",
+  "src": [
+   {
+    "cite": "Roland Chollet (1985), 「Le commerce de la lecture à Paris sous la Restauration」, Romantisme 15(47): 33-38",
+    "url": "https://www.persee.fr/doc/roman_0048-8593_1985_num_15_47_4711"
+   }
+  ]
+ },
+ {
+  "id": "urb-121",
+  "cat": "economy",
+  "text": "겨울 외투를 몽드피에테에 맡기고 몇 리브르를 빌렸다.",
+  "fx": {
+   "money": 10
+  },
+  "when": {
+   "from": 1778,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "파리 몽드피에테(공영 전당포)는 1777년 자선과 신용을 결합한 기관으로 설립되어 1778년 문을 열었다.",
+  "src": [
+   {
+    "cite": "Robert Bigo (1932), 「Aux origines du Mont-de-Piété parisien : bienfaisance et crédit (1777-1789)」, Annales d'histoire économique et sociale 4(14): 113-126",
+    "url": "https://www.persee.fr/doc/ahess_0003-441x_1932_num_4_14_1503"
+   }
+  ]
+ },
+ {
+  "id": "urb-122",
+  "cat": "economy",
+  "text": "봄이 오자 맡겨 둔 외투를 찾으려 했지만 이자까지 낼 돈이 모자랐다.",
+  "fx": {
+   "money": -12
+  },
+  "when": {
+   "from": 1778,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 몽드피에테의 저당물 장부는 리넨·옷·식기 같은 서민의 일상 물건으로 가득했다.",
+  "src": [
+   {
+    "cite": "Madeleine Ferrières (1989), 「Du bon emploi des monts-de-piété. Avignon et Carpentras (XVIIe-XVIIIe siècles)」, Le Monde alpin et rhodanien 17(1-2): 23-37",
+    "url": "https://www.persee.fr/doc/mar_0758-4431_1989_num_17_1_1400"
+   },
+   {
+    "cite": "Robert Bigo (1932), 「Aux origines du Mont-de-Piété parisien : bienfaisance et crédit (1777-1789)」, Annales d'histoire économique et sociale 4(14): 113-126",
+    "url": "https://www.persee.fr/doc/ahess_0003-441x_1932_num_4_14_1503"
+   }
+  ]
+ },
+ {
+  "id": "urb-123",
+  "cat": "economy",
+  "text": "루앙 전당포 창구에서 결혼반지를 맡겼다가 다시 찾아오기를 반복했다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1826,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "rouen"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1826~1886년 루앙 전당포의 서민 고객은 소액 대출을 위해 같은 물건을 여러 번 맡기곤 했다.",
+  "src": [
+   {
+    "cite": "Yannick Marec (1981), 「La clientèle du « clou » rouennais de 1826 à 1886」, Annales de Normandie 31(3): 263-287",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1981_num_31_3_5437"
+   }
+  ]
+ },
+ {
+  "id": "urb-124",
+  "cat": "economy",
+  "text": "왕립 복권 숫자 셋을 걸었지만 이번에도 하나도 맞지 않았다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1776,
+   "to": 1793
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "탈레랑은 1789년 12월 12일 왕립 복권이 참가자에게 극히 불리한 구조라며 폐지를 제안했다.",
+  "src": [
+   {
+    "cite": "Talleyrand (1789), 「Motion pour la suppression des loteries」(séance du 12 décembre 1789), Archives parlementaires 10: 548-554",
+    "url": "https://www.persee.fr/doc/arcpa_0000-0000_1878_num_10_1_4025_t1_0548_0000_4"
+   }
+  ]
+ },
+ {
+  "id": "urb-125",
+  "cat": "urban",
+  "text": "이웃집 굴뚝에서 불이 나 온 골목 사람들이 물동이를 들고 뛰었다.",
+  "fx": {
+   "hp": -1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1723년 파리에서는 화재 114건, 1724년 98건이 보고되었다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-126",
+  "cat": "urban",
+  "text": "오텔디외에 불이 나 환자들이 연기 속에서 끌려 나오는 것을 보았다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1772,
+   "to": 1772,
+   "months": [
+    12
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1772년 오텔디외 화재로 환자 2천 명 가운데 약 130명과 소방수 2명이 숨졌을 수 있다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2020), 「Manières d'habiter」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 91-106",
+    "url": "https://books.openedition.org/psorbonne/104817"
+   }
+  ]
+ },
+ {
+  "id": "urb-127",
+  "cat": "urban",
+  "text": "펌프 경비대가 수동 펌프를 끌고 달려와 불을 껐다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "파리의 공공 소방 체계는 18세기 초 '펌프 경비대'(gardes-pompes)로 시작되어 1811년 군대식 소방 공병대로 개편되었다.",
+  "src": [
+   {
+    "cite": "Commandant Arnaux (1959), 「Pompiers de Paris」, Revue historique des armées 15(1): 56-60",
+    "url": "https://www.persee.fr/doc/rharm_0035-3299_1959_num_15_1_6134"
+   }
+  ]
+ },
+ {
+  "id": "urb-128",
+  "cat": "urban",
+  "text": "다리 위 집들이 헐리자 처음으로 센 강이 탁 트여 보였다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1786,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "18세기 말까지 파리의 센 강은 강변과 다리 위 집들에 가려 있었고, 1780년대 철거로 강의 경관이 열렸다.",
+  "src": [
+   {
+    "cite": "Youri Carbonnier (2008), 「Paris et la Seine : le fleuve, l'architecture et l'urbanisme aux XVIIe et XVIIIe siècles」, Publications de l'École française de Rome 394: 229-243",
+    "url": "https://www.persee.fr/doc/efr_0223-5099_2008_act_394_1_9210"
+   }
+  ]
+ },
+ {
+  "id": "urb-129",
+  "cat": "food",
+  "text": "새벽 레알에서 생선 장수 여자들의 고함 속에 버터와 달걀을 샀다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "아바드의 『대시장』(2002, 1,030쪽)은 앙시앵 레짐 파리의 고기·생선·버터·달걀 공급과 시장 규제를 재구성했다.",
+  "src": [
+   {
+    "cite": "René Favier (2004), compte rendu de Reynald Abad, Le grand marché. L'approvisionnement alimentaire de Paris sous l'Ancien Régime, Histoire urbaine 9: 155-159",
+    "url": "https://doi.org/10.3917/rhu.009.0155"
+   }
+  ]
+ },
+ {
+  "id": "urb-130",
+  "cat": "food",
+  "text": "가축 시장에서 소값이 올랐다며 정육점 주인이 고기값을 올렸다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 가축 공급은 앙시앵 레짐부터 제2제정까지 '푸아시 금고'를 통한 공권력의 신용 개입을 받았다.",
+  "src": [
+   {
+    "cite": "Sylvain Leteux (2005), 「Les formes d'intervention des pouvoirs publics dans l'approvisionnement en bestiaux de Paris : la Caisse de Poissy」, Cahiers d'économie et sociologie rurales 74: 49-78",
+    "url": "https://www.persee.fr/doc/reae_0755-9208_2005_num_74_1_965"
+   }
+  ]
+ },
+ {
+  "id": "urb-131",
+  "cat": "economy",
+  "text": "시장 노점 자리값이 두 배로 뛰어 다른 구역으로 옮겨야 했다.",
+  "fx": {
+   "money": -8
+  },
+  "when": {
+   "from": 1765,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 파리 사설 시장의 임대료는 연 5천~2만 리브르에 달했다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   }
+  ]
+ },
+ {
+  "id": "urb-132",
+  "cat": "urban",
+  "text": "흉년 겨울, 성당 계단에서 구걸하는 아이들이 눈에 띄게 늘었다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 파리 빈민의 세계는 범죄 기록으로만 드러날 만큼 주변화되었고, 도시는 빈민에 대한 빚을 제대로 갚지 않았다.",
+  "src": [
+   {
+    "cite": "Christian Romon (1982), 「Le monde des pauvres à Paris au XVIIIe siècle」, Annales ESC 37(4): 729-763",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1982_num_37_4_282884"
+   }
+  ]
+ },
+ {
+  "id": "urb-133",
+  "cat": "urban",
+  "text": "일자리를 잃고 거리를 헤매다 걸인 수용소로 끌려갔다.",
+  "fx": {
+   "hp": -5,
+   "soc": -3
+  },
+  "when": {
+   "from": 1767,
+   "to": 1789
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 0.6,
+  "once": true,
+  "fact": "걸인 수용소(dépôt de mendicité)는 1767년 10월 가동되었고, 1774년까지 7만 1,760명이 수용되어 그중 1만 3,899명이 숨졌다.",
+  "src": [
+   {
+    "cite": "Thomas Adams (1975), 「Mœurs et hygiène publique au XVIIIe siècle. Quelques aspects des dépôts de mendicité」, Annales de démographie historique 1975: 93-105",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1975_num_1975_1_1271"
+   }
+  ]
+ },
+ {
+  "id": "urb-134",
+  "cat": "urban",
+  "text": "수용소에서 풀려난 이웃이 몰라볼 만큼 야위어 돌아왔다.",
+  "when": {
+   "from": 1768,
+   "to": 1789
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1768~1789년 걸인 수용소 '체포'는 23만 건으로 추산되며, 체포된 이의 약 5분의 1이 숨졌다고 한다.",
+  "src": [
+   {
+    "cite": "Thomas Adams (1975), 「Mœurs et hygiène publique au XVIIIe siècle. Quelques aspects des dépôts de mendicité」, Annales de démographie historique 1975: 93-105",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1975_num_1975_1_1271"
+   }
+  ]
+ },
+ {
+  "id": "urb-135",
+  "cat": "urban",
+  "text": "병든 노모를 구빈원에 맡기며 다시는 못 볼지도 모른다고 생각했다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "age": [
+    25,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1656년 설립된 파리 구빈원(Hôpital général)은 18세기에도 빈민 구호와 감금의 중심 기관이었다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Dousset (2017), 「L'Hospital général de Paris」, Revue d'histoire de la pharmacie 396: 521-530",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_2017_num_104_396_23528"
+   },
+   {
+    "cite": "Christian Romon (1982), 「Mendiants et policiers à Paris au XVIIIe siècle」, Histoire, économie et société 1(2): 259-295",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1982_num_1_2_1292"
+   }
+  ]
+ },
+ {
+  "id": "urb-136",
+  "cat": "work",
+  "text": "빈민 작업장에서 실 잣는 일을 얻어 겨우 겨울을 났다.",
+  "fx": {
+   "money": 2
+  },
+  "when": {
+   "from": 1788,
+   "to": 1795
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "sex": "F"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1788년 파리에 문을 연 자선 작업장은 이듬해 닫혔고, 1790년에는 자코뱅·레콜레 수도원에 빈민 여성용 방적 작업장이 생겼다.",
+  "src": [
+   {
+    "cite": "Natacha Coquery (2020), 「Produits de luxe ou de première nécessité ?」, in Paris et ses peuples au XVIIIe siècle: 237-247",
+    "url": "https://books.openedition.org/psorbonne/104912"
+   }
+  ]
+ },
+ {
+  "id": "urb-137",
+  "cat": "urban",
+  "text": "집 대문에 새 번지 판이 붙었다. 강 쪽에서 세어 짝수와 홀수로 나뉜다고 했다.",
+  "when": {
+   "from": 1805,
+   "to": 1810
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1805년 법령으로 파리 집 번호는 센 강을 기준으로 거리 한쪽은 짝수, 반대쪽은 홀수로 매겨졌다.",
+  "src": [
+   {
+    "cite": "Jean Tulard (1968), compte rendu de Jeanne Pronteau, Les numérotages des maisons de Paris du XVe siècle à nos jours, AHRF 194: 568",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1968_num_194_1_4016_t1_0568_0000_2"
+   },
+   {
+    "cite": "Christian Warolin (1989), 「Les variations du numérotage de la pharmacie de Joseph Pelletier, rue Jacob」, Revue d'histoire de la pharmacie 281-282: 196-201",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1989_num_77_281_3499"
+   }
+  ]
+ },
+ {
+  "id": "urb-138",
+  "cat": "urban",
+  "text": "혁명기 구역 번호와 새 번지가 뒤섞여 편지가 엉뚱한 집으로 갔다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1815
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리의 집 번호는 혁명기 구역별 번호에서 1805년 거리별 번호로 바뀌어, 같은 집이 여러 번호를 거쳤다.",
+  "src": [
+   {
+    "cite": "Christian Warolin (1989), 「Les variations du numérotage de la pharmacie de Joseph Pelletier, rue Jacob」, Revue d'histoire de la pharmacie 281-282: 196-201",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_1989_num_77_281_3499"
+   },
+   {
+    "cite": "Jean Tulard (1968), compte rendu de Jeanne Pronteau, Les numérotages des maisons de Paris du XVe siècle à nos jours, AHRF 194: 568",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1968_num_194_1_4016_t1_0568_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "urb-139",
+  "cat": "urban",
+  "text": "새로 생긴 승합마차에 25상팀을 내고 올라타 낯선 사람들과 무릎을 맞댔다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1828,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "파리 승합마차(omnibus)는 1828년 운행을 시작해 서로 다른 계층이 함께 타는 새로운 일상 공간이 되었다.",
+  "src": [
+   {
+    "cite": "Jennifer Terni (2014), 「The Omnibus and the Shaping of the Urban Quotidian」, Cultural and Social History 11(2): 217-242",
+    "url": "https://doi.org/10.2752/147800414X13893661072799"
+   }
+  ]
+ },
+ {
+  "id": "urb-140",
+  "cat": "urban",
+  "text": "구역 성당 종소리와 정오 대포 소리에 맞춰 점심을 먹었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "18세기 파리의 시간과 공간은 성당 교구와 경찰 구역이 겹쳐진 동네 단위로 짜여 있었다.",
+  "src": [
+   {
+    "cite": "René Pillorget, Jean de Viguerie (1970), 「Les quartiers de Paris aux XVIIe et XVIIIe siècles」, RHMC 17(2): 253-277",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1970_num_17_2_2072"
+   }
+  ]
+ },
+ {
+  "id": "urb-141",
+  "cat": "urban",
+  "text": "가게 진열대가 길 쪽으로 너무 튀어나왔다고 벌금 고지서를 받았다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "17세기 파리 규정은 고정 돌출물을 2푸스(약 5.5cm)로 제한했고, 위반한 상인에게 벌금을 물렸다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   }
+  ]
+ },
+ {
+  "id": "urb-142",
+  "cat": "urban",
+  "text": "생로랑 장터의 노점과 곡예 공연을 구경하며 하루를 보냈다.",
+  "fx": {
+   "soc": 1,
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리의 생로랑 장터는 1663년 자리를 잡았고, 생제르맹 장터는 1762년 화재를 겪었다.",
+  "src": [
+   {
+    "cite": "Nicolas Lyon-Caen (2020), 「Spécialisation, privatisation」, in Paris et ses peuples au XVIIIe siècle, Éditions de la Sorbonne: 107-120",
+    "url": "https://books.openedition.org/psorbonne/104827"
+   }
+  ]
+ },
+ {
+  "id": "urb-143",
+  "cat": "urban",
+  "text": "감독관이 봉인한 이웃 상인의 유품 목록을 작성하는 자리에 증인으로 섰다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 경찰 감독관은 사망자 재산 봉인을 맡았고, 이 조서들은 오늘날 서민 생활 연구의 핵심 사료다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1981), 「Note sur les commissaires de police de Paris au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 28(4): 669-686",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1981_num_28_4_1171"
+   },
+   {
+    "cite": "Jean Quéniart (1982), compte rendu de Daniel Roche, Le Peuple de Paris. Essai sur la culture populaire au XVIIIe siècle, Annales de Bretagne et des pays de l'Ouest 89(3): 402-405",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1982_num_89_3_3101_t1_0402_0000_2"
+   }
+  ]
+ },
+ {
+  "id": "urb-144",
+  "cat": "urban",
+  "text": "리옹 상인 저택의 하녀로 들어가 주인 가족과 같은 계단을 오르내렸다.",
+  "fx": {
+   "money": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "sex": "F",
+   "age": [
+    14,
+    30
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 리옹의 하인은 이동이 잦아 주인이 빈자리를 거의 즉시 채울 수 있었고, 주인들은 품삯 삭감 위협과 회유를 함께 썼다.",
+  "src": [
+   {
+    "cite": "Olivier Zeller (1992), 「Rapports ancillaires et mobilité des domestiques à Lyon au XVIIIe siècle」, Histoire, économie et société 11(2): 237-275",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1992_num_11_2_1634"
+   }
+  ]
+ },
+ {
+  "id": "urb-145",
+  "cat": "urban",
+  "text": "여자 혼자 사는 셋방에 집주인이 수상한 손님이 드나든다며 경찰을 불렀다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "F",
+   "married": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 말 파리의 독신 여성은 노동으로 생계를 꾸렸지만 이웃과 경찰의 의심 어린 감시도 받았다.",
+  "src": [
+   {
+    "cite": "Sabine Juratic (1987), 「Solitude féminine et travail des femmes à Paris à la fin du XVIIIe siècle」, Mélanges de l'École française de Rome 99(2): 879-900",
+    "url": "https://www.persee.fr/doc/mefr_0223-5110_1987_num_99_2_2936"
+   },
+   {
+    "cite": "Éliane Hensinger (1988), 「La prostitution et la police des mœurs au XVIIIe siècle à Paris」, Mappemonde 2: 40-44",
+    "url": "https://www.persee.fr/doc/mappe_0764-3470_1988_num_10_2_2444"
+   }
+  ]
+ },
+ {
+  "id": "urb-146",
+  "cat": "economy",
+  "text": "남편과 함께 가게를 꾸리다 그가 쓰러지자 혼자 장부와 계산대를 맡았다.",
+  "fx": {
+   "money": 5,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "sex": "F",
+   "married": true,
+   "estate": [
+    "bourgeois",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1781년 남편이 마비된 뒤 파리 상인 베르즈롱 부인은 혼자 가게를 운영했다.",
+  "src": [
+   {
+    "cite": "Laurence Croq (2020), 「Au bonheur des dames : les veuves et les héritières des marchands parisiens」, in Paris et ses peuples au XVIIIe siècle: 27-38",
+    "url": "https://books.openedition.org/psorbonne/104782"
+   }
+  ]
+ },
+ {
+  "id": "urb-147",
+  "cat": "economy",
+  "text": "딸의 결혼 지참금으로 3천 리브르를 마련하느라 가게 재고를 줄였다.",
+  "fx": {
+   "money": -100
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "bourgeois"
+   ],
+   "married": true,
+   "age": [
+    40,
+    65
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "18세기 파리 잡화상 집안의 결혼 지참금은 3천 리브르 아래인 경우가 드물었고, 예외적으로 10만 리브르를 넘기도 했다.",
+  "src": [
+   {
+    "cite": "Laurence Croq (2020), 「Au bonheur des dames : les veuves et les héritières des marchands parisiens」, in Paris et ses peuples au XVIIIe siècle: 27-38",
+    "url": "https://books.openedition.org/psorbonne/104782"
+   }
+  ]
+ },
+ {
+  "id": "urb-148",
+  "cat": "urban",
+  "text": "흉년 소문 끝에 '아이들을 잡아간다'는 유언비어가 돌아 경찰을 향해 돌이 날았다.",
+  "fx": {
+   "pol": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1750,
+   "months": [
+    5
+   ]
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1750년 파리에서는 경찰이 아이들을 납치한다는 소문이 폭동으로 번졌다.",
+  "src": [
+   {
+    "cite": "Vincent Milliot (2020), 「Aimer et détester la police ?」, in Paris et ses peuples au XVIIIe siècle: 49-64",
+    "url": "https://books.openedition.org/psorbonne/104792"
+   },
+   {
+    "cite": "Arlette Farge (1983), 「La répression à Paris au XVIIIe siècle」, L'Homme et la société 67-68: 51-57",
+    "url": "https://www.persee.fr/doc/homso_0018-4306_1983_num_67_1_2111"
+   }
+  ]
+ },
+ {
+  "id": "urb-149",
+  "cat": "urban",
+  "text": "구역 경찰 소속 경감이 새벽 2시에 셋방을 급습해 떠돌이들을 잡아갔다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "age": [
+    14,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 경찰은 야간 순찰로 걸인과 부랑자를 체포했고, 그 횟수는 시기마다 크게 달랐다.",
+  "src": [
+   {
+    "cite": "Christian Romon (1982), 「Mendiants et policiers à Paris au XVIIIe siècle」, Histoire, économie et société 1(2): 259-295",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1982_num_1_2_1292"
+   }
+  ]
+ },
+ {
+  "id": "urb-150",
+  "cat": "urban",
+  "text": "파리 경찰이 런던보다 촘촘하다는 영국인 여행자의 말을 들었다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "literate": true
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "윌리엄스의 『파리 경찰, 1718~1789』는 18세기 파리 경찰을 유럽에서 가장 정교한 도시 행정 조직으로 분석했다.",
+  "src": [
+   {
+    "cite": "Steven L. Kaplan (1980), compte rendu d'Alan Williams, The Police of Paris, 1718-1789, American Historical Review 85(4): 898-899",
+    "url": "https://doi.org/10.1086/ahr/85.4.898"
+   }
+  ]
+ },
+ {
+  "id": "urb-151",
+  "cat": "food",
+  "text": "고기는 축일에나 먹고 평소엔 빵과 수프, 싼 포도주로 버텼다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1780년대 파리 날품팔이 가계에서는 빵이 지출의 가장 큰 몫이었고 고기는 상대적으로 드물었다.",
+  "src": [
+   {
+    "cite": "George Rudé (1973), 「Paris et Londres au XVIIIe siècle : société et conflits de classes」, Annales historiques de la Révolution française 214: 481-502",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_1973_num_214_1_4144"
+   },
+   {
+    "cite": "René Favier (2004), compte rendu de Reynald Abad, Le grand marché. L'approvisionnement alimentaire de Paris sous l'Ancien Régime, Histoire urbaine 9: 155-159",
+    "url": "https://doi.org/10.3917/rhu.009.0155"
+   }
+  ]
+ },
+ {
+  "id": "urb-152",
+  "cat": "economy",
+  "text": "리옹 비단 상인에게 맡긴 직물 대금이 석 달째 들어오지 않았다.",
+  "fx": {
+   "money": -15
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 리옹 견직 '파브리크'에서는 상인–제조업자가 주문과 원사를 쥐고 작업장 장인에게 공임을 지급했다.",
+  "src": [
+   {
+    "cite": "Roger Chartier (1972), compte rendu de Maurice Garden, Lyon et les Lyonnais au XVIIIe siècle, Dix-huitième siècle 4: 393-394",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1972_num_4_1_1019_t1_0393_0000_2"
+   },
+   {
+    "cite": "Jean-François Budin (2006), 「Les ouvrières de la soie à Lyon au XVIIIe siècle」, Actes des congrès du CTHS 127(7): 117-126",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2006_act_127_2_1091"
+   }
+  ]
+ },
+ {
+  "id": "urb-153",
+  "cat": "work",
+  "text": "1831년 이후 상인들이 다시 공임을 깎자 직조공들이 비밀 결사에 드나들었다.",
+  "fx": {
+   "pol": 2,
+   "sus": 1
+  },
+  "when": {
+   "from": 1832,
+   "to": 1834
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1831년 최저 공임표가 무효화된 뒤에도 리옹 견직공의 불만은 이어졌고, 1834년 두 번째 봉기로 터졌다.",
+  "src": [
+   {
+    "cite": "Claude Levy (1947), 「La fabrique de soie lyonnaise (1830-1848)」, 1848 et les révolutions du XIXe siècle 38(177-178): 20-47",
+    "url": "https://www.persee.fr/doc/r1848_1155-8792_1947_num_38_177_1422"
+   },
+   {
+    "cite": "Jean Bruhat (1947), compte rendu de Fernand Rude, Le mouvement ouvrier à Lyon de 1827 à 1832, 1848 et les révolutions du XIXe siècle 38(176): 52-55",
+    "url": "https://www.persee.fr/doc/r1848_1155-8792_1947_num_38_176_1417_t1_0052_0000_3"
+   }
+  ]
+ },
+ {
+  "id": "urb-154",
+  "cat": "urban",
+  "text": "부둣가 카바레에서 서인도에서 돌아온 선원이 노예 반란 이야기를 늘어놓았다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bordeaux",
+    "nantes"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1791년 8월 생도맹그 봉기는 프랑스 식민지 교역을 뒤흔들었고 보르도·낭트 같은 항구의 경제를 강타했다.",
+  "src": [
+   {
+    "cite": "Natacha Coquery (2020), 「Produits de luxe ou de première nécessité ?」, in Paris et ses peuples au XVIIIe siècle: 237-247",
+    "url": "https://books.openedition.org/psorbonne/104912"
+   },
+   {
+    "cite": "Marguerite Figeac-Monthus (2011), 「Bordeaux et la traite」, Revue historique de Bordeaux et du département de la Gironde 17: 19-34",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_2011_num_17_1_1098"
+   }
+  ]
+ },
+ {
+  "id": "urb-155",
+  "cat": "economy",
+  "text": "전쟁으로 영국 해군이 항구를 봉쇄하자 부두에 일감이 끊겼다.",
+  "fx": {
+   "money": -10
+  },
+  "when": {
+   "from": 1756,
+   "to": 1815
+  },
+  "who": {
+   "region": [
+    "bordeaux",
+    "nantes"
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "보르도의 대서양·식민지 교역은 18세기 전쟁기마다 보험료·운임 상승과 해상 봉쇄로 큰 타격을 입었다.",
+  "src": [
+   {
+    "cite": "Silvia Marzagalli (2009), 「Opportunités et contraintes du commerce colonial dans l'Atlantique français au XVIIIe siècle : le cas de la maison Gradis de Bordeaux」, Outre-mers 96(362-363): 87-110",
+    "url": "https://www.persee.fr/doc/outre_1631-0438_2009_num_96_362_4383"
+   },
+   {
+    "cite": "Paul Butel (1974), 「Armateurs bordelais et commissionnaires londoniens au XVIIIe siècle」, Revue historique de Bordeaux et du département de la Gironde 23: 151-161",
+    "url": "https://doi.org/10.3406/rhbg.1974.2036"
+   }
+  ]
+ },
+ {
+  "id": "urb-156",
+  "cat": "urban",
+  "text": "카페 테라스에서 경찰 밀정이 수첩에 무엇인가 적는 것을 보고 말을 아꼈다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1793년 5월 3일 파리 코뮌은 여론을 보고하는 비밀 '관찰 위원' 경찰을 창설했다.",
+  "src": [
+   {
+    "cite": "Natacha Coquery (2020), 「Produits de luxe ou de première nécessité ?」, in Paris et ses peuples au XVIIIe siècle: 237-247",
+    "url": "https://books.openedition.org/psorbonne/104912"
+   }
+  ]
+ },
+ {
+  "id": "urb-157",
+  "cat": "urban",
+  "text": "새 규칙에 따라 집 앞 길을 아침마다 쓸어야 했는데 하인이 게으름을 피웠다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "bourgeois",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "17~18세기 파리 경찰 명령은 주민에게 자기 집 앞 길 청소 의무를 지웠다.",
+  "src": [
+   {
+    "cite": "Sophie Houdard (1983), 「La ville en propre. La police des rues à Paris aux XVIIe et XVIIIe siècles」, Cahiers de Fontenay 30-31: 61-74",
+    "url": "https://www.persee.fr/doc/cafon_0395-8418_1983_num_30_1_1263"
+   },
+   {
+    "cite": "Pierre-Denis Boudriot (1986), 「Essai sur l'ordure en milieu urbain à l'époque pré-industrielle. Boues, immondices et gadoue à Paris au XVIIIe siècle」, Histoire, économie et société 5(4): 515-528",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1986_num_5_4_2346"
+   }
+  ]
+ },
+ {
+  "id": "urb-158",
+  "cat": "work",
+  "text": "생탕투안 문밖 가구 공방에서 독일 출신 직인들과 나란히 대패질을 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "craft"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "18세기 파리 가구업에는 독일 등 외국 출신 장인·직인이 많았고, 이들은 기술 혁신의 통로가 되었다.",
+  "src": [
+   {
+    "cite": "David Garrioch (2022), 「Foreign Furniture-Makers and Innovation in Eighteenth-Century Paris」, in The Republic of Skill, Brill: 145-168",
+    "url": "https://doi.org/10.1163/9789004513259_007"
+   }
+  ]
+ }
+]

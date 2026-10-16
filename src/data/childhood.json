@@ -1,0 +1,4990 @@
+[
+ {
+  "id": "chd-001",
+  "cat": "education",
+  "text": "혼인 증서에 이름을 쓰라는 말에 신랑은 펜 대신 십자 표시를 그었다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    40
+   ],
+   "literate": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "모졸로 조사에 따르면 1786~90년 프랑스 신랑의 47%만 혼인 증서에 서명할 수 있었다.",
+  "src": [
+   {
+    "cite": "Fleury, M. & Valmary, P. (1957), 「Les progrès de l'instruction élémentaire de Louis XIV à Napoléon III, d'après l'enquête de Louis Maggiolo (1877-1879)」, Population 12(1): 71-92",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1957_num_12_1_5553"
+   }
+  ]
+ },
+ {
+  "id": "chd-002",
+  "cat": "education",
+  "text": "신부는 붉어진 얼굴로 사제가 내민 등록부에 서툰 십자를 그렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    16,
+    40
+   ],
+   "literate": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1786~90년 혼인 증서에 서명한 신부는 약 27%로, 신랑(47%)보다 크게 낮았다.",
+  "src": [
+   {
+    "cite": "Fleury, M. & Valmary, P. (1957), 「Les progrès de l'instruction élémentaire de Louis XIV à Napoléon III, d'après l'enquête de Louis Maggiolo (1877-1879)」, Population 12(1): 71-92",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1957_num_12_1_5553"
+   }
+  ]
+ },
+ {
+  "id": "chd-003",
+  "cat": "education",
+  "text": "혼인 등록부에 또박또박 이름을 쓰자 증인들이 고개를 끄덕였다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1810,
+   "to": 1835
+  },
+  "who": {
+   "age": [
+    17,
+    40
+   ],
+   "literate": true
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "모졸로 조사에서 혼인 서명률은 1686~90년 남성 29%·여성 14%에서 1816~20년 남성 54%·여성 34%로 올랐다.",
+  "src": [
+   {
+    "cite": "Fleury, M. & Valmary, P. (1957), 「Les progrès de l'instruction élémentaire de Louis XIV à Napoléon III, d'après l'enquête de Louis Maggiolo (1877-1879)」, Population 12(1): 71-92",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1957_num_12_1_5553"
+   }
+  ]
+ },
+ {
+  "id": "chd-004",
+  "cat": "education",
+  "text": "마을 젊은이 거의 모두가 혼인 증서에 제 이름을 쓸 줄 알았다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile",
+    "normandie",
+    "rouen",
+    "picardie",
+    "champagne",
+    "alsace",
+    "bourgogne"
+   ],
+   "age": [
+    14,
+    60
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "모졸로 지도는 17세기 말부터 생말로–제네바 선 북동쪽 프랑스의 서명률이 남서쪽보다 훨씬 높았음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Furet, F. & Sachs, W. (1974), 「La croissance de l'alphabétisation en France (XVIIIe-XIXe siècle)」, Annales ESC 29(3): 714-737",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1974_num_29_3_293505"
+   },
+   {
+    "cite": "Fleury, M. & Valmary, P. (1957), 「Les progrès de l'instruction élémentaire de Louis XIV à Napoléon III, d'après l'enquête de Louis Maggiolo (1877-1879)」, Population 12(1): 71-92",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1957_num_12_1_5553"
+   }
+  ]
+ },
+ {
+  "id": "chd-005",
+  "cat": "education",
+  "text": "글을 아는 이웃이 드물어 편지 한 장도 신부님께 들고 가 읽어 달라 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "auvergne",
+    "languedoc",
+    "gascogne",
+    "bordeaux",
+    "vendee"
+   ],
+   "literate": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "푸레와 삭스는 브르타뉴·중부 산지·남서부 등 생말로–제네바 선 남쪽이 19세기까지 문해에서 뒤처졌다고 정리했다.",
+  "src": [
+   {
+    "cite": "Furet, F. & Sachs, W. (1974), 「La croissance de l'alphabétisation en France (XVIIIe-XIXe siècle)」, Annales ESC 29(3): 714-737",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1974_num_29_3_293505"
+   }
+  ]
+ },
+ {
+  "id": "chd-006",
+  "cat": "education",
+  "text": "기도서는 줄줄 읽었지만 이름을 써 보라 하자 손이 굳었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    12,
+    60
+   ],
+   "literate": false,
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "케니아르는 18세기 학교가 읽기를 먼저 가르쳐, 서명만으로는 읽기 능력을 과소평가하게 된다고 지적했다.",
+  "src": [
+   {
+    "cite": "Quéniart, J. (1977), 「Les apprentissages scolaires élémentaires au XVIIIe siècle : faut-il réformer Maggiolo ?」, Revue d'histoire moderne et contemporaine 24(1): 3-27",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1977_num_24_1_963"
+   },
+   {
+    "cite": "Sonnet, M. (1986), 「La lecture dans les petites écoles」, Dix-huitième siècle 18: 33-43",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1986_num_18_1_1582"
+   }
+  ]
+ },
+ {
+  "id": "chd-007",
+  "cat": "education",
+  "text": "도시 교구 혼인식에서는 신랑 신부는 물론 증인 넷이 모두 서명했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "INED의 1740~1829년 표본 조사는 도시와 농촌 10개 지역의 혼인 서명을 따로 집계해 모졸로 결과와 대체로 일치함을 확인했다.",
+  "src": [
+   {
+    "cite": "Houdaille, J. (1977), 「Les signatures au mariage de 1740 à 1829」, Population 32(1): 65-90",
+    "url": "https://www.persee.fr/doc/pop_0032-4663_1977_num_32_1_16491"
+   }
+  ]
+ },
+ {
+  "id": "chd-008",
+  "cat": "education",
+  "text": "이웃 처녀들도 대부분 혼인 장부에 이름을 적을 줄 알았다.",
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ],
+   "sex": "F",
+   "age": [
+    14,
+    40
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1786~90년 생토메르 남쪽 농촌의 서명률은 남성 58%·여성 50%로, 모졸로의 파드칼레 평균(48.3%·30.9%)보다 높았다.",
+  "src": [
+   {
+    "cite": "Dubois, R. (1980), 「L'enquête Maggiolo, un malentendu ?」, Revue du Nord 62(246): 591-601",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1980_num_62_246_3710"
+   }
+  ]
+ },
+ {
+  "id": "chd-009",
+  "cat": "education",
+  "text": "공증인 앞 혼인 계약서에 서명하라 하자 잠시 머뭇거렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "bordeaux"
+   ],
+   "age": [
+    17,
+    40
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "푸수는 남서부의 문해율을 재는 데 교구 등록부보다 혼인 계약서 서명이 더 나은 자료라고 보았다.",
+  "src": [
+   {
+    "cite": "Poussou, J.-P. (1993), 「La « méthode Maggiolo » et la mesure de l'alphabétisation du Sud-Ouest de la France à la fin du XVIIIe siècle」, Annales du Midi 105(202): 209-223",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1993_num_105_202_2355"
+   }
+  ]
+ },
+ {
+  "id": "chd-010",
+  "cat": "education",
+  "text": "징병 검사장에서 키를 잰 뒤 글을 읽을 줄 아는지도 물었다.",
+  "when": {
+   "from": 1818,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    19,
+    21
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "르루아 라뒤리와 드모네는 1820~30년대 징병자 자료에서 문해율 지도와 신장 지도가 강하게 겹친다고 밝혔다.",
+  "src": [
+   {
+    "cite": "Le Roy Ladurie, E. & Demonet, M. (1980), 「Alphabétisation et stature : un tableau comparé」, Annales ESC 35(6): 1329-1332",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1980_num_35_6_282704"
+   }
+  ]
+ },
+ {
+  "id": "chd-011",
+  "cat": "education",
+  "text": "징병 명부에 '읽고 쓸 줄 앎'이라 적히자 하사가 서기 일을 맡겼다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1818,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    19,
+    25
+   ],
+   "literate": true
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "복고왕정과 7월 왕정기 징병자 문해 지도에서도 생말로–제네바 선이 뚜렷이 드러났다.",
+  "src": [
+   {
+    "cite": "Le Roy Ladurie, E. & Demonet, M. (1980), 「Alphabétisation et stature : un tableau comparé」, Annales ESC 35(6): 1329-1332",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1980_num_35_6_282704"
+   },
+   {
+    "cite": "Furet, F. & Sachs, W. (1974), 「La croissance de l'alphabétisation en France (XVIIIe-XIXe siècle)」, Annales ESC 29(3): 714-737",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1974_num_29_3_293505"
+   }
+  ]
+ },
+ {
+  "id": "chd-012",
+  "cat": "education",
+  "text": "마을 회의가 왕령대로 학교 선생 봉급을 주민 세금으로 걷기로 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1698·1724년 왕령은 다른 재원이 없으면 주민에게 남선생 150리브르, 여선생 100리브르까지 부과할 수 있게 했다.",
+  "src": [
+   {
+    "cite": "Laget, M. (1971), 「Petites écoles en Languedoc au XVIIIe siècle」, Annales ESC 26(6): 1398-1418",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1971_num_26_6_422420"
+   }
+  ]
+ },
+ {
+  "id": "chd-013",
+  "cat": "education",
+  "text": "학교 선생이 봉급이 모자라 성당 종지기와 성가대 일까지 맡았다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 랑그도크 교구 선생의 봉급은 대개 연 30~100리브르였고, 숙소비로 5~40리브르가 덧붙기도 했다.",
+  "src": [
+   {
+    "cite": "Laget, M. (1971), 「Petites écoles en Languedoc au XVIIIe siècle」, Annales ESC 26(6): 1398-1418",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1971_num_26_6_422420"
+   }
+  ]
+ },
+ {
+  "id": "chd-014",
+  "cat": "education",
+  "text": "신교도 집안 아이라 하여 가톨릭 교구 학교에 억지로 보내졌다.",
+  "fx": {
+   "faith": -2,
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1787
+  },
+  "who": {
+   "faith": "protestant",
+   "age": [
+    6,
+    13
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1698년 12월 13일 왕령은 교구마다 학교를 두게 하면서 '신교를 고백했던' 부모의 자녀를 특히 겨냥했다.",
+  "src": [
+   {
+    "cite": "Laget, M. (1971), 「Petites écoles en Languedoc au XVIIIe siècle」, Annales ESC 26(6): 1398-1418",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1971_num_26_6_422420"
+   },
+   {
+    "cite": "Castagnet-Lars, V. & Marchand, P. (2018), 「L'histoire des élèves en France du XVIe au XVIIIe siècle : des acteurs dans l'ombre des institutions scolaires」, Histoire de l'éducation 150",
+    "url": "https://journals.openedition.org/histoire-education/4146"
+   }
+  ]
+ },
+ {
+  "id": "chd-015",
+  "cat": "education",
+  "text": "자선 학교 수녀가 맨발의 아이들을 모아 글자와 기도를 가르쳤다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "vendee",
+    "bretagne"
+   ],
+   "age": [
+    6,
+    12
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "앙주 남부 모주 지방에서는 18세기 가난한 이들을 돕기 위한 '자선 학교'가 교구마다 세워졌다.",
+  "src": [
+   {
+    "cite": "Ménard, J.-L. (1976), 「Les petites écoles dans les Mauges au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 83(1): 71-91",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1976_num_83_1_2798"
+   }
+  ]
+ },
+ {
+  "id": "chd-016",
+  "cat": "education",
+  "text": "대여섯 살에 작은 학교에 들어가 회초리 아래서 철자를 더듬었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "age": [
+    5,
+    7
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1784년 엘리에 신부는 아이들이 5~6세부터 12~13세까지 작은 학교를 다녀도 제대로 읽지 못한다고 한탄했다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1986), 「La lecture dans les petites écoles」, Dix-huitième siècle 18: 33-43",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1986_num_18_1_1582"
+   }
+  ]
+ },
+ {
+  "id": "chd-017",
+  "cat": "education",
+  "text": "읽기를 겨우 떼자 비로소 깃펜과 잉크, 글씨본을 받았다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    8,
+    12
+   ]
+  },
+  "w": 1.2,
+  "once": true,
+  "fact": "작은 학교는 읽기를 먼저 가르치고, 읽을 줄 알게 된 아이에게만 쓰기와 셈을 가르쳤다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1986), 「La lecture dans les petites écoles」, Dix-huitième siècle 18: 33-43",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1986_num_18_1_1582"
+   }
+  ]
+ },
+ {
+  "id": "chd-018",
+  "cat": "education",
+  "text": "마을 가장들이 모여 새 학교 선생을 정하고 주교의 허가를 기다렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "gascogne",
+    "bordeaux",
+    "languedoc"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "남서부에서는 주민 공동체가 '선량한 사람'을 선생으로 고르고 주교가 그 자격을 심사했다.",
+  "src": [
+   {
+    "cite": "Castagnet, V. (2012), 「L'évaluation des enseignants des petites écoles sous l'Ancien Régime」, Spirale. Revue de recherches en éducation 49: 25-36",
+    "url": "https://www.persee.fr/doc/spira_0994-3722_2012_num_49_1_1106"
+   }
+  ]
+ },
+ {
+  "id": "chd-019",
+  "cat": "education",
+  "text": "골목 학교에서 네댓 살 꼬마들과 섞여 『예절서』를 소리 내 읽었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "age": [
+    4,
+    10
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 리옹의 소규모 학교들은 월 30수~3리브르를 받고 학교당 7~24명의 아이를 가르쳤다.",
+  "src": [
+   {
+    "cite": "Garden, M. (2008), 「Écoles et maîtres」, in Un historien dans la ville, Éditions de la MSH",
+    "url": "https://books.openedition.org/editionsmsh/9963"
+   }
+  ]
+ },
+ {
+  "id": "chd-020",
+  "cat": "education",
+  "text": "글씨 선생 집에 다니며 상인 장부에 쓰는 둥근 글씨체를 익혔다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ],
+   "age": [
+    9,
+    14
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹에서는 1734년부터 글씨 선생(maître écrivain) 자격을 얻는 데 200리브르가 들었다.",
+  "src": [
+   {
+    "cite": "Garden, M. (2008), 「Écoles et maîtres」, in Un historien dans la ville, Éditions de la MSH",
+    "url": "https://books.openedition.org/editionsmsh/9963"
+   }
+  ]
+ },
+ {
+  "id": "chd-021",
+  "cat": "education",
+  "text": "아버지가 사제의 기숙학교에 연 400리브르를 내고 맡겼다.",
+  "fx": {
+   "edu": 2,
+   "money": -40
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ],
+   "age": [
+    7,
+    12
+   ]
+  },
+  "w": 0.7,
+  "once": true,
+  "fact": "18세기 리옹의 한 사제 선생은 통학생에게 월 6리브르, 기숙생에게 연 400리브르를 받았다.",
+  "src": [
+   {
+    "cite": "Garden, M. (2008), 「Écoles et maîtres」, in Un historien dans la ville, Éditions de la MSH",
+    "url": "https://books.openedition.org/editionsmsh/9963"
+   }
+  ]
+ },
+ {
+  "id": "chd-022",
+  "cat": "education",
+  "text": "행상에게 몇 드니에짜리 철자책을 사 와 손때가 묻도록 넘겼다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "age": [
+    5,
+    10
+   ],
+   "region": [
+    "champagne",
+    "bourgogne",
+    "ile",
+    "picardie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "트루아 인쇄업자 우도의 1722년 재고에는 철자책·음절책이 1만~1만5천 부나 있었고, 값은 한 권 3드니에 미만부터였다.",
+  "src": [
+   {
+    "cite": "Chapron, E. (2010), 「Des livres pour les écoles du peuple ? Économie et pratiques du texte scolaire en Champagne au XVIIIe siècle」, Histoire de l'éducation 127",
+    "url": "https://journals.openedition.org/histoire-education/2245"
+   }
+  ]
+ },
+ {
+  "id": "chd-023",
+  "cat": "education",
+  "text": "가난한 집 딸이라 학교에서 철자책과 교리문답을 거저 받았다.",
+  "fx": {
+   "edu": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    6,
+    11
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "샹파뉴의 한 여학교는 시편집을 8수에 사서 10수에 되팔고, 그 이익으로 가난한 여학생에게 책을 나눠 주었다.",
+  "src": [
+   {
+    "cite": "Chapron, E. (2010), 「Des livres pour les écoles du peuple ? Économie et pratiques du texte scolaire en Champagne au XVIIIe siècle」, Histoire de l'éducation 127",
+    "url": "https://journals.openedition.org/histoire-education/2245"
+   }
+  ]
+ },
+ {
+  "id": "chd-024",
+  "cat": "education",
+  "text": "교리문답 책이 곧 교과서여서 성사와 십계명으로 글을 깨쳤다.",
+  "fx": {
+   "edu": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "who": {
+   "age": [
+    6,
+    11
+   ],
+   "faith": "catholic"
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "북동부 주교들은 17세기 말부터 '어린이 교리문답'에 학교 교재의 지위를 부여했다.",
+  "src": [
+   {
+    "cite": "Chapron, E. (2010), 「Des livres pour les écoles du peuple ? Économie et pratiques du texte scolaire en Champagne au XVIIIe siècle」, Histoire de l'éducation 127",
+    "url": "https://journals.openedition.org/histoire-education/2245"
+   }
+  ]
+ },
+ {
+  "id": "chd-025",
+  "cat": "education",
+  "text": "형제회 학교 수사가 아이들에게 책과 종이를 자기들한테서 사라 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "urban": true,
+   "sex": "M",
+   "age": [
+    6,
+    12
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "18세기 한 도시의 빈민학교 관리국은 형제회가 다른 곳에서 책을 사 온 가난한 아이를 거부한다고 항의했다.",
+  "src": [
+   {
+    "cite": "Chapron, E. (2010), 「Des livres pour les écoles du peuple ? Économie et pratiques du texte scolaire en Champagne au XVIIIe siècle」, Histoire de l'éducation 127",
+    "url": "https://journals.openedition.org/histoire-education/2245"
+   }
+  ]
+ },
+ {
+  "id": "chd-026",
+  "cat": "education",
+  "text": "혁명 정부가 보낸 새 교사가 옛 사제관에 들어오자 마을이 수군거렸다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1794,
+   "to": 1799
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "라카날 법 시기(1794~95) 주민들은 공립 교사가 사제관에 들어와 사는 것을 크게 못마땅해했다.",
+  "src": [
+   {
+    "cite": "Gougeaud-Arnaudeau, S. (2000), 「Chapitre troisième. Des maîtres pour le peuple」, in Entre gouvernants et gouvernés : le pédagogue au XVIIIe siècle, Presses universitaires du Septentrion",
+    "url": "https://books.openedition.org/septentrion/51411"
+   }
+  ]
+ },
+ {
+  "id": "chd-027",
+  "cat": "education",
+  "text": "공화력 교리문답을 외우라는 새 선생 때문에 학교에 가기 싫어졌다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1799
+  },
+  "who": {
+   "age": [
+    6,
+    13
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "멜랑은 1789~95년 '새 인간'을 기르려던 혁명의 초등교육 사업이 루앙 구에서 실제로 어떻게 작동했는지 추적했다.",
+  "src": [
+   {
+    "cite": "Mélen, J. (1992), 「L'école élémentaire dans le district de Rouen (1789-1795). Du système d'Ancien Régime à l'« école nationale »」, Actes des congrès nationaux des sociétés historiques et scientifiques 115: 133-146",
+    "url": "https://www.persee.fr/doc/acths_0071-8440_1992_act_115_1_3448"
+   },
+   {
+    "cite": "Gougeaud-Arnaudeau, S. (2000), 「Chapitre troisième. Des maîtres pour le peuple」, in Entre gouvernants et gouvernés : le pédagogue au XVIIIe siècle, Presses universitaires du Septentrion",
+    "url": "https://books.openedition.org/septentrion/51411"
+   }
+  ]
+ },
+ {
+  "id": "chd-028",
+  "cat": "education",
+  "text": "형제회 학교에서 수사가 딱딱이 소리 하나로 반 전체를 조용히 시켰다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "urban": true,
+   "sex": "M",
+   "age": [
+    6,
+    12
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "라살의 『기독교 학교 운영 지침』은 침묵과 신호를 비롯한 교실 질서를 세세히 규정해 형제회 학교의 표준이 되었다.",
+  "src": [
+   {
+    "cite": "Poutet, Y. (1991), 「L'éducation du caractère et des mœurs des enfants du peuple d'après les écrits de saint Jean-Baptiste de La Salle」, Littératures classiques 14: 179-201",
+    "url": "https://www.persee.fr/doc/licla_0992-5279_1991_num_14_1_1278"
+   }
+  ]
+ },
+ {
+  "id": "chd-029",
+  "cat": "education",
+  "text": "도시에 형제회 무료 학교가 새로 열려 수업료 없이 다니게 되었다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "urban": true,
+   "sex": "M",
+   "age": [
+    6,
+    10
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "기독교 학교 형제회는 1710년 17개 공동체·190명에서 1760년 105개 공동체·715명으로 커졌다.",
+  "src": [
+   {
+    "cite": "Voisine, N. (1989), 「Les Frères des Écoles chrétiennes et l'éducation de la foi」, Sessions d'étude - Société canadienne d'histoire de l'Église catholique 56",
+    "url": "https://doi.org/10.7202/1006955ar"
+   }
+  ]
+ },
+ {
+  "id": "chd-030",
+  "cat": "education",
+  "text": "제정기에 돌아온 형제회 수사들이 다시 문을 연 학교에 들어갔다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1810,
+   "to": 1830
+  },
+  "who": {
+   "urban": true,
+   "sex": "M",
+   "age": [
+    6,
+    12
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1810년 8월 4일 제국 대학은 형제회 규약을 승인했고, 수사들은 무엇보다 읽기를 먼저 가르치도록 되어 있었다.",
+  "src": [
+   {
+    "cite": "「4 août 1810. Approbation du Statut des Frères des écoles chrétiennes」(1992), Bibliothèque de l'histoire de l'éducation 5(1): 59-60",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_1992_ant_5_1_1734"
+   }
+  ]
+ },
+ {
+  "id": "chd-031",
+  "cat": "education",
+  "text": "파리 교구 자선 학교에서 바느질과 교리문답을 함께 배웠다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "sex": "F",
+   "region": [
+    "paris"
+   ],
+   "age": [
+    6,
+    12
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1760년대 파리에서는 약 1만1천 명의 여학생이 253곳의 여자 교육 시설에 다녔다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1988), 「L'éducation des filles à Paris au XVIIIe siècle : finalités et enjeux」, Publications de l'École française de Rome 104: 53-78",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1988_act_104_1_3266"
+   }
+  ]
+ },
+ {
+  "id": "chd-032",
+  "cat": "education",
+  "text": "상인 딸이라 대성당 성가대장이 관할하는 유료 학교에 다녔다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "sex": "F",
+   "region": [
+    "paris"
+   ],
+   "age": [
+    6,
+    12
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리의 성가대장 유료 학교는 주로 상인·장인의 딸을, 자선 학교는 빈민의 딸을 받았다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1988), 「L'éducation des filles à Paris au XVIIIe siècle : finalités et enjeux」, Publications de l'École française de Rome 104: 53-78",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1988_act_104_1_3266"
+   }
+  ]
+ },
+ {
+  "id": "chd-033",
+  "cat": "education",
+  "text": "수녀원 기숙생이 되어 종소리에 맞춰 기도하고 수를 놓으며 지냈다.",
+  "fx": {
+   "edu": 1,
+   "faith": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    8,
+    15
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "파리에서 수녀원 기숙학교의 비싼 수업은 대부르주아와 귀족의 딸들만 감당할 수 있었다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1988), 「L'éducation des filles à Paris au XVIIIe siècle : finalités et enjeux」, Publications de l'École française de Rome 104: 53-78",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1988_act_104_1_3266"
+   }
+  ]
+ },
+ {
+  "id": "chd-034",
+  "cat": "education",
+  "text": "우르술라회 수녀원에 맡겨져 교리와 프랑스어 읽기, 바느질을 배웠다.",
+  "fx": {
+   "edu": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "F",
+   "region": [
+    "bretagne"
+   ],
+   "age": [
+    7,
+    15
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브르타뉴 레옹·코르누아유의 우르술라회 수녀원들은 1620년대부터 세워져 여자아이 교육을 맡았다.",
+  "src": [
+   {
+    "cite": "Provost, G. (1989), 「Les Ursulines en Léon et Cornouaille aux XVIIe et XVIIIe siècles」, Annales de Bretagne et des pays de l'Ouest 96(3): 247-268",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1989_num_96_3_3329"
+   }
+  ]
+ },
+ {
+  "id": "chd-035",
+  "cat": "education",
+  "text": "짧은 학교 생활은 기도와 바느질로 끝났고 쓰기는 거의 배우지 못했다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    10,
+    13
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 여자아이들의 학교 경험은 짧은 재학 기간과 지식을 아끼는 교육 탓에 제한적이었다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1988), 「L'éducation des filles à Paris au XVIIIe siècle : finalités et enjeux」, Publications de l'École française de Rome 104: 53-78",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1988_act_104_1_3266"
+   }
+  ]
+ },
+ {
+  "id": "chd-036",
+  "cat": "education",
+  "text": "기숙학교 여선생에게 프랑스어 문법과 피아노, 예절을 배웠다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    9,
+    16
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1842년 교육부 관리 킬리앙은 여자 기숙학교부터 초등학교까지 여자 교육 기관을 단계별로 정리해 보고했다.",
+  "src": [
+   {
+    "cite": "Rogers, R. (2007), 「L'éducation des filles : un siècle et demi d'historiographie」, Histoire de l'éducation (en ligne)",
+    "url": "https://journals.openedition.org/histoire-education/1422"
+   }
+  ]
+ },
+ {
+  "id": "chd-037",
+  "cat": "education",
+  "text": "전사한 장교의 딸로 에쿠앙의 레지옹 도뇌르 학교에 들어갔다.",
+  "fx": {
+   "edu": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1807,
+   "to": 1820
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    7,
+    12
+   ],
+   "estate": [
+    "epee",
+    "hobereau",
+    "bourgeois"
+   ]
+  },
+  "w": 0.4,
+  "once": true,
+  "fact": "레지옹 도뇌르 여학교는 1807년 캉팡 부인이 이끄는 에쿠앙 성에서 문을 열었다.",
+  "src": [
+   {
+    "cite": "Compère, M.-M. (1993), 「Rebecca Rogers, Les demoiselles de la Légion d'honneur」(서평), Annales ESC 48(4)",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1993_num_48_4_279193_t1_1042_0000_002"
+   },
+   {
+    "cite": "Havelange, I. (2006), 「Le destin de Mélanie de Boileau (1774-1862), « maîtresse d'histoire » à Écouen」, L'École du genre 1: 243-263",
+    "url": "https://www.persee.fr/doc/ecoge_1952-2568_2006_ant_1_1_1374"
+   }
+  ]
+ },
+ {
+  "id": "chd-038",
+  "cat": "education",
+  "text": "가난한 귀족 집 딸이라 생시르 왕립 학원 입학 서류를 준비했다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    7,
+    12
+   ],
+   "estate": [
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 0.4,
+  "once": true,
+  "fact": "생시르 왕립 학원은 1686년 루이 14세와 맹트농 부인이 가난한 귀족 장교의 딸들을 위해 세웠다.",
+  "src": [
+   {
+    "cite": "Poisson, J. (2000), 「L'apothicairie de la Maison royale de Saint-Cyr」, Revue d'histoire de la pharmacie 88(327): 395-400",
+    "url": "https://www.persee.fr/doc/pharm_0035-2349_2000_num_88_327_5122"
+   }
+  ]
+ },
+ {
+  "id": "chd-039",
+  "cat": "education",
+  "text": "여자아이는 학교보다 집안일이 먼저라며 어머니가 일찍 데려왔다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "sex": "F",
+   "age": [
+    9,
+    12
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "로저스는 19세기 여자 교육에서 수도회와 사립 기관이 공립보다 훨씬 큰 몫을 차지했다고 정리했다.",
+  "src": [
+   {
+    "cite": "Rogers, R. (2007), 「L'éducation des filles : un siècle et demi d'historiographie」, Histoire de l'éducation (en ligne)",
+    "url": "https://journals.openedition.org/histoire-education/1422"
+   }
+  ]
+ },
+ {
+  "id": "chd-040",
+  "cat": "education",
+  "text": "열두 살 봄, 흰 옷을 입고 성당 앞줄에서 첫영성체를 받았다.",
+  "fx": {
+   "faith": 3,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "age": [
+    11,
+    14
+   ],
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": true,
+  "fact": "얀센주의 영향으로 프랑스의 첫영성체는 12~15세로 늦춰졌고, 1910년에야 7세 무렵으로 당겨졌다.",
+  "src": [
+   {
+    "cite": "Vitel, Ch. (1912), 「L. Andrieux, La première Communion : Histoire et discipline」(서평), Revue des études byzantines 15(92): 86-87",
+    "url": "https://www.persee.fr/doc/rebyz_1146-9447_1912_num_15_92_3961_t1_0086_0000_3"
+   },
+   {
+    "cite": "Lautman, F. (1988), 「Delumeau (Jean) éd., La première Communion. Quatre siècles d'histoire」(서평), Archives de sciences sociales des religions 66(2): 266-267",
+    "url": "https://www.persee.fr/doc/assr_0335-5985_1988_num_66_2_2494_t1_0266_0000_1"
+   }
+  ]
+ },
+ {
+  "id": "chd-041",
+  "cat": "education",
+  "text": "첫영성체 날 대부가 준 묵주와 새 옷이 마을의 화제가 되었다.",
+  "fx": {
+   "soc": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    11,
+    14
+   ],
+   "faith": "catholic"
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "들뤼모 편 『첫영성체: 네 세기의 역사』(1987)는 이 의식이 영적 의미를 넘는 사회적 통과의례가 되었음을 보였다.",
+  "src": [
+   {
+    "cite": "Lautman, F. (1988), 「Delumeau (Jean) éd., La première Communion. Quatre siècles d'histoire」(서평), Archives de sciences sociales des religions 66(2): 266-267",
+    "url": "https://www.persee.fr/doc/assr_0335-5985_1988_num_66_2_2494_t1_0266_0000_1"
+   }
+  ]
+ },
+ {
+  "id": "chd-042",
+  "cat": "education",
+  "text": "교리 시험에서 답을 못해 첫영성체를 한 해 미루라는 말을 들었다.",
+  "fx": {
+   "faith": -1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    11,
+    14
+   ],
+   "faith": "catholic"
+  },
+  "w": 0.6,
+  "once": true,
+  "fact": "18~19세기 첫영성체는 교리 교육을 마쳤음을 확인하는 단계였고, 교리문답 암송이 그 조건이었다.",
+  "src": [
+   {
+    "cite": "Lautman, F. (1988), 「Delumeau (Jean) éd., La première Communion. Quatre siècles d'histoire」(서평), Archives de sciences sociales des religions 66(2): 266-267",
+    "url": "https://www.persee.fr/doc/assr_0335-5985_1988_num_66_2_2494_t1_0266_0000_1"
+   },
+   {
+    "cite": "Chapron, E. (2010), 「Des livres pour les écoles du peuple ? Économie et pratiques du texte scolaire en Champagne au XVIIIe siècle」, Histoire de l'éducation 127",
+    "url": "https://journals.openedition.org/histoire-education/2245"
+   }
+  ]
+ },
+ {
+  "id": "chd-043",
+  "cat": "education",
+  "text": "주일 오후 교리반에서 상스 교리문답을 통째로 외웠다.",
+  "fx": {
+   "faith": 1,
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "age": [
+    7,
+    13
+   ],
+   "faith": "catholic",
+   "region": [
+    "bourgogne",
+    "champagne",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "랑게 대주교의 상스 교리문답은 18세기 전반 얀센주의 논쟁의 표적이 될 만큼 널리 쓰였다.",
+  "src": [
+   {
+    "cite": "Dawson, N.-M. (1993), 「Catéchisme de Sens : politique religieuse et enjeux politiques」, Histoire, économie et société 12(2): 235-262",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1993_num_12_2_1670"
+   }
+  ]
+ },
+ {
+  "id": "chd-044",
+  "cat": "education",
+  "text": "도시 콜레주에 들어가 라틴어 문법반 맨 끝자리에 앉았다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    9,
+    12
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1.3,
+  "once": true,
+  "fact": "1843년 빌맹 보고서의 '1789년 콜레주 562개·학생 72,747명'은 줄리아와 프레슬리가 과장된 통계라고 비판했다.",
+  "src": [
+   {
+    "cite": "Julia, D. & Pressly, P. (1975), 「La population scolaire en 1789. Les extravagances statistiques du ministre Villemain」, Annales ESC 30(6): 1516-1561",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1975_num_30_6_293689"
+   }
+  ]
+ },
+ {
+  "id": "chd-045",
+  "cat": "education",
+  "text": "열 살에 6학년반에 올라 키케로의 문장을 받아 적었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    10,
+    11
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 콜레주 6학년반 학생은 대략 10~11세, 5학년반은 11~12세였다.",
+  "src": [
+   {
+    "cite": "Castagnet-Lars, V. & Marchand, P. (2018), 「L'histoire des élèves en France du XVIe au XVIIIe siècle : des acteurs dans l'ombre des institutions scolaires」, Histoire de l'éducation 150",
+    "url": "https://journals.openedition.org/histoire-education/4146"
+   }
+  ]
+ },
+ {
+  "id": "chd-046",
+  "cat": "education",
+  "text": "일곱 살에 글도 모른 채 콜레주 기숙사에 맡겨졌다.",
+  "fx": {
+   "soc": -1,
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    7,
+    8
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "17세기 말부터 생긴 콜레주 기숙사는 부유층 소년을 7세부터, 글을 읽기 전에도 받았다.",
+  "src": [
+   {
+    "cite": "Castagnet-Lars, V. & Marchand, P. (2018), 「L'histoire des élèves en France du XVIe au XVIIIe siècle : des acteurs dans l'ombre des institutions scolaires」, Histoire de l'éducation 150",
+    "url": "https://journals.openedition.org/histoire-education/4146"
+   }
+  ]
+ },
+ {
+  "id": "chd-047",
+  "cat": "education",
+  "text": "벌로 교정관에게 끌려가 학생들 앞에서 회초리를 맞았다.",
+  "fx": {
+   "hp": -1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    9,
+    16
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 콜레주 체벌은 '교정관'이 맡았고, 르카토 콜레주 학생들은 개학날 그 보수로 12파타르씩 냈다.",
+  "src": [
+   {
+    "cite": "Marchand, P. (2008), 「La violence dans les collèges au XVIIIe siècle」, Histoire de l'éducation (en ligne)",
+    "url": "https://journals.openedition.org/histoire-education/546"
+   }
+  ]
+ },
+ {
+  "id": "chd-048",
+  "cat": "education",
+  "text": "억울한 매질에 반발한 친구가 칼을 휘둘러 기숙사가 발칵 뒤집혔다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    11,
+    17
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 0.5,
+  "once": true,
+  "fact": "1758년 10월 바베 콜레주에서는 매질 판결을 받은 학생이 교장을 칼로 찌르고 달아났다.",
+  "src": [
+   {
+    "cite": "Marchand, P. (2008), 「La violence dans les collèges au XVIIIe siècle」, Histoire de l'éducation (en ligne)",
+    "url": "https://journals.openedition.org/histoire-education/546"
+   }
+  ]
+ },
+ {
+  "id": "chd-049",
+  "cat": "education",
+  "text": "대도시 콜레주에서는 이제 매질 대신 외출 금지와 반성 과제가 내려졌다.",
+  "when": {
+   "from": 1775,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "urban": true,
+   "age": [
+    9,
+    16
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "18세기 말 한 증언은 '이제 매질은 계몽의 교육이 닿지 않은 외진 학교에서나 한다'고 적었다.",
+  "src": [
+   {
+    "cite": "Marchand, P. (2008), 「La violence dans les collèges au XVIIIe siècle」, Histoire de l'éducation (en ligne)",
+    "url": "https://journals.openedition.org/histoire-education/546"
+   }
+  ]
+ },
+ {
+  "id": "chd-050",
+  "cat": "education",
+  "text": "예수회 신부들이 하루아침에 떠나고 낯선 세속 사제가 교단에 섰다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1761,
+   "to": 1765
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    8,
+    18
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1761년 파리 고등법원은 관할 구역 42개 콜레주 등에 있던 예수회원 1,200명을 첫 표적으로 삼았다.",
+  "src": [
+   {
+    "cite": "Thompson, D. G. (1984), 「The Persecution of French Jesuits by the Parlement of Paris 1761-71」, Studies in Church History 21: 289-301",
+    "url": "https://doi.org/10.1017/S0424208400007671"
+   },
+   {
+    "cite": "Compère, M.-M. & Julia, D. (1984), 「Tournon, école militaire, collège de plein exercice」, Les collèges français 16e-18e siècles, t. 1: 696-712",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_1984_ant_10_1_7164"
+   }
+  ]
+ },
+ {
+  "id": "chd-051",
+  "cat": "education",
+  "text": "예수회 추방 뒤 콜레주가 오라토리오회에 넘어가 교과가 새로워졌다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1765,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    9,
+    17
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "투르농 콜레주는 1561~1762년 예수회가 맡다가 오라토리오회로 넘어가 18세기 말 가장 혁신적인 학교로 꼽혔다.",
+  "src": [
+   {
+    "cite": "Compère, M.-M. & Julia, D. (1984), 「Tournon, école militaire, collège de plein exercice」, Les collèges français 16e-18e siècles, t. 1: 696-712",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_1984_ant_10_1_7164"
+   }
+  ]
+ },
+ {
+  "id": "chd-052",
+  "cat": "education",
+  "text": "낭트 콜레주 실험실에서 전기 불꽃과 공기 펌프 시연을 구경했다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1760,
+   "to": 1802
+  },
+  "who": {
+   "sex": "M",
+   "region": [
+    "nantes"
+   ],
+   "age": [
+    12,
+    18
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "낭트의 오라토리오회 콜레주는 실험물리학 강의를 갖추었고, 이 과목은 혁명기 에콜 상트랄로도 이어졌다.",
+  "src": [
+   {
+    "cite": "Grau, H. (2000), 「L'enseignement des sciences physiques fut-il révolutionnaire ? La physique expérimentale à Nantes, du collège oratorien à l'école centrale」, Annales historiques de la Révolution française 320: 149-158",
+    "url": "https://www.persee.fr/doc/ahrf_0003-4436_2000_num_320_1_2320"
+   }
+  ]
+ },
+ {
+  "id": "chd-053",
+  "cat": "education",
+  "text": "리부른 학교에 매달 30수를 내며 라틴어와 항해 수학을 배웠다.",
+  "fx": {
+   "edu": 1,
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "region": [
+    "bordeaux"
+   ],
+   "age": [
+    9,
+    15
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리부른 학교는 리부른 학생에게 월 30수를 받았고, 라틴어 선생 외에 글씨 선생과 수로학 교사를 두었다.",
+  "src": [
+   {
+    "cite": "Compère, M.-M. & Julia, D. (1984), 「Libourne, collège d'humanités」, Les collèges français 16e-18e siècles, t. 1: 362-364",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_1984_ant_10_1_6992"
+   }
+  ]
+ },
+ {
+  "id": "chd-054",
+  "cat": "education",
+  "text": "앙제 법학부에 등록하고 학위 수수료 영수증을 소중히 챙겼다.",
+  "fx": {
+   "edu": 2,
+   "money": -30
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    16,
+    24
+   ],
+   "estate": [
+    "robe",
+    "bourgeois",
+    "hobereau"
+   ],
+   "region": [
+    "bretagne",
+    "vendee",
+    "nantes"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "18세기 앙제 법학부는 정교수 격인 박사 4명과 부교수 격 박사 8명으로 꾸려졌다.",
+  "src": [
+   {
+    "cite": "Cocard, H. (1979), 「Professeurs et étudiants de la faculté des droits d'Angers au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 86(1): 39-43",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1979_num_86_1_2966"
+   }
+  ]
+ },
+ {
+  "id": "chd-055",
+  "cat": "education",
+  "text": "툴루즈 법학부는 학위를 쉽게 준다는 소문을 듣고 그리로 갔다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    25
+   ],
+   "region": [
+    "languedoc",
+    "gascogne"
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "루시용 학생들의 등록 명부는 툴루즈 법학부가 '학위 판매소'처럼 여겨졌다는 평판을 보여 준다.",
+  "src": [
+   {
+    "cite": "Larguier, G. (2009), 「Les étudiants du Roussillon entre Perpignan et les universités du Languedoc」, Annales du Midi 121(268): 503-521",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_2009_num_121_268_7287"
+   }
+  ]
+ },
+ {
+  "id": "chd-056",
+  "cat": "education",
+  "text": "관직을 사려면 학위가 필요해 엑스 대학 법학 학사 시험을 치렀다.",
+  "fx": {
+   "edu": 1,
+   "pol": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    25
+   ],
+   "region": [
+    "provence",
+    "marseille"
+   ],
+   "estate": [
+    "robe",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "구체제 엑스 대학의 학위는 관직 취임 요건이었고, 수수료가 비교적 낮아 인근 대학 학생을 끌었다.",
+  "src": [
+   {
+    "cite": "Bertrand, R. (2012), 「Aix, ville universitaire sous l'Ancien Régime」, Provence historique 62(248): 171-185",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_2012_num_62_248_1728"
+   }
+  ]
+ },
+ {
+  "id": "chd-057",
+  "cat": "education",
+  "text": "몽펠리에 의학부 명부에 이름을 올리고 해부학 강의실에 들어섰다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    26
+   ],
+   "region": [
+    "languedoc",
+    "provence"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "몽펠리에 의학부 등록은 1720~30년대부터 늘었고, 학생은 학사·석사(licence)·박사 순으로 학위를 땄다.",
+  "src": [
+   {
+    "cite": "Berlan, H. (2005), 「Provençaux et Comtadins à la faculté de médecine de Montpellier au siècle des Lumières」, Provence historique 55(222): 435-452",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_2005_num_55_222_2248"
+   }
+  ]
+ },
+ {
+  "id": "chd-058",
+  "cat": "education",
+  "text": "라탱 지구 다락 하숙방에서 법대 강의를 들으며 첫 겨울을 났다.",
+  "fx": {
+   "edu": 2,
+   "money": -20
+  },
+  "when": {
+   "from": 1808,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    25
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "19세기 파리 학부 등록부는 법·의학부 학생 다수가 지방 출신이고 방학이면 고향에 돌아갔음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Moulinier, P. (2010), 「Étudiants voyageurs : quand le Quartier latin accueillait la jeunesse provinciale et étrangère au XIXe siècle」, Actes des congrès nationaux des sociétés historiques et scientifiques 130: 73-83",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2010_act_130_9_1699"
+   }
+  ]
+ },
+ {
+  "id": "chd-059",
+  "cat": "education",
+  "text": "열두 살이 되어 데파르트망 에콜 상트랄의 데생반에 들어갔다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1796,
+   "to": 1802
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    12,
+    13
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1795년 10월 법은 데파르트망마다 에콜 상트랄 하나를 두고, 세 과정의 입학 연령을 12·14·16세로 정했다.",
+  "src": [
+   {
+    "cite": "Mérot, C. (1987), 「La fréquentation des écoles centrales : un aspect de l'enseignement secondaire pendant la Révolution française」, Bibliothèque de l'École des chartes 145(2): 407-426",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1987_num_145_2_450476"
+   },
+   {
+    "cite": "Trenard, L. (1982), 「Les écoles centrales」, Dix-huitième siècle 14: 57-74",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1982_num_14_1_1379"
+   }
+  ]
+ },
+ {
+  "id": "chd-060",
+  "cat": "education",
+  "text": "에콜 상트랄에서 라틴어 대신 '관념학' 강의를 듣고 머리가 어지러웠다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1796,
+   "to": 1802
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    16,
+    18
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "에콜 상트랄 3과정은 언어의 기원과 정신 작용을 다루는 '관념학'을 논리학의 입문으로 가르쳤다.",
+  "src": [
+   {
+    "cite": "Trenard, L. (1982), 「Les écoles centrales」, Dix-huitième siècle 14: 57-74",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1982_num_14_1_1379"
+   }
+  ]
+ },
+ {
+  "id": "chd-061",
+  "cat": "education",
+  "text": "에콜 상트랄 고전어 강의실은 텅 비어 선생이 몇 명 앞에서 수업했다.",
+  "when": {
+   "from": 1796,
+   "to": 1802
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    12,
+    18
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "에콜 상트랄은 과목을 자유롭게 고르는 강좌제여서 고전어 교육의 자리가 늘 논란거리였다.",
+  "src": [
+   {
+    "cite": "Compère, M.-M. (1989), 「La question des disciplines scolaires dans les écoles centrales. Le cas des langues anciennes」, Histoire de l'éducation 42: 139-181",
+    "url": "https://www.persee.fr/doc/hedu_0221-6280_1989_num_42_1_3345"
+   },
+   {
+    "cite": "Mérot, C. (1987), 「La fréquentation des écoles centrales : un aspect de l'enseignement secondaire pendant la Révolution française」, Bibliothèque de l'École des chartes 145(2): 407-426",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1987_num_145_2_450476"
+   }
+  ]
+ },
+ {
+  "id": "chd-062",
+  "cat": "education",
+  "text": "리세 기숙사에서 북소리에 깨어 제복을 입고 줄지어 식당에 갔다.",
+  "fx": {
+   "edu": 2,
+   "hp": -1
+  },
+  "when": {
+   "from": 1803,
+   "to": 1830
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    10,
+    17
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "1802년 리세는 앙시앵레짐식 기숙 콜레주를 되살린 모델로, 19세기 리세는 '병영'이라 불릴 만큼 군대식 규율을 따랐다.",
+  "src": [
+   {
+    "cite": "Brambilla, E. (2009), 「Lycées et Université impériale. Innovations éducatives en France et influence sur l'instruction des élites en Italie (1789-1814)」, Rives méditerranéennes 32-33",
+    "url": "https://journals.openedition.org/rives/2949"
+   },
+   {
+    "cite": "Clastres, P. (2005), 「L'internat public au XIXe siècle」, Bibliothèque de l'histoire de l'éducation 28: 397-413",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_2005_act_28_1_9266"
+   }
+  ]
+ },
+ {
+  "id": "chd-063",
+  "cat": "education",
+  "text": "퐁티비에 새로 생긴 리세에 국비 장학생으로 입학했다.",
+  "fx": {
+   "edu": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1803,
+   "to": 1816
+  },
+  "who": {
+   "sex": "M",
+   "region": [
+    "bretagne"
+   ],
+   "age": [
+    10,
+    14
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "퐁티비 리세는 1803년 9월 24일 제1통령의 결정으로 세워졌다.",
+  "src": [
+   {
+    "cite": "Péan, F. (1904), 「Un lycée à la fondation de l'Université. Lycée de Pontivy, 1803-1816」, Annales de Bretagne 20(3): 269-295",
+    "url": "https://www.persee.fr/doc/abpo_0003-391x_1904_num_20_3_1201"
+   }
+  ]
+ },
+ {
+  "id": "chd-064",
+  "cat": "education",
+  "text": "주말에도 집에 가지 못하고 리세 기숙사 창으로 거리를 내다보았다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1803,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    10,
+    17
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 공립 중등교육은 기숙제 중심이어서 1865년에도 리세 학생의 56%가 기숙생이었다.",
+  "src": [
+   {
+    "cite": "Clastres, P. (2005), 「L'internat public au XIXe siècle」, Bibliothèque de l'histoire de l'éducation 28: 397-413",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_2005_act_28_1_9266"
+   }
+  ]
+ },
+ {
+  "id": "chd-065",
+  "cat": "education",
+  "text": "제국 대학의 허가 없이는 어떤 학교도 열 수 없다는 공고문이 붙었다.",
+  "when": {
+   "from": 1808,
+   "to": 1815
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1808년 제국 대학(Université impériale)은 리세와 학부를 하나의 국가 독점 체계로 묶었다.",
+  "src": [
+   {
+    "cite": "Brambilla, E. (2009), 「Lycées et Université impériale. Innovations éducatives en France et influence sur l'instruction des élites en Italie (1789-1814)」, Rives méditerranéennes 32-33",
+    "url": "https://journals.openedition.org/rives/2949"
+   },
+   {
+    "cite": "Secondy, L. (1980), 「Place et rôle des petits séminaires dans l'enseignement secondaire en France au XIXe siècle」, Revue d'histoire de l'Église de France 66(177): 243-259",
+    "url": "https://www.persee.fr/doc/rhef_0300-9505_1980_num_66_177_1664"
+   }
+  ]
+ },
+ {
+  "id": "chd-066",
+  "cat": "education",
+  "text": "학비가 싼 소신학교에 들어가 사제가 될 거라는 기대를 받았다.",
+  "fx": {
+   "edu": 2,
+   "faith": 2
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    11,
+    16
+   ],
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": true,
+  "fact": "19세기 소신학교는 수업료가 적거나 없어, 사제 지망생과 명사 자제가 함께 다녔다.",
+  "src": [
+   {
+    "cite": "Leflon, J. (1975), 「Les petits séminaires de France au XIXe siècle」, Revue d'histoire de l'Église de France 61(166): 25-35",
+    "url": "https://www.persee.fr/doc/rhef_0300-9505_1975_num_61_166_1539"
+   },
+   {
+    "cite": "Langlois, C. (1988), 「Le temps des séminaristes. La formation cléricale en France aux XIXe et XXe siècles」, Publications de l'École française de Rome 104: 229-255",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1988_act_104_1_3273"
+   }
+  ]
+ },
+ {
+  "id": "chd-067",
+  "cat": "education",
+  "text": "소신학교 정원이 묶여 입학을 한 해 기다려야 했다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1828,
+   "to": 1840
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    11,
+    15
+   ],
+   "region": [
+    "languedoc",
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1828년 왕령으로 몽펠리에 교구권 5개 교구 소신학교 정원은 960명으로 제한되었다.",
+  "src": [
+   {
+    "cite": "Secondy, L. (1980), 「Place et rôle des petits séminaires dans l'enseignement secondaire en France au XIXe siècle」, Revue d'histoire de l'Église de France 66(177): 243-259",
+    "url": "https://www.persee.fr/doc/rhef_0300-9505_1980_num_66_177_1664"
+   }
+  ]
+ },
+ {
+  "id": "chd-068",
+  "cat": "education",
+  "text": "새로 온 선생이 3급 교사 자격증을 내보이며 읽기·쓰기·셈을 가르친다 했다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1833
+  },
+  "who": {
+   "age": [
+    6,
+    12
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1816년 2월 29일 왕령은 초등 교사 자격증을 세 등급으로 나누고, 3급은 읽기·쓰기·셈을 아는 이에게 주었다.",
+  "src": [
+   {
+    "cite": "「29 février 1816. Ordonnance sur les brevets de capacité」(1992), Bibliothèque de l'histoire de l'éducation 5(1): 69",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_1992_ant_5_1_1746"
+   }
+  ]
+ },
+ {
+  "id": "chd-069",
+  "cat": "education",
+  "text": "상호교육 학교에서 나이 많은 아이가 모니터가 되어 모래판 글씨를 지도했다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1840
+  },
+  "who": {
+   "urban": true,
+   "age": [
+    6,
+    13
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "사르트에서 상호교육은 1817~20년 크게 번졌다가 1822년 이후 쇠퇴하고 1828년부터 되살아났다.",
+  "src": [
+   {
+    "cite": "Sachter, B. (1974), 「Politique et enseignement mutuel dans la Sarthe des premières années de la Restauration à la loi Guizot」, Annales de Bretagne et des pays de l'Ouest 81(2): 393-414",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1974_num_81_2_2729"
+   }
+  ]
+ },
+ {
+  "id": "chd-070",
+  "cat": "education",
+  "text": "모니터가 수를 불러 주면 모두 석판에 받아 적고 원을 지어 읽었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    7,
+    13
+   ],
+   "region": [
+    "bretagne",
+    "nantes"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브르타뉴 상호교육 학교에서는 모니터가 '3,202'처럼 수를 불러 주면 학생들이 석판에 받아 쓰고 원형으로 서서 읽었다.",
+  "src": [
+   {
+    "cite": "Chalopin, M. (2011), 「Chapitre VI. L'ordre mutuel」, in L'enseignement mutuel en Bretagne de 1815 à 1850, Presses universitaires de Rennes",
+    "url": "https://books.openedition.org/pur/106287"
+   }
+  ]
+ },
+ {
+  "id": "chd-071",
+  "cat": "education",
+  "text": "모범 학생으로 뽑혀 상호교육반 모니터 완장을 찼다.",
+  "fx": {
+   "edu": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1840
+  },
+  "who": {
+   "age": [
+    9,
+    13
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "자유주의자는 상호교육을, 울트라와 교회는 동시교수법을 지지해 교수법 자체가 정치 쟁점이 되었다.",
+  "src": [
+   {
+    "cite": "Sachter, B. (1974), 「Politique et enseignement mutuel dans la Sarthe des premières années de la Restauration à la loi Guizot」, Annales de Bretagne et des pays de l'Ouest 81(2): 393-414",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1974_num_81_2_2729"
+   },
+   {
+    "cite": "Chalopin, M. (2011), 「Chapitre VI. L'ordre mutuel」, in L'enseignement mutuel en Bretagne de 1815 à 1850, Presses universitaires de Rennes",
+    "url": "https://books.openedition.org/pur/106287"
+   }
+  ]
+ },
+ {
+  "id": "chd-072",
+  "cat": "education",
+  "text": "마을이 헛간을 빌려 첫 공립 초등학교를 열었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1833,
+   "to": 1845
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1833년 6월 28일 기조법 제9조는 모든 코뮌에 적어도 하나의 초등학교를 유지하도록 의무화했다.",
+  "src": [
+   {
+    "cite": "Garrier, G. (1992), 「Sur le chemin des écoles, en Rhône-Alpes (vers 1830-vers 1890)」, Cahier des Annales de Normandie 24: 439-451",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1992_hos_24_1_4103"
+   }
+  ]
+ },
+ {
+  "id": "chd-073",
+  "cat": "education",
+  "text": "가난한 집이라 면장 명단에 올라 수업료 없이 학교에 다녔다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1833,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    6,
+    12
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "기조법 아래 극빈 가정 아이는 무상 명단에 올라 학부모가 내는 수업료(rétribution scolaire)를 면제받았다.",
+  "src": [
+   {
+    "cite": "Bailleul, F. (1985), 「Les instituteurs du Nord d'après le concours Rouland de 1860」, Revue du Nord 67(266): 703-714",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1985_num_67_266_4145"
+   },
+   {
+    "cite": "Garrier, G. (1992), 「Sur le chemin des écoles, en Rhône-Alpes (vers 1830-vers 1890)」, Cahier des Annales de Normandie 24: 439-451",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1992_hos_24_1_4103"
+   }
+  ]
+ },
+ {
+  "id": "chd-074",
+  "cat": "education",
+  "text": "선생이 가난해 수업이 끝나면 밭일과 성가대 일을 하러 갔다.",
+  "when": {
+   "from": 1833,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "picardie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1850년 무렵 파드칼레 농촌 교사의 처지는 열악해 많은 이가 직업을 떠났다.",
+  "src": [
+   {
+    "cite": "Hubscher, R. (1979), 「La condition des instituteurs au début du Second Empire : l'exemple de l'arrondissement d'Arras」, Revue du Nord 61(242): 625-648",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1979_num_61_242_3608"
+   }
+  ]
+ },
+ {
+  "id": "chd-075",
+  "cat": "education",
+  "text": "장학관이 예고 없이 들이닥쳐 받아쓰기를 시키고 공책을 걷어 갔다.",
+  "when": {
+   "from": 1835,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    7,
+    13
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "기조는 1835년 2월 26일 왕령으로 초등 장학관 직을 만들어 학교 순회 감독을 맡겼다.",
+  "src": [
+   {
+    "cite": "Ravier, J. (1999), 「Les inspecteurs primaires du département du Nord durant la monarchie de Juillet」, Revue du Nord 81(330): 283-",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1999_num_91_330_2917"
+   }
+  ]
+ },
+ {
+  "id": "chd-076",
+  "cat": "education",
+  "text": "도시 고등초등학교에서 측량과 장부 기입, 기하를 배웠다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1834,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "age": [
+    12,
+    15
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1833년 기조법은 큰 코뮌에 고등초등학교를 두게 해 중등과 초등 사이의 실용 교육을 시도했다.",
+  "src": [
+   {
+    "cite": "Chapoulie, J.-M. (1989), 「L'enseignement primaire supérieur, de la loi Guizot aux écoles de la IIIe République」, Revue d'histoire moderne et contemporaine 36(3): 413-437",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1989_num_36_3_1502"
+   }
+  ]
+ },
+ {
+  "id": "chd-077",
+  "cat": "education",
+  "text": "공장 일과 교리반에 쫓겨 학교에는 일주일에 두어 번밖에 못 갔다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1833,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ],
+   "age": [
+    8,
+    13
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "7월 왕정 말 노르에서는 교리 학교와 작업장 학교가 기조식 초등학교와 아이들을 두고 경쟁했다.",
+  "src": [
+   {
+    "cite": "Hévneryck, R. (1985), 「Le développement de l'enseignement confessionnel à l'école primaire, dans le département du Nord à la fin de la Monarchie de Juillet」, Revue du Nord 67(266)",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1985_num_67_266_4143"
+   }
+  ]
+ },
+ {
+  "id": "chd-078",
+  "cat": "education",
+  "text": "겨울엔 학교에 다녔지만 봄이 오자 다시 밭으로 불려 나갔다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850,
+   "months": [
+    3,
+    4,
+    5
+   ]
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    7,
+    12
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "뤽은 19세기 초등 통계가 연중 등록자만 셈해 실제 출석, 특히 여름의 공백을 과대평가했다고 비판했다.",
+  "src": [
+   {
+    "cite": "Luc, J.-N. (1986), 「L'illusion statistique」, Annales ESC 41(4): 887-911",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1986_num_41_4_283318"
+   }
+  ]
+ },
+ {
+  "id": "chd-079",
+  "cat": "education",
+  "text": "표창을 받은 선생이 학생들 앞에서 메달을 자랑스레 보여 주었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1818,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    7,
+    13
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "교사 표창 제도는 1818년 정해졌다가 1821~28년 중단되고 1829년 다시 시행되었다.",
+  "src": [
+   {
+    "cite": "Kim, J.-I. (2012), 「Les « enfants de Guizot », deuxième génération d'instituteurs dans les dossiers de récompenses honorifiques」, Actes des congrès nationaux des sociétés historiques et scientifiques 132: 93-106",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2012_act_132_11_2143"
+   }
+  ]
+ },
+ {
+  "id": "chd-080",
+  "cat": "education",
+  "text": "기조 시대 학교에서 배운 동무가 훗날 마을 선생이 되었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1840,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    14,
+    25
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "김정인은 7월 왕정기 학교에서 자라 제2제정기에 교단에 선 교사들을 '기조의 아이들'이라 불렀다.",
+  "src": [
+   {
+    "cite": "Kim, J.-I. (2012), 「Les « enfants de Guizot », deuxième génération d'instituteurs dans les dossiers de récompenses honorifiques」, Actes des congrès nationaux des sociétés historiques et scientifiques 132: 93-106",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2012_act_132_11_2143"
+   }
+  ]
+ },
+ {
+  "id": "chd-081",
+  "cat": "childhood",
+  "text": "일곱 살 무렵부터 거위와 양 떼를 몰고 들판에 나갔다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    7,
+    9
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "포를랑은 아이들의 조기 노동이 산업혁명의 산물이 아니라 그 이전 모든 경제 체제에 있었다고 강조했다.",
+  "src": [
+   {
+    "cite": "Fohlen, C. (1973), 「Révolution industrielle et travail des enfants」, Annales de démographie historique 1973: 319-325",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1199"
+   }
+  ]
+ },
+ {
+  "id": "chd-082",
+  "cat": "childhood",
+  "text": "마을 공동 양 떼를 모는 목자를 따라다니며 어린 목동 노릇을 했다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "champagne",
+    "picardie",
+    "ile"
+   ],
+   "age": [
+    7,
+    12
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "샹파뉴의 마른 데파르트망에는 1844년 마을 공동 목자가 877명이나 있었다.",
+  "src": [
+   {
+    "cite": "Brunhes-Delamarre, M.-J. (1969), 「Quelques aspects de l'élevage traditionnel en France : bergers et troupeaux communs」, Bulletin de l'Association de géographes français 370: 369-380",
+    "url": "https://www.persee.fr/doc/bagf_0004-5322_1969_num_46_370_5898"
+   }
+  ]
+ },
+ {
+  "id": "chd-083",
+  "cat": "childhood",
+  "text": "추수철이라 이삭을 줍고 소를 지키느라 해가 지도록 들에 있었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    8,
+    14
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 농촌 아이는 대개 아버지 곁에서 일을 배웠고, 계약을 맺는 정식 견습생은 소수에 불과했다.",
+  "src": [
+   {
+    "cite": "Cocula, A.-M. (1993), 「Contrats d'apprentissage du XVIIIe siècle : quelques enseignements d'une moisson aquitaine」, Revue d'histoire moderne et contemporaine 40(3): 423-435",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1993_num_40_3_1682"
+   }
+  ]
+ },
+ {
+  "id": "chd-084",
+  "cat": "childhood",
+  "text": "뮐루즈 방적 공장에서 끊어진 실을 잇는 아이로 하루 열 몇 시간을 일했다.",
+  "fx": {
+   "hp": -2,
+   "edu": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "alsace"
+   ],
+   "age": [
+    8,
+    14
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "1841년 법은 8세 미만 고용을 금하고 8~12세는 하루 8시간, 12~16세는 12시간으로 노동을 제한했다.",
+  "src": [
+   {
+    "cite": "Denis, M.-N. (2005), 「Le travail des enfants dans les manufactures alsaciennes au XIXe siècle」, Actes du Congrès national des sociétés savantes 127(5): 241-255",
+    "url": "https://www.persee.fr/doc/acths_0000-0001_2005_act_127_5_5198"
+   },
+   {
+    "cite": "Chaline, J.-P. (1987), 「Ouvriers de huit ans... : J.-Cl. Marquis, Le travail des enfants au XIXe siècle en Seine-Inférieure」, Études normandes 36(3): 66-67",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1987_num_36_3_2734_t1_0066_0000_4"
+   }
+  ]
+ },
+ {
+  "id": "chd-085",
+  "cat": "childhood",
+  "text": "공장주가 새 법이 생겼다며 여덟 살 미만 아이들을 돌려보냈다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1841,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "age": [
+    6,
+    9
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1841년 3월 22일 법은 프랑스 최초의 아동노동법으로 8세 미만 아동의 공장 고용을 금지했다.",
+  "src": [
+   {
+    "cite": "Chaline, J.-P. (1987), 「Ouvriers de huit ans... : J.-Cl. Marquis, Le travail des enfants au XIXe siècle en Seine-Inférieure」, Études normandes 36(3): 66-67",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1987_num_36_3_2734_t1_0066_0000_4"
+   },
+   {
+    "cite": "Denis, M.-N. (2005), 「Le travail des enfants dans les manufactures alsaciennes au XIXe siècle」, Actes du Congrès national des sociétés savantes 127(5): 241-255",
+    "url": "https://www.persee.fr/doc/acths_0000-0001_2005_act_127_5_5198"
+   }
+  ]
+ },
+ {
+  "id": "chd-086",
+  "cat": "childhood",
+  "text": "작은 작업장이라 아동노동법은 상관없다며 주인이 밤일을 시켰다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1841,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    8,
+    15
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1841년 법은 공장에만 적용되어 소규모 작업장과 가내 공업의 아이들은 보호받지 못했다.",
+  "src": [
+   {
+    "cite": "Chaline, J.-P. (1987), 「Ouvriers de huit ans... : J.-Cl. Marquis, Le travail des enfants au XIXe siècle en Seine-Inférieure」, Études normandes 36(3): 66-67",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1987_num_36_3_2734_t1_0066_0000_4"
+   }
+  ]
+ },
+ {
+  "id": "chd-087",
+  "cat": "childhood",
+  "text": "루앙 면방적 공장에서 여덟 살 동생이 실패를 나르다 졸아 매를 맞았다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ],
+   "age": [
+    8,
+    15
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "쥘 시몽이 '여덟 살 노동자'라 부른 아이들은 19세기 센앵페리외르 공장에서 흔히 일했다.",
+  "src": [
+   {
+    "cite": "Chaline, J.-P. (1987), 「Ouvriers de huit ans... : J.-Cl. Marquis, Le travail des enfants au XIXe siècle en Seine-Inférieure」, Études normandes 36(3): 66-67",
+    "url": "https://www.persee.fr/doc/etnor_0014-2158_1987_num_36_3_2734_t1_0066_0000_4"
+   }
+  ]
+ },
+ {
+  "id": "chd-088",
+  "cat": "childhood",
+  "text": "구빈원 작업장에서 일곱 살부터 명주실 감는 일을 배웠다.",
+  "fx": {
+   "hp": -1,
+   "edu": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1791
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "age": [
+    7,
+    12
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹 자선원 작업장은 일곱 살 남녀 아이에게 견직 일을 가르쳐 장인들에게 계약으로 빌려주었다.",
+  "src": [
+   {
+    "cite": "Martinat, M. (2011), 「Travail et apprentissage des femmes à Lyon au XVIIIe siècle」, Mélanges de l'École française de Rome - Italie et Méditerranée 123(1)",
+    "url": "https://journals.openedition.org/mefrim/589"
+   }
+  ]
+ },
+ {
+  "id": "chd-089",
+  "cat": "childhood",
+  "text": "구빈원이 견직 장인에게 넘겨 4년짜리 견습 계약서에 이름이 올랐다.",
+  "when": {
+   "from": 1750,
+   "to": 1791
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "sex": "F",
+   "age": [
+    11,
+    16
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "리옹 자선원의 '테레즈' 여아 계약 473건(1721~91) 가운데 72.7%가 실 감는 일이었고, 기간은 4년이 가장 흔했다.",
+  "src": [
+   {
+    "cite": "Martinat, M. (2011), 「Travail et apprentissage des femmes à Lyon au XVIIIe siècle」, Mélanges de l'École française de Rome - Italie et Méditerranée 123(1)",
+    "url": "https://journals.openedition.org/mefrim/589"
+   }
+  ]
+ },
+ {
+  "id": "chd-090",
+  "cat": "childhood",
+  "text": "견직 직기 옆에 서서 하루 종일 무늬 줄을 당기느라 팔이 저렸다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "sex": "F",
+   "age": [
+    12,
+    18
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "리옹 장인들에 따르면 13~14세 소녀 5~6천 명이 '줄 당기는 일'을 했고, 스무 살이면 다른 일을 찾아 떠났다.",
+  "src": [
+   {
+    "cite": "Martinat, M. (2011), 「Travail et apprentissage des femmes à Lyon au XVIIIe siècle」, Mélanges de l'École française de Rome - Italie et Méditerranée 123(1)",
+    "url": "https://journals.openedition.org/mefrim/589"
+   }
+  ]
+ },
+ {
+  "id": "chd-091",
+  "cat": "childhood",
+  "text": "아버지 공방에서 계약서도 없이 망치와 끌 쓰는 법을 배우며 자랐다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "artisan"
+   ],
+   "age": [
+    10,
+    15
+   ],
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "18세기 공증 계약을 맺은 견습생은 아버지 곁에서 일을 배운 다수 소년에 비하면 극소수였다.",
+  "src": [
+   {
+    "cite": "Cocula, A.-M. (1993), 「Contrats d'apprentissage du XVIIIe siècle : quelques enseignements d'une moisson aquitaine」, Revue d'histoire moderne et contemporaine 40(3): 423-435",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1993_num_40_3_1682"
+   }
+  ]
+ },
+ {
+  "id": "chd-092",
+  "cat": "childhood",
+  "text": "공증인 앞에서 장인과 견습 계약을 맺고 아버지가 수업료를 치렀다.",
+  "fx": {
+   "money": -30,
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bordeaux",
+    "gascogne"
+   ],
+   "sex": "M",
+   "age": [
+    12,
+    17
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "랑공 일대의 1749~89년 견습 계약은 공증인 앞에서 맺어졌고, 장인에게 돈을 내거나 노동으로 갚는 조건이 붙었다.",
+  "src": [
+   {
+    "cite": "Cocula, A.-M. (1971), 「Contrats d'apprentissage à Langon et autour de Langon dans la seconde moitié du XVIIIe siècle」, Revue historique de Bordeaux et du département de la Gironde 20: 107-124",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1971_num_20_1_1997"
+   },
+   {
+    "cite": "Cocula, A.-M. (1993), 「Contrats d'apprentissage du XVIIIe siècle : quelques enseignements d'une moisson aquitaine」, Revue d'histoire moderne et contemporaine 40(3): 423-435",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1993_num_40_3_1682"
+   }
+  ]
+ },
+ {
+  "id": "chd-093",
+  "cat": "childhood",
+  "text": "견습 기간 동안 장인 집 다락에서 자고 식탁 끝에서 밥을 먹었다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    12,
+    18
+   ],
+   "estate": [
+    "artisan",
+    "peasant"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 견습 계약은 대개 장인이 견습생에게 숙식을 주고 기술을 가르치는 대가를 정했다.",
+  "src": [
+   {
+    "cite": "Cocula, A.-M. (1993), 「Contrats d'apprentissage du XVIIIe siècle : quelques enseignements d'une moisson aquitaine」, Revue d'histoire moderne et contemporaine 40(3): 423-435",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1993_num_40_3_1682"
+   },
+   {
+    "cite": "Cocula, A.-M. (1971), 「Contrats d'apprentissage à Langon et autour de Langon dans la seconde moitié du XVIIIe siècle」, Revue historique de Bordeaux et du département de la Gironde 20: 107-124",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1971_num_20_1_1997"
+   }
+  ]
+ },
+ {
+  "id": "chd-094",
+  "cat": "childhood",
+  "text": "구빈원 출신 견습 소녀가 장인 부인에게 매를 맞고 달아났다는 소문이 돌았다.",
+  "when": {
+   "from": 1750,
+   "to": 1791
+  },
+  "who": {
+   "region": [
+    "lyon"
+   ],
+   "age": [
+    10,
+    18
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "리옹 자선원의 견습 계약은 상당수가 여장인(patronne)과 맺어졌고, 이름만 견습일 뿐 노동 임대에 가까웠다.",
+  "src": [
+   {
+    "cite": "Martinat, M. (2011), 「Travail et apprentissage des femmes à Lyon au XVIIIe siècle」, Mélanges de l'École française de Rome - Italie et Méditerranée 123(1)",
+    "url": "https://journals.openedition.org/mefrim/589"
+   }
+  ]
+ },
+ {
+  "id": "chd-095",
+  "cat": "childhood",
+  "text": "보르도 '어머니' 여관에서 동업 직인 형제들의 환영 술잔을 받았다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "sex": "M",
+   "age": [
+    17,
+    25
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "보르도는 투르 드 프랑스의 주요 거점이었고, 18세기 건축 직종 직인들이 몰려 콩파뇽나주가 활발했다.",
+  "src": [
+   {
+    "cite": "Cavignac, J. (1968), 「Le compagnonnage dans les luttes ouvrières au XVIIIe siècle, l'exemple de Bordeaux」, Bibliothèque de l'École des chartes 126(2): 377-411",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1968_num_126_2_449797"
+   }
+  ]
+ },
+ {
+  "id": "chd-096",
+  "cat": "childhood",
+  "text": "다른 '의무'파 직인들과 길에서 마주쳐 지팡이 싸움이 벌어졌다.",
+  "fx": {
+   "hp": -2,
+   "cour": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    28
+   ],
+   "estate": [
+    "artisan"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "카비냐크는 18세기 보르도 법정 기록으로 콩파뇽나주가 노동 투쟁 조직으로 기능했음을 보였다.",
+  "src": [
+   {
+    "cite": "Cavignac, J. (1968), 「Le compagnonnage dans les luttes ouvrières au XVIIIe siècle, l'exemple de Bordeaux」, Bibliothèque de l'École des chartes 126(2): 377-411",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1968_num_126_2_449797"
+   }
+  ]
+ },
+ {
+  "id": "chd-097",
+  "cat": "childhood",
+  "text": "구리 냄비 직인으로 투르 드 프랑스 길에 올라 도시마다 일자리를 찾았다.",
+  "fx": {
+   "edu": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1820,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    25
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "망슈 출신 한 구리 냄비공의 회고록은 1836~44년의 투르 드 프랑스와 직인 간 연대, 임금을 전한다.",
+  "src": [
+   {
+    "cite": "Désert, G. (1969), 「Les mémoires d'un travailleur bas-normand. II. Le tour de France d'un compagnon-chaudronnier (1836-1844)」, Annales de Normandie 19(2): 155-178",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1969_num_19_2_5013"
+   }
+  ]
+ },
+ {
+  "id": "chd-098",
+  "cat": "childhood",
+  "text": "입회 의식을 치르고 고향 이름을 딴 직인 별명을 받았다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    17,
+    25
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "도피네에도 여러 직종 콩파뇽의 숙소 '카옌'이나 '샹브르'가 있었고, 그르노블 근처에는 '어머니' 집이 있었다.",
+  "src": [
+   {
+    "cite": "Lecotté, R. (1982), 「Le compagnonnage en Dauphiné」, Le Monde alpin et rhodanien 10: 451-484",
+    "url": "https://www.persee.fr/doc/mar_0758-4431_1982_num_10_1_1182"
+   }
+  ]
+ },
+ {
+  "id": "chd-099",
+  "cat": "childhood",
+  "text": "페르디기에의 『콩파뇽나주의 책』을 돌려 읽으며 파벌 싸움을 그만두자는 말을 들었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1839,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    16,
+    30
+   ],
+   "estate": [
+    "artisan"
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "아그리콜 페르디기에는 1839년 『콩파뇽나주의 책』을 자비로 펴내 직인회의 역사와 화해를 호소했다.",
+  "src": [
+   {
+    "cite": "Mathonière, J.-M. (2006), 「Agricol Perdiguier, premier historien du compagnonnage français」, Provence historique 56(226): 353-360",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_2006_num_56_226_1444"
+   },
+   {
+    "cite": "Maureau, A. (2006), 「L'apôtre du compagnonnage, Agricol Perdiguier (1805-1874), personnage complexe et controversé」, Provence historique 56(226): 347-352",
+    "url": "https://www.persee.fr/doc/prohi_0033-1856_2006_num_56_226_1443"
+   }
+  ]
+ },
+ {
+  "id": "chd-100",
+  "cat": "childhood",
+  "text": "어린 나이에 아버지를 잃어 학교를 일찍 그만두고 장사를 거들었다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1845
+  },
+  "who": {
+   "age": [
+    8,
+    14
+   ],
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1842년 무렵 쓰인 망슈 농촌 상인의 회고록은 유년기 아버지의 죽음과 초등교육 형편을 증언한다.",
+  "src": [
+   {
+    "cite": "Désert, G. (1969), 「Les mémoires d'un travailleur bas-normand (Première moitié du XIXe siècle)」, Annales de Normandie 19(1): 59-77",
+    "url": "https://www.persee.fr/doc/annor_0003-4134_1969_num_19_1_5009"
+   }
+  ]
+ },
+ {
+  "id": "chd-101",
+  "cat": "childhood",
+  "text": "마을 총각회에 들어가 오월 축제에서 깃발을 들었다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800,
+   "months": [
+    5
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    15,
+    25
+   ],
+   "urban": false,
+   "married": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "펠르그랭에 따르면 '바셸르리'는 15~18세기 프랑스 중서부와 부르고뉴 등지의 청년 조직이자 축제였다.",
+  "src": [
+   {
+    "cite": "Grinberg, M. (1984), 「Nicole Pellegrin, Les Bachelleries. Organisations et fêtes de la jeunesse dans le Centre-Ouest, XVe-XVIIIe siècles」(서평), Annales ESC 39(1): 48-51",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1984_num_39_1_283041_t1_0048_0000_002"
+   }
+  ]
+ },
+ {
+  "id": "chd-102",
+  "cat": "childhood",
+  "text": "청년회 '왕' 칭호를 경매에 부쳐 모은 돈으로 성인 축일 잔치를 벌였다.",
+  "fx": {
+   "soc": 1,
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    15,
+    25
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "구통은 옛 프랑스 마을에서 축제의 '왕' 칭호를 경매로 파는 '레나주'와 청년 수도원(abbaye de jeunesse)의 관계를 다뤘다.",
+  "src": [
+   {
+    "cite": "Devos, R. (1976), 「Gutton (J.-P.), Reinages, abbayes de jeunesse et confréries dans les villages de l'ancienne France」(서평), Le Monde alpin et rhodanien 4(1-2): 219",
+    "url": "https://www.persee.fr/doc/mar_0758-4431_1976_num_4_1_1012_t1_0219_0000_4"
+   }
+  ]
+ },
+ {
+  "id": "chd-103",
+  "cat": "childhood",
+  "text": "재혼하는 홀아비 집 앞에서 청년들과 냄비를 두드리며 샤리바리를 벌였다.",
+  "fx": {
+   "soc": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    14,
+    25
+   ],
+   "region": [
+    "gascogne",
+    "languedoc"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "오트피레네 도청은 19세기 전반 샤리바리 사건 서류철을 따로 만들 만큼 이 관습을 주시했다.",
+  "src": [
+   {
+    "cite": "Bonnain-Moerdyk, R. & Moerdyk, D. (1977), 「À propos du charivari : discours bourgeois et coutumes populaires」, Annales ESC 32(2): 381-398",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_2_293823"
+   }
+  ]
+ },
+ {
+  "id": "chd-104",
+  "cat": "childhood",
+  "text": "법원 서기 견습생들의 모임에 끼어 사육제 가장행렬에 나섰다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    16,
+    25
+   ],
+   "region": [
+    "languedoc"
+   ],
+   "job": [
+    "law"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "툴루즈의 '바조슈'는 젊은 서기들의 단체로, 축제 활동에서 청년 수도원을 닮아 갔다.",
+  "src": [
+   {
+    "cite": "Cassan, M. (1982), 「Basoches et basochiens à Toulouse à l'époque moderne」, Annales du Midi 94(158): 263-276",
+    "url": "https://www.persee.fr/doc/anami_0003-4398_1982_num_94_158_1994"
+   }
+  ]
+ },
+ {
+  "id": "chd-105",
+  "cat": "childhood",
+  "text": "총각들이 이웃 마을 청년들과 처녀 문제로 주먹다짐을 했다.",
+  "fx": {
+   "hp": -1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    15,
+    24
+   ],
+   "urban": false,
+   "married": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "프랑수아와 라이하르트는 청년 모임·형제회·선술집을 18~19세기 민중 사교성의 대표 형태로 꼽았다.",
+  "src": [
+   {
+    "cite": "François, É. & Reichardt, R. (1987), 「Les formes de sociabilité en France du milieu du XVIIIe au milieu du XIXe siècle」, Revue d'histoire moderne et contemporaine 34(3): 453-472",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1987_num_34_3_1419"
+   }
+  ]
+ },
+ {
+  "id": "chd-106",
+  "cat": "childhood",
+  "text": "갓난아기 때 붕대처럼 감긴 강보에 싸여 요람에 매달려 있었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    0,
+    1
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1760년부터 개혁 의사들이 강보(maillot)의 해로움을 알렸지만 유모들은 19세기 내내 이를 고수했다.",
+  "src": [
+   {
+    "cite": "Morel, M.-F. (1977), 「Ville et campagne dans le discours médical sur la petite enfance au XVIIIe siècle」, Annales ESC 32(5): 1007-1024",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293876"
+   }
+  ]
+ },
+ {
+  "id": "chd-107",
+  "cat": "childhood",
+  "text": "어머니가 루소를 읽고 유모 대신 직접 젖을 물렸다.",
+  "fx": {
+   "hp": 2
+  },
+  "when": {
+   "from": 1762,
+   "to": 1820
+  },
+  "who": {
+   "age": [
+    0,
+    1
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "epee"
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "18세기 '계몽' 의사와 행정가들은 강보를 비판하는 한편 유모 대신 어머니 수유를 강하게 권했다.",
+  "src": [
+   {
+    "cite": "Morel, M.-F. (1976), 「Théories et pratiques de l'allaitement en France au XVIIIe siècle」, Annales de démographie historique 1976: 393-427",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1976_num_1976_1_1322"
+   }
+  ]
+ },
+ {
+  "id": "chd-108",
+  "cat": "childhood",
+  "text": "태어나자마자 부르고뉴 시골 유모에게 맡겨져 수레에 실려 갔다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    0,
+    0
+   ],
+   "region": [
+    "paris"
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "테농은 파리 유모 사무소가 해마다 약 1만 명의 유모를 모집한다고 추산했다.",
+  "src": [
+   {
+    "cite": "Chamoux, A. (1973), 「Mise en nourrice et mortalité des enfants légitimes」, Annales de démographie historique 1973: 418-422",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1219"
+   }
+  ]
+ },
+ {
+  "id": "chd-109",
+  "cat": "childhood",
+  "text": "두 살 무렵 유모 집에서 돌아와 낯선 '진짜' 어머니 품에서 울음을 터뜨렸다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    2,
+    3
+   ],
+   "urban": true,
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "당대 보고에 따르면 부르고뉴에서는 유모에게 맡긴 아기의 3.5명 중 1명이 첫해에 죽었다.",
+  "src": [
+   {
+    "cite": "Chamoux, A. (1973), 「Mise en nourrice et mortalité des enfants légitimes」, Annales de démographie historique 1973: 418-422",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1219"
+   }
+  ]
+ },
+ {
+  "id": "chd-110",
+  "cat": "childhood",
+  "text": "젖먹이 아이를 두 명이나 맡은 유모 집에서 한 아기가 겨울을 넘기지 못했다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bourgogne",
+    "lyon"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 브레스의 드뤼야에서 유모에게 맡겨진 기아의 영아사망률은 1,000명당 430명으로, 마을 아기(191명)의 두 배를 넘었다.",
+  "src": [
+   {
+    "cite": "Bideau, A. & Brunet, G. (1991), 「La mortalité des enfants trouvés dans le département de l'Ain aux XVIIIe et XIXe siècles」, Publications de l'École française de Rome 140: 219-248",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4454"
+   },
+   {
+    "cite": "Bideau, A., Brunet, G. & Floquet, M. (1994), 「Mortalité différentielle des enfants indigènes et des enfants en nourrice. L'exemple de Druillat (Ain) au XVIIIe siècle」, Annales de démographie historique 1994: 151-168",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1994_num_1994_1_1864"
+   }
+  ]
+ },
+ {
+  "id": "chd-111",
+  "cat": "childhood",
+  "text": "갓 태어난 동생이 몇 주 만에 죽어 작은 관을 따라 묘지에 갔다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    3,
+    14
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 드뤼야 마을 토박이 아기의 영아사망률도 1,000명당 191명에 이르렀다.",
+  "src": [
+   {
+    "cite": "Bideau, A. & Brunet, G. (1991), 「La mortalité des enfants trouvés dans le département de l'Ain aux XVIIIe et XIXe siècles」, Publications de l'École française de Rome 140: 219-248",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4454"
+   }
+  ]
+ },
+ {
+  "id": "chd-112",
+  "cat": "childhood",
+  "text": "열병으로 앓아누운 사이 아버지가 날마다 병세를 일기에 적었다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    2,
+    12
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 사적 기록에는 아이의 사소한 병부터 중병까지 적혀 있어 '건강 수첩'을 재구성할 수 있을 정도다.",
+  "src": [
+   {
+    "cite": "Robin-Romero, I. (2003), 「L'enfant malade dans les écrits privés du XVIIIe siècle」, Histoire, économie et société 22(4): 469-486",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2003_num_22_4_2333"
+   }
+  ]
+ },
+ {
+  "id": "chd-113",
+  "cat": "childhood",
+  "text": "이가 나느라 열이 오르고 경련을 일으켜 온 집안이 밤을 새웠다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    0,
+    2
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 의사들의 아동 질병에 대한 관심은 세기 후반에야 커졌고, 비라방은 이를 소아의학의 태동으로 보았다.",
+  "src": [
+   {
+    "cite": "Biraben, J.-N. (1973), 「Le médecin et l'enfant au XVIIIe siècle. Aperçu sur la pédiatrie au XVIIIe siècle」, Annales de démographie historique 1973: 215-223",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1191"
+   },
+   {
+    "cite": "Robin-Romero, I. (2003), 「L'enfant malade dans les écrits privés du XVIIIe siècle」, Histoire, économie et société 22(4): 469-486",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_2003_num_22_4_2333"
+   }
+  ]
+ },
+ {
+  "id": "chd-114",
+  "cat": "childhood",
+  "text": "의사는 오지 않고 이웃 할머니가 배 위에 약초 찜질을 얹어 주었다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    0,
+    6
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "모렐은 18세기 의학 담론이 아기 돌봄을 두고 시골 유모의 관습적 지식과 대립했다고 분석했다.",
+  "src": [
+   {
+    "cite": "Morel, M.-F. (1977), 「Ville et campagne dans le discours médical sur la petite enfance au XVIIIe siècle」, Annales ESC 32(5): 1007-1024",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293876"
+   }
+  ]
+ },
+ {
+  "id": "chd-115",
+  "cat": "childhood",
+  "text": "몸을 조이던 몸통 옷 대신 헐렁한 아동복을 처음 입었다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1810
+  },
+  "who": {
+   "age": [
+    3,
+    8
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "18세기 후반 루소의 영향 아래 아이 옷은 어른 옷의 축소판에서 몸을 풀어 주는 아동복으로 바뀌어 갔다.",
+  "src": [
+   {
+    "cite": "Sanciaud-Azanza, A. (1999), 「L'évolution du costume enfantin au XVIIIe siècle : un enjeu politique et social」, Revue d'histoire moderne et contemporaine 46(4): 770-783",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1999_num_46_4_1992"
+   }
+  ]
+ },
+ {
+  "id": "chd-116",
+  "cat": "childhood",
+  "text": "딸랑이와 바람개비를 쥐고 마당을 뛰어다니며 놀았다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    1,
+    5
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "교육사 박물관 '놀이와 장난감' 전시는 딸랑이·크레셀·바람개비 같은 유아 장난감이 오래도록 이어졌음을 보여 주었다.",
+  "src": [
+   {
+    "cite": "Rabecq-Maillard, M.-M. (1962), 「Jeux et jouets de la première enfance」, Enfance 15(2): 191-194",
+    "url": "https://www.persee.fr/doc/enfan_0013-7545_1962_num_15_2_2288"
+   }
+  ]
+ },
+ {
+  "id": "chd-117",
+  "cat": "childhood",
+  "text": "막내가 걸음마를 떼자 온 식구가 둘러앉아 웃으며 손뼉을 쳤다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    4,
+    14
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "아리에스(1960)는 '아동기'에 대한 감정이 근대에 들어 가족과 학교를 중심으로 형성되었다고 주장했다.",
+  "src": [
+   {
+    "cite": "Bolzinger, A. (1975), 「Philippe Ariès, L'enfant et la vie familiale sous l'Ancien Régime」(서평), Bulletin de psychologie 28",
+    "url": "https://www.persee.fr/doc/bupsy_0007-4403_1975_num_28_316_10619_t1_0651_0000_5"
+   }
+  ]
+ },
+ {
+  "id": "chd-118",
+  "cat": "childhood",
+  "text": "새벽 구빈원 앞을 지나다 아기를 놓고 황급히 사라지는 여인을 보았다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "리모주 구빈원은 1726~89년 1만7천 명의 아이를 받았는데, 당시 도시 인구는 2만5천 명이 채 안 되었다.",
+  "src": [
+   {
+    "cite": "Peyronnet, J.-C. (1976), 「Les enfants abandonnés et leurs nourrices à Limoges au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 23(3)",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1976_num_23_3_2431"
+   }
+  ]
+ },
+ {
+  "id": "chd-119",
+  "cat": "childhood",
+  "text": "버려진 아기의 옷깃 사이에서 반으로 찢은 카드 한 장이 나왔다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    10,
+    60
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "리모주 구빈원 등록부에는 아이 옷에 끼워 둔 리본·단추·카드 같은 표식이 함께 보관되었다.",
+  "src": [
+   {
+    "cite": "Peyronnet, J.-C. (1976), 「Les enfants abandonnés et leurs nourrices à Limoges au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 23(3)",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1976_num_23_3_2431"
+   }
+  ]
+ },
+ {
+  "id": "chd-120",
+  "cat": "childhood",
+  "text": "파리 고아원 아기들을 실은 수레가 마을을 지나 유모 집들로 흩어졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "normandie",
+    "picardie",
+    "ile",
+    "champagne",
+    "bourgogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1690년과 1751년 파리 기아 기록은 아기들이 병원에서 먼 시골 유모 집으로 옮겨지는 긴 여정을 보여 준다.",
+  "src": [
+   {
+    "cite": "Robin, I. & Walch, A. (1987), 「Géographie des enfants trouvés de Paris aux XVIIe et XVIIIe siècles」, Histoire, économie et société 6(3)",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1456"
+   },
+   {
+    "cite": "Delasselle, C. (1975), 「Les enfants abandonnés à Paris au XVIIIe siècle」, Annales ESC 30(1): 187-218",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1975_num_30_1_293598"
+   }
+  ]
+ },
+ {
+  "id": "chd-121",
+  "cat": "childhood",
+  "text": "기아로 맡겨진 젖동생이 커서 파리 구빈원으로 다시 불려 갔다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    5,
+    14
+   ],
+   "region": [
+    "normandie",
+    "picardie",
+    "ile",
+    "champagne",
+    "bourgogne"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "파리 기아들은 시골 유모 집에서 자라다가 일정 나이가 되면 다시 파리로 돌아와야 했다.",
+  "src": [
+   {
+    "cite": "Robin, I. & Walch, A. (1987), 「Géographie des enfants trouvés de Paris aux XVIIe et XVIIIe siècles」, Histoire, économie et société 6(3)",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1456"
+   }
+  ]
+ },
+ {
+  "id": "chd-122",
+  "cat": "childhood",
+  "text": "아미앵에선 이제 버린 아이를 파리로 보낼 수 없다는 칙령이 내려졌다.",
+  "when": {
+   "from": 1779,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "picardie"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1779년 1월 10일 국왕 참사회 결정은 지방의 기아를 파리로 보내는 것을 금했다.",
+  "src": [
+   {
+    "cite": "Engrand, C. (1982), 「Les abandons d'enfants à Amiens vers la fin de l'Ancien Régime」, Revue du Nord 64(252): 73-92",
+    "url": "https://www.persee.fr/doc/rnord_0035-2624_1982_num_64_252_3853"
+   }
+  ]
+ },
+ {
+  "id": "chd-123",
+  "cat": "childhood",
+  "text": "아버지가 병들자 부모는 막내를 렌 구빈원에 잠시 맡겼다가 되찾았다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ],
+   "age": [
+    0,
+    6
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1770~89년 렌 생티브 병원에 들어온 아이의 27%는 적출자였고, 형편이 나아지면 부모가 데려갔다.",
+  "src": [
+   {
+    "cite": "Fujita, S. (1984), 「L'abandon d'enfants légitimes à Rennes à la fin du XVIIIe siècle」, Annales de démographie historique 1983: 151-162",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1984_num_1983_1_1573"
+   }
+  ]
+ },
+ {
+  "id": "chd-124",
+  "cat": "childhood",
+  "text": "사생아로 태어난 이웃 아기가 렌 구빈원으로 보내졌다.",
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "후지타는 18세기 말 렌에서 많은 사생아가 보호자에게 버려져 구빈원을 거쳐 유모에게 맡겨졌다고 보였다.",
+  "src": [
+   {
+    "cite": "Fujita, S. (1987), 「L'abandon d'enfants illégitimes à Rennes à la fin de l'Ancien Régime」, Histoire, économie et société 6(3): 329-342",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1987_num_6_3_1455"
+   }
+  ]
+ },
+ {
+  "id": "chd-125",
+  "cat": "childhood",
+  "text": "구빈원에서 데려온 젖먹이가 유모 집에서 시름시름 앓다 죽었다.",
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1770~89년 포르루이 병원 기아의 60% 이상이 유모 집에서 죽었고, 여덟 살까지 산 아이는 4%에 불과했다.",
+  "src": [
+   {
+    "cite": "Bruzulier, J.-L. (1989), 「Le problème des enfants abandonnés : l'exemple de l'hôpital général de Port-Louis (1770-1789)」, Annales de Bretagne et des pays de l'Ouest 96(3): 313-322",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1989_num_96_3_3332"
+   }
+  ]
+ },
+ {
+  "id": "chd-126",
+  "cat": "childhood",
+  "text": "이웃 처녀가 낳은 아기가 '아버지 미상'으로 세례 명부에 올랐다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "languedoc"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "몰리니에는 1780년 랑그도크 병원 조사 등을 토대로 기아·유기아·사생아를 구분해야 한다고 강조했다.",
+  "src": [
+   {
+    "cite": "Molinier, A. (1973), 「Enfants trouvés, enfants abandonnés et enfants illégitimes en Languedoc aux XVIIe et XVIIIe siècles」, Annales de démographie historique 1973",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_hos_1973_1_1156"
+   }
+  ]
+ },
+ {
+  "id": "chd-127",
+  "cat": "childhood",
+  "text": "그라스 구빈원 벽에 아기를 넣는 회전함이 새로 달렸다.",
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "18세기 말 그라스는 사생아·기아가 늘자 구빈원에 회전함을 설치하고 유모를 감독했다.",
+  "src": [
+   {
+    "cite": "Pollet, M. (1991), 「Les enfants abandonnés de Grasse au XVIIIe siècle」, Publications de l'École française de Rome 140: 897-903",
+    "url": "https://www.persee.fr/doc/efr_0000-0000_1991_act_140_1_4481"
+   }
+  ]
+ },
+ {
+  "id": "chd-128",
+  "cat": "childhood",
+  "text": "루앙 구빈원이 맡긴 기아들이 마을 유모 집마다 하나둘씩 있었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "바르데는 18세기 중반부터 루앙의 기아 수용이 양적으로 크게 바뀌었음을 계산으로 보였다.",
+  "src": [
+   {
+    "cite": "Bardet, J.-P. (1973), 「Enfants abandonnés et enfants assistés à Rouen dans la seconde moitié du XVIIIe siècle」, Annales de démographie historique 1973: 19-47",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_hos_1973_1_1129"
+   }
+  ]
+ },
+ {
+  "id": "chd-129",
+  "cat": "childhood",
+  "text": "아버지 장례 뒤 친척과 이웃이 모여 후견인을 정했다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1803
+  },
+  "who": {
+   "age": [
+    1,
+    16
+   ]
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "구체제 파리에서는 민사 대관이 친족·친구 회의의 의견을 들어 미성년 고아의 후견인을 임명했다.",
+  "src": [
+   {
+    "cite": "Perrier, S. (1995), 「Rôle des réseaux de parenté dans l'éducation des mineurs orphelins selon les comptes de tutelle parisiens (XVIIe-XVIIIe siècles)」, Annales de démographie historique 1995: 125-135",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1995_num_1995_1_1892"
+   }
+  ]
+ },
+ {
+  "id": "chd-130",
+  "cat": "childhood",
+  "text": "어머니가 재혼해 의붓아버지와 한 지붕 아래 살게 되었다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    2,
+    15
+   ]
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "파리 후견 문서에서 어머니의 재혼은 미성년 고아의 후견과 교육에 의붓아버지가 크게 개입하게 했다.",
+  "src": [
+   {
+    "cite": "Perrier, S. (1995), 「Rôle des réseaux de parenté dans l'éducation des mineurs orphelins selon les comptes de tutelle parisiens (XVIIe-XVIIIe siècles)」, Annales de démographie historique 1995: 125-135",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1995_num_1995_1_1892"
+   }
+  ]
+ },
+ {
+  "id": "chd-131",
+  "cat": "childhood",
+  "text": "부모를 잃고 형제들이 각기 다른 친척 집으로 흩어졌다.",
+  "fx": {
+   "soc": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    3,
+    15
+   ]
+  },
+  "w": 0.6,
+  "once": true,
+  "fact": "로뱅-로메로는 부모가 죽으면 형제자매가 흔히 갈라져 여러 집을 전전했다고 보았다.",
+  "src": [
+   {
+    "cite": "Robin-Romero, I. (1998), 「Les établissements pour orphelins à Paris aux XVIe-XVIIIe siècles」, Histoire, économie et société 17(3): 441-453",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1998_num_17_3_1996"
+   },
+   {
+    "cite": "Perrier, S. (1995), 「Rôle des réseaux de parenté dans l'éducation des mineurs orphelins selon les comptes de tutelle parisiens (XVIIe-XVIIIe siècles)」, Annales de démographie historique 1995: 125-135",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1995_num_1995_1_1892"
+   }
+  ]
+ },
+ {
+  "id": "chd-132",
+  "cat": "childhood",
+  "text": "고아원에 들어가 회색 옷을 입고 줄지어 미사에 다녔다.",
+  "fx": {
+   "faith": 1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "age": [
+    5,
+    14
+   ],
+   "estate": [
+    "peasant",
+    "artisan"
+   ]
+  },
+  "w": 0.4,
+  "once": true,
+  "fact": "17~18세기 파리에는 고아만을 받는 시설이 여럿 있었고, 로뱅-로메로는 이를 학위 논문으로 정리했다.",
+  "src": [
+   {
+    "cite": "Robin-Romero, I. (1998), 「Les établissements pour orphelins à Paris aux XVIe-XVIIIe siècles」, Histoire, économie et société 17(3): 441-453",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1998_num_17_3_1996"
+   }
+  ]
+ },
+ {
+  "id": "chd-133",
+  "cat": "education",
+  "text": "행상이 펼친 파란 표지 소책자를 한두 수에 샀다.",
+  "fx": {
+   "edu": 1,
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    10,
+    60
+   ],
+   "literate": true
+  },
+  "w": 1.3,
+  "once": false,
+  "fact": "트루아의 '파란 문고(Bibliothèque bleue)' 소책자는 한두 수에 팔려 행상을 통해 퍼졌다.",
+  "src": [
+   {
+    "cite": "Beutler, C. (1968), 「Robert Mandrou, De la culture populaire aux XVIIe et XVIIIe siècles (La Bibliothèque bleue de Troyes)」(서평), Annales ESC 23(2): 423-425",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1968_num_23_2_421924_t1_0423_0000_1"
+   },
+   {
+    "cite": "Lebrun, F. (1993), 「La culture populaire et la Bibliothèque bleue de Troyes trente ans après Robert Mandrou」, Annales de Bretagne et des pays de l'Ouest 100(4): 453-458",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1993_num_100_4_3494"
+   }
+  ]
+ },
+ {
+  "id": "chd-134",
+  "cat": "education",
+  "text": "겨울 밤샘 모임에서 글을 아는 이웃이 소책자를 소리 내 읽었다.",
+  "fx": {
+   "edu": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "마레는 파란 문고와 연감이 농촌에서 행상으로 퍼지고 밤샘 모임에서 낭독되었다고 보았다.",
+  "src": [
+   {
+    "cite": "Marais, J.-L. (1980), 「Littérature et culture « populaires » aux XVIIe et XVIIIe siècles」, Annales de Bretagne et des pays de l'Ouest 87(1): 65-105",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1980_num_87_1_3011"
+   }
+  ]
+ },
+ {
+  "id": "chd-135",
+  "cat": "education",
+  "text": "아버지가 연감을 넘겨 보며 파종 날짜와 장날을 정했다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    6,
+    16
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프랑슈콩테 농민 메르시에(1680~1772)의 가계부는 그가 시계와 함께 『메사제 부아퇴』 연감을 읽었음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Vernus, M. (2007), 「Le temps au village. Le cas de la Franche-Comté (1750-1850)」, Actes des congrès nationaux des sociétés historiques et scientifiques 129: 213-218",
+    "url": "https://www.persee.fr/doc/acths_1764-7355_2007_act_129_1_1256"
+   },
+   {
+    "cite": "Vernus, M. (1997), 「La culture écrite et le monde paysan. Le cas de la Franche-Comté (1750-1860)」, Histoire & Sociétés Rurales 7: 41-72",
+    "url": "https://www.persee.fr/doc/hsr_1254-728x_1997_num_7_1_1018"
+   }
+  ]
+ },
+ {
+  "id": "chd-136",
+  "cat": "education",
+  "text": "장날 행상에게 성인전과 농사 연감을 사서 다락에 모아 두었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "literate": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프랑슈콩테에서 19세기 전반 농민의 읽을거리는 신앙서·정치 문헌·연감·대중 과학서로 다양해졌다.",
+  "src": [
+   {
+    "cite": "Vernus, M. (1997), 「La culture écrite et le monde paysan. Le cas de la Franche-Comté (1750-1860)」, Histoire & Sociétés Rurales 7: 41-72",
+    "url": "https://www.persee.fr/doc/hsr_1254-728x_1997_num_7_1_1018"
+   }
+  ]
+ },
+ {
+  "id": "chd-137",
+  "cat": "education",
+  "text": "브르타뉴어로 된 성인전 소책자를 할머니가 성경처럼 아꼈다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브르타뉴에는 브르타뉴어로 찍은 '파란 문고'도 따로 있었다.",
+  "src": [
+   {
+    "cite": "Le Menn, G. (1985), 「Une « Bibliothèque bleue » en langue bretonne」, Annales de Bretagne et des pays de l'Ouest 92(3)",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1985_num_92_3_3190"
+   }
+  ]
+ },
+ {
+  "id": "chd-138",
+  "cat": "education",
+  "text": "『에몽의 네 아들』 같은 기사 이야기를 읽고 칼싸움 놀이를 했다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    8,
+    15
+   ],
+   "literate": true,
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "르브룅은 망드루 이후 30년 동안 파란 문고를 '민중 문화'로 보던 해석이 어떻게 수정되었는지 정리했다.",
+  "src": [
+   {
+    "cite": "Lebrun, F. (1993), 「La culture populaire et la Bibliothèque bleue de Troyes trente ans après Robert Mandrou」, Annales de Bretagne et des pays de l'Ouest 100(4): 453-458",
+    "url": "https://www.persee.fr/doc/abpo_0399-0826_1993_num_100_4_3494"
+   }
+  ]
+ },
+ {
+  "id": "chd-139",
+  "cat": "education",
+  "text": "백 년 귀족 증명서를 갖춰 파리 왕립 군사학교 입학을 청원했다.",
+  "fx": {
+   "edu": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1751,
+   "to": 1776
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    8,
+    11
+   ],
+   "estate": [
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 0.6,
+  "once": true,
+  "fact": "1751년 왕립 군사학교는 백 년 이상 귀족이며 군인의 아들인 가난한 귀족 소년 500명을 받기로 했다.",
+  "src": [
+   {
+    "cite": "Laulan, R. (1974), 「La fondation de l'École militaire et Madame de Pompadour」, Revue d'histoire moderne et contemporaine 21(2): 284-299",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1974_num_21_2_2299"
+   }
+  ]
+ },
+ {
+  "id": "chd-140",
+  "cat": "education",
+  "text": "군사학교 식당에서 처음으로 식탁보가 깔린 상에 앉았다.",
+  "when": {
+   "from": 1784,
+   "to": 1788
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    10,
+    16
+   ],
+   "estate": [
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "파리 왕립 군사학교에서는 1784년부터 학생 식탁에 식탁보를 깔았고, 학생들은 군복을 입었다.",
+  "src": [
+   {
+    "cite": "Laulan, R. (1957), 「À l'école royale militaire de Paris, la vie matérielle des élèves」, Revue historique des armées 13(1): 55-76",
+    "url": "https://www.persee.fr/doc/rharm_0035-3299_1957_num_13_1_10294"
+   }
+  ]
+ },
+ {
+  "id": "chd-141",
+  "cat": "education",
+  "text": "군사학교 졸업 시험에서 수학이 모자라 열여섯이 넘도록 남게 되었다.",
+  "fx": {
+   "edu": 1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1758,
+   "to": 1788
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    15,
+    17
+   ],
+   "estate": [
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 0.5,
+  "once": true,
+  "fact": "1758년부터 군사학교 학생은 졸업 전 시험을 치렀고, 성적이 모자라면 16세가 넘도록 남았다.",
+  "src": [
+   {
+    "cite": "Julia, D. & Compère, M.-M. (2002), 「École militaire」, Les collèges français 16e-18e siècles, t. 3 Paris, Bibliothèque de l'histoire de l'éducation 10(3): 413-422",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_2002_ant_10_3_8048"
+   }
+  ]
+ },
+ {
+  "id": "chd-142",
+  "cat": "education",
+  "text": "에피아 군사학교에 국왕 장학생으로 들어가 군복을 받았다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1776,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    8,
+    12
+   ],
+   "estate": [
+    "hobereau",
+    "epee"
+   ],
+   "region": [
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "에피아 학교는 1776년부터 왕의 군사 장학생을 받아 학생이 120명, 1787년 150명에 이르렀고 기숙비는 700리브르였다.",
+  "src": [
+   {
+    "cite": "Compère, M.-M. & Julia, D. (1984), 「Effiat, école militaire, collège de plein exercice」, Les collèges français 16e-18e siècles, t. 1: 268-275",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_1984_ant_10_1_6934"
+   }
+  ]
+ },
+ {
+  "id": "chd-143",
+  "cat": "education",
+  "text": "파리 군사학교 학생들이 소레즈 콜레주로 옮겨 온다는 소식이 돌았다.",
+  "when": {
+   "from": 1776,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    9,
+    16
+   ],
+   "region": [
+    "languedoc"
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "왕정은 파리와 라플레슈 군사학교 학생을 지방 콜레주에 나눌 때 먼저 소레즈를 떠올렸다.",
+  "src": [
+   {
+    "cite": "Compère, M.-M. & Julia, D. (1984), 「Sorèze, école militaire, collège de plein exercice」, Les collèges français 16e-18e siècles, t. 1: 608-622",
+    "url": "https://www.persee.fr/doc/inrp_0000-0000_1984_ant_10_1_7115"
+   }
+  ]
+ },
+ {
+  "id": "chd-144",
+  "cat": "education",
+  "text": "퐁텐블로 특수 군사학교에서 병사 신분으로 2년간 혹독한 훈련을 받았다.",
+  "fx": {
+   "edu": 2,
+   "hp": -1
+  },
+  "when": {
+   "from": 1803,
+   "to": 1815
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    16,
+    19
+   ],
+   "estate": [
+    "bourgeois",
+    "hobereau",
+    "epee",
+    "robe"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1802년 4월 24일 법으로 생긴 특수 군사학교는 1803년 1월 퐁텐블로에 자리 잡았고, 학생은 병사 신분으로 2년간 엄격한 규율을 받았다.",
+  "src": [
+   {
+    "cite": "Bourlet, M. (2013), 「L'École spéciale militaire et les quarante premiers « Bellifontains »」, in La construction du militaire, vol. 1, Éditions de la Sorbonne",
+    "url": "https://books.openedition.org/psorbonne/92632"
+   }
+  ]
+ },
+ {
+  "id": "chd-145",
+  "cat": "education",
+  "text": "함께 졸업한 동기들의 전사 소식이 하나둘 들려왔다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1805,
+   "to": 1815
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    28
+   ],
+   "job": [
+    "army"
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "특수 군사학교 첫 졸업생 40명 가운데 절반 가까이가 제국의 전장에서 전사했다.",
+  "src": [
+   {
+    "cite": "Bourlet, M. (2013), 「L'École spéciale militaire et les quarante premiers « Bellifontains »」, in La construction du militaire, vol. 1, Éditions de la Sorbonne",
+    "url": "https://books.openedition.org/psorbonne/92632"
+   }
+  ]
+ },
+ {
+  "id": "chd-146",
+  "cat": "education",
+  "text": "학교 선생이 성가대에서 노래하고 죽은 이의 종을 치느라 수업을 비웠다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    6,
+    12
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 교구 선생은 국가와 교회 양쪽에 매여 봉급을 받으며 마을 생활을 함께했다.",
+  "src": [
+   {
+    "cite": "Laget, M. (1971), 「Petites écoles en Languedoc au XVIIIe siècle」, Annales ESC 26(6): 1398-1418",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1971_num_26_6_422420"
+   }
+  ]
+ },
+ {
+  "id": "chd-147",
+  "cat": "education",
+  "text": "형이 콜레주에 가는 동안 동생은 집에 남아 아버지 가게를 지켰다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    9,
+    14
+   ],
+   "estate": [
+    "artisan",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "카스타녜-라르스와 마르샹은 앙시앵레짐 콜레주 학생이 엘리트 소수였음을 강조했다.",
+  "src": [
+   {
+    "cite": "Castagnet-Lars, V. & Marchand, P. (2018), 「L'histoire des élèves en France du XVIe au XVIIIe siècle : des acteurs dans l'ombre des institutions scolaires」, Histoire de l'éducation 150",
+    "url": "https://journals.openedition.org/histoire-education/4146"
+   },
+   {
+    "cite": "Cocula, A.-M. (1993), 「Contrats d'apprentissage du XVIIIe siècle : quelques enseignements d'une moisson aquitaine」, Revue d'histoire moderne et contemporaine 40(3): 423-435",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1993_num_40_3_1682"
+   }
+  ]
+ },
+ {
+  "id": "chd-148",
+  "cat": "education",
+  "text": "콜레주 문법반에서 여덟 살 꼬마와 스무 살 청년이 나란히 앉았다.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    8,
+    20
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "앙시앵레짐 콜레주 학급은 나이가 크게 섞여, 1618~20년 샬롱 오라토리오회 콜레주 문법반은 8~24세였다.",
+  "src": [
+   {
+    "cite": "Castagnet-Lars, V. & Marchand, P. (2018), 「L'histoire des élèves en France du XVIe au XVIIIe siècle : des acteurs dans l'ombre des institutions scolaires」, Histoire de l'éducation 150",
+    "url": "https://journals.openedition.org/histoire-education/4146"
+   }
+  ]
+ },
+ {
+  "id": "chd-149",
+  "cat": "education",
+  "text": "어머니가 세상을 떠나 할머니 손에 자라게 되었다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    1,
+    12
+   ]
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "로뱅-로메로는 부모 한쪽의 죽음과 재혼이 흔해 많은 아이가 여러 보호자 사이를 오갔다고 지적했다.",
+  "src": [
+   {
+    "cite": "Robin-Romero, I. (1998), 「Les établissements pour orphelins à Paris aux XVIe-XVIIIe siècles」, Histoire, économie et société 17(3): 441-453",
+    "url": "https://www.persee.fr/doc/hes_0752-5702_1998_num_17_3_1996"
+   }
+  ]
+ },
+ {
+  "id": "chd-150",
+  "cat": "education",
+  "text": "리세 장학 시험을 치르러 처음으로 도청 소재지에 갔다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1803,
+   "to": 1830
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    9,
+    12
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1802년 법은 데파르트망마다 적어도 리세를 두게 했고, 국비 장학생 제도로 학생을 모았다.",
+  "src": [
+   {
+    "cite": "Brambilla, E. (2009), 「Lycées et Université impériale. Innovations éducatives en France et influence sur l'instruction des élites en Italie (1789-1814)」, Rives méditerranéennes 32-33",
+    "url": "https://journals.openedition.org/rives/2949"
+   },
+   {
+    "cite": "Péan, F. (1904), 「Un lycée à la fondation de l'Université. Lycée de Pontivy, 1803-1816」, Annales de Bretagne 20(3): 269-295",
+    "url": "https://www.persee.fr/doc/abpo_0003-391x_1904_num_20_3_1201"
+   }
+  ]
+ },
+ {
+  "id": "chd-151",
+  "cat": "education",
+  "text": "에콜 상트랄에 간다던 친구는 결국 수업료 없는 강좌 몇 개만 골라 들었다.",
+  "when": {
+   "from": 1795,
+   "to": 1802
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    12,
+    20
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1795년 2월 첫 법은 에콜 상트랄 강좌 14개를 순서·기간·연령 제한 없이 따로 듣게 했다.",
+  "src": [
+   {
+    "cite": "Mérot, C. (1987), 「La fréquentation des écoles centrales : un aspect de l'enseignement secondaire pendant la Révolution française」, Bibliothèque de l'École des chartes 145(2): 407-426",
+    "url": "https://www.persee.fr/doc/bec_0373-6237_1987_num_145_2_450476"
+   }
+  ]
+ },
+ {
+  "id": "chd-152",
+  "cat": "education",
+  "text": "읽기를 배우는 반, 쓰기를 배우는 반으로 나뉘어 아이들이 웅성거렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    6,
+    12
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "작은 학교에서 쓰기는 탁자·깃펜·잉크·글씨본과 전문 선생이 필요해 학교 자원에 따라 가르치는 범위가 달랐다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1986), 「La lecture dans les petites écoles」, Dix-huitième siècle 18: 33-43",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1986_num_18_1_1582"
+   }
+  ]
+ },
+ {
+  "id": "chd-153",
+  "cat": "education",
+  "text": "누나는 수녀원 학교에 가고 자신은 들에 남아 소를 몰았다.",
+  "fx": {
+   "edu": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    7,
+    12
+   ],
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "포를랑은 산업화 이전에도 농가 아이들이 아주 일찍 집안 노동에 동원되었다고 지적했다.",
+  "src": [
+   {
+    "cite": "Fohlen, C. (1973), 「Révolution industrielle et travail des enfants」, Annales de démographie historique 1973: 319-325",
+    "url": "https://www.persee.fr/doc/adh_0066-2062_1973_num_1973_1_1199"
+   }
+  ]
+ },
+ {
+  "id": "chd-154",
+  "cat": "education",
+  "text": "학교에 가는 길이 진창이라 겨울 내내 나막신을 끌고 걸었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1833,
+   "to": 1850,
+   "months": [
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    6,
+    12
+   ],
+   "region": [
+    "lyon",
+    "bourgogne",
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "가리에는 론알프 10개 코뮌의 의회 기록으로 1830~80년 학교 건물 문제와 등굣길 사정을 추적했다.",
+  "src": [
+   {
+    "cite": "Garrier, G. (1992), 「Sur le chemin des écoles, en Rhône-Alpes (vers 1830-vers 1890)」, Cahier des Annales de Normandie 24: 439-451",
+    "url": "https://www.persee.fr/doc/annor_0570-1600_1992_hos_24_1_4103"
+   }
+  ]
+ },
+ {
+  "id": "chd-155",
+  "cat": "education",
+  "text": "신교도 마을 학교에서 성경 구절로 읽기를 배웠다.",
+  "fx": {
+   "edu": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "protestant",
+   "age": [
+    6,
+    12
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "16세기 후반 세워진 신교도 작은 학교와 콜레주는 종교개혁 지역의 교육을 떠받쳤다.",
+  "src": [
+   {
+    "cite": "Castagnet-Lars, V. & Marchand, P. (2018), 「L'histoire des élèves en France du XVIe au XVIIIe siècle : des acteurs dans l'ombre des institutions scolaires」, Histoire de l'éducation 150",
+    "url": "https://journals.openedition.org/histoire-education/4146"
+   }
+  ]
+ },
+ {
+  "id": "chd-156",
+  "cat": "education",
+  "text": "아이 몸이 곧게 자라야 한다며 유모가 강보 끈을 더 단단히 졸랐다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    0,
+    1
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "17세기 의사들은 강보가 팔다리를 곧게 해 아이를 짐승과 구별해 준다며 지지했다.",
+  "src": [
+   {
+    "cite": "Morel, M.-F. (1977), 「Ville et campagne dans le discours médical sur la petite enfance au XVIIIe siècle」, Annales ESC 32(5): 1007-1024",
+    "url": "https://www.persee.fr/doc/ahess_0395-2649_1977_num_32_5_293876"
+   }
+  ]
+ },
+ {
+  "id": "chd-157",
+  "cat": "education",
+  "text": "열 살에 글씨 연습장을 다 채워 선생에게 칭찬을 받았다.",
+  "fx": {
+   "edu": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    9,
+    12
+   ],
+   "literate": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "작은 학교의 셋째 단계인 셈은 쓰기를 익힌 뒤에야 시작되었다.",
+  "src": [
+   {
+    "cite": "Sonnet, M. (1986), 「La lecture dans les petites écoles」, Dix-huitième siècle 18: 33-43",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1986_num_18_1_1582"
+   },
+   {
+    "cite": "Garden, M. (2008), 「Écoles et maîtres」, in Un historien dans la ville, Éditions de la MSH",
+    "url": "https://books.openedition.org/editionsmsh/9963"
+   }
+  ]
+ },
+ {
+  "id": "chd-158",
+  "cat": "education",
+  "text": "견습을 마치고 장인 앞에서 시험 작품을 내놓을 날을 손꼽았다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    15,
+    20
+   ],
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "랑공 일대에 남은 1749~89년 견습 공증 계약은 견습생의 출신 마을과 직종을 알려 준다.",
+  "src": [
+   {
+    "cite": "Cocula, A.-M. (1971), 「Contrats d'apprentissage à Langon et autour de Langon dans la seconde moitié du XVIIIe siècle」, Revue historique de Bordeaux et du département de la Gironde 20: 107-124",
+    "url": "https://www.persee.fr/doc/rhbg_0242-6838_1971_num_20_1_1997"
+   }
+  ]
+ },
+ {
+  "id": "chd-159",
+  "cat": "education",
+  "text": "구빈원 기아 출신 친구가 열두 살에 농가 머슴으로 넘겨졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    10,
+    16
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "리모주 구빈원 기록은 기아가 죽거나, 부모에게 돌아가거나, 유모 집에 남는 등 갈래별 운명을 남겼다.",
+  "src": [
+   {
+    "cite": "Peyronnet, J.-C. (1976), 「Les enfants abandonnés et leurs nourrices à Limoges au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 23(3)",
+    "url": "https://www.persee.fr/doc/rhmc_0048-8003_1976_num_23_3_2431"
+   }
+  ]
+ },
+ {
+  "id": "chd-160",
+  "cat": "education",
+  "text": "혁명기 콜레주가 문을 닫아 라틴어 공부가 중간에 끊겼다.",
+  "fx": {
+   "edu": -2
+  },
+  "when": {
+   "from": 1791,
+   "to": 1795
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    9,
+    17
+   ],
+   "estate": [
+    "bourgeois",
+    "robe",
+    "hobereau",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "제헌·입법 의회는 정치·종교적 이유로 구체제 콜레주망을 무너뜨렸고, 재건은 테르미도르 이후에야 시작되었다.",
+  "src": [
+   {
+    "cite": "Trenard, L. (1982), 「Les écoles centrales」, Dix-huitième siècle 14: 57-74",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1982_num_14_1_1379"
+   }
+  ]
+ },
+ {
+  "id": "chd-161",
+  "cat": "education",
+  "text": "에콜 상트랄 데생 수업에서 기계 도면 그리는 법을 배웠다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1796,
+   "to": 1802
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    12,
+    15
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "에콜 상트랄 1과정은 감각을 기르고 '기계 기술'에도 쓸모 있다는 이유로 데생부터 가르쳤다.",
+  "src": [
+   {
+    "cite": "Trenard, L. (1982), 「Les écoles centrales」, Dix-huitième siècle 14: 57-74",
+    "url": "https://www.persee.fr/doc/dhs_0070-6760_1982_num_14_1_1379"
+   }
+  ]
+ }
+]
