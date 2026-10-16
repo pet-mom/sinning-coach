@@ -18,10 +18,11 @@ function dataOk(e){const w=e.wh||{},o=e.who||{};
   // 부모: true = 살아 계셔야, false = 돌아가셨어야
   if(o.fa!=null&&o.fa!==!!s.fa.alive)return false;if(o.mo!=null&&o.mo!==!!s.mo.alive)return false;
   if(o.parent!=null&&o.parent!==!!(s.fa.alive||s.mo.alive))return false;
-  if(e.k)for(const k of e.k)if(!s[k].alive)return false;
+  // 부모를 여읜 뒤의 장면: 그 부모가 최근 2년 안에 실제로 세상을 떠났을 때만 (장면이 부모를 죽이지는 않는다)
+  if(e.k)for(const k of e.k)if(s[k].alive||!(s[k].dy>=s.year-2))return false;
   return true}
 function dataPool(){if(typeof LIFE_DATA==='undefined')return [];s.cd=s.cd||{};
   return LIFE_DATA.filter(e=>{const k='d:'+e.id;if(e.o&&s.done[k])return false;if(s.cd[k]>s.year)return false;try{return dataOk(e)}catch(x){return false}})}
 async function runData(e){const k='d:'+e.id;if(e.o)s.done[k]=1;s.cd[k]=s.year+8;
-  say(e.t+fx(e.f||{}));if(e.fa)L(e.fa,'fact',{src:e.s||[]});if(e.k)for(const k of e.k)parentDies(k)}
+  say(e.t+fx(e.f||{}));if(e.fa)L(e.fa,'fact',{src:e.s||[]})}
 function srcShort(i){const x=LIFE_SRC[i];if(!x)return '';const m=x.c.match(/^([^,(]+?)\s*\((\d{4}[a-z]?)\)/);return m?`${m[1].trim()} (${m[2]})`:x.c.slice(0,40)}
