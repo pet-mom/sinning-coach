@@ -390,7 +390,7 @@ EV.push(
    {l:'보안위원회에 직접 탄원한다',s:'의지·사교 판정',a:'bold family',f:async()=>{s.flags.pleaded=true;const m=md([[s.st.soc>=50,1,'사교'],[s.st.cour>=50,1,'의지'],[s.pol>=0,1,'애국적 평판'],[s.sk.orat>=30||s.sk.pen>=40,1,'청원서를 다듬는 솜씨'],[s.rep.rpeople>=60,1,'구민들의 증언'],[s.rep.rpeople<35,-1,'구민들의 미움']]);const r=await roll(m.m,{label:'탄원',why:m.why});
      if(r.v>=5)say('위원 하나가 그대의 청원서를 끝까지 읽었다. 몇 주 뒤 남편이 석방 명령서를 받았다.'+fx({cour:3,fame:2,vfam:3,pen:1}),'big');
      else if(r.v>=3)say('청원서는 서류 더미에 묻혔다. 남편은 감옥에서 겨울을 났다.'+fx({hp:-2,sus:4,pen:1}));
-     else{if(T()<1794.5&&await chance(.6,'혁명재판소','귀족 혐의자의 사형 판결률')){s.spouse.alive=false;s.widowed++;say(`${jo(hn(),'은','는')} 혁명재판소에 회부되어 그날 오후 단두대에 올랐다.${s.region==='paris'?` 시신은 ${T()>=1794.2?'피크퓌스':'마들렌'} 묘지의 공동 구덩이에 던져졌다.`:''}`+fx({hp:-8,vord:-4}),'dark');nFac(['jacobin','cordelier'],-10)}else say('남편은 감옥에 그대로 남았다.'+fx({sus:5}))}}},
+     else{if(T()<1794.5&&await chance(.6,'혁명재판소','귀족 혐의자의 사형 판결률')){s.spouse.alive=false;s.spouse.dy=s.year;s.widowed++;say(`${jo(hn(),'은','는')} 혁명재판소에 회부되어 그날 오후 단두대에 올랐다.${s.region==='paris'?` 시신은 ${T()>=1794.2?'피크퓌스':'마들렌'} 묘지의 공동 구덩이에 던져졌다.`:''}`+fx({hp:-8,vord:-4}),'dark');nFac(['jacobin','cordelier'],-10)}else say('남편은 감옥에 그대로 남았다.'+fx({sus:5}))}}},
    {l:'뇌물로 간수를 매수한다',s:'재산 -1,500',a:'greedy',f:async()=>{s.flags.pleaded=true;s.money=Math.max(0,s.money-1500);if(await chance(.35,'매수','감옥 서기를 매수해 서류를 아래로 묻어 두는 일이 있었다'))say('감옥 서기가 남편의 서류를 맨 아래로 옮겼다. 테르미도르까지 버티면 된다.'+fx({cour:2}));else say('돈만 날렸다.'+fx({sus:5}))}},
    {l:'몸을 낮추고 기다린다',s:'',a:'safe',f:()=>{s.flags.pleaded=true;say('매일 감옥 창 아래서 손수건을 흔들었다. 남편이 창살 너머로 고개를 끄덕였다.'+fx({hp:-2}))}}]),
  S('nob_after',()=>(nfa()||bl())&&s.flags.prisonMem&&s.cond==='normal'&&T()>=1794.5,1,0,[

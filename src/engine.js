@@ -189,7 +189,8 @@ async function family(){
   for(const k of ['fa','mo']){const P=s[k];if(!P.alive)continue;if(R()<baseMort(P.age)*.95)parentDies(k)}
   if(child())return;
   // 배우자
-  if(s.spouse&&s.spouse.alive&&R()<baseMort(s.spouse.age)*.9){s.spouse.alive=false;s.widowed++;say(`${isM()?'아내':'남편'} ${jo(s.spouse.n,'이','가')} 병으로 세상을 떠났다.`+fx({hp:-5}),'big')}
+  // 배우자: 생명표 사망률에 흉년·도시·전쟁(남편이 군인) 위험을 더한다. 18세기 혼인의 평균 지속 기간은 약 17~20년(Dupâquier)
+  if(s.spouse&&s.spouse.alive&&R()<baseMort(s.spouse.age)*1.3*(price(s.year)>=1.5?1.3:1)*(urban()?1.1:1)*(!isM()&&atWar()&&s.spouse.age<45&&R()<.3?1.6:1)){s.spouse.alive=false;s.spouse.dy=s.year;s.widowed++;say(`${isM()?'아내':'남편'} ${jo(s.spouse.n,'이','가')} 병으로 세상을 떠났다.`+fx({hp:-5}),'big')}
   // 출산
   const motherAge=isM()?(s.spouse&&s.spouse.alive?s.spouse.age:0):s.age;
   if(s.spouse&&s.spouse.alive&&s.cond!=='emigre'&&s.cond!=='prison'&&motherAge>=17&&motherAge<=44){
@@ -197,9 +198,9 @@ async function family(){
     if(R()<p){const sx=R()<.51?'M':'F';const nm=pick(sx==='M'?M_NAMES:F_NAMES)[0];s.kids.push({n:nm,sex:sx,y:s.year,alive:true});
       if(!isM()){if(R()<.011*(motherAge>35?1.5:1)*(s.hard?1:.5)){say(`${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳았다.`);die('childbirth');return}
         say(`${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳았다.`+fx({hp:-4}))}
-      else{if(R()<.011){s.spouse.alive=false;s.widowed++;say(`아내가 ${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳다가 숨을 거두었다.`+fx({hp:-6}),'big')}else say(`아내가 ${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳았다.`)}}}
+      else{if(R()<.011){s.spouse.alive=false;s.spouse.dy=s.year;s.widowed++;say(`아내가 ${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳다가 숨을 거두었다.`+fx({hp:-6}),'big')}else say(`아내가 ${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳았다.`)}}}
   // 자녀 사망
-  for(const k of s.kids){if(!k.alive)continue;const a=s.year-k.y;if(a<20&&R()<childP(a)){k.alive=false;say(`${a<1?'갓난':a+'살 난'} ${k.sex==='M'?'아들':'딸'} ${jo(k.n,'이','가')} ${a<5?pick(['열병','천연두','이질','경련']):pick(['열병','천연두','디프테리아'])}으로 죽었다.`+fx({hp:-3}))}}
+  for(const k of s.kids){if(!k.alive)continue;const a=s.year-k.y;if(a<20&&R()<childP(a)*(price(s.year)>=1.5&&!rich()?1.3:1)*(urban()&&a<2?1.15:1)){k.alive=false;k.dy=s.year;say(`${a<1?'갓난':a+'살 난'} ${k.sex==='M'?'아들':'딸'} ${jo(k.n,'이','가')} ${a<5?pick(['열병','천연두','이질','경련']):pick(['열병','천연두','디프테리아'])}으로 죽었다.`+fx({hp:-3}))}}
 }
 async function marriageCheck(){if(s.married&&s.spouse&&s.spouse.alive)return;if(priest()||nun())return;
   if(s.married&&s.age>55)return;

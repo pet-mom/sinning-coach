@@ -1760,7 +1760,8 @@
     30,
     65
    ],
-   "urban": false
+   "urban": false,
+   "widow": true
   },
   "w": 1,
   "once": false,
@@ -2825,7 +2826,7 @@
   },
   "who": {
    "urban": true,
-   "married": true
+   "lostBaby": true
   },
   "w": 1,
   "once": false,
@@ -4458,7 +4459,8 @@
    "age": [
     20,
     50
-   ]
+   ],
+   "widow": true
   },
   "w": 0.6,
   "once": false,
