@@ -1,0 +1,5533 @@
+[
+ {
+  "id": "rur-001",
+  "cat": "rural",
+  "text": "얼어붙은 헛간 바닥에서 새벽부터 도리깨를 휘둘러 밀단을 털었다. 손바닥에 물집이 터졌다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "sex": "M",
+   "age": [
+    14,
+    65
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "탈곡은 수확 직후가 아니라 겨울 내내 헛간에서 도리깨로 조금씩 이루어졌고, 겨울철 농촌의 주된 일거리였다.",
+  "src": [
+   {
+    "cite": "Escallier, R. (1978), 「Battage et « reboule » dans un village du Champsaur」, Le Monde alpin et rhodanien 6(3): 251-253",
+    "url": "https://doi.org/10.3406/mar.1978.1069"
+   },
+   {
+    "cite": "Sigaut, F. (1985), 「Moisson et fenaison」, Les Nouvelles de l'archéologie 19: 28-38",
+    "url": "https://doi.org/10.3406/nda.1985.1412"
+   }
+  ]
+ },
+ {
+  "id": "rur-002",
+  "cat": "work",
+  "text": "도리깨 품을 팔러 큰 농가 헛간에 들어가 하루 종일 일하고 곡식 몇 되를 받았다.",
+  "fx": {
+   "money": 4,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 북부 대농장에서는 탈곡꾼에게 곡물 몫(보통 탈곡량의 일정 비율)으로 품삯을 주는 일이 흔했다.",
+  "src": [
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   },
+   {
+    "cite": "Bernet, J. (1999), 「Les grèves de moissonneurs ou « bacchanals » dans les campagnes d'Île-de-France et de Picardie au XVIIIe siècle」, Histoire & Sociétés Rurales 11: 153-186",
+    "url": "https://doi.org/10.3406/hsr.1999.1091"
+   }
+  ]
+ },
+ {
+  "id": "rur-003",
+  "cat": "rural",
+  "text": "이른 봄, 겨리를 메운 소 두 마리를 몰고 귀리 밭을 갈았다. 쟁기날이 돌에 부딪혀 튀었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "sex": "M",
+   "age": [
+    14,
+    65
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "삼포식 지대에서는 봄밭(mars)에 귀리·보리를 3~4월에 뿌리고, 가을밭에 밀·호밀을 10~11월에 뿌렸다.",
+  "src": [
+   {
+    "cite": "Faucher, D. (1961), 「L'assolement triennal en France」, Études rurales 1: 7-17",
+    "url": "https://doi.org/10.3406/rural.1961.959"
+   }
+  ]
+ },
+ {
+  "id": "rur-004",
+  "cat": "rural",
+  "text": "가을비가 그친 틈에 밀 씨를 손으로 흩뿌리고 써레로 덮었다. 까마귀 떼가 뒤따랐다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "sex": "M",
+   "age": [
+    14,
+    70
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "북부 삼포식 농업에서 겨울 곡물(밀·호밀·메테유) 파종은 10~11월에 집중되었다.",
+  "src": [
+   {
+    "cite": "Faucher, D. (1961), 「L'assolement triennal en France」, Études rurales 1: 7-17",
+    "url": "https://doi.org/10.3406/rural.1961.959"
+   },
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   }
+  ]
+ },
+ {
+  "id": "rur-005",
+  "cat": "rural",
+  "text": "풀베기 철, 이슬이 마르기 전에 낫질을 시작했다. 정오엔 온 식구가 건초를 뒤집었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    6
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "건초 수확(fenaison)은 6월에 이루어졌고 곡물 수확보다 앞서 낫(faux)으로 풀을 베었다.",
+  "src": [
+   {
+    "cite": "Sigaut, F. (1985), 「Moisson et fenaison」, Les Nouvelles de l'archéologie 19: 28-38",
+    "url": "https://doi.org/10.3406/nda.1985.1412"
+   }
+  ]
+ },
+ {
+  "id": "rur-006",
+  "cat": "rural",
+  "text": "한여름 볕 아래 허리를 굽혀 반달낫으로 밀을 베었다. 해 질 녘엔 허리가 펴지지 않았다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "age": [
+    12,
+    65
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "밀은 낟알이 쉽게 떨어져 19세기까지 주로 반달낫(faucille)으로 베었고, 큰낫(faux)은 귀리에 쓰였다.",
+  "src": [
+   {
+    "cite": "Grantham, G. (1999), 「La faucille et la faux」, Études rurales 151: 103-131",
+    "url": "https://doi.org/10.3406/rural.1999.4118"
+   }
+  ]
+ },
+ {
+  "id": "rur-007",
+  "cat": "rural",
+  "text": "귀리 밭은 남자들이 큰낫으로 쓱쓱 베어 나갔다. 뒤따르며 단을 묶느라 숨이 찼다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "큰낫은 반달낫보다 훨씬 빨랐지만 밀에서는 낟알 손실이 커서 귀리와 건초에 주로 쓰였다.",
+  "src": [
+   {
+    "cite": "Grantham, G. (1999), 「La faucille et la faux」, Études rurales 151: 103-131",
+    "url": "https://doi.org/10.3406/rural.1999.4118"
+   },
+   {
+    "cite": "Sigaut, F. (1985), 「Moisson et fenaison」, Les Nouvelles de l'archéologie 19: 28-38",
+    "url": "https://doi.org/10.3406/nda.1985.1412"
+   }
+  ]
+ },
+ {
+  "id": "rur-008",
+  "cat": "work",
+  "text": "추수꾼 무리와 함께 대농장 밀밭에 고용되었다. 품삯이 적다며 일꾼들이 들고일어나 일을 멈췄다.",
+  "fx": {
+   "money": 6,
+   "pol": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    50
+   ],
+   "region": [
+    "ile",
+    "picardie",
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 일드프랑스·피카르디 대농장 지대에서는 계절 추수꾼들이 '바카날'이라 불린 폭력적 파업을 벌이곤 했다.",
+  "src": [
+   {
+    "cite": "Bernet, J. (1999), 「Les grèves de moissonneurs ou « bacchanals » dans les campagnes d'Île-de-France et de Picardie au XVIIIe siècle」, Histoire & Sociétés Rurales 11: 153-186",
+    "url": "https://doi.org/10.3406/hsr.1999.1091"
+   }
+  ]
+ },
+ {
+  "id": "rur-009",
+  "cat": "rural",
+  "text": "추수가 끝난 그루터기 밭에 아이들과 함께 이삭을 주우러 나갔다. 해 질 때까지 한 자루를 채웠다.",
+  "fx": {
+   "money": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "age": [
+    6,
+    80
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "이삭줍기(glanage)는 노인·과부·아이 등 빈민에게 관습적으로 허용된 권리로, 수확 직후 일정 기간에만 허락되었다.",
+  "src": [
+   {
+    "cite": "Vivier, N. (1987), 「Cueillir et glaner dans la forêt normande」, Journal d'agriculture traditionnelle et de botanique appliquée 34(1): 95-111",
+    "url": "https://doi.org/10.3406/jatba.1987.3966"
+   },
+   {
+    "cite": "Clère, J.-J. (1993), 「La vaine pâture en France sous l'Ancien Régime. Essai de géographie coutumière」, HAL halshs-00203205",
+    "url": "https://shs.hal.science/halshs-00203205v1"
+   }
+  ]
+ },
+ {
+  "id": "rur-010",
+  "cat": "rural",
+  "text": "그루터기 밭이 열리자 마을 소와 양이 한데 몰려 남의 밭을 가리지 않고 풀을 뜯었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "공동방목(vaine pâture)은 수확 뒤 사유지 그루터기와 휴경지에 마을 가축을 놓아 먹이던 관습으로, 북동부에서 특히 강했다.",
+  "src": [
+   {
+    "cite": "Clère, J.-J. (1993), 「La vaine pâture en France sous l'Ancien Régime. Essai de géographie coutumière」, HAL halshs-00203205",
+    "url": "https://shs.hal.science/halshs-00203205v1"
+   }
+  ]
+ },
+ {
+  "id": "rur-011",
+  "cat": "rural",
+  "text": "영주가 정한 포도 수확 금지령(ban)이 풀리던 날, 온 마을이 바구니를 들고 포도밭으로 몰려갔다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    9,
+    10
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bourgogne",
+    "champagne",
+    "bordeaux",
+    "languedoc",
+    "provence",
+    "ile",
+    "lyon"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "포도 수확일은 공동체나 영주가 공포하는 '방 데 방당주(ban des vendanges)'로 정해졌고, 그 기록은 기후사 자료로도 쓰인다.",
+  "src": [
+   {
+    "cite": "Allix, A. (1922), 「La date des vendanges en France」, Annales de Géographie 31(174): 518-519",
+    "url": "https://doi.org/10.3406/geo.1922.10090"
+   }
+  ]
+ },
+ {
+  "id": "rur-012",
+  "cat": "work",
+  "text": "포도를 밟아 짓이기고 영주의 압착기에 실어 갔다. 압착 삯으로 포도즙 일부를 떼였다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    9,
+    10
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bourgogne",
+    "champagne",
+    "lyon",
+    "bordeaux"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "압착기 바날리테(pressoir banal)는 영주 압착기 사용을 강제하고 사용료를 현물로 받는 권리였다.",
+  "src": [
+   {
+    "cite": "Sée, H. (1908), 「La portée du régime seigneurial au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 10(3): 173-191",
+    "url": "https://doi.org/10.3406/rhmc.1908.4573"
+   },
+   {
+    "cite": "Stella, A. (1996), 「Le profil social des vignerons de la Bourgogne du Nord du XIVe au XVIIIe siècle」, Bulletin du Centre Pierre Léon 1996(3): 71-82",
+    "url": "https://doi.org/10.3406/pleon.1996.1535"
+   }
+  ]
+ },
+ {
+  "id": "rur-013",
+  "cat": "food",
+  "text": "가을 숲에서 밤송이를 까 자루에 담았다. 겨우내 밤죽으로 버틸 양식이었다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "auvergne",
+    "languedoc",
+    "gascogne"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "마시프상트랄 남부·세벤·페리고르의 밤나무 지대에서 밤은 겨울 몇 달간 주식 노릇을 했다.",
+  "src": [
+   {
+    "cite": "Grosdidier de Matons, M. (1927), 「La Châtaigneraie cantalienne」, Revue de géographie alpine 15(2): 249-277",
+    "url": "https://doi.org/10.3406/rga.1927.5029"
+   },
+   {
+    "cite": "Depain, C. (1936), 「La châtaigneraie périgourdine」, Revue géographique des Pyrénées et du Sud-Ouest 7(4): 340-365",
+    "url": "https://doi.org/10.3406/rgpso.1936.4234"
+   },
+   {
+    "cite": "Guillaume, A. (1942), 「La récolte, le traitement et la conservation des châtaignes en France」, Revue de botanique appliquée 22(249): 259-263",
+    "url": "https://doi.org/10.3406/jatba.1942.1702"
+   }
+  ]
+ },
+ {
+  "id": "rur-014",
+  "cat": "food",
+  "text": "오두막 다락 훈연 건조장(clède)에 밤을 깔고 불을 지폈다. 연기가 며칠이고 지붕 사이로 새어 나왔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11,
+    12
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "languedoc",
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "세벤 등지에서는 밤을 훈연 건조장에서 말려 껍질을 벗겨 1년 내내 저장했다.",
+  "src": [
+   {
+    "cite": "Guillaume, A. (1942), 「La récolte, le traitement et la conservation des châtaignes en France」, Revue de botanique appliquée 22(249): 259-263",
+    "url": "https://doi.org/10.3406/jatba.1942.1702"
+   },
+   {
+    "cite": "Grosdidier de Matons, M. (1927), 「La Châtaigneraie cantalienne」, Revue de géographie alpine 15(2): 249-277",
+    "url": "https://doi.org/10.3406/rga.1927.5029"
+   }
+  ]
+ },
+ {
+  "id": "rur-015",
+  "cat": "rural",
+  "text": "6월, 마을 양 떼가 목동을 따라 산 위 여름 목장으로 떠났다. 방울 소리가 골짜기를 울렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    6
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "provence",
+    "languedoc",
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프로방스·랑그도크의 양은 여름에 알프스·세벤 고지로 이동하는 이목(transhumance)을 했고, 1814~1840년에는 국경 세관 문제도 겪었다.",
+  "src": [
+   {
+    "cite": "Compan, A. (1961), 「Transhumance et douanes aux confins des Basses-Alpes et du Haut Comté de Nice (1814-1840)」, Provence historique 11(46): 343-353",
+    "url": "https://doi.org/10.3406/prohi.1961.3841"
+   },
+   {
+    "cite": "Lassalle, V. (2001), 「Terres communes et délimitations de territoires à partir des litiges sur la transhumance」, Provence historique 51(206): 445-465",
+    "url": "https://doi.org/10.3406/prohi.2001.2207"
+   }
+  ]
+ },
+ {
+  "id": "rur-016",
+  "cat": "rural",
+  "text": "가을, 산에서 내려온 양 떼가 마을 경계를 넘어 남의 목초지를 뜯어 먹어 다툼이 벌어졌다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    9,
+    10
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "provence",
+    "languedoc"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "이목로와 공유지 경계를 둘러싼 소송은 프로방스 공동체 간 영토 경계를 정하는 주요 계기였다.",
+  "src": [
+   {
+    "cite": "Lassalle, V. (2001), 「Terres communes et délimitations de territoires à partir des litiges sur la transhumance」, Provence historique 51(206): 445-465",
+    "url": "https://doi.org/10.3406/prohi.2001.2207"
+   }
+  ]
+ },
+ {
+  "id": "rur-017",
+  "cat": "rural",
+  "text": "방앗간에 밀을 지고 갔더니 방앗간지기가 몫을 떼고 밀가루를 덜 내주는 것 같았다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "방앗간 사용료(mouture)는 보통 곡물의 1/16 안팎을 현물로 떼었고, 방앗간지기는 늘 속임수를 의심받았다.",
+  "src": [
+   {
+    "cite": "Bardagot, E. et Sabatier, A. (1979), 「Moulins et meuniers en Valgaudemar」, Le Monde alpin et rhodanien 7(1): 365-393",
+    "url": "https://doi.org/10.3406/mar.1979.1078"
+   },
+   {
+    "cite": "Sée, H. (1908), 「La portée du régime seigneurial au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 10(3): 173-191",
+    "url": "https://doi.org/10.3406/rhmc.1908.4573"
+   }
+  ]
+ },
+ {
+  "id": "rur-018",
+  "cat": "rural",
+  "text": "한겨울 돼지를 잡았다. 이웃이 모여 피를 받아 순대를 만들고 기름을 녹였다.",
+  "fx": {
+   "hp": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    12,
+    1
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "농가 대부분에게 겨울에 잡는 돼지 한 마리가 1년 육류 섭취의 대부분이었다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   }
+  ]
+ },
+ {
+  "id": "rur-019",
+  "cat": "rural",
+  "text": "겨울 밤, 이웃집 외양간에 모여 실을 잣고 삼을 다듬으며 이야기를 나눴다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "겨울 저녁의 '베이예(veillée)'는 난방비를 아끼려 외양간 온기 곁에 모여 길쌈과 수작업을 하던 관습이었다.",
+  "src": [
+   {
+    "cite": "Cailly, C. (1998), 「Structure sociale et consommation dans le monde proto-industriel rural textile : le Perche ornais au XVIIIe siècle」, RHMC 45(4): 746-774",
+    "url": "https://doi.org/10.3406/rhmc.1998.1934"
+   },
+   {
+    "cite": "Lick, R. (1970), 「Les intérieurs domestiques dans la seconde moitié du XVIIIe siècle d'après les inventaires après décès de Coutances」, Annales de Normandie 20(4): 293-316",
+    "url": "https://doi.org/10.3406/annor.1970.5046"
+   }
+  ]
+ },
+ {
+  "id": "rur-020",
+  "cat": "rural",
+  "text": "3월 휴경지에 퇴비를 펼쳤다. 거름이 늘 모자라 밭 절반에만 뿌릴 수 있었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "가축 수가 적어 거름이 부족했던 것이 18세기 프랑스 곡물 수확률을 낮게 묶어 둔 핵심 요인이었다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   }
+  ]
+ },
+ {
+  "id": "rur-021",
+  "cat": "rural",
+  "text": "마을 밭은 세 구역으로 나뉘어 있었다. 올해 휴경 구역엔 쟁기 한 번 대지 못하게 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "picardie",
+    "champagne",
+    "ile",
+    "normandie",
+    "alsace",
+    "bourgogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "북부 오픈필드 지대는 겨울곡·봄곡·휴경을 돌리는 삼포식 강제 윤작(assolement)과 공동 규율을 따랐다.",
+  "src": [
+   {
+    "cite": "Faucher, D. (1961), 「L'assolement triennal en France」, Études rurales 1: 7-17",
+    "url": "https://doi.org/10.3406/rural.1961.959"
+   }
+  ]
+ },
+ {
+  "id": "rur-022",
+  "cat": "rural",
+  "text": "남쪽 밭은 한 해 걸러 쉬었다. 밀을 거둔 땅은 이듬해 내내 양들이 차지했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "languedoc",
+    "provence",
+    "gascogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "남프랑스는 밀과 휴경을 번갈아 하는 이포식(assolement biennal)이 일반적이었다.",
+  "src": [
+   {
+    "cite": "Faucher, D. (1934), 「Polyculture ancienne et assolement biennal dans la France méridionale」, Revue géographique des Pyrénées et du Sud-Ouest 5(3): 241-255",
+    "url": "https://doi.org/10.3406/rgpso.1934.4149"
+   }
+  ]
+ },
+ {
+  "id": "rur-023",
+  "cat": "rural",
+  "text": "산울타리와 둑으로 둘러싸인 작은 밭들 사이로 진창길을 걸어 외딴 농가로 돌아왔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bretagne",
+    "vendee",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "서부 보카주 지대는 산울타리로 둘러친 밭과 흩어진 농가, 목축 비중이 큰 체계였다.",
+  "src": [
+   {
+    "cite": "Bossis, P. (1983), 「L'ouvrier du Haut Bocage et de la Sèvre Nantaise au XVIIIe siècle」, Cahiers du Centre nantais de recherche 22: 24-31",
+    "url": "https://doi.org/10.3406/canan.1983.1778"
+   },
+   {
+    "cite": "Bossis, P. (1980), 「La foire aux bestiaux en Vendée au XVIIIe siècle」, Études rurales 78: 143-150",
+    "url": "https://doi.org/10.3406/rural.1980.2633"
+   }
+  ]
+ },
+ {
+  "id": "rur-024",
+  "cat": "economy",
+  "text": "지주의 집사가 와서 수확한 밀을 반으로 나눴다. 좋은 단은 늘 지주 몫으로 갔다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "gascogne",
+    "auvergne",
+    "bourgogne",
+    "languedoc",
+    "vendee"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "중부·남서부에 널리 퍼진 분익소작(métayage)에서는 수확을 지주와 대개 절반씩 나누었다.",
+  "src": [
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Fermage et métayage (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 155-190",
+    "url": "https://doi.org/10.3406/hsr.1994.864"
+   }
+  ]
+ },
+ {
+  "id": "rur-025",
+  "cat": "economy",
+  "text": "새 임대 계약서에 9년 기한과 해마다 낼 지대가 적혔다. 서명 대신 십자 표시를 그었다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "ile",
+    "picardie",
+    "normandie",
+    "champagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리 분지 등 북부에서는 9년 단위 현금 정액 차지(fermage)가 지배적이었다.",
+  "src": [
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Fermage et métayage (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 155-190",
+    "url": "https://doi.org/10.3406/hsr.1994.864"
+   }
+  ]
+ },
+ {
+  "id": "rur-026",
+  "cat": "economy",
+  "text": "분익소작 계약에 양 떼 절반이 지주 소유로 적혀 있었다. 새끼 양도 반을 내야 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "languedoc",
+    "gascogne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "랑그도크 오트 지방에서는 양 떼도 분익 계약으로 맡겨 증식분을 지주와 나누었다.",
+  "src": [
+   {
+    "cite": "De Falguerolles, G. (1963), 「Le troupeau ovin en métayage au XVIIIe siècle」, Revue géographique des Pyrénées et du Sud-Ouest 34(4): 369-386",
+    "url": "https://doi.org/10.3406/rgpso.1963.4766"
+   }
+  ]
+ },
+ {
+  "id": "rur-027",
+  "cat": "economy",
+  "text": "이웃 부르주아에게서 암소 한 마리를 '셰텔' 계약으로 맡았다. 송아지 값은 반씩 나누기로 했다.",
+  "fx": {
+   "money": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "bourgogne",
+    "auvergne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "가축을 맡아 기르고 증식분을 나누는 '단순 가축 임대(bail à cheptel)'는 부르고뉴 오수아 등에서 18~19세기 내내 흔했다.",
+  "src": [
+   {
+    "cite": "Fortunet, F. (1979), 「Les baux à cheptel simple en Auxois aux XVIIIe et XIXe siècles」, AHRF 238: 679-682",
+    "url": "https://doi.org/10.3406/ahrf.1979.4367"
+   }
+  ]
+ },
+ {
+  "id": "rur-028",
+  "cat": "rural",
+  "text": "바스브르타뉴 소작지에서 건물과 산울타리는 내 것이지만 땅은 영주 것이라, 언제든 쫓겨날 수 있었다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브르타뉴 서부의 '도멘 콩제아블(domaine congéable)'에서는 소작인이 건물을 소유하되 지주가 보상 후 퇴거시킬 수 있었다.",
+  "src": [
+   {
+    "cite": "Le Bloas, A. (2003), 「La question du domaine congéable dans l'actuel Finistère à la veille de la Révolution」, AHRF 331: 1-27",
+    "url": "https://doi.org/10.3406/ahrf.2003.2644"
+   }
+  ]
+ },
+ {
+  "id": "rur-029",
+  "cat": "rural",
+  "text": "포도밭 한 뙈기를 새로 샀다. 남의 포도밭에서 품을 팔아 모은 돈이었다.",
+  "fx": {
+   "money": -40
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "bourgogne",
+    "champagne",
+    "ile",
+    "lyon"
+   ]
+  },
+  "w": 0.6,
+  "once": true,
+  "fact": "포도 재배 농민은 작은 땅을 사고팔며 토지 시장에 활발히 참여했고, 루아르 앙부아즈 일대가 대표적 사례다.",
+  "src": [
+   {
+    "cite": "Jollet, A. (1997), 「Les vignerons et le marché immobilier de l'Ancien Régime à l'Empire, dans la région d'Amboise」, Dix-huitième Siècle 29: 69-88",
+    "url": "https://doi.org/10.3406/dhs.1997.2160"
+   }
+  ]
+ },
+ {
+  "id": "rur-030",
+  "cat": "work",
+  "text": "남의 포도밭을 맡아 가지치기와 김매기를 했다. 1년 내내 품이 들었다.",
+  "fx": {
+   "money": 4,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "bourgogne",
+    "champagne",
+    "bordeaux",
+    "languedoc"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "부르고뉴 북부 포도 농민 다수는 자기 땅이 적어 남의 포도밭 노동에 의존했다.",
+  "src": [
+   {
+    "cite": "Stella, A. (1996), 「Le profil social des vignerons de la Bourgogne du Nord du XIVe au XVIIIe siècle」, Bulletin du Centre Pierre Léon 1996(3): 71-82",
+    "url": "https://doi.org/10.3406/pleon.1996.1535"
+   }
+  ]
+ },
+ {
+  "id": "rur-031",
+  "cat": "economy",
+  "text": "올해 밀은 뿌린 한 말에 고작 네 말이 났다. 씨앗을 떼고 나니 먹을 것이 빠듯했다.",
+  "fx": {
+   "money": -3,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "auvergne",
+    "bretagne",
+    "gascogne",
+    "languedoc",
+    "vendee"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "척박한 지역의 밀 수확률은 파종량 대비 4~5배 수준에 그쳤다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Frêche, G. (1973), 「La production agricole dans la région toulousaine au XVIIIe siècle et au début du XIXe siècle」, Cahiers de la Méditerranée 1: 23-55",
+    "url": "https://doi.org/10.3406/camed.1973.1781"
+   }
+  ]
+ },
+ {
+  "id": "rur-032",
+  "cat": "economy",
+  "text": "플랑드르 쪽 비옥한 땅에선 씨앗 한 말에 열 말이 난다는 소문을 들었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "picardie",
+    "ile",
+    "normandie",
+    "alsace"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "파리 분지 대농장 등 최상급 지역에서는 수확률이 파종량의 8~10배에 이르기도 했다.",
+  "src": [
+   {
+    "cite": "Chevet, J.-M. (1994), 「Production et productivité : un modèle de développement économique des campagnes de la région parisienne」, Histoire & Mesure 9(1): 101-145",
+    "url": "https://doi.org/10.3406/hism.1994.1430"
+   },
+   {
+    "cite": "Hoffman, P. T. (1996/2018), Growth in a Traditional Society: The French Countryside, 1450-1815, Princeton University Press",
+    "url": "https://doi.org/10.2307/j.ctv39x522"
+   }
+  ]
+ },
+ {
+  "id": "rur-033",
+  "cat": "economy",
+  "text": "새 농법이라며 휴경지에 클로버를 심은 대농이 있었다. 마을 사람들은 고개를 저었다.",
+  "when": {
+   "from": 1760,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "휴경지에 사료작물을 심는 혁신은 18세기 후반부터 느리게 퍼졌고, '농업혁명'의 속도는 지역마다 크게 달랐다.",
+  "src": [
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   },
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   }
+  ]
+ },
+ {
+  "id": "rur-034",
+  "cat": "economy",
+  "text": "툴루즈 평야 소작농들은 옥수수를 늘려 심어 밀을 팔고 옥수수를 먹었다.",
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "gascogne",
+    "languedoc"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 툴루즈 지역에서는 옥수수 재배 확대로 밀을 시장에 내다 팔 여력이 커졌다.",
+  "src": [
+   {
+    "cite": "Frêche, G. (1973), 「La production agricole dans la région toulousaine au XVIIIe siècle et au début du XIXe siècle」, Cahiers de la Méditerranée 1: 23-55",
+    "url": "https://doi.org/10.3406/camed.1973.1781"
+   },
+   {
+    "cite": "Perez, J. (1944), 「La révolution agricole du XVIIIe siècle en Gascogne gersoise」, Revue géographique des Pyrénées et du Sud-Ouest 15(1): 56-105",
+    "url": "https://doi.org/10.3406/rgpso.1944.1205"
+   }
+  ]
+ },
+ {
+  "id": "rur-035",
+  "cat": "economy",
+  "text": "농업 생산이 아주 조금씩 늘었다는 말을 들었다. 밭에서 일하는 나는 거의 느끼지 못했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "literate": true
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "호프만은 1450~1815년 프랑스 농촌 생산성이 정체가 아니라 시장 접근성에 따라 완만히 성장했다고 보았다.",
+  "src": [
+   {
+    "cite": "Hoffman, P. T. (1996/2018), Growth in a Traditional Society: The French Countryside, 1450-1815, Princeton University Press",
+    "url": "https://doi.org/10.2307/j.ctv39x522"
+   }
+  ]
+ },
+ {
+  "id": "rur-036",
+  "cat": "economy",
+  "text": "도시 근처 마을에서는 농사만 짓는 집과 수공업만 하는 집이 갈라지고 있었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "농업 생산성이 높은 지역일수록 비농업 직업 분화가 진전되었다.",
+  "src": [
+   {
+    "cite": "Grantham, G. (1993), 「Divisions of Labour: Agricultural Productivity and Occupational Specialization in Pre-Industrial France」, Economic History Review 46(3): 478-502",
+    "url": "https://doi.org/10.2307/2598364"
+   }
+  ]
+ },
+ {
+  "id": "rur-037",
+  "cat": "rural",
+  "text": "가진 땅이 쟁기질 소도 못 둘 만큼 작아, 큰 농가의 쟁기를 빌리고 대신 품을 갚았다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "농촌은 쟁기와 말을 가진 '라부뢰르'와 손노동뿐인 '마누브리에'로 크게 나뉘었다.",
+  "src": [
+   {
+    "cite": "Boehler, J.-M. (1976), 「Communauté villageoise et contrastes sociaux : laboureurs et manouvriers dans la campagne strasbourgeoise」, Études rurales 63: 93-116",
+    "url": "https://doi.org/10.3406/rural.1976.2170"
+   },
+   {
+    "cite": "Dickinson, J. (1992), 「L'outillage agricole et le cheptel dans la plaine de Caen au XVIIIe siècle」, Cahier des Annales de Normandie 24: 123-133",
+    "url": "https://doi.org/10.3406/annor.1992.4078"
+   }
+  ]
+ },
+ {
+  "id": "rur-038",
+  "cat": "rural",
+  "text": "마을의 큰 라부뢰르가 말 넉 대와 쟁기를 앞세워 지나갔다. 그 집엔 늘 품팔이가 몰렸다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "알자스 스트라스부르 근교에서도 라부뢰르와 마누브리에 사이의 격차가 마을 공동체를 구조화했다.",
+  "src": [
+   {
+    "cite": "Boehler, J.-M. (1976), 「Communauté villageoise et contrastes sociaux : laboureurs et manouvriers dans la campagne strasbourgeoise」, Études rurales 63: 93-116",
+    "url": "https://doi.org/10.3406/rural.1976.2170"
+   }
+  ]
+ },
+ {
+  "id": "rur-039",
+  "cat": "food",
+  "text": "하루 품삯 대부분이 빵값으로 나갔다. 어른 한 사람이 하루 빵 서너 근을 먹었다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "18세기 노동 성인은 하루 약 1~1.5kg(2~3리브르)의 빵을 먹었고, 빵은 서민 가계 지출의 절반가량을 차지했다.",
+  "src": [
+   {
+    "cite": "Forster, R. (1977), compte rendu de S. L. Kaplan, Bread, Politics and Political Economy in the Reign of Louis XV, American Historical Review 82(5): 1263",
+    "url": "https://doi.org/10.2307/1856426"
+   },
+   {
+    "cite": "Grenier, J.-Y. (1995), 「Consommation et marché au XVIIIe siècle」, Histoire & Mesure 10(3): 371-380",
+    "url": "https://doi.org/10.3406/hism.1995.1561"
+   }
+  ]
+ },
+ {
+  "id": "rur-040",
+  "cat": "food",
+  "text": "흰 밀빵은 구경도 못 했다. 호밀과 밀을 섞은 거무스름한 메테유 빵을 한 주일 치 구웠다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "농민은 밀보다 값싼 호밀이나 밀·호밀 혼합(méteil) 빵을 주로 먹었고 큰 덩이를 한꺼번에 구워 오래 두었다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Forster, R. (1977), compte rendu de S. L. Kaplan, Bread, Politics and Political Economy in the Reign of Louis XV, American Historical Review 82(5): 1263",
+    "url": "https://doi.org/10.2307/1856426"
+   }
+  ]
+ },
+ {
+  "id": "rur-041",
+  "cat": "food",
+  "text": "딱딱하게 굳은 빵을 수프 그릇에 썰어 넣고 뜨거운 국물을 부었다. 저녁은 그게 전부였다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "농민 식단은 빵과 수프가 중심이었으며, 묵은 빵을 수프에 적셔 먹는 것이 일상이었다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Beaudry, R. (1976), 「Alimentation et population rurale en Périgord au XVIIIe siècle」, Annales de démographie historique 1976: 41-59",
+    "url": "https://doi.org/10.3406/adh.1976.1301"
+   }
+  ]
+ },
+ {
+  "id": "rur-042",
+  "cat": "food",
+  "text": "메밀가루를 묽게 개어 뜨거운 철판에 부쳐 얇은 갈레트를 구웠다. 버터밀크와 함께 먹었다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bretagne",
+    "normandie"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "메밀(blé noir)은 15~16세기 아르모리크 산지로 퍼져 브르타뉴 농민의 주식이 되었다.",
+  "src": [
+   {
+    "cite": "Nassiet, M. (1998), 「La diffusion du blé noir en France à l'époque moderne」, Histoire & Sociétés Rurales 9: 57-76",
+    "url": "https://doi.org/10.3406/hsr.1998.1052"
+   }
+  ]
+ },
+ {
+  "id": "rur-043",
+  "cat": "food",
+  "text": "메밀을 휴경지에 뿌렸다. 산성 땅에서도 잘 자라 밀이 망한 해에도 굶지는 않았다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "bretagne",
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "메밀은 산성 토양에 맞고 여름 작물이라 휴경지에 들어가 아르모리크의 곡물 총생산을 크게 늘렸다.",
+  "src": [
+   {
+    "cite": "Nassiet, M. (1998), 「La diffusion du blé noir en France à l'époque moderne」, Histoire & Sociétés Rurales 9: 57-76",
+    "url": "https://doi.org/10.3406/hsr.1998.1052"
+   }
+  ]
+ },
+ {
+  "id": "rur-044",
+  "cat": "food",
+  "text": "옥수수 가루를 끓인 죽(미야스)을 식혀 썰어 구웠다. 밀빵은 시장에 팔 몫이었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "gascogne",
+    "languedoc",
+    "bordeaux"
+   ]
+  },
+  "w": 1.8,
+  "once": false,
+  "fact": "18세기 남서부 농민 식단은 옥수수와 밤이 압도적이었고 밀의 비중은 낮았다.",
+  "src": [
+   {
+    "cite": "Beaudry, R. (1976), 「Alimentation et population rurale en Périgord au XVIIIe siècle」, Annales de démographie historique 1976: 41-59",
+    "url": "https://doi.org/10.3406/adh.1976.1301"
+   },
+   {
+    "cite": "Perez, J. (1944), 「La révolution agricole du XVIIIe siècle en Gascogne gersoise」, Revue géographique des Pyrénées et du Sud-Ouest 15(1): 56-105",
+    "url": "https://doi.org/10.3406/rgpso.1944.1205"
+   }
+  ]
+ },
+ {
+  "id": "rur-045",
+  "cat": "food",
+  "text": "밤을 삶아 껍질째 으깬 죽으로 아침과 저녁을 때웠다. 빵은 일요일에나 먹었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "auvergne",
+    "languedoc",
+    "gascogne"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "페리고르·리무쟁·세벤에서 밤은 '빵나무'라 불릴 만큼 겨울 주식이었다.",
+  "src": [
+   {
+    "cite": "Beaudry, R. (1976), 「Alimentation et population rurale en Périgord au XVIIIe siècle」, Annales de démographie historique 1976: 41-59",
+    "url": "https://doi.org/10.3406/adh.1976.1301"
+   },
+   {
+    "cite": "Depain, C. (1936), 「La châtaigneraie périgourdine」, Revue géographique des Pyrénées et du Sud-Ouest 7(4): 340-365",
+    "url": "https://doi.org/10.3406/rgpso.1936.4234"
+   }
+  ]
+ },
+ {
+  "id": "rur-046",
+  "cat": "food",
+  "text": "처음 감자를 심어 보았다. 돼지 먹이나 될 줄 알았는데 겨울 내내 식구가 배를 채웠다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1820
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": true,
+  "fact": "같은 면적에서 감자는 밀보다 두 배의 사람을 먹일 수 있었고, 18세기 마지막 3분의 1에야 받아들여지기 시작했다.",
+  "src": [
+   {
+    "cite": "Fink, B. (1983), 「L'avènement de la pomme de terre」, Dix-huitième Siècle 15: 19-32",
+    "url": "https://doi.org/10.3406/dhs.1983.1426"
+   }
+  ]
+ },
+ {
+  "id": "rur-047",
+  "cat": "food",
+  "text": "감자가 마을 밭마다 들어섰다. 이제 빵이 모자란 봄에도 감자로 버텼다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "normandie",
+    "bretagne",
+    "alsace",
+    "picardie",
+    "champagne",
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "칼바도스에서는 19세기 전반에 감자 재배가 크게 늘어 서민 식단의 한 축이 되었다.",
+  "src": [
+   {
+    "cite": "Désert, G. (1955), 「La culture de la pomme de terre dans le Calvados au XIXe siècle」, Annales de Normandie 5(3): 261-270",
+    "url": "https://doi.org/10.3406/annor.1955.6514"
+   }
+  ]
+ },
+ {
+  "id": "rur-048",
+  "cat": "food",
+  "text": "고기는 축제날에나 맛보았다. 평소엔 수프에 비계 한 조각 띄우는 것으로 만족했다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 농민의 육류 소비는 극히 적었고 돼지비계가 거의 유일한 동물성 지방이었다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Chartier, R. (1977), compte rendu de O. Hufton, The Poor of Eighteenth-Century France 1750-1789 (Oxford, 1974), Annales ESC 32(2): 296-299",
+    "url": "https://doi.org/10.1017/s0395264900150796"
+   }
+  ]
+ },
+ {
+  "id": "rur-049",
+  "cat": "food",
+  "text": "포도 찌꺼기에 물을 부어 짠 시큼한 피케트를 일꾼들에게 돌렸다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bourgogne",
+    "champagne",
+    "ile",
+    "languedoc",
+    "bordeaux",
+    "lyon",
+    "provence"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "포도 재배 지역의 농민은 좋은 포도주는 팔고 찌꺼기에 물을 탄 피케트를 마셨다.",
+  "src": [
+   {
+    "cite": "Lachiver, M. (1974), 「La fraude et les fraudeurs : à propos du commerce du vin dans la partie occidentale de l'Île-de-France au XVIIIe siècle」, RHMC 21(3): 419-444",
+    "url": "https://doi.org/10.3406/rhmc.1974.2308"
+   },
+   {
+    "cite": "Larguier, G. (2013), 「Les prix du vin, XVIe-XVIIIe siècle」, Annales du Midi 125(281): 9-27",
+    "url": "https://doi.org/10.3406/anami.2013.8457"
+   }
+  ]
+ },
+ {
+  "id": "rur-050",
+  "cat": "food",
+  "text": "노르망디 사과를 찧어 시드르를 담갔다. 식구들은 물 대신 묽은 시드르를 마셨다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "normandie",
+    "bretagne"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "노르망디와 브르타뉴 동부에서는 포도주 대신 시드르가 일상 음료였다.",
+  "src": [
+   {
+    "cite": "Morice, A. (1955), 「Pommes, cidre et calvados en Normandie」, Études normandes 17(58): 1-16",
+    "url": "https://doi.org/10.3406/etnor.1955.3212"
+   },
+   {
+    "cite": "Nourrisson, D. (1991), 「La consommation alcoolique en Seine-Inférieure au XIXe siècle」, Annales de Normandie 41(1): 49-73",
+    "url": "https://doi.org/10.3406/annor.1991.2109"
+   }
+  ]
+ },
+ {
+  "id": "rur-051",
+  "cat": "food",
+  "text": "도시 성문 입시세가 무서워, 포도주를 몰래 통에 숨겨 들여가는 이웃을 보았다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "ile",
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "일드프랑스 서부에서는 포도주 입시세를 피하려는 밀반입과 탈세가 만연했다.",
+  "src": [
+   {
+    "cite": "Lachiver, M. (1974), 「La fraude et les fraudeurs : à propos du commerce du vin dans la partie occidentale de l'Île-de-France au XVIIIe siècle」, RHMC 21(3): 419-444",
+    "url": "https://doi.org/10.3406/rhmc.1974.2308"
+   }
+  ]
+ },
+ {
+  "id": "rur-052",
+  "cat": "food",
+  "text": "포도주 값이 폭락해 통째로 썩혀야 했다. 빚 갚을 길이 막막했다.",
+  "fx": {
+   "money": -8
+  },
+  "when": {
+   "from": 1775,
+   "to": 1789
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "languedoc",
+    "bordeaux",
+    "bourgogne",
+    "champagne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "18세기 랑그도크 포도주 가격은 크게 출렁였고, 1770~80년대 과잉생산으로 포도 농민 소득이 떨어졌다.",
+  "src": [
+   {
+    "cite": "Dermigny, L. (1964), 「Le prix du vin en Languedoc au XVIIIe siècle」, Annales du Midi 76(68): 505-528",
+    "url": "https://doi.org/10.3406/anami.1964.4517"
+   },
+   {
+    "cite": "Larguier, G. (2013), 「Les prix du vin, XVIe-XVIIIe siècle」, Annales du Midi 125(281): 9-27",
+    "url": "https://doi.org/10.3406/anami.2013.8457"
+   }
+  ]
+ },
+ {
+  "id": "rur-053",
+  "cat": "food",
+  "text": "봄이 되자 곡식 궤가 바닥났다. 새 밀이 나기까지 쐐기풀과 밀기울로 버텼다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "수확 전 단경기(soudure)는 해마다 빈농을 괴롭혔고, 1747년 투르니는 페리고르 농민이 밀기울과 풀로 연명한다고 보고했다.",
+  "src": [
+   {
+    "cite": "Beaudry, R. (1976), 「Alimentation et population rurale en Périgord au XVIIIe siècle」, Annales de démographie historique 1976: 41-59",
+    "url": "https://doi.org/10.3406/adh.1976.1301"
+   },
+   {
+    "cite": "Chartier, R. (1977), compte rendu de O. Hufton, The Poor of Eighteenth-Century France 1750-1789 (Oxford, 1974), Annales ESC 32(2): 296-299",
+    "url": "https://doi.org/10.1017/s0395264900150796"
+   }
+  ]
+ },
+ {
+  "id": "rur-054",
+  "cat": "rural",
+  "text": "방 하나뿐인 초가 오두막, 흙바닥 위 침대 하나에 식구 다섯이 모여 잤다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "농민 사후 재산목록에는 대개 방 하나, 침대 한두 개, 궤짝과 솥 몇 개가 전부로 나타난다.",
+  "src": [
+   {
+    "cite": "Lick, R. (1970), 「Les intérieurs domestiques dans la seconde moitié du XVIIIe siècle d'après les inventaires après décès de Coutances」, Annales de Normandie 20(4): 293-316",
+    "url": "https://doi.org/10.3406/annor.1970.5046"
+   },
+   {
+    "cite": "Coque, R. (1956), 「L'évolution de la maison rurale en Amiénois」, Annales de Géographie 65(352): 401-417",
+    "url": "https://doi.org/10.3406/geo.1956.14127"
+   }
+  ]
+ },
+ {
+  "id": "rur-055",
+  "cat": "rural",
+  "text": "외양간과 살림방 사이엔 칸막이 하나뿐이었다. 소 숨결이 겨울 밤 방을 덥혔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "bretagne",
+    "auvergne",
+    "vendee",
+    "normandie",
+    "gascogne"
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "서부와 산간 지대에서는 사람과 가축이 한 지붕 아래 사는 '긴 집(maison longue)'이 흔했다.",
+  "src": [
+   {
+    "cite": "Coque, R. (1956), 「L'évolution de la maison rurale en Amiénois」, Annales de Géographie 65(352): 401-417",
+    "url": "https://doi.org/10.3406/geo.1956.14127"
+   },
+   {
+    "cite": "Lick, R. (1970), 「Les intérieurs domestiques dans la seconde moitié du XVIIIe siècle d'après les inventaires après décès de Coutances」, Annales de Normandie 20(4): 293-316",
+    "url": "https://doi.org/10.3406/annor.1970.5046"
+   }
+  ]
+ },
+ {
+  "id": "rur-056",
+  "cat": "rural",
+  "text": "흙벽 초가지붕이 비에 새어 짚을 새로 얹었다. 마을 남자들이 하루 품앗이를 해 주었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    4,
+    5,
+    9
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "아미앵 지역 농가는 19세기 중반까지 나무 골조에 흙벽(torchis), 초가지붕이 일반적이었다.",
+  "src": [
+   {
+    "cite": "Coque, R. (1956), 「L'évolution de la maison rurale en Amiénois」, Annales de Géographie 65(352): 401-417",
+    "url": "https://doi.org/10.3406/geo.1956.14127"
+   }
+  ]
+ },
+ {
+  "id": "rur-057",
+  "cat": "rural",
+  "text": "나막신(사보)을 새로 깎았다. 진창길에도 발은 젖지 않았지만 발등이 까졌다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "나무 신발 사보(sabot)는 농민의 일상화였고 사보 제작은 숲 근처 마을의 주요 부업이었다.",
+  "src": [
+   {
+    "cite": "Goujon, P. (1984), 「« L'industrie en sabots »」, Études rurales 93: 285-291",
+    "url": "https://doi.org/10.3406/rural.1984.3007"
+   },
+   {
+    "cite": "Daydé, J. (1935), 「L'industrie des sabots et galoches en France et particulièrement dans le Sud-Ouest」, Revue géographique des Pyrénées et du Sud-Ouest 6(1): 98-104",
+    "url": "https://doi.org/10.3406/rgpso.1935.4185"
+   }
+  ]
+ },
+ {
+  "id": "rur-058",
+  "cat": "rural",
+  "text": "대마를 물에 담가 썩히고 두드려 실을 뽑았다. 그 실로 짠 거친 베로 셔츠를 지었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "F"
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "농민 옷은 직접 기른 삼(chanvre)과 아마로 짠 거친 베가 주재료였다.",
+  "src": [
+   {
+    "cite": "Cailly, C. (1998), 「Structure sociale et consommation dans le monde proto-industriel rural textile : le Perche ornais au XVIIIe siècle」, RHMC 45(4): 746-774",
+    "url": "https://doi.org/10.3406/rhmc.1998.1934"
+   },
+   {
+    "cite": "Nassiet, M. (1998), 「La diffusion du blé noir en France à l'époque moderne」, Histoire & Sociétés Rurales 9: 57-76",
+    "url": "https://doi.org/10.3406/hsr.1998.1052"
+   }
+  ]
+ },
+ {
+  "id": "rur-059",
+  "cat": "rural",
+  "text": "일요일 미사에 갈 옷은 단 한 벌이었다. 혼례 때 받은 모직 조끼를 아껴 입었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 페르슈 농촌 가계에서도 의복과 생활용품 소비가 조금씩 늘었지만 나들이옷은 여전히 귀했다.",
+  "src": [
+   {
+    "cite": "Cailly, C. (1998), 「Structure sociale et consommation dans le monde proto-industriel rural textile : le Perche ornais au XVIIIe siècle」, RHMC 45(4): 746-774",
+    "url": "https://doi.org/10.3406/rhmc.1998.1934"
+   }
+  ]
+ },
+ {
+  "id": "rur-060",
+  "cat": "rural",
+  "text": "공유 숲에서 마른 가지를 주워 등짐으로 날랐다. 산림 감시인 눈을 피해야 했다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "농민은 공유림과 영주림에서 땔감·낙엽·도토리를 모을 관습적 권리를 주장했고 이는 끊임없는 분쟁을 낳았다.",
+  "src": [
+   {
+    "cite": "Vivier, N. (1987), 「Cueillir et glaner dans la forêt normande」, Journal d'agriculture traditionnelle et de botanique appliquée 34(1): 95-111",
+    "url": "https://doi.org/10.3406/jatba.1987.3966"
+   },
+   {
+    "cite": "Fruhauf, C. (1983), 「Les délits forestiers en Pays de Sault au XVIIIe siècle」, Annales du Midi 95(164): 391-428",
+    "url": "https://doi.org/10.3406/anami.1983.2023"
+   }
+  ]
+ },
+ {
+  "id": "rur-061",
+  "cat": "crime",
+  "text": "영주 숲에서 장작을 베다 감시인에게 들켰다. 벌금 고지서가 날아왔다.",
+  "fx": {
+   "money": -10,
+   "sus": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "18세기 피레네 소(Sault) 지방 산림 범죄 기록에는 땔감 채취와 방목 위반이 압도적으로 많다.",
+  "src": [
+   {
+    "cite": "Fruhauf, C. (1983), 「Les délits forestiers en Pays de Sault au XVIIIe siècle」, Annales du Midi 95(164): 391-428",
+    "url": "https://doi.org/10.3406/anami.1983.2023"
+   }
+  ]
+ },
+ {
+  "id": "rur-062",
+  "cat": "rural",
+  "text": "마을 공유지 황무지에 염소를 풀었다. 가진 땅 없는 집에겐 그 풀밭이 목숨줄이었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "1846년 공유지(biens communaux)는 프랑스 국토의 약 9%를 차지했고 가난한 가구의 방목지였다.",
+  "src": [
+   {
+    "cite": "Vivier, N. (2003), 「Les biens communaux en France」, in Les propriétés collectives face aux attaques libérales, PUR: 139-156",
+    "url": "https://doi.org/10.4000/books.pur.23660"
+   },
+   {
+    "cite": "Vivier, N. (1999), 「Communaux et vitalité communautaire en France à la fin de l'Ancien Régime et pendant la Révolution」, AHRF 315: 63-81",
+    "url": "https://doi.org/10.3406/ahrf.1999.2224"
+   }
+  ]
+ },
+ {
+  "id": "rur-063",
+  "cat": "rural",
+  "text": "영주가 마을 공유지의 3분의 1을 '트리아주'로 떼어 가겠다고 해 마을이 술렁였다.",
+  "fx": {
+   "pol": 1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "트리아주(triage)는 영주가 공유지의 3분의 1을 완전 소유로 가져가는 권리로, 1769~1781년 왕령으로 여러 지방에 확대되었다.",
+  "src": [
+   {
+    "cite": "Vivier, N. (2003), 「Les biens communaux en France」, in Les propriétés collectives face aux attaques libérales, PUR: 139-156",
+    "url": "https://doi.org/10.4000/books.pur.23660"
+   },
+   {
+    "cite": "Anglade, J. (1953), 「Un exemple de réaction nobiliaire dans le Comminges à la veille de la Révolution」, Annales du Midi 65(22): 171-180",
+    "url": "https://doi.org/10.3406/anami.1953.5906"
+   }
+  ]
+ },
+ {
+  "id": "rur-064",
+  "cat": "rural",
+  "text": "이웃 대농이 자기 밭에 울타리를 둘러 공동방목을 막았다. 빈농들이 밤에 울타리를 뜯었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1767,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "champagne",
+    "bourgogne",
+    "alsace",
+    "picardie",
+    "ile",
+    "normandie"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1767~1771년 왕령은 소유자가 밭에 울타리를 쳐 공동방목에서 빠지는 것을 허용했다.",
+  "src": [
+   {
+    "cite": "Vivier, N. (2003), 「Les biens communaux en France」, in Les propriétés collectives face aux attaques libérales, PUR: 139-156",
+    "url": "https://doi.org/10.4000/books.pur.23660"
+   },
+   {
+    "cite": "Clère, J.-J. (1993), 「La vaine pâture en France sous l'Ancien Régime. Essai de géographie coutumière」, HAL halshs-00203205",
+    "url": "https://shs.hal.science/halshs-00203205v1"
+   }
+  ]
+ },
+ {
+  "id": "rur-065",
+  "cat": "rural",
+  "text": "공동방목을 폐지하자는 청원에 마을이 둘로 갈렸다. 가축 없는 집들은 끝까지 반대했다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "공동방목은 1836~1838년 정부 조사에서도 널리 남아 있었고 19세기 내내 존속했다.",
+  "src": [
+   {
+    "cite": "Sée, H. (1926), 「La vaine pâture en France sous la monarchie de Juillet d'après l'enquête de 1836-1838」, Revue d'histoire moderne 1(3): 198-213",
+    "url": "https://doi.org/10.3406/rhmc.1926.3362"
+   },
+   {
+    "cite": "Clère, J.-J. (1982), 「La vaine pâture au XIXe siècle : un anachronisme ?」, AHRF 247: 113-128",
+    "url": "https://doi.org/10.3406/ahrf.1982.3649"
+   }
+  ]
+ },
+ {
+  "id": "rur-066",
+  "cat": "rural",
+  "text": "브르타뉴 황무지 개간을 놓고 영주와 마을이 다퉜다. 가시금작화 밭은 우리 땅이라고 외쳤다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1732년 브르타뉴 지사는 '바느 테르(vaines terres)' 황무지가 지방 면적의 43%에 이른다고 추산했다.",
+  "src": [
+   {
+    "cite": "Vivier, N. (2003), 「Les biens communaux en France」, in Les propriétés collectives face aux attaques libérales, PUR: 139-156",
+    "url": "https://doi.org/10.4000/books.pur.23660"
+   },
+   {
+    "cite": "Dubreuil, L. (1960), 「Seigneurie et communaux au pays de Perros-Guirec」, Annales de Bretagne 67(3): 227-254",
+    "url": "https://doi.org/10.3406/abpo.1960.2111"
+   }
+  ]
+ },
+ {
+  "id": "rur-067",
+  "cat": "rural",
+  "text": "리마뉴 마을에서 공유지를 둘러싼 소동이 일어나 헌병대가 들이닥쳤다.",
+  "fx": {
+   "pol": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "auvergne"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "오베르뉴 리마뉴의 솔제 마을은 1740~1830년 공유지 문제로 거듭 농촌 소요를 겪었다.",
+  "src": [
+   {
+    "cite": "Thuillier, G. (1969), 「L'Ancien Régime agraire dans une commune de la Limagne. Communaux et troubles ruraux à Saulzet (1740-1830)」, AHRF 195: 53-76",
+    "url": "https://doi.org/10.3406/ahrf.1969.3717"
+   }
+  ]
+ },
+ {
+  "id": "rur-068",
+  "cat": "rural",
+  "text": "아르투아에서 공유지를 집집마다 나눠 준다는 소식이 왔다. 몫은 손바닥만 했다.",
+  "when": {
+   "from": 1770,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "picardie"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "아르투아에서는 1770~1789년 왕정 허가 아래 공유지 분할이 시행되었다.",
+  "src": [
+   {
+    "cite": "Sallmann, J.-M. (1977), 「Le partage des biens communaux en Artois, 1770-1789」, Études rurales 67: 71-84",
+    "url": "https://doi.org/10.3406/rural.1977.2275"
+   }
+  ]
+ },
+ {
+  "id": "rur-069",
+  "cat": "economy",
+  "text": "성 미카엘 축일, 영주 장원 사무소에 세금(cens) 몇 수와 닭 한 마리를 바쳤다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    9,
+    11
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "상스(cens)는 토지에 붙은 소액 영구 지대로 금액은 작았으나 영주 지배의 상징이었다.",
+  "src": [
+   {
+    "cite": "Sée, H. (1908), 「La portée du régime seigneurial au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 10(3): 173-191",
+    "url": "https://doi.org/10.3406/rhmc.1908.4573"
+   },
+   {
+    "cite": "La Monneraye, J. de (1911), 「Essai sur le régime seigneurial dans le Haut-Maine au XVIIIe siècle」, Annales de Bretagne 27(2): 315-325",
+    "url": "https://doi.org/10.3406/abpo.1911.1364"
+   }
+  ]
+ },
+ {
+  "id": "rur-070",
+  "cat": "economy",
+  "text": "밀단을 세던 영주 징수원이 열두 단마다 한 단씩 떼어 수레에 실었다.",
+  "fx": {
+   "money": -6
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "샹파르(champart)는 수확의 일정 비율(흔히 1/12~1/6)을 밭에서 현물로 거두는 영주 부과였다.",
+  "src": [
+   {
+    "cite": "Bastier, J. (1983), 「Droits féodaux et revenus agricoles en Rouergue à la veille de la Révolution」, Annales du Midi 95(163): 261-287",
+    "url": "https://doi.org/10.3406/anami.1983.2013"
+   },
+   {
+    "cite": "Sée, H. (1908), 「La portée du régime seigneurial au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 10(3): 173-191",
+    "url": "https://doi.org/10.3406/rhmc.1908.4573"
+   }
+  ]
+ },
+ {
+  "id": "rur-071",
+  "cat": "economy",
+  "text": "땅을 샀더니 영주에게 거래가의 일부를 '로 에 방트'로 바치라는 통지가 왔다.",
+  "fx": {
+   "money": -10
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "토지 거래 시 영주에게 내는 이전세(lods et ventes)는 흔히 매매가의 1/12 안팎이었다.",
+  "src": [
+   {
+    "cite": "Sée, H. (1908), 「La portée du régime seigneurial au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 10(3): 173-191",
+    "url": "https://doi.org/10.3406/rhmc.1908.4573"
+   },
+   {
+    "cite": "Béaur, G. (1991), 「Investissement foncier, épargne et cycle de vie dans le pays chartrain au XVIIIe siècle」, Histoire & Mesure 6(3): 275-288",
+    "url": "https://doi.org/10.3406/hism.1991.1398"
+   }
+  ]
+ },
+ {
+  "id": "rur-072",
+  "cat": "economy",
+  "text": "집에서 빵을 구우면 안 됐다. 영주의 공동 화덕까지 반죽을 이고 가 삯을 냈다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "방앗간·화덕·압착기 바날리테는 영주 시설 사용을 강제하고 사용료를 받는 권리였다.",
+  "src": [
+   {
+    "cite": "Sée, H. (1908), 「La portée du régime seigneurial au XVIIIe siècle」, Revue d'histoire moderne et contemporaine 10(3): 173-191",
+    "url": "https://doi.org/10.3406/rhmc.1908.4573"
+   },
+   {
+    "cite": "La Monneraye, J. de (1911), 「Essai sur le régime seigneurial dans le Haut-Maine au XVIIIe siècle」, Annales de Bretagne 27(2): 315-325",
+    "url": "https://doi.org/10.3406/abpo.1911.1364"
+   }
+  ]
+ },
+ {
+  "id": "rur-073",
+  "cat": "economy",
+  "text": "루에르그 영주의 각종 부과를 다 합치니 수확의 상당 부분이 사라졌다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "languedoc",
+    "auvergne",
+    "gascogne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "혁명 직전 루에르그에서 영주 부과는 농업 순소득의 상당 몫을 잠식했다.",
+  "src": [
+   {
+    "cite": "Bastier, J. (1983), 「Droits féodaux et revenus agricoles en Rouergue à la veille de la Révolution」, Annales du Midi 95(163): 261-287",
+    "url": "https://doi.org/10.3406/anami.1983.2013"
+   }
+  ]
+ },
+ {
+  "id": "rur-074",
+  "cat": "economy",
+  "text": "영주 대리인이 낡은 토지대장(terrier)을 새로 만든다며 잊힌 부과까지 찾아냈다.",
+  "fx": {
+   "money": -4,
+   "pol": 1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "혁명 전 수십 년간 영주들은 토지대장을 갱신해 사문화된 권리를 되살리는 이른바 '영주 반동'을 벌였다.",
+  "src": [
+   {
+    "cite": "Soboul, A. (1964), 「De la pratique des terriers au brûlement des titres féodaux (1789-1793)」, AHRF 176: 149-158",
+    "url": "https://doi.org/10.3406/ahrf.1964.3668"
+   },
+   {
+    "cite": "Anglade, J. (1953), 「Un exemple de réaction nobiliaire dans le Comminges à la veille de la Révolution」, Annales du Midi 65(22): 171-180",
+    "url": "https://doi.org/10.3406/anami.1953.5906"
+   }
+  ]
+ },
+ {
+  "id": "rur-075",
+  "cat": "revolution",
+  "text": "1789년 7월 말, 큰 공포가 돌았다. 장정들이 성으로 몰려가 토지대장을 마당에서 불태웠다.",
+  "fx": {
+   "pol": 3,
+   "sus": 2
+  },
+  "when": {
+   "from": 1789,
+   "to": 1789,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1789~1793년 농민들은 영주 권리의 증서인 토지대장을 반복해서 불태웠다.",
+  "src": [
+   {
+    "cite": "Soboul, A. (1964), 「De la pratique des terriers au brûlement des titres féodaux (1789-1793)」, AHRF 176: 149-158",
+    "url": "https://doi.org/10.3406/ahrf.1964.3668"
+   },
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   }
+  ]
+ },
+ {
+  "id": "rur-076",
+  "cat": "revolution",
+  "text": "8월 4일 밤 봉건제 폐지 소식이 왔지만, 샹파르는 되사기 전까지 계속 내야 한다고 했다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1789,
+   "to": 1792
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1790년 3월 법은 인신적 부과는 무상 폐지했으나 샹파르·상스 등 토지 부과는 연액의 20~25배로 되사도록 했다.",
+  "src": [
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   },
+   {
+    "cite": "Luc, J.-N. (1979), 「Paysans et droits féodaux en Charente-Inférieure pendant la Révolution française」, AHRF 237: 486-494",
+    "url": "https://doi.org/10.3406/ahrf.1979.3317"
+   }
+  ]
+ },
+ {
+  "id": "rur-077",
+  "cat": "revolution",
+  "text": "마을 사람들이 샹파르 납부를 아예 거부했다. 징수원은 빈손으로 돌아갔다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1790,
+   "to": 1793
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "vendee",
+    "bordeaux",
+    "gascogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "샤랑트앵페리외르 농민들은 1790년 이후 되사기 조건부 부과의 납부를 광범위하게 거부했다.",
+  "src": [
+   {
+    "cite": "Luc, J.-N. (1979), 「Paysans et droits féodaux en Charente-Inférieure pendant la Révolution française」, AHRF 237: 486-494",
+    "url": "https://doi.org/10.3406/ahrf.1979.3317"
+   },
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   }
+  ]
+ },
+ {
+  "id": "rur-078",
+  "cat": "revolution",
+  "text": "1793년 7월, 남은 영주 부과를 보상 없이 모두 없앤다는 법령이 마을 광장에서 낭독되었다.",
+  "fx": {
+   "pol": 2,
+   "money": 5
+  },
+  "when": {
+   "from": 1793,
+   "to": 1793,
+   "months": [
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1793년 7월 17일 법은 남아 있던 모든 영주 부과를 무상 폐지하고 증서 소각을 명했다.",
+  "src": [
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   },
+   {
+    "cite": "Soboul, A. (1964), 「De la pratique des terriers au brûlement des titres féodaux (1789-1793)」, AHRF 176: 149-158",
+    "url": "https://doi.org/10.3406/ahrf.1964.3668"
+   }
+  ]
+ },
+ {
+  "id": "rur-079",
+  "cat": "revolution",
+  "text": "봉건 부과가 사라졌다는데도, 서부의 옛 영주 집안이 '토지 임대료'라며 같은 몫을 계속 요구했다.",
+  "fx": {
+   "money": -3,
+   "pol": 1
+  },
+  "when": {
+   "from": 1794,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "bretagne",
+    "vendee",
+    "normandie"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "서부에서는 1793년 이후에도 봉건 부과가 지대 형태로 1902년까지 잔존한 사례가 있었다.",
+  "src": [
+   {
+    "cite": "Massé, P. (1965), 「Survivances des droits féodaux dans l'Ouest (1793-1902)」, AHRF 181: 270-298",
+    "url": "https://doi.org/10.3406/ahrf.1965.3766"
+   }
+  ]
+ },
+ {
+  "id": "rur-080",
+  "cat": "revolution",
+  "text": "농민 진정서를 쓰는 날, 영주 부과와 십일조와 국왕 세금을 하나씩 적어 넣었다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1789,
+   "to": 1789,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    25,
+    80
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1789년 농촌 진정서들은 영주·교회·국가의 요구를 모두 비판했고 영주 권리에 특히 적대적이었다.",
+  "src": [
+   {
+    "cite": "Markoff, J. (1990), 「Peasants Protest: The Claims of Lord, Church, and State in the Cahiers de doléances of 1789」, Comparative Studies in Society and History 32(3): 413-454",
+    "url": "https://doi.org/10.1017/s0010417500016583"
+   }
+  ]
+ },
+ {
+  "id": "rur-081",
+  "cat": "economy",
+  "text": "십일조 징수인이 밭에 나와 단을 세어 갔다. 신부보다 먼 수도원 몫이라 더 억울했다.",
+  "fx": {
+   "money": -4,
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "십일조는 명목상 수확의 1/10이었으나 실제로는 지역별로 대략 7~8%, 낮게는 3%대까지 다양했다.",
+  "src": [
+   {
+    "cite": "Garnier, B. (1973), 「Dîme et production agricole au XVIIIe siècle」, Annales de Normandie 23(3): 187-209",
+    "url": "https://doi.org/10.3406/annor.1973.5113"
+   },
+   {
+    "cite": "Rives, J. (1980), 「Dîme et défrichements en Gascogne et Quercy au XVIIIe siècle」, Annales du Midi 92(146): 57-66",
+    "url": "https://doi.org/10.3406/anami.1980.1902"
+   }
+  ]
+ },
+ {
+  "id": "rur-082",
+  "cat": "economy",
+  "text": "새로 개간한 황무지에도 십일조를 매기겠다고 해서 마을이 소송을 걸었다.",
+  "fx": {
+   "money": -2,
+   "pol": 1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "gascogne",
+    "languedoc"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "18세기 가스코뉴·케르시에서는 개간지에 대한 '노발(novales)' 십일조를 두고 분쟁이 잦았다.",
+  "src": [
+   {
+    "cite": "Rives, J. (1980), 「Dîme et défrichements en Gascogne et Quercy au XVIIIe siècle」, Annales du Midi 92(146): 57-66",
+    "url": "https://doi.org/10.3406/anami.1980.1902"
+   }
+  ]
+ },
+ {
+  "id": "rur-083",
+  "cat": "economy",
+  "text": "십일조가 폐지되었다는데도 신부는 예전처럼 곡식을 거둬 갔다. 마을 사람 일부는 계속 냈다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1834
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "푸아투 보뇌유마투르에서는 1790년 십일조 폐지 후에도 1834년까지 관행적 납부가 이어졌다.",
+  "src": [
+   {
+    "cite": "Massé, P. (1958), 「Survivances de la dîme à Bonneuil-Matours aux XVIIIe et XIXe siècles (1790-1834)」, AHRF 151: 1-30",
+    "url": "https://doi.org/10.3406/ahrf.1958.4748"
+   }
+  ]
+ },
+ {
+  "id": "rur-084",
+  "cat": "economy",
+  "text": "타유 징수원이 마을 명부를 들고 왔다. 귀족 영지는 빠지고 우리 몫만 늘었다.",
+  "fx": {
+   "money": -8,
+   "pol": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "타유(taille)는 평민만 내는 직접세였고 성직자·귀족과 많은 도시민은 면제되었다.",
+  "src": [
+   {
+    "cite": "Fontaine, M. (1956), 「Conflits entre paysans et bourgeois de Cherbourg à propos de la taille (XVIIe et XVIIIe siècles)」, Annales de Normandie 6(1): 75-86",
+    "url": "https://doi.org/10.3406/annor.1956.4304"
+   },
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   }
+  ]
+ },
+ {
+  "id": "rur-085",
+  "cat": "economy",
+  "text": "셰르부르 부르주아들이 시골 땅을 사서 타유를 마을에 떠넘긴다고 농민들이 성토했다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "코탕탱에서는 도시 면세 특권자가 농촌 토지를 사들이며 타유 부담을 둘러싼 분쟁이 이어졌다.",
+  "src": [
+   {
+    "cite": "Fontaine, M. (1956), 「Conflits entre paysans et bourgeois de Cherbourg à propos de la taille (XVIIe et XVIIIe siècles)」, Annales de Normandie 6(1): 75-86",
+    "url": "https://doi.org/10.3406/annor.1956.4304"
+   }
+  ]
+ },
+ {
+  "id": "rur-086",
+  "cat": "economy",
+  "text": "타유 외에 인두세(capitation)와 20분의 1세(vingtième)까지 고지되었다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "인두세는 1695년, 20분의 1세는 1749년 도입되어 모든 신분에 부과되었으나 특권층은 감면을 누렸다.",
+  "src": [
+   {
+    "cite": "Marion, M. (1914), 「Les rôles de vingtièmes et les statistiques de la propriété territoriale sous l'ancien régime」, RHMC 19(2): 105-112",
+    "url": "https://doi.org/10.3406/rhmc.1914.4696"
+   },
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   }
+  ]
+ },
+ {
+  "id": "rur-087",
+  "cat": "economy",
+  "text": "타유 연대책임 징수원에 뽑혔다. 못 걷은 돈은 내 재산으로 메워야 했다.",
+  "fx": {
+   "money": -15,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    25,
+    60
+   ]
+  },
+  "w": 0.5,
+  "once": true,
+  "fact": "마을 주민이 돌아가며 맡은 타유 징수원(collecteur)은 미수액을 자기 재산으로 책임졌다.",
+  "src": [
+   {
+    "cite": "Fontaine, M. (1956), 「Conflits entre paysans et bourgeois de Cherbourg à propos de la taille (XVIIe et XVIIIe siècles)」, Annales de Normandie 6(1): 75-86",
+    "url": "https://doi.org/10.3406/annor.1956.4304"
+   }
+  ]
+ },
+ {
+  "id": "rur-088",
+  "cat": "economy",
+  "text": "소금 창고에서 의무 구입량을 사야 했다. 한 됫박에 일주일 품삯이 날아갔다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "ile",
+    "picardie",
+    "champagne",
+    "bourgogne",
+    "normandie",
+    "paris"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "대(大)가벨 지방에서는 소금을 국가 창고에서 높은 값에 의무 구입해야 했고, 베리 지방회의는 관세가가 원가의 6~12배라 했다.",
+  "src": [
+   {
+    "cite": "Huvet-Martinet, M. (1978), 「Faux-saunage et faux-sauniers dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 85(3): 377-400",
+    "url": "https://doi.org/10.3406/abpo.1978.2945"
+   }
+  ]
+ },
+ {
+  "id": "rur-089",
+  "cat": "crime",
+  "text": "브르타뉴 경계 너머에서 값싼 소금을 자루에 메고 밤길로 넘어왔다.",
+  "fx": {
+   "money": 6,
+   "sus": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "bretagne",
+    "normandie",
+    "vendee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "가벨이 면제된 브르타뉴와 대가벨 지방 사이 경계에서는 소금 밀매(faux-saunage)가 대규모로 벌어졌다.",
+  "src": [
+   {
+    "cite": "Huvet-Martinet, M. (1978), 「Faux-saunage et faux-sauniers dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 85(3): 377-400",
+    "url": "https://doi.org/10.3406/abpo.1978.2945"
+   },
+   {
+    "cite": "Huvet-Martinet, M. (1977), 「La répression du faux-saunage dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 84(2): 423-443",
+    "url": "https://doi.org/10.3406/abpo.1977.2886"
+   }
+  ]
+ },
+ {
+  "id": "rur-090",
+  "cat": "crime",
+  "text": "이웃 여자와 아이들이 소금 밀매로 붙잡혀 소뮈르 법정으로 끌려갔다.",
+  "fx": {
+   "soc": -1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1764,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "vendee",
+    "bretagne",
+    "normandie"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "1764~1789년 소뮈르 특별위원회는 서부·중부 소금 밀매자를 재판했고 무장 밀매는 갤리선형까지 받았다.",
+  "src": [
+   {
+    "cite": "Huvet-Martinet, M. (1977), 「La répression du faux-saunage dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 84(2): 423-443",
+    "url": "https://doi.org/10.3406/abpo.1977.2886"
+   }
+  ]
+ },
+ {
+  "id": "rur-091",
+  "cat": "revolution",
+  "text": "가벨이 폐지되었다. 처음으로 소금을 마음대로 사서 돼지고기를 넉넉히 절였다.",
+  "fx": {
+   "money": 3,
+   "pol": 1
+  },
+  "when": {
+   "from": 1790,
+   "to": 1791
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "가벨은 1790년 3월 국민의회에 의해 폐지되었다.",
+  "src": [
+   {
+    "cite": "Huvet-Martinet, M. (1978), 「Faux-saunage et faux-sauniers dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 85(3): 377-400",
+    "url": "https://doi.org/10.3406/abpo.1978.2945"
+   },
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   }
+  ]
+ },
+ {
+  "id": "rur-092",
+  "cat": "work",
+  "text": "왕의 길 부역에 불려 갔다. 사흘을 소달구지 끌고 자갈을 날랐는데 한 푼도 받지 못했다.",
+  "fx": {
+   "hp": -2,
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1786,
+   "months": [
+    3,
+    4,
+    5,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1738년 이후 왕도로 부역(corvée royale)은 도로 인근 평민 공동체에 봄·가을 며칠씩 무상 노동을 강제했다.",
+  "src": [
+   {
+    "cite": "Conchon, A. (2009), 「Le travail entre labeur et valeur : la corvée royale au XVIIIe siècle」, Cahiers d'histoire 110: 39-51",
+    "url": "https://doi.org/10.4000/chrhc.1973"
+   },
+   {
+    "cite": "Conchon, A. (2016), 「Les comptes de la corvée」, in La corvée des grands chemins au XVIIIe siècle, PUR: 161-191",
+    "url": "https://doi.org/10.4000/books.pur.45603"
+   }
+  ]
+ },
+ {
+  "id": "rur-093",
+  "cat": "work",
+  "text": "부역지까지 걸어가는 데만 반나절이 걸려 정작 일은 몇 시간 하지도 못했다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1786,
+   "months": [
+    3,
+    4,
+    5,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "엥 지방 부아스 주민들은 먼 공사장까지의 이동으로 하루 노동의 대부분을 허비한다고 호소했다.",
+  "src": [
+   {
+    "cite": "Conchon, A. (2009), 「Le travail entre labeur et valeur : la corvée royale au XVIIIe siècle」, Cahiers d'histoire 110: 39-51",
+    "url": "https://doi.org/10.4000/chrhc.1973"
+   }
+  ]
+ },
+ {
+  "id": "rur-094",
+  "cat": "revolution",
+  "text": "튀르고가 길 부역을 없앴다는 소문에 마을이 기뻐했지만, 몇 달 만에 다시 소집장이 왔다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1776,
+   "to": 1777
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M"
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1776년 2월 튀르고 칙령은 부역을 폐지했으나 고등법원 반대와 그의 실각으로 개혁은 무산되었다.",
+  "src": [
+   {
+    "cite": "Conchon, A. (2009), 「Le travail entre labeur et valeur : la corvée royale au XVIIIe siècle」, Cahiers d'histoire 110: 39-51",
+    "url": "https://doi.org/10.4000/chrhc.1973"
+   }
+  ]
+ },
+ {
+  "id": "rur-095",
+  "cat": "economy",
+  "text": "이제 부역 대신 돈으로 내라고 했다. 일손은 덜었지만 타유에 덧붙은 세금이 늘었다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1787,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1786년 시험 도입 후 1787년 부역의 금납 전환이 선거구 지방에서 의무화되었다.",
+  "src": [
+   {
+    "cite": "Conchon, A. (2009), 「Le travail entre labeur et valeur : la corvée royale au XVIIIe siècle」, Cahiers d'histoire 110: 39-51",
+    "url": "https://doi.org/10.4000/chrhc.1973"
+   },
+   {
+    "cite": "Conchon, A. (2016), 「Les comptes de la corvée」, in La corvée des grands chemins au XVIIIe siècle, PUR: 161-191",
+    "url": "https://doi.org/10.4000/books.pur.45603"
+   }
+  ]
+ },
+ {
+  "id": "rur-096",
+  "cat": "work",
+  "text": "브르타뉴 신부가 설교 끝에 부역 명단을 읽었다. 이번엔 우리 교구가 해안 도로 몫이었다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "bretagne"
+   ],
+   "sex": "M"
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "브르타뉴에서는 지방신분회의 반대로 부역이 금납으로 바뀌지 않고 혁명 때까지 현물 노동으로 남았다.",
+  "src": [
+   {
+    "cite": "Letaconnoux, J. (1905), 「Le régime de la corvée en Bretagne au XVIIIe siècle」, Annales de Bretagne 21(2): 144-159",
+    "url": "https://doi.org/10.3406/abpo.1905.1218"
+   },
+   {
+    "cite": "Conchon, A. (2009), 「Le travail entre labeur et valeur : la corvée royale au XVIIIe siècle」, Cahiers d'histoire 110: 39-51",
+    "url": "https://doi.org/10.4000/chrhc.1973"
+   }
+  ]
+ },
+ {
+  "id": "rur-097",
+  "cat": "war",
+  "text": "민병 제비뽑기 날, 미혼 장정들이 모자 속 쪽지를 뽑았다. 검은 쪽지를 뽑은 친구가 울었다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    40
+   ],
+   "married": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1726년부터 왕정 민병은 교구 미혼 남성들 사이의 제비뽑기로 충원되었고 농촌의 원성을 샀다.",
+  "src": [
+   {
+    "cite": "Sturgill, C. (1975), 「Le tirage au sort de la milice en 1726」, Revue historique des armées 2(3): 27-38",
+    "url": "https://doi.org/10.3406/rharm.1975.7865"
+   },
+   {
+    "cite": "Robbe, M. (1937), 「La milice dans l'intendance de la Flandre wallonne au XVIIIe siècle」, Revue du Nord 23(89): 5-50",
+    "url": "https://doi.org/10.3406/rnord.1937.1736"
+   }
+  ]
+ },
+ {
+  "id": "rur-098",
+  "cat": "war",
+  "text": "제비를 피하려고 서둘러 혼례를 치르는 젊은이들이 늘었다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    35
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "민병 제비뽑기는 미혼자 대상이어서 회피를 위한 조혼과 도주가 흔했다.",
+  "src": [
+   {
+    "cite": "Robbe, M. (1937), 「La milice dans l'intendance de la Flandre wallonne au XVIIIe siècle」, Revue du Nord 23(89): 5-50",
+    "url": "https://doi.org/10.3406/rnord.1937.1736"
+   }
+  ]
+ },
+ {
+  "id": "rur-099",
+  "cat": "war",
+  "text": "징집 통지를 받은 이웃 아들이 계절 이주 노동자 무리에 섞여 사라졌다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1799,
+   "to": 1814
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    18,
+    30
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "제1제정기 징병 기피는 산간의 전통적 계절 이주와 결합해 특히 중부 산지에서 두드러졌다.",
+  "src": [
+   {
+    "cite": "Chatelain, A. (1972), 「Résistance à la conscription et migrations temporaires sous le Premier Empire」, AHRF 210: 606-625",
+    "url": "https://doi.org/10.3406/ahrf.1972.4684"
+   }
+  ]
+ },
+ {
+  "id": "rur-100",
+  "cat": "work",
+  "text": "하루 종일 남의 밭을 갈고 받은 품삯은 빵 두어 덩이 값이었다.",
+  "fx": {
+   "money": 4,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M",
+   "age": [
+    15,
+    65
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 후반 곡물 가격 상승이 농촌 임금 상승을 크게 앞질러 일용 노동자의 실질 소득이 떨어졌다.",
+  "src": [
+   {
+    "cite": "Labrousse, E. (1939), 「Prix et structure régionale : le prix du froment, 1782-1790」, Annales d'histoire sociale 1(4): 382-400",
+    "url": "https://doi.org/10.3406/ahess.1939.3007"
+   },
+   {
+    "cite": "Chartier, R. (1977), compte rendu de O. Hufton, The Poor of Eighteenth-Century France 1750-1789 (Oxford, 1974), Annales ESC 32(2): 296-299",
+    "url": "https://doi.org/10.1017/s0395264900150796"
+   }
+  ]
+ },
+ {
+  "id": "rur-101",
+  "cat": "work",
+  "text": "겨울엔 일거리가 없어 식구 절반이 먼 친척집에 얹혀 지내거나 구걸하러 나섰다.",
+  "fx": {
+   "hp": -1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "허프턴은 18세기 빈민 가계가 이주·구걸·부업을 엮은 '임시방편의 경제'로 버텼다고 보았다.",
+  "src": [
+   {
+    "cite": "Chartier, R. (1977), compte rendu de O. Hufton, The Poor of Eighteenth-Century France 1750-1789 (Oxford, 1974), Annales ESC 32(2): 296-299",
+    "url": "https://doi.org/10.1017/s0395264900150796"
+   }
+  ]
+ },
+ {
+  "id": "rur-102",
+  "cat": "work",
+  "text": "상인이 놓고 간 실을 받아 밤마다 베틀을 돌렸다. 완성한 천을 넘기고 몇 수를 받았다.",
+  "fx": {
+   "money": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "normandie",
+    "picardie",
+    "bretagne",
+    "champagne"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 페르슈·북부에서는 상인-제조업자가 농가에 원료를 맡겨 짜게 하는 농촌 직물 원공업이 번성했다.",
+  "src": [
+   {
+    "cite": "Cailly, C. (1998), 「Structure sociale et consommation dans le monde proto-industriel rural textile : le Perche ornais au XVIIIe siècle」, RHMC 45(4): 746-774",
+    "url": "https://doi.org/10.3406/rhmc.1998.1934"
+   },
+   {
+    "cite": "Chassagne, S. (1990), 「Le rôle des marchands-fabricants dans la transition entre proto-industrie et industrie cotonnière」, Annales de Bretagne et des pays de l'Ouest 97(3): 291-306",
+    "url": "https://doi.org/10.3406/abpo.1990.3361"
+   }
+  ]
+ },
+ {
+  "id": "rur-103",
+  "cat": "work",
+  "text": "브르타뉴 해안 마을의 아마 베는 생말로 상인을 거쳐 멀리 스페인으로 팔려 간다고 했다.",
+  "fx": {
+   "money": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "북부 브르타뉴는 곡물 잉여를 바탕으로 아마 재배와 아마포(toile) 산업으로 일부 전환했다.",
+  "src": [
+   {
+    "cite": "Nassiet, M. (1998), 「La diffusion du blé noir en France à l'époque moderne」, Histoire & Sociétés Rurales 9: 57-76",
+    "url": "https://doi.org/10.3406/hsr.1998.1052"
+   }
+  ]
+ },
+ {
+  "id": "rur-104",
+  "cat": "work",
+  "text": "하이 보카주 마을에서 밭일 사이사이 손베틀로 손수건 천을 짰다.",
+  "fx": {
+   "money": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "region": [
+    "vendee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 하이 보카주와 세브르낭테즈 농촌 노동자 다수는 직조 부업을 병행했다.",
+  "src": [
+   {
+    "cite": "Bossis, P. (1983), 「L'ouvrier du Haut Bocage et de la Sèvre Nantaise au XVIIIe siècle」, Cahiers du Centre nantais de recherche 22: 24-31",
+    "url": "https://doi.org/10.3406/canan.1983.1778"
+   }
+  ]
+ },
+ {
+  "id": "rur-105",
+  "cat": "work",
+  "text": "봄이면 마을 장정들이 파리 공사판으로 걸어서 떠났다. 마을엔 여자와 노인만 남았다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "auvergne"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 오트마르슈(크뢰즈)에서는 15~40세 남성의 3분의 1 이상, 연 1만 5천~2만 명이 주로 석공으로 이주했다.",
+  "src": [
+   {
+    "cite": "Moulin, A. (1995), 「Les maçons creusois de Paris」, Siècles 1: 9-17",
+    "url": "https://doi.org/10.4000/siecles.4622"
+   }
+  ]
+ },
+ {
+  "id": "rur-106",
+  "cat": "work",
+  "text": "열일곱에 고향을 떠나 파리 석공 일꾼으로 들어갔다. 숙소엔 같은 고향 사람들뿐이었다.",
+  "fx": {
+   "money": 8
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "auvergne"
+   ],
+   "sex": "M",
+   "age": [
+    16,
+    25
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "크뢰즈 석공들은 대개 17~25세에 걸어서 파리로 떠났고, 혁명 직전 파리에 최소 5천 명이 살았다.",
+  "src": [
+   {
+    "cite": "Moulin, A. (1995), 「Les maçons creusois de Paris」, Siècles 1: 9-17",
+    "url": "https://doi.org/10.4000/siecles.4622"
+   }
+  ]
+ },
+ {
+  "id": "rur-107",
+  "cat": "work",
+  "text": "겨울 끝무렵 석공 일을 마친 남편이 은화 몇 닢을 들고 마을로 돌아왔다.",
+  "fx": {
+   "money": 20
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "auvergne"
+   ],
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "단순 인부들은 겨울 실업기에 귀향했고, 이주 수입은 고향 가계의 세금과 빚을 메웠다.",
+  "src": [
+   {
+    "cite": "Moulin, A. (1995), 「Les maçons creusois de Paris」, Siècles 1: 9-17",
+    "url": "https://doi.org/10.4000/siecles.4622"
+   }
+  ]
+ },
+ {
+  "id": "rur-108",
+  "cat": "work",
+  "text": "오베르뉴 사람들이 스페인으로 행상과 장사를 떠난다고 했다. 몇 년 뒤 돌아온 이는 땅을 샀다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "auvergne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "마시프상트랄과 이베리아반도 사이에는 행상·상인의 오랜 이주망이 있었다.",
+  "src": [
+   {
+    "cite": "Poujade, P. (2014), 「Migrations et mobilités commerciales entre le Massif central et la péninsule ibérique au XVIIe siècle」, Diasporas 23-24: 132-146",
+    "url": "https://doi.org/10.4000/diasporas.311"
+   }
+  ]
+ },
+ {
+  "id": "rur-109",
+  "cat": "work",
+  "text": "사부아 아이들이 굴뚝 청소부로 도시를 떠돌았다. 겨울마다 검댕투성이로 지나갔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "사부아 산지의 계절 이주는 굴뚝 청소·행상 등으로 프랑스 도시들에 널리 퍼졌다.",
+  "src": [
+   {
+    "cite": "Letonnelier, G. (1920), 「L'émigration des Savoyards」, Revue de géographie alpine 8(4): 541-584",
+    "url": "https://doi.org/10.3406/rga.1920.2809"
+   }
+  ]
+ },
+ {
+  "id": "rur-110",
+  "cat": "work",
+  "text": "모르방 여자들이 파리 아이를 맡아 젖을 먹이러 떠났다. 그 돈으로 지붕을 갈았다.",
+  "fx": {
+   "money": 10
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bourgogne"
+   ],
+   "sex": "F",
+   "age": [
+    18,
+    40
+   ],
+   "married": true
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "19세기 모르방은 파리 아기들을 맡는 유모 산업으로 유명했고 그 수입이 농가 경제를 지탱했다.",
+  "src": [
+   {
+    "cite": "Armengaud, A. (1964), 「Histoire rurale et démographie : les nourrices du Morvan au XIXe siècle」, Études et chronique de démographie historique 1964: 131-139",
+    "url": "https://doi.org/10.3406/adh.1964.883"
+   }
+  ]
+ },
+ {
+  "id": "rur-111",
+  "cat": "economy",
+  "text": "방데 큰 장날, 황소 두 마리를 몰고 나갔다. 흥정 끝에 손바닥을 맞부딪쳐 거래를 맺었다.",
+  "fx": {
+   "money": 30,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "vendee",
+    "bretagne",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 '소의 고장' 방데는 대가축이 평균 2ha당 1마리로 오픈필드보다 훨씬 조밀했고, 가축 장이 농촌 경제의 중심이었다.",
+  "src": [
+   {
+    "cite": "Bossis, P. (1980), 「La foire aux bestiaux en Vendée au XVIIIe siècle」, Études rurales 78: 143-150",
+    "url": "https://doi.org/10.3406/rural.1980.2633"
+   }
+  ]
+ },
+ {
+  "id": "rur-112",
+  "cat": "economy",
+  "text": "장날 읍내 곡물 시장에서 밀 한 부아소 값이 지난달보다 훨씬 뛰었다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 곡물 시장 가격은 지역 장터 시세(mercuriale)로 기록되었고 해마다 크게 출렁였다.",
+  "src": [
+   {
+    "cite": "Labrousse, E. (1939), 「Prix et structure régionale : le prix du froment, 1782-1790」, Annales d'histoire sociale 1(4): 382-400",
+    "url": "https://doi.org/10.3406/ahess.1939.3007"
+   },
+   {
+    "cite": "Grenier, J.-Y. (1995), 「Consommation et marché au XVIIIe siècle」, Histoire & Mesure 10(3): 371-380",
+    "url": "https://doi.org/10.3406/hism.1995.1561"
+   }
+  ]
+ },
+ {
+  "id": "rur-113",
+  "cat": "economy",
+  "text": "암소 한 마리, 돼지 두 마리, 닭 몇 마리. 재산목록에 적힌 우리 집 가축의 전부였다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "캉 평야 농가의 18세기 재산목록은 소농의 가축이 소 한두 마리 수준이었음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Dickinson, J. (1992), 「L'outillage agricole et le cheptel dans la plaine de Caen au XVIIIe siècle」, Cahier des Annales de Normandie 24: 123-133",
+    "url": "https://doi.org/10.3406/annor.1992.4078"
+   }
+  ]
+ },
+ {
+  "id": "rur-114",
+  "cat": "rural",
+  "text": "소가 병들어 쓰러졌다. 수의사는 없고 마을 노인이 약초를 달여 먹였다.",
+  "fx": {
+   "money": -15
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "쟁기 소 한 마리를 잃는 것은 소농에게 1년 소득에 맞먹는 손실이었다.",
+  "src": [
+   {
+    "cite": "Dickinson, J. (1992), 「L'outillage agricole et le cheptel dans la plaine de Caen au XVIIIe siècle」, Cahier des Annales de Normandie 24: 123-133",
+    "url": "https://doi.org/10.3406/annor.1992.4078"
+   },
+   {
+    "cite": "Fortunet, F. (1979), 「Les baux à cheptel simple en Auxois aux XVIIIe et XIXe siècles」, AHRF 238: 679-682",
+    "url": "https://doi.org/10.3406/ahrf.1979.4367"
+   }
+  ]
+ },
+ {
+  "id": "rur-115",
+  "cat": "economy",
+  "text": "돈이 급해 내년 수확을 담보로 읍내 상인에게 빚을 냈다.",
+  "fx": {
+   "money": 20
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "농민은 토지와 수확을 담보로 한 소액 신용에 의존했고 토지 매매는 생애 주기에 맞춰 이루어졌다.",
+  "src": [
+   {
+    "cite": "Béaur, G. (1991), 「Investissement foncier, épargne et cycle de vie dans le pays chartrain au XVIIIe siècle」, Histoire & Mesure 6(3): 275-288",
+    "url": "https://doi.org/10.3406/hism.1991.1398"
+   },
+   {
+    "cite": "Weil, F. (2001), 「Le marché foncier à Camembert (1752-1790)」, Annales de Normandie 51(4): 331-355",
+    "url": "https://doi.org/10.3406/annor.2001.1336"
+   }
+  ]
+ },
+ {
+  "id": "rur-116",
+  "cat": "economy",
+  "text": "노르망디 카망베르 마을의 작은 목초지 한 조각이 경매에 나왔다. 이웃 셋이 다퉜다.",
+  "when": {
+   "from": 1752,
+   "to": 1790
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1752~1790년 카망베르의 토지 시장은 소규모 필지 거래가 활발했음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Weil, F. (2001), 「Le marché foncier à Camembert (1752-1790)」, Annales de Normandie 51(4): 331-355",
+    "url": "https://doi.org/10.3406/annor.2001.1336"
+   }
+  ]
+ },
+ {
+  "id": "rur-117",
+  "cat": "economy",
+  "text": "형제끼리 아버지 땅을 쪼개 나눴다. 각자 몫은 혼자 먹고살기도 힘든 크기였다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "티메레 지역에서는 가족 전략에 따라 토지와 사람이 함께 이동하며 상속 분할을 조정했다.",
+  "src": [
+   {
+    "cite": "Derouet, B. (1982), 「Famille, ménage paysan et mobilité de la terre et des personnes en Thimerais au XVIIIe siècle」, Études rurales 86: 47-56",
+    "url": "https://doi.org/10.3406/rural.1982.2821"
+   }
+  ]
+ },
+ {
+  "id": "rur-118",
+  "cat": "economy",
+  "text": "투렌 마을에서 밭 대부분은 성 주인과 읍내 부르주아 것이었다. 우리는 빌려 부칠 뿐이었다.",
+  "when": {
+   "from": 1750,
+   "to": 1800
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "region": [
+    "bourgogne",
+    "ile",
+    "champagne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "18세기 투렌 농민 다수는 자작과 차지를 겸했고, 토지의 큰 몫은 특권층과 도시민이 소유했다.",
+  "src": [
+   {
+    "cite": "Maillard, B. (1998), 「Paysans propriétaires, paysans locataires」, in Les campagnes de Touraine au XVIIIe siècle, PUR: 135-167",
+    "url": "https://doi.org/10.4000/books.pur.17126"
+   },
+   {
+    "cite": "Sagnac, P. (1901), 「La propriété foncière et les paysans en France au XVIIIe siècle, d'après les travaux de J. Loutchisky」, RHMC 3(2): 156-171",
+    "url": "https://doi.org/10.3406/rhmc.1901.4394"
+   }
+  ]
+ },
+ {
+  "id": "rur-119",
+  "cat": "rural",
+  "text": "해 질 녘 숲 가장자리에서 늑대 울음이 들렸다. 양 떼를 서둘러 우리에 몰아넣었다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "18세기 프랑스 전역에 늑대가 서식했고 가축 피해와 인명 공격이 끊이지 않았다.",
+  "src": [
+   {
+    "cite": "Molinier, A. et Molinier-Meyer, N. (1981), 「Environnement et histoire : les loups et l'homme en France」, Revue d'histoire moderne et contemporaine 28(2): 225-245",
+    "url": "https://doi.org/10.3917/rhmc.g1981.28n2.0225"
+   },
+   {
+    "cite": "Dugas de la Boissony, C. (1991), 「La destruction des loups en Franche-Comté (XVIIIe siècle)」, Histoire, économie et société 10(1): 113-126",
+    "url": "https://doi.org/10.3406/hes.1991.1597"
+   }
+  ]
+ },
+ {
+  "id": "rur-120",
+  "cat": "rural",
+  "text": "이웃 목동 아이가 늑대에게 물려 죽었다는 소식에 온 마을이 몰이사냥에 나섰다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1830
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "왕정과 지방 당국은 늑대 몰이(battue)를 조직하고 포상금을 지급했다.",
+  "src": [
+   {
+    "cite": "Favier, R. (2002), 「La monarchie et la lutte contre les loups en Dauphiné dans la seconde moitié du XVIIIe siècle」, Le Monde alpin et rhodanien 30(1): 117-124",
+    "url": "https://doi.org/10.3406/mar.2002.1765"
+   },
+   {
+    "cite": "Dugas de la Boissony, C. (1991), 「La destruction des loups en Franche-Comté (XVIIIe siècle)」, Histoire, économie et société 10(1): 113-126",
+    "url": "https://doi.org/10.3406/hes.1991.1597"
+   }
+  ]
+ },
+ {
+  "id": "rur-121",
+  "cat": "rural",
+  "text": "늑대 머리를 잘라 면사무소에 가져가 포상금을 받았다.",
+  "fx": {
+   "money": 10,
+   "fame": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "sex": "M",
+   "age": [
+    16,
+    60
+   ]
+  },
+  "w": 0.4,
+  "once": true,
+  "fact": "프랑슈콩테와 도피네에서 18세기 왕정은 늑대 한 마리마다 포상금을 주며 퇴치를 장려했다.",
+  "src": [
+   {
+    "cite": "Dugas de la Boissony, C. (1991), 「La destruction des loups en Franche-Comté (XVIIIe siècle)」, Histoire, économie et société 10(1): 113-126",
+    "url": "https://doi.org/10.3406/hes.1991.1597"
+   },
+   {
+    "cite": "Favier, R. (2002), 「La monarchie et la lutte contre les loups en Dauphiné dans la seconde moitié du XVIIIe siècle」, Le Monde alpin et rhodanien 30(1): 117-124",
+    "url": "https://doi.org/10.3406/mar.2002.1765"
+   }
+  ]
+ },
+ {
+  "id": "rur-122",
+  "cat": "rural",
+  "text": "1709년 대한파 이야기를 할머니가 또 했다. 포도나무와 올리브나무까지 얼어 죽었다고.",
+  "when": {
+   "from": 1750,
+   "to": 1790,
+   "months": [
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1709년 대한파와 이어진 1709~1713년 위기는 알비 등지에서 대량 사망을 낳고 오래 기억되었다.",
+  "src": [
+   {
+    "cite": "Floutard, G. (1972), 「La crise de 1709-1713 à Albi」, Annales du Midi 84(107): 117-150",
+    "url": "https://doi.org/10.3406/anami.1972.5573"
+   }
+  ]
+ },
+ {
+  "id": "rur-123",
+  "cat": "food",
+  "text": "곡식 값이 치솟았다. 장터에서 빵을 못 산 사람들이 곡물 수레를 세워 값을 정해 버렸다.",
+  "fx": {
+   "pol": 2,
+   "sus": 1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 곡물 위기 때 군중은 곡물을 압류해 '정당한 가격'에 파는 민중 가격 책정(taxation populaire)을 벌였다.",
+  "src": [
+   {
+    "cite": "Forster, R. (1977), compte rendu de S. L. Kaplan, Bread, Politics and Political Economy in the Reign of Louis XV, American Historical Review 82(5): 1263",
+    "url": "https://doi.org/10.2307/1856426"
+   },
+   {
+    "cite": "Bouis, R. (1958), 「À propos de la guerre des farines」, AHRF 154: 75-83",
+    "url": "https://doi.org/10.3406/ahrf.1958.4778"
+   }
+  ]
+ },
+ {
+  "id": "rur-124",
+  "cat": "revolution",
+  "text": "1775년 봄, 밀가루 값 폭등에 성난 군중이 시장과 방앗간을 덮쳤다.",
+  "fx": {
+   "pol": 2,
+   "sus": 2
+  },
+  "when": {
+   "from": 1775,
+   "to": 1775,
+   "months": [
+    4,
+    5
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "ile",
+    "picardie",
+    "champagne",
+    "normandie",
+    "paris"
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1775년 4~5월 '밀가루 전쟁'은 튀르고의 곡물 자유화 이후 파리 분지 일대에서 일어난 곡물 폭동이었다.",
+  "src": [
+   {
+    "cite": "Bouis, R. (1958), 「À propos de la guerre des farines」, AHRF 154: 75-83",
+    "url": "https://doi.org/10.3406/ahrf.1958.4778"
+   },
+   {
+    "cite": "Darnton, R. (1969), 「Le lieutenant de police J.-P. Lenoir, la guerre des farines et l'approvisionnement de Paris」, RHMC 16(4): 611-624",
+    "url": "https://doi.org/10.3406/rhmc.1969.3050"
+   }
+  ]
+ },
+ {
+  "id": "rur-125",
+  "cat": "rural",
+  "text": "1788년 7월 13일, 하늘이 검어지더니 우박이 쏟아져 익어 가던 밀밭이 한순간에 쓰러졌다.",
+  "fx": {
+   "money": -15,
+   "hp": -1
+  },
+  "when": {
+   "from": 1788,
+   "to": 1788,
+   "months": [
+    7
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "ile",
+    "normandie",
+    "picardie",
+    "champagne",
+    "paris"
+   ]
+  },
+  "w": 3,
+  "once": true,
+  "fact": "1788년 7월 13일 대우박은 파리 분지 수확을 망쳐 1789년 봄여름 곡가 폭등의 원인이 되었다.",
+  "src": [
+   {
+    "cite": "Labrousse, E. (1939), 「Prix et structure régionale : le prix du froment, 1782-1790」, Annales d'histoire sociale 1(4): 382-400",
+    "url": "https://doi.org/10.3406/ahess.1939.3007"
+   }
+  ]
+ },
+ {
+  "id": "rur-126",
+  "cat": "food",
+  "text": "1789년 봄, 빵 값이 사상 최고로 올랐다. 품삯의 거의 전부가 빵으로 나갔다.",
+  "fx": {
+   "money": -8,
+   "hp": -2,
+   "pol": 2
+  },
+  "when": {
+   "from": 1789,
+   "to": 1789,
+   "months": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2.5,
+  "once": true,
+  "fact": "밀 가격은 1789년 7월 18세기 최고치에 달했고 이는 혁명기 민중 동원의 배경이 되었다.",
+  "src": [
+   {
+    "cite": "Labrousse, E. (1939), 「Prix et structure régionale : le prix du froment, 1782-1790」, Annales d'histoire sociale 1(4): 382-400",
+    "url": "https://doi.org/10.3406/ahess.1939.3007"
+   },
+   {
+    "cite": "Botrel, A. (1904), 「La communauté de Lamballe en 1788, 1789 et 1790」, Annales de Bretagne 20(3): 296-315",
+    "url": "https://doi.org/10.3406/abpo.1904.1202"
+   }
+  ]
+ },
+ {
+  "id": "rur-127",
+  "cat": "food",
+  "text": "1740년 겨울 흉작 뒤 마을 아이와 노인이 잇달아 죽었다. 묘지가 모자랐다.",
+  "fx": {
+   "hp": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1760
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "1740년대 파리 고등법원 관할 지역의 생계 위기는 사망률 급등을 낳았다.",
+  "src": [
+   {
+    "cite": "Bricourt, M., Lachiver, M. et Queruel, D. (1974), 「La crise de subsistance des années 1740 dans le ressort du Parlement de Paris」, Annales de démographie historique 1974: 281-333",
+    "url": "https://doi.org/10.3406/adh.1974.1241"
+   }
+  ]
+ },
+ {
+  "id": "rur-128",
+  "cat": "food",
+  "text": "아시냐 가치가 곤두박질치고 흉작이 겹쳐 겨울 내내 굶주렸다.",
+  "fx": {
+   "hp": -3,
+   "money": -5
+  },
+  "when": {
+   "from": 1795,
+   "to": 1796
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "공화력 3~4년(1795~96년) 위기는 루앙 일대에서 기근과 사망률 급증을 낳았다.",
+  "src": [
+   {
+    "cite": "Cobb, R. (1956), 「Disette et mortalité. La crise de l'an III et de l'an IV à Rouen」, Annales de Normandie 6(3): 267-291",
+    "url": "https://doi.org/10.3406/annor.1956.4320"
+   }
+  ]
+ },
+ {
+  "id": "rur-129",
+  "cat": "food",
+  "text": "1816년 여름 내내 비가 내려 밀이 썩었다. 이듬해 봄, 장터에선 곡물 호송대를 막아섰다.",
+  "fx": {
+   "hp": -2,
+   "money": -8,
+   "pol": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2.5,
+  "once": true,
+  "fact": "1816년 '여름 없는 해'의 흉작은 1816~1817년 기근과 전국적 곡물 소요를 불렀다.",
+  "src": [
+   {
+    "cite": "Marjolin, R. (1933), 「Troubles provoqués en France par la disette de 1816-1817」, Revue d'histoire moderne 8(10): 423-460",
+    "url": "https://doi.org/10.3406/rhmc.1933.3779"
+   },
+   {
+    "cite": "Geneau, F. (1929), 「La disette de 1816-1817 dans une région productive de blé, la Brie」, Revue d'histoire moderne 4(19): 18-46",
+    "url": "https://doi.org/10.3406/rhmc.1929.3523"
+   }
+  ]
+ },
+ {
+  "id": "rur-130",
+  "cat": "food",
+  "text": "브리의 곡창지대에서조차 빵이 모자라 빈민 구호소 앞에 줄이 늘어섰다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1817
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "ile",
+    "champagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "밀 생산지인 브리에서도 1816~1817년 기근은 심각한 곤궁을 낳았다.",
+  "src": [
+   {
+    "cite": "Geneau, F. (1929), 「La disette de 1816-1817 dans une région productive de blé, la Brie」, Revue d'histoire moderne 4(19): 18-46",
+    "url": "https://doi.org/10.3406/rhmc.1929.3523"
+   }
+  ]
+ },
+ {
+  "id": "rur-131",
+  "cat": "food",
+  "text": "감자 역병이 돌고 밀값이 오른 1846년 겨울, 이웃들이 시장 수레를 습격했다.",
+  "fx": {
+   "hp": -2,
+   "money": -5,
+   "pol": 1
+  },
+  "when": {
+   "from": 1846,
+   "to": 1847
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1846~1847년 흉작과 감자 병으로 외르·캉 평야 등지에서 식량 위기와 소요가 일어났다.",
+  "src": [
+   {
+    "cite": "Baudot, M. (1952), 「La crise alimentaire des années 1846 et 1847 dans le département de l'Eure」, Annales de Normandie 2(1): 51-56",
+    "url": "https://doi.org/10.3406/annor.1952.4219"
+   },
+   {
+    "cite": "Désert, G. (1951), 「La population de la Plaine de Caen et la crise de 1846-1847」, Annales de Normandie 1(3): 252-265",
+    "url": "https://doi.org/10.3406/annor.1951.4207"
+   }
+  ]
+ },
+ {
+  "id": "rur-132",
+  "cat": "food",
+  "text": "아리에주 산골에서 곡물 값이 뛰자 굶주린 사람들이 상인 창고 앞에 모였다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1845,
+   "to": 1847
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "gascogne",
+    "languedoc"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "아리에주는 1845~1847년 기근과 물가 앙등으로 심한 고통을 겪었다.",
+  "src": [
+   {
+    "cite": "Morère, P. (1920), 「Disette et vie chère en Ariège à la fin de la monarchie de Juillet (1845-1847)」, La Révolution de 1848 17(85): 129-152",
+    "url": "https://doi.org/10.3406/r1848.1920.1648"
+   }
+  ]
+ },
+ {
+  "id": "rur-133",
+  "cat": "revolution",
+  "text": "수도원 땅이 국유재산으로 경매에 나왔다. 읍내 부르주아가 높은 값을 불러 통째로 가져갔다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1795
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1791년 말까지 대부분 교회 재산이 팔렸고 최대 몫은 부르주아가, 일부는 부유한 농민이 차지했다.",
+  "src": [
+   {
+    "cite": "Teyssier, A. (2000), 「La vente des biens nationaux et la question agraire, 1789-1795」, Rives nord-méditerranéennes 5: 45-62",
+    "url": "https://doi.org/10.4000/rives.100"
+   },
+   {
+    "cite": "Bodinier, B. et Teyssier, É. (2003), 「Les biens nationaux en France : état de la question」, in La Révolution française au carrefour des recherches, PUP: 87-99",
+    "url": "https://doi.org/10.4000/books.pup.5753"
+   }
+  ]
+ },
+ {
+  "id": "rur-134",
+  "cat": "revolution",
+  "text": "마을 사람 몇이 돈을 모아 국유재산 한 필지를 공동으로 샀다. 밤새 몫을 나눴다.",
+  "fx": {
+   "money": -30,
+   "pol": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1793
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "농민들의 공동 매입(association)은 1793년 4월 24일 법으로 금지되었다.",
+  "src": [
+   {
+    "cite": "Teyssier, A. (2000), 「La vente des biens nationaux et la question agraire, 1789-1795」, Rives nord-méditerranéennes 5: 45-62",
+    "url": "https://doi.org/10.4000/rives.100"
+   },
+   {
+    "cite": "Lefebvre, G. (1928), 「Les recherches relatives à la vente des biens nationaux」, Revue d'histoire moderne 3(15): 188-219",
+    "url": "https://doi.org/10.3406/rhmc.1928.3479"
+   }
+  ]
+ },
+ {
+  "id": "rur-135",
+  "cat": "revolution",
+  "text": "망명 귀족의 땅이 작은 조각으로 나뉘어 팔렸다. 생전 처음 내 이름으로 된 밭이 생겼다.",
+  "fx": {
+   "money": -40,
+   "soc": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1796
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1792~93년 법은 망명귀족 토지를 작은 필지로 나눠 팔도록 했고, 아르데슈 코이롱에서는 48개 영지가 744필지로 쪼개졌다.",
+  "src": [
+   {
+    "cite": "Teyssier, A. (2000), 「La vente des biens nationaux et la question agraire, 1789-1795」, Rives nord-méditerranéennes 5: 45-62",
+    "url": "https://doi.org/10.4000/rives.100"
+   },
+   {
+    "cite": "Bodinier, B. et Teyssier, É. (2003), 「Les biens nationaux en France : état de la question」, in La Révolution française au carrefour des recherches, PUP: 87-99",
+    "url": "https://doi.org/10.4000/books.pup.5753"
+   }
+  ]
+ },
+ {
+  "id": "rur-136",
+  "cat": "revolution",
+  "text": "가난한 가장에게 국유재산 구입권 500리브르를 준다는 법령이 낭독되었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1793년 9월 13일 법은 빈민에게 20년 무이자 상환의 500리브르 증서를 주어 국유재산 구입을 돕도록 했다.",
+  "src": [
+   {
+    "cite": "Teyssier, A. (2000), 「La vente des biens nationaux et la question agraire, 1789-1795」, Rives nord-méditerranéennes 5: 45-62",
+    "url": "https://doi.org/10.4000/rives.100"
+   }
+  ]
+ },
+ {
+  "id": "rur-137",
+  "cat": "revolution",
+  "text": "공유지 분할 투표에 남자뿐 아니라 여자들도 나와 손을 들었다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1793년 6월 10일 법은 남녀 주민 3분의 1 찬성으로 공유지를 1인당 균등 분할할 수 있게 했다.",
+  "src": [
+   {
+    "cite": "Aberdam, S. (2005), 「Deux occasions de participation féminine en 1793」, AHRF 339: 17-34",
+    "url": "https://doi.org/10.3406/ahrf.2005.2750"
+   },
+   {
+    "cite": "Vivier, N. (2003), 「Les biens communaux en France」, in Les propriétés collectives face aux attaques libérales, PUR: 139-156",
+    "url": "https://doi.org/10.4000/books.pur.23660"
+   }
+  ]
+ },
+ {
+  "id": "rur-138",
+  "cat": "revolution",
+  "text": "공유지 분할을 놓고 가축 가진 집과 땅 없는 집이 맞붙어 마을 회의가 난장판이 됐다.",
+  "fx": {
+   "pol": 1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "공유지 분할은 혁명기 농촌 공동체를 분열시켰고 1795년 법 시행이 중지되었다.",
+  "src": [
+   {
+    "cite": "Ikni, G. (1982), 「Sur les biens communaux pendant la Révolution française」, AHRF 247: 71-94",
+    "url": "https://doi.org/10.3406/ahrf.1982.3647"
+   },
+   {
+    "cite": "Vivier, N. (1999), 「Communaux et vitalité communautaire en France à la fin de l'Ancien Régime et pendant la Révolution」, AHRF 315: 63-81",
+    "url": "https://doi.org/10.3406/ahrf.1999.2224"
+   }
+  ]
+ },
+ {
+  "id": "rur-139",
+  "cat": "revolution",
+  "text": "시장이 나폴레옹의 법령에 따라 임대 중이던 공유지를 경매에 부친다고 했다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1813,
+   "to": 1815
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1813년 재정법은 임대 중인 공유지 매각을 명했고 약 10만 ha가 팔린 것으로 추정된다.",
+  "src": [
+   {
+    "cite": "Vivier, N. (2003), 「Les biens communaux en France」, in Les propriétés collectives face aux attaques libérales, PUR: 139-156",
+    "url": "https://doi.org/10.4000/books.pur.23660"
+   }
+  ]
+ },
+ {
+  "id": "rur-140",
+  "cat": "revolution",
+  "text": "에르의 수도원 농장을 샀던 이웃은 20년 뒤 그 땅을 부유한 농민에게 되팔았다.",
+  "when": {
+   "from": 1795,
+   "to": 1827
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "normandie"
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "외르에서는 1789~1827년 국유재산 매각과 재매각이 장기적으로 토지 구조를 바꾸었다.",
+  "src": [
+   {
+    "cite": "Bodinier, B. et Teyssier, É. (2003), 「Les biens nationaux en France : état de la question」, in La Révolution française au carrefour des recherches, PUP: 87-99",
+    "url": "https://doi.org/10.4000/books.pup.5753"
+   },
+   {
+    "cite": "Lefebvre, G. (1928), 「Les recherches relatives à la vente des biens nationaux」, Revue d'histoire moderne 3(15): 188-219",
+    "url": "https://doi.org/10.3406/rhmc.1928.3479"
+   }
+  ]
+ },
+ {
+  "id": "rur-141",
+  "cat": "revolution",
+  "text": "혁명 뒤로 마을 장터에서 장정들이 정치 얘기를 하는 일이 늘었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1830,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 농민의 정치화는 장터·주점·이주 경험을 통해 점진적으로 이루어졌다.",
+  "src": [
+   {
+    "cite": "Pécout, G. (1994), 「La politisation des paysans au XIXe siècle」, Histoire & Sociétés Rurales 2: 91-125",
+    "url": "https://doi.org/10.3406/hsr.1994.880"
+   }
+  ]
+ },
+ {
+  "id": "rur-142",
+  "cat": "crime",
+  "text": "1827년 새 산림법으로 공유림 방목이 막혔다. 산림관을 쫓아내려 남자들이 여자 옷을 입고 나섰다.",
+  "fx": {
+   "pol": 2,
+   "sus": 2
+  },
+  "when": {
+   "from": 1829,
+   "to": 1831
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "gascogne",
+    "languedoc"
+   ],
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1827년 산림법에 맞서 아리에주 농민들은 여장을 하고 산림 감시인을 습격한 '아가씨들의 전쟁'(1829~1831)을 벌였다.",
+  "src": [
+   {
+    "cite": "Dupont, A. (1932), 「Les forêts du Saint-Gironnais avant la Guerre des Demoiselles (1829-1831)」, Revue géographique des Pyrénées et du Sud-Ouest 3(3): 355-367",
+    "url": "https://doi.org/10.3406/rgpso.1932.4065"
+   }
+  ]
+ },
+ {
+  "id": "rur-143",
+  "cat": "rural",
+  "text": "산림 감시인이 새로 생긴 공유림 규칙을 읽었다. 염소는 이제 숲에 한 발짝도 못 들인다고 했다.",
+  "fx": {
+   "money": -2
+  },
+  "when": {
+   "from": 1827,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "provence",
+    "languedoc",
+    "gascogne",
+    "auvergne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 프로방스 코뮌 회계는 산림 방목권 제한이 농민 경제에 미친 압박을 보여 준다.",
+  "src": [
+   {
+    "cite": "Dupont, A. (1932), 「Les forêts du Saint-Gironnais avant la Guerre des Demoiselles (1829-1831)」, Revue géographique des Pyrénées et du Sud-Ouest 3(3): 355-367",
+    "url": "https://doi.org/10.3406/rgpso.1932.4065"
+   },
+   {
+    "cite": "Fruhauf, C. (1983), 「Les délits forestiers en Pays de Sault au XVIIIe siècle」, Annales du Midi 95(164): 391-428",
+    "url": "https://doi.org/10.3406/anami.1983.2023"
+   }
+  ]
+ },
+ {
+  "id": "rur-144",
+  "cat": "food",
+  "text": "도시에선 고기를 매일 먹는다는 말을 들었다. 우리 식탁엔 여전히 빵과 수프, 감자뿐이었다.",
+  "when": {
+   "from": 1820,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 전반까지 농촌 식단은 빵·수프·감자 중심이었고 육류 소비는 도시보다 훨씬 적었다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Désert, G. (1955), 「La culture de la pomme de terre dans le Calvados au XIXe siècle」, Annales de Normandie 5(3): 261-270",
+    "url": "https://doi.org/10.3406/annor.1955.6514"
+   }
+  ]
+ },
+ {
+  "id": "rur-145",
+  "cat": "economy",
+  "text": "타유는 사라졌지만 토지세 고지서가 새로 날아왔다. 액수는 그리 줄지 않은 것 같았다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1791,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "혁명기 토지세(contribution foncière, 1790~91)는 신분 특권 없이 모든 토지에 부과되었다.",
+  "src": [
+   {
+    "cite": "Ormières, J.-L. (1989), compte rendu de P. M. Jones, The Peasantry in the French Revolution (Cambridge UP, 1988), Annales ESC 44(1): 103",
+    "url": "https://doi.org/10.1017/s039526490006443x"
+   },
+   {
+    "cite": "Marion, M. (1914), 「Les rôles de vingtièmes et les statistiques de la propriété territoriale sous l'ancien régime」, RHMC 19(2): 105-112",
+    "url": "https://doi.org/10.3406/rhmc.1914.4696"
+   }
+  ]
+ },
+ {
+  "id": "rur-146",
+  "cat": "work",
+  "text": "1848년 봄, 농업 노동자의 처지를 묻는 조사원이 마을에 왔다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1848,
+   "to": 1848,
+   "months": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1848년 혁명기 농업 노동자 문제는 정치적 쟁점이 되었고 각종 조사와 제안이 나왔다.",
+  "src": [
+   {
+    "cite": "Pécout, G. (1994), 「La politisation des paysans au XIXe siècle」, Histoire & Sociétés Rurales 2: 91-125",
+    "url": "https://doi.org/10.3406/hsr.1994.880"
+   }
+  ]
+ },
+ {
+  "id": "rur-147",
+  "cat": "rural",
+  "text": "새벽 종이 울리기도 전에 소에게 여물을 주고 우물에서 물을 길어 왔다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "농가의 하루는 가축 돌보기로 시작했고, 가축은 쟁기 동력이자 거름 공급원이었다.",
+  "src": [
+   {
+    "cite": "Dickinson, J. (1992), 「L'outillage agricole et le cheptel dans la plaine de Caen au XVIIIe siècle」, Cahier des Annales de Normandie 24: 123-133",
+    "url": "https://doi.org/10.3406/annor.1992.4078"
+   },
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   }
+  ]
+ },
+ {
+  "id": "rur-148",
+  "cat": "rural",
+  "text": "호밀 밭에 깜부기가 번져 빵이 시커멓고 쓴맛이 났다. 먹고 나서 손발이 저렸다.",
+  "fx": {
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    8,
+    9
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "호밀은 척박한 땅의 주곡이었으나 맥각 등 곡물병이 퍼지면 식량 질이 크게 떨어졌다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Nassiet, M. (1998), 「La diffusion du blé noir en France à l'époque moderne」, Histoire & Sociétés Rurales 9: 57-76",
+    "url": "https://doi.org/10.3406/hsr.1998.1052"
+   }
+  ]
+ },
+ {
+  "id": "rur-149",
+  "cat": "rural",
+  "text": "가을 장마에 밀 씨를 다 뿌리지 못했다. 남은 밭엔 봄에 보리를 넣기로 했다.",
+  "fx": {
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    10,
+    11
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "파종기의 날씨는 이듬해 수확을 좌우했고, 실패한 가을밭은 봄곡으로 대체되었다.",
+  "src": [
+   {
+    "cite": "Faucher, D. (1961), 「L'assolement triennal en France」, Études rurales 1: 7-17",
+    "url": "https://doi.org/10.3406/rural.1961.959"
+   },
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   }
+  ]
+ },
+ {
+  "id": "rur-150",
+  "cat": "rural",
+  "text": "가뭄이 길어져 샘이 말랐다. 신부가 비를 비는 행렬을 이끌고 밭을 돌았다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    5,
+    6,
+    7
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "농촌 공동체는 가뭄·우박 같은 기상 재해에 기원 행렬(rogations)로 대응했다.",
+  "src": [
+   {
+    "cite": "Allix, A. (1922), 「La date des vendanges en France」, Annales de Géographie 31(174): 518-519",
+    "url": "https://doi.org/10.3406/geo.1922.10090"
+   },
+   {
+    "cite": "Floutard, G. (1972), 「La crise de 1709-1713 à Albi」, Annales du Midi 84(107): 117-150",
+    "url": "https://doi.org/10.3406/anami.1972.5573"
+   }
+  ]
+ },
+ {
+  "id": "rur-151",
+  "cat": "rural",
+  "text": "마을 어귀 방앗간 물레방아가 가뭄에 멈춰, 이웃 마을까지 곡식을 지고 갔다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "산간 마을 방앗간들은 수량에 따라 가동이 좌우되었고 방앗간지기는 마을 경제의 중심이었다.",
+  "src": [
+   {
+    "cite": "Bardagot, E. et Sabatier, A. (1979), 「Moulins et meuniers en Valgaudemar」, Le Monde alpin et rhodanien 7(1): 365-393",
+    "url": "https://doi.org/10.3406/mar.1979.1078"
+   }
+  ]
+ },
+ {
+  "id": "rur-152",
+  "cat": "food",
+  "text": "혼례 잔치에 소 한 마리를 잡고 흰 빵을 구웠다. 몇 년 만에 실컷 고기를 먹었다.",
+  "fx": {
+   "hp": 1,
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "농민의 육류 소비는 축일과 혼례 같은 특별한 날에 집중되었다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Cailly, C. (1998), 「Structure sociale et consommation dans le monde proto-industriel rural textile : le Perche ornais au XVIIIe siècle」, RHMC 45(4): 746-774",
+    "url": "https://doi.org/10.3406/rhmc.1998.1934"
+   }
+  ]
+ },
+ {
+  "id": "rur-153",
+  "cat": "food",
+  "text": "밀가루가 모자라 콩과 보릿가루를 섞어 빵을 구웠다. 금방 부스러졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    4,
+    5,
+    6
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "흉년에는 보리·콩·메밀 등을 섞은 대용 빵이 일상화되었다.",
+  "src": [
+   {
+    "cite": "Forster, R. (1977), compte rendu de S. L. Kaplan, Bread, Politics and Political Economy in the Reign of Louis XV, American Historical Review 82(5): 1263",
+    "url": "https://doi.org/10.2307/1856426"
+   },
+   {
+    "cite": "Beaudry, R. (1976), 「Alimentation et population rurale en Périgord au XVIIIe siècle」, Annales de démographie historique 1976: 41-59",
+    "url": "https://doi.org/10.3406/adh.1976.1301"
+   }
+  ]
+ },
+ {
+  "id": "rur-154",
+  "cat": "rural",
+  "text": "다 큰 딸이 이웃 큰 농가에 하녀로 들어갔다. 1년 품삯은 옷 한 벌과 몇 리브르였다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "농촌 청년들은 결혼 전 몇 년간 큰 농가의 하인·하녀로 일하며 지참금을 모았다.",
+  "src": [
+   {
+    "cite": "Derouet, B. (1982), 「Famille, ménage paysan et mobilité de la terre et des personnes en Thimerais au XVIIIe siècle」, Études rurales 86: 47-56",
+    "url": "https://doi.org/10.3406/rural.1982.2821"
+   },
+   {
+    "cite": "Boehler, J.-M. (1976), 「Communauté villageoise et contrastes sociaux : laboureurs et manouvriers dans la campagne strasbourgeoise」, Études rurales 63: 93-116",
+    "url": "https://doi.org/10.3406/rural.1976.2170"
+   }
+  ]
+ },
+ {
+  "id": "rur-155",
+  "cat": "rural",
+  "text": "나무 쟁기 끝에 쇠 보습을 새로 달았다. 대장장이 삯이 만만치 않았다.",
+  "fx": {
+   "money": -6
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "sex": "M"
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "18세기 캉 평야의 농기구 목록은 쟁기·써레·수레 등 철제 부품의 가치가 컸음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Dickinson, J. (1992), 「L'outillage agricole et le cheptel dans la plaine de Caen au XVIIIe siècle」, Cahier des Annales de Normandie 24: 123-133",
+    "url": "https://doi.org/10.3406/annor.1992.4078"
+   }
+  ]
+ },
+ {
+  "id": "rur-156",
+  "cat": "work",
+  "text": "주인 집 짚단을 묶고 수레에 실어 곡물 창고로 날랐다. 저녁엔 주인 식탁 끝에 앉아 먹었다.",
+  "fx": {
+   "money": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "age": [
+    14,
+    50
+   ]
+  },
+  "w": 1.2,
+  "once": false,
+  "fact": "수확기 일꾼은 품삯 외에 식사를 제공받는 것이 관례였다.",
+  "src": [
+   {
+    "cite": "Bernet, J. (1999), 「Les grèves de moissonneurs ou « bacchanals » dans les campagnes d'Île-de-France et de Picardie au XVIIIe siècle」, Histoire & Sociétés Rurales 11: 153-186",
+    "url": "https://doi.org/10.3406/hsr.1999.1091"
+   },
+   {
+    "cite": "Grantham, G. (1999), 「La faucille et la faux」, Études rurales 151: 103-131",
+    "url": "https://doi.org/10.3406/rural.1999.4118"
+   }
+  ]
+ },
+ {
+  "id": "rur-157",
+  "cat": "economy",
+  "text": "곡물 거래 자유화 소식에 장사꾼들이 마을 밀을 사들여 멀리 실어 갔다. 마을 사람들이 수군거렸다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1763,
+   "to": 1775
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1763~64년과 1774년 곡물 거래 자유화는 '기근 음모' 의심과 민중 저항을 낳았다.",
+  "src": [
+   {
+    "cite": "Forster, R. (1977), compte rendu de S. L. Kaplan, Bread, Politics and Political Economy in the Reign of Louis XV, American Historical Review 82(5): 1263",
+    "url": "https://doi.org/10.2307/1856426"
+   },
+   {
+    "cite": "Darnton, R. (1969), 「Le lieutenant de police J.-P. Lenoir, la guerre des farines et l'approvisionnement de Paris」, RHMC 16(4): 611-624",
+    "url": "https://doi.org/10.3406/rhmc.1969.3050"
+   }
+  ]
+ },
+ {
+  "id": "rur-158",
+  "cat": "rural",
+  "text": "가스코뉴 언덕의 옥수수 밭 사이로 양 떼를 몰았다.",
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "gascogne"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "18세기 가스코뉴 제르 지방에서는 옥수수 도입이 '농업혁명'이라 부를 만한 변화를 낳았다.",
+  "src": [
+   {
+    "cite": "Perez, J. (1944), 「La révolution agricole du XVIIIe siècle en Gascogne gersoise」, Revue géographique des Pyrénées et du Sud-Ouest 15(1): 56-105",
+    "url": "https://doi.org/10.3406/rgpso.1944.1205"
+   }
+  ]
+ },
+ {
+  "id": "rur-159",
+  "cat": "rural",
+  "text": "람발 읍 공동체가 굶주린 이웃을 위해 곡물을 사들이자며 모였다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1788,
+   "to": 1790
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "1788~1790년 브르타뉴 람발 공동체는 곡물 부족과 정치 변화에 동시에 대응해야 했다.",
+  "src": [
+   {
+    "cite": "Botrel, A. (1904), 「La communauté de Lamballe en 1788, 1789 et 1790」, Annales de Bretagne 20(3): 296-315",
+    "url": "https://doi.org/10.3406/abpo.1904.1202"
+   }
+  ]
+ },
+ {
+  "id": "rur-160",
+  "cat": "rural",
+  "text": "20분의 1세 장부를 만들러 측량인이 와서 밭 넓이를 재고 갔다.",
+  "fx": {
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "20분의 1세 과세 장부(rôles des vingtièmes)는 앙시앵레짐 토지 소유 구조를 보여 주는 주요 자료다.",
+  "src": [
+   {
+    "cite": "Marion, M. (1914), 「Les rôles de vingtièmes et les statistiques de la propriété territoriale sous l'ancien régime」, RHMC 19(2): 105-112",
+    "url": "https://doi.org/10.3406/rhmc.1914.4696"
+   }
+  ]
+ },
+ {
+  "id": "rur-161",
+  "cat": "rural",
+  "text": "작은 밭뙈기를 마침내 손에 넣었다. 남의 품 팔아 모은 돈을 다 털었다.",
+  "fx": {
+   "money": -30,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": true,
+  "fact": "루치스키 연구는 혁명 전 이미 농민이 프랑스 토지의 상당 부분(약 3분의 1 내외)을 소유했음을 보여 주었다.",
+  "src": [
+   {
+    "cite": "Sagnac, P. (1901), 「La propriété foncière et les paysans en France au XVIIIe siècle, d'après les travaux de J. Loutchisky」, RHMC 3(2): 156-171",
+    "url": "https://doi.org/10.3406/rhmc.1901.4394"
+   }
+  ]
+ },
+ {
+  "id": "rur-162",
+  "cat": "rural",
+  "text": "시골 마을엔 약방도 없었다. 들일하다 다친 상처에 거미줄과 쑥을 붙였다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "빈민 다수는 의료 접근이 거의 없었고 민간요법에 의존했다.",
+  "src": [
+   {
+    "cite": "Chartier, R. (1977), compte rendu de O. Hufton, The Poor of Eighteenth-Century France 1750-1789 (Oxford, 1974), Annales ESC 32(2): 296-299",
+    "url": "https://doi.org/10.1017/s0395264900150796"
+   }
+  ]
+ },
+ {
+  "id": "rur-163",
+  "cat": "work",
+  "text": "겨울에 숲 가장자리에서 사보를 깎아 장날 내다 팔았다.",
+  "fx": {
+   "money": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "sex": "M"
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "사보 제작은 숲 지대 농민의 겨울 부업으로 남서부 등지에 집중되었다.",
+  "src": [
+   {
+    "cite": "Daydé, J. (1935), 「L'industrie des sabots et galoches en France et particulièrement dans le Sud-Ouest」, Revue géographique des Pyrénées et du Sud-Ouest 6(1): 98-104",
+    "url": "https://doi.org/10.3406/rgpso.1935.4185"
+   },
+   {
+    "cite": "Goujon, P. (1984), 「« L'industrie en sabots »」, Études rurales 93: 285-291",
+    "url": "https://doi.org/10.3406/rural.1984.3007"
+   }
+  ]
+ },
+ {
+  "id": "rur-164",
+  "cat": "rural",
+  "text": "삼밭에서 대마를 뽑아 연못에 담갔다. 썩는 냄새가 마을까지 번졌다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    8,
+    9
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "서부 농가는 대마를 연못에 담가 섬유를 분리하는 '루이사주(rouissage)'를 했다.",
+  "src": [
+   {
+    "cite": "Nassiet, M. (1998), 「La diffusion du blé noir en France à l'époque moderne」, Histoire & Sociétés Rurales 9: 57-76",
+    "url": "https://doi.org/10.3406/hsr.1998.1052"
+   },
+   {
+    "cite": "Cailly, C. (1998), 「Structure sociale et consommation dans le monde proto-industriel rural textile : le Perche ornais au XVIIIe siècle」, RHMC 45(4): 746-774",
+    "url": "https://doi.org/10.3406/rhmc.1998.1934"
+   }
+  ]
+ },
+ {
+  "id": "rur-165",
+  "cat": "food",
+  "text": "장날 염장 대구 한 토막을 샀다. 사순절 금육 기간엔 그것으로 수프를 끓였다.",
+  "fx": {
+   "money": -1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "사순절에는 육식이 금지되어 염장 생선과 채소가 서민 식단을 대신했다.",
+  "src": [
+   {
+    "cite": "Grenier, J.-Y. (1995), 「Consommation et marché au XVIIIe siècle」, Histoire & Mesure 10(3): 371-380",
+    "url": "https://doi.org/10.3406/hism.1995.1561"
+   },
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   }
+  ]
+ },
+ {
+  "id": "rur-166",
+  "cat": "rural",
+  "text": "보리 밭 김을 매며 허리를 폈다 굽혔다 했다. 뙤약볕에 아이들도 함께였다.",
+  "fx": {
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ],
+   "age": [
+    8,
+    70
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "농가의 아이들은 어려서부터 김매기·목축 등 농사일에 투입되었다.",
+  "src": [
+   {
+    "cite": "Derouet, B. (1982), 「Famille, ménage paysan et mobilité de la terre et des personnes en Thimerais au XVIIIe siècle」, Études rurales 86: 47-56",
+    "url": "https://doi.org/10.3406/rural.1982.2821"
+   },
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   }
+  ]
+ },
+ {
+  "id": "rur-167",
+  "cat": "rural",
+  "text": "풀밭이 모자라 소에게 나뭇잎과 짚을 먹였다. 봄이 되니 소가 비쩍 말랐다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "사료 부족으로 겨울 동안 가축이 굶주리는 것은 18세기 농업의 만성 문제였다.",
+  "src": [
+   {
+    "cite": "Morineau, M. (1974), 「Révolution agricole, révolution alimentaire, révolution démographique」, Annales de démographie historique 1974: 335-371",
+    "url": "https://doi.org/10.3406/adh.1974.1242"
+   },
+   {
+    "cite": "Moriceau, J.-M. (1994), 「Le changement agricole. Transformations culturales et innovation (XIIe-XIXe siècle)」, Histoire & Sociétés Rurales 1: 37-66",
+    "url": "https://doi.org/10.3406/hsr.1994.856"
+   }
+  ]
+ },
+ {
+  "id": "rur-168",
+  "cat": "rural",
+  "text": "아르데슈 산비탈 밤나무 숲 아래에서 낙엽을 긁어 외양간 깔짚으로 썼다.",
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12
+   ]
+  },
+  "who": {
+   "urban": false,
+   "region": [
+    "languedoc",
+    "auvergne"
+   ]
+  },
+  "w": 0.7,
+  "once": false,
+  "fact": "밤나무 숲은 열매뿐 아니라 깔짚·땔감·목재를 공급하는 다목적 자원이었다.",
+  "src": [
+   {
+    "cite": "Grosdidier de Matons, M. (1927), 「La Châtaigneraie cantalienne」, Revue de géographie alpine 15(2): 249-277",
+    "url": "https://doi.org/10.3406/rga.1927.5029"
+   },
+   {
+    "cite": "Depain, C. (1936), 「La châtaigneraie périgourdine」, Revue géographique des Pyrénées et du Sud-Ouest 7(4): 340-365",
+    "url": "https://doi.org/10.3406/rgpso.1936.4234"
+   }
+  ]
+ },
+ {
+  "id": "rur-169",
+  "cat": "economy",
+  "text": "곡가가 떨어진 해엔 소작료 낼 돈이 모자랐다. 풍년이 꼭 반갑지만은 않았다.",
+  "fx": {
+   "money": -4
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "urban": false,
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "라브루스는 곡가 하락기에 현금 지대와 세금을 내야 하는 소농이 오히려 곤경에 처했음을 지적했다.",
+  "src": [
+   {
+    "cite": "Labrousse, E. (1939), 「Prix et structure régionale : le prix du froment, 1782-1790」, Annales d'histoire sociale 1(4): 382-400",
+    "url": "https://doi.org/10.3406/ahess.1939.3007"
+   },
+   {
+    "cite": "Grenier, J.-Y. (1995), 「Consommation et marché au XVIIIe siècle」, Histoire & Mesure 10(3): 371-380",
+    "url": "https://doi.org/10.3406/hism.1995.1561"
+   }
+  ]
+ },
+ {
+  "id": "rur-170",
+  "cat": "rural",
+  "text": "측량사가 와서 공동방목권이 걸린 목초지 경계를 다시 그었다. 이웃 마을과 고성이 오갔다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.6,
+  "once": false,
+  "fact": "공동방목의 범위는 관습법마다 달라 마을 간 경계 분쟁이 잦았다.",
+  "src": [
+   {
+    "cite": "Clère, J.-J. (1993), 「La vaine pâture en France sous l'Ancien Régime. Essai de géographie coutumière」, HAL halshs-00203205",
+    "url": "https://shs.hal.science/halshs-00203205v1"
+   },
+   {
+    "cite": "Lassalle, V. (2001), 「Terres communes et délimitations de territoires à partir des litiges sur la transhumance」, Provence historique 51(206): 445-465",
+    "url": "https://doi.org/10.3406/prohi.2001.2207"
+   }
+  ]
+ }
+]
