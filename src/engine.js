@@ -171,7 +171,7 @@ async function promoCheck(){const j=job();if(!j||j.tr==='pol'&&j.t>=3)return;con
   if(war)p=.14;if(purge)p=.3;if(trait('야심'))p*=1.4;if(trait('신중'))p*=.8;if(s.plan==='근면')p*=1.3;
   if(R()>=p)return;const n=pick(next);
   const key=PROMO_KEY[j.tr]||['soc',45];
-  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[(j.tr==='law'&&s.kn.klaw>=50)||(j.tr==='med'&&s.kn.kmed>=50)||(j.tr==='church'&&s.kn.ktheo>=45)||(j.tr==='letters'&&s.kn.klett>=50),1,'전문 지식'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
+  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)>=50,1,'숙련'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)<15&&['craft','med','art','sea'].includes(j.tr),-1,'서툰 솜씨'],[(s.sk.manner||0)>=50&&['law','pol','church','serv','state'].includes(j.tr),1,'예법'],[(j.tr==='law'&&s.kn.klaw>=50)||(j.tr==='med'&&s.kn.kmed>=50)||(j.tr==='church'&&s.kn.ktheo>=45)||(j.tr==='letters'&&s.kn.klett>=50),1,'전문 지식'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
   const r=await roll(m,{label:`${pname(n)} 승진`,why});
   if(r.v>=4){takeJob(n.id,purge?'귀족 장교들이 떠난 자리를 메우며 ':'');if(n.tr==='army')fx({fame:2})}}
 
