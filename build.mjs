@@ -12,7 +12,7 @@ for(const f of readdirSync(dataDir).filter(f=>f.endsWith('.json')).sort()){for(c
   const s=(e.src||[]).map(x=>{const key=x.url;if(!srcIdx.has(key)){srcIdx.set(key,LIFE_SRC.length);LIFE_SRC.push({c:x.cite,u:x.url,n:0})}const i=srcIdx.get(key);LIFE_SRC[i].n++;return i});
   const d={id:e.id,c:e.cat,t:e.text,fa:e.fact,s,w:e.w??1};if(e.fx)d.f=e.fx;if(e.once)d.o=1;if(e.when)d.wh=e.when;if(e.who)d.who=e.who;LIFE_DATA.push(d)}}
 const dataJs=`const LIFE_DATA=${JSON.stringify(LIFE_DATA)};\nconst LIFE_SRC=${JSON.stringify(LIFE_SRC)};`;
-const js=['core.js','life.js','engine.js','history.js','events.js','stories.js','politics.js','school.js',...content,'scene.js',...art].map(r).concat([dataJs,r('lifedata.js'),r('ui.js')]).join('\n');
+const js=['core.js','life.js','engine.js','history.js','events.js','stories.js','politics.js','school.js','attrs.js',...content,'scene.js',...art].map(r).concat([dataJs,r('lifedata.js'),r('ui.js')]).join('\n');
 const frag=r('index.template.html').replace('/*@@CSS@@*/',()=>r('style.css')).replace('/*@@JS@@*/',()=>js);
 const cut=frag.indexOf('<div id="app">');
 const head=frag.slice(0,cut).trim(),body=frag.slice(cut).trim();

@@ -31,7 +31,7 @@ const EV=[
  {id:'inoc',c:()=>child()&&s.age>=2&&s.age<=10&&s.year>=1756&&(noble()||s.estate==='bourgeois')&&!s.flags.inoc,w:.6,cd:99,run:async()=>{s.flags.inoc=true;
    if(R()<.5){say('부모가 의사를 불러 천연두 인두 접종을 시켰다. 며칠 앓고 털고 일어났다.'+fx({hp:3}));s.flags.immune=true}else say('부모는 인두 접종이 위험하다며 하지 않았다.')}},
  {id:'cill',c:()=>child()&&s.age>=1,w:1.1,cd:2,run:async()=>{const r=await roll(s.st.hp>=55?1:0,{label:'병치레'});if(r.v<=1)say(pick(['천연두를 앓았다. 얼굴에 곰보 자국이 남았다.','홍역으로 사경을 헤맸다.','이질로 몇 주를 앓았다.'])+fx({hp:-10}));else if(r.v===2)say('잔병치레가 잦았다.'+fx({hp:-4}));else say('감기를 앓다 털고 일어났다.'+fx({hp:1}))}},
- C('ccat',()=>child()&&s.age>=7,1,3,'어린 날','enfance','본당 신부가 교리 수업에 빠지지 말라고 했다. 동무들은 강가로 가재 잡으러 가자고 조른다.',[{l:'교리 수업에 간다',s:'신앙·학식',a:'pious study',f:()=>say('교리문답을 외웠다.'+fx({faith:3,edu:1}))},{l:'강가로 간다',s:'건강·처세',a:'social',f:()=>say('하루 종일 강가에서 놀았다.'+fx({hp:2,soc:2}))}]),
+ C('ccat',()=>child()&&s.age>=7,1,3,'어린 날','enfance','본당 신부가 교리 수업에 빠지지 말라고 했다. 동무들은 강가로 가재 잡으러 가자고 조른다.',[{l:'교리 수업에 간다',s:'신앙·학식',a:'pious study',f:()=>say('교리문답을 외웠다.'+fx({faith:3,edu:1}))},{l:'강가로 간다',s:'건강·사교',a:'social',f:()=>say('하루 종일 강가에서 놀았다.'+fx({hp:2,soc:2}))}]),
 
  // ---------- 농촌 ----------
  S('farm',peas,1.6,0,[
@@ -42,7 +42,7 @@ const EV=[
    ['징발대가 와서 곡식과 말을 거두어 갔다.',{money:-30,pol:-3},()=>T()>=1793&&T()<1795],['교회 종탑의 종이 내려져 대포 공장으로 실려 갔다.',{faith:-1,pol:-2},()=>T()>=1793.5&&T()<1795],
    ['순례길에 생자크 성지 순례자들을 재워 주었다.',{faith:2}],['가뭄에 우물이 말랐다.',{hp:-2}]]),
  C('salt',()=>peas()&&pre89()&&['bretagne','normandie','vendee'].includes(loc())&&s.age<50,.8,3,'소금 밀매','faux-saunage','브르타뉴는 소금세가 없다. 국경 넘어 소금을 지고 오면 열 배 값에 팔린다. 붙잡히면 갤리선 노예다.',[
-   {l:'밤에 소금 자루를 지고 넘는다',s:'담력 판정',a:'bold greedy',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'밀매'});if(r.v>=4)say('소금을 팔아 한철 벌이를 했다.'+fx({money:60,cour:2}));else if(r.v===1){say('소금세 순찰대에게 붙잡혔다.','big');if(await chance(.35,'갤리선 형','붙잡힌 밀매꾼 가운데 갤리선 노역형을 받은 비율')){say('툴롱 갤리선 노역장으로 끌려가 여섯 해를 노를 저었다.'+fx({hp:-25,cour:5}),'big')}else{say('벌금을 물고 풀려났다.'+fx({money:-50}))}}else say('순찰대를 피해 빈손으로 돌아왔다.')}},
+   {l:'밤에 소금 자루를 지고 넘는다',s:'의지 판정',a:'bold greedy',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'밀매'});if(r.v>=4)say('소금을 팔아 한철 벌이를 했다.'+fx({money:60,cour:2}));else if(r.v===1){say('소금세 순찰대에게 붙잡혔다.','big');if(await chance(.35,'갤리선 형','붙잡힌 밀매꾼 가운데 갤리선 노역형을 받은 비율')){say('툴롱 갤리선 노역장으로 끌려가 여섯 해를 노를 저었다.'+fx({hp:-25,cour:5}),'big')}else{say('벌금을 물고 풀려났다.'+fx({money:-50}))}}else say('순찰대를 피해 빈손으로 돌아왔다.')}},
    {l:'손대지 않는다',s:'',a:'safe',f:()=>say('밀매꾼들의 발소리를 모른 척하였다.')}]),
  C('poach',()=>peas()&&pre89()&&isM(),.7,4,'영주의 숲','braconnage','영주의 토끼가 밭을 망친다. 숲에 덫을 놓으면 고기를 먹을 수 있지만, 밀렵은 영주재판에 끌려간다.',[
    {l:'덫을 놓는다',s:'',a:'bold',f:async()=>{const r=await roll(0,{label:'밀렵'});if(r.v>=3)say('토끼 두 마리를 잡았다.'+fx({hp:2}));else say('산지기에게 들켜 벌금을 물었다.'+fx({money:-30,pol:3}))}},
@@ -70,7 +70,7 @@ const EV=[
    ['국유재산 경매장에서 수도원 건물이 헐값에 팔리는 것을 보았다.',{},()=>T()>=1790&&T()<1800],['총재정부 시절의 무도회에 ‘희생자 무도회’가 유행하였다.',{soc:1},()=>T()>=1795&&T()<1799],
    ['황후의 말메종 정원을 거닐었다.',{soc:1},()=>imp()&&s.fame>=50],['돌아온 망명 귀족들이 거들먹거렸다.',{},()=>T()>=1814&&T()<1830]]),
  C('duel',()=>gentry()&&isM()&&noble()&&s.age>=18&&s.age<=45,.5,6,'결투 신청','duel','무도회에서 한 기사가 그대의 가문을 모욕하였다. 장갑이 던져졌다.',[
-   {l:'결투를 받아들인다',s:'담력 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=55?1:s.st.cour<35?-1:0,{label:'결투'});if(r.v>=4)say('상대의 팔을 베어 명예를 지켰다.'+fx({fame:4,cour:3}));else if(r.v===1){if(await chance(.3,'결투의 상처','결투 부상의 치사율')){die('duel');return}say('옆구리를 찔려 몇 달을 앓았다.'+fx({hp:-15}))}else say('첫 피를 보고 결투가 끝났다.'+fx({fame:1}))}},
+   {l:'결투를 받아들인다',s:'의지 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=55?1:s.st.cour<35?-1:0,{label:'결투'});if(r.v>=4)say('상대의 팔을 베어 명예를 지켰다.'+fx({fame:4,cour:3}));else if(r.v===1){if(await chance(.3,'결투의 상처','결투 부상의 치사율')){die('duel');return}say('옆구리를 찔려 몇 달을 앓았다.'+fx({hp:-15}))}else say('첫 피를 보고 결투가 끝났다.'+fx({fame:1}))}},
    {l:'사과를 받아 내고 물러선다',s:'',a:'safe',f:()=>say('비겁하다는 뒷말이 돌았다.'+fx({fame:-3}))}]),
  C('mason',()=>free()&&lit()&&s.year>=1755&&s.year<1793&&(gentry()||s.estate==='bourgeois'||onTrack('law'))&&!s.flags.mason,.6,99,'프리메이슨','franc-maçonnerie','지인이 프리메이슨 지부에 들어오라고 권한다. 귀족과 상인과 법률가가 ‘형제’로 앉는 곳이다.',()=>[
    {l:'입회한다',s:'입회비 150',a:'social',dis:s.money<150,f:()=>{s.flags.mason=true;say('눈가리개를 쓰고 입회 의식을 치렀다.'+fx({money:-150,soc:3,fame:2,pol:3}))}},
@@ -133,13 +133,17 @@ const ACTS=[
  {k:'read',n:'계몽 서적을 읽는다',s:'학식 +3, 급진 성향',c:()=>free()&&lit(),f:()=>say(pick(['볼테르의 『철학 서간』을 읽었다.','몽테스키외의 『법의 정신』을 읽었다.','루소의 『신엘로이즈』를 밤새 읽었다.','『백과전서』의 한 권을 빌려 읽었다.'])+fx({edu:3,pol:2}))},
  {k:'learn',n:'글을 배운다',s:'재산 40. 학식 판정',cost:40,c:()=>free()&&!lit(),inter:async()=>{const r=await roll(s.age<30?0:-1,{label:'글 배우기'});s.money-=40;if(r.v>=3){s.literate=true;say('떠듬떠듬 글을 읽을 수 있게 되었다.'+fx({edu:4}),'big')}else say('밤마다 촛불 아래 철자를 익혔지만 아직은 어렵다.'+fx({edu:1}))}},
  {k:'mass',n:'미사와 고해에 나간다',s:'신앙 +3. 1793~94년엔 혐의',c:()=>free()&&s.faithKind==='catholic',f:()=>{const t=T()>=1793.75&&T()<1795;say((t?'숲 속 헛간에서 선서 거부 사제의 비밀 미사를 드렸다.':'미사에 나가 고해성사를 보았다.')+fx({faith:3,sus:t?4:0}))}},
- {k:'salon',n:'살롱과 카페에 드나든다',s:'재산 40. 처세 +3',cost:40,c:()=>free()&&(urban()||noble()||s.estate==='bourgeois'),f:()=>say(pick(['조프랭 부인의 살롱에서 철학자들과 마주 앉았다.','카페 드 라 레장스에서 체스를 두었다.','팔레루아얄 회랑의 카페를 돌았다.'])+fx({money:-40,soc:3}))},
- {k:'train',n:'검술과 사격을 익힌다',s:'재산 30. 담력 +3',cost:30,c:()=>free()&&s.age<55,f:()=>say('검술 도장에서 땀을 흘렸다.'+fx({money:-30,cour:3}))},
+ {k:'salon',n:'살롱과 카페에 드나든다',s:'재산 40. 사교 +3',cost:40,c:()=>free()&&(urban()||noble()||s.estate==='bourgeois'),f:()=>say(pick(['조프랭 부인의 살롱에서 철학자들과 마주 앉았다.','카페 드 라 레장스에서 체스를 두었다.','팔레루아얄 회랑의 카페를 돌았다.'])+fx({money:-40,soc:3,relite:2,orat:1}))},
+ {k:'train',n:'검술과 사격을 익힌다',s:'재산 30. 의지 +3, 무예 숙련',cost:30,c:()=>free()&&s.age<55,f:()=>say('검술 도장에서 땀을 흘렸다.'+fx({money:-30,cour:3,arms:4,str:1}))},
+ {k:'skill',n:'솜씨를 갈고닦는다',s:'기술 +2, 주 기술 숙련 +4',c:()=>free()&&s.age<65,f:()=>{const k=mainSkill();say(`${SKILLS.find(x=>x[0]===k)[1]} 솜씨를 익히느라 밤늦도록 손을 놀렸다.`+fx({dex:2,[k]:4}))}},
+ {k:'labor',n:'몸을 단련한다',s:'체력 +3, 건강 +1',c:()=>free()&&s.age<60,f:()=>say(pick(['새벽마다 장작을 패고 물을 길었다.','들판을 달리고 강에서 헤엄쳤다.','무거운 짐을 지고 언덕길을 오르내렸다.'])+fx({str:3,hp:1}))},
+ {k:'orat',n:'웅변을 연습한다',s:'웅변 숙련 +4, 사교 +1',c:()=>free()&&lit()&&s.age>=16,f:()=>say(pick(['키케로의 연설문을 소리 내어 외웠다.','거울 앞에서 몸짓과 목소리를 다듬었다.','토론 모임에서 반대편을 맡아 논박했다.'])+fx({orat:4,soc:1}))},
+ {k:'visit',n:'친지와 지인을 찾아다닌다',s:'가장 가까운 이와 친밀 +, 가족 평판 +',c:()=>free()&&relsAlive().length>0,f:()=>{const r=relsAlive().sort((a,b)=>b.close-a.close)[0];say(`${r.n}의 집에 들러 저녁을 함께 먹었다.`+fx({rfam:2})+relFx(r,{close:8,trust:3}))}},
  {k:'study',n:'대학에서 법학을 공부한다',s:'재산 300. 학식 +5',cost:300,c:()=>free()&&lit()&&isM()&&s.age<35,f:()=>say('법학부 강의를 들으며 로마법을 익혔다.'+fx({money:-300,edu:5}))},
  {k:'spa',n:'온천에서 요양한다',s:'재산 150. 건강 +6',cost:150,c:()=>free(),f:()=>say(pick(['플롱비에르의 온천에서 한 철을 보냈다.','비시 온천에서 몸을 추슬렀다.','바레주의 유황 온천을 찾았다.'])+fx({money:-150,hp:6}))},
- {k:'charity',n:'가난한 이웃을 돕는다',s:'재산 60. 명성 +2',cost:60,c:()=>free(),f:()=>{s.seeds.push({t:'saved',n:person(),y:s.year});say('흉년에 이웃들에게 빵과 장작을 나누었다.'+fx({money:-60,fame:2,faith:1}))}},
+ {k:'charity',n:'가난한 이웃을 돕는다',s:'재산 60. 명성 +2',cost:60,c:()=>free(),f:()=>{s.seeds.push({t:'saved',n:person(),y:s.year});say('흉년에 이웃들에게 빵과 장작을 나누었다.'+fx({money:-60,fame:2,faith:1,rloc:3,rpeople:2}))}},
  {k:'club',hide:1,n:'자코뱅 클럽에 가입한다',s:'급진 +10, 명성 +2. 공포정치기 혐의 감소',c:()=>free()&&T()>=1790&&T()<1794.75&&!s.flags.club&&(lit()||urban())&&isM(),f:()=>{s.flags.club=true;say('헌우회(자코뱅 클럽) 회원증을 받았다. 저녁마다 생토노레 거리의 옛 수도원 회합에 나갔다.'+fx({pol:10,fame:2,sus:-6}))}},
- {k:'cert',n:'시민증(공민 증명서)을 신청한다',s:'처세 판정. 혐의 감소',c:()=>free()&&T()>=1793.25&&T()<1794.5,inter:async()=>{const r=await roll(s.pol>=30?1:noble()?-1:0,{label:'시민증'});if(r.v>=4)say('구 위원회에서 시민증을 받았다.'+fx({sus:-12}));else say('위원회가 서류를 보류하였다.'+fx({sus:4}))}},
+ {k:'cert',n:'시민증(공민 증명서)을 신청한다',s:'사교 판정. 혐의 감소',c:()=>free()&&T()>=1793.25&&T()<1794.5,inter:async()=>{const r=await roll(s.pol>=30?1:noble()?-1:0,{label:'시민증'});if(r.v>=4)say('구 위원회에서 시민증을 받았다.'+fx({sus:-12}));else say('위원회가 서류를 보류하였다.'+fx({sus:4}))}},
  {k:'pamph',n:'팸플릿을 써서 돌린다',s:'학식 판정. 명성과 성향',c:()=>free()&&lit()&&s.year>=1787,inter:async()=>{
    const i=await Q('팸플릿','pamphlet','어떤 논조로 쓸 것인가?',[{l:'혁명을 더 밀어붙이자',s:'',a:'radical'},{l:'질서와 화해를 말한다',s:'',a:'safe'},{l:'왕과 교회를 옹호한다',s:'',a:'royal pious'}]);
    const r=await roll(s.st.edu>=60?1:s.st.edu<40?-1:0,{label:'집필'});const k=r.v>=4?2:1;

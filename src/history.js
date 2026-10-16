@@ -59,10 +59,10 @@ H(1789,1,'세기에 드문 혹한. 센 강이 얼어붙고 빵값은 계속 올�
 /* ---------- 1789: 혁명 (여기부터 한 달 단위) ---------- */
 H(1789,3,'3월, 전국에서 삼부회 선거가 시작되었다. 교구와 길드마다 왕에게 올릴 진정서(카이에 드 돌레앙스)를 쓴다.',async()=>{
   if(!adult()||s.age<20)return;
-  const i=await Q('진정서','cahier de doléances',`${noble()?'귀족 신분회':priest()?'성직자 신분회':'교구 회의'}가 열려 왕에게 올릴 진정서를 쓴다.`,[{l:'회의에 나가 목소리를 낸다',s:'처세·학식 판정. 대표로 뽑힐 수도 있다',a:'social radical'},{l:'이름만 올린다',s:'',a:'safe'}]);
+  const i=await Q('진정서','cahier de doléances',`${noble()?'귀족 신분회':priest()?'성직자 신분회':'교구 회의'}가 열려 왕에게 올릴 진정서를 쓴다.`,[{l:'회의에 나가 목소리를 낸다',s:'사교·학식 판정. 대표로 뽑힐 수도 있다',a:'social radical'},{l:'이름만 올린다',s:'',a:'safe'}]);
   if(i===1){say('진정서에 이름만 올렸다.');await done();return}
   const ok=lit()&&s.st.edu>=45&&s.fame>=25&&isM();
-  const {m,why}=md([[s.st.soc>=50,1,'처세'],[s.fame>=45,1,'명성'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!lit(),-2,'문맹']]);
+  const {m,why}=md([[s.st.soc>=50,1,'사교'],[s.fame>=45,1,'명성'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!lit(),-2,'문맹']]);
   const r=await roll(m,{label:'회의',why});
   if(r.v>=4)say(pick(['소금세와 십일조를 없애 달라는 조항을 넣자고 했다.','영주의 비둘기와 토끼가 밭을 망친다는 조항을 넣었다.','신분에 상관없이 세금을 고르게 내자는 조항을 넣었다.','왕의 권위를 지키되 헌법을 세우자고 주장하였다.'])+fx({fame:3,pol:4}));
   else say('발언 기회를 얻지 못했다.');
@@ -92,7 +92,7 @@ H(1789,7,'7월 14일, 파리 민중이 앵발리드에서 총을 빼앗고 바�
 H(1789,7,'7월 17일, 왕이 파리 시청에 와서 삼색 모표를 받았다. 아르투아 백작 등 왕족과 대귀족들이 첫 망명길에 올랐다.');
 H(1789,8,'7월 말부터 8월 초까지 대공포. 귀족들이 도적을 풀어 곡식을 망친다는 소문에 농민들이 무장하고 영주의 성관을 습격하였다.',async()=>{
   if(!adult()||urban())return;
-  if(noble()&&s.land>0){const i=await Q('대공포','Grande Peur','마을 사람들이 낫과 쇠스랑을 들고 성관으로 몰려온다. 영주권 문서를 내놓으라고 한다.',[{l:'문서를 내주고 달랜다',s:'처세 판정',a:'safe'},{l:'하인들을 무장시켜 막는다',s:'담력 판정',a:'bold royal'},{l:'몸만 빠져나와 도시로 피한다',s:'',a:'safe'}]);
+  if(noble()&&s.land>0){const i=await Q('대공포','Grande Peur','마을 사람들이 낫과 쇠스랑을 들고 성관으로 몰려온다. 영주권 문서를 내놓으라고 한다.',[{l:'문서를 내주고 달랜다',s:'사교 판정',a:'safe'},{l:'하인들을 무장시켜 막는다',s:'의지 판정',a:'bold royal'},{l:'몸만 빠져나와 도시로 피한다',s:'',a:'safe'}]);
     if(i===0){const r=await roll(s.st.soc>=50?1:0,{label:'협상'});if(r.v>=3)say('문서들이 마당에서 불탔다. 성관은 무사했다.'+fx({money:-Math.round(s.money*.05)}));else{say('성관에 불이 붙었다.'+fx({money:-Math.round(s.money*.3)}));s.land=Math.round(s.land*.7)}}
     else if(i===1){const r=await roll(s.st.cour>=55?0:-1,{label:'방어'});if(r.v<=1&&await chance(.25,'습격','성관 방어 중 영주가 죽을 확률')){die('murdered','성관을 지키다 농민들에게 맞아 죽었다.');await done();return}
       if(r.v>=4)say('군중이 물러갔다. 그러나 원한은 남았다.'+fx({sus:15,pol:-6}));else{say('성관이 불탔다.'+fx({sus:10,money:-Math.round(s.money*.35)}));s.land=Math.round(s.land*.6)}}
@@ -320,7 +320,7 @@ H(1812,10,'9월 7일 보로디노 전투, 9월 14일 모스크바 입성. 모스
   if(await chance(.12,'보로디노','대육군 병사의 이날 사망률')){die('battle','보로디노');await done();return}say('살아남아 불타는 모스크바에 들어갔다.'+fx({hp:-4}));await done()});
 H(1813,1,'영하 30도의 퇴각. 11월 26~29일 베레지나 강 도하. 러시아에 들어간 대육군 가운데 돌아온 이는 열에 하나 남짓이었다.',async()=>{
   if(!s.flags.russia||!soldier())return;sheetOpen('러시아의 겨울','la retraite de Russie');shText('말을 잡아먹고 눈 속에서 잔다. 코사크가 낙오병을 노린다.','q');
-  const i=await shButtons([{l:'대열을 따라 버틴다',s:'',a:'safe'},{l:'약탈로 먹을 것을 구한다',s:'담력 판정',a:'bold'}]);
+  const i=await shButtons([{l:'대열을 따라 버틴다',s:'',a:'safe'},{l:'약탈로 먹을 것을 구한다',s:'의지 판정',a:'bold'}]);
   if(i===1){const r=await roll(s.st.cour>=50?1:0,{label:'약탈'});if(r.v>=4)fx({hp:5})}
   if(await chance(s.st.hp>=60?.45:.6,'퇴각','퇴각 중 대육군의 사망률')){die('cold','러시아에서 퇴각하던 중 눈 속에 쓰러졌다.');await done();return}
   if(await chance(.2,'베레지나','베레지나 도하에서의 손실')){if(R()<.5){die('drowned','베레지나 강을 건너다 얼음물에 빠져 죽었다.');await done();return}say('코사크에게 사로잡혔다. 1814년에야 풀려났다.'+fx({hp:-10}),'big');s.flags.pow=true}
@@ -355,8 +355,8 @@ H(1849,1,'루이 나폴레옹 보나파르트가 대통령에 뽑혔다.');
 H(1852,1,'12월 2일, 대통령 루이 나폴레옹이 친위 쿠데타를 일으켰다.');
 
 /* 선거 */
-async function election(name,base){const {m,why}=md([[s.fame>=60,1,'명성'],[s.st.soc>=55,1,'처세'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!!s.party&&partyFit()>0,1,'당의 지지'],[s.prank>=2,1,'당 지도부'],[s.flags.bastille||s.flags.dix,1,'혁명의 공'],[s.pol<0,-1,'온건']]);
-  const i=await Q(name,'élections','선거인 회의가 열린다. 출마하겠는가?',[{l:'출마한다',s:'처세·명성 판정',a:'social radical'},{l:'나서지 않는다',s:'',a:'safe'}]);
+async function election(name,base){const {m,why}=md([[s.fame>=60,1,'명성'],[s.st.soc>=55,1,'사교'],[onTrack('law'),1,'법률가'],[trait('야심'),1,'야심'],[!!s.party&&partyFit()>0,1,'당의 지지'],[s.prank>=2,1,'당 지도부'],[s.flags.bastille||s.flags.dix,1,'혁명의 공'],[s.sk.orat>=50,1,'웅변'],[s.rep.rpeople>=65,1,'민중의 지지'],[influence().v>=40,1,'영향력'],[s.pol<0,-1,'온건']]);
+  const i=await Q(name,'élections','선거인 회의가 열린다. 출마하겠는가?',[{l:'출마한다',s:'사교·명성 판정',a:'social radical'},{l:'나서지 않는다',s:'',a:'safe'}]);
   if(i===1){await done();return}
   const r=await roll(m,{label:name,why});
   if(r.v>=5&&await chance(base*2+(s.fame-40)/150,'당선','선거인단의 표를 얻을 확률')){s.flags.wasDeputy=true;s.loc='paris';if(s.job)s.prevJob=s.job;takeJob('p3','파리로 올라가 ');fx({fame:8})}

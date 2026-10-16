@@ -13,13 +13,13 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,
   if(estate==='artisan'){st.edu+=ri(3,8);pol=ri(-8,15)}
   if(estate==='peasant'){st.hp+=6;pol=ri(-15,6)}
   if(['bretagne','vendee'].includes(region))faith+=15;if(region==='paris')faith-=12;if(fk!=='catholic')faith=ri(50,80);
-  return {v:2,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
+  return attrsInit({v:2,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
     st,money:0,land:0,dues:0,fame,sus:0,pol,faith:clamp(faith,0,100),literate:false,
     age:0,year:by,month:bm-(bm%3)+2,season:seasonOf(bm-(bm%3)+2),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
     job:null,jobSince:0,prevJob:null,best:{},hist:[],cond:'normal',condSince:0,
     fa:{alive:true,age:ri(24,40)},mo:{alive:true,age:ri(19,34)},sibs:ri(1,6),eldest:R()<.35,inherit:0,
     spouse:null,married:false,kids:[],widowed:0,divorced:false,
-    seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null}}
+    seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null})}
 function birth(){L(`${yl()}`,'yr');const E=ESTATES[s.estate],Rg=REGIONS[s.region];
   const who=isM()?'아들':'딸';
   say(`${s.year}년 ${s.month+1}월, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 영지`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
@@ -69,36 +69,40 @@ async function advanceSeason(){
   if(s.age>=14&&!s.flags.adult)await comingOfAge();
   if(s.dead)return;
   await randomEvent(monthly()?.42:.72);if(s.dead)return;
-  if(s.month===11){await family();if(s.dead)return;await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
+  if(s.month===11){await family();if(s.dead)return;await relTick();if(s.dead)return;await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
 }
 function birthday(){if(s.age>=50)s.st.hp=clamp(s.st.hp-(s.age>=65?2:1),0,100);else if(s.st.hp<50)s.st.hp+=2;else if(s.st.hp<60)s.st.hp+=1}
 function newYear(){s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
   const ry=repYear(s.year);L(`${yl()}${ry?' · '+ry:''}`,'yr');
   s.polHist=s.polHist||[];s.polHist.push([s.year,s.pol]);s.pol=Math.round(s.pol*.96);
   s.sus=Math.max(0,s.sus-(inTerror()?0:3));
+  attrsYear(s.plan);
   if(child())return;
   if(trait('경건'))s.faith=clamp(s.faith+1,0,100);if(trait('열정'))s.st.cour=clamp(s.st.cour+1,0,100);
   // 방침
   let pl=s.plan;if(pl==='학업'&&!lit())pl='근면';if(pl==='정치'&&s.year<1788)pl='교제';
   if(s.cond==='prison'||s.cond==='hiding')pl='양생';
-  const pf={근면:{},학업:{edu:2},교제:{soc:3,money:-Math.round(20+s.money*.01)},양생:{hp:3},신앙:{faith:3,sus:inTerror()?4:0},정치:{fame:1,pol:s.pol>=0?3:-3,sus:inTerror()&&s.pol<40?3:0},절약:{soc:-1}}[pl];
+  const pf={근면:{},수련:{},단련:{},학업:{edu:2},교제:{soc:3,money:-Math.round(20+s.money*.01)},양생:{hp:3},신앙:{faith:3,sus:inTerror()?4:0},정치:{fame:1,pol:s.pol>=0?3:-3,sus:inTerror()&&s.pol<40?3:0},절약:{soc:-1}}[pl];
   const ptxt=fx(pf);
   economy(pl,ptxt);
-  if(INFL[s.year]&&s.money>200){const loss=Math.round(s.money*INFL[s.year]*(s.land>0?.3:.5));s.money-=loss;
+  const E0=econ(),cp=(CUR[s.year-1]||1),drop=1-E0.cur/cp;
+  if(drop>0&&s.money>200){const loss=Math.round(s.money*drop*(s.land>0?.22:.36));s.money-=loss;
     L(`${s.year<=1796?'아시냐':'지폐'} 가치가 떨어져 모아 둔 돈이 녹아내렸다. (재산 -${fmt(loss)})`,'sys')}
 }
 function economy(pl,ptxt){const j=job();const away=s.cond!=='normal';
-  let pay=j&&!away?j.pay:0;if(pl==='근면')pay*=1.25;if(j&&j.tr==='farm'&&s.year>=1790)pay*=1.12;
+  const E=econ();let pay=j&&!away?j.pay:0;if(pl==='근면')pay*=1.25;let slack='';
+  if(pay&&wageEarner()){pay*=E.wage;if(E.jobs<45){pay*=.5+E.jobs/90;slack=' 일감이 줄어 벌이가 깎였다.'}}
+  if(pay&&j.tr==='craft'&&j.t>=3)pay*=1+(s.sk.trade+s.sk.craft-60)/400;if(j&&j.tr==='farm'&&s.year>=1790)pay*=1.12;
   const sp=s.spouse&&s.spouse.alive?s.spouse.pay:0;
   const land=s.cond==='emigre'?0:s.land, dues=s.cond==='emigre'?0:s.dues;
   const inc=pay+land+dues+sp;
   const kids=kidsAlive().filter(k=>s.year-k.y<15).length;
-  const need=110*price(s.year)*(1+(s.spouse&&s.spouse.alive?.35:0)+.2*kids)*(s.cond==='emigre'?1.6:1);
+  const need=110*E.price*(1+(s.spouse&&s.spouse.alive?.35:0)+.2*kids)*(s.cond==='emigre'?1.6:1);
   let life=Math.max(need,inc*(noble()?.92:.78));if(pl==='절약')life*=.8;if(trait('쾌활'))life*=1.06;
   if(s.cond==='prison')life=need*.7;
   const net=Math.round(inc-life);s.money+=net;
   const parts=[pay?`벌이 +${fmt(pay)}`:'',sp?`배우자 +${fmt(sp)}`:'',land?`지대 +${fmt(land)}`:'',dues?`영주 공납 +${fmt(dues)}`:'',`생활비 -${fmt(life)}`].filter(Boolean);
-  L(`방침 ${pl}${ptxt}. 살림 ${net>=0?'+':''}${fmt(net)} ${money()} (${parts.join(', ')}).`,'sys');
+  L(`방침 ${pl}${ptxt}.${slack} 살림 ${net>=0?'+':''}${fmt(net)} ${money()} (${parts.join(', ')}).`,'sys');
   if(s.money<0){s.money=0;say(price(s.year)>=1.4?'빵값이 치솟아 끼니를 거르는 날이 많았다.'+fx({hp:-4}):'빚과 가난에 시달렸다.'+fx({hp:-2}))}}
 
 /* ================= 죽음 ================= */
@@ -161,7 +165,7 @@ async function promoCheck(){const j=job();if(!j||j.tr==='pol'&&j.t>=3)return;con
   if(war)p=.14;if(purge)p=.3;if(trait('야심'))p*=1.4;if(trait('신중'))p*=.8;if(s.plan==='근면')p*=1.3;
   if(R()>=p)return;const n=pick(next);
   const key={farm:['soc',40],craft:['soc',45],law:['edu',60],church:['edu',50],army:['cour',50],pol:['soc',50],letters:['edu',60],med:['edu',60]}[j.tr];
-  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적']]);
+  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
   const r=await roll(m,{label:`${pname(n)} 승진`,why});
   if(r.v>=4){takeJob(n.id,purge?'귀족 장교들이 떠난 자리를 메우며 ':'');if(n.tr==='army')fx({fame:2})}}
 
@@ -223,14 +227,16 @@ function arrestP(){let p=.0045;const why=[];
   if(inParis())p*=1.4;if(['lyon','nantes','vendee','marseille'].includes(loc())){p*=1.8;why.push('반란 지역')}
   if(rich()){p*=1.5;why.push('부유함')}
   if(deputy()&&s.pol<35){p*=2.5}
+  if(frelOf('jacobin')<=-30){p*=1.5;why.push('자코뱅의 적의')}else if(frelOf('jacobin')>=40)p*=.8;
+  if(s.rep.rloc>=70)p*=.75;else if(s.rep.rloc<=30){p*=1.4;why.push('이웃의 고발')}
   if(T()<1793.5)p*=.5;if(greatTerror())p*=1.3;if(trait('신중'))p*=.85;
   return {p:clamp(p,0,.6),why:why.join(', ')}}
 async function terrorCheck(q=1){const {p,why}=arrestP();if(R()<p*q)await arrest(why||'고발')}
 async function arrest(why){s.cnt.arrest++;sheetOpen('체포','arrestation');
   shText(`밤중에 감시위원회 사람들과 국민방위대가 문을 두드렸다. 혐의자법에 따라 체포한다고 한다. (사유: ${why})`,'q b');
-  const opts=[{l:'무고를 항변한다',s:'처세·학식 판정',a:'safe'},{l:'뇌물을 찔러 준다',s:'500 이상 든다',a:'greedy',dis:s.money<500},{l:'창문으로 달아난다',s:'담력 판정. 실패하면 위험하다',a:'bold'},{l:'순순히 따라간다',s:'',a:'safe'}];
+  const opts=[{l:'무고를 항변한다',s:'사교·학식 판정',a:'safe'},{l:'뇌물을 찔러 준다',s:'500 이상 든다',a:'greedy',dis:s.money<500},{l:'창문으로 달아난다',s:'의지 판정. 실패하면 위험하다',a:'bold'},{l:'순순히 따라간다',s:'',a:'safe'}];
   const i=await shButtons(opts);
-  if(i===0){const {m,why:w}=md([[s.st.soc>=55,1,'처세'],[s.st.edu>=60,1,'학식'],[s.pol>=40,1,'혁명 열성'],[noble(),-1,'귀족'],[s.sus>=50,-1,'짙은 혐의']]);
+  if(i===0){const {m,why:w}=md([[s.st.soc>=55,1,'사교'],[s.st.edu>=60,1,'학식'],[s.pol>=40,1,'혁명 열성'],[noble(),-1,'귀족'],[s.sus>=50,-1,'짙은 혐의']]);
     const r=await roll(m-1,{label:'항변',why:w});if(r.v>=5){say('위원들이 서류를 다시 보더니 돌아갔다. 이번에는 넘어갔다.'+fx({sus:-8}));await done();return}}
   if(i===1){const pay=Math.min(s.money,Math.round(500+s.money*.15));const r=await roll(s.st.soc>=45?1:0,{label:'뇌물'});
     if(r.v>=4){say(`위원 한 사람에게 ${fmt(pay)} ${money()}을 쥐여 주었다. 명단에서 이름이 빠졌다.`+fx({money:-pay,sus:-5}));await done();return}
@@ -249,7 +255,7 @@ async function prisonSeason(){const t=T();
 async function trial(){sheetOpen('혁명재판소','Tribunal révolutionnaire');
   const where=inParis()?'파리 혁명재판소. 검사 푸키에탱빌이 기소장을 읽는다.':loc()==='lyon'?'리옹 혁명위원회. 하루에 수십 명씩 판결이 내려진다.':loc()==='nantes'?'낭트. 파견의원 카리에의 감시 아래 재판이 열린다.':'지방 혁명위원회 앞에 섰다.';
   shText(where+(greatTerror()?' 프레리알 22일 법 이후로 변호인도 증인도 없다.':''),'q b');
-  const {m,why}=md([[s.st.soc>=60,1,'처세'],[s.pol>=40,1,'애국자의 증언'],[s.fame>=50&&s.pol>=20,1,'명성'],[noble(),-1,'귀족'],[!!s.flags.refractory,-1,'선서 거부'],[s.pol<-25,-1,'왕당파'],[greatTerror(),-1,'대공포정치']]);
+  const {m,why}=md([[s.st.soc>=60,1,'사교'],[s.pol>=40,1,'애국자의 증언'],[s.fame>=50&&s.pol>=20,1,'명성'],[noble(),-1,'귀족'],[!!s.flags.refractory,-1,'선서 거부'],[s.pol<-25,-1,'왕당파'],[greatTerror(),-1,'대공포정치']]);
   const i=await shButtons([{l:'당당히 공화국에 대한 충성을 말한다',s:'판정',a:'bold'},{l:'고개를 숙이고 자비를 구한다',s:'판정',a:'safe'}]);
   const r=await roll(m,{label:'판결',why});const harsh=inParis()||['lyon','nantes'].includes(loc())||greatTerror();
   if(r.v<=(harsh?3:2)){say('“사형.” 판결은 오 분도 걸리지 않았다.','dark');s.flags.condemned=true;
@@ -270,7 +276,7 @@ async function hidingSeason(){const t=T();s.money=Math.max(0,s.money-60);
 const WARD={1756:.05,1757:.07,1758:.06,1759:.06,1760:.05,1761:.05,1762:.04,1778:.02,1779:.03,1780:.03,1781:.04,1782:.03,1792:.06,1793:.12,1794:.1,1795:.07,1796:.08,1797:.06,1798:.05,1799:.09,1800:.07,1801:.03,1803:.02,1804:.02,1805:.06,1806:.06,1807:.09,1808:.08,1809:.1,1810:.06,1811:.06,1812:.1,1813:.25,1814:.12,1815:.1};
 const FRONTS=y=>y<1763?['독일 전선','하노버','캐나다']:y<1784?['아메리카','앤틸리스 제도']:y<1796?['북부 전선','라인 전선','방데','알프스 전선','피레네 전선']:y<1800?['이탈리아','라인 전선','이집트','스위스']:y<1805?['마렝고','라인 전선','불로뉴 해안 진지']:y<1808?['아우스터리츠','예나','아일라우','프리틀란트']:y<1812?['에스파냐','바그람','포르투갈']:y<1813?['에스파냐']:['작센','라이프치히','샹파뉴','워털루'];
 async function warSeason(q=1){const j=job();let p=(WARD[s.year]||.03)/4*q;
-  if(j.t>=6)p*=.55;else if(j.t>=3)p*=1.1;if(s.st.hp<40)p*=1.3;if(trait('신중'))p*=.85;
+  if(j.t>=6)p*=.55;else if(j.t>=3)p*=1.1;if(s.st.hp<40)p*=1.3;if(s.st.str>=60)p*=.85;else if(s.st.str<30)p*=1.2;if(s.sk.arms>=50)p*=.85;if(trait('신중'))p*=.85;
   const front=pick(FRONTS(s.year));s.flags.front=front;
   if(R()<p){die('battle',front);return}
   if(R()<p*2){s.cnt.wound++;const sev=R();
@@ -279,7 +285,7 @@ async function warSeason(q=1){const j=job();let p=(WARD[s.year]||.03)/4*q;
   if(R()<.3*q){await battleEvent(front)}}
 async function battleEvent(front){s.cnt.battle++;sheetOpen(front,'bataille');
   shText(pick([`${front}. 새벽 안개 속에서 적의 대열이 다가온다.`,`${front}. 포격이 멎자 북소리가 진격을 알린다.`,`${front}. 적의 기병이 측면을 노리고 있다.`]),'q');
-  const i=await shButtons([{l:'선두에 서서 돌격한다',s:'담력 판정. 공을 세우면 승진, 실패하면 크게 다친다',a:'bold'},{l:'대열을 지키며 버틴다',s:'',a:'safe'},{l:'몸을 사린다',s:'명성 -',a:'safe'}]);
+  const i=await shButtons([{l:'선두에 서서 돌격한다',s:'의지 판정. 공을 세우면 승진, 실패하면 크게 다친다',a:'bold'},{l:'대열을 지키며 버틴다',s:'',a:'safe'},{l:'몸을 사린다',s:'명성 -',a:'safe'}]);
   if(i===0){const r=await roll(s.st.cour>=55?1:s.st.cour<35?-1:0,{label:'돌격'});
     if(r.v>=5){say('적의 깃발을 빼앗았다. 장군이 이름을 물었다.'+fx({fame:6,cour:3}),'big');const n=PL.filter(x=>x[1]==='army'&&x[2]===job().t+1).map(x=>POST[x[0]]).filter(p=>meets(p));if(n.length&&R()<.6)takeJob(n[0].id,'전장에서 진급하여 ');
       if(s.year>=1802&&!s.flags.legion&&R()<.25){s.flags.legion=true;say('레지옹 도뇌르 훈장을 받았다.'+fx({fame:6}),'big')}}
@@ -314,7 +320,7 @@ async function emigreSeason(){const t=T();
   if(t>=1814.25&&s.cond==='emigre'){say('부르봉 왕가와 함께 마침내 프랑스 땅을 밟았다.','big');returnHome(.4);fx({fame:5});return}
   if(s.season===2&&R()<.25){const ev=pick([['프랑스어와 춤을 가르쳐 끼니를 이었다.',{money:120,soc:1}],['가져온 보석을 하나씩 팔았다.',{money:300}],['망명 귀족들의 무도회에서 고향 소식을 들었다.',{soc:1}],['낯선 기후에 병을 앓았다.',{hp:-5}],['모자 만드는 일을 배워 먹고살았다.',{money:150}],['고향의 땅이 국유재산으로 경매에 붙었다는 소식을 들었다.',{hp:-2}]]);say(ev[0]+fx(ev[1]))}
   if(t>=1795&&t<1800&&s.season===3&&R()<.12){sheetOpen('몰래 귀국','retour clandestin');shText('가짜 여권을 구해 몰래 돌아가는 이들이 있다. 붙잡히면 망명자법에 따라 총살이다.','q');
-    const i=await shButtons([{l:'몰래 돌아간다',s:'담력 판정',a:'bold family'},{l:'아직은 이르다',s:'',a:'safe'}]);
+    const i=await shButtons([{l:'몰래 돌아간다',s:'의지 판정',a:'bold family'},{l:'아직은 이르다',s:'',a:'safe'}]);
     if(i===0){const r=await roll(s.st.cour>=50?1:0,{label:'귀국'});if(r.v<=1&&await chance(.5,'망명자 처형','붙잡힌 귀국 망명자가 처형될 확률')){die('shot','몰래 돌아왔다가 붙잡혀 총살되었다.');await done();return}
       if(r.v>=3){returnHome(.2);say('가명을 쓰며 고향 근처에 숨어 살았다.'+fx({sus:15}))}else say('국경에서 되돌아와야 했다.')}
     await done()}}

@@ -47,7 +47,7 @@ EV.push(
  C('pea_hands',()=>peaLand()&&peaT()>=3&&peaM(5,6),.6,2,'추수 일꾼','les moissonneurs','밀이 누렇게 익었다. 낫질할 일꾼을 더 불러야 한다. 산골에서 내려온 떠돌이 추수꾼(aoûterons)들이 광장에 서서 품삯을 부른다. 올해는 품삯이 비싸다.',[
    {l:'넉넉히 부른다',s:'돈이 들지만 제때 거둔다',a:'work',f:()=>{s.flags.peaHands=s.year;say('추수꾼 여럿과 품삯, 하루 네 끼 밥, 포도주를 약조하였다.'+fx({money:-peaV(20)}))}},
    {l:'식구끼리 해치운다',s:'돈은 아끼나 몸이 상한다',a:'family safe',f:()=>say('새벽부터 해 질 녘까지 온 식구가 낫을 들었다.'+fx({hp:-3,cour:1}))},
-   {l:'품삯을 깎는다',s:'처세 판정',a:'greedy',f:async()=>{const r=await roll(s.st.soc>=45?1:0,{label:'품삯 흥정'});if(r.v>=4){s.flags.peaHands=s.year;say('싼 값에 일꾼들을 붙잡았다.'+fx({money:-peaV(10)}))}else say('일꾼들은 침을 뱉고 이웃 농가로 가 버렸다.'+fx({soc:-2,hp:-2}))}}]),
+   {l:'품삯을 깎는다',s:'사교 판정',a:'greedy',f:async()=>{const r=await roll(s.st.soc>=45?1:0,{label:'품삯 흥정'});if(r.v>=4){s.flags.peaHands=s.year;say('싼 값에 일꾼들을 붙잡았다.'+fx({money:-peaV(10)}))}else say('일꾼들은 침을 뱉고 이웃 농가로 가 버렸다.'+fx({soc:-2,hp:-2}))}}]),
  C('pea_harvest',()=>peaLand()&&peaM(6,7),1,1,'추수','la moisson',()=>peaBad()?'비가 그치지 않는다. 쓰러진 이삭이 밭에서 싹을 틔울 지경이다. 하늘이 갤 날을 기다릴 것인가, 젖은 채로 베어 들일 것인가.':'뙤약볕 아래 밀이 바스락거린다. 다 익기를 하루 이틀 더 기다리면 낟알이 여물지만, 우박 철이다.',[
    {l:'서둘러 베어 들인다',s:'수확 판정',a:'safe work',f:async()=>peaHarvestOut(await peaReap())},
    {l:'한껏 익기를 기다린다',s:'날씨가 좋으면 유리, 나쁘면 불리',a:'bold',f:async()=>peaHarvestOut(await peaReap(peaFine()?1:peaBad()?-1:R()<.5?1:-1,peaFine()?'다 여문 낟알':'기다리다 비를 맞음'))},
@@ -59,7 +59,7 @@ EV.push(
  C('pea_sell',()=>peaLand()&&peaM(10,11,0)&&!(s.flags.peaStore&&T()-s.flags.peaStore<1.2),.6,1,'곡식을 팔까','au marché',()=>`장날이다. 타작한 곡식을 지금 팔면 값이 헐하고, 봄 보릿고개(la soudure)까지 쟁여 두면 값이 오른다. 하지만 바구미와 쥐가 있고, ${T()>=1789.5?'곡식을 쌓아 두는 자는 ‘매점꾼(accapareur)’이라고 손가락질 받는다.':'흉년이면 이웃들의 눈길이 따갑다.'}`,[
    {l:'지금 장에 내다 판다',s:'',a:'safe',f:()=>say('곡식 자루를 수레에 싣고 장에 가서 팔았다.'+fx({money:Math.round(peaV(25)*price(s.year))}))},
    {l:'봄까지 쟁여 둔다',s:'봄에 값이 오르면 이득',a:'greedy',f:()=>{s.flags.peaStore=T();say('곡식을 다락에 펴 말리고 쥐덫을 놓았다.'+fx({sus:T()>=1793&&T()<1795?4:0}))}},
-   {l:'가난한 이웃에게 싸게 넘긴다',s:'신앙·처세',a:'pious social',f:()=>say('씨앗조차 없는 이웃들에게 시세보다 싸게 넘겼다.'+fx({money:peaV(12),soc:2,faith:2}))}]),
+   {l:'가난한 이웃에게 싸게 넘긴다',s:'신앙·사교',a:'pious social',f:()=>say('씨앗조차 없는 이웃들에게 시세보다 싸게 넘겼다.'+fx({money:peaV(12),soc:2,faith:2}))}]),
  C('pea_storeout',()=>peas()&&s.flags.peaStore&&T()-s.flags.peaStore>.1&&T()-s.flags.peaStore<1.2&&peaM(2,3,4,5),1.5,0,'보릿고개의 곡식값','la soudure','봄이 되자 곡식값이 뛰었다. 이웃들은 굶주리고, 다락의 곡식 자루는 아직 묵직하다.',[
    {l:'장에서 높은 값에 판다',s:'바구미 판정',a:'greedy',f:async()=>{s.flags.peaStore=0;const r=await roll(0,{label:'곡식 상태'});if(r.v>=3)say('높은 값에 곡식을 팔았다. 돌아오는 길에 아낙들이 등 뒤에서 욕을 하였다.'+fx({money:Math.round(peaV(40)*price(s.year)),soc:-2,sus:rev()?3:0}));else say('자루를 열어 보니 바구미가 슬어 절반은 가루가 되어 있었다.'+fx({money:peaV(10)}))}},
    {l:'이웃에게 제값에 나눈다',s:'',a:'pious social',f:()=>{s.flags.peaStore=0;say('시세보다 낮은 값에 이웃들에게 나누어 팔았다. 신부가 강론에서 칭찬하였다.'+fx({money:peaV(20),soc:3,faith:2}))}}]),
@@ -79,9 +79,9 @@ EV.push(
    {l:'날마다 품을 판다',s:'',a:'social',f:()=>say('그날그날 일감을 찾아 이 밭 저 밭을 다녔다.'+fx({money:15,soc:1}))}]),
  C('pea_glean',()=>peas()&&(peaT()===1||!isM())&&peaM(6,7),.6,2,'이삭줍기','le glanage','볏단이 실려 나간 밭에는 이삭줍기 권리가 있다. 과부와 아이들, 가난한 아낙들이 허리를 굽힌다. 그런데 아직 볏단이 남아 있는 옆 밭에도 이삭이 수북하다.',[
    {l:'볏단이 나간 밭에서만 줍는다',s:'',a:'safe',f:()=>say('해 질 녘까지 이삭을 주워 앞치마 가득 담았다. 겨울 빵 몇 덩이 몫이다.'+fx({money:6,hp:-1}))},
-   {l:'볏단 사이로 몰래 들어간다',s:'담력 판정',a:'bold greedy',f:async()=>{const r=await roll(0,{label:'몰래 줍기'});if(r.v>=4)say('볏단에서 이삭 한 줌씩을 뽑아 앞치마에 감추었다.'+fx({money:12}));else say(`${T()>=1791?'들판 감시인(garde champêtre)':'밭 지기(messier)'}에게 들켜 이삭을 빼앗기고 벌금을 물었다.`+fx({money:-8,soc:-2}))}}]),
+   {l:'볏단 사이로 몰래 들어간다',s:'의지 판정',a:'bold greedy',f:async()=>{const r=await roll(0,{label:'몰래 줍기'});if(r.v>=4)say('볏단에서 이삭 한 줌씩을 뽑아 앞치마에 감추었다.'+fx({money:12}));else say(`${T()>=1791?'들판 감시인(garde champêtre)':'밭 지기(messier)'}에게 들켜 이삭을 빼앗기고 벌금을 물었다.`+fx({money:-8,soc:-2}))}}]),
  C('pea_glean2',()=>peaLand()&&peaT()>=3&&peaM(6,7),.4,3,'이삭줍는 사람들','glaneuses','볏단을 다 실어 내기도 전에 마을 아낙과 아이들이 밭머리에 몰려왔다. 관습으로는 이삭줍기를 막을 수 없지만, 갈퀴로 밭을 먼저 긁어 버리는 농가도 있다.',[
-   {l:'밭을 열어 준다',s:'신앙·처세',a:'pious social',f:()=>say('볏단을 서둘러 실어 내고 밭을 열어 주었다.'+fx({faith:2,soc:2}))},
+   {l:'밭을 열어 준다',s:'신앙·사교',a:'pious social',f:()=>say('볏단을 서둘러 실어 내고 밭을 열어 주었다.'+fx({faith:2,soc:2}))},
    {l:'갈퀴로 먼저 긁는다',s:'',a:'greedy',f:()=>say('일꾼들에게 갈퀴로 밭을 긁게 하였다. 아낙들이 저주를 퍼부었다.'+fx({money:peaV(5),soc:-3,pol:-1}))}]),
  C('pea_hay',()=>peaLand()&&peaM(5,6),.5,2,'건초 말리기','la fenaison','풀을 베어 널어 두었는데 서쪽 하늘이 시커멓다. 덜 마른 건초를 지금 들이면 곳간에서 뜨거워져 불이 날 수 있다. 두면 비에 썩는다.',[
    {l:'덜 말랐어도 들인다',s:'',a:'bold',f:async()=>{if(await chance(.12,'건초 자연 발화','젖은 건초 더미의 발열'))say('사흘 뒤 건초 더미에서 연기가 올라 반을 마당에 끌어내 태웠다.'+fx({money:-peaV(20),hp:-1}));else say('비가 오기 직전에 마지막 수레가 곳간에 들어갔다.'+fx({hp:-1}))}},
@@ -117,14 +117,14 @@ EV.push(
  C('pea_fair',()=>peaLand()&&peaM(2,3,8,9),.6,2,'가축 장','la foire aux bestiaux',()=>`읍내 큰 장날이다. 리무쟁 소, 노르망디 젖소, 푸아투 노새가 줄지어 섰다. 말 장수(maquignon)들이 손바닥을 마주치며 값을 정한다.${s.flags.peaOx?' 집에는 쟁기 끌 소가 이미 있다.':' 아직 쟁기 끌 소가 없어 남의 소를 빌려 밭을 간다.'}`,()=>[
    {l:'쟁기 끌 소 한 겨리를 산다',s:`재산 -${fmt(peaV(110))}`,a:'greedy work',dis:s.money<peaV(110)||!!s.flags.peaOx,f:()=>{s.flags.peaOx=true;say('뿔이 고른 황소 두 마리를 사서 멍에를 맞추었다.'+fx({money:-peaV(110),soc:1}))}},
    {l:'젖소 한 마리를 산다',s:'재산 -60',a:'family',dis:s.money<60,f:()=>say('젖소를 끌고 돌아왔다. 아이들 죽에 우유가 들어간다.'+fx({money:-60,hp:2}))},
-   {l:'말 장수와 흥정한다',s:'처세 판정. 속을 수도',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'흥정'});if(r.v>=4)say('늙은 말 장수를 이겨 쓸 만한 말을 싸게 샀다.'+fx({money:-peaV(20),soc:1}));else say('이빨을 검게 물들여 젊어 보이게 한 늙은 말이었다. 집에 오는 길에 절름거렸다.'+fx({money:-peaV(30)}))}},
+   {l:'말 장수와 흥정한다',s:'사교 판정. 속을 수도',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'흥정'});if(r.v>=4)say('늙은 말 장수를 이겨 쓸 만한 말을 싸게 샀다.'+fx({money:-peaV(20),soc:1}));else say('이빨을 검게 물들여 젊어 보이게 한 늙은 말이었다. 집에 오는 길에 절름거렸다.'+fx({money:-peaV(30)}))}},
    {l:'구경만 한다',s:'',a:'safe',f:()=>say('소 값만 묻고 돌아왔다.')}]),
  C('pea_epizoo',()=>peaLand()&&peaAt('gascogne','languedoc')&&s.year>=1774&&s.year<=1776,1.5,3,'소 역병','l’épizootie de 1774',`플랑드르에서 바욘으로 들어온 소 역병이 남서부를 휩쓸고 있다. 파리에서 내려온 의사 비크다지르(Vicq d’Azyr)와 군인들이 병든 소를 모두 죽여 생석회에 묻고, 값의 3분의 1을 보상한다고 한다. 우리 외양간 소가 침을 흘린다.`,[
    {l:'신고하고 살처분을 받아들인다',s:'',a:'safe',f:()=>{s.flags.peaOx=false;say('군인들이 소를 끌어내 구덩이에 묻었다. 보상금은 소 값의 3분의 1이었다.'+fx({money:-peaV(50),pol:1}))}},
    {l:'숲속에 소를 숨긴다',s:'판정',a:'bold',f:async()=>{const r=await roll(-1,{label:'숨긴 소'});if(r.v>=4)say('소가 앓다가 살아났다. 아무도 몰랐다.'+fx({cour:2}));else{s.flags.peaOx=false;say('소는 결국 죽고, 숨긴 것이 들통나 벌금까지 물었다. 이웃 외양간에도 병이 번졌다.'+fx({money:-peaV(80),soc:-4}),'dark');peaBadY()}}},
    {l:'성 안토니오에게 빌고 약초를 먹인다',s:'',a:'pious',f:async()=>{const r=await roll(-1,{label:'민간요법'});if(r.v>=5)say('기도 덕인지 소가 일어섰다.'+fx({faith:3}));else{s.flags.peaOx=false;say('소가 쓰러져 죽었다.'+fx({money:-peaV(70),faith:1}),'dark');peaBadY()}}}]),
  C('pea_wolf',()=>peas()&&peaAt('auvergne','languedoc','bretagne','vendee','bourgogne','champagne','alsace','gascogne','provence')&&peaM(11,0,1,2),.5,3,'늑대','le loup','눈 덮인 새벽, 양 우리 울타리가 부서지고 양 세 마리가 목이 물린 채 죽어 있었다. 숲 가장자리에 커다란 발자국이 이어진다.',[
-   {l:'이웃과 몰이사냥(battue)을 한다',s:'담력 판정. 늑대 포상금',a:'bold social',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'늑대 사냥'});if(r.v>=4)say(`늑대를 잡아 ${T()>=1800?'군청':'지방 감독관 사무소'}에 머리를 가져가 포상금을 받았다. 마을을 돌며 달걀과 베이컨도 얻었다.`+fx({money:15,fame:2,cour:2}));else if(r.v===1)say('덤불에서 뛰쳐나온 늑대에게 팔을 물렸다. 미친 늑대가 아니기만 빌었다.'+fx({hp:-8}));else say('하루 종일 숲을 헤맸지만 그림자도 못 보았다.'+fx({hp:-1}))}},
+   {l:'이웃과 몰이사냥(battue)을 한다',s:'의지 판정. 늑대 포상금',a:'bold social',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'늑대 사냥'});if(r.v>=4)say(`늑대를 잡아 ${T()>=1800?'군청':'지방 감독관 사무소'}에 머리를 가져가 포상금을 받았다. 마을을 돌며 달걀과 베이컨도 얻었다.`+fx({money:15,fame:2,cour:2}));else if(r.v===1)say('덤불에서 뛰쳐나온 늑대에게 팔을 물렸다. 미친 늑대가 아니기만 빌었다.'+fx({hp:-8}));else say('하루 종일 숲을 헤맸지만 그림자도 못 보았다.'+fx({hp:-1}))}},
    {l:'개를 풀고 밤새 지킨다',s:'',a:'safe',f:()=>say('가시 목걸이를 채운 개와 함께 우리 옆에서 밤을 새웠다.'+fx({hp:-2,money:-peaV(4)}))},
    {l:'손해를 감수한다',s:'',a:'safe',f:()=>say('죽은 양 가죽이라도 벗겨 팔았다.'+fx({money:-peaV(8)}))}]),
  C('pea_vet',()=>peaLand()&&peaT()>=3&&s.year>=1768,.4,3,'아픈 말','le vétérinaire',()=>`밭 가는 말이 배를 부여잡고 뒹군다. 산통이다. ${T()>=1800?'읍내에 알포르 수의학교(1765년 설립)를 나온 수의사가 있다.':'리옹과 알포르의 왕립 수의학교를 나온 ‘수의 기술자’가 군청 소재지에 산다고 한다.'} 마을에는 말발굽 장이와 접골사가 있다.`,[
@@ -139,14 +139,14 @@ EV.push(
  C('pea_tithe',()=>peaCom()&&peaLand()&&T()<1790.8&&peaM(6,7),.6,2,'십일조','la dîme',()=>`십일조 징수원이 밭머리에서 볏단을 센다. 이 교구에서는 ${pick(['열한','열세','열다섯'])} 단에 한 단을 교회 몫으로 가져간다. 걷은 곡식은 대부분 본당 신부가 아니라 먼 수도원과 참사회의 곳간으로 간다.`,()=>{const o=[
    {l:'정직하게 낸다',s:'',a:'pious safe',f:()=>say('징수원이 볏단을 골라 수레에 실었다.'+fx({money:-peaV(10),faith:1}))},
    {l:'밤에 볏단 몇 개를 숨긴다',s:'판정',a:'bold greedy',f:async()=>{const r=await roll(0,{label:'볏단 숨기기'});if(r.v>=3)say('달밤에 볏단 몇 개를 곳간에 먼저 들였다.'+fx({money:-peaV(5)}));else say('징수원이 볏단 수를 맞춰 보고 고발하였다. 벌금과 소송 비용을 물었다.'+fx({money:-peaV(30),pol:2,soc:-1}))}}];
-   if(['potato','maize'].includes(s.flags.peaSpring))o.push({l:'새 작물엔 십일조가 없다고 버틴다',s:'처세 판정',a:'radical',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'새 작물 십일조 다툼'});if(r.v>=4)say(`${s.flags.peaSpring==='potato'?'감자':'옥수수'}는 옛 관습에 없는 작물이라는 주장이 받아들여졌다.`+fx({money:-peaV(5),pol:2}));else say('수도원이 소송을 걸었다. 결국 새 작물에도 ‘노발’ 십일조를 물게 되었다.'+fx({money:-peaV(20),pol:3}))}});
+   if(['potato','maize'].includes(s.flags.peaSpring))o.push({l:'새 작물엔 십일조가 없다고 버틴다',s:'사교 판정',a:'radical',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'새 작물 십일조 다툼'});if(r.v>=4)say(`${s.flags.peaSpring==='potato'?'감자':'옥수수'}는 옛 관습에 없는 작물이라는 주장이 받아들여졌다.`+fx({money:-peaV(5),pol:2}));else say('수도원이 소송을 걸었다. 결국 새 작물에도 ‘노발’ 십일조를 물게 되었다.'+fx({money:-peaV(20),pol:3}))}});
    return o}),
  C('pea_champart',()=>peaCom()&&peaLand()&&peaFeud()&&!peaAt('bretagne')&&peaM(6,7),.5,2,'영주의 몫','le champart',`영주의 소작료 징수인이 와서 열두 단에 한 단(champart)을 골라 가기 전에는 제 볏단을 실어 갈 수 없다. 징수인은 사흘째 오지 않고, 하늘엔 비구름이 몰려온다.`,[
    {l:'징수인을 기다린다',s:'날씨 판정',a:'safe',f:async()=>{const r=await roll(peaBad()?-1:0,{label:'기다림'});if(r.v>=3)say('나흘째 징수인이 와서 볏단을 골라 갔다.');else say('기다리는 사이 비가 쏟아져 볏단에서 싹이 텄다.'+fx({money:-peaV(15),pol:3}))}},
    {l:'영주 몫만 남기고 제 볏단을 실어 간다',s:'판정',a:'bold radical',f:async()=>{const r=await roll(0,{label:'먼저 실어 가기'});if(r.v>=4)say('영주 몫 볏단을 밭에 세워 두고 나머지를 들였다. 징수인은 투덜대고 말았다.'+fx({pol:2}));else say('영주 재판소에 불려 가 벌금을 물었다.'+fx({money:-peaV(20),pol:4}))}},
    {l:'징수인에게 닭 두 마리를 보낸다',s:'',a:'social',f:()=>say('닭을 받은 징수인이 그날로 달려왔다.'+fx({money:-3,soc:1}))}]),
  C('pea_mill',()=>peaCom()&&T()<1790,.5,3,'영주의 방앗간','le moulin banal','영주의 방앗간(moulin banal) 말고는 곡식을 빻을 수 없다. 방앗간지기는 열여섯 말에 한 말이라는 삯보다 더 떼어 간다는 소문이다. 오늘도 밀가루 자루가 가벼워 보인다.',[
-   {l:'제 저울로 달아 따진다',s:'처세 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'방앗간 시비'});if(r.v>=4)say('방앗간지기가 얼굴을 붉히며 가루를 한 바가지 더 퍼 주었다.'+fx({soc:1,pol:1}));else say('방앗간지기는 다음번엔 일주일을 기다리게 하였다.'+fx({pol:2,hp:-1}))}},
+   {l:'제 저울로 달아 따진다',s:'사교 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'방앗간 시비'});if(r.v>=4)say('방앗간지기가 얼굴을 붉히며 가루를 한 바가지 더 퍼 주었다.'+fx({soc:1,pol:1}));else say('방앗간지기는 다음번엔 일주일을 기다리게 하였다.'+fx({pol:2,hp:-1}))}},
    {l:'몰래 이웃 교구 방앗간에 간다',s:'판정',a:'bold greedy',f:async()=>{const r=await roll(0,{label:'몰래 빻기'});if(r.v>=3)say('강 건너 방앗간에서 제대로 빻아 왔다.'+fx({money:3}));else say('영주의 방앗간지기에게 들켜 밀가루와 나귀를 압수당하고 벌금을 물었다.'+fx({money:-peaV(15),pol:4}))}},
    {l:'참는다',s:'',a:'safe',f:()=>say('도둑 방앗간지기라는 노래를 흥얼거리며 가벼운 자루를 메고 왔다.'+fx({pol:1}))}]),
  C('pea_corvee',()=>peaCom()&&isM()&&s.age<=60&&T()<1787.4&&!peaYr(1775.95,1776.5)&&peaM(2,3,8,9),.5,2,'왕의 길 부역','la corvée royale','지방 감독관의 명으로 왕의 길(grand chemin)을 닦는 부역에 나오라는 통지가 왔다. 한 해 엿새에서 열흘, 소와 수레가 있는 집은 수레까지 내야 한다. 하필 밭갈이 철이다.',[
@@ -156,22 +156,22 @@ EV.push(
  C('pea_collect',()=>peaCom()&&isM()&&s.age>=25&&peaT()>=2&&T()<1790.8&&!peaAt('provence','languedoc')&&!s.flags.peaCollector,.4,99,'타유세 징수인','collecteur de la taille','올해 마을의 타유세(taille) 징수인으로 뽑혔다. 돌아가며 맡는 자리지만, 다 걷지 못하면 모자라는 돈을 징수인이 제 재산으로 채워야 하고, 감옥에 갇히기도 한다.',[
    {l:'이웃을 닦달해 다 걷는다',s:'',a:'greedy',f:()=>{s.flags.peaCollector=1;say('과부의 냄비와 가난한 집 침대 이불까지 압류하여 기한 안에 다 걷었다. 마을 사람들이 등을 돌렸다.'+fx({soc:-5,pol:-1}))}},
    {l:'가난한 집은 사정을 봐준다',s:'',a:'pious social',f:()=>{s.flags.peaCollector=1;say('모자라는 돈을 제 주머니에서 채웠다.'+fx({money:-peaV(30),soc:4,faith:1}))}},
-   {l:'선물을 써서 빠진다',s:'처세 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'징수인 면제'});if(r.v>=4){s.flags.peaCollector=1;say('지방 관리에게 버터와 닭을 보내 다른 사람으로 바꾸게 하였다.'+fx({money:-peaV(8),soc:-1}))}else{s.flags.peaCollector=1;say('뇌물은 받고 자리는 그대로였다. 결국 모자라는 돈을 채웠다.'+fx({money:-peaV(35)}))}}}]),
+   {l:'선물을 써서 빠진다',s:'사교 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'징수인 면제'});if(r.v>=4){s.flags.peaCollector=1;say('지방 관리에게 버터와 닭을 보내 다른 사람으로 바꾸게 하였다.'+fx({money:-peaV(8),soc:-1}))}else{s.flags.peaCollector=1;say('뇌물은 받고 자리는 그대로였다. 결국 모자라는 돈을 채웠다.'+fx({money:-peaV(35)}))}}}]),
  C('pea_assess',()=>peaCom()&&peaLand()&&T()<1790.8&&!peaAt('provence','languedoc')&&peaM(11,0,1),.4,3,'세금 할당','la taille arbitraire','마을 할당인들이 우리 집 타유세를 크게 올렸다. 지난봄 젖소를 들이고 지붕을 새로 이은 것을 보았다는 것이다. 그래서 다들 일부러 집을 허름하게 둔다.',[
-   {l:'감면 청원을 낸다',s:'학식·처세 판정',a:'study',f:async()=>{const r=await roll(lit()?1:0,{label:'감면 청원'});if(r.v>=4)say(`${lit()?'직접 쓴':'대서인에게 맡긴'} 청원이 받아들여져 세액이 깎였다.`+fx({money:-peaV(4),edu:1}));else say('청원은 묵살되었다. 대서료만 날렸다.'+fx({money:-peaV(18)}))}},
+   {l:'감면 청원을 낸다',s:'학식·사교 판정',a:'study',f:async()=>{const r=await roll(lit()?1:0,{label:'감면 청원'});if(r.v>=4)say(`${lit()?'직접 쓴':'대서인에게 맡긴'} 청원이 받아들여져 세액이 깎였다.`+fx({money:-peaV(4),edu:1}));else say('청원은 묵살되었다. 대서료만 날렸다.'+fx({money:-peaV(18)}))}},
    {l:'젖소를 팔고 일부러 허름하게 산다',s:'',a:'safe',f:()=>say('젖소를 팔고 깨진 창을 그대로 두었다. 이듬해 세액이 줄었다.'+fx({money:-peaV(4),hp:-1}))},
    {l:'그대로 낸다',s:'',a:'safe',f:()=>say('세리에게 돈을 셈해 주었다.'+fx({money:-peaV(15),pol:1}))}]),
  C('pea_gabelle',()=>peaCom()&&T()<1790&&(peaGG()||peaAt('provence','languedoc')),.5,3,'소금세 순찰','les gabelous',()=>peaGG()?'소금세 순찰원(gabelous)들이 들이닥쳤다. 이 대염세 지방에서는 집집마다 ‘의무 소금(sel du devoir)’을 해마다 정해진 만큼 비싼 값에 사야 한다. 순찰원들이 찬장과 절임 통을 뒤지며 밀매 소금을 찾는다. 시장에서 싸게 산 소금 한 봉지가 부엌에 있다.':'소금세 순찰원들이 마을을 돈다. 이 지방은 소금세가 가벼운 편이지만, 밀매 소금은 여전히 범죄다. 부엌에 출처 모를 소금 한 봉지가 있다.',[
    {l:'뒤지게 둔다',s:'판정',a:'safe',f:async()=>{const r=await roll(0,{label:'소금 수색'});if(r.v>=3)say('소금 봉지는 밀가루 통 바닥에 묻혀 있었다. 순찰원들은 빈손으로 나갔다.');else say('밀매 소금이 발각되었다. 벌금 수백 리브르를 물 수 없어 가구를 압류당했다.'+fx({money:-peaV(60),pol:4}),'dark')}},
    {l:'순찰원에게 돈을 쥐여 준다',s:'',a:'greedy',f:()=>say('순찰대장에게 은화를 쥐여 주자 수색이 건성으로 끝났다.'+fx({money:-peaV(10)}))},
-   {l:'문을 막아선다',s:'담력 판정',a:'bold radical',f:async()=>{const r=await roll(s.st.cour>=50?1:-1,{label:'저항'});if(r.v>=4)say('이웃들이 쇠스랑을 들고 몰려나오자 순찰원들이 물러갔다.'+fx({pol:4,cour:3,soc:2}));else say('순찰원 폭행 혐의로 붙잡혀 몇 주를 감옥에서 보냈다.'+fx({hp:-6,money:-peaV(30),pol:5}),'dark')}}]),
+   {l:'문을 막아선다',s:'의지 판정',a:'bold radical',f:async()=>{const r=await roll(s.st.cour>=50?1:-1,{label:'저항'});if(r.v>=4)say('이웃들이 쇠스랑을 들고 몰려나오자 순찰원들이 물러갔다.'+fx({pol:4,cour:3,soc:2}));else say('순찰원 폭행 혐의로 붙잡혀 몇 주를 감옥에서 보냈다.'+fx({hp:-6,money:-peaV(30),pol:5}),'dark')}}]),
  C('pea_cens',()=>peaCom()&&peaLand()&&pre89()&&s.year>=1765,.4,5,'토지 대장 갱신','la réaction seigneuriale','영주가 고용한 봉건법 전문가(feudiste)가 낡은 토지 대장(terrier)을 들고 왔다. 백 년 동안 잊혔던 공조와 밀린 지대를 되살려 받겠다고 한다. 마을 사람 여럿이 함께 소송을 하자고 한다.',()=>[
    {l:'밀린 지대를 낸다',s:'',a:'safe',f:()=>say('잊혔던 닭 공조와 귀리 몇 말에, 밀린 몫까지 셈하여 바쳤다.'+fx({money:-peaV(25),pol:2}))},
-   {l:'마을 소송에 돈을 보탠다',s:'처세 판정',a:'social radical',f:async()=>{say('마을이 바이아주 재판소에 소장을 냈다.'+fx({money:-peaV(10)}));const r=await roll(s.st.soc>=50?1:0,{label:'마을 소송'});if(r.v>=4)say('재판소가 옛 공조의 증빙이 모자란다며 마을 손을 들어 주었다.'+fx({soc:3,pol:3}));else say('소송에 졌다. 비용까지 물어야 했다.'+fx({money:-peaV(25),pol:5}))}},
+   {l:'마을 소송에 돈을 보탠다',s:'사교 판정',a:'social radical',f:async()=>{say('마을이 바이아주 재판소에 소장을 냈다.'+fx({money:-peaV(10)}));const r=await roll(s.st.soc>=50?1:0,{label:'마을 소송'});if(r.v>=4)say('재판소가 옛 공조의 증빙이 모자란다며 마을 손을 들어 주었다.'+fx({soc:3,pol:3}));else say('소송에 졌다. 비용까지 물어야 했다.'+fx({money:-peaV(25),pol:5}))}},
    {l:'원본 문서를 보여 달라고 버틴다',s:'학식 판정',a:'study bold',dis:!lit(),f:async()=>{const r=await roll(s.st.edu>=40?1:0,{label:'문서 대조'});if(r.v>=4)say('토지 대장의 경계가 지금 밭과 다르다는 것을 찾아냈다. 우리 밭은 빠졌다.'+fx({edu:2,pol:2}));else say('라틴어와 옛 글씨를 읽어 낼 수 없었다.'+fx({money:-peaV(15)}))}}]),
  C('pea_hunt',()=>peaCom()&&pre89()&&peaAt('ile','champagne','picardie','bourgogne'),.4,3,'영주의 사냥감','les capitaineries',()=>`${peaAt('ile')?'왕실 사냥 관할구(capitainerie)':'영주의 사냥터'} 안에서는 밭에 울타리를 칠 수도, 사냥감을 쫓을 수도 없다. 밤마다 사슴과 멧돼지 떼가 밀밭을 짓밟는다.`,[
    {l:'손해 배상을 청원한다',s:'판정',a:'safe',f:async()=>{const r=await roll(0,{label:'배상 청원'});if(r.v>=5)say('사냥 관리관이 몇 리브르를 내주었다.'+fx({money:8}));else say('청원은 사냥 관리관 책상 서랍에 처박혔다.'+fx({pol:2,money:-peaV(8)}))}},
-   {l:'밤에 사슴을 잡는다',s:'담력 판정',a:'bold radical',f:async()=>{const r=await roll(0,{label:'밤 사냥'});if(r.v>=4)say('사슴을 잡아 숲속에서 해체하고 고기를 나누었다.'+fx({hp:2,pol:3}));else say('사냥터 지기에게 붙잡혀 사냥 재판에 넘겨졌다. 벌금에 칼을 쓰고 장터에 섰다.'+fx({money:-peaV(30),hp:-3,soc:-2,pol:5}),'dark')}},
+   {l:'밤에 사슴을 잡는다',s:'의지 판정',a:'bold radical',f:async()=>{const r=await roll(0,{label:'밤 사냥'});if(r.v>=4)say('사슴을 잡아 숲속에서 해체하고 고기를 나누었다.'+fx({hp:2,pol:3}));else say('사냥터 지기에게 붙잡혀 사냥 재판에 넘겨졌다. 벌금에 칼을 쓰고 장터에 섰다.'+fx({money:-peaV(30),hp:-3,soc:-2,pol:5}),'dark')}},
    {l:'허수아비를 세우고 참는다',s:'',a:'safe',f:()=>say('밤새 냄비를 두드리며 사슴을 쫓았다.'+fx({hp:-2,pol:2,money:-peaV(5)}))}]),
  C('pea_rachat',()=>peaCom()&&peaLand()&&peaYr(1790.2,1793.35)&&!s.flags.peaRachat,.6,99,'공조 되사기','le rachat des droits',`1790년 5월 법령에 따르면 영주의 지대와 소작료는 돈을 내야 없앨 수 있다. 돈으로 내는 지대는 스무 해 치, 현물 소작료는 스물다섯 해 치를 한꺼번에 치러야 한다. 영주의 관리인이 셈을 들고 왔다.`,[
    {l:'돈을 치르고 되산다',s:'땅이 온전히 내 것이 된다',a:'safe royal',f:()=>{s.flags.peaRachat='paid';say('공증인 앞에서 몇 해 모은 돈을 치르고 되사기 증서를 받았다.'+fx({money:-peaV(90),pol:-1}))}},
@@ -187,7 +187,7 @@ EV.push(
    {l:'밤에 도시 사람들에게 웃돈 받고 판다',s:'',a:'greedy',f:()=>say('밤에 찾아온 도시 아낙들에게 시세대로 팔았다.'+fx({money:peaV(25),sus:8}))}]),
  C('pea_assignat',()=>peas()&&peaYr(1795,1796.2),.6,99,'휴지가 된 지폐','les assignats','몇 해 전 곡식을 꾸어 간 이웃이 아시냐 지폐 다발로 빚을 갚겠다고 한다. 법으로는 지폐를 거절할 수 없다. 그러나 지폐 백 리브르로는 이제 빵 몇 덩이도 못 산다.',[
    {l:'지폐를 받는다',s:'',a:'safe',f:()=>say('지폐 다발을 받았다. 그날로 값이 또 떨어졌다.'+fx({money:-peaV(15),pol:1}))},
-   {l:'곡식으로 갚으라고 버틴다',s:'처세 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=45?1:0,{label:'빚 다툼'});if(r.v>=4)say('결국 호밀 몇 말로 받아 냈다.'+fx({money:peaV(8)}));else say('이웃이 치안판사에게 가서 지폐로 갚았다는 증서를 받아 갔다. 원수가 되었다.'+fx({money:-peaV(15),soc:-3}))}}]),
+   {l:'곡식으로 갚으라고 버틴다',s:'사교 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=45?1:0,{label:'빚 다툼'});if(r.v>=4)say('결국 호밀 몇 말로 받아 냈다.'+fx({money:peaV(8)}));else say('이웃이 치안판사에게 가서 지폐로 갚았다는 증서를 받아 갔다. 원수가 되었다.'+fx({money:-peaV(15),soc:-3}))}}]),
 
  /* ---------------- 빚과 땅 ---------------- */
  C('pea_borrow',()=>peaLand()&&!s.flags.peaDebt&&s.money<peaV(40)&&peaM(2,3,4),.6,2,'빚','emprunt',()=>`지대 낼 날과 씨앗 살 날이 겹쳤다. 돈 나올 데는 셋이다. 공증인을 통한 연 5푼짜리 정기 이자 증서(rente constituée), 이자가 곱절인 방앗간지기, 그리고 ${T()>=1800?'읍내 고리대금업자':'마을의 부농'}.`,[
@@ -196,7 +196,7 @@ EV.push(
    {l:'허리띠를 졸라맨다',s:'',a:'safe',f:()=>say('빚 대신 끼니를 줄였다.'+fx({hp:-3}))}]),
  C('pea_debt',()=>peas()&&s.flags.peaDebt&&(s.flags.peaDebt.n||0)<=s.year&&peaM(9,10,11),1.4,0,'성 마르탱의 빚','la Saint-Martin',()=>`성 마르탱 축일(11월 11일)이다. 빚 ${fmt(s.flags.peaDebt.a)} ${money()}의 기한이 돌아왔다.`,()=>{const d=s.flags.peaDebt;const o=[
    {l:'갚는다',s:`재산 -${fmt(d.a)}`,a:'safe',dis:s.money<d.a,f:()=>{s.flags.peaDebt=null;say('빚을 다 갚고 증서를 돌려받아 아궁이에 넣었다.'+fx({money:-d.a,soc:1}))}},
-   {l:'기한을 늘려 달라고 빈다',s:'처세 판정',a:'social',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'빚 연장'});if(r.v>=4){d.a=Math.round(d.a*1.1);d.n=s.year+1;say('한 해를 더 받았다. 이자는 불었다.')}else{s.flags.peaDebt=null;if(s.land>0||peaT()>=3){peaBadY(2);say('빚쟁이가 집달리를 데리고 와서 가축과 농기구를 압류하였다.'+fx({money:-Math.round(d.a*.6),soc:-3}),'dark')}else say('빚쟁이가 냄비와 이불을 가져갔다.'+fx({money:-Math.round(d.a*.5),hp:-2}),'dark')}}}];
+   {l:'기한을 늘려 달라고 빈다',s:'사교 판정',a:'social',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'빚 연장'});if(r.v>=4){d.a=Math.round(d.a*1.1);d.n=s.year+1;say('한 해를 더 받았다. 이자는 불었다.')}else{s.flags.peaDebt=null;if(s.land>0||peaT()>=3){peaBadY(2);say('빚쟁이가 집달리를 데리고 와서 가축과 농기구를 압류하였다.'+fx({money:-Math.round(d.a*.6),soc:-3}),'dark')}else say('빚쟁이가 냄비와 이불을 가져갔다.'+fx({money:-Math.round(d.a*.5),hp:-2}),'dark')}}}];
    if(s.land>0)o.push({l:'밭 한 뙈기를 판다',s:'땅이 줄어든다',a:'safe',f:()=>{s.flags.peaDebt=null;const l=Math.round(s.land*.4);s.land-=l;say(`밭 한 뙈기를 공증인 앞에서 넘겨주고 빚을 지웠다. 연 지대 -${fmt(l)}.`+fx({money:Math.max(0,l*20-d.a)}),'big')}});
    return o}),
  C('pea_plot',()=>peaFarm()&&peaT()<=4&&s.money>=180,.5,3,'밭 한 뙈기','achat d’un lopin',()=>`${pick(['홀아비가 된','빚에 몰린','도시로 떠나는'])} 이웃이 마을 어귀 밭 한 뙈기를 판다고 한다. 땅을 사는 것은 모든 농부의 꿈이다.${T()<1790?' 땅을 사면 영주에게 거래세(lods et ventes)로 값의 열두에 하나를 따로 바쳐야 한다.':''}`,()=>{const a=Math.min(600,Math.max(180,Math.round(s.money*.4)));const lods=T()<1790?Math.round(a/12):0;return [
@@ -215,11 +215,11 @@ EV.push(
    o.push({l:'한 해만 더 버텨 본다',s:'판정',a:'bold',f:async()=>{const r=await roll(0,{label:'버티기'});if(r.v>=4){s.flags.peaBad=0;say('친척에게 돈을 꾸어 겨우 한 해를 넘겼다.'+fx({soc:-1}))}else{peaDown('끝내 빚에 밀려 ',.3);say('집달리가 가재도구까지 경매에 부쳤다.'+fx({hp:-3}),'dark')}}});return o}),
  C('pea_metayage',()=>s.job==='f2'&&peas()&&peaM(8,9,10),.6,3,'소작 계약 갱신','le bail à mi-fruits',`성 미카엘 축일(9월 29일), 소작 계약을 다시 쓸 때다. 수확도 가축 이익도 지주와 반씩 나눈다. 지주의 관리인은 이번에 거세한 수탉 여섯 마리와 짐 나르기 부역 열흘을 더 얹겠다고 한다.`,()=>{const o=[
    {l:'그대로 받아들인다',s:'',a:'safe',f:()=>say('관리인이 내미는 계약서에 십자 표시를 하였다.'+fx({money:-peaV(8),pol:1}))},
-   {l:'조건을 따진다',s:'처세 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'계약 흥정'});if(r.v>=4)say('수탉은 둘로 줄고 부역은 빠졌다. 관리인은 좋은 소작인을 잃기 싫었다.'+fx({soc:2}));else if(r.v===1){loseJob('관리인이 다른 소작인을 들였다. %에서 쫓겨났다.');takeJob('f1','짐을 꾸려 마을 어귀 오두막으로 옮겨 ')}else say('결국 관리인 뜻대로 되었다.'+fx({money:-peaV(10)}))}}];
+   {l:'조건을 따진다',s:'사교 판정',a:'bold',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'계약 흥정'});if(r.v>=4)say('수탉은 둘로 줄고 부역은 빠졌다. 관리인은 좋은 소작인을 잃기 싫었다.'+fx({soc:2}));else if(r.v===1){loseJob('관리인이 다른 소작인을 들였다. %에서 쫓겨났다.');takeJob('f1','짐을 꾸려 마을 어귀 오두막으로 옮겨 ')}else say('결국 관리인 뜻대로 되었다.'+fx({money:-peaV(10)}))}}];
    if(meets(POST.f3))o.push({l:'떠나서 제 땅을 장만한다',s:needText(POST.f3),a:'bold greedy',f:()=>takeJob('f3','소작을 그만두고 소 한 겨리와 밭을 사서 ')});return o}),
  C('pea_lease',()=>s.job==='f4'&&peas()&&peaM(8,9,10),.6,4,'임대 계약 갱신','le renouvellement du bail',()=>`아홉 해 임대 계약이 끝난다. 지주가 지대를 3분의 1 올리겠다고 한다. 이웃 군의 대농 하나가 더 높은 값을 부르며 이 농장을 노린다는 소문이다.${peaAt('picardie')?' 피카르디에는 쫓겨난 임차인의 편을 들어 새 임차인을 위협하는 ‘나쁜 뜻(mauvais gré)’의 관습이 있다.':''}`,()=>{const o=[
    {l:'올린 지대를 받아들인다',s:'',a:'safe',f:()=>say('새 계약서에 서명하였다. 밀값이 오르기만 빌었다.'+fx({money:-peaV(25)}))},
-   {l:'지주와 흥정한다',s:'처세 판정',a:'social',f:async()=>{const r=await roll(s.st.soc>=55?1:0,{label:'임대 흥정'});if(r.v>=4)say('지대를 조금만 올리는 데 합의하였다.'+fx({money:-peaV(8),soc:2}));else if(r.v===1){peaSet('f3','농장을 경쟁자에게 빼앗기고 제 땅만 가는 ');}else say('지주는 한 푼도 깎아 주지 않았다.'+fx({money:-peaV(30)}))}}];
+   {l:'지주와 흥정한다',s:'사교 판정',a:'social',f:async()=>{const r=await roll(s.st.soc>=55?1:0,{label:'임대 흥정'});if(r.v>=4)say('지대를 조금만 올리는 데 합의하였다.'+fx({money:-peaV(8),soc:2}));else if(r.v===1){peaSet('f3','농장을 경쟁자에게 빼앗기고 제 땅만 가는 ');}else say('지주는 한 푼도 깎아 주지 않았다.'+fx({money:-peaV(30)}))}}];
    if(peaAt('picardie'))o.push({l:'경쟁자에게 ‘나쁜 뜻’을 보낸다',s:'협박. 위험',a:'bold',f:async()=>{const r=await roll(0,{label:'나쁜 뜻'});if(r.v>=4)say('경쟁자의 곳간 문에 협박장이 붙고 그는 물러났다. 계약은 옛 조건대로 이어졌다.'+fx({sus:4,cour:2}));else say('경쟁자의 양이 독살되자 의심이 우리에게 쏠렸다. 재판 비용과 벌금을 물었다.'+fx({money:-peaV(40),soc:-4,sus:8}),'dark')}});
    return o}),
  C('pea_tenant',()=>peas()&&(s.job==='f4'||s.job==='f5')&&peaM(9,10,11),.5,3,'지대를 못 내는 소작인','le fermier insolvable',()=>`소작인 ${jo(person(),'이','가')} 흉년이라 올해 지대를 못 내겠다며 모자를 쥐고 서 있다. 식구가 일곱이다.`,[
@@ -233,20 +233,20 @@ EV.push(
 
  /* ---------------- 마을 ---------------- */
  C('pea_communal',()=>peas()&&!noble(),.5,5,'공유지 회의','l’assemblée des habitants',()=>peaYr(1793.4,1796)?'1793년 6월 법에 따라 마을 공유지(communaux)를 주민 머릿수대로 나눌지 투표한다. 가난한 이는 손바닥만 한 땅이라도 갖게 되고, 가축 많은 부농은 방목지를 잃는다.':pre89()?'영주가 마을 공유 목초지의 3분의 1을 떼어 가겠다며 ‘3분할(triage)’을 요구하였다. 일요일 미사 뒤 교회 앞에서 주민 회의가 열렸다.':'마을 의회가 빚을 갚으려고 공유 목초지를 경매에 부치겠다고 한다. 땅 없는 이들은 거위 한 마리 풀 뜯길 곳이 없어진다.',()=>{const poor=peaT()<=2;return [
-   {l:peaYr(1793.4,1796)&&poor?'머릿수대로 나누자고 한다':'공유지를 지키자고 목소리를 높인다',s:'처세 판정',a:'social radical',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'주민 회의'});if(r.v>=4){if(peaYr(1793.4,1796)&&poor){s.land+=3;say('공유지가 머릿수대로 나뉘었다. 손바닥만 한 밭이 생겼다. 연 지대 +3.'+fx({pol:3,soc:2}))}else say('회의가 뜻대로 정해졌다. 공유지가 지켜졌다.'+fx({soc:3,pol:2}))}else say('부농들과 마을 유지들이 뜻대로 밀어붙였다.'+fx({pol:3,soc:-1}))}},
+   {l:peaYr(1793.4,1796)&&poor?'머릿수대로 나누자고 한다':'공유지를 지키자고 목소리를 높인다',s:'사교 판정',a:'social radical',f:async()=>{const r=await roll(s.st.soc>=50?1:0,{label:'주민 회의'});if(r.v>=4){if(peaYr(1793.4,1796)&&poor){s.land+=3;say('공유지가 머릿수대로 나뉘었다. 손바닥만 한 밭이 생겼다. 연 지대 +3.'+fx({pol:3,soc:2}))}else say('회의가 뜻대로 정해졌다. 공유지가 지켜졌다.'+fx({soc:3,pol:2}))}else say('부농들과 마을 유지들이 뜻대로 밀어붙였다.'+fx({pol:3,soc:-1}))}},
    {l:'유력자들 편에 선다',s:'',a:'royal greedy',f:()=>say('유지들 편에 섰다. 땅 없는 이웃들이 등을 돌렸다.'+fx({soc:-2,money:peaT()>=3?peaV(8):0,pol:-2}))},
    {l:'말없이 듣기만 한다',s:'',a:'safe',f:()=>say('뒷줄에서 모자를 만지작거리며 듣기만 하였다.')}]}),
  C('pea_enclose',()=>peas()&&((pre89()&&s.year>=1767&&peaAt('champagne','bourgogne','alsace','gascogne'))||T()>=1791.75),.4,5,'울타리','la clôture',()=>`${pre89()?'울타리 칙령(édit des clôtures)이 내리자':'1791년 농촌법이 울타리를 칠 자유를 주자'} 이웃 부농이 제 밭에 도랑을 파고 산울타리를 둘렀다. 추수가 끝나면 온 마을 가축이 그루터기를 뜯던 밭이다.`,()=>[
-   {l:'밤에 이웃들과 울타리를 뽑는다',s:'담력 판정',a:'bold radical',f:async()=>{const r=await roll(0,{label:'울타리 뽑기'});if(r.v>=4)say('하룻밤 새 울타리가 사라졌다. 누가 했는지 아무도 입을 열지 않았다.'+fx({pol:3,cour:2,soc:2}));else say('기마경찰대가 주동자를 찾는다며 마을을 뒤졌다. 벌금을 물었다.'+fx({money:-peaV(20),sus:5,pol:3}))}},
+   {l:'밤에 이웃들과 울타리를 뽑는다',s:'의지 판정',a:'bold radical',f:async()=>{const r=await roll(0,{label:'울타리 뽑기'});if(r.v>=4)say('하룻밤 새 울타리가 사라졌다. 누가 했는지 아무도 입을 열지 않았다.'+fx({pol:3,cour:2,soc:2}));else say('기마경찰대가 주동자를 찾는다며 마을을 뒤졌다. 벌금을 물었다.'+fx({money:-peaV(20),sus:5,pol:3}))}},
    {l:'관습을 들어 소송을 건다',s:'',a:'study',f:()=>say('재판은 해를 넘기며 늘어졌다.'+fx({money:-peaV(12),edu:1}))},
    {l:'우리도 울타리를 친다',s:'',a:'greedy',dis:peaT()<3,f:()=>say('제 밭에도 울타리를 둘렀다. 가축이 늘었다.'+fx({money:peaV(10),soc:-3}))},
    {l:'받아들인다',s:'',a:'safe',f:()=>say('가축을 길가 풀밭으로 몰았다.'+fx({money:-peaV(4)}))}]),
  C('pea_boundary',()=>peaLand(),.4,4,'경계석','la borne déplacée',()=>`밭 경계석이 한 걸음쯤 우리 쪽으로 옮겨져 있다. 옆 밭 ${jo(person(),'이','가')} 쟁기질하다 슬쩍 밀었다고 다들 수군거린다.`,()=>[
-   {l:'멱살을 잡는다',s:'담력 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'주먹다짐'});if(r.v>=4)say('밭고랑에서 뒹굴며 싸웠다. 이튿날 경계석이 제자리로 돌아와 있었다.'+fx({cour:2,hp:-2}));else say('쇠스랑 자루에 머리를 맞았다. 앙금만 남았다.'+fx({hp:-6,soc:-1}))}},
+   {l:'멱살을 잡는다',s:'의지 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'주먹다짐'});if(r.v>=4)say('밭고랑에서 뒹굴며 싸웠다. 이튿날 경계석이 제자리로 돌아와 있었다.'+fx({cour:2,hp:-2}));else say('쇠스랑 자루에 머리를 맞았다. 앙금만 남았다.'+fx({hp:-6,soc:-1}))}},
    {l:'마을 노인들과 측량사를 부른다',s:'',a:'social',f:()=>say('노인들이 옛 경계를 증언하고 측량사가 돌을 다시 박았다.'+fx({money:-peaV(4),soc:2}))},
    {l:T()>=1790.9?'치안판사에게 간다':'영주 재판소에 소를 낸다',s:'',a:'study',f:async()=>{const r=await roll(T()>=1790.9?1:0,{label:'경계 소송'});if(r.v>=4)say(T()>=1790.9?'치안판사가 한나절 만에 화해 조서를 써 주었다.':'영주 재판소 판결로 경계가 돌아왔다. 소송비가 땅값보다 더 들었다.'+fx({money:-peaV(8)}));else say('판결은 흐지부지되었다.'+fx({money:-peaV(10)}))}}]),
  C('pea_jp',()=>peas()&&T()>=1790.9,.4,4,'치안판사','la justice de paix',()=>`${person()}의 염소들이 울타리를 넘어와 우리 ${peaWine()?'포도 새순':'양배추 밭'}을 다 뜯어 먹었다. 새로 생긴 치안판사(juge de paix)가 먼저 화해 절차(conciliation)를 하자고 부른다.`,[
-   {l:'손해를 다 물리라고 한다',s:'처세 판정',a:'greedy',f:async()=>{const r=await roll(s.st.soc>=45?1:0,{label:'화해 재판'});if(r.v>=4)say('치안판사가 손해를 모두 물어 주라고 하였다.'+fx({money:peaV(10),soc:-1}));else say('치안판사는 반반씩 양보하라고 하였다.'+fx({money:peaV(3)}))}},
+   {l:'손해를 다 물리라고 한다',s:'사교 판정',a:'greedy',f:async()=>{const r=await roll(s.st.soc>=45?1:0,{label:'화해 재판'});if(r.v>=4)say('치안판사가 손해를 모두 물어 주라고 하였다.'+fx({money:peaV(10),soc:-1}));else say('치안판사는 반반씩 양보하라고 하였다.'+fx({money:peaV(3)}))}},
    {l:'포도주 한 병으로 화해한다',s:'',a:'social',f:()=>say('치안판사 앞에서 악수하고 카바레에서 한잔하였다.'+fx({soc:3}))},
    {l:'염소를 가두어 버린다',s:'',a:'bold',f:()=>say('농촌법대로 염소를 우리에 가두고 벌금을 받고서야 풀어 주었다.'+fx({money:peaV(5),soc:-2}))}]),
  C('pea_wood',()=>peas()&&peaM(11,0,1),.5,2,'땔감','le bois',()=>T()>=1827.5?'1827년 산림법이 내린 뒤로 국유림과 공유림에서 마른 가지 줍기와 가축 방목이 막혔다. 산림 감시인이 숲을 돈다. 아궁이가 차갑다.':pre89()?'영주의 숲에서는 마른 나무와 잡목(bois mort et mort-bois)만 주울 수 있다. 참나무 생가지를 치면 산림 재판소에 끌려간다. 아궁이가 차갑다.':'숲 주인들이 땔감 줍는 이들을 쫓아낸다. 아궁이가 차갑다.',[
@@ -254,14 +254,14 @@ EV.push(
    {l:'생나무를 벤다',s:'판정',a:'bold',f:async()=>{const r=await roll(0,{label:'도벌'});if(r.v>=4)say('밤에 참나무 한 그루를 베어 장작을 쌓았다. 겨울이 따뜻하였다.'+fx({hp:2}));else say('산림 감시인에게 들켜 도끼를 빼앗기고 벌금을 물었다.'+fx({money:-peaV(15),pol:3}))}},
    {l:'장작을 산다',s:'',a:'safe',f:()=>say('장작 한 수레를 샀다.'+fx({money:-peaV(10),hp:1}))}]),
  C('pea_demoiselles',()=>peas()&&isM()&&peaAt('languedoc','gascogne')&&s.year>=1829&&s.year<=1832&&s.age<=50,1,99,'아가씨들의 전쟁','la guerre des Demoiselles','피레네 아리에주 골짜기에서 사내들이 얼굴에 검댕을 칠하고 여자 옷을 입은 채 산림 감시인과 숯 굽는 사람들을 내쫓는다. 1827년 산림법으로 빼앗긴 숲을 되찾겠다는 것이다. 마을 젊은이들이 함께 가자고 한다.',[
-   {l:'흰 치마를 입고 따라간다',s:'담력 판정',a:'bold radical',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'아가씨들'});if(r.v>=4)say('밤에 감시인 오두막을 불태우고 달아났다. 감시인들은 숲에 발을 들이지 못하였다.'+fx({pol:5,cour:3}));else say('헌병대에 붙잡혀 몇 달 동안 갇혔다.'+fx({hp:-6,money:-peaV(20),pol:5}),'dark')}},
+   {l:'흰 치마를 입고 따라간다',s:'의지 판정',a:'bold radical',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'아가씨들'});if(r.v>=4)say('밤에 감시인 오두막을 불태우고 달아났다. 감시인들은 숲에 발을 들이지 못하였다.'+fx({pol:5,cour:3}));else say('헌병대에 붙잡혀 몇 달 동안 갇혔다.'+fx({hp:-6,money:-peaV(20),pol:5}),'dark')}},
    {l:'집에 머문다',s:'',a:'safe',f:()=>say('산에서 불빛을 바라만 보았다.')}]),
  C('pea_hail',()=>peaLand()&&peaM(4,5,6,7),.4,3,'우박','la grêle',()=>s.year===1788?'7월 13일 일요일 아침, 하늘이 검게 변하더니 달걀만 한 우박이 쏟아졌다. 일드프랑스에서 플랑드르까지 수많은 교구의 곡식이 한 시간 만에 쓰러졌다.':'하늘이 노랗게 물들더니 우박이 쏟아졌다. 반 시간 만에 밭이 짓이겨졌다.',[
    {l:'종을 치고 행렬을 올린다',s:'신앙',a:'pious',f:()=>{peaBadY();say('신부가 성체를 모시고 밭을 돌았다. 남은 이삭이라도 지켜 달라고 빌었다.'+fx({money:-peaV(25),faith:3}))}},
-   {l:'세금 감면을 청원한다',s:'처세 판정',a:'study social',f:async()=>{peaBadY();const r=await roll(s.st.soc>=45||lit()?1:0,{label:'감면 청원'});say('우박에 밭이 결딴났다.'+fx({money:-peaV(25)}));if(r.v>=4)say(`${T()<1790?'지방 감독관':'도청'}이 피해 교구의 세금을 깎아 주었다.`+fx({money:peaV(10)}));else say('조사관은 오지 않았다.'+fx({pol:2}))}},
+   {l:'세금 감면을 청원한다',s:'사교 판정',a:'study social',f:async()=>{peaBadY();const r=await roll(s.st.soc>=45||lit()?1:0,{label:'감면 청원'});say('우박에 밭이 결딴났다.'+fx({money:-peaV(25)}));if(r.v>=4)say(`${T()<1790?'지방 감독관':'도청'}이 피해 교구의 세금을 깎아 주었다.`+fx({money:peaV(10)}));else say('조사관은 오지 않았다.'+fx({pol:2}))}},
    {l:'다시 뿌린다',s:'메밀이나 순무를 늦게라도',a:'work',f:()=>say('쓰러진 밀을 갈아엎고 늦게라도 순무를 뿌렸다.'+fx({money:-peaV(12),hp:-2}))}]),
  C('pea_fire',()=>peas()&&peaT()>=2,.3,5,'곳간의 불','l’incendie',()=>`한밤중 "불이야!" 소리에 깼다. 곳간 초가지붕이 활활 탄다. 외양간에서 소가 울부짖는다.${s.flags.peaInsured?' 다행히 화재 공제조합에 들어 있다.':''}`,[
-   {l:'외양간으로 뛰어든다',s:'담력 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'불길'});if(r.v>=4)say('연기 속에서 소의 고삐를 풀어 끌어냈다.'+fx({cour:3,hp:-2,money:-peaV(s.flags.peaInsured?5:25)}));else say('불붙은 서까래가 떨어져 팔에 화상을 입었다. 소도 잃었다.'+fx({hp:-10,money:-peaV(s.flags.peaInsured?15:60)}),'dark')}},
+   {l:'외양간으로 뛰어든다',s:'의지 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'불길'});if(r.v>=4)say('연기 속에서 소의 고삐를 풀어 끌어냈다.'+fx({cour:3,hp:-2,money:-peaV(s.flags.peaInsured?5:25)}));else say('불붙은 서까래가 떨어져 팔에 화상을 입었다. 소도 잃었다.'+fx({hp:-10,money:-peaV(s.flags.peaInsured?15:60)}),'dark')}},
    {l:'양동이 줄을 세워 곡식을 지킨다',s:'',a:'social',f:()=>say('이웃들이 우물에서 양동이를 날랐다. 곳간은 탔지만 집은 지켰다.'+fx({soc:2,money:-peaV(s.flags.peaInsured?8:35)}))},
    {l:'식구들만 데리고 피한다',s:'',a:'safe family',f:()=>{peaBadY();say('잿더미만 남았다.'+fx({money:-peaV(s.flags.peaInsured?15:50)}),'dark')}}]),
  C('pea_insure',()=>peaLand()&&peaT()>=3&&T()>=1820&&!s.flags.peaInsured,.3,5,'화재 공제조합','assurance mutuelle','도청 소재지의 화재 공제조합(assurance mutuelle contre l’incendie) 대리인이 와서 해마다 조금씩 내면 불이 났을 때 물어 준다고 한다.',[
@@ -270,10 +270,10 @@ EV.push(
  C('pea_flood',()=>peas()&&peaAt('languedoc','provence','gascogne','bourgogne','ile','vendee','champagne','picardie')&&peaM(9,10,11,0,1,2,3,4),.3,4,'물난리','l’inondation',()=>`${peaRiver()}이 둑을 넘었다. 물이 밤새 불어 마당까지 차올랐다.`,[
    {l:'가축을 언덕으로 몬다',s:'',a:'safe',f:()=>say('물살을 헤치고 소와 양을 언덕으로 몰았다. 곳간 곡식은 젖었다.'+fx({money:-peaV(15),hp:-2}))},
    {l:'곡식 자루를 다락에 올린다',s:'',a:'family',f:()=>say('곡식은 지켰지만 돼지 한 마리가 떠내려갔다.'+fx({money:-peaV(10),hp:-1}))},
-   {l:'배를 저어 이웃을 구한다',s:'담력 판정',a:'bold social',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'구조'});if(r.v>=3)say('지붕에 올라앉은 이웃 식구들을 배로 실어 날랐다. 신문에 이름이 났다.'+fx({fame:3,soc:3,money:-peaV(15)}));else say('배가 뒤집혀 간신히 헤엄쳐 나왔다.'+fx({hp:-8,money:-peaV(15)}))}}]),
+   {l:'배를 저어 이웃을 구한다',s:'의지 판정',a:'bold social',f:async()=>{const r=await roll(s.st.cour>=50?1:0,{label:'구조'});if(r.v>=3)say('지붕에 올라앉은 이웃 식구들을 배로 실어 날랐다. 신문에 이름이 났다.'+fx({fame:3,soc:3,money:-peaV(15)}));else say('배가 뒤집혀 간신히 헤엄쳐 나왔다.'+fx({hp:-8,money:-peaV(15)}))}}]),
  C('pea_fete',()=>peas()&&peaM(5,7,8),.5,2,'마을 잔치','la fête votive',()=>pick(['성 요한 축일 밤, 광장에 모닥불이 올랐다.','수호성인 축일(fête patronale)이다. 백파이프와 바이올린이 울린다.','마지막 볏단을 꽃으로 꾸며 실어 들이는 추수 잔치(la gerbe)다.'])+' 젊은이들의 씨름판과 볼링(quilles) 내기에는 양 한 마리가 걸렸다.',[
    {l:'밤새 춤춘다',s:'',a:'social',f:()=>say('부레와 론도를 추며 새벽까지 놀았다.'+fx({soc:3,hp:-1}))},
-   {l:'씨름판에 나선다',s:'담력 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=50&&isM()?1:isM()?0:-1,{label:'씨름'});if(r.v>=5)say('이웃 마을 장사를 넘어뜨리고 양을 탔다.'+fx({money:8,fame:2,cour:2}));else say('첫판에 나가떨어졌다. 다들 웃었다.'+fx({hp:-1,soc:1}))}},
+   {l:'씨름판에 나선다',s:'의지 판정',a:'bold',f:async()=>{const r=await roll(s.st.cour>=50&&isM()?1:isM()?0:-1,{label:'씨름'});if(r.v>=5)say('이웃 마을 장사를 넘어뜨리고 양을 탔다.'+fx({money:8,fame:2,cour:2}));else say('첫판에 나가떨어졌다. 다들 웃었다.'+fx({hp:-1,soc:1}))}},
    {l:'카바레에서 마신다',s:'',a:'social',f:()=>say('카바레에서 외상 술을 마시다 이웃 마을 패와 시비가 붙었다.'+fx({money:-5,soc:1,hp:-2}))},
    {l:'일찍 들어간다',s:'',a:'pious safe',f:()=>say('신부는 춤을 죄라고 했다. 일찍 들어가 묵주를 돌렸다.'+fx({faith:2}))}]),
  C('pea_pedlar',()=>peas(),.5,2,'방물장수','le colporteur',()=>`${pick(['도피네 산골','코탕탱','오베르뉴'])}에서 온 방물장수가 등짐을 풀었다. 바늘과 실, 리본, 안경, 약초, 그리고 파란 표지의 싸구려 책(Bibliothèque bleue)과 ${T()>=1800?'에피날의 채색 판화와 ':''}달력(almanach)이 있다.`,()=>[

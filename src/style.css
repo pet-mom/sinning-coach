@@ -276,3 +276,39 @@ ul.hist li small{color:var(--mut);font-style:italic}
 .srcs{padding-left:1.4em;display:grid;gap:8px;font-size:.92rem}
 .srcs a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .srcs small{color:var(--mut)}
+
+/* 인물 · 관계 · 경제 */
+.stats{grid-template-columns:repeat(5,1fr)}
+.st span i,.cgrid .lab i{font-style:normal;font-size:.68rem;opacity:.7;letter-spacing:.08em}
+.cgrid,.egrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px 16px;margin-bottom:10px}
+.egrid{grid-template-columns:repeat(5,1fr)}
+.cgrid>div,.egrid>div{min-width:0}
+.cgrid .lab,.egrid .lab{display:block;font-size:.8rem;color:var(--mut);letter-spacing:.06em}
+.cgrid b,.egrid b{font-family:var(--fd);font-size:1.2rem;font-weight:900}
+.cgrid small,.egrid small{display:block;font-size:.76rem;color:var(--mut);margin-top:3px;line-height:1.35}
+.egrid b i{font-style:normal;font-size:.8rem;margin-left:4px}.egrid .gd{color:var(--green)}.egrid .bd{color:var(--red)}.egrid .eq{color:var(--mut)}
+.mbar{display:block;height:5px;margin-top:4px;text-decoration:none;border:1px solid var(--line)}
+.mbar u{display:block;height:100%;text-decoration:none}
+.chip.bad{color:var(--red);border-color:var(--red)}
+.small{font-size:.82rem}
+.reps{margin-top:4px}
+.bels{display:grid;gap:6px;margin:10px 0}
+.bel{display:grid;grid-template-columns:7em 5.5em 1fr 5.5em;align-items:center;gap:8px;font-size:.8rem}
+.bel .bn{color:var(--fg);font-weight:600}.bel .ba{text-align:right;color:var(--mut)}.bel .bb{color:var(--mut)}
+.bel small{grid-column:2/-1;color:var(--mut);font-size:.72rem;margin-top:-4px}
+.axbar{position:relative;display:block;height:8px;border:1px solid var(--line);text-decoration:none;background:linear-gradient(90deg,var(--roy),color-mix(in srgb,var(--mod) 50%,var(--card)) 50%,var(--rad))}
+.axbar i{position:absolute;top:-4px;width:3px;height:14px;margin-left:-1.5px;background:var(--ink);box-shadow:0 0 0 2px var(--card)}
+.rels{display:grid;gap:8px}
+.rel{border:1px solid var(--line);padding:8px 10px}
+.rel .rh{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+.rel .tag{font-size:.72rem;border:1px solid var(--line);padding:0 6px;color:var(--mut)}
+.rel .tag.f{border-color:var(--fc);color:var(--fc)}
+.rel .rv{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.78rem;color:var(--mut);margin-top:4px}
+.rel .warn{color:var(--red)}
+.fac .fr2{display:block;font-size:.68rem;color:var(--mut);margin-top:2px;min-height:1em}
+ul.infl{margin:0 0 8px;padding-left:1.2em;font-size:.88rem}
+@media (max-width:640px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .egrid{grid-template-columns:repeat(3,1fr)}
+  .bel{grid-template-columns:5.5em 4em 1fr 4em;font-size:.74rem}
+}
