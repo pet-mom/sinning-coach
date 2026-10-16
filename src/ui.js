@@ -17,7 +17,7 @@ function rebuildLog(){const box=$('#log');box.innerHTML='';shown=Math.max(0,s.lo
 
 /* ================= 결정 창 ================= */
 let sheetMark=0;
-function sheetOpen(t,fr){sheetMark=s?s.log.length:0;$('#shT').textContent=t;$('#shFr').textContent=fr||'';$('#shB').innerHTML='';$('#sheet').hidden=false;sheetLive=true;freeze();document.body.classList.add('modal')}
+function sheetOpen(t,fr){if(s)$('#shDecree').textContent=era().h||'';sheetMark=s?s.log.length:0;$('#shT').textContent=t;$('#shFr').textContent=fr||'';$('#shB').innerHTML='';$('#sheet').hidden=false;sheetLive=true;freeze();document.body.classList.add('modal')}
 function sheetClose(){$('#sheet').hidden=true;sheetLive=false;document.body.classList.remove('modal')}
 function shText(t,c){$('#shB').appendChild(el('p',c||'',t))}
 let autoMode=false,pend=null;
@@ -44,7 +44,7 @@ const STATORD=[['hp','건강'],['edu','학식'],['soc','처세'],['cour','담력
 function statusText(){if(child())return s.age<7?'어린아이':'아이';
   const c={prison:'수감 중',hiding:s.flags.refractaire?'징집 기피자로 숨어 지냄':'은신 중',emigre:`망명 중 · ${s.emiPlace||''}`}[s.cond];if(c)return c;
   const j=job();if(j)return pname(j);return s.flags.retired?'은퇴':noble()&&s.land?'지대로 사는 지주':'일 없음'}
-function render(){if(!s)return;
+function render(){if(!s)return;document.documentElement.style.setProperty('--era',eraColor());$('#decree').textContent=era().h||'';
   $('#age').textContent=s.age;const nm=`${s.given[0]} ${s.sur[0]}`;
   $('#subline').textContent=`${ym()} · ${nm} · 1년 ≈ ${secPerYear()}초`;
   $('#where').innerHTML='';$('#where').append(s.cond==='emigre'?`${s.emiPlace||'국외'} (망명) · ${homeLabel().replace(/ · .*/,'')} · ${companions()}`:`${REGIONS[loc()].n}, 프랑스 · ${homeLabel()} · ${companions()}`);
