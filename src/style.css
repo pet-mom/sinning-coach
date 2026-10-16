@@ -332,3 +332,72 @@ p.warn{color:var(--red)}
 .spec .pub{background:var(--card);border:2px solid var(--ink);width:6px;margin-left:-3px}
 .spec .lbl span{flex:1;text-align:center}.spec .lbl span:first-child{text-align:left}.spec .lbl span:last-child{text-align:right}
 .fopts.cond{margin:4px 0 12px}
+
+/* ================= 3차 개편: 혁명 테마의 단순한 판 ================= */
+#app{max-width:1180px}
+.ribbon{display:flex;height:6px;margin:0 -16px}
+.ribbon i{flex:1}.ribbon i:nth-child(1){background:var(--roi)}.ribbon i:nth-child(2){background:var(--card)}.ribbon i:nth-child(3){background:var(--rouge)}
+#top{padding-top:0;border-bottom:1px solid var(--ink);box-shadow:0 3px 0 -1px var(--bg),0 4px 0 -1px var(--ink)}
+#top .decree{margin:8px 0 4px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap}
+.agebar{align-items:center}
+#age{font-size:2.6rem}
+.sfx{font-size:1.2rem;margin-right:10px}
+#subline{font-style:normal;font-size:.95rem}#subline b{font-family:var(--fd);font-weight:700}
+.cockade{width:30px;height:30px;border-radius:50%;margin-right:10px;flex:none;background:radial-gradient(circle,var(--roi) 0 30%,var(--card) 31% 60%,var(--rouge) 61% 100%);box-shadow:0 0 0 1px var(--ink)}
+.prog{margin:8px 0 10px;height:4px}
+.ctl .cb{min-height:38px;padding:6px 12px}.spd button{padding:6px 9px}
+.board{display:grid;gap:16px;margin-top:16px;grid-template-columns:1fr}
+.colL,.colR{display:grid;gap:16px;align-content:start;min-width:0}
+@media (min-width:980px){.board{grid-template-columns:380px 1fr}.colL{position:sticky;top:150px;max-height:calc(100vh - 166px);overflow:auto;padding-right:2px}}
+@media (max-width:979px){.colR{order:-1}.board .scene{order:-1}}
+.card{padding:16px 18px}
+.ch{margin-bottom:8px}
+/* 장면 */
+.scene canvas{width:100%;image-rendering:pixelated;display:block;border:1px solid var(--ink)}
+.econ{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.84rem;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);cursor:help}
+.econ b{font-family:var(--fd)}
+/* 프로필: 혁명기 신분증 */
+.prof{border-top:4px solid var(--era)}
+.pf-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.pf-doc{font-family:var(--fd);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--era)}
+.pf-doc i{font-family:var(--fr);font-style:italic;letter-spacing:.04em;text-transform:none;color:var(--mut);margin-left:8px;font-size:.8rem}
+.pf-id{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start}
+.pf-por{width:72px;height:88px;image-rendering:pixelated;border:1px solid var(--ink);background:linear-gradient(90deg,color-mix(in srgb,var(--roi) 18%,var(--card)) 0 33%,var(--card) 33% 66%,color-mix(in srgb,var(--rouge) 18%,var(--card)) 66%)}
+.pf-n{font-family:var(--fd);font-weight:900;font-size:1.3rem;line-height:1.15}
+.pf-fr{font-family:var(--fr);font-style:italic;color:var(--mut);font-size:.88rem;margin-bottom:4px}
+.pf-l{font-size:.86rem;line-height:1.45}
+.pf-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.bdg{border:1px solid var(--line);padding:6px 6px 5px;text-align:center;min-width:0}
+.bdg span{display:block;font-size:.7rem;color:var(--mut);letter-spacing:.08em}
+.bdg b{display:block;font-family:var(--fd);font-size:1.15rem;font-weight:900;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bdg small{display:block;font-size:.66rem;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bdg.fame{border-color:var(--gold)}.bdg.inf{border-color:var(--rouge)}.bdg.warn b{color:var(--red)}
+.pf-stats{display:grid;gap:5px;margin-bottom:8px}
+.ps{display:grid;grid-template-columns:64px 1fr 28px;gap:8px;align-items:center;font-size:.84rem}
+.ps span i{font-style:normal;font-size:.62rem;color:var(--mut);margin-left:4px;letter-spacing:.06em}
+.ps s{display:block;height:7px;border:1px solid var(--line);text-decoration:none}.ps s u{display:block;height:100%;text-decoration:none}
+.ps b{font-family:var(--fd);text-align:right}
+.pf-tal{margin:4px 0 10px}
+.pf-btns{display:flex;gap:8px;margin-top:10px}.pf-btns .pill{flex:1}
+.pol-lab{margin-bottom:6px;font-size:1rem}.pol-lab b{font-family:var(--fd)}
+.spec .lbl{font-size:.64rem}
+/* 시작 화면과 부고 */
+.splash{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 16px;min-height:100%}
+.splash .ribbon{position:fixed;top:0;left:0;right:0;margin:0;height:8px}
+.sp{max-width:440px;width:100%;display:grid;justify-items:center;gap:6px}
+.sp-cockade{width:88px;height:88px;border-radius:50%;background:radial-gradient(circle,var(--roi) 0 28%,var(--card) 29% 58%,var(--rouge) 59% 100%);box-shadow:0 0 0 2px var(--ink),0 0 0 6px var(--bg),0 0 0 7px var(--line);margin-bottom:14px}
+.sp-year{font-family:var(--fd);font-weight:900;font-size:5.2rem;line-height:.9;letter-spacing:-.04em}.sp-year span{color:var(--rouge)}
+.sp-t{font-family:'Noto Serif KR',var(--fd);font-weight:900;font-size:1.7rem;margin:6px 0 0;letter-spacing:.04em}
+.sp-f{font-family:var(--fr);font-style:italic;color:var(--mut);margin:0 0 22px}
+.sp-btns{display:grid;gap:10px;width:min(260px,100%);margin-top:6px}
+.sp-btns .pill{min-height:48px;font-size:1.05rem}
+.sp-motto{position:fixed;bottom:18px;left:0;right:0;font-family:var(--fd);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin:0}
+#end{background:var(--bg)}
+.ob-k{font-family:var(--fd);font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:4px 14px;margin-bottom:22px}
+.ob-n{font-family:var(--fd);font-weight:900;font-size:2.4rem;line-height:1.1}.ob-n small{display:block;font-family:var(--fr);font-style:italic;font-weight:400;font-size:1rem;color:var(--mut);margin-top:6px}
+.ob-y{font-family:var(--fd);font-size:1.25rem;letter-spacing:.12em;margin:10px 0 18px}
+.ob-w{font-size:1.15rem;line-height:1.7;font-style:italic;max-width:30em;margin:0 0 26px;padding:0 6px}
+.ob-w::before{content:'';display:block;width:40px;height:1px;background:var(--ink);margin:0 auto 18px}
+@media (max-width:640px){#age{font-size:2.2rem}.pf-badges{grid-template-columns:repeat(2,1fr)}.sp-year{font-size:4.2rem}.ob-n{font-size:1.9rem}}
+@media (max-width:979px){.board{display:flex;flex-direction:column}.colL,.colR{display:contents}.board .scene{order:1}.board .prof{order:2}.board .logc{order:3}.board .polc{order:4}.board .relc{order:5}}

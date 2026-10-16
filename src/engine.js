@@ -1,8 +1,9 @@
 /* ================= 새 인생 ================= */
 function rollName(sex,estate,region){const g=pick(sex==='M'?M_NAMES:F_NAMES);let f;
   if(ESTATES[estate].noble)f=pick(NOBLE_SURS);else if(REG_SURS[region]&&R()<.55)f=pick(REG_SURS[region]);else f=pick(SURS);return {g,f}}
-function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=ri(0,11);const estate=o.estate||wpick(Object.entries(ESTATES).map(([k,v])=>[k,v.w]));
-  let region=o.region;if(!region){const urbanBias=estate==='epee'?[['paris',6],['bourgogne',1],['ile',2]]:estate==='bourgeois'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?12:1)]):estate==='artisan'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?20:.6)]):Object.entries(REGIONS).map(([k,v])=>[k,v.urban?0:v.w]);region=wpick(urbanBias)}
+function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=ri(0,11);// 태어나는 곳은 파리로 고정. 1789년 파리 주민 약 60만: 수공업·장사·품팔이의 서민이 대부분, 부르주아 약 15%, 귀족 1~2%.
+  const PARIS_W={epee:.8,robe:1.4,hobereau:.3,bourgeois:16,artisan:81.5,peasant:0};const estate=o.estate||wpick(Object.entries(PARIS_W).filter(x=>x[1]>0));
+  let region='paris';if(false){const urbanBias=estate==='epee'?[['paris',6],['bourgogne',1],['ile',2]]:estate==='bourgeois'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?12:1)]):estate==='artisan'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?20:.6)]):Object.entries(REGIONS).map(([k,v])=>[k,v.urban?0:v.w]);region=wpick(urbanBias)}
   const nm=rollName(sex,estate,region);
   const given=o.given?[o.given,'']:[nm.g[0],nm.g[1]],sur=o.sur?[o.sur,'']:[nm.f[0],nm.f[1]];
   const fk=region==='languedoc'&&R()<.12||region==='alsace'&&R()<.18||R()<.004?'protestant':(region==='alsace'&&R()<.03)||(region==='bordeaux'&&R()<.03)?'jewish':'catholic';
