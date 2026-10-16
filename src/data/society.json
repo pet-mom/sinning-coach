@@ -1,0 +1,4907 @@
+[
+ {
+  "id": "soc-001",
+  "cat": "religion",
+  "text": "부활절 영성체를 위해 본당 신부 앞에 줄을 섰다. 빠진 사람 이름은 마을이 다 알았다.",
+  "fx": {
+   "faith": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "faith": "catholic",
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 농촌 본당에서는 성인 대부분이 부활절 영성체 의무를 지켰고, 이를 거른 사람은 보통 몇 퍼센트에 그쳤다.",
+  "src": [
+   {
+    "cite": "Michel Vovelle (1972), 「Analyse spectrale d'un diocèse méridional au XVIIIe siècle : Aix-en-Provence」, Provence historique 22(90): 352-451",
+    "url": "https://doi.org/10.3406/prohi.1972.3224"
+   },
+   {
+    "cite": "Vinot-Préfontaine (1959), 「Sanctions prises dans l'ancien diocèse de Beauvais au XVIIe siècle, contre les réfractaires du devoir pascal」, Revue d'histoire de l'Église de France 45(142): 76-83",
+    "url": "https://doi.org/10.3406/rhef.1959.3245"
+   }
+  ]
+ },
+ {
+  "id": "soc-002",
+  "cat": "religion",
+  "text": "부활절 영성체를 거른 이웃이 신부에게 불려 가 꾸지람을 들었다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    4,
+    5
+   ]
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "교구는 부활절 의무 불이행자를 명부로 관리했고, 17~18세기 보베 교구는 이들에게 교회 처벌을 내렸다.",
+  "src": [
+   {
+    "cite": "Vinot-Préfontaine (1959), 「Sanctions prises dans l'ancien diocèse de Beauvais au XVIIe siècle, contre les réfractaires du devoir pascal」, Revue d'histoire de l'Église de France 45(142): 76-83",
+    "url": "https://doi.org/10.3406/rhef.1959.3245"
+   }
+  ]
+ },
+ {
+  "id": "soc-003",
+  "cat": "religion",
+  "text": "도시 본당에서 부활절 영성체를 받지 않는 남자가 눈에 띄게 늘었다. 신부가 설교에서 한탄했다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1789,
+   "months": [
+    4
+   ]
+  },
+  "who": {
+   "faith": "catholic",
+   "urban": true,
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "엑스 교구 분석에서 18세기 후반 도시 남성의 종교 실천은 농촌·여성보다 먼저 약해졌다.",
+  "src": [
+   {
+    "cite": "Michel Vovelle (1972), 「Analyse spectrale d'un diocèse méridional au XVIIIe siècle : Aix-en-Provence」, Provence historique 22(90): 352-451",
+    "url": "https://doi.org/10.3406/prohi.1972.3224"
+   },
+   {
+    "cite": "Michel Vovelle (1975), 「Les attitudes devant la mort, front actuel de l'histoire des mentalités」, Archives de sciences sociales des religions 39(1): 17-29",
+    "url": "https://doi.org/10.3406/assr.1975.2764"
+   }
+  ]
+ },
+ {
+  "id": "soc-004",
+  "cat": "religion",
+  "text": "일요일 대미사에 온 마을이 모였다. 미사 뒤 성당 앞에서 공지와 소문이 함께 돌았다.",
+  "fx": {
+   "soc": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "urban": false
+  },
+  "w": 3,
+  "once": false,
+  "fact": "구체제 농촌에서 일요 미사는 거의 의무였고, 미사 뒤 성당 앞 광장은 공지와 장터 같은 사교의 장이었다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett & Claude Langlois (1980), 「Ecclesiastical Structures and Clerical Geography on the Eve of the French Revolution」, French Historical Studies 11(3): 352",
+    "url": "https://doi.org/10.2307/286393"
+   },
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   }
+  ]
+ },
+ {
+  "id": "soc-005",
+  "cat": "religion",
+  "text": "미사 시간에 남자들이 성당 대신 주막에 앉아 있었다. 신부가 이름을 적어 갔다.",
+  "fx": {
+   "sus": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1820,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "sex": "M",
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "불라르의 자료에 따르면 19세기 전반 일요 미사 참석률은 지역차가 커서 파리 분지 일부 농촌은 남성 참석이 매우 낮았다.",
+  "src": [
+   {
+    "cite": "Fernand Boulard (1973), 「Aspects de la pratique religieuse en France, de 1802 à 1939」, Revue d'histoire de l'Église de France 59(163): 269-311",
+    "url": "https://doi.org/10.3406/rhef.1973.1512"
+   },
+   {
+    "cite": "Fernand Boulard et al. (1976), 「Matériaux pour l'histoire religieuse du peuple français. Aspects de la pratique religieuse en France, 1802-1939」, Annales ESC 31(4): 761-801",
+    "url": "https://doi.org/10.3406/ahess.1976.293749"
+   }
+  ]
+ },
+ {
+  "id": "soc-006",
+  "cat": "religion",
+  "text": "19세기 들어 브르타뉴 마을 성당은 일요일마다 가득 찼다. 남자들도 빠지지 않았다.",
+  "fx": {
+   "faith": 2
+  },
+  "when": {
+   "from": 1802,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "region": [
+    "bretagne",
+    "vendee"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "불라르의 종교 실천 지도에서 서부(브르타뉴·방데)는 1802~1939년 내내 미사·부활절 참여율이 가장 높은 지역이었다.",
+  "src": [
+   {
+    "cite": "Fernand Boulard (1973), 「Aspects de la pratique religieuse en France, de 1802 à 1939」, Revue d'histoire de l'Église de France 59(163): 269-311",
+    "url": "https://doi.org/10.3406/rhef.1973.1512"
+   },
+   {
+    "cite": "Fernand Boulard et al. (1976), 「Matériaux pour l'histoire religieuse du peuple français. Aspects de la pratique religieuse en France, 1802-1939」, Annales ESC 31(4): 761-801",
+    "url": "https://doi.org/10.3406/ahess.1976.293749"
+   }
+  ]
+ },
+ {
+  "id": "soc-007",
+  "cat": "religion",
+  "text": "샹파뉴 마을 성당에서 부활절 미사에 온 남자는 손에 꼽을 정도였다. 여자들만 자리를 채웠다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1820,
+   "to": 1850,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "faith": "catholic",
+   "region": [
+    "champagne",
+    "ile",
+    "bourgogne"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "불라르 자료에서 파리 분지와 샹파뉴·부르고뉴 일부는 19세기 부활절 참여가 크게 낮아 '선교 지역'으로 분류됐다.",
+  "src": [
+   {
+    "cite": "Fernand Boulard et al. (1976), 「Matériaux pour l'histoire religieuse du peuple français. Aspects de la pratique religieuse en France, 1802-1939」, Annales ESC 31(4): 761-801",
+    "url": "https://doi.org/10.3406/ahess.1976.293749"
+   },
+   {
+    "cite": "Fernand Boulard (1973), 「Aspects de la pratique religieuse en France, de 1802 à 1939」, Revue d'histoire de l'Église de France 59(163): 269-311",
+    "url": "https://doi.org/10.3406/rhef.1973.1512"
+   }
+  ]
+ },
+ {
+  "id": "soc-008",
+  "cat": "religion",
+  "text": "고해실 격자 너머로 죄를 털어놓았다. 신부가 사면을 미루고 다음 주에 다시 오라고 했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    2,
+    3,
+    4
+   ]
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "엄격주의 사목은 고해 후 사면을 유보하는 관행을 퍼뜨려, 회개가 확인될 때까지 영성체를 미루게 했다.",
+  "src": [
+   {
+    "cite": "Marcel Bernos (2007), 「Confession et conversion」, in Les sacrements dans la France des XVIIe et XVIIIe siècles, Presses universitaires de Provence: 81-93",
+    "url": "https://doi.org/10.4000/books.pup.7340"
+   }
+  ]
+ },
+ {
+  "id": "soc-009",
+  "cat": "religion",
+  "text": "고해 신부가 춤과 밤샘 모임을 죄로 다스리며 엄하게 꾸짖었다.",
+  "fx": {
+   "faith": 1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "faith": "catholic",
+   "age": [
+    14,
+    30
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 사목 지침은 고해를 통해 춤·밤샘 모임·주점 출입을 단속하려 했다.",
+  "src": [
+   {
+    "cite": "Marcel Bernos (2007), 「Confession et conversion」, in Les sacrements dans la France des XVIIe et XVIIIe siècles, Presses universitaires de Provence: 81-93",
+    "url": "https://doi.org/10.4000/books.pup.7340"
+   },
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   }
+  ]
+ },
+ {
+  "id": "soc-010",
+  "cat": "religion",
+  "text": "본당 신부가 설교단에서 왕령과 세금 공고를 읽었다. 글을 모르는 사람들은 그 말로 세상 소식을 들었다.",
+  "fx": {
+   "edu": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "faith": "catholic",
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "구체제 본당 신부는 설교단에서 왕령을 공포하는 행정 전달자이기도 했다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett & Claude Langlois (1980), 「Ecclesiastical Structures and Clerical Geography on the Eve of the French Revolution」, French Historical Studies 11(3): 352",
+    "url": "https://doi.org/10.2307/286393"
+   },
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   }
+  ]
+ },
+ {
+  "id": "soc-011",
+  "cat": "religion",
+  "text": "새로 온 신부는 신학교 출신으로 엄격했다. 마을 축제에서 바이올린 소리를 금했다.",
+  "fx": {
+   "soc": -1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "faith": "catholic",
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 교구 신학교 교육으로 성직자 질이 높아졌고, 이들은 민중 축제를 정화하려 했다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett (1986), Religion, Revolution, and Regional Culture in Eighteenth-Century France: The Ecclesiastical Oath of 1791, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400854370"
+   },
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   }
+  ]
+ },
+ {
+  "id": "soc-012",
+  "cat": "religion",
+  "text": "수확 때 십일조 징수인이 밭에 와서 볏단을 세어 열세 단에 한 단꼴로 가져갔다.",
+  "fx": {
+   "money": -15
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    7,
+    8
+   ]
+  },
+  "who": {
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "18세기 십일조는 곡물 수확의 대략 1/13~1/10 수준이었고 지역마다 비율이 달랐다.",
+  "src": [
+   {
+    "cite": "Garnier (1973), 「Dîme et production agricole au XVIIIe siècle」, Annales de Normandie 23(3): 187-209",
+    "url": "https://doi.org/10.3406/annor.1973.5113"
+   },
+   {
+    "cite": "Rives (1980), 「Dîme et défrichements en Gascogne et Quercy au XVIIIe siècle」, Annales du Midi 92(146): 57-66",
+    "url": "https://doi.org/10.3406/anami.1980.1902"
+   }
+  ]
+ },
+ {
+  "id": "soc-013",
+  "cat": "religion",
+  "text": "새로 개간한 밭에도 십일조를 내라는 요구가 와서 마을 사람들이 소송을 준비했다.",
+  "fx": {
+   "money": -10,
+   "sus": 1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "gascogne",
+    "languedoc"
+   ],
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 가스코뉴·케르시에서는 개간지 십일조(novales)를 둘러싼 분쟁이 잦았다.",
+  "src": [
+   {
+    "cite": "Rives (1980), 「Dîme et défrichements en Gascogne et Quercy au XVIIIe siècle」, Annales du Midi 92(146): 57-66",
+    "url": "https://doi.org/10.3406/anami.1980.1902"
+   },
+   {
+    "cite": "Astoul (2010), 「La contestation des dîmes dans le Sud-Ouest au XVIIIe siècle」, in La dîme, Presses universitaires du Midi: 241-255",
+    "url": "https://doi.org/10.4000/books.pumi.9268"
+   }
+  ]
+ },
+ {
+  "id": "soc-014",
+  "cat": "religion",
+  "text": "십일조를 거둔 수도원은 본당 신부에게 쥐꼬리만 한 몫을 남겼다. 신부가 마을 사람들 앞에서 불평했다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "많은 본당 신부는 십일조 수취권자에게서 고정 보수(portion congrue)만 받아 불만이 컸고, 1786년 이를 700리브르로 올렸다.",
+  "src": [
+   {
+    "cite": "Astoul (2010), 「La contestation des dîmes dans le Sud-Ouest au XVIIIe siècle」, in La dîme, Presses universitaires du Midi: 241-255",
+    "url": "https://doi.org/10.4000/books.pumi.9268"
+   },
+   {
+    "cite": "Timothy Tackett & Claude Langlois (1980), 「Ecclesiastical Structures and Clerical Geography on the Eve of the French Revolution」, French Historical Studies 11(3): 352",
+    "url": "https://doi.org/10.2307/286393"
+   }
+  ]
+ },
+ {
+  "id": "soc-015",
+  "cat": "religion",
+  "text": "8월 4일 밤 결정 소식이 왔다. 이제 십일조를 내지 않아도 된다고 사람들이 기뻐했다.",
+  "fx": {
+   "money": 20,
+   "pol": 2
+  },
+  "when": {
+   "from": 1789,
+   "to": 1790,
+   "months": [
+    8,
+    9
+   ]
+  },
+  "who": {
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "십일조는 1789년 8월 4~11일 국민의회 법령으로 보상 없이 폐지되었다.",
+  "src": [
+   {
+    "cite": "Astoul (2010), 「La contestation des dîmes dans le Sud-Ouest au XVIIIe siècle」, in La dîme, Presses universitaires du Midi: 241-255",
+    "url": "https://doi.org/10.4000/books.pumi.9268"
+   },
+   {
+    "cite": "Garnier (1973), 「Dîme et production agricole au XVIIIe siècle」, Annales de Normandie 23(3): 187-209",
+    "url": "https://doi.org/10.3406/annor.1973.5113"
+   }
+  ]
+ },
+ {
+  "id": "soc-016",
+  "cat": "religion",
+  "text": "하얀 두건을 쓴 고행회원들과 성주간 행렬을 걸었다. 횃불 아래 얼굴은 아무도 알아보지 못했다.",
+  "fx": {
+   "faith": 2,
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    3,
+    4
+   ]
+  },
+  "who": {
+   "region": [
+    "provence",
+    "languedoc"
+   ],
+   "sex": "M",
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 프로방스에는 거의 모든 마을에 백·흑·청색 고행회 형제단이 있었다.",
+  "src": [
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   },
+   {
+    "cite": "Ehlinger (1971), 「Sociologie des Pénitents sous l'Ancien Régime : les deux confréries de Lambesc」, Provence historique 21(86): 421-443",
+    "url": "https://doi.org/10.3406/prohi.1971.3185"
+   }
+  ]
+ },
+ {
+  "id": "soc-017",
+  "cat": "religion",
+  "text": "고행회 형제단 장례 의식으로 가난한 회원의 시신을 형제들이 메고 갔다.",
+  "fx": {
+   "soc": 2,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "provence",
+    "languedoc",
+    "marseille"
+   ],
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "프로방스 고행회는 회원의 장례와 기도를 보장하는 상조 기능을 맡았다.",
+  "src": [
+   {
+    "cite": "Ehlinger (1971), 「Sociologie des Pénitents sous l'Ancien Régime : les deux confréries de Lambesc」, Provence historique 21(86): 421-443",
+    "url": "https://doi.org/10.3406/prohi.1971.3185"
+   },
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   }
+  ]
+ },
+ {
+  "id": "soc-018",
+  "cat": "religion",
+  "text": "고행회 연회에서 형제들이 회장 선거로 다투었다. 결국 잔을 들고 화해했다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "람베스크의 두 고행회 연구는 형제단이 신분별로 갈리고 선거·연회로 운영되는 사교 조직이었음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Ehlinger (1971), 「Sociologie des Pénitents sous l'Ancien Régime : les deux confréries de Lambesc」, Provence historique 21(86): 421-443",
+    "url": "https://doi.org/10.3406/prohi.1971.3185"
+   }
+  ]
+ },
+ {
+  "id": "soc-019",
+  "cat": "religion",
+  "text": "혁명 뒤 문을 닫았던 고행회 예배당이 다시 열려 형제들이 옛 두건을 꺼냈다.",
+  "fx": {
+   "faith": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1801,
+   "to": 1830
+  },
+  "who": {
+   "region": [
+    "provence",
+    "languedoc"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "오드 지방 등 남프랑스 고행회는 혁명기에 해산되었다가 19세기 초 다수 재건되었다.",
+  "src": [
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   },
+   {
+    "cite": "Ehlinger (1971), 「Sociologie des Pénitents sous l'Ancien Régime : les deux confréries de Lambesc」, Provence historique 21(86): 421-443",
+    "url": "https://doi.org/10.3406/prohi.1971.3185"
+   }
+  ]
+ },
+ {
+  "id": "soc-020",
+  "cat": "religion",
+  "text": "묵주 형제단에 가입했다. 매달 첫 일요일마다 여자들이 모여 묵주기도를 바쳤다.",
+  "fx": {
+   "faith": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "sex": "F"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "18세기 프로방스 동부에서 묵주·성체 형제단은 여성 참여가 많은 신심 단체였다.",
+  "src": [
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   }
+  ]
+ },
+ {
+  "id": "soc-021",
+  "cat": "festival",
+  "text": "성인 축일 파르동에 갔다. 행렬 뒤 풀밭에서 씨름과 춤판이 밤까지 이어졌다.",
+  "fx": {
+   "faith": 1,
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "17~18세기 브르타뉴 파르동은 성인 순례와 놀이·장터를 겸한 축제였다.",
+  "src": [
+   {
+    "cite": "Albert (2000), compte rendu de G. Provost, La Fête et le sacré. Pardons et pèlerinages en Bretagne aux XVIIe et XVIIIe siècles, Archives de sciences sociales des religions 110 (2000): 99-101",
+    "url": "https://doi.org/10.4000/assr.20593"
+   },
+   {
+    "cite": "Philippe Martin (2001), Compte rendu de Georges Provost, La fête et le sacré. Pardons et pèlerinages en Bretagne aux XVIIe et XVIIIe siècles, Annales HSS 56(3): 723-725",
+    "url": "https://doi.org/10.1017/s0395264900000822"
+   }
+  ]
+ },
+ {
+  "id": "soc-022",
+  "cat": "religion",
+  "text": "병든 아이를 위해 성 이브 성지에 순례를 갔다. 성인 상 앞에 초를 바쳤다.",
+  "fx": {
+   "faith": 2,
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ],
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브르타뉴에는 치유와 소원을 비는 순례지가 촘촘했고, 프로보스트는 이를 체계적으로 조사했다.",
+  "src": [
+   {
+    "cite": "Philippe Martin (2001), Compte rendu de Georges Provost, La fête et le sacré. Pardons et pèlerinages en Bretagne aux XVIIe et XVIIIe siècles, Annales HSS 56(3): 723-725",
+    "url": "https://doi.org/10.1017/s0395264900000822"
+   }
+  ]
+ },
+ {
+  "id": "soc-023",
+  "cat": "religion",
+  "text": "열병이 낫기를 빌며 성인의 샘물을 마셨다. 샘 옆 나무에 헝겊을 묶어 두었다.",
+  "fx": {
+   "faith": 1,
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false,
+   "faith": "catholic"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "농민들은 특정 병마다 그 병을 고친다는 성인과 샘을 찾아갔고, 교회는 이를 정화하려 애썼다.",
+  "src": [
+   {
+    "cite": "Harismendy (2002), compte rendu de Louis Pérouas, Culte des saints et anticléricalisme. Entre statistique et culture populaire, Annales de Bretagne et des pays de l'Ouest 109(3): 166-168",
+    "url": "https://doi.org/10.4000/abpo.1580"
+   },
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-024",
+  "cat": "religion",
+  "text": "가축 역병이 돌자 성 앙투안 축일에 소를 몰고 가 축복을 받았다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    1
+   ]
+  },
+  "who": {
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "가축 수호성인 공경은 19세기 농촌에서도 이어졌고, 페루아는 이를 통계로 추적했다.",
+  "src": [
+   {
+    "cite": "Harismendy (2002), compte rendu de Louis Pérouas, Culte des saints et anticléricalisme. Entre statistique et culture populaire, Annales de Bretagne et des pays de l'Ouest 109(3): 166-168",
+    "url": "https://doi.org/10.4000/abpo.1580"
+   },
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-025",
+  "cat": "religion",
+  "text": "아이 이름을 마을 수호성인 이름으로 지었다. 대부모가 성당에서 이름을 불렀다.",
+  "fx": {
+   "faith": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "페루아는 세례명 선택을 통해 성인 숭배의 지역별 강약과 쇠퇴를 측정했다.",
+  "src": [
+   {
+    "cite": "Harismendy (2002), compte rendu de Louis Pérouas, Culte des saints et anticléricalisme. Entre statistique et culture populaire, Annales de Bretagne et des pays de l'Ouest 109(3): 166-168",
+    "url": "https://doi.org/10.4000/abpo.1580"
+   }
+  ]
+ },
+ {
+  "id": "soc-026",
+  "cat": "festival",
+  "text": "성체 축일 행렬이 꽃을 깐 길을 지났다. 집집마다 창에 하얀 천을 걸었다.",
+  "fx": {
+   "faith": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "성체 축일(Fête-Dieu) 행렬은 성체를 모시고 공동체 전체가 신분 순으로 행진하는 구체제 최대의 종교 행사였다.",
+  "src": [
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   },
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-027",
+  "cat": "festival",
+  "text": "성체 축일 행렬에서 상석을 두고 두 동업조합이 몸싸움을 벌였다.",
+  "fx": {
+   "soc": -1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "구체제 행렬의 서열은 사회 질서의 표현이었고, 자리다툼 소송이 흔했다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   },
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   }
+  ]
+ },
+ {
+  "id": "soc-028",
+  "cat": "festival",
+  "text": "혁명 뒤 처음으로 성체 축일 행렬이 다시 거리로 나왔다. 노인들이 눈물을 훔쳤다.",
+  "fx": {
+   "faith": 2
+  },
+  "when": {
+   "from": 1802,
+   "to": 1805,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1801년 정교협약 뒤 공적 예배와 행렬이 단계적으로 다시 허용되었다.",
+  "src": [
+   {
+    "cite": "Paul Pisani (1921), 「La négociation du concordat de 1801」, Revue d'histoire de l'Église de France 7(34): 17-29",
+    "url": "https://doi.org/10.3406/rhef.1921.2168"
+   },
+   {
+    "cite": "Olwen Hufton (1983), 「The reconstruction of a church 1796–1801」, in Beyond the Terror, Cambridge University Press: 21-52",
+    "url": "https://doi.org/10.1017/cbo9780511562679.003"
+   }
+  ]
+ },
+ {
+  "id": "soc-029",
+  "cat": "festival",
+  "text": "개신교 집 앞에도 성체 행렬용 천을 걸라는 압력이 왔다. 걸지 않은 집 창문에 돌이 날아왔다.",
+  "fx": {
+   "sus": 2,
+   "soc": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1830,
+   "months": [
+    5,
+    6
+   ]
+  },
+  "who": {
+   "faith": "protestant"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "왕정복고기 남프랑스에서는 성체 행렬 장식을 둘러싸고 신·구교 갈등이 되풀이되었다.",
+  "src": [
+   {
+    "cite": "Valérie Sottocasa (2009), 「Protestants et catholiques en Languedoc」, in La coexistence confessionnelle à l'épreuve, LARHRA: 193-226",
+    "url": "https://doi.org/10.4000/books.larhra.6103"
+   },
+   {
+    "cite": "Sheryl Kroen (2000), 「The Missionaries」, in Politics and Theater: The Crisis of Legitimacy in Restoration France, 1815-1830, University of California Press: 76-108",
+    "url": "https://doi.org/10.1525/california/9780520222144.003.0003"
+   }
+  ]
+ },
+ {
+  "id": "soc-030",
+  "cat": "religion",
+  "text": "공증인 앞에서 유언장을 불러 주었다. 내 영혼을 위해 미사 백 번을 올려 달라고 했다.",
+  "fx": {
+   "faith": 2,
+   "money": -60
+  },
+  "when": {
+   "from": 1750,
+   "to": 1770
+  },
+  "who": {
+   "age": [
+    45,
+    90
+   ],
+   "estate": [
+    "bourgeois",
+    "artisan",
+    "robe",
+    "hobereau"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "보벨이 분석한 프로방스 유언장에서는 1760년대까지 미사 봉헌을 요청하는 비율이 높았다.",
+  "src": [
+   {
+    "cite": "Williams (1976), Review of M. Vovelle, Piété baroque et déchristianisation en Provence au XVIIIe siècle, American Historical Review 81(5): 1125",
+    "url": "https://doi.org/10.2307/1852972"
+   },
+   {
+    "cite": "Michel Vovelle (1975), 「Les attitudes devant la mort, front actuel de l'histoire des mentalités」, Archives de sciences sociales des religions 39(1): 17-29",
+    "url": "https://doi.org/10.3406/assr.1975.2764"
+   }
+  ]
+ },
+ {
+  "id": "soc-031",
+  "cat": "religion",
+  "text": "유언장에 미사 요청 대신 '장례는 검소하게'라는 한 줄만 남겼다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "age": [
+    45,
+    90
+   ],
+   "urban": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "보벨에 따르면 1760년 이후 프로방스 유언장에서 미사 요청과 장례 의식 규정이 급격히 줄었다.",
+  "src": [
+   {
+    "cite": "Williams (1976), Review of M. Vovelle, Piété baroque et déchristianisation en Provence au XVIIIe siècle, American Historical Review 81(5): 1125",
+    "url": "https://doi.org/10.2307/1852972"
+   },
+   {
+    "cite": "Michel Vovelle (1975), 「Les attitudes devant la mort, front actuel de l'histoire des mentalités」, Archives de sciences sociales des religions 39(1): 17-29",
+    "url": "https://doi.org/10.3406/assr.1975.2764"
+   },
+   {
+    "cite": "Michel Vovelle (1972), 「Analyse spectrale d'un diocèse méridional au XVIIIe siècle : Aix-en-Provence」, Provence historique 22(90): 352-451",
+    "url": "https://doi.org/10.3406/prohi.1972.3224"
+   }
+  ]
+ },
+ {
+  "id": "soc-032",
+  "cat": "religion",
+  "text": "친척 유언장 낭독을 들었다. 성당 대신 병원과 가난한 이들에게 유산 일부를 남겼다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1800
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "보벨은 유언장 속 신앙 표현의 감소를 '바로크 신심'에서 세속화로의 전환으로 해석했다.",
+  "src": [
+   {
+    "cite": "Michel Vovelle (1975), 「Les attitudes devant la mort, front actuel de l'histoire des mentalités」, Archives de sciences sociales des religions 39(1): 17-29",
+    "url": "https://doi.org/10.3406/assr.1975.2764"
+   },
+   {
+    "cite": "Williams (1976), Review of M. Vovelle, Piété baroque et déchristianisation en Provence au XVIIIe siècle, American Historical Review 81(5): 1125",
+    "url": "https://doi.org/10.2307/1852972"
+   }
+  ]
+ },
+ {
+  "id": "soc-033",
+  "cat": "religion",
+  "text": "오세르 교구 마을에서 신부가 성당이 텅 비고 결혼 전 임신이 늘었다고 주교에게 보고했다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bourgogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "오세르 교구 연구는 18세기에 이미 지방 단위의 '탈기독교화'가 진행되었음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Dominique Dinet (1991), 「Une déchristianisation provinciale au XVIIIe siècle : le diocèse d'Auxerre」, Histoire, économie et société 10(4): 467-489",
+    "url": "https://doi.org/10.3406/hes.1991.1579"
+   }
+  ]
+ },
+ {
+  "id": "soc-034",
+  "cat": "religion",
+  "text": "임종 직전 이웃 노인이 고해 증명서를 내놓지 못해 신부가 병자성사를 거부했다. 동네가 들끓었다.",
+  "fx": {
+   "faith": -1,
+   "pol": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1756
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ],
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1749~1754년 파리 대주교 보몽은 우니게니투스 칙서를 받아들인 신부의 고해 증명서가 없는 이에게 종부성사를 거부했다.",
+  "src": [
+   {
+    "cite": "Monique Cubells (2003), 「Religion, famille et justice à Aix en 1754 : le refus des sacrements opposé à Madame de Charleval」, in Identités juives et chrétiennes, Presses universitaires de Provence: 217-225",
+    "url": "https://doi.org/10.4000/books.pup.5563"
+   },
+   {
+    "cite": "Jean-Pierre Chantin (2018), 「Les convulsionnaires de Saint-Médard : une dissidence catholique au temps des Lumières」, in De sectes en hérésies, Presses universitaires de Lyon: 123-142",
+    "url": "https://doi.org/10.4000/books.pul.32733"
+   }
+  ]
+ },
+ {
+  "id": "soc-035",
+  "cat": "religion",
+  "text": "고등법원이 성사 거부 신부를 소환했다는 소식이 장터에 돌았다. 사람들은 법관 편을 들었다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1752,
+   "to": 1754
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "파리 고등법원은 1752년 4월 18일 고해 증명서 부족 등을 이유로 한 공개적 성사 거부를 금지했다.",
+  "src": [
+   {
+    "cite": "Monique Cubells (2003), 「Religion, famille et justice à Aix en 1754 : le refus des sacrements opposé à Madame de Charleval」, in Identités juives et chrétiennes, Presses universitaires de Provence: 217-225",
+    "url": "https://doi.org/10.4000/books.pup.5563"
+   }
+  ]
+ },
+ {
+  "id": "soc-036",
+  "cat": "religion",
+  "text": "엑스에서 귀부인에게 성사를 거부한 사건이 재판에 올랐다. 살롱마다 그 이야기뿐이었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1754,
+   "to": 1755
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "estate": [
+    "robe",
+    "epee",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1754년 엑스에서는 샤를르발 부인에 대한 성사 거부가 가족·사법 분쟁으로 번졌다.",
+  "src": [
+   {
+    "cite": "Monique Cubells (2003), 「Religion, famille et justice à Aix en 1754 : le refus des sacrements opposé à Madame de Charleval」, in Identités juives et chrétiennes, Presses universitaires de Provence: 217-225",
+    "url": "https://doi.org/10.4000/books.pup.5563"
+   }
+  ]
+ },
+ {
+  "id": "soc-037",
+  "cat": "religion",
+  "text": "왕이 얀센주의 논쟁을 금하는 '침묵의 법'을 내렸다. 성당 문 앞 논쟁이 잦아들었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1754,
+   "to": 1756
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1754년 9월 2일 왕의 선언은 우니게니투스 논쟁에 대한 침묵을 명했다.",
+  "src": [
+   {
+    "cite": "Monique Cubells (2003), 「Religion, famille et justice à Aix en 1754 : le refus des sacrements opposé à Madame de Charleval」, in Identités juives et chrétiennes, Presses universitaires de Provence: 217-225",
+    "url": "https://doi.org/10.4000/books.pup.5563"
+   },
+   {
+    "cite": "Jean-Pierre Chantin (2018), 「Les convulsionnaires de Saint-Médard : une dissidence catholique au temps des Lumières」, in De sectes en hérésies, Presses universitaires de Lyon: 123-142",
+    "url": "https://doi.org/10.4000/books.pul.32733"
+   }
+  ]
+ },
+ {
+  "id": "soc-038",
+  "cat": "belief",
+  "text": "생메다르 묘지 이야기를 하는 노인이 있었다. 파리스 부제의 무덤에서 사람들이 경련했다고 했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1780
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "파리스 부제는 1727년 5월 1일 죽었고, 경련 소동이 커지자 정부는 1732년 생메다르 묘지를 폐쇄했다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Chantin (2018), 「Les convulsionnaires de Saint-Médard : une dissidence catholique au temps des Lumières」, in De sectes en hérésies, Presses universitaires de Lyon: 123-142",
+    "url": "https://doi.org/10.4000/books.pul.32733"
+   }
+  ]
+ },
+ {
+  "id": "soc-039",
+  "cat": "belief",
+  "text": "다락방 비밀 집회에서 경련파 여자가 몸을 뒤틀며 예언을 외쳤다. 몇은 그녀를 칼로 찔러 기적을 시험했다.",
+  "fx": {
+   "faith": 1,
+   "sus": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 0.5,
+  "once": true,
+  "fact": "생메다르 폐쇄 뒤 경련파는 비밀 집회로 숨어들어 '구조(secours)'라는 고통 의례를 18세기 내내 이어 갔다.",
+  "src": [
+   {
+    "cite": "Jean-Pierre Chantin (2018), 「Les convulsionnaires de Saint-Médard : une dissidence catholique au temps des Lumières」, in De sectes en hérésies, Presses universitaires de Lyon: 123-142",
+    "url": "https://doi.org/10.4000/books.pul.32733"
+   }
+  ]
+ },
+ {
+  "id": "soc-040",
+  "cat": "religion",
+  "text": "밤에 산속 골짜기에서 목사 설교를 들었다. 망보는 아이가 휘파람을 불면 흩어졌다.",
+  "fx": {
+   "faith": 3,
+   "sus": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1787
+  },
+  "who": {
+   "faith": "protestant"
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "'광야(Désert)' 시기 개신교도는 1787년까지 불법이던 야외 비밀 집회로 예배를 드렸다.",
+  "src": [
+   {
+    "cite": "Michel Péronnet (1985), 「Les Assemblées du clergé et les protestants」, Dix-huitième Siècle 17: 141-150",
+    "url": "https://doi.org/10.3406/dhs.1985.1539"
+   },
+   {
+    "cite": "Valérie Sottocasa (2009), 「Protestants et catholiques en Languedoc」, in La coexistence confessionnelle à l'épreuve, LARHRA: 193-226",
+    "url": "https://doi.org/10.4000/books.larhra.6103"
+   }
+  ]
+ },
+ {
+  "id": "soc-041",
+  "cat": "religion",
+  "text": "광야 집회에 군대가 들이닥쳤다는 소문이 돌았다. 붙잡힌 남자들은 갤리선으로 갔다고 했다.",
+  "fx": {
+   "sus": 3,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1765
+  },
+  "who": {
+   "faith": "protestant",
+   "region": [
+    "languedoc",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1750년대까지 랑그독 개신교 집회 참석 남성은 갤리선형, 여성은 투옥에 처해질 수 있었다.",
+  "src": [
+   {
+    "cite": "Valérie Sottocasa (2009), 「Protestants et catholiques en Languedoc」, in La coexistence confessionnelle à l'épreuve, LARHRA: 193-226",
+    "url": "https://doi.org/10.4000/books.larhra.6103"
+   },
+   {
+    "cite": "André Zysberg (1975), 「La société des galériens au milieu du XVIIIe siècle」, Annales ESC 30(1): 43-65",
+    "url": "https://doi.org/10.3406/ahess.1975.293587"
+   }
+  ]
+ },
+ {
+  "id": "soc-042",
+  "cat": "religion",
+  "text": "광야에서 결혼한 부부라 신부는 아이를 사생아로 적었다. 상속이 걱정이었다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1787
+  },
+  "who": {
+   "faith": "protestant",
+   "married": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1787년 이전 개신교 혼인은 법적으로 인정되지 않아 자녀가 사생아로 취급될 위험이 있었다.",
+  "src": [
+   {
+    "cite": "Michel Péronnet (1985), 「Les Assemblées du clergé et les protestants」, Dix-huitième Siècle 17: 141-150",
+    "url": "https://doi.org/10.3406/dhs.1985.1539"
+   }
+  ]
+ },
+ {
+  "id": "soc-043",
+  "cat": "religion",
+  "text": "관용 칙령 소식이 왔다. 판사 앞에서 혼인과 아이 출생을 정식으로 등록할 수 있게 되었다.",
+  "fx": {
+   "soc": 2,
+   "faith": 1
+  },
+  "when": {
+   "from": 1787,
+   "to": 1789
+  },
+  "who": {
+   "faith": "protestant"
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1787년 11월 베르사유 관용 칙령은 비가톨릭 신자에게 호적(état civil)을 인정했으나 공적 예배 자유는 주지 않았다.",
+  "src": [
+   {
+    "cite": "Michel Péronnet (1985), 「Les Assemblées du clergé et les protestants」, Dix-huitième Siècle 17: 141-150",
+    "url": "https://doi.org/10.3406/dhs.1985.1539"
+   },
+   {
+    "cite": "Valérie Sottocasa (2009), 「Protestants et catholiques en Languedoc」, in La coexistence confessionnelle à l'épreuve, LARHRA: 193-226",
+    "url": "https://doi.org/10.4000/books.larhra.6103"
+   }
+  ]
+ },
+ {
+  "id": "soc-044",
+  "cat": "religion",
+  "text": "성직자 총회가 개신교 관용에 반대하는 청원을 냈다는 말이 돌았다.",
+  "fx": {
+   "pol": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1788
+  },
+  "who": {
+   "faith": "protestant"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 성직자 총회는 개신교에 대한 억압 법률 유지를 거듭 요구했다.",
+  "src": [
+   {
+    "cite": "Michel Péronnet (1985), 「Les Assemblées du clergé et les protestants」, Dix-huitième Siècle 17: 141-150",
+    "url": "https://doi.org/10.3406/dhs.1985.1539"
+   }
+  ]
+ },
+ {
+  "id": "soc-045",
+  "cat": "religion",
+  "text": "님의 장터에서 가톨릭 상인과 개신교 상인이 서로의 가게를 피했다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "languedoc"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "랑그독에서는 신·구교 공동체가 공존하면서도 혼인·거래가 분리된 경우가 많았다.",
+  "src": [
+   {
+    "cite": "Valérie Sottocasa (2009), 「Protestants et catholiques en Languedoc」, in La coexistence confessionnelle à l'épreuve, LARHRA: 193-226",
+    "url": "https://doi.org/10.4000/books.larhra.6103"
+   }
+  ]
+ },
+ {
+  "id": "soc-046",
+  "cat": "religion",
+  "text": "1815년 여름 가르 지방에서 개신교도가 습격당했다는 소식에 문을 걸어 잠갔다.",
+  "fx": {
+   "sus": 3,
+   "hp": -1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1815,
+   "months": [
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "faith": "protestant",
+   "region": [
+    "languedoc"
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "1815년 백색 테러 때 님과 가르 지방에서는 개신교도 살해가 잇따랐다.",
+  "src": [
+   {
+    "cite": "Valérie Sottocasa (2009), 「Protestants et catholiques en Languedoc」, in La coexistence confessionnelle à l'épreuve, LARHRA: 193-226",
+    "url": "https://doi.org/10.4000/books.larhra.6103"
+   }
+  ]
+ },
+ {
+  "id": "soc-047",
+  "cat": "religion",
+  "text": "왕의 관리가 와서 유대인 가구를 한 집씩 세었다. 이름과 직업, 아이 수를 적어 갔다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1784,
+   "to": 1785
+  },
+  "who": {
+   "faith": "jewish",
+   "region": [
+    "alsace"
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1784년 알자스 유대인 총조사는 약 2만 명을 집계했다.",
+  "src": [
+   {
+    "cite": "Gabriel Hemerdinger (1901), 「Le dénombrement des Israélites d'Alsace (1784)」, Revue des études juives 42(84): 253-264",
+    "url": "https://doi.org/10.3406/rjuiv.1901.4498"
+   }
+  ]
+ },
+ {
+  "id": "soc-048",
+  "cat": "religion",
+  "text": "시나고그에서 안식일 예배를 마치고 이웃 마을 행상 이야기를 나누었다.",
+  "fx": {
+   "faith": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "jewish"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "알자스 유대인 다수는 시골 마을에 살며 가축 거래·행상·대금업에 종사했다.",
+  "src": [
+   {
+    "cite": "Gabriel Hemerdinger (1901), 「Le dénombrement des Israélites d'Alsace (1784)」, Revue des études juives 42(84): 253-264",
+    "url": "https://doi.org/10.3406/rjuiv.1901.4498"
+   }
+  ]
+ },
+ {
+  "id": "soc-049",
+  "cat": "religion",
+  "text": "농민들이 빚 영수증이 가짜라며 유대인 대금업자를 고소했다. 마을 분위기가 험악해졌다.",
+  "fx": {
+   "sus": 2,
+   "soc": -1
+  },
+  "when": {
+   "from": 1777,
+   "to": 1790
+  },
+  "who": {
+   "faith": "jewish",
+   "region": [
+    "alsace"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1778년 알자스 '가짜 영수증 사건'은 왕립 위원회를 거쳐 1784년 유대인 규제 개혁으로 이어졌다.",
+  "src": [
+   {
+    "cite": "Gabriel Hemerdinger (1901), 「Le dénombrement des Israélites d'Alsace (1784)」, Revue des études juives 42(84): 253-264",
+    "url": "https://doi.org/10.3406/rjuiv.1901.4498"
+   }
+  ]
+ },
+ {
+  "id": "soc-050",
+  "cat": "religion",
+  "text": "보르도 포르투갈계 공동체 회의에서 자선 기금 분담을 정했다.",
+  "fx": {
+   "soc": 2,
+   "money": -20
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "faith": "jewish",
+   "region": [
+    "bordeaux"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "보르도의 세파르디 '포르투갈 민족'은 상인 중심의 자치 공동체였고, 1790년 1월 28일 다른 유대인보다 먼저 시민권을 얻었다.",
+  "src": [
+   {
+    "cite": "Stéphane Minvielle (2005), 「La limitation des naissances chez les négociants catholiques, protestants et juifs bordelais de la seconde moitié du XVIIIe siècle」, Revue historique de Bordeaux 7(1): 133-156",
+    "url": "https://doi.org/10.3406/rhbg.2005.1476"
+   }
+  ]
+ },
+ {
+  "id": "soc-051",
+  "cat": "religion",
+  "text": "유대인도 시민이라는 의회 결정이 전해졌다. 랍비가 감사 기도를 올렸다.",
+  "fx": {
+   "pol": 2,
+   "soc": 2
+  },
+  "when": {
+   "from": 1791,
+   "to": 1792
+  },
+  "who": {
+   "faith": "jewish"
+  },
+  "w": 2,
+  "once": true,
+  "fact": "국민의회는 1791년 9월 27일 모든 유대인에게 시민권을 부여했다.",
+  "src": [
+   {
+    "cite": "Gabriel Hemerdinger (1901), 「Le dénombrement des Israélites d'Alsace (1784)」, Revue des études juives 42(84): 253-264",
+    "url": "https://doi.org/10.3406/rjuiv.1901.4498"
+   },
+   {
+    "cite": "Stéphane Minvielle (2005), 「La limitation des naissances chez les négociants catholiques, protestants et juifs bordelais de la seconde moitié du XVIIIe siècle」, Revue historique de Bordeaux 7(1): 133-156",
+    "url": "https://doi.org/10.3406/rhbg.2005.1476"
+   }
+  ]
+ },
+ {
+  "id": "soc-052",
+  "cat": "religion",
+  "text": "보르도 상인 집안끼리 아이를 둘만 낳자는 말이 오갔다. 유대인 상인 집안도 마찬가지였다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1770,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "bordeaux"
+   ],
+   "estate": [
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 후반 보르도 가톨릭·개신교·유대 상인층 모두에서 출산 제한이 나타났다.",
+  "src": [
+   {
+    "cite": "Stéphane Minvielle (2005), 「La limitation des naissances chez les négociants catholiques, protestants et juifs bordelais de la seconde moitié du XVIIIe siècle」, Revue historique de Bordeaux 7(1): 133-156",
+    "url": "https://doi.org/10.3406/rhbg.2005.1476"
+   }
+  ]
+ },
+ {
+  "id": "soc-053",
+  "cat": "religion",
+  "text": "눈을 가리고 로지에 입회했다. 앞치마를 받고 '형제'라는 호칭을 들었다.",
+  "fx": {
+   "soc": 3,
+   "fame": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "estate": [
+    "bourgeois",
+    "robe",
+    "epee",
+    "hobereau"
+   ],
+   "age": [
+    21,
+    70
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "18세기 후반 프랑스 프리메이슨 로지는 급증해 1789년 무렵 수백 개가 활동했다.",
+  "src": [
+   {
+    "cite": "Pierre-Yves Beaurepaire (2003), L'espace des francs-maçons. Une sociabilité européenne au XVIIIe siècle, Presses universitaires de Rennes",
+    "url": "https://doi.org/10.4000/books.pur.23622"
+   }
+  ]
+ },
+ {
+  "id": "soc-054",
+  "cat": "religion",
+  "text": "로지 연회에서 귀족과 상인이 한 식탁에 앉아 건배를 올렸다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1760,
+   "to": 1792
+  },
+  "who": {
+   "sex": "M",
+   "urban": true,
+   "estate": [
+    "bourgeois",
+    "robe",
+    "epee"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "보르페르는 로지를 신분을 가로지르는 유럽적 사교 공간으로 분석했다.",
+  "src": [
+   {
+    "cite": "Pierre-Yves Beaurepaire (2003), L'espace des francs-maçons. Une sociabilité européenne au XVIIIe siècle, Presses universitaires de Rennes",
+    "url": "https://doi.org/10.4000/books.pur.23622"
+   }
+  ]
+ },
+ {
+  "id": "soc-055",
+  "cat": "religion",
+  "text": "고행회에서 함께 행렬하던 이웃이 이제는 프리메이슨 로지에 나간다고 했다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1760,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "provence",
+    "marseille"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "아귈롱 이래 연구는 프로방스에서 고행회 사교가 18세기 후반 로지로 옮겨 갔다고 본다.",
+  "src": [
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   },
+   {
+    "cite": "Pierre-Yves Beaurepaire (2003), L'espace des francs-maçons. Une sociabilité européenne au XVIIIe siècle, Presses universitaires de Rennes",
+    "url": "https://doi.org/10.4000/books.pur.23622"
+   }
+  ]
+ },
+ {
+  "id": "soc-056",
+  "cat": "religion",
+  "text": "제정기 로지가 다시 열려 장교와 관리들이 몰려왔다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1800,
+   "to": 1814
+  },
+  "who": {
+   "sex": "M",
+   "job": [
+    "army",
+    "law",
+    "pol"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "제정기 프리메이슨은 체제의 후원을 받아 다시 번성했다.",
+  "src": [
+   {
+    "cite": "Pierre-Yves Beaurepaire (2003), L'espace des francs-maçons. Une sociabilité européenne au XVIIIe siècle, Presses universitaires de Rennes",
+    "url": "https://doi.org/10.4000/books.pur.23622"
+   }
+  ]
+ },
+ {
+  "id": "soc-057",
+  "cat": "religion",
+  "text": "본당 신부가 미사 뒤 헌법 선서를 했다. 몇은 박수를 쳤고 몇은 성당을 나가 버렸다.",
+  "fx": {
+   "pol": 2,
+   "faith": -1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1791,
+   "months": [
+    1,
+    2,
+    3
+   ]
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1791년 성직자 선서에서 본당 신부의 약 절반 남짓이 선서했고, 지역 차가 매우 컸다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett (1986), Religion, Revolution, and Regional Culture in Eighteenth-Century France: The Ecclesiastical Oath of 1791, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400854370"
+   },
+   {
+    "cite": "Philippe Sagnac (1906), 「Étude statistique sur le clergé constitutionnel et le clergé réfractaire en 1791」, Revue d'histoire moderne et contemporaine 8(2): 97-115",
+    "url": "https://doi.org/10.3406/rhmc.1906.4501"
+   }
+  ]
+ },
+ {
+  "id": "soc-058",
+  "cat": "religion",
+  "text": "선서 거부 신부가 쫓겨나고 낯선 선서파 신부가 왔다. 마을 여자들이 미사를 거부했다.",
+  "fx": {
+   "faith": 1,
+   "pol": -1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1792
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "vendee",
+    "alsace",
+    "normandie"
+   ],
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "서부·알자스·북부는 선서 거부율이 높았고, 이는 반혁명 지리와 겹쳤다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett (1982), 「The West in France in 1789: The Religious Factor in the Origins of the Counterrevolution」, Journal of Modern History 54(4): 715-745",
+    "url": "https://doi.org/10.1086/244228"
+   },
+   {
+    "cite": "Timothy Tackett (1986), Religion, Revolution, and Regional Culture in Eighteenth-Century France: The Ecclesiastical Oath of 1791, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400854370"
+   }
+  ]
+ },
+ {
+  "id": "soc-059",
+  "cat": "religion",
+  "text": "선서한 신부가 그대로 남아 미사를 이어 갔다. 마을은 별 동요가 없었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1792
+  },
+  "who": {
+   "region": [
+    "ile",
+    "champagne",
+    "bourgogne",
+    "picardie",
+    "provence",
+    "paris"
+   ],
+   "faith": "catholic"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "파리 분지·중부·남동부는 선서율이 높은 지역이었다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett (1986), Religion, Revolution, and Regional Culture in Eighteenth-Century France: The Ecclesiastical Oath of 1791, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400854370"
+   },
+   {
+    "cite": "Philippe Sagnac (1906), 「Étude statistique sur le clergé constitutionnel et le clergé réfractaire en 1791」, Revue d'histoire moderne et contemporaine 8(2): 97-115",
+    "url": "https://doi.org/10.3406/rhmc.1906.4501"
+   }
+  ]
+ },
+ {
+  "id": "soc-060",
+  "cat": "religion",
+  "text": "서부 신부들은 원래 마을 출신이 많고 존경을 받았다. 그들을 내쫓는다는 말에 사람들이 낫을 들었다.",
+  "fx": {
+   "pol": -2,
+   "sus": 2
+  },
+  "when": {
+   "from": 1791,
+   "to": 1793
+  },
+  "who": {
+   "region": [
+    "vendee",
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "태킷은 1789년 서부의 조밀한 성직자 배치와 높은 위상이 반혁명의 종교적 배경이라고 보았다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett (1982), 「The West in France in 1789: The Religious Factor in the Origins of the Counterrevolution」, Journal of Modern History 54(4): 715-745",
+    "url": "https://doi.org/10.1086/244228"
+   },
+   {
+    "cite": "Timothy Tackett & Claude Langlois (1980), 「Ecclesiastical Structures and Clerical Geography on the Eve of the French Revolution」, French Historical Studies 11(3): 352",
+    "url": "https://doi.org/10.2307/286393"
+   }
+  ]
+ },
+ {
+  "id": "soc-061",
+  "cat": "religion",
+  "text": "광장에 '이성의 사원'이 차려졌다. 하얀 옷을 입은 처녀가 자유의 여신 역을 맡았다.",
+  "fx": {
+   "faith": -2,
+   "pol": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794,
+   "months": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1793년 11월 10일 파리 노트르담에서 이성의 축제가 열렸고, 이후 지방으로 퍼졌다.",
+  "src": [
+   {
+    "cite": "Serge Bianchi (1978), 「La déchristianisation de l'An II. Essai d'interprétation」, Annales historiques de la Révolution française 233: 341-371",
+    "url": "https://doi.org/10.3406/ahrf.1978.4083"
+   },
+   {
+    "cite": "Gérard Cholvy (1978), 「Religion et Révolution : la déchristianisation de l'An II」, Annales historiques de la Révolution française 233: 451-464",
+    "url": "https://doi.org/10.3406/ahrf.1978.4087"
+   }
+  ]
+ },
+ {
+  "id": "soc-062",
+  "cat": "religion",
+  "text": "성당 종을 떼어 대포 만들러 보냈다. 성인상은 광장에서 불태워졌다.",
+  "fx": {
+   "faith": -2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": true,
+  "fact": "공화력 2년 탈기독교화는 종 철거, 성물 파괴, 성직 포기 강요를 동반했다.",
+  "src": [
+   {
+    "cite": "Serge Bianchi (1978), 「La déchristianisation de l'An II. Essai d'interprétation」, Annales historiques de la Révolution française 233: 341-371",
+    "url": "https://doi.org/10.3406/ahrf.1978.4083"
+   },
+   {
+    "cite": "Gérard Cholvy (1978), 「Religion et Révolution : la déchristianisation de l'An II」, Annales historiques de la Révolution française 233: 451-464",
+    "url": "https://doi.org/10.3406/ahrf.1978.4087"
+   }
+  ]
+ },
+ {
+  "id": "soc-063",
+  "cat": "religion",
+  "text": "신부가 사제직을 포기한다는 서약서에 서명하고 결혼했다는 소문이 돌았다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1794
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공화력 2년에 약 2만 명의 사제가 성직을 포기했다.",
+  "src": [
+   {
+    "cite": "Serge Bianchi (1978), 「La déchristianisation de l'An II. Essai d'interprétation」, Annales historiques de la Révolution française 233: 341-371",
+    "url": "https://doi.org/10.3406/ahrf.1978.4083"
+   },
+   {
+    "cite": "Gérard Cholvy (1978), 「Religion et Révolution : la déchristianisation de l'An II」, Annales historiques de la Révolution française 233: 451-464",
+    "url": "https://doi.org/10.3406/ahrf.1978.4087"
+   }
+  ]
+ },
+ {
+  "id": "soc-064",
+  "cat": "religion",
+  "text": "일요일 대신 열흘째 날(데카디)에 쉬라는 명령이 내려왔다. 몰래 일요일에 일손을 놓았다.",
+  "fx": {
+   "sus": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1801
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1793년 10월 공화력이 도입되어 일요일 대신 데카디가 공식 휴일이 되었다.",
+  "src": [
+   {
+    "cite": "Mona Ozouf (1975), 「La fête révolutionnaire et le renouvellement de l'imaginaire collectif」, Annales historiques de la Révolution française 221: 385-405",
+    "url": "https://doi.org/10.3406/ahrf.1975.4998"
+   },
+   {
+    "cite": "Serge Bianchi (1978), 「La déchristianisation de l'An II. Essai d'interprétation」, Annales historiques de la Révolution française 233: 341-371",
+    "url": "https://doi.org/10.3406/ahrf.1978.4083"
+   }
+  ]
+ },
+ {
+  "id": "soc-065",
+  "cat": "religion",
+  "text": "헛간에서 숨어 지내는 신부가 밤 미사를 올렸다. 아기 세례도 그때 몰래 받았다.",
+  "fx": {
+   "faith": 3,
+   "sus": 2
+  },
+  "when": {
+   "from": 1793,
+   "to": 1801
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "공포정치기와 총재정부기에 선서 거부 사제들은 비밀 미사와 성사를 계속 집전했다.",
+  "src": [
+   {
+    "cite": "Vandervennet (1990), 「Le culte clandestin et l'organisation des missions dans le district de Saint-Pol 1793-1801」, in Église, vie religieuse et Révolution dans la France du Nord, IRHiS: 99-105",
+    "url": "https://doi.org/10.4000/books.irhis.1001"
+   },
+   {
+    "cite": "Olwen Hufton (1983), 「The reconstruction of a church 1796–1801」, in Beyond the Terror, Cambridge University Press: 21-52",
+    "url": "https://doi.org/10.1017/cbo9780511562679.003"
+   }
+  ]
+ },
+ {
+  "id": "soc-066",
+  "cat": "religion",
+  "text": "여자들이 성당 열쇠를 되찾아 와 신부 없이 저녁기도를 바쳤다.",
+  "fx": {
+   "faith": 2,
+   "pol": -1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1801
+  },
+  "who": {
+   "sex": "F",
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "허프턴은 1795~1796년 여성들이 성당을 다시 열고 평신도 예배를 이끈 주역이었다고 밝혔다.",
+  "src": [
+   {
+    "cite": "Olwen Hufton (1971), 「Women in Revolution 1789–1796」, Past and Present 53: 90-108",
+    "url": "https://doi.org/10.1093/past/53.1.90"
+   },
+   {
+    "cite": "Olwen Hufton (1983), 「The reconstruction of a church 1796–1801」, in Beyond the Terror, Cambridge University Press: 21-52",
+    "url": "https://doi.org/10.1017/cbo9780511562679.003"
+   }
+  ]
+ },
+ {
+  "id": "soc-067",
+  "cat": "religion",
+  "text": "예배 자유 법령 뒤 마을이 돈을 모아 성당을 다시 열었다. 첫 미사에 사람이 넘쳤다.",
+  "fx": {
+   "faith": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1797
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "공화력 3년(1795) 예배 자유 법령 이후 각지에서 공동체 주도의 예배 재개가 빠르게 퍼졌다.",
+  "src": [
+   {
+    "cite": "Jacques Bernet (1998), 「Les limites de la déchristianisation de l'an II éclairées par le retour au culte de l'an III」, Annales historiques de la Révolution française 312: 285-299",
+    "url": "https://doi.org/10.3406/ahrf.1998.2178"
+   },
+   {
+    "cite": "Olwen Hufton (1983), 「The reconstruction of a church 1796–1801」, in Beyond the Terror, Cambridge University Press: 21-52",
+    "url": "https://doi.org/10.1017/cbo9780511562679.003"
+   }
+  ]
+ },
+ {
+  "id": "soc-068",
+  "cat": "religion",
+  "text": "공화력 2년에도 성당 문은 닫혔지만 마을 사람들은 집에서 묵주기도를 계속했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1793,
+   "to": 1795
+  },
+  "who": {
+   "faith": "catholic",
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "베르네는 공화력 3년 예배 재개를 통해 공화력 2년 탈기독교화가 깊지 않았음을 보여 주었다.",
+  "src": [
+   {
+    "cite": "Jacques Bernet (1998), 「Les limites de la déchristianisation de l'an II éclairées par le retour au culte de l'an III」, Annales historiques de la Révolution française 312: 285-299",
+    "url": "https://doi.org/10.3406/ahrf.1998.2178"
+   }
+  ]
+ },
+ {
+  "id": "soc-069",
+  "cat": "religion",
+  "text": "정교협약 소식이 왔다. 성당 종이 다시 울리고 주교가 새로 임명되었다.",
+  "fx": {
+   "faith": 2,
+   "pol": 1
+  },
+  "when": {
+   "from": 1801,
+   "to": 1802
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": true,
+  "fact": "정교협약은 1801년 7월 15일 서명되어 1802년 4월 조직 조항과 함께 공포되었다.",
+  "src": [
+   {
+    "cite": "Paul Pisani (1921), 「La négociation du concordat de 1801」, Revue d'histoire de l'Église de France 7(34): 17-29",
+    "url": "https://doi.org/10.3406/rhef.1921.2168"
+   }
+  ]
+ },
+ {
+  "id": "soc-070",
+  "cat": "religion",
+  "text": "정교협약 뒤 온 신부가 옛 선서파였다. 신자들 일부는 그를 끝까지 받아들이지 않았다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1802,
+   "to": 1815
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "정교협약 뒤에도 선서파와 비선서파의 반목은 교구마다 오래 남았다.",
+  "src": [
+   {
+    "cite": "Olwen Hufton (1983), 「The reconstruction of a church 1796–1801」, in Beyond the Terror, Cambridge University Press: 21-52",
+    "url": "https://doi.org/10.1017/cbo9780511562679.003"
+   },
+   {
+    "cite": "Paul Pisani (1921), 「La négociation du concordat de 1801」, Revue d'histoire de l'Église de France 7(34): 17-29",
+    "url": "https://doi.org/10.3406/rhef.1921.2168"
+   }
+  ]
+ },
+ {
+  "id": "soc-071",
+  "cat": "religion",
+  "text": "정교협약을 거부한 '소교회' 사람들이 따로 미사를 드렸다.",
+  "fx": {
+   "faith": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1802,
+   "to": 1830
+  },
+  "who": {
+   "region": [
+    "vendee",
+    "bretagne",
+    "lyon"
+   ],
+   "faith": "catholic"
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "정교협약을 거부한 일부 신자는 '소교회(Petite Église)'를 이루어 서부에 남았다.",
+  "src": [
+   {
+    "cite": "Paul Pisani (1921), 「La négociation du concordat de 1801」, Revue d'histoire de l'Église de France 7(34): 17-29",
+    "url": "https://doi.org/10.3406/rhef.1921.2168"
+   }
+  ]
+ },
+ {
+  "id": "soc-072",
+  "cat": "religion",
+  "text": "선교사 일행이 와 몇 주 동안 설교했다. 마지막 날 언덕에 거대한 선교 십자가를 세웠다.",
+  "fx": {
+   "faith": 3,
+   "soc": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1830
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "왕정복고기(1815~1830)에는 약 1,500회의 국내 선교가 열렸고 끝에는 선교 십자가를 세웠다.",
+  "src": [
+   {
+    "cite": "Sheryl Kroen (2000), 「The Missionaries」, in Politics and Theater: The Crisis of Legitimacy in Restoration France, 1815-1830, University of California Press: 76-108",
+    "url": "https://doi.org/10.1525/california/9780520222144.003.0003"
+   }
+  ]
+ },
+ {
+  "id": "soc-073",
+  "cat": "religion",
+  "text": "선교사가 혁명기에 산 교회 재산을 돌려주라고 설교했다. 국유재산을 산 이웃이 얼굴을 붉혔다.",
+  "fx": {
+   "pol": -1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1816,
+   "to": 1830
+  },
+  "w": 1,
+  "once": false,
+  "fact": "크로엔은 복고기 선교가 혁명 기억을 속죄시키는 정치 의례였다고 분석했다.",
+  "src": [
+   {
+    "cite": "Sheryl Kroen (2000), 「The Missionaries」, in Politics and Theater: The Crisis of Legitimacy in Restoration France, 1815-1830, University of California Press: 76-108",
+    "url": "https://doi.org/10.1525/california/9780520222144.003.0003"
+   }
+  ]
+ },
+ {
+  "id": "soc-074",
+  "cat": "religion",
+  "text": "선교 기간 극장에서 「타르튀프」를 올리자 관객이 선교사를 조롱하는 노래를 불렀다.",
+  "fx": {
+   "pol": 1,
+   "fame": 1
+  },
+  "when": {
+   "from": 1817,
+   "to": 1830
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "복고기 도시에서는 선교에 맞서 「타르튀프」 공연 요구 등 반성직주의 소동이 잦았다.",
+  "src": [
+   {
+    "cite": "Sheryl Kroen (2000), 「The Missionaries」, in Politics and Theater: The Crisis of Legitimacy in Restoration France, 1815-1830, University of California Press: 76-108",
+    "url": "https://doi.org/10.1525/california/9780520222144.003.0003"
+   }
+  ]
+ },
+ {
+  "id": "soc-075",
+  "cat": "religion",
+  "text": "1830년 혁명 뒤 사람들이 선교 십자가를 끌어내렸다.",
+  "fx": {
+   "pol": 2,
+   "faith": -1
+  },
+  "when": {
+   "from": 1830,
+   "to": 1831
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": true,
+  "fact": "7월 혁명 직후 여러 도시에서 선교 십자가가 철거되었다.",
+  "src": [
+   {
+    "cite": "Sheryl Kroen (2000), 「The Missionaries」, in Politics and Theater: The Crisis of Legitimacy in Restoration France, 1815-1830, University of California Press: 76-108",
+    "url": "https://doi.org/10.1525/california/9780520222144.003.0003"
+   }
+  ]
+ },
+ {
+  "id": "soc-076",
+  "cat": "festival",
+  "text": "사순절 전 사흘 동안 가면을 쓰고 거리를 누볐다. 짚 인형 '카레망트랑'을 재판해 불태웠다.",
+  "fx": {
+   "soc": 2,
+   "hp": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "카니발 마지막 날 짚 인형을 재판·처형하는 의례는 근대 초 유럽 민중문화의 핵심이었다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   },
+   {
+    "cite": "Bouvier (1973), 「Feux cérémoniels de carnaval-carême et de la Saint-Jean dans la Drôme」, Le Monde alpin et rhodanien 1(3): 103-108",
+    "url": "https://doi.org/10.3406/mar.1973.933"
+   }
+  ]
+ },
+ {
+  "id": "soc-077",
+  "cat": "festival",
+  "text": "카니발 날 청년들이 남녀 옷을 바꿔 입고 마을 유지 흉내를 냈다. 신부가 설교에서 꾸짖었다.",
+  "fx": {
+   "soc": 2,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "age": [
+    14,
+    30
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "교회와 당국은 18세기 내내 카니발의 가면·이성복 착용을 제한하려 했다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-078",
+  "cat": "festival",
+  "text": "카니발 불놀이 장작을 모으러 집집을 돌았다. 장작을 안 준 집 앞에서 야유를 퍼부었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    2,
+    3
+   ]
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    10,
+    25
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "드롬 지방에서는 카니발·사순절과 성 요한 축일에 의례적 불을 피우는 관습이 이어졌다.",
+  "src": [
+   {
+    "cite": "Bouvier (1973), 「Feux cérémoniels de carnaval-carême et de la Saint-Jean dans la Drôme」, Le Monde alpin et rhodanien 1(3): 103-108",
+    "url": "https://doi.org/10.3406/mar.1973.933"
+   }
+  ]
+ },
+ {
+  "id": "soc-079",
+  "cat": "festival",
+  "text": "성 요한 축일 밤 광장에 큰 불을 피웠다. 젊은이들이 불을 뛰어넘고 타다 남은 숯을 집에 가져갔다.",
+  "fx": {
+   "soc": 2,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    6
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "6월 23일 밤 성 요한 불은 거의 전국에서 피웠고, 숯은 액막이로 보관했다.",
+  "src": [
+   {
+    "cite": "Bouvier (1973), 「Feux cérémoniels de carnaval-carême et de la Saint-Jean dans la Drôme」, Le Monde alpin et rhodanien 1(3): 103-108",
+    "url": "https://doi.org/10.3406/mar.1973.933"
+   },
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-080",
+  "cat": "festival",
+  "text": "총재정부가 금했던 성 요한 불과 주현절 놀이가 다시 허용되었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1797,
+   "to": 1800,
+   "months": [
+    6
+   ]
+  },
+  "who": {
+   "region": [
+    "rouen",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "루앙에서는 총재정부기에 성 요한 불과 왕 축일 관습의 재개를 둘러싼 논란이 있었다.",
+  "src": [
+   {
+    "cite": "André Dubuc (1960), 「Le rétablissement des feux de la Saint-Jean et des Rois, sous le Directoire à Rouen」, Annales de Normandie 10(1): 70",
+    "url": "https://doi.org/10.3406/annor.1960.6156"
+   }
+  ]
+ },
+ {
+  "id": "soc-081",
+  "cat": "festival",
+  "text": "주현절 갈레트에서 콩을 찾아 그날의 왕이 되었다. 모두가 '왕이 마신다!'를 외쳤다.",
+  "fx": {
+   "soc": 1,
+   "fame": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    1
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "주현절 '콩의 왕' 놀이는 혁명기에 '평등의 케이크'로 바뀌어 불리기도 했다.",
+  "src": [
+   {
+    "cite": "André Dubuc (1960), 「Le rétablissement des feux de la Saint-Jean et des Rois, sous le Directoire à Rouen」, Annales de Normandie 10(1): 70",
+    "url": "https://doi.org/10.3406/annor.1960.6156"
+   },
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-082",
+  "cat": "festival",
+  "text": "연방 축제에 온 마을이 들판에 모여 제단 앞에서 국민·법·왕에게 충성을 맹세했다.",
+  "fx": {
+   "pol": 3,
+   "soc": 2
+  },
+  "when": {
+   "from": 1790,
+   "to": 1790,
+   "months": [
+    7
+   ]
+  },
+  "w": 2,
+  "once": true,
+  "fact": "1790년 7월 14일 연방 축제는 파리와 전국 각지에서 동시에 열렸다.",
+  "src": [
+   {
+    "cite": "Mona Ozouf (1975), 「La fête révolutionnaire et le renouvellement de l'imaginaire collectif」, Annales historiques de la Révolution française 221: 385-405",
+    "url": "https://doi.org/10.3406/ahrf.1975.4998"
+   }
+  ]
+ },
+ {
+  "id": "soc-083",
+  "cat": "festival",
+  "text": "최고 존재 축제 행렬에 섰다. 꽃을 든 어머니들과 쟁기를 진 농부들이 줄지어 걸었다.",
+  "fx": {
+   "pol": 2
+  },
+  "when": {
+   "from": 1794,
+   "to": 1794,
+   "months": [
+    6
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "최고 존재 축제는 1794년 6월 8일(공화력 2년 프레리알 20일) 열렸다.",
+  "src": [
+   {
+    "cite": "Mona Ozouf (1975), 「La fête révolutionnaire et le renouvellement de l'imaginaire collectif」, Annales historiques de la Révolution française 221: 385-405",
+    "url": "https://doi.org/10.3406/ahrf.1975.4998"
+   }
+  ]
+ },
+ {
+  "id": "soc-084",
+  "cat": "festival",
+  "text": "자유의 나무를 심는 날 마을 사람들이 노래하며 포플러를 세웠다.",
+  "fx": {
+   "pol": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1790,
+   "to": 1799,
+   "months": [
+    3,
+    4,
+    5
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "오주프는 혁명 축제가 집단적 상상계를 새로 쓰려는 시도였고, 자유의 나무가 그 대표 상징이었다고 보았다.",
+  "src": [
+   {
+    "cite": "Mona Ozouf (1975), 「La fête révolutionnaire et le renouvellement de l'imaginaire collectif」, Annales historiques de la Révolution française 221: 385-405",
+    "url": "https://doi.org/10.3406/ahrf.1975.4998"
+   }
+  ]
+ },
+ {
+  "id": "soc-085",
+  "cat": "festival",
+  "text": "혁명 축제 관람석이 텅 비었다. 사람들은 장터로 몰려가 옛 성인 축일을 즐겼다.",
+  "fx": {
+   "pol": -1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1796,
+   "to": 1799
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "총재정부기 국가 축제는 형식화되었고, 옛 축일 관습은 끈질기게 살아남았다.",
+  "src": [
+   {
+    "cite": "Mona Ozouf (1975), 「La fête révolutionnaire et le renouvellement de l'imaginaire collectif」, Annales historiques de la Révolution française 221: 385-405",
+    "url": "https://doi.org/10.3406/ahrf.1975.4998"
+   },
+   {
+    "cite": "André Dubuc (1960), 「Le rétablissement des feux de la Saint-Jean et des Rois, sous le Directoire à Rouen」, Annales de Normandie 10(1): 70",
+    "url": "https://doi.org/10.3406/annor.1960.6156"
+   }
+  ]
+ },
+ {
+  "id": "soc-086",
+  "cat": "festival",
+  "text": "수호성인 축일(부오그)에 이웃 마을 청년들과 공놀이를 하다 패싸움이 붙었다.",
+  "fx": {
+   "soc": 1,
+   "hp": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    15,
+    35
+   ],
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "무셈블레드는 마을 축제와 청년 집단 간 싸움을 근대 초 농촌 폭력의 주요 무대로 보았다.",
+  "src": [
+   {
+    "cite": "Robert Muchembled (1989), La violence au village. Sociabilité et comportements populaires en Artois du XVe au XVIIe siècle, Brepols",
+    "url": "https://doi.org/10.1484/m.viso-eb.5.112382"
+   },
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-087",
+  "cat": "festival",
+  "text": "장터 무대에서 바이올린 악사가 연주하자 젊은이들이 원무를 추었다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "age": [
+    14,
+    35
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "18세기 농촌 무도는 떠돌이 악사의 바이올린·백파이프에 맞춘 원무와 브랑르가 중심이었다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-088",
+  "cat": "festival",
+  "text": "혼례에 온 바이올린 악사가 밤새 연주했다. 신부(新婦)는 춤을 너무 춰 신발이 닳았다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "농촌 혼례와 축제의 춤은 사목 당국의 경계 대상이면서도 공동체 생활의 중심이었다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   },
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   }
+  ]
+ },
+ {
+  "id": "soc-089",
+  "cat": "festival",
+  "text": "늙은 홀아비가 젊은 처녀와 재혼하자 청년들이 밤마다 냄비를 두드리는 샤리바리를 했다.",
+  "fx": {
+   "soc": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "랑그독에서 샤리바리는 재혼·부부 관계뿐 아니라 사회적 분쟁 일반을 다스리는 수단으로 쓰였다.",
+  "src": [
+   {
+    "cite": "Castan (1981), 「Contentieux social et utilisation variable du charivari à la fin de l'Ancien Régime en Languedoc」, in J. Le Goff & J.-C. Schmitt (dir.), Le charivari, Mouton/EHESS: 197-206",
+    "url": "https://doi.org/10.1515/9783110823097-018"
+   }
+  ]
+ },
+ {
+  "id": "soc-090",
+  "cat": "festival",
+  "text": "세금 징수인 집 앞에서 샤리바리가 벌어졌다. 냄비와 뿔피리 소리에 그는 창문도 열지 못했다.",
+  "fx": {
+   "pol": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "18세기 말 랑그독에서는 샤리바리가 관리·지주에 대한 항의로도 활용되었다.",
+  "src": [
+   {
+    "cite": "Castan (1981), 「Contentieux social et utilisation variable du charivari à la fin de l'Ancien Régime en Languedoc」, in J. Le Goff & J.-C. Schmitt (dir.), Le charivari, Mouton/EHESS: 197-206",
+    "url": "https://doi.org/10.1515/9783110823097-018"
+   }
+  ]
+ },
+ {
+  "id": "soc-091",
+  "cat": "festival",
+  "text": "겨울밤 외양간 짚더미 옆에 모여 실을 잣고 옛이야기를 들었다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 3,
+  "once": false,
+  "fact": "겨울 밤샘 모임(veillée)은 노동·이야기·구애가 이루어지는 농촌 사교의 핵심이었다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   },
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-092",
+  "cat": "festival",
+  "text": "밤샘 모임에서 늑대인간과 떠도는 영혼 이야기가 나왔다. 돌아오는 길이 무서웠다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    6,
+    20
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "데블린은 19세기 농민들이 밤샘 모임에서 유령·늑대인간·마녀 이야기를 전승했다고 분석했다.",
+  "src": [
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-093",
+  "cat": "festival",
+  "text": "밤샘 모임에서 청년이 마음에 둔 처녀 옆에 앉아 물레를 돌려 주었다.",
+  "fx": {
+   "soc": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    15,
+    25
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "교회는 밤샘 모임에서의 남녀 교제를 위험하게 여겨 사목 방문에서 거듭 금했다.",
+  "src": [
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   },
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-094",
+  "cat": "festival",
+  "text": "일 끝나고 주점에서 동료들과 포도주를 마셨다. 한 잔 값에 하루 소식이 다 모였다.",
+  "fx": {
+   "soc": 2,
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan"
+   ]
+  },
+  "w": 3,
+  "once": false,
+  "fact": "브레넌은 18세기 파리 주점이 장인·노동자의 일상 사교와 평판 형성의 핵심 공간이었다고 밝혔다.",
+  "src": [
+   {
+    "cite": "Thomas Brennan (1988), Public Drinking and Popular Culture in Eighteenth-Century Paris, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400859184"
+   }
+  ]
+ },
+ {
+  "id": "soc-095",
+  "cat": "crime",
+  "text": "주점에서 외상값을 두고 시비가 붙어 술잔이 날았다. 경비대가 와서 둘을 끌어냈다.",
+  "fx": {
+   "hp": -2,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "파리 주점 관련 소송의 상당수가 명예·빚을 둘러싼 언쟁과 폭행이었다.",
+  "src": [
+   {
+    "cite": "Thomas Brennan (1988), Public Drinking and Popular Culture in Eighteenth-Century Paris, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400859184"
+   }
+  ]
+ },
+ {
+  "id": "soc-096",
+  "cat": "festival",
+  "text": "일요일에 성문 밖 갱게트로 나가 세금 안 붙은 싼 포도주를 마셨다.",
+  "fx": {
+   "soc": 2,
+   "money": -4
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "파리 입시세 장벽 밖 갱게트는 싼 술 덕분에 일요일 민중 행락지로 번성했다.",
+  "src": [
+   {
+    "cite": "Thomas Brennan (1988), Public Drinking and Popular Culture in Eighteenth-Century Paris, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400859184"
+   }
+  ]
+ },
+ {
+  "id": "soc-097",
+  "cat": "festival",
+  "text": "마을 주점에서 농부들이 카드 놀이를 했다. 내기 돈이 커지자 아내가 데리러 왔다.",
+  "fx": {
+   "soc": 1,
+   "money": -8
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "주점에서의 카드 도박은 18세기 사목 문헌과 치안 기록에 자주 등장한다.",
+  "src": [
+   {
+    "cite": "Thomas Brennan (1988), Public Drinking and Popular Culture in Eighteenth-Century Paris, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400859184"
+   },
+   {
+    "cite": "Benoît Garnot (1981), 「Délits et châtiments en Anjou au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 88(3): 283-304",
+    "url": "https://doi.org/10.3406/abpo.1981.3052"
+   }
+  ]
+ },
+ {
+  "id": "soc-098",
+  "cat": "festival",
+  "text": "성당 뒤 공터에서 나무공 굴리기 내기를 했다. 진 쪽이 술을 샀다.",
+  "fx": {
+   "soc": 2,
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "who": {
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "공굴리기·기둥 쓰러뜨리기 같은 놀이는 일요일 오후 남성 사교의 일상이었다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   },
+   {
+    "cite": "Dupuis (2015), 「Analyse comparée de l'escrime, des barres et du jeu de paume」, e-Phaïstos IV(1): 27-42",
+    "url": "https://doi.org/10.4000/ephaistos.626"
+   }
+  ]
+ },
+ {
+  "id": "soc-099",
+  "cat": "festival",
+  "text": "도시 실내 코트에서 주드폼 경기를 구경했다. 귀족 청년들이 공 하나에 큰돈을 걸었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "epee",
+    "robe",
+    "bourgeois"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "주드폼은 근대 초 귀족·도시 엘리트의 대표 구기였으며 18세기에 쇠퇴했다.",
+  "src": [
+   {
+    "cite": "Dupuis (2015), 「Analyse comparée de l'escrime, des barres et du jeu de paume」, e-Phaïstos IV(1): 27-42",
+    "url": "https://doi.org/10.4000/ephaistos.626"
+   }
+  ]
+ },
+ {
+  "id": "soc-100",
+  "cat": "belief",
+  "text": "소가 젖을 내지 않자 이웃 노파의 저주라고 믿었다. 저주를 푼다는 사람을 불러 돈을 냈다.",
+  "fx": {
+   "money": -10,
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "데블린은 19세기 농촌에서 '저주 풀이꾼(leveurs de sorts)'과 마녀 의심이 흔했음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-101",
+  "cat": "belief",
+  "text": "뼈 맞추는 사람이 와서 어긋난 어깨를 단번에 맞췄다. 의사보다 싸고 믿음이 갔다.",
+  "fx": {
+   "hp": 2,
+   "money": -3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "농촌에서는 접골사·치유사 같은 민간 치료자가 19세기까지 의사보다 널리 이용되었다.",
+  "src": [
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-102",
+  "cat": "belief",
+  "text": "사마귀를 떼려고 보름달 밤에 주문을 외는 여자를 찾아갔다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "민간 치유는 기도문·성인 이름을 섞은 주문을 사용해 교회와 마술의 경계에 있었다.",
+  "src": [
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   },
+   {
+    "cite": "Harismendy (2002), compte rendu de Louis Pérouas, Culte des saints et anticléricalisme. Entre statistique et culture populaire, Annales de Bretagne et des pays de l'Ouest 109(3): 166-168",
+    "url": "https://doi.org/10.4000/abpo.1580"
+   }
+  ]
+ },
+ {
+  "id": "soc-103",
+  "cat": "belief",
+  "text": "마녀로 지목된 이웃 여자 집에 청년들이 몰려가 창문을 깼다.",
+  "fx": {
+   "sus": 2,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "마술 재판은 1682년 칙령 뒤 사실상 끝났지만 19세기에도 마녀 의심으로 인한 폭행 사건이 법정에 올랐다.",
+  "src": [
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-104",
+  "cat": "belief",
+  "text": "행상에게서 새 달력 책을 샀다. 파종일, 장날, 일식 예보와 우스운 이야기가 들어 있었다.",
+  "fx": {
+   "edu": 1,
+   "money": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1
+   ]
+  },
+  "w": 2.5,
+  "once": false,
+  "fact": "트루아의 '파란 책' 등 행상 문학 가운데 연감은 가장 널리 팔린 대중 인쇄물이었다.",
+  "src": [
+   {
+    "cite": "Geneviève Bollème (1965), 「Littérature populaire et littérature de colportage au 18e siècle」, in Livre et société dans la France du XVIIIe siècle, Mouton: 61-92",
+    "url": "https://doi.org/10.1515/9783111330563-004"
+   },
+   {
+    "cite": "Lise Andries (1978), 「La Bibliothèque bleue : les réécritures de Robert le Diable」, Littérature 30(2): 51-66",
+    "url": "https://doi.org/10.3406/litt.1978.1154"
+   }
+  ]
+ },
+ {
+  "id": "soc-105",
+  "cat": "belief",
+  "text": "밤샘 모임에서 글 아는 사람이 파란 표지 책으로 「악마 로베르」 이야기를 읽어 주었다.",
+  "fx": {
+   "edu": 1,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    11,
+    12,
+    1,
+    2
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "'파란 책(Bibliothèque bleue)'은 기사담·성인전을 싸게 고쳐 써 농촌에 퍼뜨렸다.",
+  "src": [
+   {
+    "cite": "Lise Andries (1978), 「La Bibliothèque bleue : les réécritures de Robert le Diable」, Littérature 30(2): 51-66",
+    "url": "https://doi.org/10.3406/litt.1978.1154"
+   },
+   {
+    "cite": "Geneviève Bollème (1965), 「Littérature populaire et littérature de colportage au 18e siècle」, in Livre et société dans la France du XVIIIe siècle, Mouton: 61-92",
+    "url": "https://doi.org/10.1515/9783111330563-004"
+   }
+  ]
+ },
+ {
+  "id": "soc-106",
+  "cat": "belief",
+  "text": "산골 출신 행상이 짐 상자를 열었다. 성화, 노래책, 바늘과 연감이 쏟아져 나왔다.",
+  "fx": {
+   "soc": 1,
+   "money": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 행상은 연감·성인전·노래책을 농촌 깊숙이 유통시킨 주요 경로였다.",
+  "src": [
+   {
+    "cite": "Geneviève Bollème (1965), 「Littérature populaire et littérature de colportage au 18e siècle」, in Livre et société dans la France du XVIIIe siècle, Mouton: 61-92",
+    "url": "https://doi.org/10.1515/9783111330563-004"
+   }
+  ]
+ },
+ {
+  "id": "soc-107",
+  "cat": "belief",
+  "text": "혜성이 보이자 노인들이 전쟁이나 흉년의 징조라고 수군댔다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "연감은 천문 현상을 징조로 풀이하는 예언 기사를 꾸준히 실었다.",
+  "src": [
+   {
+    "cite": "Geneviève Bollème (1965), 「Littérature populaire et littérature de colportage au 18e siècle」, in Livre et société dans la France du XVIIIe siècle, Mouton: 61-92",
+    "url": "https://doi.org/10.1515/9783111330563-004"
+   },
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-108",
+  "cat": "belief",
+  "text": "인쇄소 견습공들이 주인 마님의 고양이를 '재판'해 매달고 웃어 댔다.",
+  "fx": {
+   "soc": 1,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1770
+  },
+  "who": {
+   "urban": true,
+   "estate": [
+    "artisan"
+   ],
+   "age": [
+    14,
+    25
+   ]
+  },
+  "w": 0.5,
+  "once": true,
+  "fact": "단턴은 1730년대 파리 생세브랭 거리 인쇄소의 '고양이 대학살'을 장인 세계의 상징적 반란으로 해석했다.",
+  "src": [
+   {
+    "cite": "Robert Darnton (1998), 「Workers Revolt: The Great Cat Massacre of the Rue Saint-Séverin」, in Rethinking Popular Culture, University of California Press: 97-120",
+    "url": "https://doi.org/10.1525/9780520354647-004"
+   }
+  ]
+ },
+ {
+  "id": "soc-109",
+  "cat": "belief",
+  "text": "두 식구가 나간 뒤 집에 흰 새가 날아들자 어머니가 죽음의 전조라며 성수를 뿌렸다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 농민의 죽음 전조 믿음은 데블린의 민속 자료 분석에서 두드러진다.",
+  "src": [
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   }
+  ]
+ },
+ {
+  "id": "soc-110",
+  "cat": "belief",
+  "text": "수확 축제 밤에 마지막 볏단으로 인형을 만들어 집에 걸었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    8
+   ]
+  },
+  "who": {
+   "job": [
+    "farm"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "버크는 수확 의례를 근대 초 유럽 농촌 달력 축제의 대표로 꼽았다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-111",
+  "cat": "crime",
+  "text": "장터에서 소매치기가 지갑을 털어 갔다. 경비대에 신고했지만 돌아온 것은 없었다.",
+  "fx": {
+   "money": -15
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 노르망디 바야주 연구는 범죄 구성이 폭력에서 절도 중심으로 옮겨 갔음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Gégot (1966), 「Étude par sondage de la criminalité dans le bailliage de Falaise (XVIIe-XVIIIe siècles)」, Annales de Normandie 16(2): 103-164",
+    "url": "https://doi.org/10.3406/annor.1966.4606"
+   },
+   {
+    "cite": "Bernadette Boutelet (1962), 「Étude par sondage de la criminalité dans le bailliage du Pont-de-l'Arche (XVIIe-XVIIIe siècles)」, Annales de Normandie 12(4): 235-262",
+    "url": "https://doi.org/10.3406/annor.1962.4517"
+   }
+  ]
+ },
+ {
+  "id": "soc-112",
+  "cat": "crime",
+  "text": "헛간에서 밀 자루가 사라졌다. 떠돌이 품팔이꾼이 의심받아 붙잡혔다.",
+  "fx": {
+   "money": -10,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "캐머런은 오베르뉴·기엔 판결에서 절도 피고 다수가 떠돌이·빈민이었음을 밝혔다.",
+  "src": [
+   {
+    "cite": "Iain A. Cameron (1981), 「Theft」, in Crime and Repression in the Auvergne and the Guyenne, 1720-1790, Cambridge University Press: 179-190",
+    "url": "https://doi.org/10.1017/cbo9780511896163.008"
+   },
+   {
+    "cite": "Nicole Dyonet (2001), 「La maréchaussée et la population mobile dans l'Orléanais au XVIIIe siècle」, in Police et migrants, Presses universitaires de Rennes: 51-62",
+    "url": "https://doi.org/10.4000/books.pur.21037"
+   }
+  ]
+ },
+ {
+  "id": "soc-113",
+  "cat": "crime",
+  "text": "주일 미사 뒤 두 집안이 경계석 문제로 몽둥이를 휘둘렀다.",
+  "fx": {
+   "hp": -3,
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false,
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "팔레즈 바야주 연구에서 17세기 말까지는 상해·폭행이 범죄의 큰 비중을 차지했다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Gégot (1966), 「Étude par sondage de la criminalité dans le bailliage de Falaise (XVIIe-XVIIIe siècles)」, Annales de Normandie 16(2): 103-164",
+    "url": "https://doi.org/10.3406/annor.1966.4606"
+   },
+   {
+    "cite": "Robert Muchembled (1989), La violence au village. Sociabilité et comportements populaires en Artois du XVe au XVIIe siècle, Brepols",
+    "url": "https://doi.org/10.1484/m.viso-eb.5.112382"
+   }
+  ]
+ },
+ {
+  "id": "soc-114",
+  "cat": "crime",
+  "text": "하녀가 주인집 은수저를 훔친 혐의로 체포되었다. 하인 절도는 사형까지 갈 수 있다고들 했다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "구체제에서 가내 절도(vol domestique)는 원칙상 사형에 처할 수 있는 중죄였다.",
+  "src": [
+   {
+    "cite": "Iain A. Cameron (1981), 「Theft」, in Crime and Repression in the Auvergne and the Guyenne, 1720-1790, Cambridge University Press: 179-190",
+    "url": "https://doi.org/10.1017/cbo9780511896163.008"
+   },
+   {
+    "cite": "Castan (1979), 「Une justice à l'épreuve : crime et justice en Languedoc (1750-1790)」, Annales historiques de la Révolution française 238: 654-660",
+    "url": "https://doi.org/10.3406/ahrf.1979.4364"
+   }
+  ]
+ },
+ {
+  "id": "soc-115",
+  "cat": "crime",
+  "text": "앙주의 재판소 앞에 형벌 공고가 붙었다. 대부분 절도였고 낙인과 추방이 내려졌다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "nantes",
+    "vendee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 앙주 형사 재판에서 재산 범죄가 다수였고, 태형·낙인·추방이 흔한 형벌이었다.",
+  "src": [
+   {
+    "cite": "Benoît Garnot (1981), 「Délits et châtiments en Anjou au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 88(3): 283-304",
+    "url": "https://doi.org/10.3406/abpo.1981.3052"
+   }
+  ]
+ },
+ {
+  "id": "soc-116",
+  "cat": "crime",
+  "text": "랑그독 재판소가 범인 대신 이웃끼리 합의하라고 권했다. 소송비가 무서웠다.",
+  "fx": {
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "languedoc"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "카스탕은 1750~1790년 랑그독에서 상당수 분쟁이 공식 재판 밖 중재로 해결되었다고 보았다.",
+  "src": [
+   {
+    "cite": "Castan (1979), 「Une justice à l'épreuve : crime et justice en Languedoc (1750-1790)」, Annales historiques de la Révolution française 238: 654-660",
+    "url": "https://doi.org/10.3406/ahrf.1979.4364"
+   }
+  ]
+ },
+ {
+  "id": "soc-117",
+  "cat": "crime",
+  "text": "순찰 기마경찰대가 마을에 들러 떠돌이와 부랑자를 붙잡아 갔다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 2,
+  "once": false,
+  "fact": "1720년 개혁 이후 마레쇼세는 소규모 기마 분대로 전국 도로와 농촌을 순찰했다.",
+  "src": [
+   {
+    "cite": "Martin (1980), 「La maréchaussée au XVIIIe siècle. Les hommes et l'institution en Auvergne」, Annales historiques de la Révolution française 239: 91-117",
+    "url": "https://doi.org/10.3406/ahrf.1980.4195"
+   },
+   {
+    "cite": "Nicole Dyonet (2001), 「La maréchaussée et la population mobile dans l'Orléanais au XVIIIe siècle」, in Police et migrants, Presses universitaires de Rennes: 51-62",
+    "url": "https://doi.org/10.4000/books.pur.21037"
+   }
+  ]
+ },
+ {
+  "id": "soc-118",
+  "cat": "crime",
+  "text": "기마경찰대원은 퇴역 군인이었다. 주점에서 그가 들려주는 무용담을 들었다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "urban": false,
+   "sex": "M"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "오베르뉴 마레쇼세 대원 다수는 군 경력이 있는 퇴역병이었다.",
+  "src": [
+   {
+    "cite": "Martin (1980), 「La maréchaussée au XVIIIe siècle. Les hommes et l'institution en Auvergne」, Annales historiques de la Révolution française 239: 91-117",
+    "url": "https://doi.org/10.3406/ahrf.1980.4195"
+   }
+  ]
+ },
+ {
+  "id": "soc-119",
+  "cat": "crime",
+  "text": "오를레앙 길목에서 기마경찰대가 통행증을 검사했다. 서류 없는 사람은 구금되었다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "ile",
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "마레쇼세는 이동 인구 통제를 핵심 임무로 삼아 통행증·신원을 검사했다.",
+  "src": [
+   {
+    "cite": "Nicole Dyonet (2001), 「La maréchaussée et la population mobile dans l'Orléanais au XVIIIe siècle」, in Police et migrants, Presses universitaires de Rennes: 51-62",
+    "url": "https://doi.org/10.4000/books.pur.21037"
+   }
+  ]
+ },
+ {
+  "id": "soc-120",
+  "cat": "crime",
+  "text": "새 군경찰대(장다르므리)가 마을에 주둔하게 되었다. 삼색 휘장이 낯설었다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1800
+  },
+  "w": 1,
+  "once": true,
+  "fact": "마레쇼세는 1791년 2월 국가 장다르므리로 개편되었다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Farcy (2001), 「La gendarmerie, police judiciaire au XIXe siècle」, Histoire, économie et société 20(3): 385-403",
+    "url": "https://doi.org/10.3406/hes.2001.2234"
+   },
+   {
+    "cite": "Martin (1980), 「La maréchaussée au XVIIIe siècle. Les hommes et l'institution en Auvergne」, Annales historiques de la Révolution française 239: 91-117",
+    "url": "https://doi.org/10.3406/ahrf.1980.4195"
+   }
+  ]
+ },
+ {
+  "id": "soc-121",
+  "cat": "crime",
+  "text": "장다르므리가 징집 기피자를 찾으러 마을을 뒤졌다. 사람들이 산으로 숨었다.",
+  "fx": {
+   "sus": 2,
+   "pol": -1
+  },
+  "when": {
+   "from": 1798,
+   "to": 1814
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    18,
+    30
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "제정기 장다르므리는 징집 기피자 추적을 주 업무로 삼았다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Farcy (2001), 「La gendarmerie, police judiciaire au XIXe siècle」, Histoire, économie et société 20(3): 385-403",
+    "url": "https://doi.org/10.3406/hes.2001.2234"
+   },
+   {
+    "cite": "Aurélien Lignereux (2003), 「Rosser le gendarme dans les spectacles de marionnettes au XIXe siècle : une école de rébellion ?」, Sociétés & Représentations 16: 95-113",
+    "url": "https://doi.org/10.3917/sr.016.0095"
+   }
+  ]
+ },
+ {
+  "id": "soc-122",
+  "cat": "crime",
+  "text": "장날 인형극에서 꼭두각시가 군경찰을 몽둥이로 때리자 구경꾼들이 환호했다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1815,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 인형극은 군경찰을 두들기는 장면으로 관객의 반감을 표출했다.",
+  "src": [
+   {
+    "cite": "Aurélien Lignereux (2003), 「Rosser le gendarme dans les spectacles de marionnettes au XIXe siècle : une école de rébellion ?」, Sociétés & Représentations 16: 95-113",
+    "url": "https://doi.org/10.3917/sr.016.0095"
+   }
+  ]
+ },
+ {
+  "id": "soc-123",
+  "cat": "crime",
+  "text": "군경찰이 예심 판사 명령으로 이웃집을 수색했다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1811,
+   "to": 1850
+  },
+  "w": 1,
+  "once": false,
+  "fact": "19세기 장다르므리는 사법 경찰로서 수사·체포의 상당 부분을 맡았다.",
+  "src": [
+   {
+    "cite": "Jean-Claude Farcy (2001), 「La gendarmerie, police judiciaire au XIXe siècle」, Histoire, économie et société 20(3): 385-403",
+    "url": "https://doi.org/10.3406/hes.2001.2234"
+   }
+  ]
+ },
+ {
+  "id": "soc-124",
+  "cat": "crime",
+  "text": "그레브 광장에서 처형이 있다는 말에 군중이 몰려갔다. 사형수가 수레바퀴에 묶였다.",
+  "fx": {
+   "sus": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "수레바퀴형 등 공개 처형은 구체제 형벌의 공적 연극이었고, 1791년 형법으로 폐지되었다.",
+  "src": [
+   {
+    "cite": "Michel Bée (1983), 「Le spectacle de l'exécution dans la France d'Ancien Régime」, Annales ESC 38(4): 843-862",
+    "url": "https://doi.org/10.3406/ahess.1983.410964"
+   }
+  ]
+ },
+ {
+  "id": "soc-125",
+  "cat": "crime",
+  "text": "사형 집행 전 사형수가 성당 앞에서 촛불을 들고 공개 사죄를 했다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "공개 사죄(amende honorable)는 구체제 처형 의례의 일부였다.",
+  "src": [
+   {
+    "cite": "Michel Bée (1983), 「Le spectacle de l'exécution dans la France d'Ancien Régime」, Annales ESC 38(4): 843-862",
+    "url": "https://doi.org/10.3406/ahess.1983.410964"
+   }
+  ]
+ },
+ {
+  "id": "soc-126",
+  "cat": "crime",
+  "text": "광장에 기요틴이 세워졌다. 칼날이 떨어지는 소리가 생각보다 짧았다.",
+  "fx": {
+   "hp": -1,
+   "pol": 1
+  },
+  "when": {
+   "from": 1792,
+   "to": 1850
+  },
+  "who": {
+   "urban": true
+  },
+  "w": 1,
+  "once": false,
+  "fact": "기요틴은 1792년 4월 25일 처음 사용되었고, 모든 사형수에게 같은 방식의 처형을 적용했다.",
+  "src": [
+   {
+    "cite": "Michel Bée (1983), 「Le spectacle de l'exécution dans la France d'Ancien Régime」, Annales ESC 38(4): 843-862",
+    "url": "https://doi.org/10.3406/ahess.1983.410964"
+   }
+  ]
+ },
+ {
+  "id": "soc-127",
+  "cat": "crime",
+  "text": "이웃 청년이 소금 밀수로 잡혀 갤리선 노역형을 받았다. 쇠사슬에 묶여 마르세유로 끌려갔다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "normandie",
+    "vendee",
+    "nantes"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 중엽 갤리 수형자 가운데 소금·담배 밀수꾼이 큰 비중을 차지했다.",
+  "src": [
+   {
+    "cite": "André Zysberg (1975), 「La société des galériens au milieu du XVIIIe siècle」, Annales ESC 30(1): 43-65",
+    "url": "https://doi.org/10.3406/ahess.1975.293587"
+   },
+   {
+    "cite": "Huvet-Martinet (1978), 「Faux-saunage et faux-sauniers dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 85(3): 377-400",
+    "url": "https://doi.org/10.3406/abpo.1978.2945"
+   }
+  ]
+ },
+ {
+  "id": "soc-128",
+  "cat": "crime",
+  "text": "도형수 행렬(쇠사슬 행렬)이 마을을 지나갔다. 아이들이 돌을 던지고 여자들은 빵을 건넸다.",
+  "when": {
+   "from": 1750,
+   "to": 1836
+  },
+  "w": 1,
+  "once": false,
+  "fact": "갤리선 폐지(1748) 뒤 수형자는 툴롱·브레스트·로슈포르 육상 도형장(bagne)으로 쇠사슬 행렬을 지어 이송되었다.",
+  "src": [
+   {
+    "cite": "André Zysberg (1975), 「La société des galériens au milieu du XVIIIe siècle」, Annales ESC 30(1): 43-65",
+    "url": "https://doi.org/10.3406/ahess.1975.293587"
+   },
+   {
+    "cite": "Joannic-Seta (2000), 「… Aux forçats」, in Le bagne de Brest, Presses universitaires de Rennes: 251-272",
+    "url": "https://doi.org/10.4000/books.pur.17270"
+   }
+  ]
+ },
+ {
+  "id": "soc-129",
+  "cat": "crime",
+  "text": "브레스트 도형장 노역장에서 붉은 옷을 입은 도형수들이 쇠사슬을 끌며 일했다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "브레스트 도형장은 1749년 문을 열어 해군 공창 노역에 수형자를 동원했다.",
+  "src": [
+   {
+    "cite": "Joannic-Seta (2000), 「… Aux forçats」, in Le bagne de Brest, Presses universitaires de Rennes: 251-272",
+    "url": "https://doi.org/10.4000/books.pur.17270"
+   }
+  ]
+ },
+ {
+  "id": "soc-130",
+  "cat": "crime",
+  "text": "툴롱 도형장에서 형기를 마친 사람이 노란 통행증을 들고 돌아왔다. 아무도 일을 주지 않았다.",
+  "fx": {
+   "soc": -2
+  },
+  "when": {
+   "from": 1800,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "provence",
+    "marseille"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "툴롱 도형장은 1850년대 유형제로 바뀌기 전까지 프랑스 최대 도형장이었다.",
+  "src": [
+   {
+    "cite": "Louis-José Barbançon (2003), 「Du bagne de Toulon au voyage de l'Iphigénie」, in L'Archipel des forçats, Presses universitaires du Septentrion: 97-137",
+    "url": "https://doi.org/10.4000/books.septentrion.54812"
+   }
+  ]
+ },
+ {
+  "id": "soc-131",
+  "cat": "crime",
+  "text": "해안 세관선을 피해 밤에 소금을 지고 산길을 넘었다. 한 자루로 한 달 빵값을 벌었다.",
+  "fx": {
+   "money": 40,
+   "sus": 3
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "vendee",
+    "nantes",
+    "normandie"
+   ],
+   "estate": [
+    "peasant"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "면세 지역 브르타뉴와 대가벨 지역 사이의 가격 차가 1764~1789년 서부 소금 밀수를 키웠다.",
+  "src": [
+   {
+    "cite": "Huvet-Martinet (1978), 「Faux-saunage et faux-sauniers dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 85(3): 377-400",
+    "url": "https://doi.org/10.3406/abpo.1978.2945"
+   }
+  ]
+ },
+ {
+  "id": "soc-132",
+  "cat": "crime",
+  "text": "소금 밀수에 나섰던 여자들과 아이들이 염세 단속반에 붙잡혔다.",
+  "fx": {
+   "sus": 2
+  },
+  "when": {
+   "from": 1764,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "vendee",
+    "normandie"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "위베마르티네는 서부·중부 소금 밀수에 여성과 아동이 대거 참여했음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Huvet-Martinet (1978), 「Faux-saunage et faux-sauniers dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 85(3): 377-400",
+    "url": "https://doi.org/10.3406/abpo.1978.2945"
+   }
+  ]
+ },
+ {
+  "id": "soc-133",
+  "cat": "crime",
+  "text": "염세가 폐지되었다는 소식에 사람들이 소금 창고 앞에서 춤을 추었다.",
+  "fx": {
+   "money": 10,
+   "pol": 2
+  },
+  "when": {
+   "from": 1790,
+   "to": 1790
+  },
+  "w": 1,
+  "once": true,
+  "fact": "가벨(염세)은 1790년 3월 폐지되었다.",
+  "src": [
+   {
+    "cite": "Huvet-Martinet (1978), 「Faux-saunage et faux-sauniers dans la France de l'Ouest et du Centre à la fin de l'Ancien Régime (1764-1789)」, Annales de Bretagne et des pays de l'Ouest 85(3): 377-400",
+    "url": "https://doi.org/10.3406/abpo.1978.2945"
+   }
+  ]
+ },
+ {
+  "id": "soc-134",
+  "cat": "crime",
+  "text": "망드랭 일당이 장터에서 밀수 담배를 공개적으로 팔았다. 사람들은 징세청부인보다 그를 반겼다.",
+  "fx": {
+   "pol": 1,
+   "money": -5
+  },
+  "when": {
+   "from": 1754,
+   "to": 1755
+  },
+  "who": {
+   "region": [
+    "auvergne",
+    "lyon",
+    "bourgogne"
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "망드랭은 1754년 여러 차례 무장 원정으로 밀수 담배를 팔고, 1755년 5월 발랑스에서 수레바퀴형에 처해졌다.",
+  "src": [
+   {
+    "cite": "Michael Kwass (2014), 「The Execution of Louis Mandrin」, in Contraband: Louis Mandrin and the Making of a Global Underground, Harvard University Press: 217-251",
+    "url": "https://doi.org/10.4159/harvard.9780674369634.c11"
+   },
+   {
+    "cite": "Sylvie Mouysset (2013), 「Mandrin au miroir des écrits de son temps : intrépide contrebandier ou brigand scélérat ?」, in Les brigands, Presses universitaires de Rennes: 19-34",
+    "url": "https://doi.org/10.4000/books.pur.118518"
+   }
+  ]
+ },
+ {
+  "id": "soc-135",
+  "cat": "crime",
+  "text": "망드랭의 처형을 노래한 애가를 행상이 팔았다. 사람들은 그를 의적으로 기억했다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1755,
+   "to": 1800
+  },
+  "who": {
+   "region": [
+    "auvergne",
+    "lyon",
+    "bourgogne",
+    "provence"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "망드랭은 동시대 인쇄물에서 대담한 밀수꾼과 흉악한 도적이라는 상반된 이미지로 그려졌다.",
+  "src": [
+   {
+    "cite": "Sylvie Mouysset (2013), 「Mandrin au miroir des écrits de son temps : intrépide contrebandier ou brigand scélérat ?」, in Les brigands, Presses universitaires de Rennes: 19-34",
+    "url": "https://doi.org/10.4000/books.pur.118518"
+   },
+   {
+    "cite": "Michael Kwass (2014), 「The Execution of Louis Mandrin」, in Contraband: Louis Mandrin and the Making of a Global Underground, Harvard University Press: 217-251",
+    "url": "https://doi.org/10.4159/harvard.9780674369634.c11"
+   }
+  ]
+ },
+ {
+  "id": "soc-136",
+  "cat": "crime",
+  "text": "노인들이 카르투슈 이야기를 했다. 파리가 '숲 같았던' 시절 그의 일당이 밤거리를 지배했다고.",
+  "when": {
+   "from": 1750,
+   "to": 1790
+  },
+  "who": {
+   "region": [
+    "paris",
+    "ile"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "카르투슈는 1721년 11월 그레브 광장에서 수레바퀴형으로 처형되었다.",
+  "src": [
+   {
+    "cite": "Patrice Peveri (1997), 「« Cette ville était alors comme un bois... ». Criminalité et opinion publique à Paris dans les années qui précèdent l'affaire Cartouche」, Crime, Histoire & Sociétés 1(2): 51-73",
+    "url": "https://doi.org/10.4000/chs.1010"
+   }
+  ]
+ },
+ {
+  "id": "soc-137",
+  "cat": "crime",
+  "text": "총재정부기 밤에 '화부' 일당이 농가를 습격해 발을 불에 지져 돈 숨긴 곳을 캤다는 소문이 돌았다.",
+  "fx": {
+   "sus": 1,
+   "hp": -1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1802
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "총재정부기(1795~1799) 오르제르 등 '화부(chauffeurs)' 강도단이 농촌을 공포에 떨게 했다.",
+  "src": [
+   {
+    "cite": "Stephen Clay (2001), 「Le brigandage en Provence du Directoire au Consulat (1795-1802)」, in Du Directoire au Consulat 3, IRHiS: 67-89",
+    "url": "https://doi.org/10.4000/books.irhis.2616"
+   },
+   {
+    "cite": "Jean-Claude Farcy (2001), 「La gendarmerie, police judiciaire au XIXe siècle」, Histoire, économie et société 20(3): 385-403",
+    "url": "https://doi.org/10.3406/hes.2001.2234"
+   }
+  ]
+ },
+ {
+  "id": "soc-138",
+  "cat": "crime",
+  "text": "프로방스 산길에서 승합마차가 강도에게 털렸다. 왕당파라고 자칭했다.",
+  "fx": {
+   "money": -30,
+   "sus": 1
+  },
+  "when": {
+   "from": 1795,
+   "to": 1802
+  },
+  "who": {
+   "region": [
+    "provence",
+    "marseille"
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1795~1802년 프로방스 강도질은 왕당파 백색 테러와 얽혀 있었다.",
+  "src": [
+   {
+    "cite": "Stephen Clay (2001), 「Le brigandage en Provence du Directoire au Consulat (1795-1802)」, in Du Directoire au Consulat 3, IRHiS: 67-89",
+    "url": "https://doi.org/10.4000/books.irhis.2616"
+   }
+  ]
+ },
+ {
+  "id": "soc-139",
+  "cat": "crime",
+  "text": "아버지가 방탕한 아들을 감금해 달라고 왕의 봉인장을 청원했다.",
+  "fx": {
+   "sus": 2,
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "bourgeois",
+    "hobereau",
+    "robe",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 봉인장 다수는 가족이 명예를 지키려 요청한 '가족 봉인장'이었다.",
+  "src": [
+   {
+    "cite": "Claude Quétel (1978), 「Lettres de cachet et correctionnaires dans la généralité de Caen au XVIIIe siècle」, Annales de Normandie 28(2): 127-159",
+    "url": "https://doi.org/10.3406/annor.1978.6337"
+   },
+   {
+    "cite": "Jandeaux (2017), 「La procédure des lettres de cachet de famille」, in Le roi et le déshonneur des familles, École des chartes: 99-152",
+    "url": "https://doi.org/10.4000/books.enc.13312"
+   }
+  ]
+ },
+ {
+  "id": "soc-140",
+  "cat": "crime",
+  "text": "봉인장으로 수도원 감화원에 갇힌 사촌이 편지를 보내 꺼내 달라고 빌었다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "normandie",
+    "rouen"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "캉 징세구에서는 봉인장으로 감화원에 수용된 이들이 18세기 후반 크게 늘었다.",
+  "src": [
+   {
+    "cite": "Claude Quétel (1978), 「Lettres de cachet et correctionnaires dans la généralité de Caen au XVIIIe siècle」, Annales de Normandie 28(2): 127-159",
+    "url": "https://doi.org/10.3406/annor.1978.6337"
+   }
+  ]
+ },
+ {
+  "id": "soc-141",
+  "cat": "crime",
+  "text": "봉인장이 폐지되었다는 소식에 감금되었던 이웃이 집으로 돌아왔다.",
+  "fx": {
+   "pol": 1
+  },
+  "when": {
+   "from": 1790,
+   "to": 1790
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "국민의회는 1790년 3월 봉인장을 폐지했다.",
+  "src": [
+   {
+    "cite": "Jandeaux (2017), 「La procédure des lettres de cachet de famille」, in Le roi et le déshonneur des familles, École des chartes: 99-152",
+    "url": "https://doi.org/10.4000/books.enc.13312"
+   },
+   {
+    "cite": "Claude Quétel (1978), 「Lettres de cachet et correctionnaires dans la généralité de Caen au XVIIIe siècle」, Annales de Normandie 28(2): 127-159",
+    "url": "https://doi.org/10.3406/annor.1978.6337"
+   }
+  ]
+ },
+ {
+  "id": "soc-142",
+  "cat": "crime",
+  "text": "미혼 하녀가 임신 신고를 하러 판사 앞에 섰다. 아이 아버지 이름을 대야 했다.",
+  "fx": {
+   "sus": 2,
+   "fame": -2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1791
+  },
+  "who": {
+   "sex": "F",
+   "married": false,
+   "age": [
+    16,
+    40
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1556년 칙령 이래 미혼 임신 여성은 임신 신고 의무가 있었고, 숨긴 채 아이가 죽으면 영아살해로 추정되었다.",
+  "src": [
+   {
+    "cite": "Marie-Claude Phan (1975), 「Les déclarations de grossesse en France (XVIe-XVIIIe siècles) : essai institutionnel」, Revue d'histoire moderne et contemporaine 22(1): 61-88",
+    "url": "https://doi.org/10.3406/rhmc.1975.2318"
+   }
+  ]
+ },
+ {
+  "id": "soc-143",
+  "cat": "crime",
+  "text": "마을 연못에서 갓난아이 시신이 발견되었다. 몇 주 전 배가 불렀던 하녀가 체포되었다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "브르타뉴에서만 1825~1865년 약 600건의 영아살해가 재판에 회부되었다.",
+  "src": [
+   {
+    "cite": "Annick Tillier (2001), Des criminelles au village. Femmes infanticides en Bretagne (1825-1865), Presses universitaires de Rennes",
+    "url": "https://doi.org/10.4000/books.pur.17449"
+   },
+   {
+    "cite": "Marie-Claude Phan (1975), 「Les déclarations de grossesse en France (XVIe-XVIIIe siècles) : essai institutionnel」, Revue d'histoire moderne et contemporaine 22(1): 61-88",
+    "url": "https://doi.org/10.3406/rhmc.1975.2318"
+   }
+  ]
+ },
+ {
+  "id": "soc-144",
+  "cat": "crime",
+  "text": "영아살해로 기소된 여자가 중죄재판소에서 무죄로 풀려났다. 배심원들이 그녀를 불쌍히 여겼다.",
+  "when": {
+   "from": 1811,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "bretagne"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "1810년 형법은 영아살해를 사형으로 다스렸지만, 배심원들은 자주 무죄나 감경을 택했다.",
+  "src": [
+   {
+    "cite": "Annick Tillier (2001), Des criminelles au village. Femmes infanticides en Bretagne (1825-1865), Presses universitaires de Rennes",
+    "url": "https://doi.org/10.4000/books.pur.17449"
+   }
+  ]
+ },
+ {
+  "id": "soc-145",
+  "cat": "crime",
+  "text": "영주 숲에서 토끼 덫을 놓다 사냥터지기에게 들켰다. 벌금과 매질이 따랐다.",
+  "fx": {
+   "sus": 2,
+   "money": -20
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "sex": "M"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "구체제에서 사냥권은 영주의 특권이었고 밀렵은 무거운 벌금과 체형으로 처벌되었다.",
+  "src": [
+   {
+    "cite": "Maroteaux (1986), 「Gardes forestiers et gardes-chasse du roi à Versailles : approche d'un milieu social」, Revue forestière française 6: 573",
+    "url": "https://doi.org/10.4267/2042/25691"
+   },
+   {
+    "cite": "Benoît Garnot (1981), 「Délits et châtiments en Anjou au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 88(3): 283-304",
+    "url": "https://doi.org/10.3406/abpo.1981.3052"
+   }
+  ]
+ },
+ {
+  "id": "soc-146",
+  "cat": "crime",
+  "text": "사냥권 폐지 뒤 너도나도 총을 들고 들판에 나가 토끼와 비둘기를 잡았다.",
+  "fx": {
+   "money": 5,
+   "pol": 1
+  },
+  "when": {
+   "from": 1789,
+   "to": 1790,
+   "months": [
+    8,
+    9,
+    10
+   ]
+  },
+  "who": {
+   "estate": [
+    "peasant"
+   ],
+   "sex": "M"
+  },
+  "w": 1,
+  "once": true,
+  "fact": "1789년 8월 4일 밤 결의로 영주의 배타적 사냥권과 비둘기장 특권이 폐지되었다.",
+  "src": [
+   {
+    "cite": "Maroteaux (1986), 「Gardes forestiers et gardes-chasse du roi à Versailles : approche d'un milieu social」, Revue forestière française 6: 573",
+    "url": "https://doi.org/10.4267/2042/25691"
+   }
+  ]
+ },
+ {
+  "id": "soc-147",
+  "cat": "crime",
+  "text": "사냥 허가증 없이 총을 들고 나갔다가 산림 감시인에게 조서를 받았다.",
+  "fx": {
+   "sus": 1,
+   "money": -15
+  },
+  "when": {
+   "from": 1844,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "1844년 수렵법은 허가증 제도를 도입해 무허가 사냥을 경범죄로 처벌했다.",
+  "src": [
+   {
+    "cite": "Rausch (2013), 「Aspects de l'organisation de la chasse dans les Alpes-Maritimes au XIXe siècle」, Provence historique 63(251): 73-85",
+    "url": "https://doi.org/10.3406/prohi.2013.1782"
+   }
+  ]
+ },
+ {
+  "id": "soc-148",
+  "cat": "crime",
+  "text": "왕의 사냥터 감시인과 마주쳤다. 그들은 밀렵꾼을 잡으면 상여금을 받는다고 했다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "ile",
+    "paris"
+   ]
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "베르사유 왕실 사냥터지기는 밀렵 단속을 맡은 별도의 직업 집단이었다.",
+  "src": [
+   {
+    "cite": "Maroteaux (1986), 「Gardes forestiers et gardes-chasse du roi à Versailles : approche d'un milieu social」, Revue forestière française 6: 573",
+    "url": "https://doi.org/10.4267/2042/25691"
+   }
+  ]
+ },
+ {
+  "id": "soc-149",
+  "cat": "crime",
+  "text": "파리 경찰 끄나풀이 주점에서 왕을 욕한 사람의 말을 적어 갔다는 소문이 돌았다.",
+  "fx": {
+   "sus": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "18세기 파리 경찰은 정보원 망을 운영해 술집과 거리의 말을 감시했다.",
+  "src": [
+   {
+    "cite": "Patrice Peveri (1997), 「« Cette ville était alors comme un bois... ». Criminalité et opinion publique à Paris dans les années qui précèdent l'affaire Cartouche」, Crime, Histoire & Sociétés 1(2): 51-73",
+    "url": "https://doi.org/10.4000/chs.1010"
+   },
+   {
+    "cite": "Thomas Brennan (1988), Public Drinking and Popular Culture in Eighteenth-Century Paris, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400859184"
+   }
+  ]
+ },
+ {
+  "id": "soc-150",
+  "cat": "crime",
+  "text": "카르투슈 시절을 기억하는 경찰관이 요즘 파리는 훨씬 안전하다고 했다.",
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "paris"
+   ],
+   "job": [
+    "law"
+   ]
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "페베리는 1720년 전후 파리 범죄 공포가 여론과 경찰 개혁을 자극했다고 분석했다.",
+  "src": [
+   {
+    "cite": "Patrice Peveri (1997), 「« Cette ville était alors comme un bois... ». Criminalité et opinion publique à Paris dans les années qui précèdent l'affaire Cartouche」, Crime, Histoire & Sociétés 1(2): 51-73",
+    "url": "https://doi.org/10.4000/chs.1010"
+   }
+  ]
+ },
+ {
+  "id": "soc-151",
+  "cat": "crime",
+  "text": "절도죄로 낙인찍힌 남자가 이웃 마을로 추방되어 왔다. 어깨의 'V' 자를 다들 수군댔다.",
+  "fx": {
+   "soc": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "w": 1,
+  "once": false,
+  "fact": "구체제 절도범에게는 낙인(V는 voleur)과 추방형이 흔했다.",
+  "src": [
+   {
+    "cite": "Benoît Garnot (1981), 「Délits et châtiments en Anjou au XVIIIe siècle」, Annales de Bretagne et des pays de l'Ouest 88(3): 283-304",
+    "url": "https://doi.org/10.3406/abpo.1981.3052"
+   },
+   {
+    "cite": "Castan (1979), 「Une justice à l'épreuve : crime et justice en Languedoc (1750-1790)」, Annales historiques de la Révolution française 238: 654-660",
+    "url": "https://doi.org/10.3406/ahrf.1979.4364"
+   }
+  ]
+ },
+ {
+  "id": "soc-152",
+  "cat": "crime",
+  "text": "마을 처녀가 흉기에 다쳤는데 가해자 가족이 돈을 주고 합의했다.",
+  "fx": {
+   "money": 5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "랑그독 등지에서는 상해 사건도 공식 처벌 대신 배상 합의로 끝나는 일이 많았다.",
+  "src": [
+   {
+    "cite": "Castan (1979), 「Une justice à l'épreuve : crime et justice en Languedoc (1750-1790)」, Annales historiques de la Révolution française 238: 654-660",
+    "url": "https://doi.org/10.3406/ahrf.1979.4364"
+   },
+   {
+    "cite": "Robert Muchembled (1989), La violence au village. Sociabilité et comportements populaires en Artois du XVe au XVIIe siècle, Brepols",
+    "url": "https://doi.org/10.1484/m.viso-eb.5.112382"
+   }
+  ]
+ },
+ {
+  "id": "soc-153",
+  "cat": "crime",
+  "text": "남부 시골 재판소에서 명예훼손 소송이 열렸다. '도둑년'이라는 말 한마디가 원인이었다.",
+  "fx": {
+   "fame": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "languedoc",
+    "gascogne"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "카스탕 등의 연구는 18세기 랑그독 소송에서 명예·체면(honnêteté)이 핵심 쟁점이었음을 보여 준다.",
+  "src": [
+   {
+    "cite": "Castan (1979), 「Une justice à l'épreuve : crime et justice en Languedoc (1750-1790)」, Annales historiques de la Révolution française 238: 654-660",
+    "url": "https://doi.org/10.3406/ahrf.1979.4364"
+   },
+   {
+    "cite": "Castan (1981), 「Contentieux social et utilisation variable du charivari à la fin de l'Ancien Régime en Languedoc」, in J. Le Goff & J.-C. Schmitt (dir.), Le charivari, Mouton/EHESS: 197-206",
+    "url": "https://doi.org/10.1515/9783110823097-018"
+   }
+  ]
+ },
+ {
+  "id": "soc-154",
+  "cat": "religion",
+  "text": "주교의 사목 방문이 있었다. 견진성사를 받으려 마을 아이들이 줄을 섰다.",
+  "fx": {
+   "faith": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "age": [
+    7,
+    16
+   ]
+  },
+  "w": 1.5,
+  "once": true,
+  "fact": "투르 교구 사목 방문 기록은 18세기 견진·교리 교육을 감독하는 주요 수단이었다.",
+  "src": [
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   }
+  ]
+ },
+ {
+  "id": "soc-155",
+  "cat": "religion",
+  "text": "교리문답 시간에 신부가 질문하자 아이들이 외운 답을 줄줄 읊었다.",
+  "fx": {
+   "edu": 1,
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "age": [
+    7,
+    13
+   ]
+  },
+  "w": 2,
+  "once": false,
+  "fact": "18세기 교구 사목은 교리문답 교육을 통해 신자의 종교 지식을 표준화했다.",
+  "src": [
+   {
+    "cite": "Brigitte Maillard (2003), 「Méthodes et pratiques pastorales dans les campagnes du diocèse de Tours au XVIIIe siècle」, in Vivre en Touraine au XVIIIe siècle, Presses universitaires de Rennes: 419-429",
+    "url": "https://doi.org/10.4000/books.pur.9272"
+   },
+   {
+    "cite": "Timothy Tackett & Claude Langlois (1980), 「Ecclesiastical Structures and Clerical Geography on the Eve of the French Revolution」, French Historical Studies 11(3): 352",
+    "url": "https://doi.org/10.2307/286393"
+   }
+  ]
+ },
+ {
+  "id": "soc-156",
+  "cat": "religion",
+  "text": "프로방스 마을 신부는 다른 지방 출신이었다. 사투리를 못 알아들어 고해가 어설펐다.",
+  "fx": {
+   "faith": -1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "provence"
+   ],
+   "faith": "catholic"
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "보벨의 엑스 교구 분석은 성직자 출신과 배치의 지역차를 보여 준다.",
+  "src": [
+   {
+    "cite": "Michel Vovelle (1972), 「Analyse spectrale d'un diocèse méridional au XVIIIe siècle : Aix-en-Provence」, Provence historique 22(90): 352-451",
+    "url": "https://doi.org/10.3406/prohi.1972.3224"
+   }
+  ]
+ },
+ {
+  "id": "soc-157",
+  "cat": "religion",
+  "text": "서부에서는 사제가 많아 작은 마을에도 신부와 보좌신부가 함께 있었다.",
+  "fx": {
+   "faith": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1789
+  },
+  "who": {
+   "region": [
+    "bretagne",
+    "vendee",
+    "normandie"
+   ],
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "태킷·랑글루아에 따르면 혁명 전야 서부·북부·알프스는 인구 대비 성직자 밀도가 높았다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett & Claude Langlois (1980), 「Ecclesiastical Structures and Clerical Geography on the Eve of the French Revolution」, French Historical Studies 11(3): 352",
+    "url": "https://doi.org/10.2307/286393"
+   },
+   {
+    "cite": "Timothy Tackett (1982), 「The West in France in 1789: The Religious Factor in the Origins of the Counterrevolution」, Journal of Modern History 54(4): 715-745",
+    "url": "https://doi.org/10.1086/244228"
+   }
+  ]
+ },
+ {
+  "id": "soc-158",
+  "cat": "religion",
+  "text": "아들이 신학교에 들어간다고 하자 온 집안이 자랑스러워했다.",
+  "fx": {
+   "fame": 2,
+   "money": -30
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "married": true
+  },
+  "w": 0.8,
+  "once": true,
+  "fact": "18세기 성직자 다수는 도시 중간층과 부유한 농민 가정 출신이었다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett & Claude Langlois (1980), 「Ecclesiastical Structures and Clerical Geography on the Eve of the French Revolution」, French Historical Studies 11(3): 352",
+    "url": "https://doi.org/10.2307/286393"
+   },
+   {
+    "cite": "Timothy Tackett (1986), Religion, Revolution, and Regional Culture in Eighteenth-Century France: The Ecclesiastical Oath of 1791, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400854370"
+   }
+  ]
+ },
+ {
+  "id": "soc-159",
+  "cat": "religion",
+  "text": "수녀원 기숙학교에 딸을 보냈다. 교리와 바느질, 읽기를 배운다고 했다.",
+  "fx": {
+   "edu": 1,
+   "money": -40
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "faith": "catholic",
+   "married": true,
+   "estate": [
+    "bourgeois",
+    "hobereau",
+    "robe",
+    "epee"
+   ]
+  },
+  "w": 1,
+  "once": true,
+  "fact": "정교협약 뒤 여성 수도회는 교육·간호 활동을 중심으로 빠르게 재건되었다.",
+  "src": [
+   {
+    "cite": "Olwen Hufton (1983), 「The reconstruction of a church 1796–1801」, in Beyond the Terror, Cambridge University Press: 21-52",
+    "url": "https://doi.org/10.1017/cbo9780511562679.003"
+   }
+  ]
+ },
+ {
+  "id": "soc-160",
+  "cat": "religion",
+  "text": "선서파 신부와 비선서파 신부의 미사가 같은 날 열렸다. 어느 쪽에 가는지로 이웃이 갈렸다.",
+  "fx": {
+   "soc": -1,
+   "pol": 1
+  },
+  "when": {
+   "from": 1791,
+   "to": 1793
+  },
+  "who": {
+   "faith": "catholic"
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "1791년 이후 두 성직자단의 병존은 마을 공동체를 정치적으로 분열시켰다.",
+  "src": [
+   {
+    "cite": "Timothy Tackett (1986), Religion, Revolution, and Regional Culture in Eighteenth-Century France: The Ecclesiastical Oath of 1791, Princeton University Press",
+    "url": "https://doi.org/10.1515/9781400854370"
+   },
+   {
+    "cite": "Olwen Hufton (1971), 「Women in Revolution 1789–1796」, Past and Present 53: 90-108",
+    "url": "https://doi.org/10.1093/past/53.1.90"
+   }
+  ]
+ },
+ {
+  "id": "soc-161",
+  "cat": "religion",
+  "text": "임종 때 신부를 부르지 않겠다는 노인이 있었다. 장례 때 종을 울리지 않았다.",
+  "fx": {
+   "faith": -1,
+   "soc": -1
+  },
+  "when": {
+   "from": 1820,
+   "to": 1850
+  },
+  "who": {
+   "urban": true,
+   "sex": "M"
+  },
+  "w": 0.5,
+  "once": false,
+  "fact": "19세기 전반 도시 남성의 성사 거부는 반성직주의의 표현으로 늘어났다.",
+  "src": [
+   {
+    "cite": "Fernand Boulard (1973), 「Aspects de la pratique religieuse en France, de 1802 à 1939」, Revue d'histoire de l'Église de France 59(163): 269-311",
+    "url": "https://doi.org/10.3406/rhef.1973.1512"
+   },
+   {
+    "cite": "Sheryl Kroen (2000), 「The Missionaries」, in Politics and Theater: The Crisis of Legitimacy in Restoration France, 1815-1830, University of California Press: 76-108",
+    "url": "https://doi.org/10.1525/california/9780520222144.003.0003"
+   }
+  ]
+ },
+ {
+  "id": "soc-162",
+  "cat": "festival",
+  "text": "마을 축일 미사 뒤 수호성인 상을 가마에 싣고 밭을 돌며 풍년을 빌었다.",
+  "fx": {
+   "faith": 2,
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    4,
+    5
+   ]
+  },
+  "who": {
+   "urban": false,
+   "faith": "catholic"
+  },
+  "w": 2,
+  "once": false,
+  "fact": "승천 전 기원제(Rogations) 행렬은 밭을 돌며 수확을 비는 농촌 의례였다.",
+  "src": [
+   {
+    "cite": "Harismendy (2002), compte rendu de Louis Pérouas, Culte des saints et anticléricalisme. Entre statistique et culture populaire, Annales de Bretagne et des pays de l'Ouest 109(3): 166-168",
+    "url": "https://doi.org/10.4000/abpo.1580"
+   },
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   }
+  ]
+ },
+ {
+  "id": "soc-163",
+  "cat": "festival",
+  "text": "장례 행렬에 고행회 형제들이 두건을 쓰고 따라왔다. 상주는 그들에게 빵을 나눴다.",
+  "fx": {
+   "faith": 1,
+   "money": -5
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "region": [
+    "provence",
+    "languedoc"
+   ]
+  },
+  "w": 1,
+  "once": false,
+  "fact": "프로방스 고행회는 장례 동행과 망자 기도를 통해 공동체 의례를 주관했다.",
+  "src": [
+   {
+    "cite": "Marie-Hélène Froeschlé-Chopard (1984), 「Pénitents et autres confréries de Provence orientale. Différences de sociabilité」, Provence historique 34(136): 215-234",
+    "url": "https://doi.org/10.3406/prohi.1984.2946"
+   },
+   {
+    "cite": "Ehlinger (1971), 「Sociologie des Pénitents sous l'Ancien Régime : les deux confréries de Lambesc」, Provence historique 21(86): 421-443",
+    "url": "https://doi.org/10.3406/prohi.1971.3185"
+   }
+  ]
+ },
+ {
+  "id": "soc-164",
+  "cat": "religion",
+  "text": "과부가 남편 영혼을 위한 연미사를 신청하고 몇 년 동안 기일마다 돈을 냈다.",
+  "fx": {
+   "faith": 2,
+   "money": -10
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "F",
+   "married": false,
+   "age": [
+    30,
+    90
+   ],
+   "faith": "catholic"
+  },
+  "w": 1,
+  "once": false,
+  "fact": "보벨은 연옥 영혼을 위한 미사 봉헌을 바로크 신심의 지표로 삼았다.",
+  "src": [
+   {
+    "cite": "Michel Vovelle (1975), 「Les attitudes devant la mort, front actuel de l'histoire des mentalités」, Archives de sciences sociales des religions 39(1): 17-29",
+    "url": "https://doi.org/10.3406/assr.1975.2764"
+   }
+  ]
+ },
+ {
+  "id": "soc-165",
+  "cat": "belief",
+  "text": "성 요한 축일 아침 이슬로 얼굴을 씻으면 병이 없다는 말에 새벽 들판에 나갔다.",
+  "fx": {
+   "hp": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    6
+   ]
+  },
+  "who": {
+   "urban": false
+  },
+  "w": 1,
+  "once": false,
+  "fact": "성 요한 축일 이슬·약초 채집은 19세기 민속 조사에서 흔히 기록된 치유 믿음이다.",
+  "src": [
+   {
+    "cite": "Judith Devlin (1987), The Superstitious Mind: French Peasants and the Supernatural in the Nineteenth Century, Yale University Press",
+    "url": "https://doi.org/10.12987/9780300163551"
+   },
+   {
+    "cite": "Bouvier (1973), 「Feux cérémoniels de carnaval-carême et de la Saint-Jean dans la Drôme」, Le Monde alpin et rhodanien 1(3): 103-108",
+    "url": "https://doi.org/10.3406/mar.1973.933"
+   }
+  ]
+ },
+ {
+  "id": "soc-166",
+  "cat": "festival",
+  "text": "5월 1일 밤 청년들이 처녀 집 앞에 5월 나무를 세웠다. 싫은 처녀 집엔 가시나무를 꽂았다.",
+  "fx": {
+   "soc": 1
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850,
+   "months": [
+    5
+   ]
+  },
+  "who": {
+   "urban": false,
+   "age": [
+    14,
+    25
+   ]
+  },
+  "w": 1.5,
+  "once": false,
+  "fact": "5월 나무 의례는 청년 집단이 마을 처녀의 평판을 공개적으로 표시하는 관습이었다.",
+  "src": [
+   {
+    "cite": "Peter Burke (2017), Popular Culture in Early Modern Europe, 3rd ed., Routledge",
+    "url": "https://doi.org/10.4324/9781315246420"
+   },
+   {
+    "cite": "Robert Muchembled (1989), La violence au village. Sociabilité et comportements populaires en Artois du XVe au XVIIe siècle, Brepols",
+    "url": "https://doi.org/10.1484/m.viso-eb.5.112382"
+   }
+  ]
+ },
+ {
+  "id": "soc-167",
+  "cat": "crime",
+  "text": "청년단끼리 이웃 마을 처녀를 두고 다투다 칼부림이 났다.",
+  "fx": {
+   "hp": -4,
+   "sus": 2
+  },
+  "when": {
+   "from": 1750,
+   "to": 1850
+  },
+  "who": {
+   "sex": "M",
+   "age": [
+    16,
+    28
+   ],
+   "urban": false
+  },
+  "w": 0.8,
+  "once": false,
+  "fact": "근대 초 농촌 폭력은 청년 집단 간 명예 다툼에서 자주 비롯되었다.",
+  "src": [
+   {
+    "cite": "Robert Muchembled (1989), La violence au village. Sociabilité et comportements populaires en Artois du XVe au XVIIe siècle, Brepols",
+    "url": "https://doi.org/10.1484/m.viso-eb.5.112382"
+   },
+   {
+    "cite": "Jean-Claude Gégot (1966), 「Étude par sondage de la criminalité dans le bailliage de Falaise (XVIIe-XVIIIe siècles)」, Annales de Normandie 16(2): 103-164",
+    "url": "https://doi.org/10.3406/annor.1966.4606"
+   }
+  ]
+ }
+]
