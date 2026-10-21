@@ -29,13 +29,13 @@ const DISEASES=[
 const DIS={};DISEASES.forEach(d=>DIS[d.k]=d);
 function illName(){return s.ill?DIS[s.ill.k].n:''}
 // 건강이 낮을수록, 가난할수록, 기근이 들수록 잘 걸린다
-function illMult(){const h=s.st.hp;let m=h<25?3:h<40?2:h<55?1.3:h>=75?.6:1;
+function illMult(){const h=s.st.hp;let m=h<25?3:h<40?2:h<55?1.3:h>=75?.6:1;m*=1.4-hsub('res')/100*.8;
   if(!child()&&s.money<50&&!rich())m*=1.3;if(price(s.year)>=1.5&&!rich())m*=1.25;if(econ().supply<45)m*=1.15;if(rich())m*=.85;if(!s.hard&&s.age<10)m*=.35;return m}
 async function illnessTick(){if(s.dead||s.ill)return;const f=s.tick/12;const m=illMult();
   const am=s.age>=14?.7:1;for(const d of DISEASES){let p=d.inc()*m*f*am;if(!p)continue;if(R()<p){await fallIll(d);return}}
   // 오래 앓는 병
   if(s.flags.phthisis&&quarter()&&R()<.035*f*4/(s.st.hp>=50?2:1)){die('ill','폐결핵');return}}
-async function fallIll(d){const P=Math.round(d.cfr()*(s.st.hp<30?1.6:s.st.hp<45?1.25:s.st.hp>=70?.7:1)*(s.age>=70?1.4:1)*1000)/1000;
+async function fallIll(d){const P=Math.round((1.3-hsub('rec')/100*.6)*d.cfr()*(s.st.hp<30?1.6:s.st.hp<45?1.25:s.st.hp>=70?.7:1)*(s.age>=70?1.4:1)*1000)/1000;
   s.ill={k:d.k,y:s.year};let cfr=P;
   if(!child()&&cfr>=.08&&s.cond==='normal'){const doc=Math.max(10,Math.round(s.money*.03));
     const i=await Q(`${d.n}`,d.fr,`${d.n}에 걸렸다. 열이 오르고 자리에서 일어나지 못한다.`,[{l:'의사를 부른다',s:`재산 -${doc}. 사혈과 하제, 키나 껍질`,a:'safe',dis:s.money<doc},{l:urban()?'시립 병원(오텔디외)에 간다':'이웃 아낙의 민간요법을 쓴다',s:urban()?'돈은 들지 않으나 병원은 붐비고 위험하다':'약초와 기도',a:'greedy'},{l:'성인에게 기도한다',s:'신앙에 기댄다',a:'pious'}]);
@@ -45,5 +45,5 @@ async function fallIll(d){const P=Math.round(d.cfr()*(s.st.hp<30?1.6:s.st.hp<45?
   if(d.after)d.after();if(d.chronic&&R()<d.chronic){s.flags[d.k==='phthisis'?'phthisis':d.k]=true;if(d.k==='phthisis')L('기침이 멎지 않는다. 폐병이 깊어졌다.','sys')}
   s.illLoss=(s.illLoss||0)+d.mo;s.ill=null}
 // 해마다: 오래 앓는 병의 영향
-function illYear(){if(!s.flags.phthisis&&!s.flags.pellagra){if(s.st.hp<45)s.st.hp=clamp(s.st.hp+ri(4,6),0,100);else if(s.st.hp<58)s.st.hp=clamp(s.st.hp+2,0,100)}
+function illYear(){if(!s.flags.phthisis&&!s.flags.pellagra){if(s.st.hp<45)s.st.hp=clamp(s.st.hp+ri(3,5)+Math.round(hsub('rec')/30),0,100);else if(s.st.hp<58)s.st.hp=clamp(s.st.hp+2,0,100)}
   if(s.year>=1801&&s.age<20&&!s.flags.pox&&!s.flags.vacc&&R()<(s.year<1810?.06:.1)*(urban()?1.5:1)){s.flags.vacc=true;L('제너의 우두 종두를 맞았다. 이제 천연두를 겁내지 않아도 된다.','sys')}if(s.flags.phthisis)fx({hp:-3,str:-1});if(s.flags.ague&&R()<.5)fx({hp:-2});if(s.flags.pellagra)fx({hp:-2,edu:-1});if(s.flags.pox2)fx({hp:-1})}

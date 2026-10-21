@@ -228,7 +228,7 @@ EV.push(
    {l:'맹세하고 몇 달 뒤 무대로 돌아간다',s:'',a:'social',f:()=>say('많은 배우가 하는 대로 하였다. 성사를 받고, 다시 분장을 하였다.'+fx({faith:-1,fame:1,rguild:2}))},
    {l:'아무 맹세도 하지 않는다',s:'',a:'bold radical',f:()=>say('무대가 내 신앙이라고 하였다. 신부는 고개를 저었다.'+fx({faith:-4,vlib:3,brl:3,rloc:-2,fame:1}))}]),
  C('job_salon',()=>free()&&jbIs('ar2p','ar2m','ar3p','ar4')&&(!jbIs('ar2p','ar2m')||T()>=1791)&&s.year%2===1,.9,2,'살롱 출품','le Salon',()=>`루브르의 살롱 전시회가 열린다. ${T()<1791?'아카데미 회원과 준회원만 그림을 걸 수 있다.':'1791년부터는 누구나 출품할 수 있다. 심사단이 그림을 고른다.'} 비평가들의 글 한 줄이 주문을 좌우한다.`,[
-   {l:'큰 역사화를 낸다',s:'그림 판정',a:'bold work',f:async()=>{const {m,why}=md([[s.sk.draw>=55,1,'그림 솜씨'],[s.sk.draw<35,-1,'솜씨 부족'],[s.fame>=30,1,'명성'],[!!patron(),1,'후원자'],[s.kn.khist>=25,1,'역사 지식']]);const r=await roll(m,{label:'살롱 출품',why});
+   {l:'큰 역사화를 낸다',s:'그림 판정',a:'bold work',f:async()=>{const {m,why}=md([[s.sk.draw>=55,1,'그림 솜씨'],[s.sk.draw<35,-1,'솜씨 부족'],[s.fame>=30,1,'명성'],[!!patron(),1,'후원자'],[s.kn.klat>=25,1,'역사 지식']]);const r=await roll(m,{label:'살롱 출품',why});
      if(r.v>=5)say('비평가들이 그림 앞에 오래 머물렀다. 주문이 밀려들었다.'+fx({fame:4,money:300,relite:3,draw:2}),'big');else if(r.v>=3)say('그림이 높은 벽 구석에 걸렸다. 몇 사람이 알아보았다.'+fx({fame:1,draw:1}));else say('비평가 하나가 그대의 그림을 두고 ‘간판 그림’이라 썼다.'+fx({fame:-2,cour:1}))}},
    {l:'초상화 몇 점만 낸다',s:'',a:'safe',f:()=>say('얌전한 초상화가 팔려 나갔다.'+fx({money:120,fame:1}))}]),
  // ---------- 관리·기술직 ----------

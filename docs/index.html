@@ -415,6 +415,49 @@ p.warn{color:var(--red)}
 @media (max-width:640px){#age{font-size:2.2rem}.pf-badges{grid-template-columns:repeat(2,1fr)}.sp-year{font-size:4.2rem}.ob-n{font-size:1.9rem}}
 @media (max-width:979px){.board{display:flex;flex-direction:column}.colL,.colR{display:contents}.board .scene{order:1}.board .prof{order:2}.board .logc{order:3}.board .polc{order:4}.board .relc{order:5}}
 
+/* ================= 4차 개편: 하단 메뉴 다섯 칸 ================= */
+#app{max-width:760px;padding-bottom:96px}
+.tabs{margin-top:14px}
+.tab{display:grid;gap:14px;min-width:0}
+.tab>div{display:grid;gap:14px;min-width:0}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);background:var(--card);border-top:1px solid var(--ink);box-shadow:0 -3px 0 -1px var(--bg),0 -4px 0 -1px var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav::before{content:'';position:absolute;left:0;right:0;top:-5px;height:3px;background:linear-gradient(90deg,var(--roi) 0 33.3%,var(--card) 33.3% 66.6%,var(--rouge) 66.6%)}
+.nav button{border:0;background:none;padding:8px 2px 9px;cursor:pointer;display:grid;justify-items:center;gap:1px;font-size:.8rem;color:var(--mut);letter-spacing:.04em}
+.nav button .ni{font-size:1.15rem;line-height:1.2;font-family:var(--fd)}
+.nav button[aria-current="page"]{color:var(--era);font-weight:700;box-shadow:inset 0 3px 0 var(--era)}
+.nav button:focus-visible{outline-offset:-3px}
+/* 시작 화면 */
+.newf{width:100%;text-align:left;margin-top:4px;display:grid;gap:10px;border-top:4px solid var(--era)}
+.nf-row{display:grid;grid-template-columns:1fr 1fr auto;gap:8px}
+.nf-row input,.nf-date select{font:inherit;font-size:1.05rem;padding:8px 10px;border:1px solid var(--ink);background:var(--bg);color:var(--fg);border-radius:0;min-width:0}
+.nf-row input{font-family:var(--fd);font-weight:700}
+.dice{font-size:1.5rem;padding:0 12px;min-width:48px}
+.nf-est{font-size:1rem;text-align:center}#estName{font-family:var(--fd);font-weight:900;color:var(--era)}#estFr{font-family:var(--fr);font-style:italic}
+.nf-sex{display:flex;gap:6px;justify-content:center}
+.nf-date{display:grid;grid-template-columns:auto 1.3fr 1fr 1fr;gap:6px;align-items:center}.nf-date label{font-size:.86rem;color:var(--mut);margin-right:4px}
+.nf-place{text-align:center;margin:0}
+#goB{min-height:48px;font-size:1.05rem}
+#title .sp-btns{margin-top:10px}
+#title .sp-cockade{width:64px;height:64px;margin-bottom:8px}#title .sp-year{font-size:3.6rem}#title .sp-f{margin-bottom:10px}
+#title.splash{justify-content:flex-start;padding-top:40px;overflow:auto}
+/* 결말 화면 */
+.sp.wide{max-width:560px}
+#end.splash{justify-content:flex-start;padding-top:48px;overflow:auto}
+.ob-sec{width:100%;text-align:left;margin:4px 0 14px}.ob-sec h3{text-align:center;border-bottom:1px solid var(--line)}
+.ob-rels{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ob-rels li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding:4px 0;font-size:.92rem}.ob-rels li span{color:var(--mut);text-align:right}
+.ob-ep{font-family:var(--fd);font-weight:900;font-size:1.2rem;text-align:center}.ob-st{text-align:center;color:var(--gold);letter-spacing:.2em;margin:2px 0 6px}
+#obEval p{text-align:left}
+/* 재능 */
+.tals{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.tal{border:1px solid var(--line);padding:6px 8px;opacity:.6}.tal.on{opacity:1;border-color:var(--gold)}
+.tal b{display:block;font-size:.88rem}.tal .st{color:var(--gold);font-size:.85rem}.tal small{display:block;color:var(--mut);font-size:.7rem}
+.tchip{display:inline-block;border:1px solid var(--gold);padding:0 6px;margin:2px 4px 2px 0}.tchip i{font-style:normal;color:var(--gold)}
+.lab .tk{font-style:normal;color:var(--gold)}
+.pf-tal{line-height:1.9}
+@media (max-width:640px){.nf-row{grid-template-columns:1fr 1fr 48px}.nf-date{grid-template-columns:1fr 1fr 1fr}.nf-date label{grid-column:1/-1}}
+body.covered #app{display:none}
+
 </style>
 </head>
 <body>
@@ -444,25 +487,40 @@ p.warn{color:var(--red)}
     <div class="prog"><i id="progFill"></i></div>
     <div class="hint" id="hint" hidden>빠르게 보려면 4×나 8×를 눌러 보세요. 중요한 결정이 오면 시간이 멈춰요.</div>
   </header>
-  <main class="board">
-    <div class="colL">
-      <section class="card prof" id="profCard"></section>
-      <section class="card polc" id="polCard"></section>
-      <section class="card relc" id="relCard"></section>
-    </div>
-    <div class="colR">
-      <section class="card scene">
+  <main class="tabs">
+    <section class="tab" id="tProfile" data-t="profile" hidden>
+      <div class="card prof" id="profCard"></div>
+      <div id="profMore"></div>
+    </section>
+    <section class="tab" id="tRel" data-t="rel" hidden>
+      <div class="card relc" id="relCard"></div>
+      <div id="relMore"></div>
+    </section>
+    <section class="tab" id="tDaily" data-t="daily">
+      <div class="card scene">
         <canvas id="cv" width="256" height="96" aria-label="지금 사는 곳과 가족"></canvas>
         <div class="sc-t"><div class="where" id="where"></div><div class="mut" id="famAges"></div><div class="era mut" id="era"></div></div>
         <div class="econ" id="econCard"></div>
-      </section>
-      <section class="card logc">
+      </div>
+      <div class="card logc">
         <div class="ch"><h2>인생 기록</h2><span class="mut">최근 순 <button class="lnk" id="dataT" type="button" aria-pressed="false">자료 보기</button></span></div>
         <div id="log" aria-live="polite"></div>
         <div class="logmore"><button class="pill" id="logMore" type="button" hidden></button><button class="pill" id="logLess" type="button" hidden>접기</button></div>
-      </section>
-    </div>
+      </div>
+    </section>
+    <section class="tab" id="tLife" data-t="life" hidden><div id="lifeHost"></div></section>
+    <section class="tab" id="tEra" data-t="era" hidden>
+      <div class="card polc" id="polCard"></div>
+      <div id="eraHost"></div>
+    </section>
   </main>
+  <nav class="nav" id="nav" aria-label="화면">
+    <button type="button" data-t="profile"><span class="ni">✦</span>프로필</button>
+    <button type="button" data-t="rel"><span class="ni">♥</span>관계</button>
+    <button type="button" data-t="daily" aria-current="page"><span class="ni">✎</span>일상</button>
+    <button type="button" data-t="life"><span class="ni">⚒</span>생활</button>
+    <button type="button" data-t="era"><span class="ni">⚑</span>시대</button>
+  </nav>
   <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shdecree" id="shDecree"></div><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><div id="shB"></div></div></div>
   <div class="toast" id="toast" role="status" hidden></div>
 </div>
@@ -476,21 +534,32 @@ p.warn{color:var(--red)}
     <div class="sp-year">17<span>89</span></div>
     <h1 class="sp-t">한 시민의 일생</h1>
     <p class="sp-f">Vie d’un citoyen de Paris</p>
-    <div class="sp-btns">
-      <button class="pill pri" id="newB" type="button">새 게임</button>
-      <button class="pill" id="contB" type="button" hidden>이어가기</button>
+    <div class="card newf" id="newForm">
+      <div class="nf-row">
+        <input id="inGiven" maxlength="12" autocomplete="off" placeholder="이름" aria-label="이름">
+        <input id="inSur" maxlength="16" autocomplete="off" placeholder="성" aria-label="성">
+        <button class="cb dice" id="rollB" type="button" aria-label="무작위로 정하기" title="이름·신분·출생일을 무작위로">⚄</button>
+      </div>
+      <div class="nf-est"><span id="estName"></span><span class="mut" id="estFr"></span></div>
+      <div class="nf-sex" role="group" aria-label="성별"><button type="button" class="fopt" data-x="M">남</button><button type="button" class="fopt" data-x="F">여</button></div>
+      <div class="nf-date"><label>출생일</label><select id="bY" aria-label="출생 연도"></select><select id="bM" aria-label="출생 월"></select><select id="bD" aria-label="출생 일"></select></div>
+      <p class="mut small nf-place">출생지 · 파리</p>
+      <button class="pill pri" id="goB" type="button">게임 시작</button>
     </div>
+    <div class="sp-btns"><button class="pill" id="contB" type="button" hidden>이어가기</button></div>
   </div>
   <p class="sp-motto">Liberté · Égalité · Fraternité</p>
 </div>
 
 <div id="end" class="over splash" hidden>
   <div class="ribbon dark" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="sp">
+  <div class="sp wide">
     <div class="ob-k">부고 · Nécrologie</div>
     <div class="ob-n" id="obName"></div>
     <div class="ob-y" id="obYears"></div>
     <p class="ob-w" id="obWill"></p>
+    <div class="ob-sec"><h3>남은 사람들</h3><ul class="ob-rels" id="obRels"></ul></div>
+    <div class="ob-sec"><h3>사후 평가</h3><div id="obEval"></div></div>
     <div class="sp-btns">
       <button class="pill pri" id="againB" type="button">새 게임</button>
       <button class="pill" id="homeB" type="button">처음으로</button>
@@ -714,7 +783,7 @@ function meets(p,quiet){const n=p.need;if(!canSex(p)||!p.ok())return false;
   if(p.tr==='law'&&!isM())return false;if(!NOLIT.has(p.tr)&&!lit())return false;
   if(s.faithKind!=='catholic'&&(p.tr==='church'||(T()<1789.5&&(p.tr==='law'||(p.tr==='army'&&p.t>=3)))))return false;
   for(const k of ['edu','soc','dex','str','cour','faith','fame'])if(n[k]&&(k in s.st?s.st[k]:s[k])<n[k])return false;
-  if(n.sk)for(const k in n.sk)if((s.sk[k]||0)<n.sk[k])return false;if(n.kn)for(const k in n.kn)if(((s.kn||{})[k]||0)<n.kn[k])return false;
+  if(n.sk)for(const k in n.sk)if((s.sk[k]||0)<n.sk[k])return false;if(n.kn)for(const k in n.kn)if(((s.kn||{})[KN_ALIAS[k]||k]||0)<n.kn[k])return false;
   if(n.money&&s.money<n.money)return false;if(n.cost&&s.money<n.cost)return false;if(n.land&&s.land<n.land)return false;return true}
 function needText(p){const n=p.need,o=[];for(const k of ['edu','soc','dex','str','cour','faith','fame'])if(n[k])o.push(`${FXN[k]} ${n[k]}`);
   if(n.sk)for(const k in n.sk)o.push(`${FXN[k]||k} ${n.sk[k]}`);if(n.kn)for(const k in n.kn)o.push(`${FXN[k]||k} ${n.kn[k]}`);
@@ -779,11 +848,11 @@ function defineEntry(id,why,c,o={}){ENTRIES.push({id,why,c:c||(()=>true),firstOn
 /* ================= 새 인생 ================= */
 function rollName(sex,estate,region){const g=pick(sex==='M'?M_NAMES:F_NAMES);let f;
   if(ESTATES[estate].noble)f=pick(NOBLE_SURS);else if(REG_SURS[region]&&R()<.55)f=pick(REG_SURS[region]);else f=pick(SURS);return {g,f}}
-function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=ri(0,11);// 태어나는 곳은 파리로 고정. 1789년 파리 주민 약 60만: 수공업·장사·품팔이의 서민이 대부분, 부르주아 약 15%, 귀족 1~2%.
+function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=o.month?o.month-1:ri(0,11),bd=o.day||ri(1,28);// 태어나는 곳은 파리로 고정. 1789년 파리 주민 약 60만: 수공업·장사·품팔이의 서민이 대부분, 부르주아 약 15%, 귀족 1~2%.
   const PARIS_W={epee:.8,robe:1.4,hobereau:.3,bourgeois:16,artisan:81.5,peasant:0};const estate=o.estate||wpick(Object.entries(PARIS_W).filter(x=>x[1]>0));
   let region='paris';if(false){const urbanBias=estate==='epee'?[['paris',6],['bourgogne',1],['ile',2]]:estate==='bourgeois'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?12:1)]):estate==='artisan'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?20:.6)]):Object.entries(REGIONS).map(([k,v])=>[k,v.urban?0:v.w]);region=wpick(urbanBias)}
   const nm=rollName(sex,estate,region);
-  const given=o.given?[o.given,'']:[nm.g[0],nm.g[1]],sur=o.sur?[o.sur,'']:[nm.f[0],nm.f[1]];
+  const given=o.given?[o.given,o.givenFr||'']:[nm.g[0],nm.g[1]],sur=o.sur?[o.sur,o.surFr||'']:[nm.f[0],nm.f[1]];
   const fk=region==='languedoc'&&R()<.12||region==='alsace'&&R()<.18||R()<.004?'protestant':(region==='alsace'&&R()<.03)||(region==='bordeaux'&&R()<.03)?'jewish':'catholic';
   const st={edu:ri(4,14),soc:ri(12,30),hp:ri(42,70),cour:ri(18,42)};
   const E=ESTATES[estate];let fame=0,pol=ri(-12,8),faith=ri(45,75);
@@ -794,14 +863,14 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,
   if(['bretagne','vendee'].includes(region))faith+=15;if(region==='paris')faith-=12;if(fk!=='catholic')faith=ri(50,80);
   return attrsInit({v:2,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
     st,money:0,land:0,dues:0,fame,sus:0,pol,faith:clamp(faith,0,100),literate:false,
-    age:0,year:by,month:bm-(bm%3)+2,season:seasonOf(bm-(bm%3)+2),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
+    age:0,bd,year:by,month:bm-(bm%3)+2,season:seasonOf(bm-(bm%3)+2),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
     job:null,jobSince:0,prevJob:null,best:{},hist:[],cond:'normal',condSince:0,
     fa:{alive:true,age:ri(24,40)},mo:{alive:true,age:ri(19,34)},sibs:ri(1,6),eldest:R()<.35,inherit:0,
     spouse:null,married:false,kids:[],widowed:0,divorced:false,
     seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null})}
 function birth(){L(`${yl()}`,'yr');const E=ESTATES[s.estate],Rg=REGIONS[s.region];
   const who=isM()?'아들':'딸';
-  say(`${s.year}년 ${s.month+1}월, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 영지`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
+  say(`${s.by}년 ${s.bm+1}월 ${s.bd||1}일, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 저택`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
   say(`세례명은 ${s.given[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}.`+(s.faithKind==='protestant'?(s.year<1788?' 집안은 몰래 신교 예배를 지키는 위그노다. 왕국의 법은 신교도의 혼인조차 인정하지 않는다.':' 집안은 신교(위그노)를 믿는다.'):s.faithKind==='jewish'?(s.year<1791?' 집안은 유대교를 믿는다. 왕국에서 유대인은 시민이 아니다.':' 집안은 유대교를 믿는다.'):''));
   L(`지금 프랑스를 다스리는 것은 ${ruler()}. 시대는 ${era().n}.`,'sys')}
 
@@ -949,7 +1018,7 @@ async function promoCheck(){const j=job();if(!j||j.tr==='pol'&&j.t>=3)return;con
   if(war)p=.14;if(purge)p=.3;if(trait('야심'))p*=1.4;if(trait('신중'))p*=.8;if(s.plan==='근면')p*=1.3;
   if(R()>=p)return;const n=pick(next);
   const key=PROMO_KEY[j.tr]||['soc',45];
-  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)>=50,1,'숙련'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)<15&&['craft','med','art','sea'].includes(j.tr),-1,'서툰 솜씨'],[(s.sk.manner||0)>=50&&['law','pol','church','serv','state'].includes(j.tr),1,'예법'],[(j.tr==='law'&&s.kn.klaw>=50)||(j.tr==='med'&&s.kn.kmed>=50)||(j.tr==='church'&&s.kn.ktheo>=45)||(j.tr==='letters'&&s.kn.klett>=50),1,'전문 지식'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
+  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)>=50,1,'숙련'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)<15&&['craft','med','art','sea'].includes(j.tr),-1,'서툰 솜씨'],[(s.sk.manner||0)>=50&&['law','pol','church','serv','state'].includes(j.tr),1,'예법'],[(j.tr==='law'&&s.kn.klaw>=50)||(j.tr==='med'&&s.kn.kmed>=50)||(j.tr==='church'&&s.kn.ktheo>=45)||(j.tr==='letters'&&s.kn.kphil>=50),1,'전문 지식'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
   const r=await roll(m,{label:`${pname(n)} 승진`,why});
   if(r.v>=4){takeJob(n.id,purge?'귀족 장교들이 떠난 자리를 메우며 ':'');if(n.tr==='army')fx({fame:2})}}
 
@@ -2941,26 +3010,41 @@ async function graduate(){const x=SCH(),g=x.grade;
    가치  vlib 자유 · veq 평등 · vhon 명예 · vfam 가족 · vord 질서 · vjus 정의   (0~100)
    영향력 inf (쌓아 온 영향력. 공직·파벌·인맥·재산·대중의 지지·정권과의 관계와 합쳐 계산한다) */
 // 숙련: 기술(DEX)·사교(CHA)·체력(STR)의 하위 분야. 셋째 칸이 어느 능력치에 딸렸는지.
-const SKILLS=[['pen','글씨·문서','dex'],['craft','수공 일반','dex'],['wood','목공','dex'],['metal','금속 세공','dex'],['weave','직조','dex'],['sew','바느질·재봉','dex'],['cook','제빵·요리','dex'],['draw','그림','dex'],['music','악기','dex'],['print','인쇄','dex'],['heal','외과 손기술','dex'],
- ['trade','장사·셈','dex'],['farm','농사일','dex'],
- ['manner','예법·몸가짐','soc'],['conv','대화술','soc'],['dance','춤','soc'],['orat','웅변','soc'],['ride','승마','soc'],['arms','검술·무예','soc']];
-// 학식(INT)의 분야
-const KNOW=[['klat','라틴어·고전'],['ktheo','신학'],['klaw','법학'],['kmed','의학 지식'],['ksci','수학·자연과학'],['kphil','철학·사상'],['khist','역사·지리'],['klang','외국어'],['klett','문학']];
-// 세부 분야는 세 갈래: 학식 · 기술 · 예법 (예법에는 승마·검술·춤·웅변 같은 신사·숙녀의 소양이 든다)
-const SKG=[['edu','학식',KNOW.map(x=>x[0])],['dex','기술',SKILLS.filter(x=>x[2]==='dex').map(x=>x[0])],['soc','예법',SKILLS.filter(x=>x[2]==='soc').map(x=>x[0])]];
-// 타고난 재능: 0~100. gift는 유난히 잘 배우는 분야 하나
-const giftName=()=>s.gift?FXN[s.gift]:'';
+// 숙련: 셋째 칸이 속한 능력치. 사교(CHA) · 기술(DEX) · 체력(STR)
+const SKILLS=[['pen','글씨·필사','dex'],['craft','수공 일반','dex'],['wood','목공','dex'],['metal','금속 세공','dex'],['weave','직조','dex'],['sew','바느질·재봉','dex'],['cook','제빵·요리','dex'],['draw','그림','dex'],['music','악기','dex'],['print','인쇄','dex'],['heal','외과 손기술','dex'],
+ ['manner','예법·몸가짐','soc'],['conv','대화술','soc'],['dance','춤','soc'],['orat','웅변','soc'],['trade','장사·흥정','soc'],
+ ['farm','농사일','str'],['labor','짐 나르기·막일','str'],['arms','검술·무예','str'],['ride','승마','str']];
+// 학식(INT): 학문과 지식
+const KNOW=[['kread','읽기·쓰기'],['karith','산수·회계'],['kphil','철학·수사학'],['klaw','법학'],['kmed','의학'],['ksci','자연과학'],['keng','공학'],['kastr','천문학'],['ktheo','신학'],['klat','고전학']];
+// 예전 분야 이름은 가까운 새 분야로 (장면에서 쓰던 키를 그대로 받는다)
+const KN_ALIAS={khist:'klat',klang:'klat',klett:'kphil'};
+// 건강(CON): 질병 저항 · 회복력 · 신체 상태(=건강 수치)
+const HSUB=[['res','질병 저항'],['rec','회복력'],['body','신체 상태']];
+const hsub=k=>k==='body'?s.st.hp:((s.hs||{})[k]??50);
+// 세부 분야: 건강 · 학식 · 사교 · 기술 · 체력
+const SKG=[['edu','학식',KNOW.map(x=>x[0])],['soc','사교',SKILLS.filter(x=>x[2]==='soc').map(x=>x[0])],['dex','기술',SKILLS.filter(x=>x[2]==='dex').map(x=>x[0])],['str','체력',SKILLS.filter(x=>x[2]==='str').map(x=>x[0])]];
+/* 재능: 숙련과 다른 타고난 잠재력(0~100). 어떤 분야를 얼마나 쉽게 배우는지 정한다.
+   값이 55 이상이면 ★, 70 이상 ★★, 85 이상 ★★★. 배우는 속도 = 0.7 + (관련 재능 가운데 가장 높은 값)/100 × 0.9 */
+const TALENTS=[['memory','뛰어난 기억력',['klat','ktheo','klaw','kread','pen']],['lang','언어 감각',['klat','kread','conv','orat']],['math','수리적 재능',['karith','keng','kastr','ksci','trade']],
+ ['orat','웅변 재능',['orat','kphil','conv']],['art','예술적 감각',['draw','sew','metal','wood','weave']],['music','음악적 재능',['music','dance']],['space','공간 지각력',['keng','kastr','wood','ride','arms']],
+ ['observe','뛰어난 관찰력',['kmed','ksci','heal','cook']],['social','사회적 직관',['manner','conv','trade','dance']],['strat','전략적 사고',['arms','klaw','kphil','trade']]];
+const TAL_BY={};TALENTS.forEach(([t,,ks])=>ks.forEach(k=>(TAL_BY[k]=TAL_BY[k]||[]).push(t)));
+const talName=t=>(TALENTS.find(x=>x[0]===t)||[,''])[1];
+const stars=v=>v>=85?'★★★':v>=70?'★★':v>=55?'★':'';
+function topTalents(n=3){return TALENTS.map(x=>[x[0],x[1],(s.tal||{})[x[0]]||0]).sort((a,b)=>b[2]-a[2]).slice(0,n)}
+function rollTalents(){const o={};TALENTS.forEach(([t])=>o[t]=clamp(Math.round(38+(R()+R()-1)*30),5,70));const k=TALENTS.map(x=>x[0]).sort(()=>R()-.5);o[k[0]]=ri(70,96);if(R()<.6)o[k[1]]=ri(58,84);return o}
+const giftName=()=>{const t=topTalents(1)[0];return t?t[1]:''};
 // 수공업 전문 분야(처음 수공업에 들 때 정한다)
 const SPECS={wood:'목수·소목장',metal:'대장장이·자물쇠장이',weave:'직조공',sew:'재봉사',cook:'제빵사·요리사',print:'인쇄공',craft:'잡역 장인'};
 function pickSpec(){if(s.spec)return s.spec;const L0=loc();let w=isM()?[['wood',3],['metal',3],['weave',L0==='lyon'||L0==='rouen'?6:2],['cook',2],['print',urban()?1.5:.2],['sew',1],['craft',2]]:[['sew',5],['weave',L0==='lyon'||L0==='rouen'?6:3],['cook',2],['craft',1]];s.spec=wpick(w);return s.spec}
 const REPG=[['rfam','가족'],['rloc','이웃·고을'],['rguild','동업자'],['rpeople','민중'],['relite','상류사회']];
 const BELIEF=[['brg','정치 체제','왕정','공화정'],['bor','사회 질서','신분 특권','법적 평등'],['bch','변화의 방식','점진 개혁','급진 변화'],['bpw','권력 구조','중앙집권','지방 자치'],['brl','종교와 국가','긴밀한 결합','분리']];
 const VALUES=[['vlib','자유'],['veq','평등'],['vhon','명예'],['vfam','가족'],['vord','질서'],['vjus','정의']];
-SKILLS.forEach(([k,n])=>FXN[k]=n);KNOW.forEach(([k,n])=>FXN[k]=n);REPG.forEach(([k,n])=>FXN[k]='평판('+n+')');BELIEF.forEach(([k,n])=>FXN[k]=n);VALUES.forEach(([k,n])=>FXN[k]='가치('+n+')');
+SKILLS.forEach(([k,n])=>FXN[k]=n);KNOW.forEach(([k,n])=>FXN[k]=n);Object.entries(KN_ALIAS).forEach(([a,b])=>FXN[a]=FXN[b]);FXN.res='질병 저항';FXN.rec='회복력';REPG.forEach(([k,n])=>FXN[k]='평판('+n+')');BELIEF.forEach(([k,n])=>FXN[k]=n);VALUES.forEach(([k,n])=>FXN[k]='가치('+n+')');
 const SKK=new Set(SKILLS.map(x=>x[0])),KNK=new Set(KNOW.map(x=>x[0])),REPK=new Set(REPG.map(x=>x[0])),BELK=new Set(BELIEF.map(x=>x[0])),VALK=new Set(VALUES.map(x=>x[0]));
-const tmul=k=>(.7+((s&&s.talent)||50)/150)*(s&&k===s.gift?1.5:1);
+const tmul=k=>{if(!s||!s.tal)return 1;const ts=TAL_BY[k];if(!ts)return .7+((s.talent||50)/100)*.6;return .7+Math.max(...ts.map(t=>s.tal[t]||0))/100*.9};
 // fx()가 부르는 확장 키 처리. 처리했으면 실제 바뀐 양, 아니면 null.
-function fxAttr(k,n){
+function fxAttr(k,n){if(KN_ALIAS[k])k=KN_ALIAS[k];if(k==='res'||k==='rec'){s.hs=s.hs||{res:50,rec:50};const v=s.hs[k];s.hs[k]=clamp(v+n,0,100);return s.hs[k]-v}
   if(SKK.has(k)){const v=s.sk[k]||0;if(n>0){const g=n*(1-v/120)*tmul(k);n=Math.max(1,Math.floor(g)+(R()<g%1?1:0))}const nv=clamp(v+n,0,100);n=nv-v;s.sk[k]=nv;return n}
   if(KNK.has(k)){s.kn=s.kn||{};const v=s.kn[k]||0;if(n>0){const g=n*(1-v/120)*tmul(k);n=Math.max(1,Math.floor(g)+(R()<g%1?1:0))}if(n>0&&!lit())n=Math.min(n,Math.max(0,15-v));const nv=clamp(v+n,0,100);s.kn[k]=nv;return nv-v}
   if(REPK.has(k)){const v=s.rep[k];const nv=clamp(v+n,0,100);s.rep[k]=nv;return nv-v}
@@ -2972,7 +3056,8 @@ function fxAttr(k,n){
 /* ---------- 새 인생 · 옛 저장 맞추기 ---------- */
 function attrsInit(o){const E=o.estate,nb=ESTATES[E].noble;
   o.st.dex=ri(4,10);o.st.str=ri(6,14);
-  o.talent=clamp(Math.round(50+(R()+R()+R()-1.5)*40),5,98);o.gift=pick(KNOW.concat(SKILLS))[0];
+  o.tal=rollTalents();const tt=Object.values(o.tal).sort((a,b)=>b-a);o.talent=Math.round((tt[0]+tt[1]+tt[2])/3);o.gift=(TALENTS.find(x=>o.tal[x[0]]===tt[0])||TALENTS[0])[2][0];
+  o.hs={res:clamp(ri(35,65)+(ESTATES[o.estate].noble?5:0),5,95),rec:clamp(ri(35,65),5,95)};
   o.sk={};SKILLS.forEach(([k])=>o.sk[k]=0);o.kn={};KNOW.forEach(([k])=>o.kn[k]=0);o.faithMode=null;
   o.rep={rfam:60,rloc:50,rguild:50,rpeople:50,relite:nb?55:E==='bourgeois'?45:35};
   const p=o.pol;
@@ -2988,14 +3073,14 @@ function attrsInit(o){const E=o.estate,nb=ESTATES[E].noble;
 function attrsMigrate(o){if(!o)return o;if(o.sk&&o.rep&&o.bel)return o;
   const base={estate:o.estate,region:o.region,pol:o.pol,faith:o.faith,faithKind:o.faithKind,st:o.st};attrsInit(base);
   o.st.dex=o.st.dex??clamp(base.st.dex+Math.min(o.age,18)*1.5,0,100);o.st.str=o.st.str??clamp(base.st.str+Math.min(o.age,18)*2.4,0,100);
-  for(const k of ['sk','kn','rep','bel','val','rel','frel','inf0','econ','econPrev','talent','gift'])if(o[k]==null)o[k]=base[k];SKILLS.forEach(([k])=>{if(o.sk[k]==null)o.sk[k]=0});o.rel=(o.rel||[]).filter(r=>r.pid||r.kind==='fic');return o}
+  for(const k of ['sk','kn','rep','bel','val','rel','frel','inf0','econ','econPrev','talent','gift','tal','hs'])if(o[k]==null)o[k]=base[k];SKILLS.forEach(([k])=>{if(o.sk[k]==null)o.sk[k]=0});o.rel=(o.rel||[]).filter(r=>r.pid||r.kind==='fic');return o}
 
 /* ---------- 해마다 ---------- */
 // 직업 트랙이 기르는 숙련
 const TRACK_SK={farm:{farm:3,str:1},craft:{dex:1},law:{pen:3,orat:2,klaw:2},church:{orat:2,pen:1,ktheo:2,klat:1},med:{heal:3,dex:1,kmed:2,ksci:1},army:{arms:3,str:1},pol:{orat:3,khist:1},letters:{pen:3,klett:2,kphil:1}};
 function mainSkill(){const j=job();if(j){if(j.tr==='craft'&&j.t>=4)return 'trade';if(j.tr==='craft')return pickSpec();const t=TRACK_SK[j.tr]||TRACK_SK_EXTRA[j.tr];if(t&&t.main)return t.main;if(t)return Object.keys(t).find(k=>SKK.has(k))}
   let best='craft',bv=-1;for(const [k] of SKILLS)if(s.sk[k]>bv){bv=s.sk[k];best=k}return best}
-function grow(k,n){if(n>0){n=n*(.7+(s.talent||50)/150)*(k===s.gift?1.5:1);n=Math.floor(n)+(R()<n%1?1:0);if(!n)return}if(KNK.has(k)){s.kn[k]=clamp((s.kn[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.kn[k]||0)/120))),0,lit()?100:15);return}if(k in s.st)s.st[k]=clamp(s.st[k]+n,0,100);else if(SKK.has(k))s.sk[k]=clamp((s.sk[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.sk[k]||0)/120))),0,100)}
+function grow(k,n){k=KN_ALIAS[k]||k;if(n>0){n=n*tmul(k);n=Math.floor(n)+(R()<n%1?1:0);if(!n)return}if(KNK.has(k)){s.kn[k]=clamp((s.kn[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.kn[k]||0)/120))),0,lit()?100:15);return}if(k in s.st)s.st[k]=clamp(s.st[k]+n,0,100);else if(SKK.has(k))s.sk[k]=clamp((s.sk[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.sk[k]||0)/120))),0,100)}
 function childGrowth(){const a=s.age,f=isM()?1:.8;
   if(a>=2&&a<=18){grow('str',Math.round((ri(2,3)+(a>=8&&['peasant','artisan'].includes(s.estate)?1:0))*f));grow('dex',ri(0,2))}
   if(a>=7&&a<14){if(s.estate==='peasant')grow('farm',ri(2,4));if(s.estate==='artisan')grow('craft',ri(1,3));if(!isM())grow('sew',ri(2,4));
@@ -3004,13 +3089,16 @@ function childGrowth(){const a=s.age,f=isM()?1:.8;
 // 학교에서 자라는 학식 분야
 function schoolKnow(){if(!s.kn)return;const x=SCH(),T0=T();if(!inSchool())return;
   const g=(k,n)=>grow(k,n);
-  if(x.st==='petite'){g('khist',ri(0,1))}
+  if(x.st==='petite'){g('kread',3);g('karith',2)}
   if(x.st==='college'){const mod=T0>=1795.75;g('klat',mod?2:3);g('khist',1);if(mod)g('ksci',2);else if(R()<.5)g('ksci',1);if(s.age>=15)g('kphil',T0>=1795.75&&T0<1802.5?1:2);if(R()<.3)g('klett',1)}
   if(x.st==='convent'){g('klett',2);g('khist',1);if(R()<.5)g('klang',1);grow('manner',2);grow('music',1)}
   if(x.st==='univ'){if(x.fac==='law'){g('klaw',5);g('klat',1)}if(x.fac==='med'){g('kmed',5);g('ksci',2)}}
   if(x.st==='seminary'){g('ktheo',5);g('klat',2);g('kphil',1)}
   if(noble()&&s.age>=8&&s.age<16){g('klang',1);grow('manner',2)}}
-function attrsYear(pl){schoolKnow();if(child()){childGrowth();return}
+function attrsYear(pl){if(lit()&&s.kn&&(s.kn.kread||0)<20)s.kn.kread=20;
+  s.hs=s.hs||{res:50,rec:50};if(pl==='양생'){s.hs.res=clamp(s.hs.res+1,0,100);s.hs.rec=clamp(s.hs.rec+1,0,100)}if(s.age>=55){s.hs.rec=clamp(s.hs.rec-1,0,100);if(s.age>=65)s.hs.res=clamp(s.hs.res-1,0,100)}
+  {const j0=job();if(j0&&s.cond==='normal'&&(['craft','state','sea'].includes(j0.tr)&&j0.t>=3||j0.tr==='law'))grow('karith',1);if(j0&&j0.tr==='army'&&j0.t>=3)grow('keng',1);if(j0&&['law','letters','church','state'].includes(j0.tr))grow('kread',1)}
+  schoolKnow();if(child()){childGrowth();return}
   if(s.faithMode)faithYear();
   const away=s.cond!=='normal';const j=job();
   if(j&&!away){const t=TRACK_SK[j.tr]||TRACK_SK_EXTRA[j.tr]||{};for(const k in t)if(k!=='main'&&R()<.75)grow(k,t[k]);
@@ -3253,13 +3341,13 @@ const DISEASES=[
 const DIS={};DISEASES.forEach(d=>DIS[d.k]=d);
 function illName(){return s.ill?DIS[s.ill.k].n:''}
 // 건강이 낮을수록, 가난할수록, 기근이 들수록 잘 걸린다
-function illMult(){const h=s.st.hp;let m=h<25?3:h<40?2:h<55?1.3:h>=75?.6:1;
+function illMult(){const h=s.st.hp;let m=h<25?3:h<40?2:h<55?1.3:h>=75?.6:1;m*=1.4-hsub('res')/100*.8;
   if(!child()&&s.money<50&&!rich())m*=1.3;if(price(s.year)>=1.5&&!rich())m*=1.25;if(econ().supply<45)m*=1.15;if(rich())m*=.85;if(!s.hard&&s.age<10)m*=.35;return m}
 async function illnessTick(){if(s.dead||s.ill)return;const f=s.tick/12;const m=illMult();
   const am=s.age>=14?.7:1;for(const d of DISEASES){let p=d.inc()*m*f*am;if(!p)continue;if(R()<p){await fallIll(d);return}}
   // 오래 앓는 병
   if(s.flags.phthisis&&quarter()&&R()<.035*f*4/(s.st.hp>=50?2:1)){die('ill','폐결핵');return}}
-async function fallIll(d){const P=Math.round(d.cfr()*(s.st.hp<30?1.6:s.st.hp<45?1.25:s.st.hp>=70?.7:1)*(s.age>=70?1.4:1)*1000)/1000;
+async function fallIll(d){const P=Math.round((1.3-hsub('rec')/100*.6)*d.cfr()*(s.st.hp<30?1.6:s.st.hp<45?1.25:s.st.hp>=70?.7:1)*(s.age>=70?1.4:1)*1000)/1000;
   s.ill={k:d.k,y:s.year};let cfr=P;
   if(!child()&&cfr>=.08&&s.cond==='normal'){const doc=Math.max(10,Math.round(s.money*.03));
     const i=await Q(`${d.n}`,d.fr,`${d.n}에 걸렸다. 열이 오르고 자리에서 일어나지 못한다.`,[{l:'의사를 부른다',s:`재산 -${doc}. 사혈과 하제, 키나 껍질`,a:'safe',dis:s.money<doc},{l:urban()?'시립 병원(오텔디외)에 간다':'이웃 아낙의 민간요법을 쓴다',s:urban()?'돈은 들지 않으나 병원은 붐비고 위험하다':'약초와 기도',a:'greedy'},{l:'성인에게 기도한다',s:'신앙에 기댄다',a:'pious'}]);
@@ -3269,7 +3357,7 @@ async function fallIll(d){const P=Math.round(d.cfr()*(s.st.hp<30?1.6:s.st.hp<45?
   if(d.after)d.after();if(d.chronic&&R()<d.chronic){s.flags[d.k==='phthisis'?'phthisis':d.k]=true;if(d.k==='phthisis')L('기침이 멎지 않는다. 폐병이 깊어졌다.','sys')}
   s.illLoss=(s.illLoss||0)+d.mo;s.ill=null}
 // 해마다: 오래 앓는 병의 영향
-function illYear(){if(!s.flags.phthisis&&!s.flags.pellagra){if(s.st.hp<45)s.st.hp=clamp(s.st.hp+ri(4,6),0,100);else if(s.st.hp<58)s.st.hp=clamp(s.st.hp+2,0,100)}
+function illYear(){if(!s.flags.phthisis&&!s.flags.pellagra){if(s.st.hp<45)s.st.hp=clamp(s.st.hp+ri(3,5)+Math.round(hsub('rec')/30),0,100);else if(s.st.hp<58)s.st.hp=clamp(s.st.hp+2,0,100)}
   if(s.year>=1801&&s.age<20&&!s.flags.pox&&!s.flags.vacc&&R()<(s.year<1810?.06:.1)*(urban()?1.5:1)){s.flags.vacc=true;L('제너의 우두 종두를 맞았다. 이제 천연두를 겁내지 않아도 된다.','sys')}if(s.flags.phthisis)fx({hp:-3,str:-1});if(s.flags.ague&&R()<.5)fx({hp:-2});if(s.flags.pellagra)fx({hp:-2,edu:-1});if(s.flags.pox2)fx({hp:-1})}
 
 /* ================= 가상의 벗: 이웃·동창·동료·맞수·연인 =================
@@ -3790,7 +3878,7 @@ defineAct({k:'guing',g:'social',n:'관문 밖 선술집에서 춤춘다',s:'재�
   ['성문 밖 풀밭 무도회에서 바이올린 소리에 맞춰 돌았다.']])+fx({money:-5,soc:2,rpeople:1,hp:R()<.3?-1:0}))});
 defineAct({k:'billet',g:'social',n:'연애편지를 쓴다',s:'글솜씨 판정. 혼담이 될 수도',c:()=>free()&&lit()&&s.age>=16&&s.age<45&&!(s.spouse&&s.spouse.alive)&&!priest()&&!nun(),inter:async()=>{
   const lv=relsAlive().find(r=>r.role==='연인');
-  const {m,why}=md([[s.sk.pen>=30,1,'글솜씨'],[(s.kn.klett||0)>=25,1,'문학'],[s.st.soc>=50,1,'사교'],[s.sk.pen<10,-1,'서툰 글씨']]);const r=await roll(m,{label:'연애편지',why});
+  const {m,why}=md([[s.sk.pen>=30,1,'글솜씨'],[(s.kn.kphil||0)>=25,1,'문학'],[s.st.soc>=50,1,'사교'],[s.sk.pen<10,-1,'서툰 글씨']]);const r=await roll(m,{label:'연애편지',why});
   if(lv){say(`${lv.n}에게 편지를 보냈다.`+(r.v>=4?' 답장이 왔다.':' 답장은 짧았다.')+fx({pen:1,klett:1})+relFx(lv,{close:r.v>=4?8:2}));return}
   if(r.v<=2){say('편지가 상대 부모 손에 들어갔다. 동네에 소문이 돌았다.'+fx({pen:1,rfam:-3,rloc:-1}));return}
   if(r.v<5){say('밤새 고쳐 쓴 편지를 보냈다. 답장은 없었다.'+fx({pen:1,klett:1}));return}
@@ -4568,7 +4656,7 @@ EV.push(
    {l:'맹세하고 몇 달 뒤 무대로 돌아간다',s:'',a:'social',f:()=>say('많은 배우가 하는 대로 하였다. 성사를 받고, 다시 분장을 하였다.'+fx({faith:-1,fame:1,rguild:2}))},
    {l:'아무 맹세도 하지 않는다',s:'',a:'bold radical',f:()=>say('무대가 내 신앙이라고 하였다. 신부는 고개를 저었다.'+fx({faith:-4,vlib:3,brl:3,rloc:-2,fame:1}))}]),
  C('job_salon',()=>free()&&jbIs('ar2p','ar2m','ar3p','ar4')&&(!jbIs('ar2p','ar2m')||T()>=1791)&&s.year%2===1,.9,2,'살롱 출품','le Salon',()=>`루브르의 살롱 전시회가 열린다. ${T()<1791?'아카데미 회원과 준회원만 그림을 걸 수 있다.':'1791년부터는 누구나 출품할 수 있다. 심사단이 그림을 고른다.'} 비평가들의 글 한 줄이 주문을 좌우한다.`,[
-   {l:'큰 역사화를 낸다',s:'그림 판정',a:'bold work',f:async()=>{const {m,why}=md([[s.sk.draw>=55,1,'그림 솜씨'],[s.sk.draw<35,-1,'솜씨 부족'],[s.fame>=30,1,'명성'],[!!patron(),1,'후원자'],[s.kn.khist>=25,1,'역사 지식']]);const r=await roll(m,{label:'살롱 출품',why});
+   {l:'큰 역사화를 낸다',s:'그림 판정',a:'bold work',f:async()=>{const {m,why}=md([[s.sk.draw>=55,1,'그림 솜씨'],[s.sk.draw<35,-1,'솜씨 부족'],[s.fame>=30,1,'명성'],[!!patron(),1,'후원자'],[s.kn.klat>=25,1,'역사 지식']]);const r=await roll(m,{label:'살롱 출품',why});
      if(r.v>=5)say('비평가들이 그림 앞에 오래 머물렀다. 주문이 밀려들었다.'+fx({fame:4,money:300,relite:3,draw:2}),'big');else if(r.v>=3)say('그림이 높은 벽 구석에 걸렸다. 몇 사람이 알아보았다.'+fx({fame:1,draw:1}));else say('비평가 하나가 그대의 그림을 두고 ‘간판 그림’이라 썼다.'+fx({fame:-2,cour:1}))}},
    {l:'초상화 몇 점만 낸다',s:'',a:'safe',f:()=>say('얌전한 초상화가 팔려 나갔다.'+fx({money:120,fame:1}))}]),
  // ---------- 관리·기술직 ----------
@@ -8437,7 +8525,7 @@ function render(){if(!s)return;document.documentElement.style.setProperty('--era
   $('#famAges').textContent=familyAges();
   $('#era').textContent=era().n===ruler()?era().n:`${era().n} · ${ruler()}`;
   drawScene($('#cv'));
-  renderProfile();renderPolCard();renderRel();renderEcon();drawProg(0)}
+  renderEcon();if(curTab!=='daily')renderTab(curTab);drawProg(0)}
 function polPos(p){return (p+100)/2}
 function polSpark(w,h){const pts=(s.polHist||[]).slice(-40).concat([[s.year,s.pol]]);if(pts.length<2)return '';const n=pts.length;
   return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="${w}" y1="${h/2}" y2="${h/2}" stroke="var(--line)" stroke-width="1"/><polyline fill="none" stroke="var(--fg)" stroke-width="1.5" points="${pts.map((p,i)=>`${(i/(n-1)*w).toFixed(1)},${(h/2-p[1]/100*(h/2-2)).toFixed(1)}`).join(' ')}"/><circle cx="${w}" cy="${(h/2-s.pol/100*(h/2-2)).toFixed(1)}" r="2.5" fill="var(--pink)"/></svg>`}
@@ -8472,7 +8560,7 @@ function actButtons(list,box){list.forEach(a=>{const used=s.acts[a.k]===s.year,p
   const sp=el('span');sp.appendChild(el('span','ol',a.n));sp.appendChild(el('small',null,a.s));b.appendChild(sp);b.appendChild(el('em',null,used?'올해 함':a.cost?`${a.cost}`:''));b.disabled=used||poor||sheetLive||busy;
   b.onclick=async()=>{if(busy||sheetLive)return;s.acts[a.k]=s.year;busy=true;$('#panel').hidden=true;try{if(a.inter){await a.inter();if(sheetLive)await done()}else a.f()}catch(e){console.error(e);sheetClose()}busy=false;render();save();if(s.dead){running=false;setTimeout(showEnd,900);return}closePanel()};
   box.appendChild(b)})}
-function showActs(){if(!s)return;const pin=openPanel('행동');
+function buildActs(pin){if(!s)return;
   if(child()){pin.appendChild(el('p','mut','열네 살이 되면 할 수 있는 일이 생깁니다.'));return}
   pin.appendChild(planBox());
   pin.appendChild(el('p','mut','행동은 각각 한 해에 한 번. 시간이 멈춘 동안 고를 수 있습니다.'));
@@ -8480,7 +8568,7 @@ function showActs(){if(!s)return;const pin=openPanel('행동');
   if(list.length){ACT_GROUPS.forEach(([g,gn])=>{const sub=list.filter(a=>(a.g||actGroup(a))===g);if(!sub.length)return;box.appendChild(el('h3','ag',gn));actButtons(sub,box)});pin.appendChild(box);return}
   if(!list.length)box.appendChild(el('p','mut',s.cond==='prison'?'감옥에서는 할 수 있는 일이 없다.':s.cond==='emigre'?'망명지에서는 기다릴 수밖에 없다.':'지금은 할 수 있는 일이 없다.'));
   actButtons(list,box);pin.appendChild(box)}
-function showPolitics(){if(!s)return;const pin=openPanel('정치');
+function buildPolitics(pin){if(!s)return;
   const top=el('div','pol-top');top.innerHTML=`<div class="big">${s.pol>0?'+':''}${s.pol}</div><div><b>${polLabel(s.pol)}</b><div class="mut small">공개 입장 ${polLabel(pubPol())} · 처신: ${CONDUCT.find(x=>x.k===conduct()).n}</div><div class="mut">${s.party?`${FAC[s.party].n} ${PRANK[s.prank]}`:'무소속'}</div></div>${polSpark(160,40)}`;pin.appendChild(top);
   pin.appendChild(el('h3',null,'지금의 파벌'));const fs=activeFactions().slice().sort((a,b)=>a.pol-b.pol);
   if(!fs.length)pin.appendChild(el('p','mut','아직 정치적 파벌이 뚜렷하지 않다.'));
@@ -8494,7 +8582,7 @@ function showPolitics(){if(!s)return;const pin=openPanel('정치');
       b.disabled=on||child()||s.acts['st_'+iss.id]===s.year||s.cond!=='normal';b.onclick=()=>{s.acts['st_'+iss.id]=s.year;setStance(iss.id,i,true);render();save();showPolitics()};ns.appendChild(b)});r.appendChild(ns);pin.appendChild(r)});
   pin.appendChild(el('h3',null,'당 활동'));const list=PACTS.filter(a=>{try{return a.c()}catch(e){return false}});const box=el('div','acts');
   if(!list.length)box.appendChild(el('p','mut',s.party?'지금은 할 수 있는 당 활동이 없다.':'파벌에 들면 연설, 논설, 시위, 출마 같은 활동을 할 수 있다.'));actButtons(list,box);pin.appendChild(box)}
-function showHist(){if(!s)return;const pin=openPanel('이력');
+function showHist(host){if(!s)return;const pin=host||openPanel('이력');
   const dl=el('dl','kv');const add=(k,v)=>{dl.appendChild(el('dt',null,k));dl.appendChild(el('dd',null,v))};
   add('이름',`${s.given[0]} ${s.sur[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}`);add('태어난 곳',`${REGIONS[s.region].n}, ${s.by}년 ${s.bm+1}월`);add('신분',`${ESTATES[s.estate].n} — ${ESTATES[s.estate].fr}`);add('신앙',{catholic:'가톨릭',protestant:'신교(위그노·루터파)',jewish:'유대교'}[s.faithKind]);add('글',lit()?'읽고 쓴다':'문맹');
   if(s.trait)add('성품',s.trait);if(s.goal)add('평생의 뜻',`${s.goal}${s.goalDone?' (이룸)':''}`);
@@ -8539,7 +8627,7 @@ function loadLives(){try{return JSON.parse(localStorage.getItem(LKEY)||'[]')}cat
 function recordLife(out,ep){try{const l=loadLives();l.unshift({n:`${s.given[0]} ${s.sur[0]}`,ep,y:`${s.by}–${s.year}`,age:s.age,txt:out.slice(0,2).join(' ')});localStorage.setItem(LKEY,JSON.stringify(l.slice(0,30)))}catch(e){}}
 
 /* ================= 시작 ================= */
-function start(fresh,o){$('#title').hidden=true;$('#end').hidden=true;sheetClose();
+function start(fresh,o){$('#title').hidden=true;$('#end').hidden=true;document.body.classList.remove('covered');sheetClose();curTab='daily';setTab('daily');
   if(fresh){s=newState(o);rebuildLog();birth()}else rebuildLog();
   render();running=true;busy=false;frac=0;setPaused(false);save();
   try{if(!localStorage.getItem(KEY+'_hint')){$('#hint').hidden=false;localStorage.setItem(KEY+'_hint','1');setTimeout(()=>{$('#hint').hidden=true},7000)}}catch(e){}}
@@ -8587,11 +8675,24 @@ function obituary(){const d=s.death,nm=`${s.given[0]} ${s.sur[0]}`,out=[];
   const k=s.kids.length,ka=adultKids();out.push(s.spouse?`${jo(s.spouse.n,'과','와')} 혼인하여 자녀 ${k}명을 두었고, 그 가운데 ${ka}명이 어른이 되었다.`:'혼인하지 않았다.');
   out.push(`남긴 재산은 ${fmt(s.money)} ${money()}${s.land?`, 해마다 ${fmt(s.land)}의 지대가 나오는 땅`:''}.`);
   return out}
-function showEnd(){const out=obituary(),ep=epithet();recordLife(out,ep);try{localStorage.removeItem(KEY)}catch(e){}
+function showEnd(){if(!s||!s.dead||!s.death)return;const out=obituary(),ep=epithet();recordLife(out,ep);try{localStorage.removeItem(KEY)}catch(e){}
   $('#obName').innerHTML=`${s.given[0]} ${s.sur[0]}${s.given[1]?`<small>${s.given[1]} ${s.sur[1]}</small>`:''}`;
-  $('#obYears').textContent=`${s.by} – ${s.year}`;
+  $('#obYears').textContent=`${s.by}. ${s.bm+1}. ${s.bd||1} – ${s.year}`;
   $('#obWill').textContent=`“${willLine()}”`;
-  $('#end').hidden=false;$('#end').scrollTop=0}
+  // 인간관계의 결과
+  const ul=$('#obRels');ul.innerHTML='';const fam=[];
+  if(s.spouse)fam.push([`${isM()?'아내':'남편'} ${s.spouse.n||''}`.trim(),s.spouse.alive?'그대를 떠나보냈다':s.divorced?'오래전에 갈라섰다':'먼저 세상을 떠났다']);
+  const kA=kidsAlive().length,kD=s.kids.length-kA;if(s.kids.length)fam.push([`자녀 ${s.kids.length}명`,`${kA}명이 살아 남았다${kD?` · ${kD}명을 먼저 묻었다`:''}`]);
+  const rs=(s.rel||[]).slice().sort((a,b)=>(b.close+(b.hate||0)+b.riv+b.resp)-(a.close+(a.hate||0)+a.riv+a.resp)).slice(0,6);
+  fam.concat(rs.map(r=>[`${r.n} · ${relBond(r)}`,r.alive?(relBond(r)==='혐오'?'그대가 죽은 뒤에도 살아남았다':relBond(r)==='친우'?'관 곁을 지켰다':'소식을 듣고 슬퍼했다'):relEnd(r)||'먼저 떠났다'])).forEach(([n,v])=>{const li=el('li');li.innerHTML=`<b>${n}</b><span>${v}</span>`;ul.appendChild(li)});
+  if(!ul.children.length)ul.appendChild(el('li','mut','곁에 남은 이가 없었다.'));
+  // 사후 평가
+  const ev=$('#obEval');ev.innerHTML='';const sc=legacyScore();ev.appendChild(el('div','ob-ep',`「${ep}」`));ev.appendChild(el('div','ob-st',`${'★'.repeat(sc)}${'☆'.repeat(5-sc)}`));
+  ev.appendChild(el('p','small',legacyText()));
+  $('#end').hidden=false;document.body.classList.add('covered');$('#end').scrollTop=0}
+// 후세의 평가: 명성·영향력·업적·혐의로 별 다섯 개까지
+function legacyScore(){let p=0;p+=s.fame>=70?2:s.fame>=35?1:0;const iv=influence().v;p+=iv>=50?1:0;if((s.best&&Object.values(s.best).some(v=>v>=5))||s.flags.wasDeputy||s.flags.book||s.flags.legion)p++;if(s.flags.bastille||s.flags.regicide||s.flags.title)p++;if(s.age>=14&&s.goalDone)p++;return clamp(p,s.age>=14?1:0,5)}
+function legacyText(){const o=obituary();const txt=o.slice(0,1).concat(o.slice(2,4)).join(' ');const pol=s.age>=16?` 후세 사람들은 그를 ${polLabel(s.pol)}의 한 사람으로 기억했다.`:'';const rp=s.rep&&s.rep.rpeople>=65?' 이웃들은 오래도록 그의 이름을 말했다.':s.rep&&s.rep.rloc<=30?' 동네 사람들은 그의 이름을 꺼내지 않았다.':'';return txt+pol+rp}
 // 마지막 한마디: 성품·가치·정치 성향·신앙·평생의 뜻·죽음의 방식에서 고른다
 function willLine(){const d=s.death||{},c=d.cause,p=s.pol,tv=topValues(1)[0],fm=faithModeNow(),k=kidsAlive().length,tr=s.trait;
   if(s.age<7)return pick(['엄마…','따뜻하다.','빵 한 조각만…']);
@@ -8623,18 +8724,17 @@ function willLine(){const d=s.death||{},c=d.cause,p=s.pol,tv=topValues(1)[0],fm=
 function boot(){logBox=$('#log');$('#logMore').onclick=()=>{logLimit+=LOG_STEP;foldLog()};$('#logLess').onclick=()=>{logLimit=LOG_STEP;foldLog();$('.logc').scrollIntoView({block:'start',behavior:RM?'auto':'smooth'})};
   try{const v=+localStorage.getItem(KEY+'_spd');if([1,2,4,8,12,16].includes(v))speed=v}catch(e){}setSpeed(speed);
   const saved=load();if(saved){$('#contB').hidden=false;$('#contB').onclick=()=>{s=load()||saved;start(false)}}
-  $('#newB').onclick=()=>start(true,{hard:true});
-  $('#againB').onclick=()=>start(true,{hard:true});
+  $('#againB').onclick=()=>{$('#end').hidden=true;$('#title').hidden=false;document.body.classList.add('covered');s=null;$('#contB').hidden=true;rollPre()};
   $('#homeB').onclick=()=>{$('#end').hidden=true;$('#title').hidden=false;s=null;$('#contB').hidden=!load()};
   $('#pClose').onclick=closePanel;
   $('#pp').onclick=()=>{if(running)setPaused(!paused)};
   document.querySelectorAll('#spd button').forEach(b=>b.onclick=()=>setSpeed(+b.dataset.s));
   $('#nextB').onclick=()=>{if(!running||busy||sheetLive)return;clearTimeout(timer);ticking=false;frac=0;step()};
   $('#moreB').onclick=e=>{e.stopPropagation();$('#menu').hidden=!$('#menu').hidden};document.addEventListener('click',()=>{$('#menu').hidden=true});
-  $('#mHist').onclick=showHist;$('#mHelp').onclick=showHelp;$('#mLives').onclick=showLives;$('#mSrc').onclick=showSources;$('#mPol').onclick=showPolitics;$('#mInfo').onclick=showInfo;
+  $('#mHist').onclick=()=>showHist();$('#mHelp').onclick=showHelp;$('#mLives').onclick=showLives;$('#mSrc').onclick=showSources;$('#mPol').onclick=showPolitics;$('#mInfo').onclick=showInfo;
   try{if(localStorage.getItem(KEY+'_data')==='1')document.body.classList.add('showdata')}catch(e){}$('#dataT').setAttribute('aria-pressed',String(document.body.classList.contains('showdata')));
   $('#dataT').onclick=()=>{const on=document.body.classList.toggle('showdata');$('#dataT').setAttribute('aria-pressed',String(on));$('#dataT').textContent=on?'자료 가리기':'자료 보기';try{localStorage.setItem(KEY+'_data',on?'1':'0')}catch(e){}};$('#autoT').onclick=()=>setAuto(!autoMode);
-  $('#mNew').onclick=()=>{if(!s)return;running=false;freeze();save();$('#menu').hidden=true;$('#title').hidden=false;$('#contB').hidden=!load()};$('#hint').onclick=()=>{$('#hint').hidden=true};
+  $('#mNew').onclick=()=>{if(!s)return;running=false;freeze();save();$('#menu').hidden=true;$('#title').hidden=false;document.body.classList.add('covered');$('#contB').hidden=!load()};$('#hint').onclick=()=>{$('#hint').hidden=true};
   $('#pp').innerHTML=PAUSE;
 }
 boot();
@@ -8665,10 +8765,10 @@ function renderProfile(){const C=$('#profCard');if(!C)return;C.innerHTML='';cons
   bd.innerHTML=[['명성',s.fame,s.fame>=60?'나라 안에 이름이 났다':s.fame>=30?'고장의 유명인':s.fame>=10?'아는 사람만 안다':'이름 없는 사람','fame'],['영향력',inf.v,inf.b.filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,1).map(x=>x[0])[0]||'없음','inf'],['재산',fmt(s.money),money()+(s.land?` · 지대 ${fmt(s.land)}`:''),'money'],['혐의',s.sus,s.sus>=50?'위험':s.sus>=25?'주목받음':'깨끗함','sus']]
    .map(([n,v,sm,k])=>`<div class="bdg ${k}${k==='sus'&&s.sus>=30?' warn':''}"><span>${n}</span><b>${v}</b><small>${sm}</small></div>`).join('');C.appendChild(bd);
   const st=el('div','pf-stats');st.innerHTML=STATS.map(([k,n,ab])=>`<div class="ps"><span>${n}<i>${ab}</i></span><s><u style="width:${s.st[k]}%;background:${STATC[k]}"></u></s><b>${s.st[k]}</b></div>`).join('');C.appendChild(st);
-  const tl=el('p','pf-tal small');tl.innerHTML=`<span class="mut">재능</span> <b>${s.talent||50}</b>${s.gift?` · <span class="mut">타고난 소질</span> ${giftName()}`:''}${s.trait?` · <span class="mut">성품</span> ${s.trait}`:''}${s.goal?` · <span class="mut">뜻</span> ${s.goal}`:''}`;C.appendChild(tl);
+  const tl=el('div','pf-tal small');tl.innerHTML=`<span class="mut">재능</span> ${topTalents(3).filter(x=>x[2]>=55).map(x=>`<span class="tchip">${x[1]} <i>${stars(x[2])}</i></span>`).join('')||'<span class="mut">아직 드러나지 않았다</span>'}${s.trait?` <span class="mut">· 성품</span> ${s.trait}`:''}${s.goal?` <span class="mut">· 뜻</span> ${s.goal}`:''}`;C.appendChild(tl);
   C.appendChild(faithBox(true));
   const rp=el('div','chips reps');REPG.forEach(([k,n])=>{const v=s.rep[k];if(v>=40&&v<=60)return;const w=repWord(k);rp.appendChild(el('span','chip'+(v>=65?' on':'')+(v<=35?' bad':''),`${n} ${w&&w!=='—'?w:v}`))});if(rp.children.length)C.appendChild(rp);
-  const row=el('div','pf-btns');const a=el('button','pill pri','행동');a.type='button';a.onclick=showActs;const d=el('button','pill','세부 정보');d.type='button';d.onclick=showInfo;row.append(a,d);C.appendChild(row)}
+}
 function famLine(){const o=[];if(s.fa.alive)o.push(`아버지 ${s.fa.age}세`);if(s.mo.alive)o.push(`어머니 ${s.mo.age}세`);if(s.spouse&&s.spouse.alive)o.push(`${isM()?'아내':'남편'} ${s.spouse.n||''}`.trim());const k=kidsAlive().length;if(k)o.push(`자녀 ${k}`);return o.join(' · ')||'가족이 없다'}
 function relRow(r,full){const d=el('div','rel');const f=r.fac&&FAC[r.fac];const P=perOf(r);
   d.innerHTML=`<div class="rh"><b>${r.n}</b>${P?`<span class="mut small">${P.fr} · ${P.b}~${P.d}</span>`:''}<span class="tag">${r.role}</span>${f?`<span class="tag f" style="--fc:${facColor(f)}">${f.n}</span>`:''}</div>`+
@@ -8681,22 +8781,58 @@ function renderRel(){const C=$('#relCard');if(!C)return;C.innerHTML='';const h=e
     if(fs.length){const p=el('p','mut small');p.innerHTML=`${my.n}의 동맹: ${fs.filter(x=>x[1]>0).map(x=>x[0].n).join(', ')||'없음'} · 적: ${fs.filter(x=>x[1]<0).map(x=>x[0].n).join(', ')||'없음'}`;C.appendChild(p)}}}
 function renderEcon(){const C=$('#econCard');if(!C)return;const E=econ();const bk=basket();
   C.innerHTML=`<span class="ec-i"><span class="mut">빵 4리브르</span> <b>${priceTxt(bk[0][1],bk[0][2])}</b></span><span class="ec-i"><span class="mut">물가</span> <b>×${E.price.toFixed(2)}</b> ${econWord('price',E.price)}</span><span class="ec-i"><span class="mut">화폐 가치</span> <b>${Math.round(E.cur*100)}%</b></span>`;C.title=curNote()}
-function showInfo(){if(!s)return;const pin=openPanel('인물');
-  pin.appendChild(el('h3',null,'핵심 능력치'));const t=el('div','cgrid');t.innerHTML=STATS.map(([k,n,ab])=>`<div><span class="lab">${n} <i>${ab}</i></span><b>${s.st[k]}</b>${bar(s.st[k],0,100,STATC[k])}</div>`).join('');pin.appendChild(t);
-  pin.appendChild(el('p','small',`의지 ${s.st.cour} · 재능 ${s.talent||50}${s.gift?` · 타고난 소질: ${giftName()}`:''}`));
+function buildInfo(pin){if(!s)return;
+  pin.appendChild(el('h3',null,'건강 (CON)'));const hg=el('div','cgrid');hg.innerHTML=HSUB.map(([k,n])=>`<div><span class="lab">${n}</span><b>${hsub(k)}</b>${bar(hsub(k),0,100,'var(--green)')}</div>`).join('');pin.appendChild(hg);
   if(s.ill)pin.appendChild(el('p','warn',`지금 앓는 병: ${illName()}`));
-  skillGroups(-1).forEach(([base,gn,ks,src])=>{pin.appendChild(el('h3',null,`${gn} 분야`));const g=el('div','cgrid');g.innerHTML=ks.map(k=>`<div><span class="lab">${FXN[k]}</span><b>${src[k]||0}</b>${bar(src[k]||0)}</div>`).join('');pin.appendChild(g)});
-  pin.appendChild(el('h3',null,'재산과 혐의'));pin.appendChild(el('p',null,`재산 ${fmt(s.money)} ${money()}${s.land?` · 지대 ${fmt(s.land)}/년`:''}${s.dues?` · 영주 공납 ${fmt(s.dues)}/년`:''} · 혐의 ${s.sus}`));
+  pin.appendChild(el('h3',null,'재능 · 타고난 잠재력'));const tg=el('div','tals');
+  TALENTS.map(x=>[x,(s.tal||{})[x[0]]||0]).sort((a,b)=>b[1]-a[1]).forEach(([[k,n,ks],v])=>{const d=el('div','tal'+(v>=55?' on':''));d.innerHTML=`<b>${n}</b><span class="st">${stars(v)||'·'}</span><small>${ks.map(x=>FXN[x]).slice(0,3).join(' · ')}</small>`;tg.appendChild(d)});pin.appendChild(tg);
+  skillGroups(-1).forEach(([base,gn,ks,src])=>{pin.appendChild(el('h3',null,`${gn} (${STATS.find(x=>x[0]===base)[2]}) 분야`));const g=el('div','cgrid');g.innerHTML=ks.map(k=>`<div><span class="lab">${FXN[k]}${TAL_BY[k]&&TAL_BY[k].some(t=>(s.tal||{})[t]>=70)?' <i class="tk">★</i>':''}</span><b>${src[k]||0}</b>${bar(src[k]||0)}</div>`).join('');pin.appendChild(g)});
   pin.appendChild(el('h3',null,'신앙'));pin.appendChild(faithBox(false));
-  pin.appendChild(el('h3',null,'명성'));pin.appendChild(el('p',null,`명성 ${s.fame}`));
   pin.appendChild(el('h3',null,'평판'));const rp=el('div','cgrid');rp.innerHTML=REPG.map(([k,n])=>`<div><span class="lab">${n}</span><b>${s.rep[k]}</b>${bar(s.rep[k],0,100,s.rep[k]<=35?'var(--red)':'var(--green)')}<small>${repWord(k)}</small></div>`).join('');pin.appendChild(rp);
-  const inf=influence();pin.appendChild(el('h3',null,`정치적 영향력 ${inf.v}`));const ul=el('ul','infl');(inf.b.length?inf.b:[['아직 아무 영향력이 없다',0]]).forEach(([n,v])=>ul.appendChild(el('li',null,`${n} ${v>0?'+':''}${v||''}`)));pin.appendChild(ul);
-  pin.appendChild(el('h3',null,'가치와 의지'));const vv=el('div','cgrid');vv.innerHTML=VALUES.map(([k,n])=>`<div><span class="lab">${n}</span><b>${s.val[k]}</b>${bar(s.val[k],0,100,'var(--teal)')}</div>`).join('')+`<div><span class="lab">의지</span><b>${s.st.cour}</b>${bar(s.st.cour,0,100,'var(--rad)')}</div>`;pin.appendChild(vv);
-  pin.appendChild(el('h3',null,'사람들'));const rl=relsAlive();if(!rl.length)pin.appendChild(el('p','mut','아직 가까운 사람이 없다.'));const box=el('div','rels');rl.forEach(r=>box.appendChild(relRow(r,true)));pin.appendChild(box);
-  const gone=(s.rel||[]).filter(r=>!r.alive);if(gone.length)pin.appendChild(el('p','mut small',`떠난 사람들: ${gone.map(r=>`${r.n}${r.dead?` (${r.dead}년 사망)`:''}`).join(', ')}`));
-  const E=econ();pin.appendChild(el('h3',null,`그 시절의 경제 · ${REGIONS[loc()].n}`));const bu=el('ul','basket');basket().forEach(([n,v,u])=>{const li=el('li');li.innerHTML=`<span>${n}</span><b>${priceTxt(v,u)}</b>`;bu.appendChild(li)});pin.appendChild(bu);pin.appendChild(el('p','mut small',`물가 ×${E.price.toFixed(2)} · 화폐 가치 ${Math.round(E.cur*100)}% — ${curNote()}`));
-  pin.appendChild(el('h3',null,'파벌과의 관계'));const fs=activeFactions();if(!fs.length)pin.appendChild(el('p','mut','아직 뚜렷한 파벌이 없다.'));
-  const fl=el('ul','infl');fs.forEach(f=>fl.appendChild(el('li',null,`${f.n} — ${s.party===f.id?`소속 · ${PRANK[s.prank]} · `:''}${frelWord(frelOf(f.id))} ${frelOf(f.id)} · 성향 친밀도 ${affinity(f)}%`)));pin.appendChild(fl)}
+  const inf=influence();pin.appendChild(el('h3',null,`명성 ${s.fame} · 정치적 영향력 ${inf.v}`));const ul=el('ul','infl');(inf.b.length?inf.b:[['아직 아무 영향력이 없다',0]]).forEach(([n,v])=>ul.appendChild(el('li',null,`${n} ${v>0?'+':''}${v||''}`)));pin.appendChild(ul);
+  pin.appendChild(el('h3',null,'가치와 의지'));const vv=el('div','cgrid');vv.innerHTML=VALUES.map(([k,n])=>`<div><span class="lab">${n}</span><b>${s.val[k]}</b>${bar(s.val[k],0,100,'var(--teal)')}</div>`).join('')+`<div><span class="lab">의지</span><b>${s.st.cour}</b>${bar(s.st.cour,0,100,'var(--rad)')}</div>`;pin.appendChild(vv)}
+
+/* ================= 하단 메뉴: 프로필 · 관계 · 일상 · 생활 · 시대 ================= */
+let curTab='daily';
+const TABS={profile:'#tProfile',rel:'#tRel',daily:'#tDaily',life:'#tLife',era:'#tEra'};
+function setTab(t){if(!TABS[t])return;curTab=t;Object.entries(TABS).forEach(([k,q])=>{$(q).hidden=k!==t});document.querySelectorAll('#nav button').forEach(b=>{if(b.dataset.t===t)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+  closePanel();if(s)renderTab(t);if(t==='daily'&&s)drawScene($('#cv'));window.scrollTo({top:0,behavior:'auto'})}
+function showActs(){setTab('life')}function showPolitics(){setTab('era')}function showInfo(){setTab('profile')}
+function hostClear(q){const h=$(q);h.innerHTML='';return h}
+function cardIn(host,title,fr){const c=el('section','card');const h=el('div','ch');h.innerHTML=`<h2>${title}</h2>${fr?`<span class="fr">${fr}</span>`:''}`;c.appendChild(h);host.appendChild(c);return c}
+let tabBusy=false;
+function renderTab(t){if(!s||tabBusy)return;tabBusy=true;const keepY=window.scrollY;
+  try{
+  if(t==='profile'){renderProfile();const H=hostClear('#profMore');buildInfo(cardIn(H,'세부 정보','Détails'))}
+  if(t==='rel'){renderRel();const H=hostClear('#relMore');relMore(H)}
+  if(t==='life'){const H=hostClear('#lifeHost');buildActs(cardIn(H,'생활','La vie quotidienne'));showHist(cardIn(H,'이력','État civil'));lifeEcon(cardIn(H,'살림과 물가','Le ménage'))}
+  if(t==='era'){renderPolCard();const H=hostClear('#eraHost');eraCard(cardIn(H,era().n,era().h));buildPolitics(cardIn(H,'정치','La politique'))}
+  }catch(e){console.error(e)}tabBusy=false;window.scrollTo(0,keepY)}
+function relMore(H){const c=cardIn(H,'사람들','Les proches');const rl=relsAlive();if(!rl.length)c.appendChild(el('p','mut','아직 가까운 사람이 없다. 학교, 일터, 클럽, 이웃에서 사람을 만난다.'));
+  const box=el('div','rels');rl.sort((a,b)=>(b.close+(b.hate||0)+b.riv)-(a.close+(a.hate||0)+a.riv)).forEach(r=>box.appendChild(relRow(r,true)));c.appendChild(box);
+  const gone=(s.rel||[]).filter(r=>!r.alive);if(gone.length){c.appendChild(el('h3',null,'떠난 사람들'));const ul=el('ul','infl');gone.forEach(r=>ul.appendChild(el('li',null,`${r.n} — ${relBond(r)}${relEnd(r)?` · ${relEnd(r)}`:''}`)));c.appendChild(ul)}
+  const f=cardIn(H,'파벌과의 관계','Les factions');const fs=activeFactions();if(!fs.length)f.appendChild(el('p','mut','아직 뚜렷한 파벌이 없다.'));
+  const fl=el('ul','infl');fs.forEach(x=>fl.appendChild(el('li',null,`${x.n} — ${s.party===x.id?`소속 · ${PRANK[s.prank]} · `:''}${frelWord(frelOf(x.id))} ${frelOf(x.id)} · 성향 친밀도 ${affinity(x)}%`)));f.appendChild(fl)}
+// 관계가 어떻게 끝났는가(사망·연락 두절)
+function relEnd(r){const P=typeof perOf==='function'?perOf(r):null;if(r.alive)return '';if(P)return `${P.d}년 ${P.dc||'사망'}`;
+  const f=r.fate&&r.fate.length?r.fate[r.fate.length-1]:null;const ft=f?(typeof f==='string'?f:(f.t||'')):'';if(r.dead)return `${r.dead}년 사망${ft?` — ${ft.slice(0,40)}`:''}`;if(r.lost)return '연락이 끊김';return ft.slice(0,50)}
+function lifeEcon(c){const E=econ();const bu=el('ul','basket');basket().forEach(([n,v,u])=>{const li=el('li');li.innerHTML=`<span>${n}</span><b>${priceTxt(v,u)}</b>`;bu.appendChild(li)});c.appendChild(bu);
+  c.appendChild(el('p','small',`재산 ${fmt(s.money)} ${money()}${s.land?` · 지대 ${fmt(s.land)}/년`:''}${s.dues?` · 영주 공납 ${fmt(s.dues)}/년`:''} · 물가 ×${E.price.toFixed(2)} · 화폐 가치 ${Math.round(E.cur*100)}%`));c.appendChild(el('p','mut small',curNote()))}
+function eraCard(c){c.appendChild(el('p',null,`${ruler()} · ${s.year}년${repYear(s.year)?' · '+repYear(s.year):''}`));
+  const hs=s.log.filter(e=>e.k==='hist').slice(-8).reverse();if(hs.length){c.appendChild(el('h3',null,'최근의 사건'));const ul=el('ul','infl');hs.forEach(e=>ul.appendChild(el('li',null,e.t)));c.appendChild(ul)}}
+// 시작 화면: 이름·성별·신분·출생일, 주사위
+let pre={};
+function rollPre(){const sex=R()<.5?'M':'F';const PW={epee:.8,robe:1.4,hobereau:.3,bourgeois:16,artisan:81.5};const estate=wpick(Object.entries(PW));const nm=rollName(sex,estate,'paris');
+  pre={sex,estate,given:nm.g[0],givenFr:nm.g[1],sur:nm.f[0],surFr:nm.f[1],year:ri(1750,1790),month:ri(1,12),day:ri(1,28)};fillPre()}
+function fillPre(){$('#inGiven').value=pre.given;$('#inSur').value=pre.sur;$('#estName').textContent=ESTATES[pre.estate].n;$('#estFr').textContent=' · '+ESTATES[pre.estate].fr;
+  document.querySelectorAll('.nf-sex button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.x===pre.sex)));$('#bY').value=pre.year;$('#bM').value=pre.month;fillDays();$('#bD').value=pre.day}
+function fillDays(){const y=+$('#bY').value,m=+$('#bM').value;const n=new Date(y,m,0).getDate();const cur=+$('#bD').value||pre.day||1;$('#bD').innerHTML=Array.from({length:n},(_,i)=>`<option value="${i+1}">${i+1}일</option>`).join('');$('#bD').value=Math.min(cur,n)}
+function bootStart(){$('#bY').innerHTML=Array.from({length:41},(_,i)=>`<option value="${1750+i}">${1750+i}년</option>`).join('');$('#bM').innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1}월</option>`).join('');
+  $('#bY').onchange=fillDays;$('#bM').onchange=fillDays;$('#rollB').onclick=()=>rollPre();
+  document.querySelectorAll('.nf-sex button').forEach(b=>b.onclick=()=>{if(pre.sex===b.dataset.x)return;pre.sex=b.dataset.x;const g=rollName(pre.sex,pre.estate,'paris').g;pre.given=g[0];pre.givenFr=g[1];fillPre()});
+  $('#goB').onclick=()=>{const g=$('#inGiven').value.trim(),sr=$('#inSur').value.trim();start(true,{hard:true,sex:pre.sex,estate:pre.estate,year:+$('#bY').value,month:+$('#bM').value,day:+$('#bD').value,given:g||pre.given,givenFr:(!g||g===pre.given)?pre.givenFr:'',sur:sr||pre.sur,surFr:(!sr||sr===pre.sur)?pre.surFr:''})};
+  document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>setTab(b.dataset.t));document.body.classList.add('covered');rollPre()}
+bootStart();
 
 </script>
 </body>

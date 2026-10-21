@@ -1,11 +1,11 @@
 /* ================= 새 인생 ================= */
 function rollName(sex,estate,region){const g=pick(sex==='M'?M_NAMES:F_NAMES);let f;
   if(ESTATES[estate].noble)f=pick(NOBLE_SURS);else if(REG_SURS[region]&&R()<.55)f=pick(REG_SURS[region]);else f=pick(SURS);return {g,f}}
-function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=ri(0,11);// 태어나는 곳은 파리로 고정. 1789년 파리 주민 약 60만: 수공업·장사·품팔이의 서민이 대부분, 부르주아 약 15%, 귀족 1~2%.
+function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,1790),bm=o.month?o.month-1:ri(0,11),bd=o.day||ri(1,28);// 태어나는 곳은 파리로 고정. 1789년 파리 주민 약 60만: 수공업·장사·품팔이의 서민이 대부분, 부르주아 약 15%, 귀족 1~2%.
   const PARIS_W={epee:.8,robe:1.4,hobereau:.3,bourgeois:16,artisan:81.5,peasant:0};const estate=o.estate||wpick(Object.entries(PARIS_W).filter(x=>x[1]>0));
   let region='paris';if(false){const urbanBias=estate==='epee'?[['paris',6],['bourgogne',1],['ile',2]]:estate==='bourgeois'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?12:1)]):estate==='artisan'?Object.entries(REGIONS).map(([k,v])=>[k,v.w*(v.urban?20:.6)]):Object.entries(REGIONS).map(([k,v])=>[k,v.urban?0:v.w]);region=wpick(urbanBias)}
   const nm=rollName(sex,estate,region);
-  const given=o.given?[o.given,'']:[nm.g[0],nm.g[1]],sur=o.sur?[o.sur,'']:[nm.f[0],nm.f[1]];
+  const given=o.given?[o.given,o.givenFr||'']:[nm.g[0],nm.g[1]],sur=o.sur?[o.sur,o.surFr||'']:[nm.f[0],nm.f[1]];
   const fk=region==='languedoc'&&R()<.12||region==='alsace'&&R()<.18||R()<.004?'protestant':(region==='alsace'&&R()<.03)||(region==='bordeaux'&&R()<.03)?'jewish':'catholic';
   const st={edu:ri(4,14),soc:ri(12,30),hp:ri(42,70),cour:ri(18,42)};
   const E=ESTATES[estate];let fame=0,pol=ri(-12,8),faith=ri(45,75);
@@ -16,14 +16,14 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,
   if(['bretagne','vendee'].includes(region))faith+=15;if(region==='paris')faith-=12;if(fk!=='catholic')faith=ri(50,80);
   return attrsInit({v:2,sex,given,sur,estate,region,loc:null,fk,faithKind:fk,hard:o.hard!==false,
     st,money:0,land:0,dues:0,fame,sus:0,pol,faith:clamp(faith,0,100),literate:false,
-    age:0,year:by,month:bm-(bm%3)+2,season:seasonOf(bm-(bm%3)+2),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
+    age:0,bd,year:by,month:bm-(bm%3)+2,season:seasonOf(bm-(bm%3)+2),by,bm,tick:3,party:null,prank:0,stance:{},polHist:[],trait:null,goal:null,goalDone:false,plan:'근면',
     job:null,jobSince:0,prevJob:null,best:{},hist:[],cond:'normal',condSince:0,
     fa:{alive:true,age:ri(24,40)},mo:{alive:true,age:ri(19,34)},sibs:ri(1,6),eldest:R()<.35,inherit:0,
     spouse:null,married:false,kids:[],widowed:0,divorced:false,
     seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null})}
 function birth(){L(`${yl()}`,'yr');const E=ESTATES[s.estate],Rg=REGIONS[s.region];
   const who=isM()?'아들':'딸';
-  say(`${s.year}년 ${s.month+1}월, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 영지`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
+  say(`${s.by}년 ${s.bm+1}월 ${s.bd||1}일, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 저택`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
   say(`세례명은 ${s.given[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}.`+(s.faithKind==='protestant'?(s.year<1788?' 집안은 몰래 신교 예배를 지키는 위그노다. 왕국의 법은 신교도의 혼인조차 인정하지 않는다.':' 집안은 신교(위그노)를 믿는다.'):s.faithKind==='jewish'?(s.year<1791?' 집안은 유대교를 믿는다. 왕국에서 유대인은 시민이 아니다.':' 집안은 유대교를 믿는다.'):''));
   L(`지금 프랑스를 다스리는 것은 ${ruler()}. 시대는 ${era().n}.`,'sys')}
 
@@ -171,7 +171,7 @@ async function promoCheck(){const j=job();if(!j||j.tr==='pol'&&j.t>=3)return;con
   if(war)p=.14;if(purge)p=.3;if(trait('야심'))p*=1.4;if(trait('신중'))p*=.8;if(s.plan==='근면')p*=1.3;
   if(R()>=p)return;const n=pick(next);
   const key=PROMO_KEY[j.tr]||['soc',45];
-  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)>=50,1,'숙련'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)<15&&['craft','med','art','sea'].includes(j.tr),-1,'서툰 솜씨'],[(s.sk.manner||0)>=50&&['law','pol','church','serv','state'].includes(j.tr),1,'예법'],[(j.tr==='law'&&s.kn.klaw>=50)||(j.tr==='med'&&s.kn.kmed>=50)||(j.tr==='church'&&s.kn.ktheo>=45)||(j.tr==='letters'&&s.kn.klett>=50),1,'전문 지식'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
+  const {m,why}=md([[s.st[key[0]]>=key[1],1,FXN[key[0]]],[s.fame>=40,1,'명성'],[s.st[key[0]]<key[1]-20,-1,FXN[key[0]]+' 부족'],[['law','church','med','letters'].includes(j.tr)&&SCH().grade>=80,1,'학업 성적'],[!!patron(),1,'후원자'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)>=50,1,'숙련'],[(s.sk[mainSkill()]||s.kn[mainSkill()]||0)<15&&['craft','med','art','sea'].includes(j.tr),-1,'서툰 솜씨'],[(s.sk.manner||0)>=50&&['law','pol','church','serv','state'].includes(j.tr),1,'예법'],[(j.tr==='law'&&s.kn.klaw>=50)||(j.tr==='med'&&s.kn.kmed>=50)||(j.tr==='church'&&s.kn.ktheo>=45)||(j.tr==='letters'&&s.kn.kphil>=50),1,'전문 지식'],[!!rival(),-1,'맞수'],[s.rep.rguild>=70,1,'동업자들의 신망'],[s.rep.rguild<=30,-1,'나쁜 평판'],[j.tr==='craft'&&s.st.dex>=60,1,'기술'],[j.tr==='farm'&&s.st.str>=60,1,'체력'],[j.tr==='army'&&s.st.str>=60,1,'체력']]);
   const r=await roll(m,{label:`${pname(n)} 승진`,why});
   if(r.v>=4){takeJob(n.id,purge?'귀족 장교들이 떠난 자리를 메우며 ':'');if(n.tr==='army')fx({fame:2})}}
 

@@ -102,7 +102,7 @@ defineAct({k:'guing',g:'social',n:'관문 밖 선술집에서 춤춘다',s:'재�
   ['성문 밖 풀밭 무도회에서 바이올린 소리에 맞춰 돌았다.']])+fx({money:-5,soc:2,rpeople:1,hp:R()<.3?-1:0}))});
 defineAct({k:'billet',g:'social',n:'연애편지를 쓴다',s:'글솜씨 판정. 혼담이 될 수도',c:()=>free()&&lit()&&s.age>=16&&s.age<45&&!(s.spouse&&s.spouse.alive)&&!priest()&&!nun(),inter:async()=>{
   const lv=relsAlive().find(r=>r.role==='연인');
-  const {m,why}=md([[s.sk.pen>=30,1,'글솜씨'],[(s.kn.klett||0)>=25,1,'문학'],[s.st.soc>=50,1,'사교'],[s.sk.pen<10,-1,'서툰 글씨']]);const r=await roll(m,{label:'연애편지',why});
+  const {m,why}=md([[s.sk.pen>=30,1,'글솜씨'],[(s.kn.kphil||0)>=25,1,'문학'],[s.st.soc>=50,1,'사교'],[s.sk.pen<10,-1,'서툰 글씨']]);const r=await roll(m,{label:'연애편지',why});
   if(lv){say(`${lv.n}에게 편지를 보냈다.`+(r.v>=4?' 답장이 왔다.':' 답장은 짧았다.')+fx({pen:1,klett:1})+relFx(lv,{close:r.v>=4?8:2}));return}
   if(r.v<=2){say('편지가 상대 부모 손에 들어갔다. 동네에 소문이 돌았다.'+fx({pen:1,rfam:-3,rloc:-1}));return}
   if(r.v<5){say('밤새 고쳐 쓴 편지를 보냈다. 답장은 없었다.'+fx({pen:1,klett:1}));return}

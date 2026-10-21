@@ -401,3 +401,46 @@ p.warn{color:var(--red)}
 .ob-w::before{content:'';display:block;width:40px;height:1px;background:var(--ink);margin:0 auto 18px}
 @media (max-width:640px){#age{font-size:2.2rem}.pf-badges{grid-template-columns:repeat(2,1fr)}.sp-year{font-size:4.2rem}.ob-n{font-size:1.9rem}}
 @media (max-width:979px){.board{display:flex;flex-direction:column}.colL,.colR{display:contents}.board .scene{order:1}.board .prof{order:2}.board .logc{order:3}.board .polc{order:4}.board .relc{order:5}}
+
+/* ================= 4차 개편: 하단 메뉴 다섯 칸 ================= */
+#app{max-width:760px;padding-bottom:96px}
+.tabs{margin-top:14px}
+.tab{display:grid;gap:14px;min-width:0}
+.tab>div{display:grid;gap:14px;min-width:0}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);background:var(--card);border-top:1px solid var(--ink);box-shadow:0 -3px 0 -1px var(--bg),0 -4px 0 -1px var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav::before{content:'';position:absolute;left:0;right:0;top:-5px;height:3px;background:linear-gradient(90deg,var(--roi) 0 33.3%,var(--card) 33.3% 66.6%,var(--rouge) 66.6%)}
+.nav button{border:0;background:none;padding:8px 2px 9px;cursor:pointer;display:grid;justify-items:center;gap:1px;font-size:.8rem;color:var(--mut);letter-spacing:.04em}
+.nav button .ni{font-size:1.15rem;line-height:1.2;font-family:var(--fd)}
+.nav button[aria-current="page"]{color:var(--era);font-weight:700;box-shadow:inset 0 3px 0 var(--era)}
+.nav button:focus-visible{outline-offset:-3px}
+/* 시작 화면 */
+.newf{width:100%;text-align:left;margin-top:4px;display:grid;gap:10px;border-top:4px solid var(--era)}
+.nf-row{display:grid;grid-template-columns:1fr 1fr auto;gap:8px}
+.nf-row input,.nf-date select{font:inherit;font-size:1.05rem;padding:8px 10px;border:1px solid var(--ink);background:var(--bg);color:var(--fg);border-radius:0;min-width:0}
+.nf-row input{font-family:var(--fd);font-weight:700}
+.dice{font-size:1.5rem;padding:0 12px;min-width:48px}
+.nf-est{font-size:1rem;text-align:center}#estName{font-family:var(--fd);font-weight:900;color:var(--era)}#estFr{font-family:var(--fr);font-style:italic}
+.nf-sex{display:flex;gap:6px;justify-content:center}
+.nf-date{display:grid;grid-template-columns:auto 1.3fr 1fr 1fr;gap:6px;align-items:center}.nf-date label{font-size:.86rem;color:var(--mut);margin-right:4px}
+.nf-place{text-align:center;margin:0}
+#goB{min-height:48px;font-size:1.05rem}
+#title .sp-btns{margin-top:10px}
+#title .sp-cockade{width:64px;height:64px;margin-bottom:8px}#title .sp-year{font-size:3.6rem}#title .sp-f{margin-bottom:10px}
+#title.splash{justify-content:flex-start;padding-top:40px;overflow:auto}
+/* 결말 화면 */
+.sp.wide{max-width:560px}
+#end.splash{justify-content:flex-start;padding-top:48px;overflow:auto}
+.ob-sec{width:100%;text-align:left;margin:4px 0 14px}.ob-sec h3{text-align:center;border-bottom:1px solid var(--line)}
+.ob-rels{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ob-rels li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding:4px 0;font-size:.92rem}.ob-rels li span{color:var(--mut);text-align:right}
+.ob-ep{font-family:var(--fd);font-weight:900;font-size:1.2rem;text-align:center}.ob-st{text-align:center;color:var(--gold);letter-spacing:.2em;margin:2px 0 6px}
+#obEval p{text-align:left}
+/* 재능 */
+.tals{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.tal{border:1px solid var(--line);padding:6px 8px;opacity:.6}.tal.on{opacity:1;border-color:var(--gold)}
+.tal b{display:block;font-size:.88rem}.tal .st{color:var(--gold);font-size:.85rem}.tal small{display:block;color:var(--mut);font-size:.7rem}
+.tchip{display:inline-block;border:1px solid var(--gold);padding:0 6px;margin:2px 4px 2px 0}.tchip i{font-style:normal;color:var(--gold)}
+.lab .tk{font-style:normal;color:var(--gold)}
+.pf-tal{line-height:1.9}
+@media (max-width:640px){.nf-row{grid-template-columns:1fr 1fr 48px}.nf-date{grid-template-columns:1fr 1fr 1fr}.nf-date label{grid-column:1/-1}}
+body.covered #app{display:none}
