@@ -171,7 +171,7 @@ function resultCard(head,deltas){const b=$('#toast');b.innerHTML='';b.className=
   b.hidden=false;b.onclick=()=>{b.hidden=true};clearTimeout(toastT);toastT=setTimeout(()=>{b.hidden=true},Math.max(2600,6000/Math.sqrt(speed)))}
 
 /* ---------- 표지 ---------- */
-drawLaurel($('#laurel'));drawParis($('#titleArt'),1788,'city');
+drawLaurel($('#laurel'));
 
 /* ---------- 실제 그림(퍼블릭 도메인, docs/img/credits.json) ---------- */
 const IMGS={};(typeof IMG_CREDITS!=='undefined'?IMG_CREDITS:[]).forEach(c=>IMGS[c.file]=c);
@@ -198,4 +198,28 @@ function credLine(f){const c=IMGS[f];return c?`${c.title||''} · ${c.artist||''}
 function showImgCredits(){const pin=openPanel('그림 출처');pin.appendChild(el('p','mut small','화면의 그림은 모두 저작권 보호 기간이 끝난 퍼블릭 도메인 작품입니다(위키미디어 공용).'));const ul=el('ol','srcs');(typeof IMG_CREDITS!=='undefined'?IMG_CREDITS:[]).forEach(c=>{const li=el('li');const a=el('a',null,`${c.title||c.file}`);a.href=c.source;a.target='_blank';a.rel='noopener';li.appendChild(a);li.appendChild(el('small',null,` · ${c.artist||''}${c.date?`, ${c.date}`:''} · ${c.license||''}`));ul.appendChild(li)});pin.appendChild(ul);if(!ul.children.length)pin.appendChild(el('p','mut','아직 그림이 없습니다.'))}
 {const b=$('#mImg');if(b)b.onclick=()=>{$('#menu').hidden=true;showImgCredits()}}
 // 표지 그림
-{if(hasImg('title.jpg')){const cv=$('#titleArt');if(cv){const im=el('img');im.src=imgSrc('title.jpg');im.alt='';im.onerror=()=>im.replaceWith(cv);cv.replaceWith(im)}}}
+
+
+
+/* ---------- 픽셀 그림을 모두 걷어 내고 실제 그림만 쓴다 ----------
+   그림이 없으면 금색 카메오 실루엣(초상) 또는 빈 액자(풍경)로 대신한다. */
+function cameo(F){return `<svg class="cameo" viewBox="0 0 60 70" aria-hidden="true"><ellipse cx="30" cy="35" rx="28" ry="33"/><path class="sil" d="${F?'M36 18c-7-5-17-2-19 7-1 5 1 9 3 11-1 2-4 3-4 5 2 1 4 1 5 2l-1 4c2 1 4 1 6 0l2 6c-6 2-12 5-14 11h32c-1-6-6-9-11-11 1-4 3-6 3-10 3-2 4-6 4-9 2 0 4-2 3-4-3-1-5-3-6-6 1-2 0-4-3-6z':'M35 17c-8-4-18 0-19 9 0 5 2 8 3 10-1 2-3 3-3 5 2 1 3 1 4 2l-1 4c2 1 5 1 7 0l1 6c-7 2-13 5-15 12h34c-1-7-7-10-12-12 1-4 3-6 3-10 3-1 4-5 4-8 1-1 3-2 2-4-2-1-3-3-4-5 1-4 0-7-4-9z'}"/></svg>`}
+function figBox(fig,cls){const im=plateImg(fig,cls||'');if(im){im.onerror=()=>{const d=el('div','cameo-w');d.innerHTML=cameo(fig.sex==='F');im.replaceWith(d)};return im}const d=el('div','cameo-w');d.innerHTML=cameo(fig.sex==='F');return d}
+medal=function(cls,fig){const w=el('div','medal '+(cls||''));w.appendChild(figBox(fig));return w};
+drawPortrait=function(cv){if(!cv||!cv.parentNode||!s)return;const b=figBox({sex:s.sex,age:s.age,estate:s.estate,role:sceneRole(),pol:s.pol},'pf-por');if(!b.classList.contains('pf-por'))b.classList.add('pf-por');cv.replaceWith(b)};
+drawFig=function(){};drawParis=function(){};
+// 시대 그림을 액자에 넣는다
+function paintInto(box,k){if(!box)return;const f=eraImgFile(k);const cur=box.dataset.f||'';if(f&&cur===f)return;box.dataset.f=f||'none';box.innerHTML='';
+  if(f){const im=el('img');im.src=imgSrc(f);im.alt=IMGS[f].title||'';im.decoding='async';im.onerror=()=>{box.innerHTML='';box.classList.add('empty')};box.appendChild(im);box.title=credLine(f);box.classList.remove('empty')}else box.classList.add('empty')}
+drawScene=function(cv){if(!s)return;paintInto(cv||$('#cv'))};
+{const _so2=sheetOpen;sheetOpen=function(t,fr){_so2(t,fr);const a=$('#shArt');if(a){a.dataset.f='';paintInto(a)}}}
+eraTab=function(H){H.innerHTML='';const top=el('section','card era-h');const box=el('div','era-pic');top.appendChild(box);paintInto(box);const f=eraImgFile();
+  const t=el('div','era-t');t.innerHTML=`<b>${era().n} (${eraSpan()})</b><span class="mut small">${ruler()}${repYear(s.year)?' · '+repYear(s.year):''}</span>`;top.appendChild(t);if(f)top.appendChild(el('div','era-cap',credLine(f)));
+  const seg=el('div','seg');[['ev','주요 사건'],['pol','정치 세력'],['eco','경제'],['src','자료']].forEach(([k,n])=>{const b=el('button',null,n);b.type='button';b.setAttribute('aria-pressed',String(eraSub===k));b.onclick=()=>{eraSub=k;renderTab('era')};seg.appendChild(b)});top.appendChild(seg);H.appendChild(top);
+  const tmp=el('div');_eraBody(tmp);while(tmp.firstChild)H.appendChild(tmp.firstChild)};
+function _eraBody(H){if(eraSub==='ev'){const c=el('section','card');const mi=MI();const past=HIST.filter(h=>h.mi<=mi&&h.text).sort((a,b)=>b.mi-a.mi).slice(0,40);const ul=el('ul','evl');past.forEach(h=>{const li=el('li');const y=Math.floor(h.mi/12),m=h.mi%12+1;li.innerHTML=`<span class="yb">${y}</span><span><b>${m}월</b> ${String(h.text).replace(/^\d+월(\s?\d+일)?,?\s?/,'').slice(0,90)}</span>`;ul.appendChild(li)});if(!past.length)c.appendChild(el('p','mut','아직 기록할 큰 사건이 없다.'));c.appendChild(ul);H.appendChild(c)}
+  if(eraSub==='pol'){const pc=el('section','card polc');H.appendChild(pc);renderPolCardInto(pc);buildPolitics(cardIn(H,'정치','La politique'))}
+  if(eraSub==='eco'){const c=cardIn(H,'그 시절의 경제','L’économie');const E=econ();const g=el('div','egrid two');g.innerHTML=`<div><span class="lab">물가</span><b>×${E.price.toFixed(2)}</b><small>${econWord('price',E.price)}</small></div><div><span class="lab">화폐 가치</span><b>${Math.round(E.cur*100)}%</b><small>${econWord('cur',E.cur)}</small></div>`;c.appendChild(g);lifeEcon(c)}
+  if(eraSub==='src'){const c=cardIn(H,'참고 문헌','Sources');c.appendChild(el('p','mut small',`생활사 장면 ${LIFE_DATA.length}건의 근거가 된 학술 자료 ${LIFE_SRC.length}개.`));const ol=el('ol','srcs');LIFE_SRC.slice().sort((a,b)=>b.n-a.n).slice(0,60).forEach(x=>{const li=el('li');const a=el('a',null,x.c);a.href=x.u;a.target='_blank';a.rel='noopener';li.appendChild(a);ol.appendChild(li)});c.appendChild(ol);const b=el('button','pill','전체 목록');b.type='button';b.onclick=showSources;c.appendChild(b);const b2=el('button','pill','그림 출처');b2.type='button';b2.onclick=showImgCredits;c.appendChild(b2)}}
+// 표지 그림
+{const tb=$('#titleArt');if(tb&&hasImg('title.jpg')){const im=el('img');im.src=imgSrc('title.jpg');im.alt='';tb.appendChild(im)}}
