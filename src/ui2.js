@@ -99,15 +99,15 @@ function relMore(H){H.innerHTML='';const list=el('div','plist');const fam=famPeo
   if(relFilter==='gone')fam.filter(p=>!p.alive).forEach(p=>show.push(['fam',p]));
   if(!show.length)list.appendChild(el('p','mut',child()?'아직 어려서 집 밖의 인연이 많지 않다.':'아직 이 칸에 들어갈 사람이 없다.'));
   show.forEach(([k,p])=>{const b=el('button','prow'+(p.alive===false?' dead':''));b.type='button';
-    if(k==='fam'){b.appendChild(medal('sm',{sex:p.sex,age:p.age,estate:p.estate,seed:p.n.length*97}));const t=el('div','pt');t.innerHTML=`<b>${p.n}</b><span>${p.role}</span><small>${p.note}</small>`;b.appendChild(t);b.appendChild(el('span','pic fam','⌂'))}
-    else{const P=perOf(p);b.appendChild(medal('sm',{sex:p.sex,age:relAge(p),estate:p.estate||(P?'bourgeois':'artisan'),seed:(p.fid||p.pid||p.n).length*131+p.y}));const bd=relBond(p);const t=el('div','pt');t.innerHTML=`<b>${p.n}</b><span>${p.role}${bd!==p.role?` · ${bd}`:''}${P?' · 실존 인물':''}</span><small>${relNote(p)}</small>`;b.appendChild(t);b.appendChild(el('span','pic b-'+(bd==='혐오'||bd==='라이벌'||bd==='경쟁자'?'bad':bd==='친우'||bd==='연인'?'love':'mid'),BOND_IC[bd]||'·'));b.onclick=()=>personPage(p)}
+    if(k==='fam'){const t=el('div','pt');t.innerHTML=`<b>${p.n}</b><span>${p.role}</span><small>${p.note}</small>`;b.appendChild(t);b.appendChild(el('span','pic fam','⌂'))}
+    else{const P=perOf(p);const bd=relBond(p);const t=el('div','pt');t.innerHTML=`<b>${p.n}</b><span>${p.role}${bd!==p.role?` · ${bd}`:''}${P?' · 실존 인물':''}</span><small>${relNote(p)}</small>`;b.appendChild(t);b.appendChild(el('span','pic b-'+(bd==='혐오'||bd==='라이벌'||bd==='경쟁자'?'bad':bd==='친우'||bd==='연인'?'love':'mid'),BOND_IC[bd]||'·'));b.onclick=()=>personPage(p)}
     list.appendChild(b)});
   const c=el('section','card');c.appendChild(list);c.appendChild(el('p','mut small center','지인들도 저마다의 삶을 살아갑니다. 혁명에 가담하고, 떠나고, 죽기도 합니다.'));H.appendChild(c);
   const f=cardIn(H,'파벌과의 관계','Les factions');const fs=activeFactions();if(!fs.length)f.appendChild(el('p','mut','아직 뚜렷한 파벌이 없다.'));
   const fl=el('ul','infl');fs.forEach(x=>fl.appendChild(el('li',null,`${x.n} — ${s.party===x.id?`소속 · ${PRANK[s.prank]} · `:''}${frelWord(frelOf(x.id))} ${frelOf(x.id)} · 성향 친밀도 ${affinity(x)}%`)));f.appendChild(fl)}
 let ppTab='sum';
 function personPage(r){const pin=openPanel('인물 기록');pin.innerHTML='';const P=perOf(r);
-  const top=el('div','pp-top');top.appendChild(medal('big',{sex:r.sex,age:relAge(r),estate:r.estate||'bourgeois',seed:(r.fid||r.pid||r.n).length*131+r.y}));
+  const top=el('div','pp-top noimg');
   const id=el('div');id.innerHTML=`<div class="hm-n">${r.n}</div><div class="hm-fr">${P?P.fr:''}</div><div class="small mut">${r.role} · ${relBond(r)}${P?` · ${P.b}~${P.d}`:r.by?` · ${r.by}년생`:''}${r.home?` · ${r.home}`:''}</div>`;top.appendChild(id);pin.appendChild(top);
   const seg=el('div','seg');[['sum','개요'],['rel','관계'],['log','기록']].forEach(([k,n])=>{const b=el('button',null,n);b.type='button';b.setAttribute('aria-pressed',String(ppTab===k));b.onclick=()=>{ppTab=k;personPage(r)};seg.appendChild(b)});pin.appendChild(seg);
   if(ppTab==='sum'){if(P)pin.appendChild(el('p',null,P.bio));if(r.w)pin.appendChild(el('p','small',`만난 곳: ${r.w}.`));
@@ -149,14 +149,14 @@ function renderPolCardInto(C){const real=$('#polCard');if(real){const id=real.id
 /* ---------- 탭 다시 그리기(ui.js의 renderTab을 바꾼다) ---------- */
 renderTab=function(t){if(!s||tabBusy)return;tabBusy=true;const keepY=window.scrollY;
   try{
-  if(t==='daily'){heroDate();renderHome();renderSched()}
+  if(t==='daily'){}
   if(t==='profile'){renderProfile();const H=hostClear('#profMore');profileExtra(H);buildInfo(cardIn(H,'세부 정보','Détails'))}
   if(t==='rel'){renderRel();relMore(hostClear('#relMore'))}
   if(t==='life')lifeTab(hostClear('#lifeHost'));
   if(t==='era'){$('#polCard').hidden=true;eraTab(hostClear('#eraHost'))}
   }catch(e){console.error(e)}tabBusy=false;window.scrollTo(0,keepY)};
 // 일상 칸도 매 진행마다 갱신
-{const _r=render;render=function(){_r();if(s&&curTab==='daily'){heroDate();renderHome();renderSched()}}}
+
 
 /* ---------- 사건 화면 ---------- */
 {const _so=sheetOpen;sheetOpen=function(t,fr){_so(t,fr);if(s)$('#shFr').textContent=`${s.year}년 ${s.month+1}월 · 파리${fr?` · ${fr}`:''}`;}}
