@@ -33,25 +33,40 @@
     <div class="prog"><i id="progFill"></i></div>
     <div class="hint" id="hint" hidden>빠르게 보려면 4×나 8×를 눌러 보세요. 중요한 결정이 오면 시간이 멈춰요.</div>
   </header>
-  <main class="board">
-    <div class="colL">
-      <section class="card prof" id="profCard"></section>
-      <section class="card polc" id="polCard"></section>
-      <section class="card relc" id="relCard"></section>
-    </div>
-    <div class="colR">
-      <section class="card scene">
+  <main class="tabs">
+    <section class="tab" id="tProfile" data-t="profile" hidden>
+      <div class="card prof" id="profCard"></div>
+      <div id="profMore"></div>
+    </section>
+    <section class="tab" id="tRel" data-t="rel" hidden>
+      <div class="card relc" id="relCard"></div>
+      <div id="relMore"></div>
+    </section>
+    <section class="tab" id="tDaily" data-t="daily">
+      <div class="card scene">
         <canvas id="cv" width="256" height="96" aria-label="지금 사는 곳과 가족"></canvas>
         <div class="sc-t"><div class="where" id="where"></div><div class="mut" id="famAges"></div><div class="era mut" id="era"></div></div>
         <div class="econ" id="econCard"></div>
-      </section>
-      <section class="card logc">
+      </div>
+      <div class="card logc">
         <div class="ch"><h2>인생 기록</h2><span class="mut">최근 순 <button class="lnk" id="dataT" type="button" aria-pressed="false">자료 보기</button></span></div>
         <div id="log" aria-live="polite"></div>
         <div class="logmore"><button class="pill" id="logMore" type="button" hidden></button><button class="pill" id="logLess" type="button" hidden>접기</button></div>
-      </section>
-    </div>
+      </div>
+    </section>
+    <section class="tab" id="tLife" data-t="life" hidden><div id="lifeHost"></div></section>
+    <section class="tab" id="tEra" data-t="era" hidden>
+      <div class="card polc" id="polCard"></div>
+      <div id="eraHost"></div>
+    </section>
   </main>
+  <nav class="nav" id="nav" aria-label="화면">
+    <button type="button" data-t="profile"><span class="ni">✦</span>프로필</button>
+    <button type="button" data-t="rel"><span class="ni">♥</span>관계</button>
+    <button type="button" data-t="daily" aria-current="page"><span class="ni">✎</span>일상</button>
+    <button type="button" data-t="life"><span class="ni">⚒</span>생활</button>
+    <button type="button" data-t="era"><span class="ni">⚑</span>시대</button>
+  </nav>
   <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shdecree" id="shDecree"></div><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><div id="shB"></div></div></div>
   <div class="toast" id="toast" role="status" hidden></div>
 </div>
@@ -65,21 +80,32 @@
     <div class="sp-year">17<span>89</span></div>
     <h1 class="sp-t">한 시민의 일생</h1>
     <p class="sp-f">Vie d’un citoyen de Paris</p>
-    <div class="sp-btns">
-      <button class="pill pri" id="newB" type="button">새 게임</button>
-      <button class="pill" id="contB" type="button" hidden>이어가기</button>
+    <div class="card newf" id="newForm">
+      <div class="nf-row">
+        <input id="inGiven" maxlength="12" autocomplete="off" placeholder="이름" aria-label="이름">
+        <input id="inSur" maxlength="16" autocomplete="off" placeholder="성" aria-label="성">
+        <button class="cb dice" id="rollB" type="button" aria-label="무작위로 정하기" title="이름·신분·출생일을 무작위로">⚄</button>
+      </div>
+      <div class="nf-est"><span id="estName"></span><span class="mut" id="estFr"></span></div>
+      <div class="nf-sex" role="group" aria-label="성별"><button type="button" class="fopt" data-x="M">남</button><button type="button" class="fopt" data-x="F">여</button></div>
+      <div class="nf-date"><label>출생일</label><select id="bY" aria-label="출생 연도"></select><select id="bM" aria-label="출생 월"></select><select id="bD" aria-label="출생 일"></select></div>
+      <p class="mut small nf-place">출생지 · 파리</p>
+      <button class="pill pri" id="goB" type="button">게임 시작</button>
     </div>
+    <div class="sp-btns"><button class="pill" id="contB" type="button" hidden>이어가기</button></div>
   </div>
   <p class="sp-motto">Liberté · Égalité · Fraternité</p>
 </div>
 
 <div id="end" class="over splash" hidden>
   <div class="ribbon dark" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="sp">
+  <div class="sp wide">
     <div class="ob-k">부고 · Nécrologie</div>
     <div class="ob-n" id="obName"></div>
     <div class="ob-y" id="obYears"></div>
     <p class="ob-w" id="obWill"></p>
+    <div class="ob-sec"><h3>남은 사람들</h3><ul class="ob-rels" id="obRels"></ul></div>
+    <div class="ob-sec"><h3>사후 평가</h3><div id="obEval"></div></div>
     <div class="sp-btns">
       <button class="pill pri" id="againB" type="button">새 게임</button>
       <button class="pill" id="homeB" type="button">처음으로</button>

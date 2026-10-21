@@ -7,26 +7,41 @@
    가치  vlib 자유 · veq 평등 · vhon 명예 · vfam 가족 · vord 질서 · vjus 정의   (0~100)
    영향력 inf (쌓아 온 영향력. 공직·파벌·인맥·재산·대중의 지지·정권과의 관계와 합쳐 계산한다) */
 // 숙련: 기술(DEX)·사교(CHA)·체력(STR)의 하위 분야. 셋째 칸이 어느 능력치에 딸렸는지.
-const SKILLS=[['pen','글씨·문서','dex'],['craft','수공 일반','dex'],['wood','목공','dex'],['metal','금속 세공','dex'],['weave','직조','dex'],['sew','바느질·재봉','dex'],['cook','제빵·요리','dex'],['draw','그림','dex'],['music','악기','dex'],['print','인쇄','dex'],['heal','외과 손기술','dex'],
- ['trade','장사·셈','dex'],['farm','농사일','dex'],
- ['manner','예법·몸가짐','soc'],['conv','대화술','soc'],['dance','춤','soc'],['orat','웅변','soc'],['ride','승마','soc'],['arms','검술·무예','soc']];
-// 학식(INT)의 분야
-const KNOW=[['klat','라틴어·고전'],['ktheo','신학'],['klaw','법학'],['kmed','의학 지식'],['ksci','수학·자연과학'],['kphil','철학·사상'],['khist','역사·지리'],['klang','외국어'],['klett','문학']];
-// 세부 분야는 세 갈래: 학식 · 기술 · 예법 (예법에는 승마·검술·춤·웅변 같은 신사·숙녀의 소양이 든다)
-const SKG=[['edu','학식',KNOW.map(x=>x[0])],['dex','기술',SKILLS.filter(x=>x[2]==='dex').map(x=>x[0])],['soc','예법',SKILLS.filter(x=>x[2]==='soc').map(x=>x[0])]];
-// 타고난 재능: 0~100. gift는 유난히 잘 배우는 분야 하나
-const giftName=()=>s.gift?FXN[s.gift]:'';
+// 숙련: 셋째 칸이 속한 능력치. 사교(CHA) · 기술(DEX) · 체력(STR)
+const SKILLS=[['pen','글씨·필사','dex'],['craft','수공 일반','dex'],['wood','목공','dex'],['metal','금속 세공','dex'],['weave','직조','dex'],['sew','바느질·재봉','dex'],['cook','제빵·요리','dex'],['draw','그림','dex'],['music','악기','dex'],['print','인쇄','dex'],['heal','외과 손기술','dex'],
+ ['manner','예법·몸가짐','soc'],['conv','대화술','soc'],['dance','춤','soc'],['orat','웅변','soc'],['trade','장사·흥정','soc'],
+ ['farm','농사일','str'],['labor','짐 나르기·막일','str'],['arms','검술·무예','str'],['ride','승마','str']];
+// 학식(INT): 학문과 지식
+const KNOW=[['kread','읽기·쓰기'],['karith','산수·회계'],['kphil','철학·수사학'],['klaw','법학'],['kmed','의학'],['ksci','자연과학'],['keng','공학'],['kastr','천문학'],['ktheo','신학'],['klat','고전학']];
+// 예전 분야 이름은 가까운 새 분야로 (장면에서 쓰던 키를 그대로 받는다)
+const KN_ALIAS={khist:'klat',klang:'klat',klett:'kphil'};
+// 건강(CON): 질병 저항 · 회복력 · 신체 상태(=건강 수치)
+const HSUB=[['res','질병 저항'],['rec','회복력'],['body','신체 상태']];
+const hsub=k=>k==='body'?s.st.hp:((s.hs||{})[k]??50);
+// 세부 분야: 건강 · 학식 · 사교 · 기술 · 체력
+const SKG=[['edu','학식',KNOW.map(x=>x[0])],['soc','사교',SKILLS.filter(x=>x[2]==='soc').map(x=>x[0])],['dex','기술',SKILLS.filter(x=>x[2]==='dex').map(x=>x[0])],['str','체력',SKILLS.filter(x=>x[2]==='str').map(x=>x[0])]];
+/* 재능: 숙련과 다른 타고난 잠재력(0~100). 어떤 분야를 얼마나 쉽게 배우는지 정한다.
+   값이 55 이상이면 ★, 70 이상 ★★, 85 이상 ★★★. 배우는 속도 = 0.7 + (관련 재능 가운데 가장 높은 값)/100 × 0.9 */
+const TALENTS=[['memory','뛰어난 기억력',['klat','ktheo','klaw','kread','pen']],['lang','언어 감각',['klat','kread','conv','orat']],['math','수리적 재능',['karith','keng','kastr','ksci','trade']],
+ ['orat','웅변 재능',['orat','kphil','conv']],['art','예술적 감각',['draw','sew','metal','wood','weave']],['music','음악적 재능',['music','dance']],['space','공간 지각력',['keng','kastr','wood','ride','arms']],
+ ['observe','뛰어난 관찰력',['kmed','ksci','heal','cook']],['social','사회적 직관',['manner','conv','trade','dance']],['strat','전략적 사고',['arms','klaw','kphil','trade']]];
+const TAL_BY={};TALENTS.forEach(([t,,ks])=>ks.forEach(k=>(TAL_BY[k]=TAL_BY[k]||[]).push(t)));
+const talName=t=>(TALENTS.find(x=>x[0]===t)||[,''])[1];
+const stars=v=>v>=85?'★★★':v>=70?'★★':v>=55?'★':'';
+function topTalents(n=3){return TALENTS.map(x=>[x[0],x[1],(s.tal||{})[x[0]]||0]).sort((a,b)=>b[2]-a[2]).slice(0,n)}
+function rollTalents(){const o={};TALENTS.forEach(([t])=>o[t]=clamp(Math.round(38+(R()+R()-1)*30),5,70));const k=TALENTS.map(x=>x[0]).sort(()=>R()-.5);o[k[0]]=ri(70,96);if(R()<.6)o[k[1]]=ri(58,84);return o}
+const giftName=()=>{const t=topTalents(1)[0];return t?t[1]:''};
 // 수공업 전문 분야(처음 수공업에 들 때 정한다)
 const SPECS={wood:'목수·소목장',metal:'대장장이·자물쇠장이',weave:'직조공',sew:'재봉사',cook:'제빵사·요리사',print:'인쇄공',craft:'잡역 장인'};
 function pickSpec(){if(s.spec)return s.spec;const L0=loc();let w=isM()?[['wood',3],['metal',3],['weave',L0==='lyon'||L0==='rouen'?6:2],['cook',2],['print',urban()?1.5:.2],['sew',1],['craft',2]]:[['sew',5],['weave',L0==='lyon'||L0==='rouen'?6:3],['cook',2],['craft',1]];s.spec=wpick(w);return s.spec}
 const REPG=[['rfam','가족'],['rloc','이웃·고을'],['rguild','동업자'],['rpeople','민중'],['relite','상류사회']];
 const BELIEF=[['brg','정치 체제','왕정','공화정'],['bor','사회 질서','신분 특권','법적 평등'],['bch','변화의 방식','점진 개혁','급진 변화'],['bpw','권력 구조','중앙집권','지방 자치'],['brl','종교와 국가','긴밀한 결합','분리']];
 const VALUES=[['vlib','자유'],['veq','평등'],['vhon','명예'],['vfam','가족'],['vord','질서'],['vjus','정의']];
-SKILLS.forEach(([k,n])=>FXN[k]=n);KNOW.forEach(([k,n])=>FXN[k]=n);REPG.forEach(([k,n])=>FXN[k]='평판('+n+')');BELIEF.forEach(([k,n])=>FXN[k]=n);VALUES.forEach(([k,n])=>FXN[k]='가치('+n+')');
+SKILLS.forEach(([k,n])=>FXN[k]=n);KNOW.forEach(([k,n])=>FXN[k]=n);Object.entries(KN_ALIAS).forEach(([a,b])=>FXN[a]=FXN[b]);FXN.res='질병 저항';FXN.rec='회복력';REPG.forEach(([k,n])=>FXN[k]='평판('+n+')');BELIEF.forEach(([k,n])=>FXN[k]=n);VALUES.forEach(([k,n])=>FXN[k]='가치('+n+')');
 const SKK=new Set(SKILLS.map(x=>x[0])),KNK=new Set(KNOW.map(x=>x[0])),REPK=new Set(REPG.map(x=>x[0])),BELK=new Set(BELIEF.map(x=>x[0])),VALK=new Set(VALUES.map(x=>x[0]));
-const tmul=k=>(.7+((s&&s.talent)||50)/150)*(s&&k===s.gift?1.5:1);
+const tmul=k=>{if(!s||!s.tal)return 1;const ts=TAL_BY[k];if(!ts)return .7+((s.talent||50)/100)*.6;return .7+Math.max(...ts.map(t=>s.tal[t]||0))/100*.9};
 // fx()가 부르는 확장 키 처리. 처리했으면 실제 바뀐 양, 아니면 null.
-function fxAttr(k,n){
+function fxAttr(k,n){if(KN_ALIAS[k])k=KN_ALIAS[k];if(k==='res'||k==='rec'){s.hs=s.hs||{res:50,rec:50};const v=s.hs[k];s.hs[k]=clamp(v+n,0,100);return s.hs[k]-v}
   if(SKK.has(k)){const v=s.sk[k]||0;if(n>0){const g=n*(1-v/120)*tmul(k);n=Math.max(1,Math.floor(g)+(R()<g%1?1:0))}const nv=clamp(v+n,0,100);n=nv-v;s.sk[k]=nv;return n}
   if(KNK.has(k)){s.kn=s.kn||{};const v=s.kn[k]||0;if(n>0){const g=n*(1-v/120)*tmul(k);n=Math.max(1,Math.floor(g)+(R()<g%1?1:0))}if(n>0&&!lit())n=Math.min(n,Math.max(0,15-v));const nv=clamp(v+n,0,100);s.kn[k]=nv;return nv-v}
   if(REPK.has(k)){const v=s.rep[k];const nv=clamp(v+n,0,100);s.rep[k]=nv;return nv-v}
@@ -38,7 +53,8 @@ function fxAttr(k,n){
 /* ---------- 새 인생 · 옛 저장 맞추기 ---------- */
 function attrsInit(o){const E=o.estate,nb=ESTATES[E].noble;
   o.st.dex=ri(4,10);o.st.str=ri(6,14);
-  o.talent=clamp(Math.round(50+(R()+R()+R()-1.5)*40),5,98);o.gift=pick(KNOW.concat(SKILLS))[0];
+  o.tal=rollTalents();const tt=Object.values(o.tal).sort((a,b)=>b-a);o.talent=Math.round((tt[0]+tt[1]+tt[2])/3);o.gift=(TALENTS.find(x=>o.tal[x[0]]===tt[0])||TALENTS[0])[2][0];
+  o.hs={res:clamp(ri(35,65)+(ESTATES[o.estate].noble?5:0),5,95),rec:clamp(ri(35,65),5,95)};
   o.sk={};SKILLS.forEach(([k])=>o.sk[k]=0);o.kn={};KNOW.forEach(([k])=>o.kn[k]=0);o.faithMode=null;
   o.rep={rfam:60,rloc:50,rguild:50,rpeople:50,relite:nb?55:E==='bourgeois'?45:35};
   const p=o.pol;
@@ -54,14 +70,14 @@ function attrsInit(o){const E=o.estate,nb=ESTATES[E].noble;
 function attrsMigrate(o){if(!o)return o;if(o.sk&&o.rep&&o.bel)return o;
   const base={estate:o.estate,region:o.region,pol:o.pol,faith:o.faith,faithKind:o.faithKind,st:o.st};attrsInit(base);
   o.st.dex=o.st.dex??clamp(base.st.dex+Math.min(o.age,18)*1.5,0,100);o.st.str=o.st.str??clamp(base.st.str+Math.min(o.age,18)*2.4,0,100);
-  for(const k of ['sk','kn','rep','bel','val','rel','frel','inf0','econ','econPrev','talent','gift'])if(o[k]==null)o[k]=base[k];SKILLS.forEach(([k])=>{if(o.sk[k]==null)o.sk[k]=0});o.rel=(o.rel||[]).filter(r=>r.pid||r.kind==='fic');return o}
+  for(const k of ['sk','kn','rep','bel','val','rel','frel','inf0','econ','econPrev','talent','gift','tal','hs'])if(o[k]==null)o[k]=base[k];SKILLS.forEach(([k])=>{if(o.sk[k]==null)o.sk[k]=0});o.rel=(o.rel||[]).filter(r=>r.pid||r.kind==='fic');return o}
 
 /* ---------- 해마다 ---------- */
 // 직업 트랙이 기르는 숙련
 const TRACK_SK={farm:{farm:3,str:1},craft:{dex:1},law:{pen:3,orat:2,klaw:2},church:{orat:2,pen:1,ktheo:2,klat:1},med:{heal:3,dex:1,kmed:2,ksci:1},army:{arms:3,str:1},pol:{orat:3,khist:1},letters:{pen:3,klett:2,kphil:1}};
 function mainSkill(){const j=job();if(j){if(j.tr==='craft'&&j.t>=4)return 'trade';if(j.tr==='craft')return pickSpec();const t=TRACK_SK[j.tr]||TRACK_SK_EXTRA[j.tr];if(t&&t.main)return t.main;if(t)return Object.keys(t).find(k=>SKK.has(k))}
   let best='craft',bv=-1;for(const [k] of SKILLS)if(s.sk[k]>bv){bv=s.sk[k];best=k}return best}
-function grow(k,n){if(n>0){n=n*(.7+(s.talent||50)/150)*(k===s.gift?1.5:1);n=Math.floor(n)+(R()<n%1?1:0);if(!n)return}if(KNK.has(k)){s.kn[k]=clamp((s.kn[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.kn[k]||0)/120))),0,lit()?100:15);return}if(k in s.st)s.st[k]=clamp(s.st[k]+n,0,100);else if(SKK.has(k))s.sk[k]=clamp((s.sk[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.sk[k]||0)/120))),0,100)}
+function grow(k,n){k=KN_ALIAS[k]||k;if(n>0){n=n*tmul(k);n=Math.floor(n)+(R()<n%1?1:0);if(!n)return}if(KNK.has(k)){s.kn[k]=clamp((s.kn[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.kn[k]||0)/120))),0,lit()?100:15);return}if(k in s.st)s.st[k]=clamp(s.st[k]+n,0,100);else if(SKK.has(k))s.sk[k]=clamp((s.sk[k]||0)+Math.max(n>0?1:n,Math.round(n*(1-(s.sk[k]||0)/120))),0,100)}
 function childGrowth(){const a=s.age,f=isM()?1:.8;
   if(a>=2&&a<=18){grow('str',Math.round((ri(2,3)+(a>=8&&['peasant','artisan'].includes(s.estate)?1:0))*f));grow('dex',ri(0,2))}
   if(a>=7&&a<14){if(s.estate==='peasant')grow('farm',ri(2,4));if(s.estate==='artisan')grow('craft',ri(1,3));if(!isM())grow('sew',ri(2,4));
@@ -70,13 +86,16 @@ function childGrowth(){const a=s.age,f=isM()?1:.8;
 // 학교에서 자라는 학식 분야
 function schoolKnow(){if(!s.kn)return;const x=SCH(),T0=T();if(!inSchool())return;
   const g=(k,n)=>grow(k,n);
-  if(x.st==='petite'){g('khist',ri(0,1))}
+  if(x.st==='petite'){g('kread',3);g('karith',2)}
   if(x.st==='college'){const mod=T0>=1795.75;g('klat',mod?2:3);g('khist',1);if(mod)g('ksci',2);else if(R()<.5)g('ksci',1);if(s.age>=15)g('kphil',T0>=1795.75&&T0<1802.5?1:2);if(R()<.3)g('klett',1)}
   if(x.st==='convent'){g('klett',2);g('khist',1);if(R()<.5)g('klang',1);grow('manner',2);grow('music',1)}
   if(x.st==='univ'){if(x.fac==='law'){g('klaw',5);g('klat',1)}if(x.fac==='med'){g('kmed',5);g('ksci',2)}}
   if(x.st==='seminary'){g('ktheo',5);g('klat',2);g('kphil',1)}
   if(noble()&&s.age>=8&&s.age<16){g('klang',1);grow('manner',2)}}
-function attrsYear(pl){schoolKnow();if(child()){childGrowth();return}
+function attrsYear(pl){if(lit()&&s.kn&&(s.kn.kread||0)<20)s.kn.kread=20;
+  s.hs=s.hs||{res:50,rec:50};if(pl==='양생'){s.hs.res=clamp(s.hs.res+1,0,100);s.hs.rec=clamp(s.hs.rec+1,0,100)}if(s.age>=55){s.hs.rec=clamp(s.hs.rec-1,0,100);if(s.age>=65)s.hs.res=clamp(s.hs.res-1,0,100)}
+  {const j0=job();if(j0&&s.cond==='normal'&&(['craft','state','sea'].includes(j0.tr)&&j0.t>=3||j0.tr==='law'))grow('karith',1);if(j0&&j0.tr==='army'&&j0.t>=3)grow('keng',1);if(j0&&['law','letters','church','state'].includes(j0.tr))grow('kread',1)}
+  schoolKnow();if(child()){childGrowth();return}
   if(s.faithMode)faithYear();
   const away=s.cond!=='normal';const j=job();
   if(j&&!away){const t=TRACK_SK[j.tr]||TRACK_SK_EXTRA[j.tr]||{};for(const k in t)if(k!=='main'&&R()<.75)grow(k,t[k]);

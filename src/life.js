@@ -82,7 +82,7 @@ function meets(p,quiet){const n=p.need;if(!canSex(p)||!p.ok())return false;
   if(p.tr==='law'&&!isM())return false;if(!NOLIT.has(p.tr)&&!lit())return false;
   if(s.faithKind!=='catholic'&&(p.tr==='church'||(T()<1789.5&&(p.tr==='law'||(p.tr==='army'&&p.t>=3)))))return false;
   for(const k of ['edu','soc','dex','str','cour','faith','fame'])if(n[k]&&(k in s.st?s.st[k]:s[k])<n[k])return false;
-  if(n.sk)for(const k in n.sk)if((s.sk[k]||0)<n.sk[k])return false;if(n.kn)for(const k in n.kn)if(((s.kn||{})[k]||0)<n.kn[k])return false;
+  if(n.sk)for(const k in n.sk)if((s.sk[k]||0)<n.sk[k])return false;if(n.kn)for(const k in n.kn)if(((s.kn||{})[KN_ALIAS[k]||k]||0)<n.kn[k])return false;
   if(n.money&&s.money<n.money)return false;if(n.cost&&s.money<n.cost)return false;if(n.land&&s.land<n.land)return false;return true}
 function needText(p){const n=p.need,o=[];for(const k of ['edu','soc','dex','str','cour','faith','fame'])if(n[k])o.push(`${FXN[k]} ${n[k]}`);
   if(n.sk)for(const k in n.sk)o.push(`${FXN[k]||k} ${n.sk[k]}`);if(n.kn)for(const k in n.kn)o.push(`${FXN[k]||k} ${n.kn[k]}`);
