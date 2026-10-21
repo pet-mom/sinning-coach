@@ -1,0 +1,121 @@
+[
+  {
+    "file": "frame_01.jpg",
+    "title": "Omlijsting met middenonder een akelei.jpeg",
+    "artist": "Pieter Huys (attributed) / anonymous",
+    "date": "c. 1545-1550",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Omlijsting_met_middenonder_een_akelei.jpeg",
+    "width": 664,
+    "height": 1000,
+    "orientation": "portrait",
+    "inner": {
+      "left": 17.6,
+      "top": 9.8,
+      "right": 83.0,
+      "bottom": 83.8
+    }
+  },
+  {
+    "file": "frame_02.jpg",
+    "title": "Omlijsting met onderaan drie spelende kinderen.jpeg",
+    "artist": "Pieter Huys (attributed) / anonymous",
+    "date": "c. 1545-1550",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Omlijsting_met_onderaan_drie_spelende_kinderen.jpeg",
+    "width": 664,
+    "height": 1000,
+    "orientation": "portrait",
+    "inner": {
+      "left": 18.1,
+      "top": 9.8,
+      "right": 83.1,
+      "bottom": 84.3
+    }
+  },
+  {
+    "file": "frame_03.jpg",
+    "title": "Omlijsting met onderaan een engeltje.jpeg",
+    "artist": "Pieter Huys (attributed) / anonymous",
+    "date": "c. 1545-1550",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Omlijsting_met_onderaan_een_engeltje.jpeg",
+    "width": 669,
+    "height": 1000,
+    "orientation": "portrait",
+    "inner": {
+      "left": 17.5,
+      "top": 9.4,
+      "right": 83.3,
+      "bottom": 83.8
+    }
+  },
+  {
+    "file": "frame_04.jpg",
+    "title": "Omlijsting met bovenaan een lege banderolle.jpeg",
+    "artist": "Pieter Huys (attributed) / anonymous",
+    "date": "c. 1545-1550",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Omlijsting_met_bovenaan_een_lege_banderolle.jpeg",
+    "width": 668,
+    "height": 1000,
+    "orientation": "portrait",
+    "inner": {
+      "left": 18.0,
+      "top": 10.1,
+      "right": 81.6,
+      "bottom": 83.6
+    }
+  },
+  {
+    "file": "frame_05.jpg",
+    "title": "Rechthoekige cartouche met in beide bovenhoeken een pauw Cartouches in een omlijsting van rol- en beslagwerk met grotesken, guirlandes en mascarons (serietitel), RP-P-1905-2764.jpg",
+    "artist": "Nicolaes de Bruyn, after Hans Vredeman de Vries (Rijksmuseum RP-P-1905-2764)",
+    "date": "1581-1635",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rechthoekige_cartouche_met_in_beide_bovenhoeken_een_pauw_Cartouches_in_een_omlijsting_van_rol-_en_beslagwerk_met_grotesken,_guirlandes_en_mascarons_(serietitel),_RP-P-1905-2764.jpg",
+    "width": 1000,
+    "height": 726,
+    "orientation": "landscape",
+    "inner": {
+      "left": 26.0,
+      "top": 30.2,
+      "right": 74.3,
+      "bottom": 71.1
+    }
+  },
+  {
+    "file": "frame_06.jpg",
+    "title": "(Encadrement ornemental) (1er état) - .Io. MIGon 1544. (Jean Mignon) ; (d'après Le Primatice) - btv1b53230250h.jpg",
+    "artist": "Jean Mignon, after Primaticcio (BnF)",
+    "date": "1544",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:(Encadrement_ornemental)_(1er_état)_-_.Io._MIGon_1544._(Jean_Mignon)_;_(d'après_Le_Primatice)_-_btv1b53230250h.jpg",
+    "width": 1000,
+    "height": 917,
+    "orientation": "square",
+    "inner": {
+      "left": 45.3,
+      "top": 38.4,
+      "right": 60.7,
+      "bottom": 68.4
+    }
+  },
+  {
+    "file": "frame_07.jpg",
+    "title": "Ornamentele rand rondom een lege cartouche, RP-P-1976-157.jpg",
+    "artist": "Anonymous (Rijksmuseum RP-P-1976-157)",
+    "date": "c. 1685-1724",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ornamentele_rand_rondom_een_lege_cartouche,_RP-P-1976-157.jpg",
+    "width": 759,
+    "height": 1000,
+    "orientation": "portrait",
+    "inner": {
+      "left": 26.1,
+      "top": 32.1,
+      "right": 74.6,
+      "bottom": 71.5
+    }
+  }
+]
