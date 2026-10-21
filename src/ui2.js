@@ -172,3 +172,30 @@ function resultCard(head,deltas){const b=$('#toast');b.innerHTML='';b.className=
 
 /* ---------- 표지 ---------- */
 drawLaurel($('#laurel'));drawParis($('#titleArt'),1788,'city');
+
+/* ---------- 실제 그림(퍼블릭 도메인, docs/img/credits.json) ---------- */
+const IMGS={};(typeof IMG_CREDITS!=='undefined'?IMG_CREDITS:[]).forEach(c=>IMGS[c.file]=c);
+const hasImg=f=>!!IMGS[f];
+const imgSrc=f=>'img/'+f;
+// 인물에 맞는 패션 판화·초상: 나이·성별·신분·역할·시대
+function plateFor(p){const t=T(),F=p.sex==='F',E=p.estate||'bourgeois',nb=['epee','robe','hobereau'].includes(E),rich=nb||E==='bourgeois';const c=[];
+  if((p.age||30)<13)c.push('p_child.jpg');
+  if(p.role==='priest'||p.role==='nun')c.push('p_priest.jpg');if(p.role==='soldier'||p.role==='officer')c.push('p_soldier.jpg');if(p.role==='sansculotte')c.push('p_sansculotte.jpg');
+  if(t<1792.6){c.push(nb?(F?'p_noble_f_1780.jpg':'p_noble_m_1780.jpg'):rich?(F?'p_bourg_f_1780.jpg':'p_bourg_m_1780.jpg'):(F?'p_people_f.jpg':'p_people_m.jpg'))}
+  else if(t<1795.5){c.push(!rich&&!F&&(p.pol||0)>=20?'p_sansculotte.jpg':rich?(F?'p_bourg_f_1780.jpg':'p_bourg_m_1780.jpg'):(F?'p_people_f.jpg':'p_people_m.jpg'))}
+  else if(t<1800){c.push(rich&&(p.age||30)<40?(F?'p_merveilleuse.jpg':'p_incroyable.jpg'):rich?(F?'p_bourg_f_1780.jpg':'p_bourg_m_1780.jpg'):(F?'p_people_f.jpg':'p_people_m.jpg'))}
+  else if(t<1815){c.push(rich?(F?'p_empire_f.jpg':'p_empire_m.jpg'):(F?'p_people_f.jpg':'p_people_m.jpg'))}
+  else c.push(rich?(F?'p_restor_f.jpg':'p_restor_m.jpg'):(F?'p_people_f.jpg':'p_people_m.jpg'));
+  c.push(F?'p_bourg_f_1780.jpg':'p_bourg_m_1780.jpg');return c.find(hasImg)||null}
+function plateImg(p,cls){const f=plateFor(p);if(!f)return null;const im=el('img',cls||'');im.src=imgSrc(f);im.alt='';im.loading='lazy';im.decoding='async';im.title=`${IMGS[f].title||''} — ${IMGS[f].artist||''}`;return im}
+{const _medal=medal;medal=function(cls,fig){const w=_medal(cls,fig);const im=plateImg(fig);if(im){const cv=w.querySelector('canvas');im.onerror=()=>{im.replaceWith(cv)};if(cv)cv.replaceWith(im);else w.appendChild(im)}return w}}
+{const _dp=drawPortrait;drawPortrait=function(cv){const im=plateImg({sex:s.sex,age:s.age,estate:s.estate,role:sceneRole(),pol:s.pol},'pf-por');if(im&&cv&&cv.parentNode){im.onerror=()=>{im.replaceWith(cv);_dp(cv)};cv.replaceWith(im)}else _dp(cv)}}
+const ERA_IMG={ancien:'era_ancien.jpg',constit:'era_constit.jpg',republic:'era_republic.jpg',directory:'era_directory.jpg',consulate:'era_empire.jpg',empire:'era_empire.jpg',restoration:'era_restoration.jpg',july:'era_july.jpg',republic2:'era_july.jpg',empire2:'era_july.jpg'};
+function eraImgFile(k){const f=ERA_IMG[k||era().k];return hasImg(f)?f:hasImg('title.jpg')?'title.jpg':null}
+function credLine(f){const c=IMGS[f];return c?`${c.title||''} · ${c.artist||''}${c.date?`, ${c.date}`:''}`:''}
+{const _et=eraTab;eraTab=function(H){_et(H);const f=eraImgFile();if(!f)return;const top=H.querySelector('.era-h');const cv=top&&top.querySelector('canvas');if(!cv)return;const im=el('img','era-img');im.src=imgSrc(f);im.alt=IMGS[f].title||'';im.onerror=()=>im.replaceWith(cv);cv.replaceWith(im);const cap=el('div','era-cap',credLine(f));im.after(cap)}}
+{const _se=showEnd;showEnd=function(){_se();const box=$('#end .sp');if(!box||!s)return;box.querySelectorAll('.ob-oval').forEach(x=>x.remove());const f=eraImgFile();if(!f)return;const im=el('img','ob-oval');im.src=imgSrc(f);im.alt='';im.title=credLine(f);box.insertBefore(im,$('#obName'))}}
+function showImgCredits(){const pin=openPanel('그림 출처');pin.appendChild(el('p','mut small','화면의 그림은 모두 저작권 보호 기간이 끝난 퍼블릭 도메인 작품입니다(위키미디어 공용).'));const ul=el('ol','srcs');(typeof IMG_CREDITS!=='undefined'?IMG_CREDITS:[]).forEach(c=>{const li=el('li');const a=el('a',null,`${c.title||c.file}`);a.href=c.source;a.target='_blank';a.rel='noopener';li.appendChild(a);li.appendChild(el('small',null,` · ${c.artist||''}${c.date?`, ${c.date}`:''} · ${c.license||''}`));ul.appendChild(li)});pin.appendChild(ul);if(!ul.children.length)pin.appendChild(el('p','mut','아직 그림이 없습니다.'))}
+{const b=$('#mImg');if(b)b.onclick=()=>{$('#menu').hidden=true;showImgCredits()}}
+// 표지 그림
+{if(hasImg('title.jpg')){const cv=$('#titleArt');if(cv){const im=el('img');im.src=imgSrc('title.jpg');im.alt='';im.onerror=()=>im.replaceWith(cv);cv.replaceWith(im)}}}

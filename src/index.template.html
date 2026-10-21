@@ -3,7 +3,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23A3262C%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2210%22 fill=%22%23fff%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%2327407A%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Noto+Serif+KR:wght@400;600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Pinyon+Script&family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 /*@@CSS@@*/
 </style>
@@ -25,6 +25,7 @@
           <button type="button" id="mHelp">설명</button>
           <button type="button" id="mLives">지난 인생</button>
           <button type="button" id="mSrc">참고 문헌</button>
+          <button type="button" id="mImg">그림 출처</button>
           <button type="button" id="autoT" aria-pressed="false">자동 선택 꺼짐</button>
           <button type="button" id="mNew">처음 화면</button>
         </div>
@@ -77,13 +78,16 @@
 <div id="panel" class="over" hidden><div class="pw"><div class="ph"><h2 id="pT"></h2><button class="cb" id="pClose" type="button">닫기</button></div><div id="pin"></div></div></div>
 
 <div id="title" class="over splash">
-  <div class="ribbon" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="t-bg" aria-hidden="true"><canvas id="titleArt" width="256" height="96"></canvas></div>
   <div class="sp">
-    <div class="wreath">
-      <svg class="laurel" viewBox="0 0 320 300" aria-hidden="true" id="laurel"></svg>
-      <div class="wr-in"><div class="sp-year">1789</div><p class="sp-f">Une vie française</p><h1 class="sp-t">한 시민의 일생</h1></div>
+    <div class="t-head">
+      <div class="mono" aria-hidden="true">C<i>&amp;</i>P</div>
+      <p class="scr">Bienvenue à</p>
+      <div class="sp-year">MDCCLXXXIX</div>
+      <p class="scr big">une vie française</p>
+      <h1 class="sp-t">한 시민의 일생</h1>
+      <svg class="laurel" viewBox="0 0 320 300" aria-hidden="true" id="laurel" hidden></svg>
     </div>
-    <canvas id="titleArt" width="256" height="96" aria-hidden="true"></canvas>
     <div class="card newf" id="newForm">
       <div class="nf-row">
         <input id="inGiven" maxlength="12" autocomplete="off" placeholder="이름" aria-label="이름">
