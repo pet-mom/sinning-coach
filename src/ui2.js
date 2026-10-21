@@ -159,7 +159,7 @@ renderTab=function(t){if(!s||tabBusy)return;tabBusy=true;const keepY=window.scro
 {const _r=render;render=function(){_r();if(s&&curTab==='daily'){heroDate();renderHome();renderSched()}}}
 
 /* ---------- 사건 화면 ---------- */
-{const _so=sheetOpen;sheetOpen=function(t,fr){_so(t,fr);if(s)$('#shFr').textContent=`${s.year}년 ${s.month+1}월 · 파리${fr?` · ${fr}`:''}`;const a=$('#shArt'),src=$('#cv');if(a&&src){const c=a.getContext('2d');c.imageSmoothingEnabled=false;c.clearRect(0,0,256,96);try{c.drawImage(src,0,0)}catch(e){}}}}
+{const _so=sheetOpen;sheetOpen=function(t,fr){_so(t,fr);if(s)$('#shFr').textContent=`${s.year}년 ${s.month+1}월 · 파리${fr?` · ${fr}`:''}`;}}
 {const _sb=shButtons;shButtons=function(opts){$('#shB').appendChild(el('div','ask','어떻게 하시겠습니까?'));return _sb(opts)}}
 // 선택 뒤: 결과 카드(계속 버튼 없이 잠깐 떠 있다가 사라진다)
 done=async function(){if(!sheetLive)return;if(lastPick&&typeof reactAfter==='function'){try{reactAfter(lastPick)}catch(e){console.error(e)}}lastPick=null;
