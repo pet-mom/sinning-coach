@@ -104,7 +104,7 @@ function economy(pl,ptxt){const j=job();const away=s.cond!=='normal';
   const need=110*E.price*(1+(s.spouse&&s.spouse.alive?.35:0)+.2*kids)*(s.cond==='emigre'?1.6:1);
   let life=Math.max(need,inc*(noble()?.92:.78));if(pl==='절약')life*=.8;if(trait('쾌활'))life*=1.06;
   if(s.cond==='prison')life=need*.7;
-  const net=Math.round(inc-life);s.money+=net;
+  const net=Math.round(inc-life);s.money+=net;s.ledger={y:s.year,pay:Math.round(pay),sp:Math.round(sp),land,dues,life:Math.round(life),net,pl};
   const parts=[pay?`벌이 +${fmt(pay)}`:'',sp?`배우자 +${fmt(sp)}`:'',land?`지대 +${fmt(land)}`:'',dues?`영주 공납 +${fmt(dues)}`:'',`생활비 -${fmt(life)}`].filter(Boolean);
   L(`방침 ${pl}${ptxt}.${slack} 살림 ${net>=0?'+':''}${fmt(net)} ${money()} (${parts.join(', ')}).`,'sys');
   if(s.money<0){s.money=0;say(price(s.year)>=1.4?'빵값이 치솟아 끼니를 거르는 날이 많았다.'+fx({hp:-4}):'빚과 가난에 시달렸다.'+fx({hp:-2}))}}
