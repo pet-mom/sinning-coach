@@ -458,6 +458,128 @@ p.warn{color:var(--red)}
 @media (max-width:640px){.nf-row{grid-template-columns:1fr 1fr 48px}.nf-date{grid-template-columns:1fr 1fr 1fr}.nf-date label{grid-column:1/-1}}
 body.covered #app{display:none}
 
+/* ================= 5차: 양피지와 동판화 (참고 디자인) ================= */
+:root{--bg:#E8DECB;--card:#F3EBDC;--card2:#EAE0CD;--line:#CDBFA6;--fg:#3A2D22;--mut:#7A6A58;--ink:#3A2D22;
+  --rouge:#7B2B2B;--roi:#2F4060;--gold:#9A7838;--yellow:#9A7838;--pink:#7B2B2B;--red:#8E2F2A;--green:#4E6B45;--teal:#3F5166;
+  --bar:#5A4434;--era:#7B2B2B;--rad:#8E2F2A;--roy:#2F4060;--mod:#8a7a66;--r:12px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C1814;--card:#27211B;--card2:#2E2720;--line:#4A3F33;--fg:#EADFC9;--mut:#B2A28B;--ink:#EADFC9;--rouge:#C9776E;--roi:#9FB0D0;--gold:#D2AE6A;--bar:#C9AE8A;--era:#C9776E;--green:#9CBC8F;--red:#E0857B}}
+:root[data-theme="dark"]{--bg:#1C1814;--card:#27211B;--card2:#2E2720;--line:#4A3F33;--fg:#EADFC9;--mut:#B2A28B;--ink:#EADFC9;--rouge:#C9776E;--roi:#9FB0D0;--gold:#D2AE6A;--bar:#C9AE8A;--era:#C9776E;--green:#9CBC8F;--red:#E0857B}
+body{background-image:radial-gradient(ellipse at top,color-mix(in srgb,#fff 18%,transparent),transparent 60%),repeating-linear-gradient(0deg,transparent 0 3px,color-mix(in srgb,var(--ink) 1.5%,transparent) 3px 4px)}
+.card{border-radius:var(--r);border:1px solid var(--line);outline:none;box-shadow:0 1px 0 color-mix(in srgb,#fff 40%,transparent) inset,0 2px 8px color-mix(in srgb,var(--ink) 8%,transparent);background:var(--card)}
+.ch{border-bottom:1px solid var(--line);position:relative}
+.ch h2{font-weight:700;font-size:1.15rem}
+.ch::after{content:'❦';position:absolute;left:50%;bottom:-.62em;transform:translateX(-50%);background:var(--card);color:var(--gold);font-size:.8rem;padding:0 6px;line-height:1}
+.pill{border-radius:10px;border:1px solid var(--line);background:var(--card2)}
+.pill.pri{background:var(--rouge);border-color:var(--rouge);color:#F6EEDF;box-shadow:inset 0 0 0 2px color-mix(in srgb,#fff 12%,transparent)}
+.pill.wide{width:100%;margin-top:12px;min-height:46px}
+.cb{border-radius:10px;border-color:var(--line)}.spd{border-radius:10px;border-color:var(--line)}
+.ribbon{height:4px}
+#top{background:var(--bg);box-shadow:0 1px 0 var(--line);border-bottom:0}
+.cockade{width:26px;height:26px}
+.engr,#cv,#shArt,#titleArt,.medal canvas{filter:sepia(.78) saturate(.75) contrast(1.06) brightness(.98)}
+/* 머리 그림 */
+.hero{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 2px 10px color-mix(in srgb,var(--ink) 14%,transparent)}
+.hero canvas{display:block;width:100%;border:0!important;image-rendering:pixelated}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--card) 92%,transparent));pointer-events:none}
+.hero-date{position:absolute;left:12px;right:12px;bottom:8px;z-index:1;display:flex;justify-content:space-between;font-size:.86rem;font-weight:600}
+/* 메달 초상 */
+.medal{flex:none;border-radius:50%;padding:3px;background:radial-gradient(circle,var(--card) 60%,var(--gold) 61% 64%,var(--card) 65% 70%,color-mix(in srgb,var(--gold) 70%,var(--ink)) 71% 74%,transparent 75%);display:grid;place-items:center}
+.medal canvas{border-radius:50%;width:100%;height:100%;image-rendering:pixelated;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--card) 80%,#fff),var(--card2))}
+.medal.big{width:104px;height:116px;border-radius:50% / 46%}.medal.big canvas{border-radius:50% / 46%}
+.medal.sm{width:48px;height:52px}
+/* 홈 */
+.hm-top{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center}
+.hm-n{font-family:var(--fd);font-weight:700;font-size:1.35rem;line-height:1.2}.hm-fr{font-family:var(--fr);font-style:italic;color:var(--mut);font-size:.88rem}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:1px 12px;margin:8px 0 0;font-size:.86rem}dl.facts dt{color:var(--mut)}dl.facts dd{margin:0}
+h3.sec{border:0;font-size:.95rem;margin:16px 0 8px;display:flex;align-items:center;gap:8px}h3.sec::after{content:'';flex:1;border-top:1px solid var(--line)}
+.pf-stats .ps{grid-template-columns:56px 1fr 30px}.ps s{height:6px;border-radius:3px;border:0;background:color-mix(in srgb,var(--line) 60%,transparent)}.ps s u{border-radius:3px;background:var(--bar)!important}
+.rowbtn{display:grid;grid-template-columns:28px auto 1fr 14px;gap:8px;align-items:center;width:100%;margin-top:14px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card2);cursor:pointer;text-align:left}
+.rowbtn b{text-align:right;font-family:var(--fd)}.rowbtn .ri{font-size:1.1rem;color:var(--gold);text-align:center}.chev{color:var(--mut)}
+.curev{display:grid;grid-template-columns:1fr 14px;gap:2px 8px;width:100%;margin-top:12px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card2);text-align:left;cursor:pointer;position:relative}
+.curev .tagr{grid-column:1/-1;justify-self:start;background:var(--rouge);color:#F6EEDF;font-size:.72rem;padding:2px 10px;border-radius:0 8px 8px 0;margin:-12px 0 6px -14px}
+.curev b{font-family:var(--fd);font-weight:700}.curev small{color:var(--mut);grid-column:1}.curev .chev{grid-row:2/4;grid-column:2;align-self:center}
+/* 오늘의 일과 */
+.sched-l{list-style:none;margin:0;padding:0;position:relative}
+.sched-l::before{content:'';position:absolute;left:61px;top:6px;bottom:6px;border-left:1px solid var(--line)}
+.sched-l li{display:grid;grid-template-columns:48px 26px 1fr;align-items:center;padding:6px 0;font-size:.9rem}
+.sched-l .tm{font-family:var(--fd);color:var(--mut);font-size:.84rem}.sched-l .dot{width:9px;height:9px;border-radius:50%;background:var(--card);border:2px solid var(--gold);justify-self:center;z-index:1}
+.sched-l .nm i{font-style:normal;font-size:.74rem;color:var(--green);margin-left:6px}
+.econ{border:0;margin:0;padding:2px 6px;justify-content:center}
+/* 인생 기록: 연표 */
+#log{position:relative}
+#log .le{border-bottom:0;position:relative;padding-left:4px}
+#log .le.yr b{font-family:var(--fd);font-size:1.1rem;color:var(--rouge)}
+/* 하단 바 */
+.nav{background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 10px color-mix(in srgb,var(--ink) 10%,transparent)}
+.nav::before{display:none}
+.nav button{font-size:.74rem;gap:3px;padding:7px 2px 8px}
+.nav .ni{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.nav button[aria-current="page"]{color:var(--rouge);box-shadow:none;position:relative}
+.nav button[aria-current="page"]::after{content:'';position:absolute;bottom:3px;width:18px;height:2px;border-radius:1px;background:var(--rouge)}
+/* 분류 단추 */
+.seg{display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--line);margin:4px 0 8px;scrollbar-width:none}
+.seg button{border:0;background:none;padding:8px 12px;cursor:pointer;color:var(--mut);white-space:nowrap;font-size:.88rem;border-bottom:2px solid transparent}
+.seg button[aria-pressed="true"]{color:var(--rouge);border-bottom-color:var(--rouge);font-weight:700}
+/* 사람 목록 */
+.plist{display:grid;gap:2px}
+.prow{display:grid;grid-template-columns:48px 1fr 28px;gap:12px;align-items:center;width:100%;padding:8px 4px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;cursor:pointer}
+.prow:last-child{border-bottom:0}.prow.dead{opacity:.6}
+.prow .pt b{display:block;font-family:var(--fd);font-size:1rem}.prow .pt span{display:block;font-size:.8rem;color:var(--mut)}.prow .pt small{display:block;font-size:.78rem;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pic{font-size:1.05rem;text-align:center;color:var(--mut)}.pic.b-love{color:var(--rouge)}.pic.b-bad{color:var(--red)}.pic.b-mid{color:var(--gold)}
+.center{text-align:center}
+/* 인물 기록 */
+.pp-top{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center;margin-bottom:8px}
+ul.tl{list-style:none;margin:6px 0;padding:0 0 0 16px;border-left:1px solid var(--line)}ul.tl li{position:relative;padding:4px 0 8px;font-size:.88rem}ul.tl li::before{content:'';position:absolute;left:-21px;top:10px;width:9px;height:9px;border-radius:50%;background:var(--card);border:2px solid var(--rouge)}
+.lab{font-size:.8rem;color:var(--mut);letter-spacing:.06em;margin:12px 0 4px}
+.chips .chip{border-radius:999px;padding:2px 10px;background:var(--card2);border-color:var(--line)}
+.chips .chip.on{border-color:var(--gold);color:var(--fg)}
+/* 생활 */
+.ladder{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;font-size:.8rem;margin:6px 0}.ladder i{font-style:normal;color:var(--mut)}
+.lad{padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--mut)}.lad.past{color:var(--fg)}.lad.on{background:var(--rouge);border-color:var(--rouge);color:#F6EEDF;font-weight:700}
+ul.basket b.neg{color:var(--red)}
+/* 시대 */
+.era-h{padding:0;overflow:hidden}.era-h canvas{display:block;width:100%;image-rendering:pixelated}.era-t{padding:10px 16px 0;display:grid}.era-t b{font-family:var(--fd);font-size:1.15rem}.era-h .seg{margin:6px 8px 0}
+ul.evl{list-style:none;margin:0;padding:0}ul.evl li{display:grid;grid-template-columns:52px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.88rem}ul.evl li:last-child{border-bottom:0}
+.yb{font-family:var(--fd);font-weight:700;text-align:center;border:1px solid var(--line);border-radius:8px;padding:2px 0;align-self:start;background:var(--card2)}
+/* 사건 화면 */
+#sheet .sh{border-radius:16px 16px 0 0;background:var(--card);border:1px solid var(--line)}
+.sh-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}.sh-k{font-family:var(--fd);font-weight:700;color:var(--mut)}.sh-k::before{content:'‹ ';}
+.sh-top .shdecree{flex:1}
+#shArt{display:block;width:100%;border-radius:10px;border:1px solid var(--line);margin:8px 0 12px;image-rendering:pixelated}
+.shh h2{font-size:1.3rem}
+.ask{font-family:var(--fd);font-weight:700;margin:16px 0 8px}
+#shB .opt{border-radius:10px;border:1px solid var(--line);background:var(--card2);padding-left:44px;position:relative;text-align:left}
+#shB .opt::before{content:'';position:absolute;left:14px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;border:1.5px solid var(--mut);background:var(--card)}
+#shB .opt.chosen,#shB .opt:hover:not(:disabled){background:var(--rouge);border-color:var(--rouge);color:#F6EEDF}
+#shB .opt.chosen::before{border-color:#F6EEDF;background:#F6EEDF;box-shadow:inset 0 0 0 4px var(--rouge)}
+#shB .opt.chosen small,#shB .opt:hover:not(:disabled) small{color:#EBDCC6}
+/* 결과 카드 */
+.toast.res{left:50%;right:auto;transform:translateX(-50%);width:min(420px,calc(100% - 32px));bottom:84px;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px color-mix(in srgb,var(--ink) 25%,transparent);padding:14px 16px;cursor:pointer;text-align:left}
+.toast.res .rk{font-family:var(--fd);font-weight:700;font-size:.82rem;color:var(--rouge);letter-spacing:.12em}
+.toast.res .rh{margin:6px 0 8px;font-size:.95rem;line-height:1.55}
+.toast.res .rk2{font-size:.76rem;color:var(--mut);border-top:1px solid var(--line);padding-top:6px}
+.toast.res ul.rd{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:2px}.toast.res ul.rd li{display:flex;justify-content:space-between;font-size:.88rem}
+.toast.res .up{color:var(--green)}.toast.res .dn{color:var(--red)}
+/* 표지: 월계관 */
+.wreath{position:relative;width:300px;height:280px;display:grid;place-items:center;margin:0 auto}
+.laurel{position:absolute;inset:0;width:100%;height:100%}
+.laurel ellipse{fill:color-mix(in srgb,var(--green) 55%,var(--ink));opacity:.85}.laurel ellipse.in{fill:color-mix(in srgb,var(--green) 40%,var(--gold));opacity:.7}
+.laurel .rib{fill:var(--rouge);opacity:.9}.laurel .knot{fill:var(--gold)}
+.wr-in{position:relative;text-align:center}
+#title .sp-year{font-family:var(--fd);font-style:italic;font-weight:700;font-size:4.2rem;letter-spacing:-.02em;color:var(--ink)}
+#title .sp-f{font-family:var(--fr);font-size:1.05rem;margin:2px 0 6px}
+#title .sp-t{font-size:1.25rem}
+#titleArt{width:100%;max-width:440px;border-radius:12px;border:1px solid var(--line);image-rendering:pixelated;margin:4px 0 10px}
+#title.splash{padding-top:22px}
+.newf{border-top:1px solid var(--line);border-radius:14px}
+.nf-row input,.nf-date select{border-radius:10px;border-color:var(--line);background:var(--card)}
+.dice{border-radius:10px}
+/* 프로필 */
+.prof{border-top:1px solid var(--line)}
+.pf-por{border-radius:50% / 46%;border:2px solid var(--gold)}
+@media (max-width:640px){.wreath{width:260px;height:244px}#title .sp-year{font-size:3.4rem}.hm-top,.pp-top{grid-template-columns:88px 1fr}.medal.big{width:88px;height:98px}}
+.econ .ec-i{display:inline-block}.econ{display:flex;flex-wrap:wrap;gap:2px 14px}
+
 </style>
 </head>
 <body>
@@ -497,11 +619,14 @@ body.covered #app{display:none}
       <div id="relMore"></div>
     </section>
     <section class="tab" id="tDaily" data-t="daily">
-      <div class="card scene">
+      <div class="hero scene">
         <canvas id="cv" width="256" height="96" aria-label="지금 사는 곳과 가족"></canvas>
-        <div class="sc-t"><div class="where" id="where"></div><div class="mut" id="famAges"></div><div class="era mut" id="era"></div></div>
-        <div class="econ" id="econCard"></div>
+        <div class="hero-date" id="heroDate"></div>
+        <div class="sc-t" hidden><div class="where" id="where"></div><div class="mut" id="famAges"></div><div class="era mut" id="era"></div></div>
       </div>
+      <div class="card home" id="homeCard"></div>
+      <div class="card sched" id="schedCard"></div>
+      <div class="econ" id="econCard"></div>
       <div class="card logc">
         <div class="ch"><h2>인생 기록</h2><span class="mut">최근 순 <button class="lnk" id="dataT" type="button" aria-pressed="false">자료 보기</button></span></div>
         <div id="log" aria-live="polite"></div>
@@ -515,13 +640,13 @@ body.covered #app{display:none}
     </section>
   </main>
   <nav class="nav" id="nav" aria-label="화면">
-    <button type="button" data-t="profile"><span class="ni">✦</span>프로필</button>
-    <button type="button" data-t="rel"><span class="ni">♥</span>관계</button>
-    <button type="button" data-t="daily" aria-current="page"><span class="ni">✎</span>일상</button>
-    <button type="button" data-t="life"><span class="ni">⚒</span>생활</button>
-    <button type="button" data-t="era"><span class="ni">⚑</span>시대</button>
+    <button type="button" data-t="profile"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>프로필</button>
+    <button type="button" data-t="rel"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="8.5" r="3.2"/><circle cx="16.5" cy="9.5" r="2.7"/><path d="M2.5 20c0-3.6 2.7-6 6-6s6 2.4 6 6M14 14.4c3.6-.6 7.5 1.4 7.5 5.6"/></svg>관계</button>
+    <button type="button" data-t="daily" aria-current="page"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 4l8.5 6.5V20a1 1 0 0 1-1 1h-5v-6h-5v6h-5a1 1 0 0 1-1-1z"/></svg>일상</button>
+    <button type="button" data-t="life"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="17" height="12.5" rx="2"/><path d="M9 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5.5v2M3.5 12.5h17"/></svg>생활</button>
+    <button type="button" data-t="era"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 3.5 2 3.5H5"/></svg>시대</button>
   </nav>
-  <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shdecree" id="shDecree"></div><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><div id="shB"></div></div></div>
+  <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="sh-top"><span class="sh-k">사건</span><span class="shdecree" id="shDecree"></span></div><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><canvas id="shArt" width="256" height="96" aria-hidden="true"></canvas><div id="shB"></div></div></div>
   <div class="toast" id="toast" role="status" hidden></div>
 </div>
 
@@ -530,10 +655,11 @@ body.covered #app{display:none}
 <div id="title" class="over splash">
   <div class="ribbon" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="sp">
-    <div class="sp-cockade" aria-hidden="true"></div>
-    <div class="sp-year">17<span>89</span></div>
-    <h1 class="sp-t">한 시민의 일생</h1>
-    <p class="sp-f">Vie d’un citoyen de Paris</p>
+    <div class="wreath">
+      <svg class="laurel" viewBox="0 0 320 300" aria-hidden="true" id="laurel"></svg>
+      <div class="wr-in"><div class="sp-year">1789</div><p class="sp-f">Une vie française</p><h1 class="sp-t">한 시민의 일생</h1></div>
+    </div>
+    <canvas id="titleArt" width="256" height="96" aria-hidden="true"></canvas>
     <div class="card newf" id="newForm">
       <div class="nf-row">
         <input id="inGiven" maxlength="12" autocomplete="off" placeholder="이름" aria-label="이름">
@@ -951,7 +1077,7 @@ function economy(pl,ptxt){const j=job();const away=s.cond!=='normal';
   const need=110*E.price*(1+(s.spouse&&s.spouse.alive?.35:0)+.2*kids)*(s.cond==='emigre'?1.6:1);
   let life=Math.max(need,inc*(noble()?.92:.78));if(pl==='절약')life*=.8;if(trait('쾌활'))life*=1.06;
   if(s.cond==='prison')life=need*.7;
-  const net=Math.round(inc-life);s.money+=net;
+  const net=Math.round(inc-life);s.money+=net;s.ledger={y:s.year,pay:Math.round(pay),sp:Math.round(sp),land,dues,life:Math.round(life),net,pl};
   const parts=[pay?`벌이 +${fmt(pay)}`:'',sp?`배우자 +${fmt(sp)}`:'',land?`지대 +${fmt(land)}`:'',dues?`영주 공납 +${fmt(dues)}`:'',`생활비 -${fmt(life)}`].filter(Boolean);
   L(`방침 ${pl}${ptxt}.${slack} 살림 ${net>=0?'+':''}${fmt(net)} ${money()} (${parts.join(', ')}).`,'sys');
   if(s.money<0){s.money=0;say(price(s.year)>=1.4?'빵값이 치솟아 끼니를 거르는 날이 많았다.'+fx({hp:-4}):'빚과 가난에 시달렸다.'+fx({hp:-2}))}}
@@ -8833,6 +8959,181 @@ function bootStart(){$('#bY').innerHTML=Array.from({length:41},(_,i)=>`<option v
   $('#goB').onclick=()=>{const g=$('#inGiven').value.trim(),sr=$('#inSur').value.trim();start(true,{hard:true,sex:pre.sex,estate:pre.estate,year:+$('#bY').value,month:+$('#bM').value,day:+$('#bD').value,given:g||pre.given,givenFr:(!g||g===pre.given)?pre.givenFr:'',sur:sr||pre.sur,surFr:(!sr||sr===pre.sur)?pre.surFr:''})};
   document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>setTab(b.dataset.t));document.body.classList.add('covered');rollPre()}
 bootStart();
+
+/* ================= 5차 화면: 양피지 · 동판화 · 메달 초상 =================
+   ui.js 위에 덮어쓴다. 일상(홈) · 프로필 · 관계 · 생활 · 시대 다섯 칸과 사건 화면, 결과 카드, 인물 기록. */
+
+/* ---------- 그림 도우미 ---------- */
+// 픽셀 인물 하나를 작은 캔버스에 크게 (초상·메달·목록 썸네일)
+function drawFig(cv,p){if(!cv||typeof makeG!=='function'||typeof drawPeople!=='function')return;const W=256,H=96;const off=document.createElement('canvas');off.width=W;off.height=H;const c=off.getContext('2d');
+  const g=makeG(c,{seed:(p.seed||7)>>>0,t:T(),era:era().k,season:s?s.season:1,loc:'paris'});drawPeople(g,[{sex:p.sex||'M',age:clamp(p.age||30,1,90),me:false,estate:p.estate||'bourgeois',role:p.role||null,pol:p.pol||0}]);
+  const pc=cv.getContext('2d');pc.imageSmoothingEnabled=false;pc.clearRect(0,0,cv.width,cv.height);const sw=22,sh=24,sx=W/2-sw/2,sy=GY+3-30;pc.drawImage(off,sx,sy,sw,sh,0,0,cv.width,cv.height)}
+function drawPortrait(cv){drawFig(cv,{sex:s.sex,age:s.age,estate:s.estate,role:sceneRole(),pol:s.pol,seed:s.by})}
+function medal(cls,fig){const w=el('div','medal '+(cls||''));const cv=el('canvas');cv.width=66;cv.height=72;cv.setAttribute('aria-hidden','true');w.appendChild(cv);requestAnimationFrame(()=>drawFig(cv,fig));return w}
+// 파리 풍경(표지·시대 머리그림)
+function drawParis(cv,t,kind){if(!cv||typeof makeG!=='function')return;const c=cv.getContext('2d');c.imageSmoothingEnabled=false;const g=makeG(c,{seed:1789,t:t||1789,era:(ERAS.find(e=>(t||1789)>=e.a&&(t||1789)<e.b)||ERAS[0]).k,season:1,loc:'paris'});artSky(g);(ART[kind||'city']||ART.city)(g)}
+// 월계관 액자
+function drawLaurel(svg){if(!svg)return;const NS='http://www.w3.org/2000/svg';let h='';const cx=160,cy=150,rx=118,ry=128;
+  for(const side of [-1,1])for(let i=0;i<15;i++){const a=Math.PI/2+side*(0.28+i*0.17);const x=cx+Math.cos(a)*rx,y=cy+Math.sin(a)*ry;const rot=(a*180/Math.PI)+(side>0?-60:60)+90;
+    h+=`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="5" ry="13" transform="rotate(${rot.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`;
+    const a2=a+side*.08,x2=cx+Math.cos(a2)*(rx-14),y2=cy+Math.sin(a2)*(ry-14);h+=`<ellipse class="in" cx="${x2.toFixed(1)}" cy="${y2.toFixed(1)}" rx="4" ry="10" transform="rotate(${(rot+(side>0?40:-40)).toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)})"/>`}
+  h+=`<path class="rib" d="M104 268 q56 22 112 0 l14 14 q-70 26 -140 0 z"/><circle class="knot" cx="160" cy="276" r="7"/>`;svg.innerHTML=h}
+
+/* ---------- 머리 그림과 날짜 ---------- */
+function heroDate(){const d=$('#heroDate');if(!d||!s)return;d.innerHTML=`<span>${s.year}년 ${s.month+1}월 · 파리 · ${SEASON[s.season]}</span><span class="mut">${era().n}</span>`}
+
+/* ---------- 홈(일상): 메달 초상 · 기본 정보 · 능력치 · 재산 · 현재 사건 · 오늘의 일과 ---------- */
+function quartier(){try{if(typeof rxQ==='function'){const q=rxQ();if(q&&q.n)return q.n}}catch(e){}return REGIONS[loc()].n}
+function statusName(){const j=job();if(child())return inSchool()?schoolStatus().split(' · ')[0]:s.age<7?'어린아이':'아이';const c={prison:'수감 중',hiding:'은신 중',emigre:'망명 중'}[s.cond];if(c)return c;return j?pname(j):s.flags.retired?'은퇴':noble()&&s.land?'지주':'일 없음'}
+function renderHome(){const C=$('#homeCard');if(!C||!s)return;C.innerHTML='';
+  const top=el('div','hm-top');top.appendChild(medal('big',{sex:s.sex,age:s.age,estate:s.estate,role:sceneRole(),pol:s.pol,seed:s.by}));
+  const id=el('div','hm-id');id.innerHTML=`<div class="hm-n">${s.given[0]} ${s.sur[0]}</div>${s.given[1]?`<div class="hm-fr">${s.given[1]} ${s.sur[1]}</div>`:''}<dl class="facts"><dt>출생</dt><dd>${s.by}년 ${s.bm+1}월 ${s.bd||1}일</dd><dt>나이</dt><dd>${s.age}세</dd><dt>신분</dt><dd>${ESTATES[s.estate].n}</dd><dt>처지</dt><dd>${statusName()}</dd><dt>거주지</dt><dd>${quartier()} · ${homeLabel()}</dd></dl>`;
+  top.appendChild(id);C.appendChild(top);
+  C.appendChild(el('h3','sec','주요 능력치'));const st=el('div','pf-stats');st.innerHTML=STATS.map(([k,n])=>`<div class="ps"><span>${n}</span><s><u style="width:${s.st[k]}%"></u></s><b>${s.st[k]}</b></div>`).join('');C.appendChild(st);
+  const mo=el('button','rowbtn');mo.type='button';mo.innerHTML=`<span class="ri">⚜</span><span>재산</span><b>${fmt(s.money)} ${money()}</b><span class="chev">›</span>`;mo.onclick=()=>setTab('life');C.appendChild(mo);
+  const ev=s.log.slice(-14).reverse().find(e=>['big','ev','dark'].includes(e.k));
+  if(ev){const cur=el('button','curev');cur.type='button';const txt=ev.t.replace(/\s?\([^()]*[+-]\s?[\d,]+[^()]*\)\.?$/,'');cur.innerHTML=`<span class="tagr">현재 사건</span><b>${txt.length>38?txt.slice(0,38)+'…':txt}</b><small>${ev.a!=null?ev.a+'세':''} · 인생 기록에서 보기</small><span class="chev">›</span>`;cur.onclick=()=>{$('.logc').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})};C.appendChild(cur)}}
+// 오늘의 일과: 나이 · 학교 · 직업 · 신분 · 처지 · 신앙 · 정치에 맞춘 하루
+function schedule(){const j=job(),a=s.age,x=SCH(),out=[];const add=(t,n,h)=>out.push([t,n,h||'']);const win=s.season===3;
+  if(s.cond==='prison'){add('06:00','간수의 점호');add('08:00','묽은 수프와 빵');add('11:00','안뜰 산책','건강 −');add('15:00','같은 방 사람들과 이야기','사교');add('19:00','촛불 아래 편지 쓰기','글씨');add('21:00','짚더미 위의 잠');return out}
+  if(s.cond==='hiding'){add('05:00','동트기 전 잠깐의 바람');add('09:00','다락방에 숨어 책 읽기','학식');add('14:00','발소리에 귀 기울이기','의지');add('22:00','몰래 내려가 저녁');return out}
+  if(s.cond==='emigre'){add('08:00','하숙집 아침');add('10:00','고국 소식 신문 읽기');add('13:00',isM()?'프랑스어·검술 개인 교습으로 생계':'자수와 모자 만들기로 생계',isM()?'예법':'기술');add('18:00','망명객들의 모임','사교');return out}
+  if(a<7){add('07:00','기상');add('08:00',`${s.mo.alive?'어머니':'유모'} 곁에서 아침`);add('10:00',noble()?'정원에서 놀기':'골목에서 동무들과 놀기','체력 +');add('15:00',noble()?'낮잠':'심부름');add('19:00','저녁');add('20:00','잠자리 기도');return out}
+  if(inSchool()){const board=!x.ext&&['college','convent','seminary'].includes(x.st);add(board?'05:30':'06:30',board?'기숙사 종소리에 기상':'기상');add('07:00',x.st==='convent'?'예배당 미사':'미사·아침');
+    if(x.st==='petite'){add('08:00','읽기와 교리문답','읽기·쓰기 +');add('13:00','쓰기와 셈','산수 +');add('16:00',s.estate==='artisan'?'공방 심부름':'집안일 거들기')}
+    else if(x.st==='college'){add('08:00','라틴어 수업','고전학 +');add('10:30',T()>=1795.75&&T()<1802.5?'수학·자연사':'작문과 번역',T()>=1795.75?'자연과학 +':'고전학 +');add('14:00',s.age>=15?'철학반 논쟁':'역사와 지리',s.age>=15?'철학·수사학 +':'');add('17:00','자습','학식 +');add('19:30','저녁과 묵상')}
+    else if(x.st==='convent'){add('08:00','교리와 읽기','읽기·쓰기 +');add('10:00','바느질·자수','재봉 +');add('14:00',noble()?'하프·클라브생':'셈과 살림','악기 +');add('16:00','춤과 예법','예법 +')}
+    else if(x.st==='univ'){add('08:00',x.fac==='med'?'해부 강의':'법학 강의',x.fac==='med'?'의학 +':'법학 +');add('12:00','카페에서 동기들과','사교 +');add('15:00',x.fac==='med'?'병원 회진 참관':'변론 연습',x.fac==='med'?'외과 +':'웅변 +');add('20:00','하숙방에서 복습','학식 +')}
+    else if(x.st==='seminary'){add('05:00','아침 기도');add('08:00','신학 강의','신학 +');add('14:00','라틴어 성무일도','고전학 +');add('20:00','저녁 기도와 침묵')}
+    add('21:00','잠자리');return out}
+  const tr=j?j.tr:null;add(tr==='army'?'05:00':noble()&&!j?'10:00':win?'06:30':'05:30',tr==='army'?'기상나팔':noble()&&!j?'느지막한 기상과 몸단장':'기상');
+  if(faithModeNow()==='devout')add('06:30','새벽 미사','신앙 +');
+  if(!j){if(noble()||rich()){add('12:00','방문객 맞이','사교 +');add('15:00',T()<1789?'튈르리 정원 산책':'팔레루아얄 산책','');add('18:00',T()<1793||T()>=1795?'극장 또는 살롱':'조용한 저녁','예법 +');add('22:00','만찬')}else{add('08:00','일거리 찾아 거리로');add('12:00','빵 한 조각');add('15:00','장터 품팔이','체력 +');add('20:00','저녁')}}
+  else if(tr==='craft'){add('06:00',`${SPECS[pickSpec()]||'공방'} 일`,`${FXN[pickSpec()]} +`);add('12:00','점심');add('13:00','다시 공방','기술 +');add('19:00','선술집','사교 +')}
+  else if(tr==='farm'){add('05:00','들일','농사일 +');add('12:00','들판에서 점심');add('13:00','들일','체력 +')}
+  else if(tr==='law'){add('08:00',j.t>=3?'법정':'사무소 서류','법학 +');add('13:00','의뢰인 상담','대화술 +');add('17:00',T()>=1789.5?'카페에서 신문':'고등법원 복도','사교 +')}
+  else if(tr==='church'){add('05:00','성무일도');add('07:00','미사 집전','웅변 +');add('10:00','병자 방문','신앙 +');add('15:00','교구 기록','글씨 +')}
+  else if(tr==='med'){add('07:00','병원 회진','의학 +');add('11:00','왕진','외과 +');add('16:00','진료와 처방')}
+  else if(tr==='army'){add('06:00','훈련','검술 +');add('12:00','막사 점심');add('14:00','행군·사격','체력 +')}
+  else if(tr==='pol'){add('09:00',deputy()?'의회 회의':'시청 업무','웅변 +');add('15:00','위원회','영향력 +')}
+  else if(tr==='letters'){add('08:00','원고 쓰기','글씨 +');add('14:00','도서관','철학·수사학 +');add('18:00','살롱','대화술 +')}
+  else if(tr==='serv'){add('06:00','주인댁 불 지피기');add('09:00','시중과 심부름','예법 +');add('20:00','주인 저녁 시중')}
+  else if(tr==='sea'){add('05:00','갑판 일','체력 +');add('12:00','항구 점심');add('15:00','짐 싣기','짐 나르기 +')}
+  else if(tr==='art'){add('09:00','작업실','그림·악기 +');add('15:00','연습 또는 손님');add('20:00','공연·전시')}
+  else if(tr==='state'){add('08:00','사무실 업무','산수·회계 +');add('14:00','순찰·검사')}
+  else if(tr==='peuple'){add('05:00','물 긷기·짐 나르기','짐 나르기 +');add('12:00','장터 점심');add('14:00','다시 일','체력 +')}
+  else{add('08:00',pname(j)+' 일');add('14:00','일')}
+  if(s.party)add('19:30',`${FAC[s.party].n} 회합`,'웅변 +');
+  if(s.spouse&&s.spouse.alive)add('20:00',`${isM()?'아내':'남편'}와 저녁${kidsAlive().length?' · 아이들':''}`,'가족 +');else add('20:00','저녁');
+  add(noble()?'23:30':'21:30','잠자리');return out.sort((a,b)=>a[0].localeCompare(b[0]))}
+function renderSched(){const C=$('#schedCard');if(!C||!s)return;C.innerHTML='';const h=el('div','ch');h.innerHTML=`<h2>오늘의 일과</h2><span class="mut small">${s.year}년 ${s.month+1}월 · 방침 ${s.plan||'근면'}</span>`;C.appendChild(h);
+  const ul=el('ul','sched-l');schedule().forEach(([t,n,hh])=>{const li=el('li');li.innerHTML=`<span class="tm">${t}</span><span class="dot"></span><span class="nm">${n}${hh?` <i>${hh}</i>`:''}</span>`;ul.appendChild(li)});C.appendChild(ul)}
+
+/* ---------- 프로필: 성격 · 신념 · 직업과 사회적 지위 ---------- */
+const PERS_T={열정:'열정적',신중:'신중함',경건:'경건함',계몽:'호기심 많음',야심:'야심만만',쾌활:'쾌활함'};
+const PERS_V={vfam:'가정적',vhon:'자존심 강함',vjus:'책임감',vlib:'자유분방',veq:'공정함',vord:'원칙적'};
+const PERS_TAL={social:'눈치 빠름',observe:'세심함',strat:'계산이 빠름',art:'감수성 풍부',music:'흥이 많음',orat:'말솜씨 좋음',memory:'꼼꼼함',lang:'재치 있음',math:'논리적',space:'손눈이 맞음'};
+function personality(){const o=[];if(s.trait)o.push(PERS_T[s.trait]||s.trait);const tv=topValues(2).map(n=>VALUES.find(x=>x[1]===n)[0]);tv.forEach(k=>o.push(PERS_V[k]));const tt=topTalents(1)[0];if(tt&&tt[2]>=60)o.push(PERS_TAL[tt[0]]);
+  if(s.st.cour>=65)o.push('대담함');else if(s.st.cour<=25)o.push('겁이 많음');return [...new Set(o.filter(Boolean))]}
+function statusLadder(){const j=job();if(!j)return '';const rows=PL.filter(x=>x[1]===j.tr).map(x=>POST[x[0]]).filter(p=>p.ok()&&canSex(p)).sort((a,b)=>a.t-b.t);return rows.map(p=>`<span class="lad${p.id===j.id?' on':p.t<j.t?' past':''}">${pname(p)}</span>`).join('<i>›</i>')}
+function profileExtra(H){const c=cardIn(H,'성격 · 신념 · 지위','Caractère');
+  c.appendChild(el('div','lab','성격'));const pc=el('div','chips');personality().forEach(x=>pc.appendChild(el('span','chip on',x)));c.appendChild(pc);
+  c.appendChild(el('p','mut small','성격은 자동 선택의 성향과 주변 사람들의 반응, 일부 판정에 영향을 줍니다.'));
+  c.appendChild(el('div','lab','신념'));const bl=el('p','small');bl.innerHTML=`<b>${polLabel(s.pol)}</b> · ${faithLabel()} · 중히 여기는 가치 ${topValues(3).join(', ')}${s.goal?` · 평생의 뜻 ‘${s.goal}’`:''}`;c.appendChild(bl);
+  c.appendChild(el('div','lab','직업과 사회적 지위'));const j=job();const jp=el('p','small');jp.innerHTML=`${ESTATES[s.estate].n} (${ESTATES[s.estate].fr}) · ${statusName()}${j?` · ${s.year-s.jobSince}년째 · ${TRACKS[j.tr]||''}`:''} · 명성 ${s.fame} · 영향력 ${influence().v}`;c.appendChild(jp);
+  const ld=statusLadder();if(ld){const d=el('div','ladder');d.innerHTML=ld;c.appendChild(d)}}
+
+/* ---------- 관계: 분류 · 목록 · 인물 기록 ---------- */
+let relFilter='all';
+function famPeople(){const o=[];if(s.fa)o.push({fam:'fa',n:'아버지',role:'가족',alive:s.fa.alive,age:s.fa.age,sex:'M',estate:s.estate,note:s.fa.alive?`${s.fa.age}세`:`${s.fa.dy||''}년 세상을 떠남`});
+  if(s.mo)o.push({fam:'mo',n:'어머니',role:'가족',alive:s.mo.alive,age:s.mo.age,sex:'F',estate:s.estate,note:s.mo.alive?`${s.mo.age}세`:`${s.mo.dy||''}년 세상을 떠남`});
+  if(s.spouse)o.push({fam:'sp',n:s.spouse.n||(isM()?'아내':'남편'),role:isM()?'아내':'남편',alive:s.spouse.alive,age:s.spouse.age,sex:isM()?'F':'M',estate:s.spouse.estate||s.estate,note:s.spouse.alive?`${s.spouse.age}세`:s.divorced?'이혼':'사별'});
+  s.kids.forEach((k,i)=>o.push({fam:'k'+i,n:k.n,role:k.sex==='M'?'아들':'딸',alive:k.alive,age:s.year-k.y,sex:k.sex,estate:s.estate,note:k.alive?`${s.year-k.y}세`:`${k.dy||''}년에 잃음`}));return o}
+function relCat(r){const b=relBond(r);if(['스승','후원자'].includes(r.role)||b==='존경')return 'mentor';if(['연인','라이벌','혐오','경쟁자'].includes(b)||r.role==='경쟁자')return 'heart';return 'friend'}
+function relAge(r){const P=perOf(r);if(P)return s.year-P.b;if(typeof npAge==='function'&&r.kind==='fic')try{return npAge(r)}catch(e){}return 30}
+function relNote(r){if(!r.alive)return relEnd(r)||'떠난 사람';if(r.kind==='fic'&&r.fate&&r.fate.length)return String(r.fate[r.fate.length-1]).slice(0,40);const P=perOf(r);if(P)return (r.w||P.bio||'').slice(0,40);return r.w||''}
+const BOND_IC={친우:'♥',연인:'♥',존경:'✦',라이벌:'⚔',혐오:'✕',경쟁자:'⚔'};
+function renderRel(){const C=$('#relCard');if(!C||!s)return;C.innerHTML='';const h=el('div','ch');h.innerHTML=`<h2>인간관계</h2><span class="mut small">${relsAlive().length}명과 인연</span>`;C.appendChild(h);
+  const seg=el('div','seg');[['all','전체'],['fam','가족'],['friend','친구·동료'],['mentor','스승·후원'],['heart','연인·라이벌'],['gone','떠난 이']].forEach(([k,n])=>{const b=el('button',null,n);b.type='button';b.setAttribute('aria-pressed',String(relFilter===k));b.onclick=()=>{relFilter=k;renderTab('rel')};seg.appendChild(b)});C.appendChild(seg)}
+function relMore(H){H.innerHTML='';const list=el('div','plist');const fam=famPeople();const rs=(s.rel||[]).slice();
+  const show=[];if(relFilter==='all'||relFilter==='fam')fam.filter(p=>p.alive||relFilter==='fam').forEach(p=>show.push(['fam',p]));
+  rs.filter(r=>relFilter==='gone'?!r.alive:r.alive&&(relFilter==='all'||relCat(r)===relFilter)).sort((a,b)=>(b.close+(b.hate||0)+b.riv)-(a.close+(a.hate||0)+a.riv)).forEach(r=>show.push(['rel',r]));
+  if(relFilter==='gone')fam.filter(p=>!p.alive).forEach(p=>show.push(['fam',p]));
+  if(!show.length)list.appendChild(el('p','mut',child()?'아직 어려서 집 밖의 인연이 많지 않다.':'아직 이 칸에 들어갈 사람이 없다.'));
+  show.forEach(([k,p])=>{const b=el('button','prow'+(p.alive===false?' dead':''));b.type='button';
+    if(k==='fam'){b.appendChild(medal('sm',{sex:p.sex,age:p.age,estate:p.estate,seed:p.n.length*97}));const t=el('div','pt');t.innerHTML=`<b>${p.n}</b><span>${p.role}</span><small>${p.note}</small>`;b.appendChild(t);b.appendChild(el('span','pic fam','⌂'))}
+    else{const P=perOf(p);b.appendChild(medal('sm',{sex:p.sex,age:relAge(p),estate:p.estate||(P?'bourgeois':'artisan'),seed:(p.fid||p.pid||p.n).length*131+p.y}));const bd=relBond(p);const t=el('div','pt');t.innerHTML=`<b>${p.n}</b><span>${p.role}${bd!==p.role?` · ${bd}`:''}${P?' · 실존 인물':''}</span><small>${relNote(p)}</small>`;b.appendChild(t);b.appendChild(el('span','pic b-'+(bd==='혐오'||bd==='라이벌'||bd==='경쟁자'?'bad':bd==='친우'||bd==='연인'?'love':'mid'),BOND_IC[bd]||'·'));b.onclick=()=>personPage(p)}
+    list.appendChild(b)});
+  const c=el('section','card');c.appendChild(list);c.appendChild(el('p','mut small center','지인들도 저마다의 삶을 살아갑니다. 혁명에 가담하고, 떠나고, 죽기도 합니다.'));H.appendChild(c);
+  const f=cardIn(H,'파벌과의 관계','Les factions');const fs=activeFactions();if(!fs.length)f.appendChild(el('p','mut','아직 뚜렷한 파벌이 없다.'));
+  const fl=el('ul','infl');fs.forEach(x=>fl.appendChild(el('li',null,`${x.n} — ${s.party===x.id?`소속 · ${PRANK[s.prank]} · `:''}${frelWord(frelOf(x.id))} ${frelOf(x.id)} · 성향 친밀도 ${affinity(x)}%`)));f.appendChild(fl)}
+let ppTab='sum';
+function personPage(r){const pin=openPanel('인물 기록');pin.innerHTML='';const P=perOf(r);
+  const top=el('div','pp-top');top.appendChild(medal('big',{sex:r.sex,age:relAge(r),estate:r.estate||'bourgeois',seed:(r.fid||r.pid||r.n).length*131+r.y}));
+  const id=el('div');id.innerHTML=`<div class="hm-n">${r.n}</div><div class="hm-fr">${P?P.fr:''}</div><div class="small mut">${r.role} · ${relBond(r)}${P?` · ${P.b}~${P.d}`:r.by?` · ${r.by}년생`:''}${r.home?` · ${r.home}`:''}</div>`;top.appendChild(id);pin.appendChild(top);
+  const seg=el('div','seg');[['sum','개요'],['rel','관계'],['log','기록']].forEach(([k,n])=>{const b=el('button',null,n);b.type='button';b.setAttribute('aria-pressed',String(ppTab===k));b.onclick=()=>{ppTab=k;personPage(r)};seg.appendChild(b)});pin.appendChild(seg);
+  if(ppTab==='sum'){if(P)pin.appendChild(el('p',null,P.bio));if(r.w)pin.appendChild(el('p','small',`만난 곳: ${r.w}.`));
+    const pers=[];if(r.tr)pers.push(r.tr);if(r.v)pers.push(PERS_V[r.v]||'');pin.appendChild(el('div','lab','성격'));const pc=el('div','chips');pers.filter(Boolean).forEach(x=>pc.appendChild(el('span','chip',x)));pin.appendChild(pc);
+    pin.appendChild(el('div','lab','관심사'));const ic=el('div','chips');[r.fac&&FAC[r.fac]?FAC[r.fac].n:'',P&&P.ctx&&P.ctx[0]?'':'',r.kind==='fic'&&typeof npJob==='function'?(()=>{try{return npJob(r)}catch(e){return ''}})():'',VALUES.find(x=>x[0]===r.v)?.[1]||''].filter(Boolean).forEach(x=>ic.appendChild(el('span','chip',x)));pin.appendChild(ic);
+    pin.appendChild(el('div','lab','최근 소식'));pin.appendChild(el('p','small',relNote(r)||'별다른 소식이 없다.'))}
+  if(ppTab==='rel'){pin.appendChild(el('div','lab','관계 상태'));const g=el('div','pf-stats');g.innerHTML=[['친밀도',r.close],['신뢰',r.trust],['존경',r.resp],['경쟁심',r.riv],['미움',r.hate||0]].map(([n,v])=>`<div class="ps"><span>${n}</span><s><u style="width:${v}%"></u></s><b>${v}</b></div>`).join('');pin.appendChild(g);
+    pin.appendChild(el('p','small mut',`관계의 성격: ${relBond(r)}. ${r.fac&&FAC[r.fac]?`${FAC[r.fac].n} 사람이다. `:''}${s.party&&r.fac?(facPair(s.party,r.fac)<=-40?'그대의 파벌과 적대 관계다.':facPair(s.party,r.fac)>=40?'그대의 파벌과 손잡은 쪽이다.':''):''}`))}
+  if(ppTab==='log'){const ul=el('ul','tl');const f=(r.fate||[]).slice().reverse();if(P){ul.appendChild(el('li',null,`${P.d}년 — ${P.dc||'세상을 떠났다'}`));(P.fac||[]).slice().reverse().forEach(([a,b,id])=>FAC[id]&&ul.appendChild(el('li',null,`${Math.floor(a)}~${Math.floor(b)}년 — ${FAC[id].n}`)));ul.appendChild(el('li',null,`${P.b}년 — 태어났다`))}
+    f.forEach(x=>ul.appendChild(el('li',null,String(x))));ul.appendChild(el('li',null,`${r.y}년 — 그대와 처음 만났다`));pin.appendChild(ul)}
+  const can=r.alive&&!child()&&s.cond!=='prison'&&lit()&&(s.acts['let_'+(r.fid||r.pid)]!==s.year);
+  const b=el('button','pill pri wide','✉ 편지 보내기');b.type='button';b.disabled=!can;b.onclick=()=>{s.acts['let_'+(r.fid||r.pid)]=s.year;say(`${r.n}에게 편지를 보냈다.`+fx({pen:1})+relFx(r,{close:4,trust:2}));save();personPage(r);render()};pin.appendChild(b);
+  if(!can&&r.alive)pin.appendChild(el('p','mut small center',!lit()?'글을 몰라 편지를 쓸 수 없다.':s.acts['let_'+(r.fid||r.pid)]===s.year?'올해는 이미 편지를 보냈다.':''))}
+
+/* ---------- 생활: 직업 · 수입과 지출 · 재산 · 거주지 · 소지품 · 교육 · 사회 활동 ---------- */
+function possessions(){const o=[];const m=s.money;if(lit())o.push(m>=3000?'장정한 책들':'낡은 책 몇 권');if(m>=1500)o.push('회중시계');if(noble()||soldier()||s.sk.arms>=30)o.push('검');if(rich())o.push('마차와 말');else if(s.sk.ride>=30)o.push('말 한 필');
+  if(s.sk.music>=30)o.push(noble()?'하프':'바이올린');if(onTrack('craft'))o.push(`${SPECS[pickSpec()]||'장인'}의 연장`);if(onTrack('med'))o.push('왕진 가방');if(onTrack('law'))o.push('법복');if(priest())o.push('성무일도서');
+  if(s.faithKind==='catholic'&&s.faith>=50)o.push('묵주');if(T()>=1789.5&&T()<1795&&s.pol>=30)o.push('삼색 모표');if(s.flags.legion)o.push('레지옹 도뇌르 훈장');if(s.land)o.push('땅문서');if(m<30)o.push('입은 옷 한 벌');return o}
+function lifeTab(H){H.innerHTML='';const j=job(),L=s.ledger;
+  const c1=cardIn(H,'직업과 지위','État');c1.appendChild(el('p',null,`${statusName()}${j?` · ${TRACKS[j.tr]||''} ${j.t}단계 · ${s.year-s.jobSince}년째 · 연 ${fmt(j.pay)} ${money()}`:''}`));const ld=statusLadder();if(ld){const d=el('div','ladder');d.innerHTML=ld;c1.appendChild(d)}
+  if(j){const nx=PL.filter(x=>x[1]===j.tr&&x[2]===j.t+1).map(x=>POST[x[0]]).filter(p=>p.ok()&&canSex(p));if(nx.length)c1.appendChild(el('p','small mut',`다음 자리: ${nx.map(p=>`${pname(p)}${needText(p)?` (${needText(p)})`:''}`).join(' / ')}`))}
+  const c2=cardIn(H,'수입과 지출','Le budget');if(L){const ul=el('ul','basket');[['벌이',L.pay],['배우자 벌이',L.sp],['지대',L.land],['영주 공납',L.dues],['생활비',-L.life],['한 해 살림',L.net]].filter(x=>x[1]).forEach(([n,v])=>{const li=el('li');li.innerHTML=`<span>${n}</span><b class="${v<0?'neg':''}">${v>0?'+':''}${fmt(v)}</b>`;ul.appendChild(li)});c2.appendChild(ul);c2.appendChild(el('p','mut small',`${L.y}년 결산 · 방침 ${L.pl}`))}else c2.appendChild(el('p','mut','아직 한 해 결산이 없다.'));
+  const c3=cardIn(H,'재산 · 거주지 · 소지품','Les biens');c3.appendChild(el('p',null,`재산 ${fmt(s.money)} ${money()}${s.land?` · 지대 ${fmt(s.land)}/년`:''}${s.dues?` · 영주 공납 ${fmt(s.dues)}/년`:''}`));c3.appendChild(el('p','small',`거주지: ${quartier()} · ${homeLabel()}`));const pc=el('div','chips');possessions().forEach(x=>pc.appendChild(el('span','chip',x)));c3.appendChild(pc);
+  const c4=cardIn(H,'교육','L’instruction');c4.appendChild(el('p','small',inSchool()?schoolStatus():`${lit()?'글을 읽고 쓴다':'글을 모른다'}${SCH().school?` · 다닌 학교: ${SCH().school}`:''}${SCH().grade?` · 마지막 성적 ${SCH().grade}`:''}`));
+  buildActs(cardIn(H,'방침과 사회 활동','Les occupations'));lifeEcon(cardIn(H,'물가','Le prix des choses'));showHist(cardIn(H,'이력','État civil'))}
+
+/* ---------- 시대: 머리그림 · 시대 이름 · 주요 사건 · 정치 세력 · 경제 · 자료 ---------- */
+let eraSub='ev';
+function eraSpan(){const e=era();return `${Math.floor(e.a)}–${Math.min(Math.floor(e.b),1850)}`}
+function eraTab(H){H.innerHTML='';const top=el('section','card era-h');const cv=el('canvas','engr');cv.width=256;cv.height=96;top.appendChild(cv);requestAnimationFrame(()=>drawParis(cv,T(),'city'));
+  const t=el('div','era-t');t.innerHTML=`<b>${era().n} (${eraSpan()})</b><span class="mut small">${ruler()}${repYear(s.year)?' · '+repYear(s.year):''}</span>`;top.appendChild(t);
+  const seg=el('div','seg');[['ev','주요 사건'],['pol','정치 세력'],['eco','경제'],['src','자료']].forEach(([k,n])=>{const b=el('button',null,n);b.type='button';b.setAttribute('aria-pressed',String(eraSub===k));b.onclick=()=>{eraSub=k;renderTab('era')};seg.appendChild(b)});top.appendChild(seg);H.appendChild(top);
+  if(eraSub==='ev'){const c=el('section','card');const mi=MI();const past=HIST.filter(h=>h.mi<=mi&&h.text).sort((a,b)=>b.mi-a.mi).slice(0,40);const ul=el('ul','evl');past.forEach(h=>{const li=el('li');const y=Math.floor(h.mi/12),m=h.mi%12+1;li.innerHTML=`<span class="yb">${y}</span><span><b>${m}월</b> ${String(h.text).replace(/^\d+월(\s?\d+일)?,?\s?/,'').slice(0,90)}</span>`;ul.appendChild(li)});if(!past.length)c.appendChild(el('p','mut','아직 기록할 큰 사건이 없다.'));c.appendChild(ul);H.appendChild(c)}
+  if(eraSub==='pol'){const pc=el('section','card polc');H.appendChild(pc);const keep=$('#polCard');renderPolCardInto(pc);buildPolitics(cardIn(H,'정치','La politique'))}
+  if(eraSub==='eco'){const c=cardIn(H,'그 시절의 경제','L’économie');const E=econ();const g=el('div','egrid two');g.innerHTML=`<div><span class="lab">물가</span><b>×${E.price.toFixed(2)}</b><small>${econWord('price',E.price)}</small></div><div><span class="lab">화폐 가치</span><b>${Math.round(E.cur*100)}%</b><small>${econWord('cur',E.cur)}</small></div>`;c.appendChild(g);lifeEcon(c)}
+  if(eraSub==='src'){const c=cardIn(H,'참고 문헌','Sources');if(typeof LIFE_SRC==='undefined'||!LIFE_SRC.length)c.appendChild(el('p','mut','자료 없음'));else{c.appendChild(el('p','mut small',`생활사 장면 ${LIFE_DATA.length}건의 근거가 된 학술 자료 ${LIFE_SRC.length}개.`));const ol=el('ol','srcs');LIFE_SRC.slice().sort((a,b)=>b.n-a.n).slice(0,60).forEach(x=>{const li=el('li');const a=el('a',null,x.c);a.href=x.u;a.target='_blank';a.rel='noopener';li.appendChild(a);ol.appendChild(li)});c.appendChild(ol);const b=el('button','pill','전체 목록');b.type='button';b.onclick=showSources;c.appendChild(b)}}}
+function renderPolCardInto(C){const real=$('#polCard');if(real){const id=real.id;real.removeAttribute('id');C.id='polCard';renderPolCard();C.removeAttribute('id');real.id=id}}
+
+/* ---------- 탭 다시 그리기(ui.js의 renderTab을 바꾼다) ---------- */
+renderTab=function(t){if(!s||tabBusy)return;tabBusy=true;const keepY=window.scrollY;
+  try{
+  if(t==='daily'){heroDate();renderHome();renderSched()}
+  if(t==='profile'){renderProfile();const H=hostClear('#profMore');profileExtra(H);buildInfo(cardIn(H,'세부 정보','Détails'))}
+  if(t==='rel'){renderRel();relMore(hostClear('#relMore'))}
+  if(t==='life')lifeTab(hostClear('#lifeHost'));
+  if(t==='era'){$('#polCard').hidden=true;eraTab(hostClear('#eraHost'))}
+  }catch(e){console.error(e)}tabBusy=false;window.scrollTo(0,keepY)};
+// 일상 칸도 매 진행마다 갱신
+{const _r=render;render=function(){_r();if(s&&curTab==='daily'){heroDate();renderHome();renderSched()}}}
+
+/* ---------- 사건 화면 ---------- */
+{const _so=sheetOpen;sheetOpen=function(t,fr){_so(t,fr);if(s)$('#shFr').textContent=`${s.year}년 ${s.month+1}월 · 파리${fr?` · ${fr}`:''}`;const a=$('#shArt'),src=$('#cv');if(a&&src){const c=a.getContext('2d');c.imageSmoothingEnabled=false;c.clearRect(0,0,256,96);try{c.drawImage(src,0,0)}catch(e){}}}}
+{const _sb=shButtons;shButtons=function(opts){$('#shB').appendChild(el('div','ask','어떻게 하시겠습니까?'));return _sb(opts)}}
+// 선택 뒤: 결과 카드(계속 버튼 없이 잠깐 떠 있다가 사라진다)
+done=async function(){if(!sheetLive)return;if(lastPick&&typeof reactAfter==='function'){try{reactAfter(lastPick)}catch(e){console.error(e)}}lastPick=null;
+  const news=s.log.slice(sheetMark).filter(e=>['ev','big','dark','sys'].includes(e.k));sheetClose();const main=news.filter(e=>e.k!=='sys');if(!main.length&&!news.length)return;
+  const deltas={};const FXRE=/\(([^()]*(?:[+-]\s?[\d,]+)[^()]*)\)\.?$/;news.forEach(e=>{const m=e.t.match(FXRE);if(!m)return;m[1].split(', ').forEach(x=>{const mm=x.match(/^(.+?)\s([+-])\s?([\d,]+)$/);if(!mm)return;const k=mm[1],v=(mm[2]==='-'?-1:1)*+mm[3].replace(/,/g,'');deltas[k]=(deltas[k]||0)+v})});
+  const head=(main.length?main[main.length-1]:news[news.length-1]).t.replace(FXRE,'').trim();resultCard(head,deltas)};
+function resultCard(head,deltas){const b=$('#toast');b.innerHTML='';b.className='toast res';b.appendChild(el('div','rk','사건 결과'));b.appendChild(el('p','rh',head.length>120?head.slice(0,120)+'…':head));
+  const ks=Object.entries(deltas).filter(([,v])=>v);if(ks.length){b.appendChild(el('div','rk2','변화된 상태'));const ul=el('ul','rd');ks.slice(0,6).forEach(([k,v])=>{const bad=BAD.has(k)?v>0:v<0;const li=el('li');li.innerHTML=`<span>${k}</span><b class="${k==='급진'||k==='보수'?'':bad?'dn':'up'}">${v>0?'+':''}${fmt(v)} ${v>0?'▲':'▼'}</b>`;ul.appendChild(li)});b.appendChild(ul)}
+  b.hidden=false;b.onclick=()=>{b.hidden=true};clearTimeout(toastT);toastT=setTimeout(()=>{b.hidden=true},Math.max(2600,6000/Math.sqrt(speed)))}
+
+/* ---------- 표지 ---------- */
+drawLaurel($('#laurel'));drawParis($('#titleArt'),1788,'city');
 
 </script>
 </body>

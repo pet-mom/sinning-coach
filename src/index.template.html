@@ -43,11 +43,14 @@
       <div id="relMore"></div>
     </section>
     <section class="tab" id="tDaily" data-t="daily">
-      <div class="card scene">
+      <div class="hero scene">
         <canvas id="cv" width="256" height="96" aria-label="지금 사는 곳과 가족"></canvas>
-        <div class="sc-t"><div class="where" id="where"></div><div class="mut" id="famAges"></div><div class="era mut" id="era"></div></div>
-        <div class="econ" id="econCard"></div>
+        <div class="hero-date" id="heroDate"></div>
+        <div class="sc-t" hidden><div class="where" id="where"></div><div class="mut" id="famAges"></div><div class="era mut" id="era"></div></div>
       </div>
+      <div class="card home" id="homeCard"></div>
+      <div class="card sched" id="schedCard"></div>
+      <div class="econ" id="econCard"></div>
       <div class="card logc">
         <div class="ch"><h2>인생 기록</h2><span class="mut">최근 순 <button class="lnk" id="dataT" type="button" aria-pressed="false">자료 보기</button></span></div>
         <div id="log" aria-live="polite"></div>
@@ -61,13 +64,13 @@
     </section>
   </main>
   <nav class="nav" id="nav" aria-label="화면">
-    <button type="button" data-t="profile"><span class="ni">✦</span>프로필</button>
-    <button type="button" data-t="rel"><span class="ni">♥</span>관계</button>
-    <button type="button" data-t="daily" aria-current="page"><span class="ni">✎</span>일상</button>
-    <button type="button" data-t="life"><span class="ni">⚒</span>생활</button>
-    <button type="button" data-t="era"><span class="ni">⚑</span>시대</button>
+    <button type="button" data-t="profile"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>프로필</button>
+    <button type="button" data-t="rel"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="8.5" r="3.2"/><circle cx="16.5" cy="9.5" r="2.7"/><path d="M2.5 20c0-3.6 2.7-6 6-6s6 2.4 6 6M14 14.4c3.6-.6 7.5 1.4 7.5 5.6"/></svg>관계</button>
+    <button type="button" data-t="daily" aria-current="page"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 4l8.5 6.5V20a1 1 0 0 1-1 1h-5v-6h-5v6h-5a1 1 0 0 1-1-1z"/></svg>일상</button>
+    <button type="button" data-t="life"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="17" height="12.5" rx="2"/><path d="M9 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5.5v2M3.5 12.5h17"/></svg>생활</button>
+    <button type="button" data-t="era"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 3.5 2 3.5H5"/></svg>시대</button>
   </nav>
-  <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="shdecree" id="shDecree"></div><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><div id="shB"></div></div></div>
+  <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="sh-top"><span class="sh-k">사건</span><span class="shdecree" id="shDecree"></span></div><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><canvas id="shArt" width="256" height="96" aria-hidden="true"></canvas><div id="shB"></div></div></div>
   <div class="toast" id="toast" role="status" hidden></div>
 </div>
 
@@ -76,10 +79,11 @@
 <div id="title" class="over splash">
   <div class="ribbon" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="sp">
-    <div class="sp-cockade" aria-hidden="true"></div>
-    <div class="sp-year">17<span>89</span></div>
-    <h1 class="sp-t">한 시민의 일생</h1>
-    <p class="sp-f">Vie d’un citoyen de Paris</p>
+    <div class="wreath">
+      <svg class="laurel" viewBox="0 0 320 300" aria-hidden="true" id="laurel"></svg>
+      <div class="wr-in"><div class="sp-year">1789</div><p class="sp-f">Une vie française</p><h1 class="sp-t">한 시민의 일생</h1></div>
+    </div>
+    <canvas id="titleArt" width="256" height="96" aria-hidden="true"></canvas>
     <div class="card newf" id="newForm">
       <div class="nf-row">
         <input id="inGiven" maxlength="12" autocomplete="off" placeholder="이름" aria-label="이름">
