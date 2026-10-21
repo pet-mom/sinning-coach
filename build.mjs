@@ -13,8 +13,9 @@ for(const f of readdirSync(dataDir).filter(f=>f.endsWith('.json')&&f!=='people.j
   const d={id:e.id,c:e.cat,t:e.text,fa:e.fact,s,w:e.w??1};if(e.fx)d.f=e.fx;if(e.once)d.o=1;if(e.when)d.wh=e.when;if(e.who)d.who=e.who;if(e.kill)d.k=e.kill;LIFE_DATA.push(d)}}
 // 실존 인물: src/data/people.json → PEOPLE (관계는 실존 인물만)
 let PEOPLE=[];try{PEOPLE=JSON.parse(readFileSync(new URL('./src/data/people.json',import.meta.url),'utf8')).people||[]}catch(e){}
-const dataJs=`const LIFE_DATA=${JSON.stringify(LIFE_DATA)};\nconst LIFE_SRC=${JSON.stringify(LIFE_SRC)};\nconst PEOPLE=${JSON.stringify(PEOPLE)};`;
-const js=['core.js'].map(r).concat([dataJs]).concat(['life.js','engine.js','history.js','events.js','stories.js','politics.js','react.js','school.js','attrs.js','health.js','npc.js',...content,'scene.js',...art].map(r)).concat([r('lifedata.js'),r('ui.js'),r('ui2.js')]).join('\n');
+let IMGC=[];try{IMGC=JSON.parse(readFileSync(new URL('./docs/img/credits.json',import.meta.url),'utf8'))}catch(e){}
+const dataJs=`const IMG_CREDITS=${JSON.stringify(IMGC)};\nconst LIFE_DATA=${JSON.stringify(LIFE_DATA)};\nconst LIFE_SRC=${JSON.stringify(LIFE_SRC)};\nconst PEOPLE=${JSON.stringify(PEOPLE)};`;
+const js=['core.js'].map(r).concat([dataJs]).concat(['life.js','engine.js','history.js','events.js','stories.js','politics.js','react.js','school.js','attrs.js','health.js','npc.js',...content,'scene.js'].map(r)).concat([r('lifedata.js'),r('ui.js'),r('ui2.js')]).join('\n');
 const frag=r('index.template.html').replace('/*@@CSS@@*/',()=>r('style.css')).replace('/*@@JS@@*/',()=>js);
 const cut=frag.indexOf('<div id="app">');
 const head=frag.slice(0,cut).trim(),body=frag.slice(cut).trim();
