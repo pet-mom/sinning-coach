@@ -72,12 +72,12 @@ function stEvents(from,to,n){const y=s.year-1;const memK=new Set((s.bf&&s.bf.mem
     // 그해 벗과의 기억이 이미 적혔으면 그 장면의 결과 줄은 뺀다
     if(BF_KEYS.some(k=>memK.has(k)&&bfMet(k)&&e.t.includes(bN(k))))return false;
     // 이름 있는 형제가 있으면 이름 없는 ‘동생·막내’ 이야기는 뺀다
-    if(named&&/동생|막내|형제|형들|언니들|누나들|오빠들/.test(e.t))return false;
+    if(named&&/동생|막내|형제|형들|언니들|누나들|오빠들/.test(e.t))return false;if(s.flags.stNurse&&/유모/.test(e.t))return false;
     if(/^(경쟁자|연인|동료|친구|스승|후원자|친우|라이벌) /.test(e.t)){if(roleN++)return false}
     return true});
   const score=e=>(e.k==='big'?3:e.k==='dark'?2:1)+(/어머니|아버지|형|누나|언니|오빠|동생|아내|남편|아들|딸/.test(e.t)?1:0)+(BF_KEYS.some(k=>bfMet(k)&&e.t.includes(bN(k)))?1:0);
   const pickd=rows.map((e,i)=>({e,i,sc:score(e)})).sort((a,b)=>b.sc-a.sc||a.i-b.i).slice(0,n).sort((a,b)=>a.i-b.i);
-  let last='';return pickd.map(({e})=>{const sea=stSeason(e.m||0);const t=stClean(e.t);const pre=sea!==last&&!/^[“‘]/.test(t)?sea+' ':'';last=sea;return pre+t})}
+  let last='';return pickd.map(({e})=>{const sea=stSeason(e.m||0);const t=stClean(e.t);const pre=sea!==last&&!/^[“‘]|^\d+월/.test(t)?sea+' ':'';last=sea;return pre+t})}
 function stHist(from,to){const h=s.log.slice(from,to).filter(e=>e.k==='hist');if(!h.length)return '';const t=stClean(pick(h).t).replace(/^\d+월(\s?\d+일)?,?\s?/,'');return stPick('hist',[`세상은 시끄러웠다. ${t}`,`어른들은 저녁마다 같은 소식을 이야기했다. ${t}`,`그해 파리에 전해진 소식이 있었다. ${t}`])}
 const stCount=a=>a.join(' ').split(/(?<=[.!?”])\s+/).filter(x=>x.trim()).length;
 
