@@ -237,9 +237,9 @@ async function relTick(){if((child()&&!(s.age>=9&&inSchool()))||s.cond==='prison
   if(!rl.some(r=>r.role==='친구'))ctx.push(['친구',.3,'이웃']);
   for(const [role,p,w] of ctx){if(rl.filter(r=>r.role===role).length>=(role==='동료'?3:2))continue;if(R()<p){const r=addRel(role);if(r){const P=perOf(r);L(`${r.w||'알게 되었다'} — ${P.n}(${P.fr}, ${P.b}~${P.d}). ${P.bio}`,'ev');break}}}
   relSync();
-  for(const r of relsAlive())if(r.close<15&&r.role!=='경쟁자'&&R()<.5){r.alive=false;r.lost=1;L(`${r.n}${bat(r.n)?'과':'와'}는 연락이 끊겼다.`,'sys')}
+  for(const r of relsAlive())if(r.close<15&&r.role!=='경쟁자'&&!r.core&&R()<.5){r.alive=false;r.lost=1;L(`${r.n}${bat(r.n)?'과':'와'}는 연락이 끊겼다.`,'sys')}
   // 한 해의 사귐
-  const live=relsAlive();if(!child()&&live.length&&R()<.7)await relEvent(pick(live))}
+  const live=relsAlive().filter(r=>!r.core);if(!child()&&live.length&&R()<.7)await relEvent(pick(live))}
 async function relEvent(r){const j=relJudge(r);const roleS=`${r.role} ${r.n}`;
   if(r.role==='경쟁자'){if(R()<.5){say(`맞수 ${r.n}${bat(r.n)?'이':'가'} 뒤에서 험담을 퍼뜨렸다.`+fx({rguild:-3})+relFx(r,{riv:4}))}
     else{const i=await Q('맞수',`rivalité`,`${r.n}${bat(r.n)?'과':'와'} 같은 자리를 두고 겨루게 되었다.`,[{l:'정면으로 겨룬다',s:'기술·사교 판정',a:'bold work'},{l:'손을 내밀어 화해한다',s:'',a:'social safe'}]);

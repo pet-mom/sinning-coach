@@ -32,7 +32,7 @@ function renderHome(){const C=$('#homeCard');if(!C||!s)return;C.innerHTML='';
   const ev=s.log.slice(-14).reverse().find(e=>['big','ev','dark'].includes(e.k));
   if(ev){const cur=el('button','curev');cur.type='button';const txt=ev.t.replace(/\s?\([^()]*[+-]\s?[\d,]+[^()]*\)\.?$/,'');cur.innerHTML=`<span class="tagr">현재 사건</span><b>${txt.length>38?txt.slice(0,38)+'…':txt}</b><small>${ev.a!=null?ev.a+'세':''} · 인생 기록에서 보기</small><span class="chev">›</span>`;cur.onclick=()=>{$('.logc').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})};C.appendChild(cur)}}
 // 오늘의 일과: 나이 · 학교 · 직업 · 신분 · 처지 · 신앙 · 정치에 맞춘 하루
-function schedule(){const j=job(),a=s.age,x=SCH(),out=[];const add=(t,n,h)=>out.push([t,n,h||'']);const win=s.season===3;
+function daySchedule(){const j=job(),a=s.age,x=SCH(),out=[];const add=(t,n,h)=>out.push([t,n,h||'']);const win=s.season===3;
   if(s.cond==='prison'){add('06:00','간수의 점호');add('08:00','묽은 수프와 빵');add('11:00','안뜰 산책','건강 −');add('15:00','같은 방 사람들과 이야기','사교');add('19:00','촛불 아래 편지 쓰기','글씨');add('21:00','짚더미 위의 잠');return out}
   if(s.cond==='hiding'){add('05:00','동트기 전 잠깐의 바람');add('09:00','다락방에 숨어 책 읽기','학식');add('14:00','발소리에 귀 기울이기','의지');add('22:00','몰래 내려가 저녁');return out}
   if(s.cond==='emigre'){add('08:00','하숙집 아침');add('10:00','고국 소식 신문 읽기');add('13:00',isM()?'프랑스어·검술 개인 교습으로 생계':'자수와 모자 만들기로 생계',isM()?'예법':'기술');add('18:00','망명객들의 모임','사교');return out}
@@ -65,7 +65,7 @@ function schedule(){const j=job(),a=s.age,x=SCH(),out=[];const add=(t,n,h)=>out.
   if(s.spouse&&s.spouse.alive)add('20:00',`${isM()?'아내':'남편'}와 저녁${kidsAlive().length?' · 아이들':''}`,'가족 +');else add('20:00','저녁');
   add(noble()?'23:30':'21:30','잠자리');return out.sort((a,b)=>a[0].localeCompare(b[0]))}
 function renderSched(){const C=$('#schedCard');if(!C||!s)return;C.innerHTML='';const h=el('div','ch');h.innerHTML=`<h2>오늘의 일과</h2><span class="mut small">${s.year}년 ${s.month+1}월 · 방침 ${s.plan||'근면'}</span>`;C.appendChild(h);
-  const ul=el('ul','sched-l');schedule().forEach(([t,n,hh])=>{const li=el('li');li.innerHTML=`<span class="tm">${t}</span><span class="dot"></span><span class="nm">${n}${hh?` <i>${hh}</i>`:''}</span>`;ul.appendChild(li)});C.appendChild(ul)}
+  const ul=el('ul','sched-l');daySchedule().forEach(([t,n,hh])=>{const li=el('li');li.innerHTML=`<span class="tm">${t}</span><span class="dot"></span><span class="nm">${n}${hh?` <i>${hh}</i>`:''}</span>`;ul.appendChild(li)});C.appendChild(ul)}
 
 /* ---------- 프로필: 성격 · 신념 · 직업과 사회적 지위 ---------- */
 const PERS_T={열정:'열정적',신중:'신중함',경건:'경건함',계몽:'호기심 많음',야심:'야심만만',쾌활:'쾌활함'};
