@@ -785,11 +785,6 @@ ul.ob-ll li b{font-weight:600;margin-right:2px}
 .pf2-in-l b{font-style:normal;font-weight:600;color:#D9BC7A}
 .pf2-warn{margin:0;text-align:center;font-size:.85rem;color:var(--rouge)}
 @media (max-width:360px){.pf2-row{grid-template-columns:78px 1fr}.pf2-por{width:78px;height:98px}}
-.pf2.pf2-pp{display:grid;gap:12px;margin-bottom:12px}
-.pf2-fid.dead .pf2-por{filter:grayscale(1) sepia(.25)}
-.pf2-fid.dead .pf2-nm::after{content:" ✝";font-size:.8em;color:#6E5F4E}
-.pf2-bond .pf2-ph small{font-family:"Noto Serif KR",serif;font-size:.82rem;letter-spacing:.1em;margin-top:4px}
-.pf2-seal.sym{font-family:"Noto Serif KR",serif;font-size:1.4rem}
 
 </style>
 </head>
@@ -8783,32 +8778,6 @@ renderProfile=function(){const C=$('#profCard');if(!C||!s)return;C.className='pf
    .map(([n,v,sm,k])=>`<div class="bdg ${k}${k==='sus'&&s.sus>=30?' warn':''}"><span>${n}</span><b>${v}</b><small>${sm}</small></div>`).join('');c.appendChild(bd);
   const st=el('div','pf-stats');st.innerHTML=STATS.map(([k,n,ab])=>`<div class="ps"><span>${n}<i>${ab}</i></span><s><u style="width:${s.st[k]}%;background:${STATC[k]}"></u></s><b>${s.st[k]}</b></div>`).join('');c.appendChild(st);
   c.appendChild(el('p','small mut',`${statusLine()}${s.trait?` · 성품 ${s.trait}`:''}${s.goal?` · 평생의 뜻 ‘${s.goal}’`:''}`));_pe(H)}}
-
-/* ================= 친구들의 프로필: 인상착의 카드 + 관계 패널 =================
-   관계 탭에서 사람을 누르면 열리는 인물 기록의 윗부분을 그대의 신분증과 같은 양식으로 그린다.
-   실존 인물은 생몰년과 약력을, 가상의 벗은 나이·사는 곳·일·당파·성격을 적는다. 오래된 벗(core)은 간직한 물건도 적는다. */
-const pfWord=v=>v>=75?'깊다':v>=55?'두텁다':v>=35?'보통':v>=15?'옅다':'거의 없다';
-function pfFriendCard(r){const P=typeof perOf==='function'?perOf(r):null;const age=typeof relAge==='function'?relAge(r):30;
-  const id=el('section','pf2-id pf2-fid'+(r.alive?'':' dead'));if(typeof hasImg==='function'&&hasImg('title.jpg'))id.style.setProperty('--pf2-bg',`url("${imgSrc('title.jpg')}")`);
-  const inn=el('div','pf2-in');inn.innerHTML=pfCorners()+`<div class="pf2-doc">Signalement<small>인상착의 · ${r.alive?`${s.year}년 현재`:`${r.dead||(P&&P.d)||''}년 세상을 떠남`}</small></div>`;
-  const row=el('div','pf2-row');const por=el('div','pf2-por');por.appendChild(figBox({sex:r.sex||'M',age,estate:r.estate||'bourgeois',role:r.cler?'priest':r.cond==='army'?'soldier':'',pol:r.pol||0}));row.appendChild(por);
-  const who=el('div','pf2-who');const rows=[];
-  if(P){rows.push(['생몰',`${P.b}~${P.d}`]);if(r.alive)rows.push(['나이',`${s.year-P.b}세`])}
-  else{if(r.by)rows.push(['출생',`${r.by}년 · ${r.alive?age+'세':'향년 '+((r.dead||s.year)-r.by)+'세'}`]);if(r.home)rows.push(['사는 곳',r.home]);
-    const jb=r.kind==='fic'&&typeof npJob==='function'?(()=>{try{return npJob(r)}catch(e){return r.job||''}})():r.job;if(jb)rows.push(['하는 일',jb]);
-    const c={prison:'감옥에 있다',deported:'먼 유형지에 있다',emigre:'망명 중',hiding:'숨어 지낸다',army:'군 복무 중'}[r.cond];if(c&&r.alive)rows.push(['형편',c])}
-  rows.push(['당파',r.fac&&FAC[r.fac]?FAC[r.fac].n:(typeof polLabel==='function'&&r.pol!=null&&!P?polLabel(r.pol):'알려지지 않음')]);
-  who.innerHTML=`<div class="pf2-nm">${r.n}</div><div class="pf2-fr">${P?P.fr:`${r.role}${relBond(r)!==r.role?` · ${relBond(r)}`:''}`}</div><dl>${rows.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl>`;row.appendChild(who);inn.appendChild(row);
-  const tg=el('div','pf2-tags');tg.appendChild(el('span','pf2-lab',r.core?'간직한 것':'성격'));
-  if(r.core&&typeof BF!=='undefined'){const mine=(s.bf&&s.bf.obj||[]).filter(o=>o.from===r.core&&!o.lost);const list=mine.length?mine.map(o=>o.t):[BF[r.core].motif];list.forEach(t=>tg.appendChild(el('span','pf2-tag',t)))}
-  else{const pc=[r.tr,typeof PERS_V!=='undefined'?PERS_V[r.v]:''].filter(Boolean);if(pc.length)pc.forEach(t=>tg.appendChild(el('span','pf2-tag',t)));else tg.appendChild(el('span','pf2-none','잘 알지 못한다'))}
-  inn.appendChild(tg);const P2=P&&P.fr?P.fr.split(/[\s,]+/).filter(w=>/^[A-ZÉ]/.test(w)):[];const ini=P2.length?(P2[0][0]+(P2.length>1?P2[P2.length-1][0]:'')):'❦';inn.appendChild(el('div','pf2-seal'+(P2.length?'':' sym'),ini));id.appendChild(inn);return id}
-function pfBondPanel(r){const p=el('section','pf2-panel pf2-rep pf2-bond');p.setAttribute('aria-label','관계');p.innerHTML=pfFlora()+`<h2 class="pf2-ph">그대와의 사이<small>${relBond(r)}</small></h2><div class="pf2-bloom" aria-hidden="true">${PF_BLOOM}</div>`;
-  const g=el('div','pf2-rg');const last=(r.hate||0)>=20?['미움',r.hate||0,true]:['경쟁심',r.riv||0,(r.riv||0)>=60];
-  [['친밀',r.close||0],['신뢰',r.trust||0],['존경',r.resp||0],last].forEach(([n,v,bad])=>{const d=el('div','pf2-ri');d.style.setProperty('--repbg',PF_REPBG);d.innerHTML=`<div class="pf2-rk">${n}</div><div class="pf2-rv${bad?' low':''}">${v}</div><div class="pf2-rw">${pfWord(v)}</div><div class="pf2-rb"><i style="width:${v}%"></i></div>`;g.appendChild(d)});p.appendChild(g);return p}
-{const _pp2=personPage;personPage=function(r){_pp2(r);if(!r)return;try{const pin=$('#pin');const top=pin&&pin.querySelector('.pp-top');if(!top)return;const box=el('div','pf2 pf2-pp');box.appendChild(pfFriendCard(r));box.appendChild(pfBondPanel(r));top.replaceWith(box);
-  // 관계 탭의 막대는 위 패널과 겹치므로 줄인다
-  const g=pin.querySelector('.pf-stats');if(g&&ppTab==='rel')g.remove()}catch(e){console.error(e)}}}
 
 </script>
 </body>

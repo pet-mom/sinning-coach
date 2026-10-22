@@ -772,8 +772,3 @@ ul.ob-ll li b{font-weight:600;margin-right:2px}
 .pf2-in-l b{font-style:normal;font-weight:600;color:#D9BC7A}
 .pf2-warn{margin:0;text-align:center;font-size:.85rem;color:var(--rouge)}
 @media (max-width:360px){.pf2-row{grid-template-columns:78px 1fr}.pf2-por{width:78px;height:98px}}
-.pf2.pf2-pp{display:grid;gap:12px;margin-bottom:12px}
-.pf2-fid.dead .pf2-por{filter:grayscale(1) sepia(.25)}
-.pf2-fid.dead .pf2-nm::after{content:" ✝";font-size:.8em;color:#6E5F4E}
-.pf2-bond .pf2-ph small{font-family:"Noto Serif KR",serif;font-size:.82rem;letter-spacing:.1em;margin-top:4px}
-.pf2-seal.sym{font-family:"Noto Serif KR",serif;font-size:1.4rem}
