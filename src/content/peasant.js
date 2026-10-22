@@ -208,7 +208,7 @@ EV.push(
    {l:'갚는다',s:`재산 -${fmt(d.a)}`,a:'safe',dis:s.money<d.a,f:()=>{s.flags.peaDebt=null;say('빚을 다 갚고 증서를 돌려받아 아궁이에 넣었다.'+fx({money:-d.a,soc:1}))}},
    {l:'기한을 늘려 달라고 빈다',s:'사교 판정',a:'social',f:async()=>{const m=md([[s.st.soc>=50,1,'사교'],[s.rep.rloc>=60,1,'성실하다는 평판'],[s.rep.rloc<35,-1,'믿을 수 없다는 평판'],[econ().price>=1.3,-1,'빚쟁이도 곡식이 귀한 해']]);const r=await roll(m.m,{label:'빚 연장',why:m.why});if(r.v>=4){d.a=Math.round(d.a*1.1);d.n=s.year+1;say('한 해를 더 받았다. 이자는 불었다.')}else{s.flags.peaDebt=null;if(s.land>0||peaT()>=3){peaBadY(2);say('빚쟁이가 집달리를 데리고 와서 가축과 농기구를 압류하였다.'+fx({money:-Math.round(d.a*.6),soc:-3}),'dark')}else say('빚쟁이가 냄비와 이불을 가져갔다.'+fx({money:-Math.round(d.a*.5),hp:-2}),'dark')}}}];
    if(s.land>0)o.push({l:'밭 한 뙈기를 판다',s:'땅이 줄어든다',a:'safe',f:()=>{s.flags.peaDebt=null;const l=Math.round(s.land*.4);s.land-=l;say(`밭 한 뙈기를 공증인 앞에서 넘겨주고 빚을 지웠다. 연 지대 -${fmt(l)}.`+fx({money:Math.max(0,l*20-d.a)}),'big')}});
-   if(econ().cur<.5)o.push({l:'아시냐 지폐로 갚는다',s:'법은 막지 못하지만 빚쟁이는 이를 간다',a:'greedy',f:()=>{s.flags.peaDebt=null;say('휴지 같은 지폐 다발을 공증인 앞에 내밀었다. 법정 통화라 빚쟁이는 받을 수밖에 없었다. 이웃들은 그대를 다시 보았다.'+fx({money:-Math.max(1,Math.round(d.a*econ().cur*4)),rloc:-4,vjus:-2}))}});
+   if(econ().cur<.5)o.push({l:'아시냐 지폐로 갚는다',s:'법은 막지 못하지만 빚쟁이는 이를 간다',a:'greedy',f:()=>{s.flags.peaDebt=null;say('휴지 같은 지폐 다발을 공증인 앞에 내밀었다. 법정 통화라 빚쟁이는 받을 수밖에 없었다. 이웃들은 당신을 다시 보았다.'+fx({money:-Math.max(1,Math.round(d.a*econ().cur*4)),rloc:-4,vjus:-2}))}});
    else if(econ().price>=1.3)o.push({l:'곡식으로 갚겠다고 한다',s:'곡식값이 비싼 해라 빚쟁이가 반긴다',a:'safe',f:()=>{s.flags.peaDebt=null;s.flags.peaFood=0;say('다락의 곡식 자루를 내주고 빚을 지웠다. 보릿고개가 걱정이다.'+fx({money:-Math.round(d.a*.7),rloc:1}))}});
    return o}),
  C('pea_plot',()=>peaFarm()&&peaT()<=4&&s.money>=180,.5,3,'밭 한 뙈기','achat d’un lopin',()=>`${pick(['홀아비가 된','빚에 몰린','도시로 떠나는'])} 이웃이 마을 어귀 밭 한 뙈기를 판다고 한다. 땅을 사는 것은 모든 농부의 꿈이다.${T()<1790?' 땅을 사면 영주에게 거래세(lods et ventes)로 값의 열두에 하나를 따로 바쳐야 한다.':''}`,()=>{const a=Math.min(600,Math.max(180,Math.round(s.money*.4)));const lods=T()<1790?Math.round(a/12):0;return [
@@ -380,32 +380,32 @@ EV.push(
    {l:'더 주는 이웃 마을로 간다',s:'',a:'greedy',f:()=>say('새벽에 이웃 마을 큰 농장으로 넘어갔다. 배신자라는 말이 뒤따랐다.'+fx({money:peaWage(8),rloc:-2,str:1}))}]}),
  C('pea2_assembly',()=>peaCom()&&isM()&&s.age>=25&&(pre89()||T()>=1800),.4,6,'주민 회의','l’assemblée des habitants',()=>`종탑이 갈라지고 마을 우물이 무너졌다. 고치는 돈을 집집마다 나눠 낼 일을 두고 일요일 미사 뒤 교회 앞에서 회의가 열렸다. ${pre89()?'회의가 정한 분담금도 지방 감독관의 하위 관리(subdélégué)가 허락해야 걷을 수 있다.':'면 의회가 정해도 도지사가 승인해야 한다.'} 부농들은 머릿수로, 가난한 집들은 땅 크기로 나누자고 한다.`,[
    {l:'땅 크기대로 나누자고 일어선다',s:'웅변·평판 판정',a:'social radical',f:async()=>{const m=md([[s.sk.orat>=25,1,'말솜씨'],[s.rep.rloc>=60,1,'이웃의 신망'],[s.st.soc>=50,1,'사교'],[s.rep.rloc<35,-1,'평판이 나쁨']]);const r=await roll(m.m,{label:'주민 회의',why:m.why});
-     if(r.v>=4)say('그대 말대로 정해졌다. 가난한 집들이 그대에게 고개를 숙였다. 그런데 승인서는 석 달이 지나서야 내려왔다.'+fx({orat:2,rloc:4,money:peaT()>=3?-peaV(6):-2,bpw:3,inf:2}));
+     if(r.v>=4)say('당신 말대로 정해졌다. 가난한 집들이 당신에게 고개를 숙였다. 그런데 승인서는 석 달이 지나서야 내려왔다.'+fx({orat:2,rloc:4,money:peaT()>=3?-peaV(6):-2,bpw:3,inf:2}));
      else say('부농들 뜻대로 머릿수로 나뉘었다. 승인서를 기다리는 사이 겨울이 왔다.'+fx({orat:1,money:-3,bpw:2}))}},
-   {l:'머릿수로 나누자는 쪽에 선다',s:'',a:'greedy safe',f:()=>say('분담금은 정해졌다. 날품팔이들이 그대를 흘겨보았다.'+fx({money:-3,rloc:-3,bor:-1}))},
+   {l:'머릿수로 나누자는 쪽에 선다',s:'',a:'greedy safe',f:()=>say('분담금은 정해졌다. 날품팔이들이 당신을 흘겨보았다.'+fx({money:-3,rloc:-3,bor:-1}))},
    {l:'돈 대신 일손을 내놓겠다고 한다',s:'',a:'work social',f:()=>say('사흘 동안 돌을 나르고 석회를 개었다.'+fx({str:1,craft:1,rloc:3,hp:-1}))}]),
- C('pea2_cure',()=>peaCom()&&(T()<1791.3||T()>=1802),.4,6,'본당 신부','monsieur le curé',()=>`${peaCure()}가 집에 들렀다. 성당 지붕을 고칠 일손과 돈이 모자란다고 한다. ${T()<1790?'십일조는 먼 수도원으로 가고 신부는 쥐꼬리만 한 몫(portion congrue)으로 산다.':'신부의 봉급은 나라가 준다지만 늘 늦는다.'} 신부는 마을 일에 그대의 힘을 빌리고 싶어 한다.`,[
-   {l:'주일마다 일손을 보탠다',s:'',a:'pious work',f:()=>{const r=peaRel('후원자',peaCure(),{v:'vfam',inf:20,close:55,trust:55});say('주일 오후마다 돌을 나르고 석회를 개었다. 신부가 강론에서 그대 이름을 불렀다.'+fx({faith:3,rloc:3,str:1,craft:1})+peaRF(r,{close:8,trust:6}))}},
+ C('pea2_cure',()=>peaCom()&&(T()<1791.3||T()>=1802),.4,6,'본당 신부','monsieur le curé',()=>`${peaCure()}가 집에 들렀다. 성당 지붕을 고칠 일손과 돈이 모자란다고 한다. ${T()<1790?'십일조는 먼 수도원으로 가고 신부는 쥐꼬리만 한 몫(portion congrue)으로 산다.':'신부의 봉급은 나라가 준다지만 늘 늦는다.'} 신부는 마을 일에 당신의 힘을 빌리고 싶어 한다.`,[
+   {l:'주일마다 일손을 보탠다',s:'',a:'pious work',f:()=>{const r=peaRel('후원자',peaCure(),{v:'vfam',inf:20,close:55,trust:55});say('주일 오후마다 돌을 나르고 석회를 개었다. 신부가 강론에서 당신 이름을 불렀다.'+fx({faith:3,rloc:3,str:1,craft:1})+peaRF(r,{close:8,trust:6}))}},
    {l:'돈만 조금 보낸다',s:'',a:'safe',f:()=>{const r=peaRel('후원자',peaCure(),{v:'vfam',inf:20});say('은화 한 닢을 보냈다.'+fx({money:-peaV(3),faith:1})+peaRF(r,{close:2}))}},
-   {l:'십일조부터 바로잡으라고 쏘아붙인다',s:'',a:'radical bold',f:()=>{const r=peaRel('경쟁자',peaCure(),{v:'vord',inf:20,riv:50});s.flags.anticler=true;say('신부의 얼굴이 굳었다. 카바레에서는 그대 말이 옳다는 이들도 있었다.'+fx({faith:-2,brl:4,rloc:-1})+peaRF(r,{close:-8,riv:6}))}}]),
+   {l:'십일조부터 바로잡으라고 쏘아붙인다',s:'',a:'radical bold',f:()=>{const r=peaRel('경쟁자',peaCure(),{v:'vord',inf:20,riv:50});s.flags.anticler=true;say('신부의 얼굴이 굳었다. 카바레에서는 당신 말이 옳다는 이들도 있었다.'+fx({faith:-2,brl:4,rloc:-1})+peaRF(r,{close:-8,riv:6}))}}]),
  C('pea2_oath',()=>peaCom()&&peaYr(tm(1791,1),tm(1792,8))&&!s.flags.peaOath,1.5,99,'신부의 선서','le serment constitutionnel',()=>`${peaCure()}가 성직자 시민헌법에 선서할지 온 마을이 숨죽여 지켜본다. ${west()?'이 고장 신부들은 대부분 선서를 거부했다. 도청이 보낸 선서 신부(intrus)는 빈 성당에서 미사를 올린다.':'선서한 신부도, 거부한 신부도 있다. 교황은 거부하라 하고 도청은 하라고 한다.'}`,[
    {l:'선서 거부 신부 편에 선다',s:'',a:'pious royal',f:()=>{s.flags.peaOath='ref';const r=peaRel('후원자',peaCure(),{v:'vord',inf:20});say('도청이 보낸 새 신부를 마을 아낙들이 성당 문 앞에서 막아섰다. 옛 신부는 헛간에서 미사를 올렸다.'+fx({faith:3,brl:-5,bpw:3,sus:3,rloc:2})+peaRF(r,{close:8,trust:8}));activeFactions().filter(f=>['absolutist','royalist'].includes(f.id)).forEach(f=>frelAdd(f.id,3))}},
    {l:'법을 따르는 선서 신부를 받아들인다',s:'',a:'radical',f:()=>{s.flags.peaOath='jur';say('선서 신부의 미사에 나갔다. 할머니들은 그 신부의 성사는 무효라며 따로 묵주를 돌렸다.'+fx({brl:4,bpw:-2,pol:3,rloc:west()?-3:-1}));activeFactions().filter(f=>['jacobin','patriote','feuillant'].includes(f.id)).forEach(f=>frelAdd(f.id,3))}},
    {l:'어느 편도 들지 않는다',s:'',a:'safe',f:()=>{s.flags.peaOath='mid';say('두 신부 사이에서 눈치를 보며 세례와 장례만 챙겼다.'+fx({faith:1}))}}]),
  C('pea2_seigneur',()=>peaCom()&&pre89()&&s.age>=18&&s.age<=50,.4,8,'성에서 온 부름','au château',()=>`${peaLord()}의 집사가 불렀다. 영주가 ${isM()?'사냥터 지기(garde-chasse)를 새로 뽑는다':'성의 빨래와 바느질을 맡을 아낙을 찾는다'}고 한다. 품삯도 좋고 겨울 땔감도 나오지만, 마을 사람들은 영주 편에 선 사람을 곱게 보지 않는다.`,()=>[
    {l:'성에 들어간다',s:isM()?'체력 판정':'기술 판정',a:'greedy royal',f:async()=>{const m=isM()?md([[s.st.str>=50,1,'체력'],[s.sk.arms>=20,1,'총 솜씨'],[s.st.cour>=50,1,'의지']]):md([[s.st.dex>=50,1,'손재주'],[s.sk.sew>=40,1,'바느질 솜씨']]);const r=await roll(m.m,{label:'성의 일',why:m.why});const lord=peaRel('후원자',peaLord(),{v:'vord',inf:45});
-     if(r.v>=4)say((isM()?'영주가 총과 제복을 내주었다. 밀렵꾼을 잡을 때마다 상금이 나온다. 이웃들은 그대 앞에서 말을 아꼈다.':'마님의 레이스 깃을 감쪽같이 고쳐 놓자 마님이 그대 이름을 기억하였다.')+fx(isM()?{money:peaWage(30),arms:2,rloc:-5,bor:-3}:{money:peaWage(20),sew:2,rloc:-2,bor:-2})+peaRF(lord,{close:10,trust:8}));
+     if(r.v>=4)say((isM()?'영주가 총과 제복을 내주었다. 밀렵꾼을 잡을 때마다 상금이 나온다. 이웃들은 당신 앞에서 말을 아꼈다.':'마님의 레이스 깃을 감쪽같이 고쳐 놓자 마님이 당신 이름을 기억하였다.')+fx(isM()?{money:peaWage(30),arms:2,rloc:-5,bor:-3}:{money:peaWage(20),sew:2,rloc:-2,bor:-2})+peaRF(lord,{close:10,trust:8}));
      else say('한 철 만에 집사와 다투고 쫓겨났다.'+fx({money:peaWage(6),rloc:1})+peaRF(lord,{close:-6,trust:-5}))}},
    {l:'집안일이 바쁘다며 사양한다',s:'',a:'safe',f:()=>say('모자를 쥐고 정중히 사양하였다. 집사가 혀를 찼다.'+fx({rloc:2,bor:1}))}]),
  C('pea2_brawl',()=>peas()&&isM()&&s.age<=45&&peaM(5,6,7,8),.4,3,'마을끼리 싸움','la rixe',`수호성인 축일 저녁, 이웃 마을 젊은이들이 우리 마을 처녀들을 놀렸다. 카바레 앞에 몽둥이와 나막신이 날아다닌다. 대대로 내려오는 마을끼리의 앙숙이다.`,[
    {l:'앞장서 주먹을 휘두른다',s:'체력 판정',a:'bold',f:async()=>{const m=md([[s.st.str>=55,1,'힘'],[s.sk.arms>=20,1,'몽둥이 솜씨'],[s.st.cour>=50,1,'의지'],[s.st.str<30,-1,'힘 부족']]);const r=await roll(m.m,{label:'몸싸움',why:m.why});
-     if(r.v>=4)say('이웃 마을 장사를 개울에 처박았다. 그날 밤 우리 마을 젊은이들이 그대를 어깨에 메고 돌았다.'+fx({str:1,arms:1,rloc:3,cour:2,hp:-1}));
+     if(r.v>=4)say('이웃 마을 장사를 개울에 처박았다. 그날 밤 우리 마을 젊은이들이 당신을 어깨에 메고 돌았다.'+fx({str:1,arms:1,rloc:3,cour:2,hp:-1}));
      else if(r.v>=2)say('눈두덩이 시퍼렇게 부었다. 피장파장이었다.'+fx({hp:-3,arms:1}));
      else say(`머리가 깨져 ${T()>=1790.9?'치안판사':'영주 재판소'}에 불려 갔다. 벌금과 접골사 삯을 물었다.`+fx({hp:-7,money:-peaV(6),rloc:-1}),'dark')}},
    {l:'뜯어말린다',s:'사교 판정',a:'social safe',f:async()=>{const m=md([[s.st.soc>=50,1,'말솜씨'],[s.rep.rloc>=60,1,'신망'],[s.st.str>=55,1,'덩치']]);const r=await roll(m.m,{label:'말리기',why:m.why});
      if(r.v>=4)say('양쪽 우두머리에게 포도주를 한 병씩 안기고 화해시켰다.'+fx({rloc:4,orat:1,money:-2}));else say('말리다가 양쪽에서 얻어맞았다.'+fx({hp:-3}))}},
    {l:'집으로 간다',s:'',a:'safe',f:()=>say('등 뒤에서 겁쟁이라는 소리가 들렸다.'+fx({rloc:-1}))}]),
- C('pea2_mairie',()=>peaCom()&&isM()&&s.age>=25&&peaYr(tm(1790,1),tm(1790,4))&&!s.flags.peaMairie,3,99,'첫 면장 선거','les municipalités de 1790',()=>`1789년 12월 법에 따라 모든 교구가 ‘코뮌’이 되어 면장(maire)과 면 의회를 뽑는다. 사흘 품삯 넘게 직접세를 내는 ‘능동 시민’만 표를 던진다. ${peaT()>=3?'그대는 능동 시민이다. 이웃들이 그대를 면 의원으로 밀자고 한다.':'그대는 세금이 모자라 표가 없다. 그래도 교회에 모인 회의를 지켜볼 수는 있다.'}`,()=>peaT()>=3?[
+ C('pea2_mairie',()=>peaCom()&&isM()&&s.age>=25&&peaYr(tm(1790,1),tm(1790,4))&&!s.flags.peaMairie,3,99,'첫 면장 선거','les municipalités de 1790',()=>`1789년 12월 법에 따라 모든 교구가 ‘코뮌’이 되어 면장(maire)과 면 의회를 뽑는다. 사흘 품삯 넘게 직접세를 내는 ‘능동 시민’만 표를 던진다. ${peaT()>=3?'당신은 능동 시민이다. 이웃들이 당신을 면 의원으로 밀자고 한다.':'당신은 세금이 모자라 표가 없다. 그래도 교회에 모인 회의를 지켜볼 수는 있다.'}`,()=>peaT()>=3?[
    {l:'면 의원 후보로 나선다',s:'웅변·평판 판정',a:'social radical',f:async()=>{s.flags.peaMairie=1;const m=md([[s.rep.rloc>=60,1,'이웃의 신망'],[s.sk.orat>=25,1,'말솜씨'],[lit(),1,'글을 앎'],[s.rep.rloc<40,-1,'평판이 나쁨']]);const r=await roll(m.m,{label:'면 선거',why:m.why});
      if(r.v>=4){s.flags.peaSyndic=1;say('면 의원으로 뽑혔다. 삼색 띠를 두른 면장 곁에서 첫 회의록에 이름을 올렸다. 이제 마을 일은 영주의 관리가 아니라 우리가 정한다.'+fx({rloc:4,orat:2,inf:6,bpw:5,pol:3}),'big')}
      else say('표가 부농 집 사위에게 몰렸다.'+fx({orat:1,bpw:2}))}},
@@ -414,9 +414,9 @@ EV.push(
    {l:'수동 시민에게도 말할 권리를 달라고 외친다',s:'',a:'radical bold',f:()=>{s.flags.peaMairie=1;say('몇몇이 박수를 쳤고 새 면장은 못 들은 척하였다.'+fx({bor:5,orat:1,rloc:1,pol:4}))}}]),
  C('pea2_requis',()=>peaCom()&&peaYr(tm(1793,9),tm(1794,8)),.8,2,'파리에서 온 위원','le commissaire aux réquisitions',()=>`${pick(['파견의원이 보낸 위원','혁명군 분견대장','파리 구민회 출신 위원'])}이 면사무소에 들이닥쳤다. 군대와 파리를 먹일 곡식과 말과 수레를 내놓으라는 징발 명령이다.${econ().supply<50?' 마을 곳간도 바닥이 보이는데,':''} 면장은 우물쭈물한다.`,[
    {l:'면장과 함께 마을 사정을 호소한다',s:'웅변·평판 판정',a:'social',f:async()=>{const m=md([[s.sk.orat>=25,1,'말솜씨'],[s.rep.rloc>=60,1,'이웃의 신망'],[s.pol>=30,1,'애국자라는 평판'],[s.sus>=30,-1,'혐의']]);const r=await roll(m.m,{label:'징발 호소',why:m.why});
-     if(r.v>=4)say('위원이 할당량을 3분의 1 깎았다. 면 사람들이 그대 손을 잡고 고마워하였다.'+fx({rloc:5,orat:2,bpw:4}));
-     else{say('위원은 “공화국이 먼저다” 하고 장부를 덮었다. 그대 이름이 그의 수첩에 적혔다.'+fx({sus:6,bpw:4,money:-peaV(10)}));frelAdd('jacobin',-4)}}},
-   {l:'공화국을 위해 앞장서 내놓는다',s:'',a:'radical',f:()=>{say('제 수레와 곡식을 먼저 내놓았다. 위원이 그대를 ‘좋은 상퀼로트’라 불렀다. 이웃들은 눈을 흘겼다.'+fx({money:-peaV(15),pol:3,bpw:-4,sus:-4,rloc:-3}));frelAdd('jacobin',5)}},
+     if(r.v>=4)say('위원이 할당량을 3분의 1 깎았다. 면 사람들이 당신 손을 잡고 고마워하였다.'+fx({rloc:5,orat:2,bpw:4}));
+     else{say('위원은 “공화국이 먼저다” 하고 장부를 덮었다. 당신 이름이 그의 수첩에 적혔다.'+fx({sus:6,bpw:4,money:-peaV(10)}));frelAdd('jacobin',-4)}}},
+   {l:'공화국을 위해 앞장서 내놓는다',s:'',a:'radical',f:()=>{say('제 수레와 곡식을 먼저 내놓았다. 위원이 당신을 ‘좋은 상퀼로트’라 불렀다. 이웃들은 눈을 흘겼다.'+fx({money:-peaV(15),pol:3,bpw:-4,sus:-4,rloc:-3}));frelAdd('jacobin',5)}},
    {l:'말과 곡식을 숲에 숨긴다',s:'평판 판정',a:'bold greedy',f:async()=>{const m=md([[s.rep.rloc>=60,1,'이웃들이 입을 다문다'],[s.rep.rloc<35,-1,'고발할 이웃이 있다']]);const r=await roll(m.m,{label:'숨기기',why:m.why});
      if(r.v>=4)say('이웃 누구도 입을 열지 않았다.'+fx({bpw:3,rloc:2}));else{say('누군가 고발하였다. 혐의자 명단에 이름이 올랐다.'+fx({sus:12,money:-peaV(20),bpw:3}),'dark');frelAdd('jacobin',-6)}}}])
 );

@@ -175,7 +175,7 @@ const acVote=()=>{const t=T();if(!isM())return null;if(t>=1789.05&&t<1789.35&&s.
   if(t>=1815.6&&t<1848.15&&s.age>=(t<1831?30:25)&&(s.land>=(t<1831?300:200)||s.money>=(t<1831?20000:12000)))return 'cens';return null};
 defineAct({k:'vote',g:'politics',n:'선거 집회에 나간다',s:'한쪽에 표를 던진다',c:()=>free()&&!!acVote(),inter:async()=>{const k=acVote();
   if(k==='pleb'){const i=await Q('국민투표','plébiscite',`${s.year===1800?'새 헌법(통령정부)':s.year===1802?'종신 통령':s.year===1804?'제정':'제국 헌법 추가법'}에 찬성하는지 시청 명부에 이름과 함께 ‘예’나 ‘아니오’를 적는다. 비밀투표가 아니다.`,[{l:'‘예’라고 적는다',s:'',a:'safe'},{l:'‘아니오’라고 적는다',s:'',a:'bold radical'}]);
-    if(i===0)say('‘예’라고 적었다.'+fx({vord:1,sus:-1}));else say('‘아니오’라고 적었다. 서기가 그대를 한 번 쳐다보았다.'+fx({vlib:2,sus:3}));await done();return}
+    if(i===0)say('‘예’라고 적었다.'+fx({vord:1,sus:-1}));else say('‘아니오’라고 적었다. 서기가 당신을 한 번 쳐다보았다.'+fx({vlib:2,sus:3}));await done();return}
   const intro={eg:'삼부회 대표를 뽑는 본당 집회에 나갔다. 세금을 내는 스물다섯 살 넘은 남자들이 모였다.',act:'능동시민 자격으로 1차 선거 집회에 나갔다.',prim:'총재정부의 1차 선거 집회에 나갔다.',cens:'세금을 많이 내는 선거인들만 모이는 선거 집회에 나갔다. 프랑스 전체에 몇만 명뿐이다.'}[k];
   const i=await Q('선거','assemblée électorale',intro,[{l:'개혁·급진 쪽 후보를 민다',s:'',a:'radical'},{l:'온건한 후보를 민다',s:'',a:'safe'},{l:'왕정·교회 쪽 후보를 민다',s:'',a:'royal pious'}]);
   say(['개혁파 후보를 위해 목청을 높였다.','온건한 공증인을 밀었다.','교회와 질서를 지키겠다는 후보를 밀었다.'][i]+fx({pol:[4,0,-4][i],inf:1,orat:1,soc:1,bch:[2,-1,-2][i]}));await done()}});

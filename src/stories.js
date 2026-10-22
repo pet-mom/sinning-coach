@@ -105,7 +105,7 @@ EV.push(
  once('sacre',()=>par()&&s.year===1804&&s.season===3&&!child(),3,'대관식','le Sacre','12월 2일 노트르담. 교황 비오 7세가 지켜보는 가운데 나폴레옹이 관을 들어 스스로 머리에 쓴다. 화가 다비드가 그 장면을 그리고 있다.',[
    {l:'눈 덮인 거리에서 행렬을 본다',s:'',a:'social',f:()=>{meet('나폴레옹');say('황금빛 마차가 지나갔다. 군중 속에서 “황제 만세!”와 침묵이 섞였다.'+fx({soc:1}))}},
    {l:'공화국의 장례라며 외면한다',s:'',a:'radical',f:()=>say('“우리는 왕을 죽이고 황제를 얻었다.”'+fx({pol:3}))}]),
- once('grognard',()=>soldier()&&imp()&&job().t<=3,2,'황제의 사열','l’Empereur','황제가 사열 중에 그대 앞에서 멈춰 선다. 회색 프록코트, 작은 모자. 그가 그대의 귀를 꼬집는다.',[
+ once('grognard',()=>soldier()&&imp()&&job().t<=3,2,'황제의 사열','l’Empereur','황제가 사열 중에 당신 앞에서 멈춰 선다. 회색 프록코트, 작은 모자. 그가 당신의 귀를 꼬집는다.',[
    {l:'“황제 만세!”',s:'',a:'bold',f:()=>{meet('나폴레옹');say('“어느 전투에 있었나?” 대답을 듣고 그가 고개를 끄덕였다. 이날부터 동료들이 ‘투덜이(그로냐르)’ 고참으로 대했다.'+fx({fame:3,cour:2,rguild:3}))}},
    {l:'굳은 채 서 있는다',s:'',a:'safe',f:()=>{meet('나폴레옹');say('황제는 다음 병사에게로 갔다.')}}]),
  once('austerlitz',()=>soldier()&&s.year===1805&&s.season===3,3,'아우스터리츠의 해','le soleil d’Austerlitz','12월 2일 새벽, 프라첸 고지 위로 안개가 걷히고 해가 떠오른다. 대관식 한 돌이다.',[
@@ -158,7 +158,7 @@ EV.push(
    ['극장 가에서 줄타기 곡예사를 보았다.',{},()=>urban()]
  ]),
  once('witch',()=>!urban()&&!child()&&s.year<1800,.7,'마녀라는 소문','sorcellerie','마을에서 소가 잇달아 죽자 사람들이 외딴집 노파를 마녀라고 수군댄다.',[
-   {l:'노파를 감싼다',s:'',a:'pious bold',f:()=>say('신부님께 가서 이야기했다. 소들은 탄저병이었다. 한동안 마을 사람들이 그대를 곱지 않게 보았다.'+fx({fame:1,faith:1,rloc:-2,vjus:3}))},
+   {l:'노파를 감싼다',s:'',a:'pious bold',f:()=>say('신부님께 가서 이야기했다. 소들은 탄저병이었다. 한동안 마을 사람들이 당신을 곱지 않게 보았다.'+fx({fame:1,faith:1,rloc:-2,vjus:3}))},
    {l:'소문에 가세한다',s:'',a:'safe',f:()=>say('노파는 마을을 떠났다.'+fx({faith:-1,rloc:1,vjus:-2}))}]),
  once('lottery',()=>urban()&&!child()&&s.money>=10&&s.year>=1776&&s.year<1836,1,'왕립 복권','Loterie royale','왕립 복권(1793년 폐지, 1797년 국영 복권으로 부활) 판매소 앞에 사람들이 줄을 섰다. 다섯 숫자 중 세 개를 맞히면 판돈의 수천 배를 준다.',[
    {l:'꿈에 본 숫자로 산다',s:'재산 -5',a:'greedy',f:async()=>{if(await chance(.03,'복권','두 숫자를 맞힐 확률(약 3%)')){say('두 숫자를 맞혔다!'+fx({money:240}),'big')}else say('하나도 맞지 않았다.'+fx({money:-5}))}},
@@ -167,8 +167,8 @@ EV.push(
  /* ---------- 일터 · 솜씨 · 평판 (능력치 체계) ---------- */
  once('st2_encyclo',()=>par()&&yr(1751,1771)&&!child()&&(onTrack('craft')||s.estate==='artisan')&&s.sk.craft>=20,1.5,'『백과전서』의 화공','les planches de l’Encyclopédie','『백과전서』 도판을 그리는 화공 구시에가 공방에 찾아와, 연장과 손놀림을 그려 가도 되겠느냐고 묻는다. 디드로는 장인의 기술도 학문만큼 귀하다고 썼다. 조합 사람들은 비법을 남에게 보이는 것을 싫어한다.',[
    {l:'연장을 늘어놓고 손놀림을 보여 준다',s:'기술 판정',a:'study work',f:async()=>{const {m,why}=md([[s.st.dex>=45,1,'기술'],[s.sk.craft>=40,1,'수공 솜씨'],[s.st.soc>=50,1,'설명을 잘함']]);const r=await roll(m,{label:'시연',why});
-     say(r.v>=4?'화공이 그대의 손을 몇 장이나 그려 갔다. 몇 해 뒤 도판 한 장에서 그대의 작업대를 알아보았다.'+fx({craft:2,edu:1,fame:1,rguild:-2,bch:1}):'손이 굳어 시원찮게 보여 주었다. 화공은 정중히 인사하고 갔다.'+fx({craft:1,rguild:-1}))}},
-   {l:'비법은 조합의 것이라며 거절한다',s:'',a:'safe',f:()=>say('화공은 이웃 공방으로 갔다. 동업자들이 그대를 믿을 만한 사람이라 했다.'+fx({rguild:2,vord:1}))}]),
+     say(r.v>=4?'화공이 당신의 손을 몇 장이나 그려 갔다. 몇 해 뒤 도판 한 장에서 당신의 작업대를 알아보았다.'+fx({craft:2,edu:1,fame:1,rguild:-2,bch:1}):'손이 굳어 시원찮게 보여 주었다. 화공은 정중히 인사하고 갔다.'+fx({craft:1,rguild:-1}))}},
+   {l:'비법은 조합의 것이라며 거절한다',s:'',a:'safe',f:()=>say('화공은 이웃 공방으로 갔다. 동업자들이 당신을 믿을 만한 사람이라 했다.'+fx({rguild:2,vord:1}))}]),
  once('st2_chef',()=>urban()&&s.job==='c2'&&T()<1791.2&&!(T()>=1776.1&&T()<1776.7)&&s.age>=22,2,'걸작','chef-d’œuvre',()=>`직인으로 여러 해를 일했다. 장인(메트르)이 되려면 조합 심사관들 앞에서 걸작을 만들어 보이고 가입비를 내야 한다. 장인의 아들이 아니면 가입비가 훨씬 비싸다.${meets(POST.c3)?'':' (재산·사교·기술이 모자라면 심사에 나설 수 없다)'}`,()=>[
    {l:'걸작에 도전한다',s:'기술·평판 판정, 비용 500',a:'work bold',dis:!meets(POST.c3),f:async()=>{const {m,why}=md([[s.st.dex>=55,1,'기술'],[s.sk.craft>=45||s.sk.sew>=45,1,'숙련'],[s.rep.rguild>=60,1,'동업자들의 신망'],[s.rep.rguild<=35,-1,'심사관의 미움'],[!!patron(),1,'후원자']]);const r=await roll(m,{label:'걸작 심사',why});
      if(r.v>=4){takeJob('c3','걸작이 통과되어 ');say('조합 연회에서 새 장인을 위해 잔을 들었다.'+fx({rguild:5,craft:2,inf:1}))}else say('심사관들이 이음매에서 흠을 찾아냈다. 심사비만 날렸다.'+fx({money:-100,rguild:-1}))}},
@@ -180,7 +180,7 @@ EV.push(
    {l:'그만둔다',s:'',a:'safe',f:()=>say('남의 논문이 당선되었다는 소식을 들었다.')}]),
  once('st2_turgot',()=>urban()&&s.year===1776&&s.season<=1&&s.job==='c2',3,'튀르고의 칙령','l’édit de Turgot','2월, 재무총감 튀르고의 칙령으로 동업 조합이 폐지되었다. 장인 자격 없이도 누구나 가게를 열 수 있다. 장인들은 세상이 끝났다고 한다.',[
    {l:'내 가게를 낸다',s:'재산 -150, 장사 판정',a:'bold greedy',f:async()=>{const {m,why}=md([[s.sk.trade>=30,1,'장사 솜씨'],[(s.sk.craft>=45||s.sk.sew>=45),1,'숙련'],[s.rep.rloc>=60,1,'단골 이웃']]);const r=await roll(m,{label:'가게 열기',why});
-     say((r.v>=4?'첫 달부터 손님이 들었다.':'손님이 뜸했다.')+' 8월, 튀르고가 실각하자 조합이 되살아났다. 가게를 접고 옛 주인에게 돌아갔다. 장인들은 그대를 괘씸하게 여겼다.'+fx({money:r.v>=4?-20:-150,trade:2,rguild:-4,vlib:2,bch:1}))}},
+     say((r.v>=4?'첫 달부터 손님이 들었다.':'손님이 뜸했다.')+' 8월, 튀르고가 실각하자 조합이 되살아났다. 가게를 접고 옛 주인에게 돌아갔다. 장인들은 당신을 괘씸하게 여겼다.'+fx({money:r.v>=4?-20:-150,trade:2,rguild:-4,vlib:2,bch:1}))}},
    {l:'두고 본다',s:'',a:'safe',f:()=>say('여름에 튀르고가 쫓겨나고 조합이 돌아왔다. 섣불리 나서지 않은 것이 다행이었다.'+fx({rguild:1,vord:1}))}]),
  once('st2_mun87',()=>yr(1787,1788)&&!urban()&&isM()&&s.age>=25&&!noble()&&!priest()&&(rich()||(onTrack('farm')&&job().t>=3)||s.estate==='bourgeois')&&!['bretagne','languedoc','provence','bourgogne','alsace'].includes(loc()),3,'마을 의회','assemblée municipale','1787년 왕령으로 교구마다 마을 의회가 생겼다. 10리브르 넘게 세금을 내는 이들이 대표 몇을 뽑고, 영주와 신부는 당연직으로 앉는다. 세금 배분과 길 닦는 일을 의논한다고 한다.',[
    {l:'대표로 나선다',s:'평판·웅변 판정',a:'social bold',f:async()=>{const {m,why}=md([[s.rep.rloc>=60,1,'이웃의 신망'],[s.st.soc>=50,1,'사교'],[s.sk.orat>=25,1,'웅변'],[lit(),1,'글을 앎'],[s.rep.rloc<=35,-1,'나쁜 평판']]);const r=await roll(m,{label:'마을 선거',why});
@@ -197,14 +197,14 @@ EV.push(
      if(r.v>=5)say('동메달을 받았다. 상점 간판에 메달을 그려 넣었다.'+fx({fame:3,rguild:4,inf:2,money:150,craft:1}),'big');else if(r.v>=3)say('‘영예로운 언급’에 이름이 올랐다.'+fx({fame:1,rguild:2,craft:1}));else say('도 심사에서 떨어졌다. 재료값만 들었다.'+fx({money:-50}))}},
    {l:'출품하지 않는다',s:'',a:'safe',f:()=>say('이웃 공방의 출품작이 메달을 받았다는 말을 들었다.')}]),
  once('st2_maximum',()=>urban()&&T()>=1793.75&&T()<1794.95&&!child()&&onTrack('craft')&&job().t===3,3,'최고가격제','le Maximum général','9월 29일, 일반 최고가격제가 공포되었다. 식료품과 생필품 값은 1790년 값의 세 분의 일을 넘게 받을 수 없다. 정가로 팔면 밑지고, 몰래 비싸게 팔다 걸리면 매점꾼으로 고발된다.',[
-   {l:'정가대로 판다',s:'재산 손해',a:'safe radical',f:()=>say('밑지면서 정가표를 내걸었다. 구민회가 그대의 가게를 애국 상점이라 불렀다.'+fx({money:-Math.round(Math.min(300,s.money*.08)),rpeople:4,sus:-4,vord:2}))},
+   {l:'정가대로 판다',s:'재산 손해',a:'safe radical',f:()=>say('밑지면서 정가표를 내걸었다. 구민회가 당신의 가게를 애국 상점이라 불렀다.'+fx({money:-Math.round(Math.min(300,s.money*.08)),rpeople:4,sus:-4,vord:2}))},
    {l:'뒷문으로 정화를 받고 판다',s:'장사 판정',a:'greedy bold',f:async()=>{const {m,why}=md([[s.sk.trade>=40,1,'장사 솜씨'],[s.rep.rloc>=60,1,'입이 무거운 이웃'],[s.rep.rloc<=30,-1,'고발하려는 이웃']]);const r=await roll(m,{label:'암거래',why});
      if(r.v>=3)say('단골들에게 은화를 받고 몰래 팔았다.'+fx({money:200,trade:1,vjus:-1}));else say('구 감시위원회에 고발당했다. 가게가 봉인되었다.'+fx({money:-100,sus:15,rpeople:-5,rloc:-3}))}},
    {l:'가게 문을 반쯤 닫는다',s:'',a:'safe',f:()=>say('물건을 감추고 진열장을 비웠다. 줄 선 사람들이 문을 두드렸다.'+fx({money:-30,sus:4,rpeople:-2}))}]),
  once('st2_canuts',()=>loc()==='lyon'&&s.year===1831&&s.month>=10&&!child()&&s.age<65,6,'크루아루스의 검은 깃발','la révolte des canuts','11월 21일, 견직물 공임표를 공장주들이 지키지 않자 크루아루스 언덕의 견직공(카뉘)들이 일어났다. 검은 깃발에 “일하며 살거나 싸우다 죽거나”라고 썼다. 국민방위대 일부도 그들 편에 섰다.',()=>[
    {l:'바리케이드에 선다',s:'의지·체력 판정',a:'radical bold',f:async()=>{const {m,why}=md([[s.st.cour>=50,1,'의지'],[s.st.str>=55,1,'완력'],[s.sk.arms>=30,1,'총을 다룰 줄 앎'],[s.st.str<30,-1,'힘 부족']]);const r=await roll(m,{label:'크루아루스',why});
      say(r.v>=3?'사흘 만에 견직공들이 시청을 차지했다. 12월, 술트 원수가 2만 군대를 끌고 와 도시를 되찾았다.'+fx({cour:3,rpeople:5,rguild:3,relite:-4,sus:8,veq:3,bor:2}):'론 강 다리 위에서 총탄에 맞았다.'+fx({hp:-12,rpeople:4,sus:8,veq:2}))}},
-   rich()||(onTrack('craft')&&job().t>=4)?{l:'국민방위대로 상점을 지킨다',s:'',a:'royal safe',f:()=>say('상인 구역의 창고 앞을 지켰다. 견직공들은 그대를 ‘공장주의 개’라 불렀다.'+fx({relite:3,rpeople:-4,vord:2}))}:
+   rich()||(onTrack('craft')&&job().t>=4)?{l:'국민방위대로 상점을 지킨다',s:'',a:'royal safe',f:()=>say('상인 구역의 창고 앞을 지켰다. 견직공들은 당신을 ‘공장주의 개’라 불렀다.'+fx({relite:3,rpeople:-4,vord:2}))}:
    {l:'집에 숨는다',s:'',a:'safe',f:()=>say('직기 소리가 멎은 언덕에서 총소리만 들렸다.')}])
 );
 

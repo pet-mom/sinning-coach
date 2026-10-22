@@ -2,7 +2,7 @@
    실존 인물(addRel)과 같은 s.rel 배열에 kind:'fic'로 들어간다. 관계의 성격(친우·라이벌·존경·혐오)은 relBond()가 수치에서 읽는다.
    r = {kind:'fic', fid, n, sex, role, by 태어난 해, estate, job, home 파리 동네, tr 성격, v 가치, pol, fac, grp 모임, eng 정치 열의(0~100),
         close, trust, resp, riv, hate, alive, cond(normal·army·emigre·prison·hiding·deported), fate[], y 만난 해, w 만난 사연, inf, mar 배우자, kids}
-   npcYear(): 12월마다 — 새 만남, 그들의 한 해(혼인·자식·일·정치·병·징집·망명), 그대와의 장면 하나.
+   npcYear(): 12월마다 — 새 만남, 그들의 한 해(혼인·자식·일·정치·병·징집·망명), 당신과의 장면 하나.
    npcMonth(a,b): 진행 구간 안의 날짜 사건(바스티유, 8월 10일, 9월 학살, 공포정치, 테르미도르, 7월 혁명, 1832년 6월 봉기, 1848년…)과 달마다의 공포정치·콜레라.
    확률은 당대 통계를 단순화했다: 바스티유 공격자 약 900명 중 98명 전사, 9월 학살 수감자 약 2,700명 중 1,100~1,400명 사망,
    파리 혁명재판소 사형 약 2,600명, 1832년 콜레라 파리 주민 2.3% 사망, 1832년 6월 봉기 반란자 약 3,000명 중 약 90명 전사,
@@ -29,7 +29,7 @@ const npWho=r=>`${relBond(r)} ${r.n}`;
 const npTop=r=>jo(r.n,'은','는'),npSub=r=>jo(r.n,'이','가'),npObj=r=>jo(r.n,'을','를'),npWith=r=>jo(r.n,'과','와');
 const npJob=r=>r.job||(npAge(r)<14?'동네 아이':'일거리를 찾는 중');
 const npCler=r=>!!r.cler;
-// 그대와 그의 정치적 거리(공개 입장 기준)
+// 당신과 그의 정치적 거리(공개 입장 기준)
 const npGap=r=>Math.abs((r.pol||0)-(child()?s.pol:pubPol()));
 const npTm=(y,m)=>y*12+m-1;
 function npName(sex,E){const used=new Set((s.rel||[]).map(r=>r.n));const cg=new Set((s.rel||[]).filter(r=>r.core).map(r=>r.n.split(' ')[0]).concat(['에티엔','엘리즈','쥘','쥘리','앙투안','앙투아네트','가브리엘','루이즈']));for(let k=0;k<24;k++){const g=pick(sex==='M'?M_NAMES:F_NAMES)[0];if(cg.has(g))continue;
@@ -101,11 +101,11 @@ function npMeetTry(){if(s.dead)return;const al=npLive().length;if(npAll().length
 /* ---------- 그들의 삶 ---------- */
 function npFate(r,t){r.fate=r.fate||[];r.fate.push(`${s.year}년 ${t}`)}
 const npKind=(r,big)=>big?(r.close>=50||r.hate>=50||r.riv>=60?'big':'ev'):(r.close>=40||r.hate>=40||r.riv>=50?'ev':'sys');
-// 그의 일을 기록하고 그대에게 알린다
+// 그의 일을 기록하고 당신에게 알린다
 function npEv(r,t,big){npFate(r,t);L(`${npWho(r)}${bat(r.n)?'은':'는'} ${t}`,npKind(r,big))}
 function npDie(r,cause,t){if(!r.alive)return;r.alive=false;r.dead=s.year;r.dc=cause;npFate(r,t);const b=relBond(r);
   let tail='';if(!child()){if(r.close>=60)tail=fx({hp:-2,vfam:1});else if(r.hate>=60)tail=fx({vjus:-1})}
-  say(`${b} ${r.n}${bat(r.n)?'은':'는'} ${t}${r.close>=70?' 그대는 오래도록 그 이름을 입에 올리지 못했다.':r.hate>=60?' 미움도 함께 땅에 묻었다.':''}`+tail,npKind(r,true))}
+  say(`${b} ${r.n}${bat(r.n)?'은':'는'} ${t}${r.close>=70?' 당신은 오래도록 그 이름을 입에 올리지 못했다.':r.hate>=60?' 미움도 함께 땅에 묻었다.':''}`+tail,npKind(r,true))}
 function npFacOk(r,f){if(['devot','philosophe','parlement'].includes(f.id))return npAge(r)>=20&&r.estate!=='artisan'&&r.estate!=='peasant';
   if(['cordelier','babeuf','jacobin','neojacobin','republican'].includes(f.id))return !npNob(r)||r.pol>=50;
   if(['royalist','ultra','legitimist','absolutist','clichy'].includes(f.id))return npNob(r)||r.tr==='경건'||r.pol<=-45;return true}
@@ -157,18 +157,18 @@ function npLife(r){const a=npAge(r),y=s.year,t=T();if(!r.alive)return;
   if(npM(r)&&!r.cler&&y>=1798&&y<=1813&&a>=19&&a<=(y===1813?30:25)&&!r.mar&&R()<(y===1813?.3:r.estate==='bourgeois'?.04:npNob(r)?.03:.12)*(r.wound?0:1))npEnlist(r,y===1813?'1813년의 대징집으로':'징병 추첨에 뽑혀');
   // 빚
   if(r.debt){if(R()<(r.tr==='냉소'?.1:r.tr==='다정'?.6:.35)){const d=r.debt;r.debt=0;if(!child())L(`${npSub(r)} 꾸어 간 돈을 갚았다.`+fx({money:d})+relFx(r,{trust:8}),'ev')}else if(y-r.debtY>=3){r.debt=0;if(!child())L(`${npTop(r)} 꾸어 간 돈을 끝내 갚지 않았다.`+relFx(r,{trust:-14,hate:6,close:-6}),'ev')}}}
-// 그대의 처신에 대한 그들의 반응
+// 당신의 처신에 대한 그들의 반응
 function npReact(r){if(child()||!npIn(r))return;const g=npGap(r);
-  if(r.eng>=45&&g>=70&&R()<.6){const t=r.pol>s.pol?`${npTop(r)} 그대가 ‘${polLabel(pubPol())}’ 쪽에 섰다며 냉담해졌다.`:`${npTop(r)} 그대의 ‘과격한’ 생각을 두려워하게 되었다.`;L(t+relFx(r,{close:-5,resp:-4}),'sys')}
+  if(r.eng>=45&&g>=70&&R()<.6){const t=r.pol>s.pol?`${npTop(r)} 당신이 ‘${polLabel(pubPol())}’ 쪽에 섰다며 냉담해졌다.`:`${npTop(r)} 당신의 ‘과격한’ 생각을 두려워하게 되었다.`;L(t+relFx(r,{close:-5,resp:-4}),'sys')}
   else if(r.eng>=45&&g<=20&&R()<.4)L(`${npWith(r)} 시국 이야기를 나누면 말이 잘 통했다.`+relFx(r,{close:3,resp:2}),'sys');
-  if(s.party&&r.fac&&FAC[r.fac]&&r.fac!==s.party&&facPair(s.party,r.fac)<=-50&&R()<.5)L(`${npTop(r)} ${FAC[r.fac].n}, 그대는 ${FAC[s.party].n}. 식탁에서 정치 이야기는 금기가 되었다.`+relFx(r,{close:-4,trust:-3}),'sys');
-  const j=relJudge(r);if(j&&R()<.3)L(j>0?`${npTop(r)} 그대를 ${VALUES.find(x=>x[0]===r.v)[1]}${bat(VALUES.find(x=>x[0]===r.v)[1])?'을':'를'} 아는 사람이라 했다.`+relFx(r,{resp:4}):`${npTop(r)} 그대의 요즘 처신을 못마땅해한다.`+relFx(r,{resp:-4}),'sys');
+  if(s.party&&r.fac&&FAC[r.fac]&&r.fac!==s.party&&facPair(s.party,r.fac)<=-50&&R()<.5)L(`${npTop(r)} ${FAC[r.fac].n}, 당신은 ${FAC[s.party].n}. 식탁에서 정치 이야기는 금기가 되었다.`+relFx(r,{close:-4,trust:-3}),'sys');
+  const j=relJudge(r);if(j&&R()<.3)L(j>0?`${npTop(r)} 당신을 ${VALUES.find(x=>x[0]===r.v)[1]}${bat(VALUES.find(x=>x[0]===r.v)[1])?'을':'를'} 아는 사람이라 했다.`+relFx(r,{resp:4}):`${npTop(r)} 당신의 요즘 처신을 못마땅해한다.`+relFx(r,{resp:-4}),'sys');
   // 시간이 흐르면 저절로 조금씩 식는다
   if(R()<.5)r.close=clamp(r.close-1,0,100);if(r.hate>0&&R()<.4)r.hate=clamp(r.hate-2,0,100);if(r.riv>0&&R()<.3)r.riv=clamp(r.riv-2,0,100)}
 // 관계의 성격이 바뀌면 알린다
 function npBondNote(r){const b=relBond(r);if(b===r.bd)return;const was=r.bd;r.bd=b;
   if(b==='혐오'&&!['경쟁자'].includes(r.role))r.role='경쟁자';
-  const m={친우:`${npWith(r)}는 이제 서로 목숨을 맡길 만한 친우가 되었다.`,라이벌:`${npTop(r)} 이제 그대의 라이벌이다.`,존경:`${r.n}${bat(r.n)?'을':'를'} 마음 깊이 존경하게 되었다.`,혐오:`${r.n}${bat(r.n)?'이라면':'라면'} 이름만 들어도 이가 갈린다.`}[b];
+  const m={친우:`${npWith(r)}는 이제 서로 목숨을 맡길 만한 친우가 되었다.`,라이벌:`${npTop(r)} 이제 당신의 라이벌이다.`,존경:`${r.n}${bat(r.n)?'을':'를'} 마음 깊이 존경하게 되었다.`,혐오:`${r.n}${bat(r.n)?'이라면':'라면'} 이름만 들어도 이가 갈린다.`}[b];
   r.bs=r.bs||{};if(m&&!r.bs[b]){r.bs[b]=1;L(m,'ev')}else if(was==='친우')L(`${npWith(r)}의 사이가 예전 같지 않다.`,'sys')}
 /* ---------- 한 해의 장면 ---------- */
 const NP_TAV=r=>{const t=T(),E=npEst(r);return E==='noble'?pick(t<1789?['오페라 무도회','롱샹 산책길','튈르리 정원']:t<1815?['튈르리 정원','팔레루아얄 회랑','레카미에 부인의 살롱']:['오페라 무도회','불로뉴 숲 산책길','그랑 불바르의 카페']):E==='bourgeois'?pick(t<1784?['카페 프로코프','카페 드 라 레장스','뤽상부르 정원']:t<1830?['카페 프로코프','팔레루아얄 회랑의 카페 드 푸아','팔레루아얄 회랑']:['그랑 불바르의 카페','카페 프로코프','뤽상부르 정원']):pick(t<1830?['라 쿠르티유 문밖의 선술집','센 강 부두의 술집','생앙투안 거리의 선술집','시 문밖 갱게트(술집)']:['벨빌의 갱게트','생앙투안 거리의 선술집','센 강 부두의 술집'])};
@@ -178,11 +178,11 @@ const NP_SC=[
  {id:'c_seine',k:['child'],w:2,c:r=>npAge(r)<16,f:async r=>{say(noble()?`${npWith(r)} ${pick(['튈르리 정원에서 굴렁쇠를 굴렸다','뤽상부르 정원 분수에 종이배를 띄웠다','저택 마구간에 숨어 하인들의 이야기를 엿들었다'])}.`+fx({soc:1})+relFx(r,{close:6}):`${npWith(r)} ${pick(['센 강가에서 맨발로 물장구를 쳤다','퐁뇌프 다리 위 약장수와 인형극을 구경하였다','부두의 장작더미 위를 뛰어다녔다','강에 떠내려온 나무토막으로 뗏목을 엮었다'])}.`+fx({str:1})+relFx(r,{close:6,trust:2}))}},
  {id:'c_orchard',k:['child'],w:1.2,c:r=>npAge(r)<16&&s.age>=7,f:async r=>{const i=await Q('서리','la maraude',`${npWith(r)} ${noble()?'정원사의 온실에서 복숭아를':'수도원 담장 너머 과수원에서 배를'} 따다가 들켰다. 성난 ${noble()?'정원사':'문지기'}가 몽둥이를 들고 쫓아온다.`,[{l:'함께 달아난다',s:'',a:'bold'},{l:`${npObj(r)} 두고 혼자 달아난다`,s:'',a:'safe'},{l:'내가 했다고 나선다',s:'',a:'family'}]);
    if(i===0){const ok=R()<.6;say(ok?'골목 셋을 지나 겨우 따돌렸다. 숨이 차서 둘이 한참을 웃었다.'+fx({cour:1})+relFx(r,{close:8,trust:6}):'둘 다 붙잡혀 귀를 잡혀 끌려갔다.'+fx({rfam:-1})+relFx(r,{close:6,trust:4}))}
-   else if(i===1)say(`${npTop(r)} 붙잡혀 혼쭐이 났다. 다음 날부터 그대를 보면 고개를 돌렸다.`+relFx(r,{trust:-15,close:-8,hate:12}));
+   else if(i===1)say(`${npTop(r)} 붙잡혀 혼쭐이 났다. 다음 날부터 당신을 보면 고개를 돌렸다.`+relFx(r,{trust:-15,close:-8,hate:12}));
    else say(`매를 대신 맞았다. ${npTop(r)} 그날 일을 오래 잊지 않았다.`+fx({hp:-1,cour:1,rfam:-1})+relFx(r,{close:14,trust:14,resp:6}));await done()}},
- {id:'c_fight',k:['child'],w:1,c:r=>npAge(r)<16&&s.age>=7,f:async r=>{say(R()<.5?`옆 골목 아이들과의 돌팔매 싸움에서 ${npSub(r)} 그대 편을 들어 주었다.`+fx({cour:1})+relFx(r,{close:7,trust:5}):`${npSub(r)} 덩치 큰 아이에게 얻어맞는 것을 보고 뛰어들었다.`+fx({cour:2,hp:-1})+relFx(r,{close:9,trust:6,resp:3}))}},
+ {id:'c_fight',k:['child'],w:1,c:r=>npAge(r)<16&&s.age>=7,f:async r=>{say(R()<.5?`옆 골목 아이들과의 돌팔매 싸움에서 ${npSub(r)} 당신 편을 들어 주었다.`+fx({cour:1})+relFx(r,{close:7,trust:5}):`${npSub(r)} 덩치 큰 아이에게 얻어맞는 것을 보고 뛰어들었다.`+fx({cour:2,hp:-1})+relFx(r,{close:9,trust:6,resp:3}))}},
  {id:'c_secret',k:['child'],w:1,c:r=>npAge(r)<16,f:async r=>{say(`${npWith(r)} ${pick(['다락방에 둘만의 비밀 장소를 만들었다','버려진 성당 지하실을 둘러보고 비밀로 하자고 맹세하였다','서로의 피를 한 방울씩 섞어 형제가 되기로 하였다'])}.`+relFx(r,{trust:8,close:5}))}},
- {id:'c_tease',k:['child'],w:.8,c:r=>npAge(r)<16&&['허영','야심','다혈질','냉소'].includes(r.tr),f:async r=>{say(`${npSub(r)} ${pick(['그대의 낡은 옷을 놀렸다','그대가 교리문답을 틀렸다고 동네방네 떠들었다','그대의 사투리를 흉내 내었다'])}.`+relFx(r,{riv:8,hate:6,close:-5}))}},
+ {id:'c_tease',k:['child'],w:.8,c:r=>npAge(r)<16&&['허영','야심','다혈질','냉소'].includes(r.tr),f:async r=>{say(`${npSub(r)} ${pick(['당신의 낡은 옷을 놀렸다','당신이 교리문답을 틀렸다고 동네방네 떠들었다','당신의 사투리를 흉내 내었다'])}.`+relFx(r,{riv:8,hate:6,close:-5}))}},
  {id:'c_catech',k:['child'],w:.8,c:r=>npAge(r)<16&&s.age>=10&&s.faithKind==='catholic'&&T()<1793,f:async r=>{say(`${npWith(r)} 나란히 첫영성체를 받았다. 하얀 옷을 입고 촛불을 들었다.`+fx({faith:2})+relFx(r,{close:5}))}},
  {id:'c_fair',k:['child'],w:.8,c:r=>npAge(r)<16&&T()<1789,f:async r=>{say(`${npWith(r)} ${pick(['생제르맹 장터','생로랑 장터'])}의 줄타기 광대와 인형극을 구경하였다.`+relFx(r,{close:5}))}},
  // ----- 친구·친우 -----
@@ -194,9 +194,9 @@ const NP_SC=[
  {id:'f_god',k:['friend','close'],w:1.5,c:r=>npIn(r)&&r.kidY===s.year,f:async r=>{say(`${r.n}의 아이 세례식에 ${isM()?'대부':'대모'}로 섰다.${T()>=1793.8&&T()<1795?' 세례 대신 구청에서 공화국식 이름을 지어 주었다.':''}`+fx({rloc:1})+relFx(r,{close:8,trust:5}))}},
  {id:'f_wed',k:['friend','close'],w:1.5,c:r=>npIn(r)&&r.marY===s.year,f:async r=>{say(`${r.n}의 혼례에 증인으로 섰다. ${jo(r.mar,'은','는')} 수줍게 웃었다.`+relFx(r,{close:6,trust:4}))}},
  {id:'f_mygod',k:['close'],w:1.5,c:r=>npIn(r)&&s.kids.some(k=>k.y===s.year),f:async r=>{say(`갓 태어난 아이의 ${r.sex==='M'?'대부':'대모'}를 ${r.n}에게 부탁하였다.`+relFx(r,{close:8,trust:6}))}},
- {id:'f_nurse',k:['close','friend'],w:2,c:r=>npIn(r)&&s.st.hp<45&&r.close>=50,f:async r=>{say(`앓아누운 그대를 ${npSub(r)} 날마다 찾아와 ${pick(['수프를 떠먹였다','이마의 땀을 닦아 주었다','약값을 대신 치렀다'])}.`+fx({hp:3})+relFx(r,{close:6,trust:6}))}},
+ {id:'f_nurse',k:['close','friend'],w:2,c:r=>npIn(r)&&s.st.hp<45&&r.close>=50,f:async r=>{say(`앓아누운 당신을 ${npSub(r)} 날마다 찾아와 ${pick(['수프를 떠먹였다','이마의 땀을 닦아 주었다','약값을 대신 치렀다'])}.`+fx({hp:3})+relFx(r,{close:6,trust:6}))}},
  {id:'f_warn',k:['close','friend'],w:2,c:r=>npIn(r)&&s.sus>=35&&r.close>=55,f:async r=>{say(`${npSub(r)} 밤늦게 찾아와 속삭였다. “구 위원회에서 자네 이름이 나왔네. 당분간 조심하게.”`+fx({sus:-6})+relFx(r,{trust:8}))}},
- {id:'f_save',k:['close','friend'],w:.6,c:r=>npIn(r)&&r.close>=55&&['다정','열정','다혈질'].includes(r.tr),f:async r=>{say(`${pick(['밤길에 강도를 만났을 때','센 강 얼음판이 꺼졌을 때','짐마차에 깔릴 뻔했을 때','불난 셋집에서 연기에 갇혔을 때'])} ${npSub(r)} 그대를 구해 냈다.`+fx({cour:1})+relFx(r,{close:10,trust:10,resp:6}),'ev')}},
+ {id:'f_save',k:['close','friend'],w:.6,c:r=>npIn(r)&&r.close>=55&&['다정','열정','다혈질'].includes(r.tr),f:async r=>{say(`${pick(['밤길에 강도를 만났을 때','센 강 얼음판이 꺼졌을 때','짐마차에 깔릴 뻔했을 때','불난 셋집에서 연기에 갇혔을 때'])} ${npSub(r)} 당신을 구해 냈다.`+fx({cour:1})+relFx(r,{close:10,trust:10,resp:6}),'ev')}},
  {id:'p_cell',k:['friend','close','admire','rival','hate','love'],w:4,c:r=>s.cond==='prison'&&r.cond==='prison',f:async r=>{say(`같은 감방의 ${npWith(r)} ${pick(['한 덩이 빵을 나누어 먹었다','짚더미 위에서 카드놀이를 하였다','벽에 날짜를 새기며 바깥 소식을 주고받았다','밤마다 서로 고향 이야기를 들려주었다','호명 소리에 함께 숨을 죽였다'])}.`+relFx(r,{close:7,trust:6,hate:-4}))}},
  {id:'f_letter',k:['friend','close','admire','love'],w:3,c:r=>r.alive&&['army','emigre','prison','deported','hiding'].includes(r.cond)&&!(s.cond==='prison'&&r.cond==='prison'),f:async r=>{const tx={army:`${npWar()}의 진중에서 ${r.n}의 편지가 왔다. “발이 부르트도록 걸었네. 빵은 딱딱하고 이가 들끓지만 아직 살아 있네.”`,emigre:`${r.emi||'런던'}에서 ${r.n}의 편지가 몰래 왔다. 망명지의 가난과 고향 그리움이 줄마다 배어 있다.`,prison:`감옥의 ${npSub(r)} 간수 손을 빌려 쪽지를 보냈다. “속옷과 빵을 부탁하네.”`,deported:`멀리 유형지에서 ${r.n}의 편지가 한 해 늦게 닿았다.`,hiding:`숨어 지내는 ${r.n}에게서 이름 없는 쪽지가 왔다.`}[r.cond];
    if(r.cond==='prison'&&inTerror()&&!child()){const i=await Q('감옥에서 온 쪽지','un billet',tx,[{l:'음식과 속옷을 넣어 준다',s:'재산 -15, 혐의 +3',a:'family bold'},{l:'답하지 않는다',s:'',a:'safe'}]);
@@ -211,47 +211,47 @@ const NP_SC=[
  {id:'f_lover',k:['friend','close','rival'],w:.8,c:r=>npIn(r)&&!s.married&&r.sex===s.sex&&s.age>=17&&s.age<=32&&!r.mar&&!priest()&&!nun(),f:async r=>{const who=isM()?woman():person();
    const opts=[{l:'물러선다',s:'',a:'safe social'},{l:'겨룬다',s:'사교 판정',a:'bold'}];if(npDuelOk(r))opts.push({l:'결투를 청한다',s:'불법이다. 목숨이 걸린다',a:'bold'});
    const i=await Q('연적','le rival en amour',`${who}에게 마음을 둔 줄 알았는데, ${npSub(r)} 같은 사람에게 꽃을 보낸다는 것을 알았다.`,opts);
-   if(i===0)say(`${npWith(r)}의 우정을 택하였다. ${npTop(r)} 미안한 얼굴로 그대의 손을 잡았다.`+relFx(r,{close:8,trust:6}));
-   else if(i===1){const x=await roll(md([[s.st.soc>=50,1,'사교'],[s.sk.dance>=30||s.sk.conv>=30,1,'춤·대화'],[r.tr==='쾌활'||r.tr==='허영',-1,'상대가 사교적']]).m,{label:'연적'});say(x.v>=5?`${who}${bat(who)?'은':'는'} 그대를 택하였다. ${npTop(r)} 축하한다고 했지만 눈이 웃지 않았다.`+fx({soc:1})+relFx(r,{riv:15,close:-10}):`${who}${bat(who)?'은':'는'} ${r.n}의 팔을 잡았다.`+relFx(r,{riv:12,close:-8,hate:5}))}
+   if(i===0)say(`${npWith(r)}의 우정을 택하였다. ${npTop(r)} 미안한 얼굴로 당신의 손을 잡았다.`+relFx(r,{close:8,trust:6}));
+   else if(i===1){const x=await roll(md([[s.st.soc>=50,1,'사교'],[s.sk.dance>=30||s.sk.conv>=30,1,'춤·대화'],[r.tr==='쾌활'||r.tr==='허영',-1,'상대가 사교적']]).m,{label:'연적'});say(x.v>=5?`${who}${bat(who)?'은':'는'} 당신을 택하였다. ${npTop(r)} 축하한다고 했지만 눈이 웃지 않았다.`+fx({soc:1})+relFx(r,{riv:15,close:-10}):`${who}${bat(who)?'은':'는'} ${r.n}의 팔을 잡았다.`+relFx(r,{riv:12,close:-8,hate:5}))}
    else await npDuel(r,'연적');await done()}},
- {id:'f_betray',k:['friend','close'],w:.8,c:r=>npIn(r)&&!child()&&(['냉소','야심','허영'].includes(r.tr))&&r.trust<60,f:async r=>{const t=job()&&job().tr==='craft'?'그대의 단골손님들을 가로챘다':job()&&['law','letters','pol'].includes(job().tr)?'그대가 털어놓은 일을 윗사람에게 고자질하였다':'그대가 털어놓은 집안 사정을 온 동네에 퍼뜨렸다';
-   const i=await Q('배신','la trahison',`${npSub(r)} ${t}. 사람들이 그대를 보고 수군거린다.`,[{l:'따지러 간다',s:'',a:'bold'},{l:'용서한다',s:'',a:'pious safe'},{l:'똑같이 갚아 준다',s:'',a:'greedy'}]);
+ {id:'f_betray',k:['friend','close'],w:.8,c:r=>npIn(r)&&!child()&&(['냉소','야심','허영'].includes(r.tr))&&r.trust<60,f:async r=>{const t=job()&&job().tr==='craft'?'당신의 단골손님들을 가로챘다':job()&&['law','letters','pol'].includes(job().tr)?'당신이 털어놓은 일을 윗사람에게 고자질하였다':'당신이 털어놓은 집안 사정을 온 동네에 퍼뜨렸다';
+   const i=await Q('배신','la trahison',`${npSub(r)} ${t}. 사람들이 당신을 보고 수군거린다.`,[{l:'따지러 간다',s:'',a:'bold'},{l:'용서한다',s:'',a:'pious safe'},{l:'똑같이 갚아 준다',s:'',a:'greedy'}]);
    if(i===0)say(`${npTop(r)} 처음엔 잡아떼다가 결국 고개를 숙였다.`+fx({cour:1})+relFx(r,{trust:-10,close:-6,hate:6}));else if(i===1)say('아무 말도 하지 않았다. 대신 다시는 속을 털어놓지 않았다.'+fx({faith:1,vjus:-1})+relFx(r,{trust:-15}));
    else say(`${r.n}의 뒤를 캐어 그의 약점을 퍼뜨렸다.`+fx({rloc:-2,vhon:-2})+relFx(r,{hate:18,close:-15,riv:10}));await done()}},
- {id:'f_jeal',k:['friend','close','rival'],w:1.5,c:r=>npIn(r)&&!child()&&s.job&&s.jobSince===s.year&&['야심','허영','냉소'].includes(r.tr),f:async r=>{say(`그대가 ${job().n} 자리에 오르자 ${npTop(r)} 축하한다는 말 대신 입술을 깨물었다.`+relFx(r,{riv:12,close:-4}))}},
+ {id:'f_jeal',k:['friend','close','rival'],w:1.5,c:r=>npIn(r)&&!child()&&s.job&&s.jobSince===s.year&&['야심','허영','냉소'].includes(r.tr),f:async r=>{say(`당신이 ${job().n} 자리에 오르자 ${npTop(r)} 축하한다는 말 대신 입술을 깨물었다.`+relFx(r,{riv:12,close:-4}))}},
  {id:'f_confide',k:['close','friend'],w:1,c:r=>npIn(r),f:async r=>{say(`${npSub(r)} ${pick(['아무에게도 말하지 못한 빚 이야기를','몰래 사랑하는 사람 이야기를','아버지와 의절한 사연을','신앙을 잃었다는 고백을'])} 털어놓았다.`+relFx(r,{trust:8,close:4}))}},
  {id:'f_book',k:['close','friend','admire'],w:.7,c:r=>npIn(r)&&lit()&&(r.tr==='계몽'||r.estate!=='artisan'),f:async r=>{const b=T()<1789?pick(['루소의 『신 엘로이즈』','볼테르의 『캉디드』','레날의 『두 인도의 역사』','몰래 찍은 금서 한 권']):T()<1800?pick(['마라의 『인민의 벗』 묶음','콩도르세의 글','데물랭의 『비외 코르들리에』']):T()<1830?pick(['스탈 부인의 『코린』','샤토브리앙의 『그리스도교의 정수』','베랑제의 노래집']):pick(['위고의 『파리의 노트르담』','라므네의 『한 신자의 말』','발자크의 소설']);say(`${npSub(r)} ${jo(b,'을','를')} 빌려주었다.`+fx({edu:1,kphil:1})+relFx(r,{close:3,resp:3}))}},
  // ----- 맞수·라이벌 -----
  {id:'r_comp',k:['rival'],w:2,c:r=>npIn(r)&&!child(),f:async r=>{const what=job()?{craft:'장인 시험 작품(걸작)',law:'법정 변론',med:'외과 수술 시연',letters:'아카데미 현상 논문',church:'강론',army:'승진 심사',pol:'선거',farm:'장터 품평'}[job().tr]||'일':s.party?'클럽 연설':'살롱의 시 낭송';
    const i=await Q('맞수','la rivalité',`${npWith(r)} ${jo(what,'으로')} 겨루게 되었다. 사람들이 누가 이길지 내기를 건다.`,[{l:'정면으로 겨룬다',s:'실력 판정',a:'bold work'},{l:'뒤에서 손을 쓴다',s:'',a:'greedy'},{l:'양보한다',s:'',a:'safe'}]);
    if(i===0){const x=await roll(md([[s.st.dex>=50||s.st.edu>=55,1,'실력'],[s.st.soc>=55,1,'사교'],[r.tr==='야심',-1,'상대의 야심']]).m,{label:what});say(x.v>=5?`${npObj(r)} 눌렀다. ${npTop(r)} 패배를 인정하고 손을 내밀었다.`+fx({fame:1,rguild:3})+relFx(r,{riv:5,resp:8}):x.v>=3?'승부가 나지 않았다. 다음을 기약하였다.'+relFx(r,{riv:5}):`${r.n}에게 졌다. 그의 웃음이 귀에 남았다.`+fx({rguild:-2})+relFx(r,{riv:6,hate:4}))}
-   else if(i===1){const bad=await chance(.35,'들통','뒷거래가 드러날 확률');say(bad?'뒷거래가 드러났다. 사람들이 그대를 손가락질하였다.'+fx({rguild:-5,vhon:-3})+relFx(r,{hate:15,riv:10}):`${npTop(r)} 영문도 모른 채 밀려났다.`+fx({rguild:2,vhon:-2})+relFx(r,{riv:8}))}
+   else if(i===1){const bad=await chance(.35,'들통','뒷거래가 드러날 확률');say(bad?'뒷거래가 드러났다. 사람들이 당신을 손가락질하였다.'+fx({rguild:-5,vhon:-3})+relFx(r,{hate:15,riv:10}):`${npTop(r)} 영문도 모른 채 밀려났다.`+fx({rguild:2,vhon:-2})+relFx(r,{riv:8}))}
    else say(`${r.n}에게 자리를 양보하였다.`+relFx(r,{riv:-12,close:6,resp:-2}));await done()}},
  {id:'r_insult',k:['rival','hate'],w:1.4,c:r=>npIn(r)&&!child()&&s.age>=16,f:async r=>{const opts=[{l:'못 들은 척한다',s:'',a:'safe'},{l:npNob(r)||noble()?'법정에 명예훼손으로 고소한다':'주먹으로 갚아 준다',s:'',a:'bold'}];if(npDuelOk(r))opts.push({l:'결투를 청한다',s:'불법이다. 목숨이 걸린다',a:'bold'});
-   const i=await Q('모욕','l’insulte',`${npSub(r)} ${pick(['여럿 앞에서 그대를 거짓말쟁이라 불렀다','그대 집안을 비웃는 노래를 지어 퍼뜨렸다','그대의 얼굴에 장갑을 던졌다','그대가 뇌물을 받았다고 떠들었다'])}.`,opts);
+   const i=await Q('모욕','l’insulte',`${npSub(r)} ${pick(['여럿 앞에서 당신을 거짓말쟁이라 불렀다','당신 집안을 비웃는 노래를 지어 퍼뜨렸다','당신의 얼굴에 장갑을 던졌다','당신이 뇌물을 받았다고 떠들었다'])}.`,opts);
    if(i===0)say('이를 악물고 지나쳤다.'+fx({vhon:-2,faith:1})+relFx(r,{riv:3}));
    else if(i===1){if(npNob(r)||noble()){const x=await roll(md([[s.st.edu>=55,1,'학식'],[!!patron(),1,'후원자']]).m,{label:'소송'});say(x.v>=4?`법정이 ${r.n}에게 사과문을 쓰게 하였다.`+fx({money:-30,vhon:3,relite:2})+relFx(r,{hate:8,riv:5}):'소송비만 들었다.'+fx({money:-40})+relFx(r,{riv:6}))}
      else{const x=await roll(md([[s.st.str>=55,1,'체력'],[s.sk.arms>=30,1,'무예']]).m,{label:'주먹다짐'});say(x.v>=4?`${npObj(r)} 진창에 메쳤다. 이웃들이 박수를 쳤다.`+fx({str:1,rloc:1,cour:1})+relFx(r,{hate:8,resp:3}):`코피를 흘리며 돌아왔다.`+fx({hp:-3})+relFx(r,{hate:8,riv:5}))}}
    else await npDuel(r,'모욕');await done()}},
  {id:'r_recon',k:['rival'],w:1,c:r=>npIn(r)&&!child()&&r.riv>=35&&r.hate<45,f:async r=>{const i=await Q('화해의 기회','la réconciliation',`${npSub(r)} ${pick(['상을 당하였다','파산할 지경이라 한다','병들어 누웠다'])}. 그동안의 맞수에게 무엇을 하겠는가.`,[{l:'찾아가 손을 내민다',s:'',a:'social pious'},{l:'모른 척한다',s:'',a:'safe'}]);
-   if(i===0){say(`${npTop(r)} 그대의 손을 오래 잡고 있었다. 맞수가 벗이 되었다.`+fx({vjus:1})+relFx(r,{riv:-25,close:15,trust:10,hate:-15}));if(r.role==='경쟁자'&&r.riv<40)r.role='친구'}else say('그 집 앞을 지나치지 않았다.'+relFx(r,{riv:2}));await done()}},
- {id:'r_rumor',k:['rival','hate'],w:1.2,c:r=>npIn(r)&&!child(),f:async r=>{say(`${npSub(r)} 뒤에서 그대를 헐뜯고 다닌다는 말이 들렸다.`+fx(job()?{rguild:-3}:{rloc:-2})+relFx(r,{hate:4,riv:3}))}},
- {id:'r_help',k:['rival'],w:.5,c:r=>npIn(r)&&!child()&&(s.st.hp<45||s.money<30),f:async r=>{say(`곤경에 빠진 그대를 뜻밖에도 ${npSub(r)} 도왔다. “내가 이길 상대가 없어지면 곤란하니까.”`+fx({money:20})+relFx(r,{resp:12,riv:-8,close:6}))}},
+   if(i===0){say(`${npTop(r)} 당신의 손을 오래 잡고 있었다. 맞수가 벗이 되었다.`+fx({vjus:1})+relFx(r,{riv:-25,close:15,trust:10,hate:-15}));if(r.role==='경쟁자'&&r.riv<40)r.role='친구'}else say('그 집 앞을 지나치지 않았다.'+relFx(r,{riv:2}));await done()}},
+ {id:'r_rumor',k:['rival','hate'],w:1.2,c:r=>npIn(r)&&!child(),f:async r=>{say(`${npSub(r)} 뒤에서 당신을 헐뜯고 다닌다는 말이 들렸다.`+fx(job()?{rguild:-3}:{rloc:-2})+relFx(r,{hate:4,riv:3}))}},
+ {id:'r_help',k:['rival'],w:.5,c:r=>npIn(r)&&!child()&&(s.st.hp<45||s.money<30),f:async r=>{say(`곤경에 빠진 당신을 뜻밖에도 ${npSub(r)} 도왔다. “내가 이길 상대가 없어지면 곤란하니까.”`+fx({money:20})+relFx(r,{resp:12,riv:-8,close:6}))}},
  // ----- 존경·스승·후원자 -----
  {id:'a_speech',k:['admire'],w:2,c:r=>npIn(r)&&!child()&&r.eng>=35,f:async r=>{const t=T(),where=t<1789?pick(['본당 강론','아카데미 공개 강연','카페의 낭독']):t<1795?pick(['구민회 연단','자코뱅 클럽 연단','코르들리에 클럽']):t<1815?pick(['학사원 강연','살롱의 낭독']):t<1848?pick(['의회 방청석에서 들은 연설','공화파 연회의 건배사','소르본 강의']):'민중 클럽 연단';
    const d=Math.round(clamp(r.pol-s.pol,-30,30)*.15);say(`${r.n}의 ${where}${bat(where)?'을':'를'} 들었다. 가슴이 뜨거워졌다.`+fx({pol:d,orat:1,kphil:1})+relFx(r,{resp:8,close:3}))}},
  {id:'a_teach',k:['admire'],w:1.5,c:r=>npIn(r)&&(r.role==='스승'||r.resp>=60),f:async r=>{const k=job()?(job().tr==='craft'?(s.spec||'craft'):job().tr==='med'?'heal':job().tr==='law'?'klaw':job().tr==='letters'?'klett':job().tr==='army'?'arms':'pen'):lit()?'klat':'craft';
    say(`${npSub(r)} ${pick(['몇 달 동안 저녁마다','손수 본을 보이며','편지로 꼼꼼히'])} 일을 가르쳐 주었다.`+fx({[k]:3})+relFx(r,{resp:5,close:4}))}},
- {id:'a_reco',k:['admire'],w:1,c:r=>npIn(r)&&!child()&&!!job()&&(r.role==='후원자'||r.role==='스승')&&r.trust>=50,f:async r=>{say(`${npSub(r)} 그대를 위해 추천장을 써 주었다.`+fx({inf:2,rguild:2})+relFx(r,{trust:4,resp:4}))}},
+ {id:'a_reco',k:['admire'],w:1,c:r=>npIn(r)&&!child()&&!!job()&&(r.role==='후원자'||r.role==='스승')&&r.trust>=50,f:async r=>{say(`${npSub(r)} 당신을 위해 추천장을 써 주었다.`+fx({inf:2,rguild:2})+relFx(r,{trust:4,resp:4}))}},
  {id:'a_fall',k:['admire','close'],w:3,c:r=>r.alive&&r.cond==='prison'&&!child()&&s.cond==='normal',f:async r=>{const i=await Q('갇힌 사람','la visite',`존경하던 ${npSub(r)} 감옥에 갇혔다. 면회를 가면 이름이 적힌다.`,[{l:'면회를 간다',s:'혐의 +',a:'bold family'},{l:'멀리서 기도만 한다',s:'',a:'safe pious'}]);
-   if(i===0)say(`철창 너머로 ${npTop(r)} 그대를 알아보고 눈물을 글썽였다.`+fx({sus:inTerror()?8:3,vjus:2})+relFx(r,{close:12,trust:12}));else say('면회 가지 않았다.'+relFx(r,{close:-5}));await done()}},
+   if(i===0)say(`철창 너머로 ${npTop(r)} 당신을 알아보고 눈물을 글썽였다.`+fx({sus:inTerror()?8:3,vjus:2})+relFx(r,{close:12,trust:12}));else say('면회 가지 않았다.'+relFx(r,{close:-5}));await done()}},
  // ----- 혐오 -----
  {id:'h_denounce',k:['hate'],w:3,c:r=>npIn(r)&&!child()&&s.cond==='normal'&&(inTerror()||T()>=1815.5&&T()<1816.5)&&Math.abs(r.pol-pubPol())>=30,f:async r=>{const opts=[{l:'버틴다',s:'',a:'safe'},{l:'돈으로 입을 막는다',s:'재산 -80',a:'greedy',dis:s.money<80},{l:'먼저 그를 고발한다',s:'',a:'radical'}];const fr=npLive().find(x=>x!==r&&npIn(x)&&x.close>=60&&x.fac&&RULING(T()).includes(x.fac));if(fr)opts.push({l:`${fr.n}에게 도움을 청한다`,s:'',a:'social'});
-   const i=await Q('밀고','la dénonciation',`${npSub(r)} 구 감시위원회에 그대를 고발하겠다고 떠들고 다닌다. 그 한마디면 충분한 세상이다.`,opts);
+   const i=await Q('밀고','la dénonciation',`${npSub(r)} 구 감시위원회에 당신을 고발하겠다고 떠들고 다닌다. 그 한마디면 충분한 세상이다.`,opts);
    if(i===0)say(`${npTop(r)} 정말로 고발장을 냈다.`+fx({sus:12,cour:1}),'dark');else if(i===1)say(`${npTop(r)} 돈을 받고 입을 다물었다.`+fx({money:-80})+relFx(r,{hate:5}));
    else if(i===2){say(`먼저 위원회 문을 두드렸다. ${npTop(r)} 그날 밤 끌려갔다.`+fx({sus:-6,vjus:-4,vhon:-3,rloc:-2}),'dark');r.cond='prison';r.py=s.year;r.denounced=1;npFate(r,'고발당해 감옥에 갇혔다.')}
    else{say(`${npSub(fr)} 위원회에 말을 넣어 고발장을 묻어 주었다.`+relFx(fr,{trust:5})+relFx(r,{hate:5}))}await done()}},
- {id:'h_street',k:['hate'],w:1.5,c:r=>npIn(r)&&!child(),f:async r=>{say(`${pick(['장터에서','성당 앞에서','선술집 문간에서','구민회장에서'])} ${npWith(r)} 마주쳤다. ${pick(['서로 침을 뱉었다','그가 들으라는 듯 그대 이야기를 큰소리로 하였다','눈길이 칼날처럼 부딪쳤다'])}.`+relFx(r,{hate:4}))}},
+ {id:'h_street',k:['hate'],w:1.5,c:r=>npIn(r)&&!child(),f:async r=>{say(`${pick(['장터에서','성당 앞에서','선술집 문간에서','구민회장에서'])} ${npWith(r)} 마주쳤다. ${pick(['서로 침을 뱉었다','그가 들으라는 듯 당신 이야기를 큰소리로 하였다','눈길이 칼날처럼 부딪쳤다'])}.`+relFx(r,{hate:4}))}},
  {id:'h_gloat',k:['hate','rival'],w:3,c:r=>r.alive&&['prison','deported','emigre'].includes(r.cond)&&!child()&&s.cond==='normal'&&!r.gl,f:async r=>{r.gl=1;const i=await Q('원수의 몰락','la chute d’un ennemi',`그토록 미워하던 ${npSub(r)} ${r.cond==='prison'?'감옥에 갇혔다':r.cond==='emigre'?'모든 것을 버리고 나라 밖으로 달아났다':'유형지로 끌려갔다'}. 그의 식구들이 끼니를 거른다고 한다.`,[{l:'그 식구들에게 빵을 보낸다',s:'재산 -20',a:'pious family'},{l:'속으로 쾌재를 부른다',s:'',a:'safe'}]);
    if(i===0)say(`이름을 밝히지 않고 빵 바구니를 보냈다. 나중에 ${npTop(r)} 그것이 누구였는지 알게 되었다.`+fx({money:-20,vjus:3,faith:1})+relFx(r,{hate:-30,resp:10,close:8}));else say('그날 밤 포도주 한 병을 땄다.'+fx({vjus:-1})+relFx(r,{hate:3}));await done()}},
  // ----- 연인 -----
@@ -263,12 +263,12 @@ const NP_SC=[
        s.married=true;s.spouse={n:r.n,age:npAge(r),alive:true,pay,estate:E};if(dowry)s.money+=dowry;say(`${npWith(r)} 본당에서 혼인 미사를 올렸다.${dowry?` 지참금 ${fmt(dowry)} ${money()}.`:''}`+fx({soc:2,vfam:3}),'big');s.rel.splice(s.rel.indexOf(r),1)}
      else{say('집안이 끝내 허락하지 않았다. 둘은 울며 헤어졌다.'+fx({hp:-2,rfam:-2})+relFx(r,{close:-20}));r.role='친구'}}
    else if(i===1)say('조금 더 기다리기로 하였다.'+relFx(r,{close:-3}));else{say(`${npWith(r)} 헤어졌다.`+relFx(r,{close:-25,trust:-10}));r.role='친구'}await done()}},
- {id:'l_other',k:['love'],w:1,c:r=>npIn(r)&&r.close<58,f:async r=>{r.mar=npM(r)?woman():person();r.marY=s.year;r.role='친구';npFate(r,`${jo(r.mar,'과','와')} 혼인하였다.`);say(`${npTop(r)} 집안이 정해 준 ${jo(r.mar,'과','와')} 혼인하였다. 혼례 행렬이 그대의 집 앞을 지나갔다.`+fx({hp:-1})+relFx(r,{close:-10}),'ev')}},
+ {id:'l_other',k:['love'],w:1,c:r=>npIn(r)&&r.close<58,f:async r=>{r.mar=npM(r)?woman():person();r.marY=s.year;r.role='친구';npFate(r,`${jo(r.mar,'과','와')} 혼인하였다.`);say(`${npTop(r)} 집안이 정해 준 ${jo(r.mar,'과','와')} 혼인하였다. 혼례 행렬이 당신의 집 앞을 지나갔다.`+fx({hp:-1})+relFx(r,{close:-10}),'ev')}},
 ];
 // 결투: 1626년 이래 금지였으나 귀족·장교·학생 사이에 흔했다. 대개 첫 피에서 멈췄다.
 async function npDuel(r,why){const x=await roll(md([[s.sk.arms>=35,1,'검술'],[s.st.cour>=55,1,'의지'],[s.st.str>=60,1,'체력'],[r.cond==='army'||npNob(r),-1,'상대가 칼을 다룰 줄 안다']]).m,{label:'결투'});
   if(x.v<=1&&await chance(.25,'결투의 상처','결투에서 크게 다친 이가 죽은 비율')){die('duel');return}
-  if(x.v>=6&&await chance(.15,'치명상','결투 상대가 숨진 비율')){npDie(r,'duel','결투에서 그대의 칼에 맞아 숨졌다.');fx({sus:15,vhon:2});return}
+  if(x.v>=6&&await chance(.15,'치명상','결투 상대가 숨진 비율')){npDie(r,'duel','결투에서 당신의 칼에 맞아 숨졌다.');fx({sus:15,vhon:2});return}
   say(x.v>=4?`불로뉴 숲 새벽, ${r.n}의 팔에 첫 피가 흘렀다. 입회인들이 결투를 멈췄다.`+fx({vhon:4,cour:2,arms:2,sus:3})+relFx(r,{resp:10,riv:-10,hate:-5}):`어깨에 칼을 맞고 쓰러졌다. ${npTop(r)} 칼을 거두었다.`+fx({hp:-8,vhon:2,arms:1,sus:3})+relFx(r,{resp:4,hate:5}))}
 function npBkey(r){if(child())return npAge(r)<16||r.role==='스승'?['child']:[];const b=relBond(r);return b==='혐오'?['hate']:b==='라이벌'||b==='경쟁자'?['rival']:b==='친우'?['close','friend']:b==='존경'||b==='스승'||b==='후원자'?['admire']:b==='연인'?['love']:['friend']}
 async function npScene(){const L0=npLive().filter(r=>r.cond==='normal'||['army','emigre','prison','deported','hiding'].includes(r.cond));if(!L0.length)return;
@@ -292,15 +292,15 @@ async function npBarri(r,o){npQ=1;const opts=[{l:'함께 바리케이드에 선�
   const i=await Q(o.t,o.fr,o.txt,opts);let goes=true;
   if(i===0){if(await chance(o.pd,o.t,o.why)){die('riot',o.dt);await done();return 'dead'}say(o.ok+fx(o.fx));r.close=clamp(r.close+12,0,100);r.trust=clamp(r.trust+10,0,100);s.flags.npBarri=(s.flags.npBarri||0)+1}
   else if(i===1){const x=await roll(md([[r.close>=70,1,'깊은 우정'],[r.trust>=65,1,'신뢰'],[s.sk.orat>=30,1,'웅변'],[r.tr==='열정',-1,'그의 열정'],[r.pol>=70,-1,'굳은 신념']]).m,{label:'설득'});
-    if(x.v>=5){goes=false;say(`${npTop(r)} 한참을 노려보다가 총을 내려놓았다. “겁쟁이라고 불러도 좋네. 자네 때문이야.”`+relFx(r,{close:-4,resp:-3}))}else say(`${npTop(r)} 그대의 손을 뿌리치고 나갔다.`+relFx(r,{close:-3}))}
+    if(x.v>=5){goes=false;say(`${npTop(r)} 한참을 노려보다가 총을 내려놓았다. “겁쟁이라고 불러도 좋네. 자네 때문이야.”`+relFx(r,{close:-4,resp:-3}))}else say(`${npTop(r)} 당신의 손을 뿌리치고 나갔다.`+relFx(r,{close:-3}))}
   else say('덧문을 닫고 총소리를 들었다.'+relFx(r,{close:-6,resp:-5}));
   await done();return goes?(i===0?'with':'go'):'stay'}
 // 진압 뒤 쫓기는 벗: 숨길 것인가
-async function npHide(r,t){npQ=2;const i=await Q('쫓기는 벗','la cache',`${t} 피투성이가 된 ${npSub(r)} 밤중에 그대의 문을 두드렸다. 경찰과 국민방위대가 집집마다 뒤진다.`,[{l:'다락에 숨겨 준다',s:'혐의 +',a:'bold family'},{l:'돈을 쥐여 돌려보낸다',s:'재산 -20',a:'safe'},{l:'경찰에 알린다',s:'혐의 -, 평판 -',a:'royal'}]);
-  if(i===0){if(await chance(.12,'가택 수색','숨겨 준 사람이 들킨 비율')){say(`수색대가 다락을 열었다. ${npTop(r)} 끌려가고 그대도 조서를 썼다.`+fx({sus:15,rloc:-2})+relFx(r,{trust:10,close:8}),'big');npArrest(r,'숨어 있다가 붙잡혔다.')}
+async function npHide(r,t){npQ=2;const i=await Q('쫓기는 벗','la cache',`${t} 피투성이가 된 ${npSub(r)} 밤중에 당신의 문을 두드렸다. 경찰과 국민방위대가 집집마다 뒤진다.`,[{l:'다락에 숨겨 준다',s:'혐의 +',a:'bold family'},{l:'돈을 쥐여 돌려보낸다',s:'재산 -20',a:'safe'},{l:'경찰에 알린다',s:'혐의 -, 평판 -',a:'royal'}]);
+  if(i===0){if(await chance(.12,'가택 수색','숨겨 준 사람이 들킨 비율')){say(`수색대가 다락을 열었다. ${npTop(r)} 끌려가고 당신도 조서를 썼다.`+fx({sus:15,rloc:-2})+relFx(r,{trust:10,close:8}),'big');npArrest(r,'숨어 있다가 붙잡혔다.')}
     else{say(`${npTop(r)} 사흘 밤을 다락에서 앓다가 새벽에 빠져나갔다. 평생 이 일을 잊지 않을 것이다.`+fx({sus:5,vjus:2,cour:1})+relFx(r,{close:20,trust:25,resp:12}),'big');r.cond='hiding';r.hy=s.year}}
   else if(i===1){say(`${npObj(r)} 돌려보냈다.`+fx({money:-20})+relFx(r,{close:-12,trust:-10}));if(R()<.5)npArrest(r,'거리에서 붙잡혔다.')}
-  else{say(`${npObj(r)} 경찰에 넘겼다. 이웃들은 그대를 다른 눈으로 본다.`+fx({sus:-8,rloc:-6,rpeople:-6,vjus:-4,vhon:-4}),'dark');r.close=0;r.trust=0;r.hate=clamp((r.hate||0)+60,0,100);r.role='경쟁자';npArrest(r,'고발당해 붙잡혔다.')}
+  else{say(`${npObj(r)} 경찰에 넘겼다. 이웃들은 당신을 다른 눈으로 본다.`+fx({sus:-8,rloc:-6,rpeople:-6,vjus:-4,vhon:-4}),'dark');r.close=0;r.trust=0;r.hate=clamp((r.hate||0)+60,0,100);r.role='경쟁자';npArrest(r,'고발당해 붙잡혔다.')}
   await done()}
 // 봉기의 하루: 가담한 벗들의 생사
 async function npRising(o){const L0=npLive().filter(r=>npIn(r)&&o.who(r));if(!L0.length)return;const go=L0.filter(r=>R()<npP(o.p(r),r));if(!go.length)return;
@@ -310,11 +310,11 @@ async function npRising(o){const L0=npLive().filter(r=>npIn(r)&&o.who(r));if(!L0
     const pd=o.pd(r)*(r===fr&&mine==='with'?.7:1);if(R()<pd){npDie(r,o.dc||'riot',typeof o.dt==='function'?o.dt(r):o.dt);continue}
     npEv(r,typeof o.ok==='function'?o.ok(r):o.ok);if(o.after)o.after(r);
     if(o.lost&&R()<o.lost){if(r===fr&&npCanQ(2)&&r.close>=45){await npHide(r,o.lostT);if(s.dead)return}else npArrest(r,o.arT)}}
-  if(fr&&mine==='stay'&&fr.alive)npFate(fr,'그대의 설득으로 집에 머물렀다.')}
+  if(fr&&mine==='stay'&&fr.alive)npFate(fr,'당신의 설득으로 집에 머물렀다.')}
 const npRad=(r,p=40)=>r.pol>=p&&npM(r)&&npAge(r)>=16&&npAge(r)<=60;
 // 파벌이 무너질 때 그 파벌의 가상 벗들 (relPurge가 숨겨 주었는지 r.pg로 안다)
 function npPurge(id,arrest,death,txt){for(const r of npLive()){if(r.fac!==id||!['normal','hiding'].includes(r.cond))continue;const pg=r.pg&&r.pg.id===id&&r.pg.y===s.year?r.pg:null;
-  if(pg&&pg.i===0){r.cond='hiding';r.hy=s.year;npFate(r,`${FAC[id].n} 숙청 때 그대의 집에 숨었다가 몰래 몸을 피했다.`);continue}
+  if(pg&&pg.i===0){r.cond='hiding';r.hy=s.year;npFate(r,`${FAC[id].n} 숙청 때 당신의 집에 숨었다가 몰래 몸을 피했다.`);continue}
   const p=pg&&pg.i===2?.9:arrest*(.4+r.eng/100)*(r.tr==='신중'?.6:1);
   if(R()<p){if(R()<death*(pg&&pg.i===2?1.3:1))npDie(r,'guillotine',txt);else npArrest(r,`${FAC[id].n} 숙청 때 체포되었다.`)}else npFate(r,`${FAC[id].n} 숙청을 용케 피했다.`)}}
 const NP_D=[
@@ -340,7 +340,7 @@ const NP_D=[
  [1792,9,async()=>{const pr=npLive().filter(r=>r.cond==='prison');if(pr.length){const fr=npFriend(pr);let vouch=null;
    if(fr&&npCanQ()){npQ=1;const i=await Q('감옥 문 앞','massacres de Septembre',`감옥마다 군중이 들이닥쳐 즉석 재판을 연다는 소식이다. ${fr.n}${bat(fr.n)?'이':'가'} 거기 있다.`,[{l:'감옥으로 달려가 그를 위해 증언한다',s:'혐의 +, 그의 목숨이 걸린다',a:'bold family'},{l:'집에서 기다린다',s:'',a:'safe'}]);
      if(i===0){vouch=fr;say('피 냄새 나는 마당에서 ‘재판관’들 앞에 섰다. “이 사람은 애국자요, 내가 보증하오!”'+fx({sus:8,cour:3,vjus:3}))}else say('밤새 잠들지 못했다.');await done()}
-   for(const r of pr){const p=(r.cler?.75:npNob(r)?.55:.3)*(r===vouch?.4:1);if(R()<p)npDie(r,'massacre',`9월 ${ri(2,6)}일 ${r.cler?'카름 수도원':pick(['아베 감옥','라포르스 감옥','콩시에르주리'])}에 들이닥친 군중에게 살해되었다.`);else{r.cond='normal';npEv(r,`“국민 만세!” 소리와 함께 감옥에서 풀려났다.${r===vouch?' 그대의 증언 덕분이었다.':''}`,true);if(r===vouch)relFx(r,{close:25,trust:30,resp:15})}}}
+   for(const r of pr){const p=(r.cler?.75:npNob(r)?.55:.3)*(r===vouch?.4:1);if(R()<p)npDie(r,'massacre',`9월 ${ri(2,6)}일 ${r.cler?'카름 수도원':pick(['아베 감옥','라포르스 감옥','콩시에르주리'])}에 들이닥친 군중에게 살해되었다.`);else{r.cond='normal';npEv(r,`“국민 만세!” 소리와 함께 감옥에서 풀려났다.${r===vouch?' 당신의 증언 덕분이었다.':''}`,true);if(r===vouch)relFx(r,{close:25,trust:30,resp:15})}}}
    for(const r of npLive().filter(npIn)){if(npRad(r,75)&&r.estate==='artisan'&&R()<.05){r.sept=1;npEv(r,'감옥 학살에 끼었다는 소문이 돌았다.',true);if(!child()&&s.val.vjus>=50)relFx(r,{hate:15,resp:-10,close:-10})}
      else if(npNob(r)&&R()<.35){r.cond='emigre';r.ey=s.year;r.emi=pick(['런던','함부르크','브뤼셀']);npEv(r,`가짜 통행증을 구해 ${jo(r.emi,'으로')} 망명하였다.`,true)}
      else if(r.cler&&r.refr&&R()<.6){r.cond='emigre';r.ey=s.year;r.emi=pick(['런던','에스파냐','로마']);npEv(r,`추방령에 따라 ${jo(r.emi,'으로')} 떠났다.`)}}}],
@@ -350,7 +350,7 @@ const NP_D=[
  [1793,11,async()=>{for(const r of npLive().filter(npIn)){if(r.cler&&!r.refr&&R()<.35){r.cler=false;r.job='사제직을 내려놓은 옛 신부';npEv(r,'비기독교화의 바람 속에 사제직을 내려놓았다.')}else if(r.tr==='경건'&&R()<.5){npFate(r,'노트르담이 ‘이성의 신전’이 되던 날 몰래 성호를 그었다.');if(!child()&&['reason','supreme'].includes(faithModeNow()))relFx(r,{close:-8,resp:-6})}}}],
  [1794,3,async()=>{npPurge('cordelier',.25,.4,'에베르파로 몰려 단두대에서 처형되었다.')}],
  [1794,4,async()=>{npPurge('indulgent',.25,.4,'관용파로 몰려 단두대에서 처형되었다.')}],
- [1794,7,async()=>{for(const r of npLive().filter(x=>x.alive&&x.fac==='jacobin'&&x.cond==='normal')){const pg=r.pg&&r.pg.id==='jacobin'&&r.pg.y===s.year?r.pg:null;if(pg&&pg.i===0){r.cond='hiding';r.hy=s.year;npFate(r,'테르미도르 9일 뒤 그대의 다락에 숨었다.');continue}
+ [1794,7,async()=>{for(const r of npLive().filter(x=>x.alive&&x.fac==='jacobin'&&x.cond==='normal')){const pg=r.pg&&r.pg.id==='jacobin'&&r.pg.y===s.year?r.pg:null;if(pg&&pg.i===0){r.cond='hiding';r.hy=s.year;npFate(r,'테르미도르 9일 뒤 당신의 다락에 숨었다.');continue}
    if(R()<(pg&&pg.i===2?.9:.12*(.5+r.eng/100))){if(R()<.5)npDie(r,'guillotine','테르미도르 10~12일 파리 코뮌 사람들과 함께 단두대에서 처형되었다.');else npArrest(r,'‘로베스피에르의 꼬리’로 몰려 체포되었다.')}else npFate(r,'테르미도르 9일 뒤 숨을 죽이고 지냈다.')}}],
  [1794,11,async()=>{for(const r of npLive().filter(npIn)){if((r.fac==='jacobin'||r.grp==='sc')&&R()<.3){npEv(r,'금빛 청년단의 몽둥이에 맞아 길바닥에 쓰러졌다.');r.wound=1}else if(r.grp==='jd'&&R()<.5)npFate(r,'자코뱅 클럽 문을 부수는 데 끼었다.')}}],
  [1795,5,async()=>{await npRising({who:r=>(r.grp==='sc'||npRad(r,50))&&r.estate!=='bourgeois'&&!npNob(r),p:()=>.4,pd:()=>.03,dt:'프레리알 봉기 때 국민공회 앞에서 쓰러졌다.',ok:'“빵과 1793년 헌법!”을 외치며 국민공회로 밀고 들어갔다.',lost:.25,arT:'프레리알 봉기 뒤 생탕투안 문밖이 포위되었을 때 붙잡혔다.',lostT:'생탕투안 문밖이 군대에 포위되었다.'})}],
@@ -389,8 +389,8 @@ async function npTerrorMonth(mi){const t=(mi-2)/12;const great=t>=1794.25&&t<179
     else if(r.cond==='prison'){const p=(npNob(r)||r.cler||['girondin','royalist','feuillant'].includes(r.fac)?.05:.015)*(great?2.5:1)*(r.saved?.4:1);
       if(R()<p)npDie(r,'guillotine',`혁명재판소에서 사형 판결을 받고 ${great?'왕좌 전복 광장':'혁명 광장'}의 단두대에 올랐다.`);else if(R()<.03){r.cond='normal';npEv(r,'구 위원회의 증명서를 얻어 감옥에서 풀려났다.')}}}
   if(q&&npCanQ()){npQ=1;const i=await Q('갇힌 벗','les suspects',`${q.n}${bat(q.n)?'이':'가'} 혐의자로 끌려갔다. 구 감시위원회에 탄원서를 낼 수 있다. 그러나 혐의자를 감싸는 자도 혐의자다.`,[{l:'탄원서를 내고 보증을 선다',s:'혐의 +, 사교·영향력 판정',a:'bold family'},{l:'감옥에 음식만 넣어 준다',s:'재산 -15',a:'family safe'},{l:'모른 척한다',s:'',a:'safe'}]);
-    if(i===0){const x=await roll(md([[s.st.soc>=55,1,'사교'],[influence().v>=30,1,'영향력'],[!!s.party&&RULING(T()).includes(s.party),1,'집권 파벌 소속'],[noble(),-1,'그대도 귀족']]).m,{label:'탄원'});
-      if(x.v>=5){q.cond='normal';q.saved=1;say(`위원회가 탄원을 받아들였다. ${npTop(q)} 열흘 만에 풀려났다.`+fx({sus:6,vjus:2})+relFx(q,{close:20,trust:25,resp:12}),'big')}else{q.saved=1;say('탄원서는 서류 더미에 묻혔다. 그대의 이름만 위원회 장부에 올랐다.'+fx({sus:10})+relFx(q,{close:10,trust:12}))}}
+    if(i===0){const x=await roll(md([[s.st.soc>=55,1,'사교'],[influence().v>=30,1,'영향력'],[!!s.party&&RULING(T()).includes(s.party),1,'집권 파벌 소속'],[noble(),-1,'당신도 귀족']]).m,{label:'탄원'});
+      if(x.v>=5){q.cond='normal';q.saved=1;say(`위원회가 탄원을 받아들였다. ${npTop(q)} 열흘 만에 풀려났다.`+fx({sus:6,vjus:2})+relFx(q,{close:20,trust:25,resp:12}),'big')}else{q.saved=1;say('탄원서는 서류 더미에 묻혔다. 당신의 이름만 위원회 장부에 올랐다.'+fx({sus:10})+relFx(q,{close:10,trust:12}))}}
     else if(i===1)say('빵과 속옷을 감옥 문지기에게 맡겼다.'+fx({money:-15,sus:2})+relFx(q,{close:8,trust:6}));else say('그 이름을 입에 올리지 않았다.'+relFx(q,{close:-15,trust:-15}));await done()}}
 function npRelease(){for(const r of npLive())if(r.cond==='prison'&&R()<.35){r.cond='normal';npEv(r,'테르미도르 뒤 감옥 문이 열려 풀려났다.',true)}else if(r.cond==='hiding'&&R()<.3){r.cond='normal';npFate(r,'숨어 지내던 곳에서 나왔다.')}}
 // 콜레라(1832년 4~9월 파리 사망률 약 2.3%, 1849년 약 1.9%): 가난하고 늙을수록 위험

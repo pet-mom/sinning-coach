@@ -96,7 +96,7 @@ async function partyTick(){if(!s.party){if(s.month===0&&adult()&&s.age>=18&&T()>
 // 1790년 첫 시정부 선거
 async function municipal(){if(!adult()||!isM()||s.age<25||s.money<60||s.job==='p1'||s.job==='p2'||deputy())return;
   if(s.fame<15&&s.plan!=='정치')return;
-  const i=await Q('시정부 선거','élections municipales','고을에서 처음으로 시장과 시정 위원을 주민이 뽑는다. 능동시민 명부에 그대의 이름이 있다.',[{l:'시정 위원에 출마한다',s:'사교·명성 판정',a:'social radical'},{l:'투표만 한다',s:'',a:'safe'}]);
+  const i=await Q('시정부 선거','élections municipales','고을에서 처음으로 시장과 시정 위원을 주민이 뽑는다. 능동시민 명부에 당신의 이름이 있다.',[{l:'시정 위원에 출마한다',s:'사교·명성 판정',a:'social radical'},{l:'투표만 한다',s:'',a:'safe'}]);
   if(i===1){say('투표함에 표를 넣었다.');await done();return}
   const {m,why}=md([[s.st.soc>=50,1,'사교'],[s.fame>=35,1,'명성'],[!!s.party,1,'파벌의 지원'],[s.rep.rloc>=65,1,'이웃의 신망'],[s.rep.rloc<=30,-1,'나쁜 평판'],[s.sk.orat>=40,1,'웅변'],[noble(),-1,'귀족 출신']]);
   const r=await roll(m,{label:'시정부 선거',why});
@@ -158,7 +158,7 @@ function setConduct(k){if(s.acts.conduct===s.year||!CONDUCT.find(x=>x.k===k))ret
   say(`처신을 바꾸었다: ${CONDUCT.find(x=>x.k===k).n}.`+fx(k==='adapt'?{vhon:-2}:k==='open'?{vhon:1}:{}),'sys')}
 // 해마다: 속마음과 겉의 차이
 function conductYear(){if(child()||s.age<16)return;const c=conduct(),gap=Math.abs(pubPol()-s.pol);
-  if(c==='adapt'){fxAttr('vhon',-1);if(gap>=40&&R()<gap/500){say(`${pick(['옛 편지가 돌았다','술자리에서 속내를 털어놓은 말이 퍼졌다','옛 동지가 그대의 과거를 폭로했다'])}. 겉으로 내세우던 입장이 거짓이었다는 소문이 났다.`+fx({sus:10,rloc:-4,relite:-2,fame:2}),'big')}}
+  if(c==='adapt'){fxAttr('vhon',-1);if(gap>=40&&R()<gap/500){say(`${pick(['옛 편지가 돌았다','술자리에서 속내를 털어놓은 말이 퍼졌다','옛 동지가 당신의 과거를 폭로했다'])}. 겉으로 내세우던 입장이 거짓이었다는 소문이 났다.`+fx({sus:10,rloc:-4,relite:-2,fame:2}),'big')}}
   if(c==='silent'&&(s.inf0||0)>0)s.inf0=Math.max(0,s.inf0-2);
   if(c==='open'&&gap===0&&s.fame>=20&&R()<.3)fxAttr('rpeople',s.pol>=30?1:0)}
 // 정권 교체 앞에서
@@ -166,11 +166,11 @@ const REGIMES=[[tm(1789,7),'바스티유 이후','국민의회가 권력을 잡�
 async function regimeTurn(t0,t1){for(const [t,n,d] of REGIMES){if(!(t>=t0&&t<t1))continue;
   if(child()||s.age<18||s.cond!=='normal'||s.dead)continue;const visible=s.fame>=15||s.party||(job()&&job().t>=3)||deputy();if(!visible)continue;
   const rp=rulingPol(),gap=Math.abs(rp-s.pol);
-  const i=await Q(n,'changement de régime',`${d}. 새 정권 앞에서 그대는 어떻게 처신할 것인가. (새 정권 쪽 성향 ${rp>0?'+':''}${rp}, 그대의 속마음 ${s.pol>0?'+':''}${s.pol})`,[
+  const i=await Q(n,'changement de régime',`${d}. 새 정권 앞에서 당신은 어떻게 처신할 것인가. (새 정권 쪽 성향 ${rp>0?'+':''}${rp}, 당신의 속마음 ${s.pol>0?'+':''}${s.pol})`,[
     {l:'지조를 지킨다',s:gap>=40?'위험하다. 명예와 옛 동지의 신뢰':'명예',a:'bold'},{l:'새 정권에 충성을 맹세한다',s:'안전과 자리. 변절의 오명',a:'safe greedy'},{l:'고향으로 물러나 몸을 낮춘다',s:'영향력을 잃는다',a:'safe family'}]);
   if(i===0){s.conduct='open';say('입장을 바꾸지 않았다.'+fx({vhon:3,sus:gap>=40?Math.round(gap/5):0,rpeople:s.pol>=30?2:0,relite:s.pol<=-30?2:0}))}
   else if(i===1){s.conduct='adapt';s.turns=(s.turns||0)+1;RULING(T()).forEach(id=>frelAdd(id,15));say('새 정권에 충성을 맹세하였다.'+fx({inf:4,sus:-Math.round(gap/6),vhon:-4,rloc:-1}));if(s.party&&!RULING(T()).includes(s.party))leaveParty('옛 파벌과 갈라섰다.')}
   else{s.conduct='silent';say('공직에서 물러나 조용히 지냈다.'+fx({inf:-6,sus:-5,rfam:2}))}
   await done()}
   // 1815년 『풍향계 사전』
-  if(tm(1815,8)>=t0&&tm(1815,8)<t1&&(s.turns||0)>=3&&s.fame>=25&&!s.flags.girouette){s.flags.girouette=true;say(`알렉시 에메리가 펴낸 『풍향계 사전』에 그대의 이름이 올랐다. 정권마다 충성을 맹세한 사람들의 목록이다. 이름 옆에 풍향계가 ${Math.min(s.turns,6)}개 그려져 있었다.`+fx({fame:4,vhon:-3,relite:-3}),'big')}}
+  if(tm(1815,8)>=t0&&tm(1815,8)<t1&&(s.turns||0)>=3&&s.fame>=25&&!s.flags.girouette){s.flags.girouette=true;say(`알렉시 에메리가 펴낸 『풍향계 사전』에 당신의 이름이 올랐다. 정권마다 충성을 맹세한 사람들의 목록이다. 이름 옆에 풍향계가 ${Math.min(s.turns,6)}개 그려져 있었다.`+fx({fame:4,vhon:-3,relite:-3}),'big')}}

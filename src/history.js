@@ -45,7 +45,7 @@ H(1775,4,'밀가루 전쟁. 빵값이 오르자 파리 분지 곳곳에서 군�
   if(!adult()||!['paris','ile','picardie','champagne','normandie','bourgogne'].includes(loc())||noble()||rich())return;
   const i=await Q('밀가루 전쟁','guerre des farines','장터에 사람들이 모였다. 곡물상이 빵값을 올려 받는다며 자루를 끌어내 “정당한 값”에 팔자고 외친다.',[{l:'함께 곡물 자루를 끌어낸다',s:'군대가 진압에 나섰다',a:'bold radical'},{l:'멀찍이 지켜본다',s:'',a:'safe'}]);
   if(i===0){if(await chance(.04,'주동자로 체포','진압 후 체포·처벌된 비율')){say('주동자로 붙잡혔다. 파리에서는 두 사람이 본보기로 교수형을 당했다.','big');if(await chance(.15,'교수형','붙잡힌 이들 중 처형된 비율')){die('executed','밀가루 전쟁의 주동자로 교수형을 당했다.');await done();return}s.cond='prison';s.prisonKind='plain';s.condSince=T()}
-    else say('정당한 값에 밀가루 한 자루를 샀다. 이웃들이 그대를 다시 보았다.'+fx({money:20,pol:4,cour:2,rloc:2,rpeople:3,relite:-2,vjus:3,bch:2}))}
+    else say('정당한 값에 밀가루 한 자루를 샀다. 이웃들이 당신을 다시 보았다.'+fx({money:20,pol:4,cour:2,rloc:2,rpeople:3,relite:-2,vjus:3,bch:2}))}
   else say('멀찍이 서서 지켜보았다.'+fx({vord:2}));await done()});
 H(1776,7,'튀르고가 실각하였다. 길드 폐지와 부역 폐지는 없던 일이 되었다.');
 H(1776,7,'아메리카 13개 식민지가 영국으로부터 독립을 선언하였다.');
@@ -79,7 +79,7 @@ H(1789,3,'3월, 전국에서 삼부회 선거가 시작되었다. 교구와 길�
     if(await chance(p,'삼부회 대표 선출','바야주 선거인단에서 대표로 뽑힐 확률')){s.flags.wasDeputy=true;s.flags.constituent=true;s.loc='paris';if(s.job)s.prevJob=s.job;takeJob('p3',`${noble()?'귀족':priest()?'성직자':'제3신분'} 대표로 뽑혀 삼부회 `);fx({fame:10})}}
   await done()});
 H(1789,3,null,async()=>{if(!adult()||!lit()||noble()||priest()||(urban()&&R()<.5)||s.sk.pen<15||R()<.4)return;
-  const i=await Q('교구의 서기','rédaction du cahier','글을 아는 사람이 드문 고을이다. 교구 회의가 그대에게 주민들의 불만을 받아 적어 달라고 한다.',[{l:'주민들의 말을 그대로 받아 적는다',s:'글씨·기술 판정. 이웃의 신망',a:'social'},{l:'변호사가 돌린 견본 진정서를 옮겨 적는다',s:'',a:'safe'},{l:'바쁘다며 사양한다',s:'',a:'safe'}]);
+  const i=await Q('교구의 서기','rédaction du cahier','글을 아는 사람이 드문 고을이다. 교구 회의가 당신에게 주민들의 불만을 받아 적어 달라고 한다.',[{l:'주민들의 말을 그대로 받아 적는다',s:'글씨·기술 판정. 이웃의 신망',a:'social'},{l:'변호사가 돌린 견본 진정서를 옮겨 적는다',s:'',a:'safe'},{l:'바쁘다며 사양한다',s:'',a:'safe'}]);
   if(i===0){const {m,why}=md([[s.sk.pen>=40,1,'글씨·문서'],[s.st.dex>=50,1,'기술'],[s.st.edu>=50,1,'학식'],[s.sk.pen<25,-1,'서툰 글씨']]);const r=await roll(m,{label:'진정서 작성',why});
     if(r.v>=4)say(`밤새 촛불 아래서 ${pick(['방앗간 사용료','십일조 곡식','영주의 사냥권','소금세','부역'])}에 대한 원성을 또박또박 적었다. 고을 사람 모두가 그 아래 이름이나 십자 표시를 남겼다.`+fx({pen:3,rloc:6,rpeople:2,inf:2,vjus:3,bor:3}),'big');
     else say('알아보기 어려운 글씨로 몇 장을 채웠다. 바야주 회의에서 다시 옮겨 적어야 했다.'+fx({pen:2,rloc:1}))}
@@ -100,7 +100,7 @@ H(1789,6,'6월 17일, 제3신분 대표들이 스스로 ‘국민의회’를 �
 H(1789,7,'7월 초, 파리에서 4리브르짜리 빵 한 덩이가 14수 반까지 올랐다. 날품팔이의 하루 품삯은 20~30수다.',async()=>{if(!adult())return;const e=econ();
   if(onTrack('craft')&&job().t>=4&&R()<.5){const i=await Q('곡물 투기','accaparement',`빵값이 평년의 ${e.price}배다. 창고의 밀가루를 묵혀 두면 값이 더 오를 것이다. 장터에서는 ‘매점꾼’을 목매달라는 소리가 들린다.`,[{l:'창고를 열어 시세대로 판다',s:'',a:'safe'},{l:'밀가루를 묵혀 둔다',s:'장사 판정. 민중의 원성',a:'greedy'},{l:'이웃에게 싼값에 푼다',s:'재산 -, 이웃의 신망 +',a:'social'}]);
     if(i===1){const {m,why}=md([[s.sk.trade>=40,1,'장사·셈'],[s.st.edu>=50,1,'학식'],[s.rep.rloc<=35,-1,'이웃의 의심']]);const r=await roll(m,{label:'투기',why});
-      if(r.v>=4)say('값이 꼭대기에 올랐을 때 팔아 큰돈을 쥐었다. 장터 사람들은 그대를 ‘매점꾼’이라 불렀다.'+fx({money:Math.round(200+s.money*.06),trade:2,rpeople:-6,rloc:-4,sus:6}));
+      if(r.v>=4)say('값이 꼭대기에 올랐을 때 팔아 큰돈을 쥐었다. 장터 사람들은 당신을 ‘매점꾼’이라 불렀다.'+fx({money:Math.round(200+s.money*.06),trade:2,rpeople:-6,rloc:-4,sus:6}));
       else say('소문이 먼저 돌아 군중이 창고 문을 부수었다.'+fx({money:-Math.round(s.money*.08),trade:1,rpeople:-4,rloc:-3}))}
     else if(i===2)say('밀가루를 원가에 풀었다. 가게 앞에 줄이 길게 늘어섰다.'+fx({money:-Math.round(80+s.money*.03),rloc:6,rpeople:4,vjus:3}));
     else say('시세대로 팔았다.'+fx({trade:1}));await done();return}
@@ -118,8 +118,8 @@ H(1789,7,'7월 14일, 파리 민중이 앵발리드에서 총을 빼앗고 바�
 H(1789,7,null,async()=>{if(!adult()||!inParis()||deputy()||!(s.sk.heal>=15||onTrack('med')))return;
   const i=await Q('그레브 광장의 부상자','les blessés du 14 juillet','시청 앞으로 부상자들이 들것에 실려 온다. 탄환이 박힌 다리, 칼에 베인 팔. 외과의는 모자라다.',[{l:'소매를 걷고 탄환을 빼낸다',s:'외과 손기술·기술 판정',a:'bold social'},{l:'물과 붕대만 나른다',s:'',a:'safe'}]);
   if(i===0){const {m,why}=md([[s.sk.heal>=40,1,'외과 손기술'],[s.st.dex>=55,1,'기술'],[onTrack('med')&&job().t>=2,1,'외과의'],[s.sk.heal<20,-1,'서툰 손']]);const r=await roll(m,{label:'수술',why});
-    if(r.v>=4)say('밤까지 탄환 열한 개를 빼내고 상처를 꿰맸다. 생탕투안 사람들이 그대의 이름을 기억했다.'+fx({heal:3,dex:1,rpeople:5,rloc:3,fame:2,vjus:2}),'big');
-    else say('피를 멈추지 못한 젊은이가 그대의 손 아래서 숨을 거두었다.'+fx({heal:2,hp:-1}))}
+    if(r.v>=4)say('밤까지 탄환 열한 개를 빼내고 상처를 꿰맸다. 생탕투안 사람들이 당신의 이름을 기억했다.'+fx({heal:3,dex:1,rpeople:5,rloc:3,fame:2,vjus:2}),'big');
+    else say('피를 멈추지 못한 젊은이가 당신의 손 아래서 숨을 거두었다.'+fx({heal:2,hp:-1}))}
   else say('밤새 물동이와 붕대를 날랐다.'+fx({rpeople:2,rloc:1}));await done()});
 H(1789,7,'7월 17일, 왕이 파리 시청에 와서 삼색 모표를 받았다. 아르투아 백작 등 왕족과 대귀족들이 첫 망명길에 올랐다.');
 H(1789,8,'7월 말부터 8월 초까지 대공포. 귀족들이 도적을 풀어 곡식을 망친다는 소문에 농민들이 무장하고 영주의 성관을 습격하였다.',async()=>{
@@ -183,8 +183,8 @@ H(1790,9,'9월 6~7일, 고등법원이 폐지되었다. 관직을 사고팔던 �
 H(1790,11,'11월 27일, 모든 성직자에게 헌법 충성 선서가 요구되었다. 기한은 1791년 1월.',async()=>{
   if(!priest())return;
   const i=await Q('선서','serment constitutionnel','교구민들 앞 주일 미사에서 헌법에 충성 선서를 해야 한다. 교황은 아직 침묵하고 있다. 동료 사제들의 절반가량이 선서할 것이다.',[{l:'선서한다 (선서 사제)',s:'성직을 지킨다. 교구민 일부가 등을 돌린다',a:'radical safe'},{l:'거부한다 (선서 거부 사제)',s:'자리를 잃고 혐의를 산다',a:'pious royal'}]);
-  if(i===0){s.flags.juror=true;setStance('church',1,false);say('강론대에서 선서하였다.'+fx({pol:10,faith:-6,vord:2,brg:2}),'big');facRel('patriote',6);facRel('jacobin',4);if(west())say('미사에 오는 이가 절반으로 줄었다. 마을 사람들은 숲 속에서 선서 거부 사제의 미사를 드린다.'+fx({fame:-4,rloc:-10}));else say('읍내의 애국파는 그대를 ‘시민 신부’라 불렀다.'+fx({rpeople:3,rloc:-2}))}
-  else{s.flags.refractory=true;setStance('church',0,false);loseJob('선서를 거부하여 % 자리에서 쫓겨났다.');say('양심을 지켰다. '+(west()?'교구민들이 몰래 먹을 것을 날라 왔다.':'읍내 애국파는 그대를 ‘광신자’라 불렀다.')+fx({faith:8,pol:-12,sus:25,fame:4,vhon:3,rloc:west()?6:-3,inf:-4}));facRel('patriote',-8);facRel('absolutist',6)}
+  if(i===0){s.flags.juror=true;setStance('church',1,false);say('강론대에서 선서하였다.'+fx({pol:10,faith:-6,vord:2,brg:2}),'big');facRel('patriote',6);facRel('jacobin',4);if(west())say('미사에 오는 이가 절반으로 줄었다. 마을 사람들은 숲 속에서 선서 거부 사제의 미사를 드린다.'+fx({fame:-4,rloc:-10}));else say('읍내의 애국파는 당신을 ‘시민 신부’라 불렀다.'+fx({rpeople:3,rloc:-2}))}
+  else{s.flags.refractory=true;setStance('church',0,false);loseJob('선서를 거부하여 % 자리에서 쫓겨났다.');say('양심을 지켰다. '+(west()?'교구민들이 몰래 먹을 것을 날라 왔다.':'읍내 애국파는 당신을 ‘광신자’라 불렀다.')+fx({faith:8,pol:-12,sus:25,fame:4,vhon:3,rloc:west()?6:-3,inf:-4}));facRel('patriote',-8);facRel('absolutist',6)}
   await done()});
 
 /* ---------- 1791 ---------- */
@@ -202,7 +202,7 @@ H(1791,7,'7월 16일, 왕의 폐위 문제로 자코뱅 클럽이 갈라졌다. 
 H(1791,7,'7월 17일, 샹드마르스에서 왕의 폐위를 청원하던 군중에게 라파예트의 국민방위대가 발포하였다.',async()=>{
   if(adult()&&inParis()&&s.flags.garde&&isM()&&s.pol<25){const i=await Q('발포 명령','loi martiale','붉은 계엄기가 올랐다. 돌이 날아오자 사령관이 총을 겨누라고 외친다. 맞은편은 청원서에 서명하던 이웃들이다.',[{l:'명령대로 쏜다',s:'',a:'safe royal'},{l:'총구를 하늘로 돌린다',s:'혐의 +',a:'bold'}]);
     if(i===0){say('연기가 걷히자 제단 앞에 쓰러진 사람들이 보였다.'+fx({vord:4,rpeople:-8,rloc:-3,relite:2}),'dark');facRel('feuillant',6);facRel('cordelier',-10)}
-    else{say('하늘로 쏘았다. 곁의 대원이 그대를 노려보았다.'+fx({vjus:3,sus:4,rpeople:2}));facRel('cordelier',3)}await done();return}
+    else{say('하늘로 쏘았다. 곁의 대원이 당신을 노려보았다.'+fx({vjus:3,sus:4,rpeople:2}));facRel('cordelier',3)}await done();return}
   if(adult()&&inParis()&&s.pol>=25&&!noble()&&isM()){const i=await Q('샹드마르스','fusillade du Champ-de-Mars','코르들리에 클럽이 조국의 제단 위에 왕의 폐위 청원서를 펼쳤다. 서명하러 간다.',[{l:'샹드마르스로 가 서명한다',s:'',a:'radical bold'},{l:'가지 않는다',s:'',a:'safe'}]);
     if(i===0){if(await chance(.01,'국민방위대의 발포','청원 군중 가운데 사망자 비율(약 50명)')){die('shot','샹드마르스에서 국민방위대의 일제 사격에 쓰러졌다.');await done();return}setStance('crown',2,false);say('라파예트의 국민방위대가 발포했다. 피 묻은 청원서를 두고 달아났다.'+fx({pol:8,sus:5,rpeople:4,relite:-4,brg:5,vlib:2}));facRel('cordelier',6);facRel('feuillant',-10)}else say('저녁에 총성이 들렸다.'+fx({vord:1}));await done()}});
 H(1791,7,'7월 11일, 볼테르의 유해가 판테옹으로 옮겨졌다.',async()=>{await fireStory('voltaire2')});
@@ -215,7 +215,7 @@ H(1791,10,'10월 1일, 입법의회가 열렸다. 브리소를 따르는 지롱�
 H(1791,11,'11월, 망명자와 선서 거부 사제를 처벌하는 법령에 왕이 거부권을 행사하였다. 사람들은 왕비를 ‘오스트리아 여자’, 왕을 ‘거부권 씨’라 불렀다.');
 
 /* ---------- 1792 ---------- */
-H(1792,2,'1~2월, 생도맹그 반란으로 설탕값이 치솟자 파리 여인들이 식료품 가게를 털었다.',async()=>{if(adult()&&inParis()&&onTrack('craft')&&job().t>=4&&R()<.3)say('가게가 털려 설탕 자루를 빼앗겼다. 여인들은 그대를 매점꾼이라 불렀다.'+fx({money:-Math.round(s.money*.05),rpeople:-3}))});
+H(1792,2,'1~2월, 생도맹그 반란으로 설탕값이 치솟자 파리 여인들이 식료품 가게를 털었다.',async()=>{if(adult()&&inParis()&&onTrack('craft')&&job().t>=4&&R()<.3)say('가게가 털려 설탕 자루를 빼앗겼다. 여인들은 당신을 매점꾼이라 불렀다.'+fx({money:-Math.round(s.money*.05),rpeople:-3}))});
 H(1792,3,'3월, 지롱드파 내각(롤랑, 뒤무리에, 클라비에르)이 들어섰다.');
 H(1792,4,'4월 20일, 프랑스가 오스트리아 왕에게 선전포고하였다. 로베스피에르는 “무장한 선교사를 좋아하는 사람은 없다”며 반대했다. 4월 25일, 단두대가 처음으로 쓰였다.',async()=>{
   if(adult()&&s.age>=18&&politic()){const i=await Q('전쟁인가 평화인가','la guerre','브리소는 전쟁이 배신자를 가려내고 자유를 퍼뜨릴 것이라 한다. 로베스피에르는 적은 코블렌츠가 아니라 파리 안에 있다고 한다.',[{l:'혁명을 유럽에 퍼뜨리자 (브리소)',s:'',a:'radical bold'},{l:'방어전이면 족하다',s:'',a:'safe'},{l:'전쟁은 독재를 부른다 (로베스피에르)',s:'',a:'radical'}]);
@@ -232,7 +232,7 @@ H(1792,8,'8월 10일, 파리 구민과 연맹병이 튈르리 궁을 습격하�
   if(noble()&&isM()){const i=await Q('8월 10일','journée du 10 août','튈르리 궁을 지킬 귀족들을 모은다는 전갈이 왔다.',[{l:'궁으로 가 왕을 지킨다',s:'궁에 남은 수비대의 대부분이 죽었다',a:'royal bold'},{l:'몸을 숨긴다',s:'',a:'safe'}]);
     if(i===0){const p=s.sk.arms>=40||s.st.str>=65?.45:.55;if(await chance(p,'튈르리 수비',`궁을 지킨 이들의 사망률${p<.55?' · 무예·체력으로 줄어듦':''}`)){die('massacre','튈르리 궁을 지키다 군중에게 살해되었다.');await done();return}say('피투성이가 되어 빠져나왔다. 이름이 혐의자 명단에 올랐다.'+fx({sus:30,pol:-10,arms:2,vhon:4,rpeople:-8,relite:4}),'big');facRel('absolutist',10)}else say('지하실에 숨어 총성을 들었다.'+fx({sus:5,vfam:1}));await done();return}
   if(isM()&&s.pol>=25){const i=await Q('8월 10일','journée du 10 août','생탕투안과 생마르소의 구민들이 무장하고 튈르리로 향한다.',[{l:'함께 궁으로 진격한다',s:'',a:'bold radical'},{l:'가지 않는다',s:'',a:'safe'}]);
-    if(i===0){const p=s.sk.arms>=30?.03:.04;if(await chance(p,'튈르리 공격','공격자 가운데 사망자 비율(약 400명)')){die('riot','튈르리 궁 공격 중 스위스 근위대의 총탄에 쓰러졌다.');await done();return}s.flags.dix=true;setStance('crown',2,false);say('궁이 함락되었다. 구민회에서 그대를 ‘8월 10일의 투사’라 불렀다.'+fx({pol:10,fame:5,cour:3,arms:1,rpeople:6,rloc:3,relite:-5,inf:3,brg:4}));facRel('jacobin',6);facRel('cordelier',6);facRel('feuillant',-10)}else say('총성이 오후 내내 이어졌다.');await done()}});
+    if(i===0){const p=s.sk.arms>=30?.03:.04;if(await chance(p,'튈르리 공격','공격자 가운데 사망자 비율(약 400명)')){die('riot','튈르리 궁 공격 중 스위스 근위대의 총탄에 쓰러졌다.');await done();return}s.flags.dix=true;setStance('crown',2,false);say('궁이 함락되었다. 구민회에서 당신을 ‘8월 10일의 투사’라 불렀다.'+fx({pol:10,fame:5,cour:3,arms:1,rpeople:6,rloc:3,relite:-5,inf:3,brg:4}));facRel('jacobin',6);facRel('cordelier',6);facRel('feuillant',-10)}else say('총성이 오후 내내 이어졌다.');await done()}});
 H(1792,8,'8월 19일, 라파예트가 군대를 버리고 오스트리아 쪽으로 넘어갔다. 8월 26일, 선서 거부 사제는 보름 안에 나라를 떠나라는 법령이 내려졌다. 망명자의 재산 몰수가 시작되었다.',async()=>{
   if(s.cond==='emigre'&&s.land>0){s.lostLand=(s.lostLand||0)+s.land;s.land=0;L('망명자 재산 몰수령으로 고향의 땅이 국유재산이 되었다.','sys')}
   if(noble()&&adult()&&R()<.4)s.flags.emigreKin=true;
@@ -242,9 +242,9 @@ H(1792,9,'9월 2~6일, 파리 감옥들에서 학살이 벌어졌다. 수감자 
   if(s.cond==='prison'&&inParis()){sheetOpen('9월 학살','massacres de Septembre');shText('감방 문이 열리고 군중이 들이닥쳤다. 즉석 ‘재판관’들이 이름을 부른다.','q b');
     const known=s.rep.rpeople>=65||s.flags.bastille||s.flags.dix;const p=(s.flags.refractory||noble()?.75:.45)-(known?.2:0);
     if(await chance(p,'감옥 학살',`갇혀 있던 이들 중 죽은 비율${known?' · 민중 사이에 이름이 알려져 줄어듦':''}`)){die('massacre');await done();return}
-    s.cond='normal';say((known?'‘재판관’ 하나가 그대의 얼굴을 알아보았다. ':'')+'“국민 만세!” 소리와 함께 풀려났다. 피 웅덩이를 밟고 나왔다.'+fx({hp:-5,vord:3,bch:-3}),'big');await done()}
+    s.cond='normal';say((known?'‘재판관’ 하나가 당신의 얼굴을 알아보았다. ':'')+'“국민 만세!” 소리와 함께 풀려났다. 피 웅덩이를 밟고 나왔다.'+fx({hp:-5,vord:3,bch:-3}),'big');await done()}
   if(adult()&&inParis()&&s.cond==='normal'&&(s.sk.heal>=30||onTrack('med'))&&R()<.4){const i=await Q('아베 감옥 앞','massacres de Septembre','아베 감옥 마당에 시신이 쌓인다. 구 위원회가 시신을 치우고 다친 이를 돌볼 사람을 찾는다.',[{l:'살아남은 이들을 치료한다',s:'외과 손기술 판정',a:'bold'},{l:'못 본 척 지나간다',s:'',a:'safe'}]);
-    if(i===0){const r=await roll(md([[s.sk.heal>=45,1,'외과 손기술'],[s.st.dex>=55,1,'기술']]).m,{label:'치료'});say(r.v>=4?'풀려난 이들의 칼자국을 꿰맸다. 그들 가운데 몇은 그대의 이름을 평생 기억했다.'+fx({heal:3,vjus:3,relite:3,sus:3}):'손을 쓸 수 없는 이가 더 많았다. 그날 밤 잠들지 못했다.'+fx({heal:1,hp:-2,vjus:2}))}
+    if(i===0){const r=await roll(md([[s.sk.heal>=45,1,'외과 손기술'],[s.st.dex>=55,1,'기술']]).m,{label:'치료'});say(r.v>=4?'풀려난 이들의 칼자국을 꿰맸다. 그들 가운데 몇은 당신의 이름을 평생 기억했다.'+fx({heal:3,vjus:3,relite:3,sus:3}):'손을 쓸 수 없는 이가 더 많았다. 그날 밤 잠들지 못했다.'+fx({heal:1,hp:-2,vjus:2}))}
     else say('골목을 돌아 집으로 왔다.'+fx({vord:1}));await done()}});
 H(1792,9,'9월 20일, 발미에서 프로이센군을 막아냈다. 같은 날 이혼법이 통과되었다. 9월 21~22일, 보통선거로 뽑힌 국민공회가 왕정을 폐지하고 공화국을 선포하였다.',async()=>{
   await fireStory('goethe');
@@ -275,7 +275,7 @@ H(1793,5,'5월 4일, 곡물 최고가격제가 처음 정해졌다. 파리 구�
   if(adult()&&politic()){const e=econ();const i=await Q('최고가격제','le Maximum',`빵값이 평년의 ${e.price}배, 아시냐 지폐는 액면의 ${Math.round(e.cur*100)}%다. 빵값을 법으로 묶을 것인가. 상퀼로트는 매점매석범을 단두대로 보내라 하고, 지롱드파는 자유 거래가 굶주림을 끝낸다고 한다.`,[{l:'최고가격제를 지지한다',s:'',a:'radical'},{l:'자유 거래를 지킨다',s:'',a:'safe greedy'}]);setStance('econ',i===0?1:0,true);
     bnote(i===0?{veq:3,rpeople:2,relite:-1}:{vlib:3,rpeople:-2,relite:1},i===0?'장터의 여인들이 고개를 끄덕였다.':'상인들은 반겼고 장터 사람들은 눈을 흘겼다.');await done()}});
 H(1793,6,'5월 31일~6월 2일, 대포를 앞세운 파리 구민들이 국민공회를 포위하였다. 지롱드파 의원 29명이 체포되었다.',async()=>{
-  if(deputy()&&(s.party==='girondin'||s.flags.girondin||s.pol<30)){const i=await Q('6월 2일','journées du 31 mai–2 juin','대포를 앞세운 국민방위대가 의사당을 둘러쌌다. 지롱드파 의원들의 체포 명단이 읽힌다. 그대의 이름도 들어 있다.',[{l:'지방으로 달아나 반란을 일으킨다',s:'',a:'bold'},{l:'남아서 체포된다',s:'',a:'safe'}]);
+  if(deputy()&&(s.party==='girondin'||s.flags.girondin||s.pol<30)){const i=await Q('6월 2일','journées du 31 mai–2 juin','대포를 앞세운 국민방위대가 의사당을 둘러쌌다. 지롱드파 의원들의 체포 명단이 읽힌다. 당신의 이름도 들어 있다.',[{l:'지방으로 달아나 반란을 일으킨다',s:'',a:'bold'},{l:'남아서 체포된다',s:'',a:'safe'}]);
     if(i===0){s.cond='hiding';s.condSince=T();s.flags.girondin=true;loseJob('% 자리를 버리고 칼바도스로 달아났다.');fx({sus:30})}else{s.flags.girondin=true;loseJob();s.cond='prison';s.prisonKind='terror';say('가택 연금을 거쳐 감옥에 갇혔다.'+fx({sus:30}),'big')}await done();return}
   await purge('girondin');if(s.dead)return;
   if(adult()&&['lyon','marseille','bordeaux'].includes(loc())&&s.pol<40&&(rich()||s.estate==='bourgeois')){const i=await Q('연방주의 반란','insurrection fédéraliste',`${REGIONS[loc()].n}의 구민회가 파리의 자코뱅에 맞서 일어섰다.`,[{l:'반란 시 정부에 가담한다',s:'',a:'bold'},{l:'관망한다',s:'',a:'safe'}]);
@@ -305,7 +305,7 @@ H(1793,10,'10월 9일 리옹 함락. 10월 16일 마리 앙투아네트 처형. 
 H(1793,11,'11월 10일, 노트르담이 ‘이성의 신전’이 되었다. 교회 종이 녹아 대포가 되었다. 11월 8일 롤랑 부인 처형.',async()=>{
   await fireStory('roland');
   if(priest()&&s.flags.juror&&s.cond==='normal'){const i=await Q('사제직 포기','abdication de prêtrise','지역 혁명위원회가 사제들에게 “미신의 직분”을 버리고 서품장을 넘기라고 요구한다. 결혼하면 의심을 덜 받는다.',[{l:'사제직을 내려놓는다',s:'',a:'radical safe'},{l:'버티며 미사를 계속한다',s:'혐의가 짙어진다',a:'pious bold'}]);
-    if(i===0){loseJob('서품장을 위원회에 넘기고 % 자리를 버렸다.');say('옛 교구민들은 길에서 그대를 외면했다.'+fx({faith:-15,sus:-15,pol:6,rloc:-5,brl:6}));s.flags.abdicated=true;setStance('church',2,false)}else say('문 닫힌 성당 대신 헛간에서 미사를 이어 갔다.'+fx({faith:6,sus:25,rloc:4,vhon:3,brl:-4}));await done()}
+    if(i===0){loseJob('서품장을 위원회에 넘기고 % 자리를 버렸다.');say('옛 교구민들은 길에서 당신을 외면했다.'+fx({faith:-15,sus:-15,pol:6,rloc:-5,brl:6}));s.flags.abdicated=true;setStance('church',2,false)}else say('문 닫힌 성당 대신 헛간에서 미사를 이어 갔다.'+fx({faith:6,sus:25,rloc:4,vhon:3,brl:-4}));await done()}
   if(adult()&&s.faith>=70&&!priest()&&R()<.35){const i=await Q('숨은 사제','prêtre caché','선서 거부 사제 한 사람이 밤중에 찾아와 하룻밤 재워 달라고 한다.',[{l:'다락에 숨겨 준다',s:'발각되면 사형',a:'pious bold'},{l:'돌려보낸다',s:'',a:'safe'}]);
     if(i===0){s.seeds.push({t:'hidPriest',y:s.year});say('다락에 숨겨 주고 새벽 미사를 드렸다.'+fx({faith:5,sus:5,brl:-3,vhon:2}))}else say('문을 닫았다.'+fx({faith:-2,vfam:2}));await done()}});
 H(1793,12,'12월, 데물랭이 신문 『비외 코르들리에』에서 “관용위원회”를 세우자고 썼다. 12월 19일 툴롱 탈환, 젊은 포병 대위 보나파르트가 이름을 알렸다. 낭트에서는 카리에가 수천 명을 루아르 강에 수장하였다.',async()=>{await partyInvite('indulgent')});
@@ -316,9 +316,9 @@ H(1794,1,'1~5월, 방데에 튀로 장군의 ‘지옥의 종대’가 휩쓸며
 H(1794,2,'2월 4일(플뤼비오즈 16일), 국민공회가 식민지의 노예제를 폐지하였다.');
 H(1794,3,'2~3월, 초석 캠페인. 모든 시민은 지하실과 마구간의 흙을 긁어 화약의 원료인 초석을 우려내라는 명령이 내려졌다. 파리에서는 구마다 초석 공방이 섰다.',async()=>{
   if(!adult()||soldier()||deputy()||s.age>65||(rich()&&R()<.5))return;
-  const i=await Q('초석 긁기','salpêtre révolutionnaire','구 위원회가 집집마다 지하실 흙을 긁어 오라고 한다. “공화국의 벼락은 그대의 지하실에서 나온다!”',[{l:'흙을 긁어 통에 지고 나른다',s:'체력 판정',a:'work radical'},{l:'돈을 내고 일꾼을 산다',s:'재산 -30',a:'safe'}]);
+  const i=await Q('초석 긁기','salpêtre révolutionnaire','구 위원회가 집집마다 지하실 흙을 긁어 오라고 한다. “공화국의 벼락은 당신의 지하실에서 나온다!”',[{l:'흙을 긁어 통에 지고 나른다',s:'체력 판정',a:'work radical'},{l:'돈을 내고 일꾼을 산다',s:'재산 -30',a:'safe'}]);
   if(i===0){const {m,why}=md([[s.st.str>=55,1,'체력'],[s.st.hp>=60,1,'건강'],[s.st.str<25,-1,'힘 부족'],[s.age>=50,-1,'나이']]);const r=await roll(m,{label:'초석 긁기',why});
-    if(r.v>=4)say('한 달 동안 초석 몇 리브르를 구 공방에 바쳤다. 구민회가 그대의 이름을 게시판에 붙였다.'+fx({str:1,rloc:4,rpeople:3,sus:-6}));else say('흙통을 지다 허리를 삐었다.'+fx({hp:-3,rloc:1,sus:-2}))}
+    if(r.v>=4)say('한 달 동안 초석 몇 리브르를 구 공방에 바쳤다. 구민회가 당신의 이름을 게시판에 붙였다.'+fx({str:1,rloc:4,rpeople:3,sus:-6}));else say('흙통을 지다 허리를 삐었다.'+fx({hp:-3,rloc:1,sus:-2}))}
   else say('일꾼을 사서 보냈다. 이웃들은 ‘돈 많은 시민’이라고 수군거렸다.'+fx({money:-30,rloc:-2,sus:2}));await done()});
 H(1794,3,'3월 24일, 에베르와 코르들리에 지도자들이 단두대에 올랐다.',async()=>{await purge('cordelier')});
 H(1794,4,'4월 5일, 당통과 데물랭이 처형되었다.',async()=>{await fireStory('danton');await purge('indulgent')});
@@ -365,7 +365,7 @@ H(1795,10,'10월 5일(방데미에르 13일), 왕당파 봉기를 보나파르�
 H(1796,2,'2월 19일, 방돔 광장에서 아시냐 인쇄판을 공개로 부수었다. 액면 100리브르짜리 아시냐 한 장으로는 빵 한 덩이도 사기 어렵다.',async()=>{if(!adult())return;const e=econ();
   if((onTrack('craft')&&job().t>=4)||(s.sk.trade>=30&&s.money>=300)){const i=await Q('지폐의 몰락','agiotage',`아시냐는 액면의 ${Math.round(e.cur*1000)/10}%짜리 휴지가 되었다. 팔레루아얄 회랑에서는 금화와 지폐를 바꾸는 투기꾼들이 들끓는다.`,[{l:'지폐를 금화와 물건으로 바꿔 둔다',s:'장사 판정',a:'greedy'},{l:'그대로 둔다',s:'',a:'safe'}]);
     if(i===0){const {m,why}=md([[s.sk.trade>=45,1,'장사·셈'],[s.st.edu>=55,1,'학식'],[!!patron(),1,'은행가 연줄'],[s.sk.trade<20,-1,'셈이 서툶']]);const r=await roll(m,{label:'환전 투기',why});
-      if(r.v>=4)say('떨어지기 전에 바꿔 둔 금화와 설탕 자루가 재산을 지켜 주었다. 사람들은 그대를 ‘투기꾼’이라 불렀다.'+fx({money:Math.round(s.money*.12),trade:2,rpeople:-3,relite:2}));
+      if(r.v>=4)say('떨어지기 전에 바꿔 둔 금화와 설탕 자루가 재산을 지켜 주었다. 사람들은 당신을 ‘투기꾼’이라 불렀다.'+fx({money:Math.round(s.money*.12),trade:2,rpeople:-3,relite:2}));
       else say('남들이 다 바꾼 뒤에야 바꾸었다. 손에 남은 금화는 몇 닢뿐이다.'+fx({money:-Math.round(s.money*.06),trade:1}))}
     else say('지폐 다발을 궤짝에 넣어 두었다.'+fx({money:-Math.round(s.money*.04)}));await done();return}
   if(onTrack('farm')&&job().t>=2&&job().t<=4&&!s.land){say('밀린 소작료와 빚을 휴지 같은 지폐로 갚았다. 지주는 이를 갈았다.'+fx({money:ri(40,120),rloc:1}));return}
@@ -393,7 +393,7 @@ H(1799,12,'12월 25일, 공화력 8년 헌법이 시행되었다. 제1통령 보
   if(!adult())return;
   patronTurn(['bonapartist','thermidor'],true,'새 정부에서 요직을 얻었다. 그의 문간에 청탁하는 이들이 줄을 섰다.');
   if(!deputy()&&s.job&&['law','pol'].includes(job().tr)&&job().t>=2){const i=await Q('새 정부에 대한 충성','ralliement','통령정부가 관리들에게 새 헌법에 충성하겠다는 서약을 받는다. “혁명은 그것을 시작한 원칙들 위에 굳게 섰다. 혁명은 끝났다.”',[{l:'서약하고 자리를 지킨다',s:'영향력 +',a:'safe'},{l:'군인의 정부는 섬기지 않는다',s:'',a:'radical'}]);
-    if(i===0){s.flags.bonap=true;facRel('bonapartist',10);say('새 정부의 임명장을 받았다.'+fx({inf:5,vord:3,bpw:-3}))}else{facRel('bonapartist',-10);facRel('ideologue',5);say('서약하지 않았다. 동료들이 그대를 딱하다는 눈으로 보았다.'+fx({vlib:4,inf:-3}))}await done()}
+    if(i===0){s.flags.bonap=true;facRel('bonapartist',10);say('새 정부의 임명장을 받았다.'+fx({inf:5,vord:3,bpw:-3}))}else{facRel('bonapartist',-10);facRel('ideologue',5);say('서약하지 않았다. 동료들이 당신을 딱하다는 눈으로 보았다.'+fx({vlib:4,inf:-3}))}await done()}
   if(s.flags.bonap||s.party==='bonapartist'||noble()||(s.job&&job().t>=4))regimeNote(s.flags.bonap||s.party==='bonapartist'?'보나파르트의 사람들이 떠오른다.':noble()?'통령정부가 망명 귀족을 불러들이기 시작했다. 옛 귀족에게도 문이 조금 열렸다.':'통령정부가 들어섰다. 권력은 이제 파리의 한 사람에게서 나온다.')});
 H(1800,2,'2월 17일, 도마다 정부가 임명하는 도지사(프레페)를 두었다. 시장도 이제 주민이 아니라 정부가 고른다.',async()=>{
   if(!adult()||(s.job!=='p1'&&s.job!=='p2'))return;
@@ -464,7 +464,7 @@ H(1816,1,'1815년 가을부터 백일천하 때 황제를 섬긴 관리들이 �
   if(!adult()||!s.job||soldier()||!['law','pol','letters','med','church'].includes(job().tr)||job().t<2)return;
   if(s.flags.loyal1815){say('겐트까지 왕을 따랐던 충성이 보답을 받았다.'+fx({inf:5,relite:3}));facRel('ultra',6);return}
   if(!s.flags.centjours&&!s.flags.bonap)return;
-  const i=await Q('숙청','épuration de 1815','도청에서 백일천하 때 황제에게 충성 서약을 한 관리들의 명단을 만들고 있다. 그대의 이름이 그 위에 있다.',[{l:'왕당파 명사에게 보증서를 부탁한다',s:'상류사회 평판·후원자 판정',a:'social'},{l:'충성을 맹세하는 청원서를 쓴다',s:'글씨·문서 판정',a:'safe'},{l:'스스로 물러난다',s:'',a:'bold'}]);
+  const i=await Q('숙청','épuration de 1815','도청에서 백일천하 때 황제에게 충성 서약을 한 관리들의 명단을 만들고 있다. 당신의 이름이 그 위에 있다.',[{l:'왕당파 명사에게 보증서를 부탁한다',s:'상류사회 평판·후원자 판정',a:'social'},{l:'충성을 맹세하는 청원서를 쓴다',s:'글씨·문서 판정',a:'safe'},{l:'스스로 물러난다',s:'',a:'bold'}]);
   if(i===2){loseJob('% 자리를 내놓았다.');s.flags.purged=true;say('황제를 두 번 배신하지는 않겠다.'+fx({vhon:4,inf:-3}));facRel('bonapartist',6);await done();return}
   const {m,why}=i===0?md([[s.rep.relite>=60,1,'상류사회의 평판'],[!!patron(),1,'후원자'],[frelOf('ultra')>=10,1,'극우 왕당파와의 관계'],[s.flags.regicide,-2,'국왕 시해자'],[s.flags.centjours,-1,'백일천하 가담']]):md([[s.sk.pen>=45,1,'글씨·문서'],[s.st.edu>=60,1,'학식'],[s.flags.regicide,-2,'국왕 시해자'],[s.flags.centjours,-1,'백일천하 가담']]);
   const r=await roll(m,{label:'숙청 심사',why});
