@@ -801,7 +801,6 @@ ul.ob-ll li b{font-weight:600;margin-right:2px}
 .st-x::first-letter{font-size:1.5em;font-weight:700;color:var(--rouge)}
 
 /* ================= 책 한 쪽 디자인 (시간 기능 없음) ================= */
-#top .topbar,#top .prog,#top .hint{display:none!important}
 #top{padding-bottom:6px}
 .mini{text-align:center;font-family:var(--fd);font-style:italic;font-size:.86rem;color:var(--mut);letter-spacing:.04em;margin-top:2px}
 #tDaily .hero,#tDaily .home,#tDaily .sched,#tDaily .econ{display:none!important}
@@ -851,6 +850,10 @@ main.tabs{padding-bottom:140px}
 #tDaily .pgwrap{display:flex;justify-content:flex-end}
 .page.draft .pg-title{color:#8A3A2A}.page.draft .pg-rule{border-top-style:dashed}
 
+/* 기록 사이에 섞이는 짧은 줄글 */
+.le.story .tx{font-family:var(--fd),"Noto Serif KR",serif;font-style:italic;color:var(--mut);line-height:1.75}
+.le.story .tx::before{content:"❦ ";font-style:normal;color:var(--gold)}
+
 </style>
 </head>
 <body>
@@ -858,7 +861,6 @@ main.tabs{padding-bottom:140px}
   <header id="top">
     <div class="ribbon" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="decree" id="decree"></div>
-    <div class="mini" id="miniLine"></div>
     <div class="topbar">
       <div class="agebar"><span class="cockade" aria-hidden="true"></span><b id="age">0</b><span class="sfx">세</span><span id="subline"></span></div>
       <div class="ctl">
@@ -867,8 +869,6 @@ main.tabs{padding-bottom:140px}
         <button class="cb" id="nextB" type="button">다음 »</button>
         <button class="cb" id="moreB" type="button" aria-label="메뉴">⋯</button>
         <div class="menu" id="menu" hidden>
-          <button type="button" id="mToc">목차</button>
-          <button type="button" id="mLog">연대기 보기</button>
           <button type="button" id="mInfo">세부 정보</button>
           <button type="button" id="mPol">정치</button>
           <button type="button" id="mHist">이력</button>
@@ -902,19 +902,7 @@ main.tabs{padding-bottom:140px}
       <div class="card home" id="homeCard" hidden></div>
       <div class="card sched" id="schedCard" hidden></div>
       <div class="econ" id="econCard" hidden></div>
-      <div class="book" id="book">
-        <article class="page" id="page" aria-live="polite">
-          <div class="pg-head"><span class="pg-year" id="pgYear"></span><span class="pg-age" id="pgAge"></span></div>
-          <h2 class="pg-title" id="pgTitle"></h2>
-          <div class="pg-rule" aria-hidden="true"></div>
-          <div class="pg-text" id="pgText"></div>
-          <div class="pg-stamp" id="pgStamp" aria-hidden="true"></div>
-          <div class="pg-foot" id="pgFoot"></div>
-        </article>
-        <button class="pg-curl" id="pgCurl" type="button" aria-label="다음 해로 넘기기"></button>
-      </div>
-      <p class="pg-hint" id="pgHint">모서리를 넘기면 한 해가 흐릅니다</p>
-      <div class="card logc" id="logCard" hidden>
+      <div class="card logc" id="logCard">
         <div class="ch"><h2>인생 기록</h2><span class="mut">최근 순 <button class="lnk" id="dataT" type="button" aria-pressed="false">자료 보기</button></span></div>
         <div id="log" aria-live="polite"></div>
         <div class="logmore"><button class="pill" id="logMore" type="button" hidden></button><button class="pill" id="logLess" type="button" hidden>접기</button></div>
@@ -933,7 +921,6 @@ main.tabs{padding-bottom:140px}
     <button type="button" data-t="life"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="17" height="12.5" rx="2"/><path d="M9 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5.5v2M3.5 12.5h17"/></svg>생활</button>
     <button type="button" data-t="era"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 3.5 2 3.5H5"/></svg>시대</button>
   </nav>
-  <div class="pgpill" id="pgPill"><button type="button" id="pgNo" aria-label="목차"></button><button type="button" id="pgMenu" aria-label="메뉴"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button></div>
   <div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="sh-top"><span class="sh-k">사건</span><span class="shdecree" id="shDecree"></span></div><div class="shh"><h2 id="shT"></h2><span class="mut" id="shFr"></span></div><div id="shArt" class="sh-pic" aria-hidden="true"></div><div id="shB"></div></div></div>
   <div class="toast" id="toast" role="status" hidden></div>
 </div>
@@ -9411,60 +9398,11 @@ function ssDraft(){if(!s)return null;const from=s.stMark||0,to=s.log.length;cons
   picks.forEach(p=>{const sea=stSeason(p.m);ev.push((sea!==last&&!/^[“‘]|^\d+월/.test(p.t)?sea+' ':'')+p.t);last=sea});
   const out=[s.ssLead[s.year],...ev].filter(Boolean);return ssParas(ssSplit(out.join(' ')))}
 
-/* ================= 책 한 쪽: 시간이 흐르는 대신 쪽을 넘긴다 =================
-   - 자동으로 흐르던 시간(타이머·배속·진행 막대)을 없앤다. 쪽 모서리를 넘기면 한 해를 살고, 그해의 이야기가 새 쪽에 적힌다.
-   - 그해 안에 결정할 일이 생기면 사건 창이 뜨고, 고르고 나면 다시 넘어간다.
-   - 아래 알약: 쪽 번호(누르면 목차) · 메뉴. 아래 탭 막대는 예전 그대로(프로필 · 관계 · 일상 · 생활 · 시대). */
-let pgView=-1,pgBusy=false;
-// -1: 가장 최근 쪽, -2: 서장
-
-// 타이머로 흐르지 않게 한다
-schedule=function(){clearTimeout(timer);ticking=false};
-async function liveYear(){if(!s||s.dead||pgBusy||busy)return;pgBusy=true;document.body.classList.add('living');const y=s.year;let g=0;
-  try{while(s&&!s.dead&&s.year===y&&g++<40){await step();if(!running)break}}catch(e){console.error(e)}
-  pgBusy=false;document.body.classList.remove('living');s.pgSeen=s.log.length;pgView=-1;renderStory(true)}
-function pgPrologue(){const rows=s.log.filter(e=>['big','ev'].includes(e.k)).slice(0,3).map(e=>stClean(e.t));
-  const fam=[];if(s.fa&&s.fa.alive)fam.push(`아버지는 ${s.fa.age}세`);if(s.mo&&s.mo.alive)fam.push(`어머니는 ${s.mo.age}세`);
-  const sib=(typeof stSibs==='function'?stSibs():[]).filter(x=>x.by<=s.year);
-  return rows.join(' ')+(fam.length?` ${fam.join(', ')}였다.`:'')+(sib.length?` 집에는 ${jo(sib.map(x=>`${stTerm(x)} ${x.n}`).join(', '),'이','가')} 있었다.`:' 당신은 그 집의 첫아이였다.')+' 당신의 이야기는 여기서 시작된다.'}
-// 쪽 목록: 서장 · 지난 해들 · (있으면) 올해 쓰이는 중
-function pgPages(){const L0=s.story||[];const P=[{k:'pro'}].concat(L0.map(c=>({k:'ch',c})));let d=null;try{if(pgBusy||s.log.length>(s.pgSeen||0))d=ssDraft()}catch(e){}if(d)P.push({k:'dr',d});return P}
-const pgCur=P=>pgView<0||pgView>=P.length?P.length-1:pgView;
-renderStory=function(force){const Pg=$('#page');if(!Pg||!s)return;const P=pgPages();const i=pgCur(P),pg=P[i];
-  let yr,ag,ti,paras;
-  if(pg.k==='pro'){yr=s.by;ag='태어난 해';ti='서장';paras=[pgPrologue()]}
-  else if(pg.k==='ch'){const c=pg.c;yr=c.y;ag=`${c.a}세`;ti=c.t;paras=c.p&&c.p.length?c.p:[c.x]}
-  else{yr=s.year;ag=`${s.age}세`;ti='올해 · 쓰이는 중';paras=pg.d}
-  // 예전의 긴 쪽은 500자 안팎으로 줄여 보여 준다
-  if(pg.k==='ch'&&paras.join(' ').length>700){try{paras=slExpand(pg.c)}catch(e){}}
-  $('#pgYear').textContent=yr;$('#pgAge').textContent=ag;$('#pgTitle').textContent=ti;Pg.classList.toggle('draft',pg.k==='dr');
-  const tx=$('#pgText');tx.innerHTML='';const body=paras.join(' ');tx.classList.toggle('dc',/^[가-힣]/.test(body));paras.forEach(t=>tx.appendChild(el('p',null,t)));
-  $('#pgStamp').innerHTML=`<span>PARIS</span><b>${yr}</b><span>${noble()?'NOBLESSE':s.estate==='bourgeois'?'BOURGEOISIE':'TIERS ÉTAT'}</span>`;
-  $('#pgFoot').textContent=`— ${i+1} —`;$('#pgNo').textContent=i+1;
-  const latest=i===P.length-1;const cu=$('#pgCurl');cu.setAttribute('aria-label',latest?(s.dead?'끝':'다음 해로 넘기기'):'다음 쪽');cu.disabled=!!s.dead&&latest;
-  $('#pgHint').textContent=!latest?'지난 쪽을 보고 있습니다. 모서리를 넘기면 다음 쪽으로 갑니다.':pg.k==='dr'?'방금 일어난 일이 이 쪽에 적혔습니다. 모서리를 넘기면 남은 한 해가 흐릅니다.':P.length<3?'모서리를 넘기면 한 해가 흐릅니다':'';
-  $('#miniLine').textContent=`${s.given[0]} ${s.sur[0]} · ${s.year}년 · ${s.age}세`};
-async function pgTurn(){if(!s||pgBusy)return;const P=pgPages();const Pg=$('#page');const cur=pgCur(P);
-  Pg.classList.add('turn');await new Promise(r=>setTimeout(r,260));
-  if(cur<P.length-1){pgView=cur+1;renderStory(true)}else{Pg.classList.remove('turn');pgView=-1;await liveYear()}
-  Pg.classList.remove('turn');Pg.classList.add('land');setTimeout(()=>Pg.classList.remove('land'),400);window.scrollTo({top:0})}
-function pgToc(){const pin=openPanel('목차');const ol=el('ol','toc');const P=pgPages();
-  P.forEach((pg,i)=>{const li=el('li');const b=el('button',null);b.type='button';const t=pg.k==='pro'?['서장',s.by,'태어난 해']:pg.k==='ch'?[pg.c.t,pg.c.y,`${pg.c.a}세`]:['올해 · 쓰이는 중',s.year,`${s.age}세`];
-    b.innerHTML=`<span class="tn">${i+1}</span><span class="tt">${t[0]}</span><span class="ty">${t[1]} · ${t[2]}</span>`;b.onclick=()=>{pgView=i===P.length-1?-1:i;closePanel();setTab('daily');renderStory(true)};li.appendChild(b);ol.appendChild(li)});pin.appendChild(ol)}
-{const cu=$('#pgCurl');if(cu)cu.onclick=()=>pgTurn();const pg=$('#page');if(pg)pg.addEventListener('click',e=>{if(e.target.closest('.pg-curl'))return});
- const no=$('#pgNo');if(no)no.onclick=e=>{e.stopPropagation();if(s)pgToc()};
- const mn=$('#pgMenu'),menu=$('#menu');if(menu){document.body.appendChild(menu);menu.classList.add('pgmenu')}
- if(mn)mn.onclick=e=>{e.stopPropagation();menu.hidden=!menu.hidden};
- const mt=$('#mToc');if(mt)mt.onclick=()=>{menu.hidden=true;if(s)pgToc()};
- const ml=$('#mLog');if(ml)ml.onclick=()=>{menu.hidden=true;setTab('daily');const lc=$('#logCard');lc.hidden=!lc.hidden;ml.textContent=lc.hidden?'연대기 보기':'연대기 닫기';if(!lc.hidden){try{rebuildLog()}catch(e){}lc.scrollIntoView({behavior:'smooth'})}};
- document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>setTab(b.dataset.t))}
-{const _st=start;start=function(f,o){_st(f,o);pgView=-1;if(f&&s)s.pgSeen=s.log.length;try{renderStory(true)}catch(e){}}}
-// 이야기 탭에서는 알약이 쪽 아래 흐름 속에, 다른 탭에서는 화면 구석에 떠 있다
-function pgPillPlace(t){const pill=$('#pgPill');if(!pill)return;if(t==='daily'){let w=$('#tDaily .pgwrap');if(!w){w=el('div','pgwrap');$('#pgHint').after(w)}w.appendChild(pill);pill.classList.add('inflow')}else{document.body.appendChild(pill);pill.classList.remove('inflow')}}
-{const _set=setTab;setTab=function(t){_set(t);pgPillPlace(t);if(t==='daily'&&s){pgView=-1;try{renderStory(true)}catch(e){}}}}
-pgPillPlace('daily');
-
-{const _d=done;done=async function(){const r=await _d.apply(this,arguments);try{if(s&&curTab==='daily'){pgView=-1;renderStory(true)}}catch(e){}return r}}
+/* ================= 기록 사이에 섞는 짧은 줄글 =================
+   해가 바뀔 때마다 신분과 나이에 맞는 일상 한 줄을 기록에 넣는다. 학교에 들어간 뒤에는 가끔 벗의 일상 한 줄을 더한다. */
+{const _ny=newYear;newYear=function(){_ny();try{if(!s||s.dead||s.age<1)return;
+  const c=ssClassLines(s.year,s.age,1)[0];if(c)L(c,'story');
+  if(s.age>=7&&R()<.45&&typeof BF_KEYS!=='undefined'){const ks=BF_KEYS.filter(k=>bfMet(k)&&bfAlive(k)&&bfR(k).cond==='normal');if(ks.length){const k=pick(ks);const ph=s.age<14?0:s.age<23?1:2;const t=stPick('mix'+k+ph,ST_BF[k][ph].map(x=>typeof x==='function'?x():x));if(t)L(t,'story')}}}catch(e){console.error(e)}}}
 
 </script>
 </body>
