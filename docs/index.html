@@ -845,11 +845,6 @@ body.covered .pgpill{display:none}
 ol.toc{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 ol.toc button{width:100%;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:baseline;text-align:left;background:none;border:0;border-bottom:1px dotted var(--line);padding:9px 2px;font:inherit;color:inherit;cursor:pointer}
 ol.toc .tn{font-family:'Cormorant Garamond',serif;color:var(--mut)}ol.toc .tt{font-weight:500}ol.toc .ty{font-size:.8rem;color:var(--mut)}
-/* 아래 탭: 네 개의 둥근 단추 */
-.nav{background:#F3EBDA!important;border-top:1px solid #2B2219!important;box-shadow:0 -1px 0 #F3EBDA,0 -3px 0 rgba(43,34,25,.35);grid-template-columns:repeat(4,1fr)!important;gap:8px;padding:9px 12px calc(9px + env(safe-area-inset-bottom,0px))!important}
-.nav button{border:1.5px solid #2B2219!important;border-radius:999px!important;background:transparent!important;color:#2B2219!important;padding:6px 4px!important;display:flex!important;flex-direction:row!important;align-items:center;justify-content:center;gap:5px;font-family:'Noto Serif KR',serif;font-size:.84rem}
-.nav button .ni{width:17px;height:17px;stroke:currentColor}
-.nav button[aria-current="page"]{background:#2B2219!important;color:#F3EBDA!important}
 main.tabs{padding-bottom:140px}
 
 .pgpill.inflow{position:static;margin:14px 6px 0 auto;width:max-content}
@@ -931,9 +926,10 @@ main.tabs{padding-bottom:140px}
     </section>
   </main>
   <nav class="nav" id="nav" aria-label="화면">
-    <button type="button" data-t="daily" aria-current="page"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13.5"/></svg>이야기</button>
     <button type="button" data-t="profile"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>프로필</button>
     <button type="button" data-t="rel"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="8.5" r="3.2"/><circle cx="16.5" cy="9.5" r="2.7"/><path d="M2.5 20c0-3.6 2.7-6 6-6s6 2.4 6 6M14 14.4c3.6-.6 7.5 1.4 7.5 5.6"/></svg>관계</button>
+    <button type="button" data-t="daily" aria-current="page"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 4l8.5 6.5V20a1 1 0 0 1-1 1h-5v-6h-5v6h-5a1 1 0 0 1-1-1z"/></svg>일상</button>
+    <button type="button" data-t="life"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="17" height="12.5" rx="2"/><path d="M9 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5.5v2M3.5 12.5h17"/></svg>생활</button>
     <button type="button" data-t="era"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 3.5 2 3.5H5"/></svg>시대</button>
   </nav>
   <div class="pgpill" id="pgPill"><button type="button" id="pgNo" aria-label="목차"></button><button type="button" id="pgMenu" aria-label="메뉴"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button></div>
@@ -9152,7 +9148,7 @@ function renderStory(force){const B=$('#storyBox');if(!B||!s)return;const n=(s.s
 /* ================= 책 한 쪽: 시간이 흐르는 대신 쪽을 넘긴다 =================
    - 자동으로 흐르던 시간(타이머·배속·진행 막대)을 없앤다. 쪽 모서리를 넘기면 한 해를 살고, 그해의 이야기가 새 쪽에 적힌다.
    - 그해 안에 결정할 일이 생기면 사건 창이 뜨고, 고르고 나면 다시 넘어간다.
-   - 아래 알약: 쪽 번호(누르면 목차) · 메뉴. 탭은 이야기 · 프로필 · 관계 · 시대 넷. 생활은 프로필 아래로 옮겼다. */
+   - 아래 알약: 쪽 번호(누르면 목차) · 메뉴. 아래 탭 막대는 예전 그대로(프로필 · 관계 · 일상 · 생활 · 시대). */
 let pgView=-1,pgBusy=false;
 // -1: 가장 최근 쪽, -2: 서장
 const pgIdx=()=>{const n=(s.story||[]).length;return pgView===-2?-1:(pgView<0||pgView>=n?n-1:pgView)};
@@ -9190,9 +9186,6 @@ function pgToc(){const pin=openPanel('목차');const ol=el('ol','toc');const L0=
  const mt=$('#mToc');if(mt)mt.onclick=()=>{menu.hidden=true;if(s)pgToc()};
  const ml=$('#mLog');if(ml)ml.onclick=()=>{menu.hidden=true;setTab('daily');const lc=$('#logCard');lc.hidden=!lc.hidden;ml.textContent=lc.hidden?'연대기 보기':'연대기 닫기';if(!lc.hidden){try{rebuildLog()}catch(e){}lc.scrollIntoView({behavior:'smooth'})}};
  document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>setTab(b.dataset.t))}
-// 생활은 프로필 아래에
-showActs=function(){setTab('profile')};
-{const _rt=renderTab;renderTab=function(t){_rt(t);if(t==='profile'&&s){try{const H=$('#profMore');const d=el('div','life-in');H.appendChild(d);lifeTab(d)}catch(e){console.error(e)}}}}
 {const _st=start;start=function(f,o){_st(f,o);pgView=-1;try{renderStory(true)}catch(e){}}}
 // 이야기 탭에서는 알약이 쪽 아래 흐름 속에, 다른 탭에서는 화면 구석에 떠 있다
 function pgPillPlace(t){const pill=$('#pgPill');if(!pill)return;if(t==='daily'){let w=$('#tDaily .pgwrap');if(!w){w=el('div','pgwrap');$('#pgHint').after(w)}w.appendChild(pill);pill.classList.add('inflow')}else{document.body.appendChild(pill);pill.classList.remove('inflow')}}

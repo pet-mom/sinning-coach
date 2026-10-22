@@ -1,7 +1,7 @@
 /* ================= 책 한 쪽: 시간이 흐르는 대신 쪽을 넘긴다 =================
    - 자동으로 흐르던 시간(타이머·배속·진행 막대)을 없앤다. 쪽 모서리를 넘기면 한 해를 살고, 그해의 이야기가 새 쪽에 적힌다.
    - 그해 안에 결정할 일이 생기면 사건 창이 뜨고, 고르고 나면 다시 넘어간다.
-   - 아래 알약: 쪽 번호(누르면 목차) · 메뉴. 탭은 이야기 · 프로필 · 관계 · 시대 넷. 생활은 프로필 아래로 옮겼다. */
+   - 아래 알약: 쪽 번호(누르면 목차) · 메뉴. 아래 탭 막대는 예전 그대로(프로필 · 관계 · 일상 · 생활 · 시대). */
 let pgView=-1,pgBusy=false;
 // -1: 가장 최근 쪽, -2: 서장
 const pgIdx=()=>{const n=(s.story||[]).length;return pgView===-2?-1:(pgView<0||pgView>=n?n-1:pgView)};
@@ -39,9 +39,6 @@ function pgToc(){const pin=openPanel('목차');const ol=el('ol','toc');const L0=
  const mt=$('#mToc');if(mt)mt.onclick=()=>{menu.hidden=true;if(s)pgToc()};
  const ml=$('#mLog');if(ml)ml.onclick=()=>{menu.hidden=true;setTab('daily');const lc=$('#logCard');lc.hidden=!lc.hidden;ml.textContent=lc.hidden?'연대기 보기':'연대기 닫기';if(!lc.hidden){try{rebuildLog()}catch(e){}lc.scrollIntoView({behavior:'smooth'})}};
  document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>setTab(b.dataset.t))}
-// 생활은 프로필 아래에
-showActs=function(){setTab('profile')};
-{const _rt=renderTab;renderTab=function(t){_rt(t);if(t==='profile'&&s){try{const H=$('#profMore');const d=el('div','life-in');H.appendChild(d);lifeTab(d)}catch(e){console.error(e)}}}}
 {const _st=start;start=function(f,o){_st(f,o);pgView=-1;try{renderStory(true)}catch(e){}}}
 // 이야기 탭에서는 알약이 쪽 아래 흐름 속에, 다른 탭에서는 화면 구석에 떠 있다
 function pgPillPlace(t){const pill=$('#pgPill');if(!pill)return;if(t==='daily'){let w=$('#tDaily .pgwrap');if(!w){w=el('div','pgwrap');$('#pgHint').after(w)}w.appendChild(pill);pill.classList.add('inflow')}else{document.body.appendChild(pill);pill.classList.remove('inflow')}}

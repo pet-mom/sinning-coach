@@ -832,11 +832,6 @@ body.covered .pgpill{display:none}
 ol.toc{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 ol.toc button{width:100%;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:baseline;text-align:left;background:none;border:0;border-bottom:1px dotted var(--line);padding:9px 2px;font:inherit;color:inherit;cursor:pointer}
 ol.toc .tn{font-family:'Cormorant Garamond',serif;color:var(--mut)}ol.toc .tt{font-weight:500}ol.toc .ty{font-size:.8rem;color:var(--mut)}
-/* 아래 탭: 네 개의 둥근 단추 */
-.nav{background:#F3EBDA!important;border-top:1px solid #2B2219!important;box-shadow:0 -1px 0 #F3EBDA,0 -3px 0 rgba(43,34,25,.35);grid-template-columns:repeat(4,1fr)!important;gap:8px;padding:9px 12px calc(9px + env(safe-area-inset-bottom,0px))!important}
-.nav button{border:1.5px solid #2B2219!important;border-radius:999px!important;background:transparent!important;color:#2B2219!important;padding:6px 4px!important;display:flex!important;flex-direction:row!important;align-items:center;justify-content:center;gap:5px;font-family:'Noto Serif KR',serif;font-size:.84rem}
-.nav button .ni{width:17px;height:17px;stroke:currentColor}
-.nav button[aria-current="page"]{background:#2B2219!important;color:#F3EBDA!important}
 main.tabs{padding-bottom:140px}
 
 .pgpill.inflow{position:static;margin:14px 6px 0 auto;width:max-content}
