@@ -836,3 +836,4 @@ main.tabs{padding-bottom:140px}
 
 .pgpill.inflow{position:static;margin:14px 6px 0 auto;width:max-content}
 #tDaily .pgwrap{display:flex;justify-content:flex-end}
+.page.draft .pg-title{color:#8A3A2A}.page.draft .pg-rule{border-top-style:dashed}
