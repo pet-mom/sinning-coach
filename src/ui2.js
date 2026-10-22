@@ -144,7 +144,7 @@ function eraTab(H){H.innerHTML='';const top=el('section','card era-h');const cv=
   if(eraSub==='pol'){const pc=el('section','card polc');H.appendChild(pc);const keep=$('#polCard');renderPolCardInto(pc);buildPolitics(cardIn(H,'정치','La politique'))}
   if(eraSub==='eco'){const c=cardIn(H,'그 시절의 경제','L’économie');const E=econ();const g=el('div','egrid two');g.innerHTML=`<div><span class="lab">물가</span><b>×${E.price.toFixed(2)}</b><small>${econWord('price',E.price)}</small></div><div><span class="lab">화폐 가치</span><b>${Math.round(E.cur*100)}%</b><small>${econWord('cur',E.cur)}</small></div>`;c.appendChild(g);lifeEcon(c)}
   if(eraSub==='src'){const c=cardIn(H,'참고 문헌','Sources');if(typeof LIFE_SRC==='undefined'||!LIFE_SRC.length)c.appendChild(el('p','mut','자료 없음'));else{c.appendChild(el('p','mut small',`생활사 장면 ${LIFE_DATA.length}건의 근거가 된 학술 자료 ${LIFE_SRC.length}개.`));const ol=el('ol','srcs');LIFE_SRC.slice().sort((a,b)=>b.n-a.n).slice(0,60).forEach(x=>{const li=el('li');const a=el('a',null,x.c);a.href=x.u;a.target='_blank';a.rel='noopener';li.appendChild(a);ol.appendChild(li)});c.appendChild(ol);const b=el('button','pill','전체 목록');b.type='button';b.onclick=showSources;c.appendChild(b)}}}
-function renderPolCardInto(C){const real=$('#polCard');if(real){const id=real.id;real.removeAttribute('id');C.id='polCard';renderPolCard();C.removeAttribute('id');real.id=id}}
+function renderPolCardInto(C){renderPolCard(C)}
 
 /* ---------- 탭 다시 그리기(ui.js의 renderTab을 바꾼다) ---------- */
 renderTab=function(t){if(!s||tabBusy)return;tabBusy=true;const keepY=window.scrollY;

@@ -7731,7 +7731,7 @@ function facCard(f,big){const a=affinity(f),mem=s.party===f.id;const c=el('butto
    `<span class="fr2">${frelOf(f.id)?`${frelWord(frelOf(f.id))} ${frelOf(f.id)>0?'+':''}${frelOf(f.id)}`:''}${s.party&&!mem&&FAC[s.party]?(()=>{const v=facPair(s.party,f.id);return v>=40?' · 우리와 동맹':v<=-40?' · 우리와 적대':''})():''}</span>`;
   c.onclick=()=>showPolitics();return c}
 function specLabels(){const S=spectrum();return S.l.map(x=>x[1])}
-function renderPolCard(){const C=$('#polCard');C.innerHTML='';const pp=pubPol(),S=spectrum();
+function renderPolCard(C0){const C=C0||$('#polCard');if(!C)return;C.innerHTML='';const pp=pubPol(),S=spectrum();
   const h=el('div','ch');h.innerHTML=`<h2>정치 성향</h2><span class="mut small">${S.n}</span>`;C.appendChild(h);
   const lab=el('div','pol-lab');lab.innerHTML=`<b style="color:${s.pol<=-25?'var(--roy)':s.pol>=35?'var(--rad)':'var(--fg)'}">${polLabel(s.pol)}</b> <span class="mut">${s.pol>0?'+':''}${s.pol}</span>${pp!==s.pol?` <span class="mut small">· 겉으로는 ${polLabel(pp)}</span>`:''}`;C.appendChild(lab);
   const sp=el('div','spec');sp.innerHTML=`<div class="bar">${pp!==s.pol?`<i class="pub" style="left:${polPos(pp)}%"></i>`:''}<i class="mk" style="left:${polPos(s.pol)}%"></i></div><div class="lbl">${specLabels().map(x=>`<span>${x}</span>`).join('')}</div>`;C.appendChild(sp);
@@ -7991,7 +7991,7 @@ let curTab='daily';
 const TABS={profile:'#tProfile',rel:'#tRel',daily:'#tDaily',life:'#tLife',era:'#tEra'};
 function setTab(t){if(!TABS[t])return;curTab=t;Object.entries(TABS).forEach(([k,q])=>{$(q).hidden=k!==t});document.querySelectorAll('#nav button').forEach(b=>{if(b.dataset.t===t)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
   closePanel();if(s)renderTab(t);if(t==='daily'&&s)drawScene($('#cv'));window.scrollTo({top:0,behavior:'auto'})}
-function showActs(){setTab('life')}function showPolitics(){setTab('era')}function showInfo(){setTab('profile')}
+function showActs(){setTab('life')}function showPolitics(){try{eraSub='pol'}catch(e){}setTab('era')}function showInfo(){setTab('profile')}
 function hostClear(q){const h=$(q);h.innerHTML='';return h}
 function cardIn(host,title,fr){const c=el('section','card');const h=el('div','ch');h.innerHTML=`<h2>${title}</h2>${fr?`<span class="fr">${fr}</span>`:''}`;c.appendChild(h);host.appendChild(c);return c}
 let tabBusy=false;
@@ -8176,7 +8176,7 @@ function eraTab(H){H.innerHTML='';const top=el('section','card era-h');const cv=
   if(eraSub==='pol'){const pc=el('section','card polc');H.appendChild(pc);const keep=$('#polCard');renderPolCardInto(pc);buildPolitics(cardIn(H,'정치','La politique'))}
   if(eraSub==='eco'){const c=cardIn(H,'그 시절의 경제','L’économie');const E=econ();const g=el('div','egrid two');g.innerHTML=`<div><span class="lab">물가</span><b>×${E.price.toFixed(2)}</b><small>${econWord('price',E.price)}</small></div><div><span class="lab">화폐 가치</span><b>${Math.round(E.cur*100)}%</b><small>${econWord('cur',E.cur)}</small></div>`;c.appendChild(g);lifeEcon(c)}
   if(eraSub==='src'){const c=cardIn(H,'참고 문헌','Sources');if(typeof LIFE_SRC==='undefined'||!LIFE_SRC.length)c.appendChild(el('p','mut','자료 없음'));else{c.appendChild(el('p','mut small',`생활사 장면 ${LIFE_DATA.length}건의 근거가 된 학술 자료 ${LIFE_SRC.length}개.`));const ol=el('ol','srcs');LIFE_SRC.slice().sort((a,b)=>b.n-a.n).slice(0,60).forEach(x=>{const li=el('li');const a=el('a',null,x.c);a.href=x.u;a.target='_blank';a.rel='noopener';li.appendChild(a);ol.appendChild(li)});c.appendChild(ol);const b=el('button','pill','전체 목록');b.type='button';b.onclick=showSources;c.appendChild(b)}}}
-function renderPolCardInto(C){const real=$('#polCard');if(real){const id=real.id;real.removeAttribute('id');C.id='polCard';renderPolCard();C.removeAttribute('id');real.id=id}}
+function renderPolCardInto(C){renderPolCard(C)}
 
 /* ---------- 탭 다시 그리기(ui.js의 renderTab을 바꾼다) ---------- */
 renderTab=function(t){if(!s||tabBusy)return;tabBusy=true;const keepY=window.scrollY;

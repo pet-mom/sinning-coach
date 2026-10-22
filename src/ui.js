@@ -71,7 +71,7 @@ function facCard(f,big){const a=affinity(f),mem=s.party===f.id;const c=el('butto
    `<span class="fr2">${frelOf(f.id)?`${frelWord(frelOf(f.id))} ${frelOf(f.id)>0?'+':''}${frelOf(f.id)}`:''}${s.party&&!mem&&FAC[s.party]?(()=>{const v=facPair(s.party,f.id);return v>=40?' · 우리와 동맹':v<=-40?' · 우리와 적대':''})():''}</span>`;
   c.onclick=()=>showPolitics();return c}
 function specLabels(){const S=spectrum();return S.l.map(x=>x[1])}
-function renderPolCard(){const C=$('#polCard');C.innerHTML='';const pp=pubPol(),S=spectrum();
+function renderPolCard(C0){const C=C0||$('#polCard');if(!C)return;C.innerHTML='';const pp=pubPol(),S=spectrum();
   const h=el('div','ch');h.innerHTML=`<h2>정치 성향</h2><span class="mut small">${S.n}</span>`;C.appendChild(h);
   const lab=el('div','pol-lab');lab.innerHTML=`<b style="color:${s.pol<=-25?'var(--roy)':s.pol>=35?'var(--rad)':'var(--fg)'}">${polLabel(s.pol)}</b> <span class="mut">${s.pol>0?'+':''}${s.pol}</span>${pp!==s.pol?` <span class="mut small">· 겉으로는 ${polLabel(pp)}</span>`:''}`;C.appendChild(lab);
   const sp=el('div','spec');sp.innerHTML=`<div class="bar">${pp!==s.pol?`<i class="pub" style="left:${polPos(pp)}%"></i>`:''}<i class="mk" style="left:${polPos(s.pol)}%"></i></div><div class="lbl">${specLabels().map(x=>`<span>${x}</span>`).join('')}</div>`;C.appendChild(sp);
@@ -331,7 +331,7 @@ let curTab='daily';
 const TABS={profile:'#tProfile',rel:'#tRel',daily:'#tDaily',life:'#tLife',era:'#tEra'};
 function setTab(t){if(!TABS[t])return;curTab=t;Object.entries(TABS).forEach(([k,q])=>{$(q).hidden=k!==t});document.querySelectorAll('#nav button').forEach(b=>{if(b.dataset.t===t)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
   closePanel();if(s)renderTab(t);if(t==='daily'&&s)drawScene($('#cv'));window.scrollTo({top:0,behavior:'auto'})}
-function showActs(){setTab('life')}function showPolitics(){setTab('era')}function showInfo(){setTab('profile')}
+function showActs(){setTab('life')}function showPolitics(){try{eraSub='pol'}catch(e){}setTab('era')}function showInfo(){setTab('profile')}
 function hostClear(q){const h=$(q);h.innerHTML='';return h}
 function cardIn(host,title,fr){const c=el('section','card');const h=el('div','ch');h.innerHTML=`<h2>${title}</h2>${fr?`<span class="fr">${fr}</span>`:''}`;c.appendChild(h);host.appendChild(c);return c}
 let tabBusy=false;
