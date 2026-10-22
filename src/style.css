@@ -772,3 +772,17 @@ ul.ob-ll li b{font-weight:600;margin-right:2px}
 .pf2-in-l b{font-style:normal;font-weight:600;color:#D9BC7A}
 .pf2-warn{margin:0;text-align:center;font-size:.85rem;color:var(--rouge)}
 @media (max-width:360px){.pf2-row{grid-template-columns:78px 1fr}.pf2-por{width:78px;height:98px}}
+.nf-est{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.nf-est label{font-size:.85rem;color:var(--mut)}
+#estSel{font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--era);background:transparent;border:1px solid var(--line);padding:4px 10px;border-radius:2px}
+#estFr{display:block;width:100%;text-align:center;font-size:.85rem}
+
+/* ---------- 이야기(일상 탭) ---------- */
+.storyc .ch .fr{font-family:var(--fd);font-style:italic}
+.st-now{font-size:.82rem;color:var(--mut);font-style:italic;text-align:center;margin:2px 0 10px}
+.st-ch{padding:12px 2px 14px;border-top:1px solid var(--line)}
+.st-ch:first-of-type{border-top:0}
+.st-h{font-size:.76rem;color:var(--mut);letter-spacing:.06em;text-align:center}
+.st-t{margin:2px 0 8px;text-align:center;font-family:var(--fd);font-size:1.15rem;font-weight:600}
+.st-x{margin:0;font-size:.98rem;line-height:1.9;text-align:left;word-break:keep-all;text-indent:1em}
+.st-x::first-letter{font-size:1.5em;font-weight:700;color:var(--rouge)}

@@ -358,11 +358,13 @@ function eraCard(c){c.appendChild(el('p',null,`${ruler()} · ${s.year}년${repYe
 let pre={};
 function rollPre(){const sex=R()<.5?'M':'F';const PW={epee:.8,robe:1.4,hobereau:.3,bourgeois:16,artisan:81.5};const estate=wpick(Object.entries(PW));const nm=rollName(sex,estate,'paris');
   pre={sex,estate,given:nm.g[0],givenFr:nm.g[1],sur:nm.f[0],surFr:nm.f[1],year:ri(1750,1790),month:ri(1,12),day:ri(1,28)};fillPre()}
-function fillPre(){$('#inGiven').value=pre.given;$('#inSur').value=pre.sur;$('#estName').textContent=ESTATES[pre.estate].n;$('#estFr').textContent=' · '+ESTATES[pre.estate].fr;
+function fillPre(){$('#inGiven').value=pre.given;$('#inSur').value=pre.sur;const es=$('#estSel');if(es)es.value=pre.estate;$('#estFr').textContent=ESTATES[pre.estate].fr;
   document.querySelectorAll('.nf-sex button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.x===pre.sex)));$('#bY').value=pre.year;$('#bM').value=pre.month;fillDays();$('#bD').value=pre.day}
 function fillDays(){const y=+$('#bY').value,m=+$('#bM').value;const n=new Date(y,m,0).getDate();const cur=+$('#bD').value||pre.day||1;$('#bD').innerHTML=Array.from({length:n},(_,i)=>`<option value="${i+1}">${i+1}일</option>`).join('');$('#bD').value=Math.min(cur,n)}
 function bootStart(){$('#bY').innerHTML=Array.from({length:41},(_,i)=>`<option value="${1750+i}">${1750+i}년</option>`).join('');$('#bM').innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1}월</option>`).join('');
   $('#bY').onchange=fillDays;$('#bM').onchange=fillDays;$('#rollB').onclick=()=>rollPre();
+  {const es=$('#estSel');if(es){es.innerHTML=['epee','robe','hobereau','bourgeois','artisan'].map(k=>`<option value="${k}">${ESTATES[k].n}</option>`).join('');
+    es.onchange=()=>{const tg=$('#inGiven').value.trim(),ts=$('#inSur').value.trim();if(tg&&tg!==pre.given){pre.given=tg;pre.givenFr=''}const keep=ts&&ts!==pre.sur;pre.estate=es.value;if(keep){pre.sur=ts;pre.surFr=''}else{const nm=rollName(pre.sex,pre.estate,'paris');pre.sur=nm.f[0];pre.surFr=nm.f[1]}fillPre()}}}
   document.querySelectorAll('.nf-sex button').forEach(b=>b.onclick=()=>{if(pre.sex===b.dataset.x)return;pre.sex=b.dataset.x;const g=rollName(pre.sex,pre.estate,'paris').g;pre.given=g[0];pre.givenFr=g[1];fillPre()});
   $('#goB').onclick=()=>{const g=$('#inGiven').value.trim(),sr=$('#inSur').value.trim();start(true,{hard:true,sex:pre.sex,estate:pre.estate,year:+$('#bY').value,month:+$('#bM').value,day:+$('#bD').value,given:g||pre.given,givenFr:(!g||g===pre.given)?pre.givenFr:'',sur:sr||pre.sur,surFr:(!sr||sr===pre.sur)?pre.surFr:''})};
   document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>setTab(b.dataset.t));document.body.classList.add('covered');rollPre()}
