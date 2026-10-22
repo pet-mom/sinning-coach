@@ -19,7 +19,7 @@ renderStory=function(force){const P=$('#page');if(!P||!s)return;const L0=s.story
   $('#pgYear').textContent=c?c.y:s.by;$('#pgAge').textContent=c?`${c.a}세`:'태어난 해';$('#pgTitle').textContent=c?c.t:'서장';
   const tx=$('#pgText');tx.innerHTML='';const body=c?c.x:pgPrologue();tx.classList.toggle('dc',/^[가-힣]/.test(body));
   // 문장을 두세 문단으로 나눈다
-  const sent=[];body.split(/(?<=[.!?”])\s+/).filter(Boolean).forEach(x=>{if(sent.length&&(/^(하고|라고|라며|하며|이라고|라는|하는|하면서)/.test(x)||(sent[sent.length-1].split('“').length>sent[sent.length-1].split('”').length)))sent[sent.length-1]+=' '+x;else sent.push(x)});const per=Math.max(3,Math.ceil(sent.length/3));for(let i=0;i<sent.length;i+=per)tx.appendChild(el('p',null,sent.slice(i,i+per).join(' ')));
+  if(c&&c.p&&c.p.length){c.p.forEach(t=>tx.appendChild(el('p',null,t)))}else{const sent=[];body.split(/(?<=[.!?”])\s+/).filter(Boolean).forEach(x=>{if(sent.length&&(/^(하고|라고|라며|하며|이라고|라는|하는|하면서)/.test(x)||(sent[sent.length-1].split('“').length>sent[sent.length-1].split('”').length)))sent[sent.length-1]+=' '+x;else sent.push(x)});const per=Math.max(3,Math.ceil(sent.length/3));for(let i=0;i<sent.length;i+=per)tx.appendChild(el('p',null,sent.slice(i,i+per).join(' ')));}
   $('#pgStamp').innerHTML=`<span>PARIS</span><b>${c?c.y:s.by}</b><span>${noble()?'NOBLESSE':s.estate==='bourgeois'?'BOURGEOISIE':'TIERS ÉTAT'}</span>`;
   $('#pgFoot').textContent=`— ${idx+2} —`;$('#pgNo').textContent=idx+2;
   const latest=idx===n-1;const cu=$('#pgCurl');cu.setAttribute('aria-label',latest?(s.dead?'끝':'다음 해로 넘기기'):'다음 쪽');cu.disabled=!!s.dead&&latest;
