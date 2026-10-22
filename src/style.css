@@ -786,3 +786,58 @@ ul.ob-ll li b{font-weight:600;margin-right:2px}
 .st-t{margin:2px 0 8px;text-align:center;font-family:var(--fd);font-size:1.15rem;font-weight:600}
 .st-x{margin:0;font-size:.98rem;line-height:1.9;text-align:left;word-break:keep-all;text-indent:1em}
 .st-x::first-letter{font-size:1.5em;font-weight:700;color:var(--rouge)}
+
+/* ================= 책 한 쪽 디자인 (시간 기능 없음) ================= */
+#top .topbar,#top .prog,#top .hint{display:none!important}
+#top{padding-bottom:6px}
+.mini{text-align:center;font-family:var(--fd);font-style:italic;font-size:.86rem;color:var(--mut);letter-spacing:.04em;margin-top:2px}
+#tDaily .hero,#tDaily .home,#tDaily .sched,#tDaily .econ{display:none!important}
+.book{position:relative;margin:18px 6px 6px 14px;perspective:1600px}
+.page{position:relative;min-height:62vh;padding:30px 26px 108px 30px;color:#2B2219;
+  background-color:#EFE6D1;
+  background-image:radial-gradient(ellipse at 18% 12%,rgba(255,252,240,.75),transparent 55%),radial-gradient(ellipse at 95% 100%,rgba(140,104,52,.22),transparent 45%),radial-gradient(ellipse at 0% 60%,rgba(120,90,40,.12),transparent 40%),repeating-linear-gradient(0deg,rgba(90,70,40,.025) 0 1px,transparent 1px 3px);
+  box-shadow:-5px 5px 0 -1px #E4D8BE,-10px 10px 0 -2px #D9CBAE,-10px 10px 0 -1px rgba(90,70,40,.25),0 14px 28px rgba(40,28,12,.22);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 54px),calc(100% - 54px) 100%,0 100%);
+  transform-origin:left center;transition:transform .26s ease-in,opacity .26s}
+.page::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:rgba(150,60,50,.28)}
+.page.turn{transform:rotateY(-24deg) translateX(-8px);opacity:.25}
+.page.land{animation:pgland .38s ease-out}
+@keyframes pgland{from{opacity:.3;transform:translateX(14px)}to{opacity:1;transform:none}}
+body.living .page{opacity:.55}
+.pg-head{display:flex;align-items:baseline;gap:12px}
+.pg-year{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:3.4rem;line-height:1;color:#2B2219;font-variant-numeric:lining-nums;transform:rotate(-3deg);transform-origin:left bottom}
+.pg-age{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-style:italic;color:#7A6A55;font-size:.95rem}
+.pg-title{margin:14px 0 0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:1.05rem;letter-spacing:.22em;text-align:center;color:#3A2E22}
+.pg-rule{height:7px;margin:10px auto 16px;width:62%;border-top:1px solid rgba(60,45,30,.55);border-bottom:1px solid rgba(60,45,30,.25)}
+.pg-text p{margin:0 0 .9em;font-family:'Noto Serif KR',serif;font-size:.98rem;line-height:1.95;text-indent:1em;word-break:keep-all;text-align:left}
+.pg-text p:first-child{text-indent:0}
+.pg-text.dc p:first-child::first-letter{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-size:2.3em;line-height:.9;float:left;margin:4px 6px 0 0;color:#6E2A2A}
+.pg-stamp{position:absolute;left:24px;bottom:18px;width:76px;height:76px;border-radius:50%;border:2px solid rgba(120,48,110,.42);display:grid;place-items:center;align-content:center;gap:0;transform:rotate(-14deg);color:rgba(120,48,110,.5);font-family:'Cormorant Garamond',serif;text-align:center;pointer-events:none}
+.pg-stamp::before{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(120,48,110,.3)}
+.pg-stamp span{font-size:.52rem;letter-spacing:.14em;line-height:1.2}.pg-stamp b{font-size:1.15rem;line-height:1;font-weight:600}
+.pg-foot{position:absolute;left:0;right:0;bottom:22px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:.85rem;color:#8A7A62;letter-spacing:.2em}
+.pg-curl{position:absolute;right:0;bottom:0;width:54px;height:54px;border:0;padding:0;cursor:pointer;background:transparent;filter:drop-shadow(-3px -3px 3px rgba(40,28,12,.25));transition:transform .2s}
+.pg-curl::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#F8F1E0 0%,#E9DCC0 45%,#CDBB95 50%,transparent 50.5%);clip-path:polygon(0 0,100% 0,0 100%)}
+.pg-curl:hover,.pg-curl:focus-visible{transform:translate(-3px,-3px) scale(1.08)}
+.pg-curl:disabled{opacity:.4;cursor:default}
+.pg-curl::after{content:"›";position:absolute;left:12px;top:6px;font-size:1.2rem;color:#7A6A55}
+.pg-hint{text-align:center;font-family:'Cormorant Garamond','Noto Serif KR',serif;font-style:italic;font-size:.84rem;color:var(--mut);margin:12px 0 0;min-height:1.2em}
+/* 쪽 번호 · 메뉴 알약 */
+.pgpill{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;align-items:stretch;border:1.5px solid #2B2219;border-radius:999px;background:#F6EFDF;box-shadow:0 4px 12px rgba(40,28,12,.18);overflow:hidden}
+.pgpill button{border:0;background:transparent;color:#2B2219;font-family:'Cormorant Garamond',serif;font-size:1.05rem;padding:6px 14px;min-width:46px;cursor:pointer;font-variant-numeric:lining-nums}
+.pgpill button+button{border-left:1.5px solid #2B2219}
+.pgpill svg{width:20px;height:20px;fill:none;stroke:#2B2219;stroke-width:1.6;stroke-linecap:round;display:block;margin:auto}
+body.covered .pgpill{display:none}
+#menu.pgmenu{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(122px + env(safe-area-inset-bottom,0px));top:auto;z-index:31}
+ol.toc{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+ol.toc button{width:100%;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:baseline;text-align:left;background:none;border:0;border-bottom:1px dotted var(--line);padding:9px 2px;font:inherit;color:inherit;cursor:pointer}
+ol.toc .tn{font-family:'Cormorant Garamond',serif;color:var(--mut)}ol.toc .tt{font-weight:500}ol.toc .ty{font-size:.8rem;color:var(--mut)}
+/* 아래 탭: 네 개의 둥근 단추 */
+.nav{background:#F3EBDA!important;border-top:1px solid #2B2219!important;box-shadow:0 -1px 0 #F3EBDA,0 -3px 0 rgba(43,34,25,.35);grid-template-columns:repeat(4,1fr)!important;gap:8px;padding:9px 12px calc(9px + env(safe-area-inset-bottom,0px))!important}
+.nav button{border:1.5px solid #2B2219!important;border-radius:999px!important;background:transparent!important;color:#2B2219!important;padding:6px 4px!important;display:flex!important;flex-direction:row!important;align-items:center;justify-content:center;gap:5px;font-family:'Noto Serif KR',serif;font-size:.84rem}
+.nav button .ni{width:17px;height:17px;stroke:currentColor}
+.nav button[aria-current="page"]{background:#2B2219!important;color:#F3EBDA!important}
+main.tabs{padding-bottom:140px}
+
+.pgpill.inflow{position:static;margin:14px 6px 0 auto;width:max-content}
+#tDaily .pgwrap{display:flex;justify-content:flex-end}

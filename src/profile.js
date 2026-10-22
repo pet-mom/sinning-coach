@@ -16,7 +16,7 @@ const PF_SRC={'공직·직책':'맡은 직책 덕에','파벌 내 지위':'파�
 function pfInfLine(inf){if(child())return '아직 어린아이다. 영향력은 어른들의 몫이다.';const v=inf.v;
   if(s.cond==='prison')return '감옥 안에서는 어떤 이름도 통하지 않는다.';if(s.cond==='emigre')return '망명지에서는 옛 이름이 <b>추억거리</b>일 뿐이다.';
   const top=inf.b.filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1])[0];const src=top?PF_SRC[top[0]]||'':'';
-  if(v<5)return '아직 누구도 그대의 이름으로 <b>움직이지 않는다</b>.';
+  if(v<5)return '아직 누구도 당신의 이름으로 <b>움직이지 않는다</b>.';
   const sc=v<15?'골목에서는':v<30?`${quartier()}에서는`:v<50?'파리에서는':v<75?'나라 안에서':'나라의 운명을 좌우할 만큼';
   const tail=v<15?'말이 통한다':v<30?'이름이 통한다':v<50?'이름이 오르내린다':v<75?'모르는 사람이 없다':'이름이 무겁다';
   return `${src?src+' ':''}${sc} <b>${tail}</b>.`}
@@ -36,7 +36,7 @@ renderProfile=function(){const C=$('#profCard');if(!C||!s)return;C.className='pf
     d.innerHTML=`<div class="pf2-rk">${n}</div><div class="pf2-rv${v<=35?' low':''}">${v}</div><div class="pf2-rw">${w&&w!=='—'?w:''}</div><div class="pf2-rb"><i style="width:${v}%"></i></div>`;g.appendChild(d)});rp.appendChild(g);C.appendChild(rp);
   // 3. 영향력(한 줄)
   const inf=influence();const ip=el('section','pf2-panel pf2-inf');ip.setAttribute('aria-label','영향력');ip.innerHTML=pfFlora()+`<div class="pf2-ib"><div class="pf2-in-n">${inf.v}</div></div><div><div class="pf2-ik">영향력<small>Influence</small></div><div class="pf2-in-l">${pfInfLine(inf)}</div></div>`;C.appendChild(ip);
-  if(s.sus>=30){const w=el('p','pf2-warn',`혐의 ${s.sus} · ${s.sus>=50?'위험하다. 누군가 그대의 이름을 적고 있다.':'주목받고 있다.'}`);C.appendChild(w)}};
+  if(s.sus>=30){const w=el('p','pf2-warn',`혐의 ${s.sus} · ${s.sus>=50?'위험하다. 누군가 당신의 이름을 적고 있다.':'주목받고 있다.'}`);C.appendChild(w)}};
 // 능력치 · 명성 · 재산 · 혐의는 아래 카드로
 {const _pe=profileExtra;profileExtra=function(H){const c=cardIn(H,'형편과 능력','Condition');
   const bd=el('div','pf-badges');bd.innerHTML=[['명성',s.fame,s.fame>=60?'나라 안에 이름이 났다':s.fame>=30?'고장의 유명인':s.fame>=10?'아는 사람만 안다':'이름 없는 사람','fame'],['재산',fmt(s.money),money()+(s.land?` · 지대 ${fmt(s.land)}`:''),'money'],['혐의',s.sus,s.sus>=50?'위험':s.sus>=25?'주목받음':'깨끗함','sus']]

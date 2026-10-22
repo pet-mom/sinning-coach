@@ -248,16 +248,16 @@ async function relEvent(r){const j=relJudge(r);const roleS=`${r.role} ${r.n}`;
   if(r.role==='연인'){if(s.married){r.role='친구';return}
     const i=await Q('연정',`amour`,`${r.n}${bat(r.n)?'이':'가'} 몰래 편지를 보냈다. 집안끼리는 아직 아무 말이 없다.`,[{l:'마음을 받아들인다',s:'친밀 +',a:'family'},{l:'거리를 둔다',s:'',a:'safe'}]);
     if(i===0)say(`${r.n}${bat(r.n)?'과':'와'} 성당 뒤 산책길에서 만나기 시작했다.`+fx({rfam:noble()?-2:0})+relFx(r,{close:15,trust:8}));else say('답장을 쓰지 않았다.'+relFx(r,{close:-15}));await done();return}
-  if(r.role==='후원자'){if(j<0){say(`후원자 ${r.n}${bat(r.n)?'은':'는'} 그대의 처신이 못마땅하다는 말을 흘렸다.`+relFx(r,{trust:-8,close:-5}));return}
+  if(r.role==='후원자'){if(j<0){say(`후원자 ${r.n}${bat(r.n)?'은':'는'} 당신의 처신이 못마땅하다는 말을 흘렸다.`+relFx(r,{trust:-8,close:-5}));return}
     const i=await Q('후원자의 부탁',`protection`,`${r.n}${bat(r.n)?'이':'가'} 그의 일을 거들어 달라고 한다. 시간과 돈이 든다.`,[{l:'기꺼이 돕는다',s:'재산 -50, 신뢰 +',a:'social work'},{l:'핑계를 대고 빠진다',s:'',a:'safe'}]);
-    if(i===0)say(`${r.n}의 일을 도왔다. 그는 그대를 잊지 않겠다고 했다.`+fx({money:-50,inf:2})+relFx(r,{trust:12,close:8}));else say('그는 아무 말도 하지 않았다.'+relFx(r,{trust:-10}));await done();return}
+    if(i===0)say(`${r.n}의 일을 도왔다. 그는 당신을 잊지 않겠다고 했다.`+fx({money:-50,inf:2})+relFx(r,{trust:12,close:8}));else say('그는 아무 말도 하지 않았다.'+relFx(r,{trust:-10}));await done();return}
   if(r.role==='스승'){say(`${roleS}에게서 ${pick(['책 몇 권을 빌렸다','편지로 조언을 받았다','손수 고친 원고를 돌려받았다'])}.`+fx({edu:1})+relFx(r,{resp:4,close:3}));return}
   // 친구 · 동료
   const pool=[
     ()=>say(`${roleS}${bat(r.n)?'과':'와'} ${pick(['장터 선술집에서 밤늦도록 이야기했다','함께 성인 축일 축제에 갔다','사냥을 나갔다','카페에서 신문을 같이 읽었다','이사를 거들었다'])}.`+relFx(r,{close:6})),
     ()=>say(`${r.n}${bat(r.n)?'이':'가'} 집안의 비밀을 털어놓았다.`+relFx(r,{trust:8,close:4})),
     ()=>say(`${r.n}${bat(r.n)?'과':'와'} ${pick(['돈 문제로','정치 이야기로','여자(남자) 문제로','하찮은 일로'])} 크게 다투었다.`+relFx(r,{close:-12,riv:5})),
-    ()=>{if(j>0)say(`${r.n}${bat(r.n)?'은':'는'} 그대가 ${VALUES.find(x=>x[0]===r.v)[1]}${bat(VALUES.find(x=>x[0]===r.v)[1])?'을':'를'} 지키는 사람이라며 치켜세웠다.`+fx({rloc:1})+relFx(r,{resp:8}));else if(j<0)say(`${r.n}${bat(r.n)?'은':'는'} 그대의 요즘 처신을 탐탁지 않아 한다.`+relFx(r,{resp:-8,close:-4}));else say(`${r.n}${bat(r.n)?'과':'와'} 편지를 주고받았다.`+relFx(r,{close:3}))},
+    ()=>{if(j>0)say(`${r.n}${bat(r.n)?'은':'는'} 당신이 ${VALUES.find(x=>x[0]===r.v)[1]}${bat(VALUES.find(x=>x[0]===r.v)[1])?'을':'를'} 지키는 사람이라며 치켜세웠다.`+fx({rloc:1})+relFx(r,{resp:8}));else if(j<0)say(`${r.n}${bat(r.n)?'은':'는'} 당신의 요즘 처신을 탐탁지 않아 한다.`+relFx(r,{resp:-8,close:-4}));else say(`${r.n}${bat(r.n)?'과':'와'} 편지를 주고받았다.`+relFx(r,{close:3}))},
     ()=>{if(s.money<50&&r.close>=55)say(`살림이 어렵다는 말을 듣고 ${r.n}${bat(r.n)?'이':'가'} 돈을 꾸어 주었다.`+fx({money:ri(30,80)})+relFx(r,{trust:5}));
       else say(`${r.n}의 아이 세례식에 ${isM()?'대부':'대모'}로 섰다.`+fx({rloc:1})+relFx(r,{close:8,trust:4}))}];
   pick(pool)()}
@@ -267,10 +267,10 @@ async function relPurge(id){const r=relsAlive().find(x=>x.fac===id&&x.close>=45&
     {l:'다락에 숨겨 준다',s:'혐의 +, 친밀·신뢰 크게 +',a:'bold family'},{l:'돈을 쥐여 보내고 문을 닫는다',s:'재산 -60',a:'safe'},{l:'구 위원회에 알린다',s:'혐의 -, 관계 끝',a:'radical'}]);
   r.pg={id,i,y:s.year}; // 가상의 벗(src/npc.js)이 이 선택에 따라 숙청을 피하거나 붙잡힌다
   if(i===0){const caught=await chance(inTerror()?.15:.06,'발각','숨겨 준 사람이 들킨 비율');
-    if(caught){say(`가택 수색이 들이닥쳐 ${r.n}${bat(r.n)?'은':'는'} 지붕을 타고 달아났다. 그대는 공범으로 의심받는다.`+fx({sus:20,rloc:-3})+relFx(r,{trust:10}),'big')}
+    if(caught){say(`가택 수색이 들이닥쳐 ${r.n}${bat(r.n)?'은':'는'} 지붕을 타고 달아났다. 당신은 공범으로 의심받는다.`+fx({sus:20,rloc:-3})+relFx(r,{trust:10}),'big')}
     else say(`${r.n}${bat(r.n)?'은':'는'} 열흘 뒤 몰래 길을 떠났다. 평생 이 일을 잊지 않을 것이다.`+fx({sus:5})+relFx(r,{close:25,trust:30,resp:15}),'big')}
   else if(i===1){say(`${r.n}에게 돈을 쥐여 보냈다.`+fx({money:-60})+relFx(r,{close:-10,trust:-5}))}
-  else{say(`${r.n}${bat(r.n)?'을':'를'} 고발하였다. 이웃들은 그대를 다른 눈으로 본다.`+fx({sus:-10,rloc:-6,pol:4}),'dark');r.close=0;r.trust=0;r.role='경쟁자';if(r.kind==='fic')r.hate=Math.max(r.hate||0,60)}
+  else{say(`${r.n}${bat(r.n)?'을':'를'} 고발하였다. 이웃들은 당신을 다른 눈으로 본다.`+fx({sus:-10,rloc:-6,pol:4}),'dark');r.close=0;r.trust=0;r.role='경쟁자';if(r.kind==='fic')r.hate=Math.max(r.hate||0,60)}
   await done()}
 
 /* ---------- 지역 경제 ---------- */

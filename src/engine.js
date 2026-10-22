@@ -340,9 +340,9 @@ function returnHome(rec){s.cond='normal';const back=Math.round((s.lostLand||0)*r
 
 /* ================= 씨앗(뒤늦은 결과) ================= */
 async function seeds(){for(const sd of s.seeds.slice()){const rm=()=>s.seeds.splice(s.seeds.indexOf(sd),1);
-  if(sd.t==='denounced'&&inTerror()&&R()<.3){rm();say(`예전에 원한을 산 ${jo(sd.n,'이','가')} 감시위원회에 그대를 고발하였다.`+fx({sus:20}),'big');return}
+  if(sd.t==='denounced'&&inTerror()&&R()<.3){rm();say(`예전에 원한을 산 ${jo(sd.n,'이','가')} 감시위원회에 당신을 고발하였다.`+fx({sus:20}),'big');return}
   if(sd.t==='hidPriest'&&inTerror()&&R()<.15){rm();say('숨겨 주었던 사제가 붙잡혀, 그를 숨긴 사람을 찾는다는 소문이 돌았다.'+fx({sus:15}));return}
   if(sd.t==='hidPriest'&&s.year>=1801&&R()<.4){rm();say('콩코르다트 뒤에 예전에 숨겨 준 사제가 찾아와 축복을 내렸다.'+fx({faith:5,fame:2}));s.flags.blessed=true;return}
-  if(sd.t==='saved'&&(s.cond==='prison'||s.sus>30)&&R()<.4){rm();say(`예전에 도와준 ${jo(sd.n,'이','가')} 위원회에서 그대를 변호하였다.`+fx({sus:-20}),'big');if(s.cond==='prison'&&R()<.6){s.cond='normal';say('덕분에 풀려났다.')}return}
+  if(sd.t==='saved'&&(s.cond==='prison'||s.sus>30)&&R()<.4){rm();say(`예전에 도와준 ${jo(sd.n,'이','가')} 위원회에서 당신을 변호하였다.`+fx({sus:-20}),'big');if(s.cond==='prison'&&R()<.6){s.cond='normal';say('덕분에 풀려났다.')}return}
   if(sd.t==='debtor'&&s.year-sd.y>=3&&R()<.35){rm();if(R()<.6){s.money+=sd.a;say(`${jo(sd.n,'이','가')} 빌려 간 돈을 갚았다. (재산 +${fmt(sd.a)})`)}else say(`${jo(sd.n,'이','가')} 끝내 빚을 갚지 못하고 사라졌다.`);return}
   if(sd.t==='student'&&s.year-sd.y>=8&&R()<.2){rm();say(`옛 제자 ${jo(sd.n,'이','가')} 출세하여 인사를 왔다.`+fx({fame:3}));return}}}
