@@ -63,13 +63,13 @@ const BF={
    inner:{desire:'누구도 굶지 않는 부엌',fear:'배고픔',shame:'글을 모른다는 것',bond:'남동생 피에르',lie:'나는 아무도 필요 없다'},
    sec:{read:['루이즈는 벽보나 편지를 늘 그대에게 읽어 달라고 했다. 눈이 침침하다고 했다.','그녀가 벽보를 거꾸로 들고 서 있는 것을 보았다.','루이즈는 글을 읽지 못했다. 그대가 읽어 준 것을 모두 외워 두었다고 했다.'],
      hunger:['루이즈는 남이 먹는 모습을 오래 지켜보곤 했다.','어린 시절 기근에 막내 동생을 잃었다고 했다. 그 뒤로 빵을 버리는 사람을 용서하지 못한다고 했다.']}},
- etienne:{sex:()=> s.sex,name:sx=>sx==='F'?'엘리즈 모렐':'에티엔 모렐',estate:()=> noble()?'bourgeois':'artisan',tr:'열정',v:'vjus',pol:25,motif:'『텔레마코스의 모험』',
+ etienne:{sex:()=> s.sex,name:sx=>sx==='F'?'엘리즈 모렐':'에티엔 모렐',estate:()=> noble()?'bourgeois':'artisan',tr:'열정',v:'veq',pol:55,motif:'『텔레마코스의 모험』',
    home:()=> noble()?'그대 집안 저택의 별채':'라탱 구역 셋집 3층',
    w:()=> noble()?'그대 집안 집사의 아이. 가정교사의 공부방에서 함께 배웠다':'작은 학교에서 한 책상을 쓰던 아이',
    inner:{desire:'세상의 잘못을 바로잡는 사람이 되는 것',fear:'아버지처럼 되는 것',shame:'아버지가 하는 일',bond:'책 한 권',lie:'나의 분노는 남을 위한 것이다'},
    sec:{father:['에티엔은 아버지 이야기를 꺼내지 않았다.',()=>`${bN('etienne')}의 아버지는 ${noble()?'그대 집안의 집사로, 소작인들의 밀린 지대를 받아 내는':'집달리로, 빚진 집의 침대와 냄비를 끌어내는'} 일을 했다.`,()=>`${bI('etienne')} 법을 바꾸려 한 것은 아버지의 일을 지우고 싶어서였다. ${bHe('etienne')}는 그것을 정의라고 불렀다.`],
      name:[()=>`그날 밤 ${bU('etienne')} 명단을 든 채 오래 서 있었다.`,()=>`나중에 들으니 그 명단에서 한 이름이 빠져 있었다고 했다.`,()=>`${bI('etienne')} 직접 그 이름을 지웠다. ${bHe('etienne')}는 그 일을 누구에게도, 그대에게도 말하지 않았다.`]}},
- jules:{sex:()=> s.sex,name:sx=>sx==='F'?'쥘리 오베르':'쥘 오베르',estate:()=> 'artisan',tr:'경건',v:'vfam',pol:-10,motif:'참새 깃털과 종소리',
+ jules:{sex:()=> 'M',name:()=> '쥘 오베르',estate:()=> 'artisan',tr:'경건',v:'vord',pol:-40,motif:'참새 깃털과 종소리',
    home:()=> `${bfPar()} 종탑 아래`,
    w:()=> `${bfPar()} 종지기의 아이`,
    inner:{desire:'조용한 삶과 신앙',fear:'큰 소리와 강요된 선택',shame:'말더듬',bond:'성당의 종',lie:'나는 겁쟁이다'},
@@ -158,8 +158,8 @@ beat('group','g_scold',{when:()=>s.age>=11&&bfMetN()>=3&&bfHere(),until:()=>s.ag
    {l:'아무도 말하지 않는다',a:'social',f:()=>{mk(`${bfList(ks)}, 그리고 그대가 함께 수도원 과수원 담을 넘었다가 붙잡혔다. 아무도 입을 열지 않아 모두 함께 벌을 받았다.`,{antoine:'아무도 말하지 않았다. 그날 우리가 한 패라는 걸 알았다. 그런 날은 다시 오지 않았다.'});say('모두 함께 손바닥을 맞았다. 돌아오는 길에 누군가 먼저 웃음을 터뜨렸다.')}}])}});
 
 beat('group','g_bridge',{when:()=>s.age>=13&&bfMetN()>=3&&bfHere(),until:()=>s.age>=17,run:async()=>{const ks=BF_KEYS.filter(k=>bfMet(k)&&bfAlive(k));
-  const go={louise:'빵집 일을 도맡게 되었다',etienne:noble()?'집사 일을 거드는 서기가 되었다':'공증인 사무소의 사환이 되었다',jules:s.sex==='F'?'수녀원 부속 학교에 들어가게 되었다':'성가대 장학생으로 신학교 예비 학교에 가게 되었다',antoine:'포목상 견습으로 들어가게 되었다',gabriel:noble()?'쥘리 기숙학교로 떠나게 되었다':'루이르그랑 콜레주 기숙생이 되었다'};
-  const J={louise:'빵집 일꾼',etienne:noble()?'집사 서기':'공증인 사무소 사환',jules:s.sex==='F'?'수녀원 학교 학생':'신학교 예비 학생',antoine:'포목상 견습',gabriel:'기숙학교 학생'};ks.forEach(k=>bfJob(k,J[k]));
+  const go={louise:'빵집 일을 도맡게 되었다',etienne:noble()?'집사 일을 거드는 서기가 되었다':'공증인 사무소의 사환이 되었다',jules:'성가대 장학생으로 신학교 예비 학교에 가게 되었다',antoine:'포목상 견습으로 들어가게 되었다',gabriel:noble()?'쥘리 기숙학교로 떠나게 되었다':'루이르그랑 콜레주 기숙생이 되었다'};
+  const J={louise:'빵집 일꾼',etienne:noble()?'집사 서기':'공증인 사무소 사환',jules:'신학교 예비 학생',antoine:'포목상 견습',gabriel:'기숙학교 학생'};ks.forEach(k=>bfJob(k,J[k]));
   const t=ks.map(k=>`${bU(k)} ${go[k]}`).join('. ')+'.';
   await bfScene('다리 위의 저녁','le Pont-Neuf',`각자 다른 길로 떠나기 전날, ${bfListW(ks)} 그대는 퐁뇌프에 모였다. ${t} 누군가 말한다. “이제 이렇게 다 같이 모이기는 어렵겠다.”`,[
    {l:'“스무 해 뒤 오늘, 여기서 다시 만나자.”',a:'social',f:()=>{bfS().meetY=s.year+20;bfS().meetM=s.month;bfMem('m_bridge',ks,`떠나기 전날 퐁뇌프에 다 같이 모였다. 스무 해 뒤 같은 날, 같은 자리에서 다시 만나자고 약속했다.`,{tone:'희망',place:'퐁뇌프'});say('모두 손을 포개고 맹세했다. 그대는 그 날짜를 마음에 새겼다.')}},
@@ -240,27 +240,38 @@ beat('etienne','et_debate',{when:()=>s.age>=18&&bfAlive('etienne')&&bfHere(),unt
    july: 그 뒤 출생 — 7월 혁명, 1831년 성당 약탈, 1832년 콜레라와 6월 봉기, 1834년 트랑스노냉, 1848년 6월. */
 const bfW=(a,b)=>T()>=a&&T()<b;
 beat('etienne','et_dawn',{when:()=>bfAlive('etienne')&&bfHere()&&!child()&&(bfRev()?bfW(1789.53,1790.9):bfW(1830.56,1831.3)),until:()=>bfRev()?T()>=1790.9:T()>=1831.3,run:async()=>{const E=bN('etienne'),rv=bfRev(),F=bfR('etienne').sex==='F';
-  bfJob('etienne',rv?(F?'구민 회의 방청석의 단골':'구민 회의 서기'):(F?'공화파 신문의 필자':'공화파 신문 기자'));bfFate('etienne',rv?'구민 회의에 드나들기 시작했다':'7월의 바리케이드에 섰다');
-  await bfScene(rv?'바스티유가 떨어진 날':'영광의 사흘',rv?'le 14 juillet':'les Trois Glorieuses',rv?`7월의 어느 날, ${bI('etienne')} 숨을 몰아쉬며 달려온다. 모자에 푸른색과 붉은색 모표를 꽂았다. “바스티유가 떨어졌어! 퐁뇌프에서 한 약속 기억해? 이제 시작이야.”`:`7월의 사흘. ${bI('etienne')} 화약 냄새를 풍기며 달려온다. 손에 삼색기를 들었다. “부르봉이 쫓겨났어! 퐁뇌프에서 한 약속 기억해? 이제 시작이야.”`,[
-   {l:rv?'구민 회의에 함께 나간다':'시청 앞 광장으로 함께 간다',a:'radical',f:()=>{bfSet('etienne','together');s.pol=clamp(s.pol+4,-100,100);bfMem('m_dawn','etienne',rv?`바스티유가 떨어진 날, ${bW('etienne')} 구민 회의에 나갔다. 모두가 동시에 말하고 있었다.`:`영광의 사흘, ${bW('etienne')} 시청 앞 광장에 섰다. 삼색기가 다시 올라갔다.`,{tone:'희망',their:'그 아이와 함께였다. 그날은 세상이 우리 편이었다.'});bfRel('etienne',{close:6})}},
+  bfSet('etienne','together');bfJob('etienne',rv?(F?'남장을 하고 구민 회의에 나가는 사람':'구민 회의 서기'):(F?'남장을 한 공화파 신문 기자':'공화파 신문 기자'));bfFate('etienne',F?(rv?'머리를 자르고 남자 옷을 입은 채 구민 회의에 나가기 시작했다':'남자 옷을 입고 7월의 바리케이드에 섰다'):rv?'구민 회의에 드나들기 시작했다':'7월의 바리케이드에 섰다');const dis=F?' 머리를 짧게 자르고 남자 옷을 입었다. “거기선 다들 나를 시민 에티엔이라고 불러.”':'';
+  await bfScene(rv?'바스티유가 떨어진 날':'영광의 사흘',rv?'le 14 juillet':'les Trois Glorieuses',rv?`7월의 어느 날, ${bI('etienne')} 숨을 몰아쉬며 달려온다. 모자에 푸른색과 붉은색 모표를 꽂았다.${dis} “바스티유가 떨어졌어! 퐁뇌프에서 한 약속 기억해? 이제 시작이야.”`:`7월의 사흘. ${bI('etienne')} 화약 냄새를 풍기며 달려온다. 손에 삼색기를 들었다.${dis} “부르봉이 쫓겨났어! 퐁뇌프에서 한 약속 기억해? 이제 시작이야.”`,[
+   {l:rv?'구민 회의에 함께 나간다':'시청 앞 광장으로 함께 간다',a:'radical',f:()=>{bfSet('etienne','withYou');s.pol=clamp(s.pol+4,-100,100);bfMem('m_dawn','etienne',rv?`바스티유가 떨어진 날, ${bW('etienne')} 구민 회의에 나갔다. 모두가 동시에 말하고 있었다.`:`영광의 사흘, ${bW('etienne')} 시청 앞 광장에 섰다. 삼색기가 다시 올라갔다.`,{tone:'희망',their:'그 아이와 함께였다. 그날은 세상이 우리 편이었다.'});bfRel('etienne',{close:6})}},
    {l:'“조심해.”라고만 한다',a:'safe',f:()=>{bfMem('m_dawn','etienne',`${rv?'바스티유가 떨어진 날':'영광의 사흘'}, ${bI('etienne')} 들떠서 달려왔다. 그대는 조심하라고만 했다.`,{tone:'두려움',their:'그 아이는 조심하라고만 했다. 그 말이 그때는 비겁하게 들렸다.'})}},
    {l:'“우리 법도 없앨 수 있을까?” 하고 묻는다',a:'radical',f:()=>{bfWake('m_promise');bfMem('m_dawn','etienne',`${rv?'바스티유가 떨어진 날':'영광의 사흘'}, ${bI('etienne')} 달려왔다. 우리 법도 없앨 수 있겠느냐고 묻자, ${bHe('etienne')}는 그대의 두 손을 잡았다.`,{tone:'희망',their:'그 아이는 약속을 기억하고 있었다. 그 순간 나는 우리가 이길 거라고 믿었다.'});bfRel('etienne',{close:8})}}])}});
 
+// 공포정치: 에티엔은 적극 가담하고 쥘과 멀어진다
+beat('etienne','et_rift',{when:()=>bfRev()&&bfAlive('etienne')&&bfAlive('jules')&&bfFl('jules','refr')&&bfHere()&&!child()&&bfW(1792.75,1793.85),until:()=>!bfRev()||T()>=1793.85||!bfAlive('jules'),run:async()=>{const E=bN('etienne'),J=bN('jules');bfSet('etienne','vsJules');bfFate('etienne','구 회의에서 선서 거부 사제들을 고발하는 연설을 했다');
+  await bfScene('공화국의 적','l’ennemi de la République',`구 회의장. 연단에 선 ${bI('etienne')} 숨어서 미사를 드리는 선서 거부 사제들의 이름을 읽는다. 그 가운데 ${J}의 이름도 있다. 회의가 끝난 뒤 ${bI('etienne')} 그대 곁에 와서 낮게 말한다. “${J}는 아직도 지하실에서 미사를 드린대. 어릴 적 친구라도 공화국의 적은 적이야.”`,[
+   {l:`“${J}는 참새 한 마리도 못 죽이는 애야.”`,a:'pious bold',f:()=>{bfBrave();bfMem('m_rift',['etienne','jules'],`구 회의장에서 ${bI('etienne')} ${jo(J,'을','를')} 공화국의 적이라고 불렀다. 그대는 ${jo(J,'이','가')} 참새 한 마리도 못 죽이는 아이라고 말했다.`,{tone:'씁쓸함',their:{etienne:'그 사람이 참새 이야기를 했다. 나도 그 참새를 기억했다. 그래서 더 화가 났다.',jules:'에티엔이 나를 적이라 불렀다는 말을 들었다. 미워하지 않았다. 그를 위해 기도했다.'}});bfRel('etienne',{close:-6,riv:6});bfRel('jules',{close:6,trust:6})}},
+   {l:'“네 말이 맞아.”',a:'radical',f:()=>{s.pol=clamp(s.pol+4,-100,100);bfMem('m_rift',['etienne','jules'],`구 회의장에서 ${bI('etienne')} ${jo(J,'을','를')} 공화국의 적이라고 불렀다. 그대는 그 말이 맞다고 했다.`,{tone:'죄책감',their:{etienne:'그 사람이 내 편을 들었다. 그날 밤 쥘의 얼굴이 자꾸 떠올랐다.',jules:'그 사람마저 에티엔의 말이 맞다고 했다고 들었다. 그날은 기도가 잘 되지 않았다.'}});bfRel('etienne',{close:6});bfRel('jules',{trust:-10});bfReg('r_rift','jules',`${jo(J,'을','를')} 공화국의 적이라 부르는 말에 맞장구를 쳤다.`)}},
+   {l:'말없이 자리를 뜬다',a:'safe',f:()=>{bfCare();bfMem('m_rift',['etienne','jules'],`구 회의장에서 ${bI('etienne')} ${jo(J,'을','를')} 공화국의 적이라고 불렀다. 그대는 아무 말 없이 자리를 떴다.`,{tone:'씁쓸함',their:{etienne:'그 사람은 아무 말 없이 나갔다. 대답보다 그게 더 오래 남았다.',jules:'그 사람은 아무 말도 하지 않았다고 했다. 그 시절엔 그것도 용기였다.'}})}}]);
+  bfRe('m_apple',`한 담을 함께 넘던 ${bW('etienne')} ${J}는 이제 서로를 적이라 부른다.`,'씁쓸함');bfRe('m_bridge','퐁뇌프에 모였던 아이들 가운데 둘이 이제 서로 반대편에 섰다.','씁쓸함')}});
+
 // 쥘: 단 하나 물러서지 않는 것
 beat('jules','ju_test',{when:()=>bfAlive('jules')&&bfHere()&&(bfRev()?(bfR('jules').sex==='F'?bfW(1792.62,1793.4):bfW(1791.0,1792.4)):bfW(1831.1,1831.5)),until:()=>bfRev()?T()>=(bfR('jules').sex==='F'?1793.4:1792.4):T()>=1831.5,run:async()=>{const J=bN('jules'),rv=bfRev(),F=bfR('jules').sex==='F';
-  bfKnow('jules','stutter',3);const r=bfR('jules');r.cler=!F;r.refr=rv;
-  if(rv){bfJob('jules',F?'선서 거부 수녀':'선서 거부 신부');bfFate('jules',F?'자유·평등 서약을 거부하고 수녀원을 떠나지 않았다':'성직자 시민 헌법 선서를 거부했다');bfSet('jules','refr')}else{bfJob('jules',`${bfPar()} 보좌 신부`);bfFate('jules','성당 앞에서 군중을 막아섰다')}
-  const T0=rv?(F?`1792년 가을. 수도회는 해산되었고, 수녀들은 연금을 받으려면 자유·평등 서약을 해야 한다. 수녀원 응접실에서 ${bI('jules')} 서약서를 앞에 두고 앉아 있다. 위원이 재촉한다. ${bHe('jules')}가 입을 연다. 더듬지 않는다. “저는 할 수 없습니다.”`:`1791년 1월. 성직자는 시민 헌법에 선서해야 한다. ${bfPar()} 설교단에 선 젊은 보좌 신부 ${bI('jules')} 선서문을 든 채 한참 말이 없다. 신자석에서 누군가 “선서해!” 하고 외친다. ${bHe('jules')}가 입을 연다. 더듬지 않는다. “저는 할 수 없습니다.”`):`1831년 2월. 군중이 생제르맹로세루아 성당과 대주교관을 부수고 있다. ${bfPar()}에도 사람들이 몰려왔다. 십자가를 끌어내리려는 사람들 앞에 보좌 신부 ${bI('jules')} 혼자 서 있다. 떨면서도 비키지 않는다.`;
+  bfKnow('jules','stutter',3);const r=bfR('jules');r.cler=true;r.refr=rv;const pr=bAge('jules')>=24;
+  if(rv){bfJob('jules',pr?'선서 거부 신부':'선서 거부 신학생');bfFate('jules',pr?'성직자 시민 헌법 선서를 거부했다':'선서한 주교에게 서품받기를 거부했다');bfSet('jules','refr')}else{bfJob('jules',`${bfPar()} 보좌 신부`);bfFate('jules','성당 앞에서 군중을 막아섰다')}
+  const T0=rv?(F?`1792년 가을. 수도회는 해산되었고, 수녀들은 연금을 받으려면 자유·평등 서약을 해야 한다. 수녀원 응접실에서 ${bI('jules')} 서약서를 앞에 두고 앉아 있다. 위원이 재촉한다. ${bHe('jules')}가 입을 연다. 더듬지 않는다. “저는 할 수 없습니다.”`:`1791년 1월. 성직자는 시민 헌법에 선서해야 한다. ${bfPar()} 설교단에 선 ${pr?'젊은 보좌 신부':'신학생'} ${bI('jules')} ${pr?'선서문을':'선서한 주교의 서품 명단을'} 든 채 한참 말이 없다. 신자석에서 누군가 “선서해!” 하고 외친다. ${bHe('jules')}가 입을 연다. 더듬지 않는다. “저는 할 수 없습니다.”`):`1831년 2월. 군중이 생제르맹로세루아 성당과 대주교관을 부수고 있다. ${bfPar()}에도 사람들이 몰려왔다. 십자가를 끌어내리려는 사람들 앞에 보좌 신부 ${bI('jules')} 혼자 서 있다. 떨면서도 비키지 않는다.`;
   await bfScene(rv?'저는 할 수 없습니다':'성당 문 앞',rv?'le serment':'le sac de Saint-Germain-l’Auxerrois',T0,[
    {l:rv?'끝까지 그 자리에 남는다':`${J}의 옆에 가서 선다`,a:'bold pious',f:()=>{bfBrave();bfSet('jules','stood');bfMem('m_oath','jules',rv?`${bI('jules')} 선서를 거부하던 날, 그대는 끝까지 그 자리에 남았다. ${bHe('jules')}는 한 번도 더듬지 않았다.`:`군중이 ${bfPar()}에 몰려온 날, 문 앞에 선 ${J}의 옆에 가서 섰다.`,{tone:'감사',their:'그 아이가 맨 앞에 있었다. 그래서 끝까지 서 있을 수 있었다.'});bfRel('jules',{close:8,trust:8});s.sus=clamp((s.sus||0)+(rv?3:0),0,100)}},
    {l:rv?'조용히 빠져나온다':'그를 억지로 끌고 나온다',a:'safe',f:()=>{bfCare();bfMem('m_oath','jules',rv?`${bI('jules')} 선서를 거부하던 날, 그대는 조용히 빠져나왔다.`:`군중이 ${bfPar()}에 몰려온 날, 문 앞에 선 ${bL('jules')} 억지로 끌고 나왔다.`,{tone:'씁쓸함',their:rv?'그 아이가 나가는 뒷모습을 보았다. 원망하지 않았다. 나도 나가고 싶었으니까.':'그 아이가 나를 끌어냈다. 살았다. 그런데 그 십자가가 끌려 내려가는 소리가 오래 귀에 남았다.'})}},
    {l:'나중에 찾아가 살라고 설득한다',a:'family',f:()=>{bfMem('m_oath','jules',`${J}에게 ${rv?'선서하고':'몸을 피하고'} 살라고 설득했다. ${bHe('jules')}는 고맙다고만 했다.`,{tone:'그리움',their:'그 아이는 살라고 했다. 그게 나를 아끼는 방식이라는 걸 알았다. 그래서 거절하기가 더 힘들었다.'})}}]);
   if(rv)say(`그 뒤로 ${bU('jules')} 숨어 지냈다. 주일마다 ${bfPar()} 종탑이 조용했다.`)}});
 // 1792년 9월 학살(카름 수도원 등)
-beat('jules','ju_sept',{when:()=>bfRev()&&bfAlive('jules')&&bfFl('jules','refr')&&bfR('jules').sex!=='F'&&bfW(1792.67,1792.8),until:()=>!bfRev()||T()>=1792.8||!bfFl('jules','refr'),gap:0,run:async()=>{
+beat('jules','ju_sept',{when:()=>bfRev()&&bfAlive('jules')&&bfFl('jules','refr')&&bfW(1792.67,1792.8),until:()=>!bfRev()||T()>=1792.8||!bfFl('jules','refr'),gap:0,run:async()=>{
   if(await chance(.12,`9월 학살 · ${bN('jules')}`,'수감된 선서 거부 사제 약 220명이 카름 수도원 등에서 살해'))bfDie('jules','massacre',`1792년 9월, 카름 수도원에서 다른 선서 거부 사제들과 함께 살해되었다.`);
   else say(`9월, 감옥마다 사제들이 끌려 나와 죽었다는 소식이 돌았다. ${bU('jules')} 잡히지 않았다.`,'dark')}});
 
+beat('jules','ju_terror',{when:()=>bfRev()&&bfAlive('jules')&&bfFl('jules','refr')&&!bfFl('jules','atGab')&&bfW(1794.2,1794.55),until:()=>!bfRev()||T()>=1794.55||!bfFl('jules','refr'),gap:0,run:async()=>{
+  if(await chance(.35,`공포정치 · ${bN('jules')}`,'숨어 지내던 선서 거부 사제의 상당수가 1793~94년에 붙잡혀 처형')){bfFate('jules','숨어 있던 지하실에서 붙잡혔다');bfDie('jules','guillotine','혁명재판소에서 사형을 선고받고 단두대에 올랐다. 수레 위에서 낮은 목소리로 노래했다고 한다.')}
+  else say(`${bU('jules')} 이 지하실 저 다락방을 옮겨 다니며 공포정치를 버텼다.`,'ev')}});
 beat('louise','lo_crisis',{when:()=>bfAlive('louise')&&bfHere()&&!child()&&(bfRev()?bfW(1793.72,1794.5):bfW(1848.47,1848.95)),until:()=>bfRev()?T()>=1794.5:T()>=1848.95,run:async()=>{const L=bN('louise'),rv=bfRev();bfJob('louise','빵집 안주인');
   const etOK=rv&&bfAlive('etienne')&&bfFl('etienne','together');
   const T0=rv?`1793년 가을. 최고가격제가 시행되었다. ${L}의 빵집 앞에 새벽부터 줄이 늘어선다. 밀가루는 모자라고, 정해진 값에 팔면 남는 게 없다. 어젯밤 구 혁명위원회가 ${L}의 남편을 매점매석 혐의로 데려갔다. ${bI('louise')} 그대 집 문을 두드린다. 처음으로 도와 달라고 한다.`:`1848년 6월. 생앙투안 문밖의 바리케이드가 무너졌다. ${L}의 아들이 돌아오지 않았다. 튈르리 지하실과 요새 감옥에 붙잡힌 사람이 수천이라고 한다. 알제리로 보낸다는 소문이 돈다. ${bI('louise')} 그대 집 문을 두드린다. 처음으로 도와 달라고 한다.`;
@@ -287,10 +298,10 @@ beat('gabriel','ga_hide',{when:()=>bfAlive('gabriel')&&bfHere()&&!child()&&(bfRe
 // 에티엔: 같은 약속, 다른 정의 — 서로 반대편에 서는 밤
 beat('etienne','et_list',{when:()=>bfAlive('etienne')&&bfHere()&&!child()&&(bfRev()?bfW(1793.9,1794.55)&&(bfFl('gabriel','hid')||T()>=1794.15):bfW(1832.45,1832.9)&&(bfFl('gabriel','hid')||T()>=1832.6)),until:()=>bfRev()?T()>=1794.55:T()>=1832.9,run:async()=>{const E=bN('etienne'),rv=bfRev(),F=bfR('etienne').sex==='F';
   const gab=bfAlive('gabriel')&&bfFl('gabriel','hid');const tgt=gab?bfGuest():(bfAlive('gabriel')?bN('gabriel'):'옆 골목의 늙은 신부');const isJ=gab&&rv&&tgt===bN('jules');const where=gab?`${bN('gabriel')}의 다락방`:'숨은 곳';
-  bfJob('etienne',rv?(F?'혁명공화여성협회 회원':'구 혁명감시위원회 위원'):(F?'경시청 관리의 아내':'경시청 관리'));bfFate('etienne',rv?(F?'혁명공화여성협회에서 밀고장을 받았다':'구 혁명감시위원회 위원이 되었다'):'경시청 관리가 되었다');
+  bfJob('etienne',rv?(F?'남장을 한 구 혁명감시위원':'구 혁명감시위원회 위원'):(F?'경시청 관리의 아내':'경시청 관리'));bfFate('etienne',rv?(F?'남장을 한 채 구 혁명감시위원회 위원이 되었다. 아무도 그녀가 여자라는 것을 몰랐다':'구 혁명감시위원회 위원이 되었다'):'경시청 관리가 되었다');
   bfKnow('etienne','name',1);bfAsk('q_et_name','etienne',`그 명단에서 이름이 빠졌다면, 그것은 ${bN('etienne')} 덕이었을까?`);
   const lawTxt=bfS().law?`‘${bfLawN(bfS().law)}’`:'가장 부당한 법';
-  const T0=rv?`밤늦게 문을 두드리는 소리. ${jo(E,'이다','다')}. ${F?'붉은 보닛을 쓰고 손에 밀고장 다발을 들었다':'모자에 붉은 모표, 허리에 구 혁명감시위원회의 띠'}. ${bU('etienne')} 명단을 든 채 오래 서 있다. “${gab?jo(tgt,'이','가')+' 숨어 있다는':tgt+'에 대한'} 밀고가 들어왔어. 어디 있는지 알지? 말해 주면 처형 대신 유형으로 돌려 볼게. 말하지 않으면… 나도 어쩔 수 없어.”`
+  const T0=rv?`밤늦게 문을 두드리는 소리. ${jo(E,'이다','다')}. ${F?'짧은 머리에 남자 옷, 모자에 붉은 모표, 허리에 구 혁명감시위원회의 띠. 위원회에서는 모두 시민 에티엔이라고 부른다':'모자에 붉은 모표, 허리에 구 혁명감시위원회의 띠'}. ${bU('etienne')} 명단을 든 채 오래 서 있다. “${gab?jo(tgt,'이','가')+' 숨어 있다는':tgt+'에 대한'} 밀고가 들어왔어. 어디 있는지 알지? 말해 주면 처형 대신 유형으로 돌려 볼게. 말하지 않으면… 나도 어쩔 수 없어.”`
    :`생메리 바리케이드가 무너진 뒤, 경시청 ${F?'관리의 아내가 된':'관리가 된'} ${bI('etienne')} 찾아온다. 두 해 전 삼색기를 들던 손에 체포 명단이 들려 있다. “${gab?jo(tgt,'이','가')+' 숨어 있다는':tgt+'에 대한'} 밀고가 들어왔어. 어디 있는지 알지? 말해 주면 가볍게 끝나게 해 볼게.”`;
   let pick=-1;
   await bfScene('명단','la liste',T0,[
@@ -302,7 +313,8 @@ beat('etienne','et_list',{when:()=>bfAlive('etienne')&&bfHere()&&!child()&&(bfRe
   if(erase){bfKnow('etienne','name',2);say(`몇 주 뒤, 그 명단에서 한 이름이 빠져 있었다는 말을 들었다. 누가 뺐는지는 아무도 몰랐다.`,'ev');return}
   // 들이닥친다
   const caught=pick===2?true:await chance(.5,'수색','숨은 이를 찾아낼 확률');if(!caught){say('위원회 사람들이 다락방 문 앞까지 왔다가 돌아갔다.','ev');return}
-  if(isJ){bfFate('jules',rv?'붙잡혀 로슈포르 앞바다의 감옥선으로 보내졌다':'붙잡혔다');bfSet('jules','deported');
+  if(isJ&&rv&&await chance(.5,`혁명재판소 · ${bN('jules')}`,'붙잡힌 선서 거부 사제는 재판 없이 처형되기도 했다')){bfFate('jules','다락방에서 붙잡혔다');bfDie('jules','guillotine','혁명재판소에서 사형을 선고받고 단두대에 올랐다. 수레 위에서 낮은 목소리로 노래했다고 한다.')}
+  else if(isJ){bfFate('jules',rv?'붙잡혀 로슈포르 앞바다의 감옥선으로 보내졌다':'붙잡혔다');bfSet('jules','deported');
     if(rv&&await chance(.55,`감옥선 · ${bN('jules')}`,'1794년 로슈포르 감옥선에 실린 사제 829명 가운데 547명 사망'))bfDie('jules','pontons',`로슈포르 앞바다 감옥선에서 굶주림과 열병으로 세상을 떠났다.`);else say(`${bU('jules')} 감옥선에서 살아남았다고 한다.`,'ev')}
   if(gab){bfFate('gabriel',rv?'숨긴 죄로 붙잡혀 콩시에르주리에 갇혔다':'숨긴 죄로 생트펠라지 감옥에 갇혔다');bfSet('gabriel','jailed');bfR('gabriel').cond='prison';
     if(rv&&T()<1794.55&&await chance(.5,`혁명재판소 · ${bN('gabriel')}`,'공포정치 말기 파리 혁명재판소 피고의 약 절반이 사형'))bfDie('gabriel','guillotine',`혁명재판소에서 사형을 선고받고 단두대에 올랐다. 마지막까지 머리를 꼿꼿이 들었다고 한다.`);
@@ -311,6 +323,13 @@ beat('etienne','et_list',{when:()=>bfAlive('etienne')&&bfHere()&&!child()&&(bfRe
 
 beat('etienne','et_fall',{when:()=>bfAlive('etienne')&&!child()&&(bfRev()?bfW(1794.56,1795.7):bfW(1834.28,1835.6))&&s.cond!=='prison',until:()=>bfRev()?T()>=1795.7:T()>=1835.6,run:async()=>{const E=bN('etienne'),rv=bfRev();bfKnow('etienne','father',3);
   const gab=bfR('gabriel');if(rv&&gab&&gab.alive&&gab.cond==='prison'){gab.cond='normal';bfFate('gabriel','테르미도르 뒤 감옥에서 풀려났다');say(`테르미도르 뒤, ${bU('gabriel')} 감옥에서 풀려났다.`,'big')}
+  if(rv&&await chance(.3,`테르미도르 · ${E}`,'테르미도르 10~12일, 로베스피에르파 코뮌 사람과 위원 약 100명이 단두대에 올랐다')){const F=bfR('etienne').sex==='F';
+    await bfScene('마지막 수레','le 10 thermidor',`테르미도르 10일 저녁. 혁명 광장으로 가는 수레들이 생토노레 거리를 지난다. 묶인 사람들 사이에 ${bI('etienne')} 있다.${F?' 붙잡히고 나서야 위원회 사람들은 시민 에티엔이 여자라는 것을 알았다.':''} 군중이 야유를 퍼붓는다. ${bU('etienne')} 고개를 들고 누군가를 찾는 얼굴이다.`,[
+     {l:'군중을 헤치고 나가 눈을 맞춘다',a:'bold',f:()=>{bfBrave();bfMem('m_cart','etienne',`테르미도르 10일, 단두대로 가는 수레 위의 ${bW('etienne')} 눈이 마주쳤다. ${bHe('etienne')}는 입 모양으로 무언가를 말했다. 퐁뇌프, 라고 한 것 같았다.`,{tone:'그리움',their:'마지막에 그 사람을 찾았다. 있었다. 그거면 됐다.'});bfAsk('q_et_cart','etienne',`수레 위의 ${bU('etienne')} 마지막에 무슨 말을 했을까?`)}},
+     {l:'이름을 부른다',a:'bold social',f:()=>{bfMem('m_cart','etienne',`테르미도르 10일, 단두대로 가는 수레를 따라가며 ${bN('etienne')}의 이름을 불렀다. 야유 속에서 ${bHe('etienne')}가 돌아보았다.`,{tone:'그리움',their:'누군가 내 이름을 불렀다. 시민 에티엔이 아니라, 어릴 적 이름으로.'})}},
+     {l:'고개를 돌린다',a:'safe',f:()=>{bfCare();bfMem('m_cart','etienne',`테르미도르 10일, 단두대로 가는 수레에 ${bI('etienne')} 실려 갔다. 그대는 고개를 돌렸다.`,{tone:'후회',their:'그 사람은 없었다. 아니, 있었는데 내가 못 본 것이었으면 좋겠다.'});bfReg('r_et_cart','etienne',`단두대로 가는 ${bN('etienne')}의 수레에서 고개를 돌렸다.`)}}]);
+    bfRe('m_promise','테르미도르 10일, 약속을 함께 한 아이가 단두대에 올랐다. 그 법은 하나도 없애지 못했다.','후회');if(bfAlive('jules')&&bfM('m_rift'))bfRe('m_rift',`${bI('etienne')} 단두대에 올랐다는 소식에 ${bU('jules')} 그를 위해 미사를 드렸다고 한다.`,'위로');
+    bfDie('etienne','guillotine','테르미도르 10일, 로베스피에르파와 함께 혁명 광장의 단두대에 올랐다.');return}
   if(rv){bfFate('etienne','테르미도르 뒤 플레시 감옥에 갇혔다');bfR('etienne').cond='prison'}else bfFate('etienne','트랑스노냉 거리 사건 보고서에 서명했다는 소문이 돌았다');
   const T0=rv?`테르미도르 9일. 로베스피에르가 쓰러졌다. 구 위원회 사람들이 잡혀간다. ${bU('etienne')} 플레시 감옥에 갇혔다. 거리에서는 금빛 청년단이 자코뱅을 몽둥이로 때린다. 그대가 찾아가자 ${bHe('etienne')}가 창살 너머에서 말한다. “결국 나도 남의 침대를 끌어내는 사람이 되었어. 아버지처럼.”`
    :`1834년 4월. 트랑스노냉 거리 12번지에서 군대가 잠옷 차림의 주민들을 죽였다. 경시청의 ${bI('etienne')} 그 보고서에 서명했다는 소문이다. 찾아가자 ${bHe('etienne')}가 말한다. “질서가 없으면 법도 없어. 그런데 있지… 결국 나도 남의 침대를 끌어내는 사람이 되었어. 아버지처럼.”`;
@@ -318,7 +337,7 @@ beat('etienne','et_fall',{when:()=>bfAlive('etienne')&&!child()&&(bfRev()?bfW(17
    {l:'“너는 아버지가 아니야.”라고 말한다',a:'social',f:()=>{bfSet('etienne','consoled');bfMem('m_fall','etienne',rv?`테르미도르 뒤, 감옥의 ${bN('etienne')}를 찾아갔다. “결국 아버지처럼 되었다”는 ${bHe('etienne')}에게, 너는 아버지가 아니라고 말했다.`:`트랑스노냉 사건 뒤, ${bN('etienne')}를 찾아갔다. “결국 아버지처럼 되었다”는 ${bHe('etienne')}에게, 너는 아버지가 아니라고 말했다.`,{tone:'위로',their:'그 사람은 내가 아버지가 아니라고 했다. 믿지 않았다. 그래도 그 말을 오래 붙들었다.'});bfRel('etienne',{close:8,hate:-8});if(bfFl('etienne','rupture'))bfSet('etienne','thaw')}},
    {l:'“그래서 그 명단은 어떻게 했어?” 하고 묻는다',a:'bold',f:()=>{bfMem('m_fall','etienne',`${rv?'테르미도르 뒤 감옥에서':'트랑스노냉 사건 뒤'} ${bN('etienne')}에게 그 명단을 어떻게 했느냐고 물었다. ${bHe('etienne')}는 “됐어.” 하고 고개를 돌렸다.`,{tone:'의문',their:'그 사람이 명단을 물었다. 말할 수 있었다. 그런데 말하면 그 일이 그 사람을 위한 일이 되어 버릴 것 같았다.'});bfRel('etienne',{trust:-4})}},
    {l:'아무 말 없이 돌아온다',a:'safe',f:()=>{bfMem('m_fall','etienne',`${rv?'테르미도르 뒤 감옥에':'트랑스노냉 사건 뒤'} ${bN('etienne')}를 찾아갔지만 아무 말도 하지 못하고 돌아왔다.`,{tone:'후회',their:'그 사람은 아무 말도 하지 않았다. 그게 가장 정직한 대답이었다.'});if(bfFl('etienne','rupture'))bfReg('r_et_fall','etienne',`${rv?'감옥의':'무너진'} ${bL('etienne')} 찾아가고도 아무 말도 하지 못했다.`)}}]);
-  if(rv){if(await chance(.08,`감옥 · ${E}`,'테르미도르 뒤 수감된 자코뱅 일부가 처형되거나 옥사'))bfDie('etienne','prison','플레시 감옥에서 열병으로 세상을 떠났다.');else{bfR('etienne').cond='normal';bfFate('etienne','감옥에 갇혔다가 이듬해 사면으로 풀려났다');bfJob('etienne',bfR('etienne').sex==='F'?'삯바느질하는 사람':'사환 노릇을 하는 옛 자코뱅')}}}});
+  if(rv){{bfR('etienne').cond='normal';bfFate('etienne','감옥에 갇혔다가 이듬해 사면으로 풀려났다');bfJob('etienne',bfR('etienne').sex==='F'?'삯바느질하는 사람':'사환 노릇을 하는 옛 자코뱅')}}}});
 
 // 1801년 생니케즈 거리 폭발 사건 뒤 옛 자코뱅 130여 명이 세이셸 제도 등지로 유형
 beat('etienne','et_exile',{when:()=>bfRev()&&bfAlive('etienne')&&bfFl('etienne','together')&&bfR('etienne').sex!=='F'&&bfW(1801.0,1801.3),until:()=>!bfRev()||T()>=1801.3,gap:0,run:async()=>{
@@ -356,7 +375,7 @@ beat('gabriel','ga_after',{when:()=>bfAlive('gabriel')&&bfFl('gabriel','hid')&&b
    {l:'“검은 옷이 잘 어울려.”라고 말한다',a:'social',f:()=>{bfMem('m_mirror2','gabriel',`검은 옷만 입는 ${Ga}에게 잘 어울린다고 했다. ${bHe('gabriel')}는 오랜만에 소리 내어 웃었다.`,{tone:'위로',their:'그 사람은 검은 옷이 어울린다고 했다. 거짓말이었다. 고마운 거짓말이었다.'});bfRel('gabriel',{close:6})}},
    {l:'옛날처럼 놀린다',a:'bold',f:()=>{bfMem('m_mirror2','gabriel',`검은 옷만 입는 ${bL('gabriel')} 옛날처럼 놀렸다. ${bHe('gabriel')}는 놀림을 듣고서야 마음이 놓인 얼굴이었다.`,{tone:'그리움',their:'그 사람이 옛날처럼 놀렸다. 그제야 다 지나갔다는 걸 알았다.'})}}])}});
 
-beat('jules','ju_return',{when:()=>bfRev()&&bfAlive('jules')&&bfFl('jules','refr')&&bfHere()&&bfW(1801.6,1804),until:()=>!bfRev()||T()>=1804,run:async()=>{const J=bN('jules'),F=bfR('jules').sex==='F';bfJob('jules',F?'다시 문을 연 수녀원의 수녀':`${bfPar()} 보좌 신부`);bfFate('jules','콩코르다 뒤 다시 성당으로 돌아왔다');
+beat('jules','ju_return',{when:()=>bfRev()&&bfAlive('jules')&&bfFl('jules','refr')&&bfHere()&&bfW(1801.6,1804),until:()=>!bfRev()||T()>=1804,run:async()=>{const J=bN('jules'),F=bfR('jules').sex==='F';bfJob('jules',bAge('jules')>=42?'본당 신부':'보좌 신부');bfFate('jules','콩코르다 뒤 다시 성당으로 돌아왔다');
   const how=bfFl('jules','deported')?'로슈포르 감옥선에서 살아남았다':bfFl('jules','atGab')?`${bN('gabriel')}의 다락방과 지하실을 전전하며 살아남았다`:'숨어 지내며 살아남았다';
   await bfScene('다시 울리는 종','le Concordat',`콩코르다 뒤 ${bI('jules')} 돌아왔다. ${how}. 머리가 하얗게 셌다. 대포를 만든다며 끌려 내려갔던 ${bfPar()}의 종 대신 새 종이 걸렸다. 그 아래서 ${bI('jules')} 그대 이름을 부른다. 더듬지 않는다.`,[
    bfFl('jules','betrayed')?{l:'용서를 구한다',a:'pious',f:()=>{bfMem('m_bells','jules',`콩코르다 뒤 돌아온 ${J}에게 그 밤의 일을 말하고 용서를 구했다. “알고 있었어요. 오래전에 용서했어요. 당신을 위해서가 아니라, 제가 살기 위해서.”`,{tone:'위로',place:'종탑 아래',their:'그 사람이 용서를 구했다. 나는 이미 용서했다. 그래도 그 말을 직접 듣고 싶었다는 걸 그때 알았다.'});bfEase('r_told',`${bI('jules')} 용서했다. 자기가 살기 위해서라고 했다.`)}}:null,
@@ -453,6 +472,8 @@ function bfYear(){const B=bfS();if(!BF_KEYS.some(bfMet))return;
   for(const k of BF_KEYS){const r=bfR(k);if(!r||!r.alive)continue;const a=s.year-r.by;if(a<40)continue;
     if(R()<baseMort(a)*.75){bfDie(k,a>=60?'old':'ill',`${a}세로 세상을 떠났다.`);
       if(r.close>=55){const ms=B.mem.filter(m=>m.k.includes(k));const m=ms[ms.length-1];if(m)bfRe(m.id,`${bN(k)}의 부고를 받은 날, 이 기억을 다시 꺼냈다.`,'그리움')}}}
+  // 쥘의 서품과 본당
+  {const r=bfR('jules');if(r&&r.alive){const a=s.year-r.by;if(r.job==='신학생'&&a>=24){r.job='보좌 신부';bfFate('jules','사제 서품을 받았다');L(`${bU('jules')} 사제 서품을 받았다. 첫 미사에서 한 번도 더듬지 않았다.`,'ev')}else if(r.job==='보좌 신부'&&a>=42){r.job='본당 신부';bfFate('jules','본당 신부가 되었다')}}}
   // 그대의 혼례에 오지 않은 사람(끝내 이유를 모른다)
   if(s.married&&!B.lwed&&bfAlive('louise')){B.lwed=1;if(R()<.45){bfAsk('q_lou_wed','louise',`${bU('louise')} 왜 그대의 혼례에 오지 않았을까?`);L(`혼례 날 ${bU('louise')} 오지 않았다. 나중에 물으니 “일이 있었어.”라고만 했다.`,'ev')}}
   // 그대가 보낸 편지에 답장이 온다
