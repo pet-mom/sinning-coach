@@ -685,3 +685,34 @@ h3,h3.sec{font-family:var(--fd);font-weight:600;font-size:1.12rem;border:0}
 .plist{overflow:hidden}.prow{max-width:100%;min-width:0}.prow .pt{min-width:0}
 .prow{grid-template-columns:1fr 28px}
 .pp-top.noimg{display:block;text-align:center;margin-bottom:10px}
+
+/* ---------- 다섯 벗: 기억 탭 · 생애 기록 ---------- */
+.bfc .bfrow .pt span{font-family:var(--fd);font-style:italic;color:var(--gold)}
+.bfmem .lab{margin-top:14px}
+ul.bk,ul.bq,ul.bl{list-style:none;margin:4px 0;padding:0;display:grid;gap:6px}
+ul.bk li{font-size:.9rem;padding-left:14px;position:relative;line-height:1.55}
+ul.bk li::before{content:'';position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;border:1px solid var(--gold)}
+ul.bk li.clue::before{background:color-mix(in srgb,var(--gold) 50%,transparent)}
+ul.bk li.truth::before{background:var(--gold)}ul.bk li.truth{font-weight:500}
+ul.bq li{font-size:.88rem;color:var(--mut);font-style:italic}ul.bq li.ans{font-style:normal;color:var(--fg)}ul.bq li small{color:var(--mut)}
+ul.bl li{font-size:.86rem;line-height:1.5;border-bottom:1px dotted var(--line);padding-bottom:5px}
+ul.bms{list-style:none;margin:4px 0;padding:0 0 0 14px;border-left:1px solid color-mix(in srgb,var(--gold) 45%,var(--line));display:grid;gap:12px}
+li.bm{position:relative}li.bm::before{content:'';position:absolute;left:-19px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--card);border:1.5px solid var(--gold)}
+.bm-y{font-size:.76rem;color:var(--mut);letter-spacing:.02em}
+.bm-t{margin:2px 0 4px;font-size:.92rem;line-height:1.6}
+.bm-re{margin:2px 0;font-size:.84rem;color:var(--mut);line-height:1.5}
+.bm-th{margin:4px 0 0;font-size:.84rem;font-style:italic;color:var(--mut);border-left:2px solid color-mix(in srgb,var(--gold) 40%,transparent);padding-left:8px}
+.bm-fade{margin:2px 0 0;font-size:.76rem;color:var(--mut)}
+li.bm.faded .bm-t{opacity:.55;filter:blur(.3px)}li.bm.faded::before{border-style:dashed}
+.tone{display:inline-block;font-size:.72rem;padding:0 7px;border-radius:999px;border:1px solid var(--line);color:var(--mut);margin-right:2px;font-style:normal}
+.tone.t-0,.tone.t-5,.tone.t-9{border-color:color-mix(in srgb,var(--gold) 60%,transparent);color:var(--gold)}
+.tone.t-2,.tone.t-3,.tone.t-7{border-color:color-mix(in srgb,var(--rouge) 55%,transparent);color:var(--rouge)}
+.tone.t-4{border-color:color-mix(in srgb,var(--green) 55%,transparent);color:var(--green)}
+#obLife{text-align:left}
+.ob-lk{text-align:center;font-family:var(--fd);font-style:italic;letter-spacing:.06em;color:#CFAE68;margin:2px 0 8px}
+.ob-lp{line-height:1.75;margin:6px 0;font-size:.95rem}
+.ob-lh{margin:14px 0 4px;font-size:.86rem;color:#CFAE68;font-weight:500;letter-spacing:.04em}
+ul.ob-ll{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+ul.ob-ll li{font-size:.88rem;line-height:1.6;border-bottom:1px dotted color-mix(in srgb,#CFAE68 30%,transparent);padding-bottom:5px}
+ul.ob-ll li small{display:block;color:#C9BBA2;font-style:italic}
+ul.ob-ll li b{font-weight:600;margin-right:2px}

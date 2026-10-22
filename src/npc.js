@@ -18,7 +18,7 @@ const NP_JOB={artisan:{M:['목수 직인','소목장 직인','자물쇠공 직�
 const NP_UP={'목수 직인':'목수 장인','소목장 직인':'소목장 장인','자물쇠공 직인':'자물쇠 장인','인쇄 직인':'인쇄소 식자 반장','제빵 직인':'빵집 주인','재봉사':'의상실 주인','모자 가게 점원':'모자 가게 주인','공증인 서기':'공증인','변호사 수습':'변호사','약제사 견습':'약제사','외과의 견습':'외과의','법학생':'변호사','화가 지망생':'화가','근위 기병 중위':'기병 대위','보병 연대 대위':'대령','고등법원 판사 견습':'고등법원 판사','신학생':'보좌 신부','보좌 신부':'본당 신부','레알 시장 생선 장수':'레알 시장 생선 가게 주인','과일 행상':'과일 가게 주인','하녀':'하녀장','짐꾼':'마부','의학생':'의사','에콜 폴리테크니크 학생':'공병 장교','오베르뉴에서 올라온 물장수':'고철상','그리제트(여공)':'의상실 주인','기계공':'기계 공장 십장','식자공':'인쇄소 식자 반장'};
 const NP_GRP={ng:'국민방위대',sc:'구민회의 상퀼로트',jd:'금빛 청년단',sdh:'공화파 인권협회',sais:'비밀결사 계절회'};
 /* ---------- 도구 ---------- */
-const npAll=()=>(s.rel||[]).filter(r=>r.kind==='fic');
+const npAll=()=>(s.rel||[]).filter(r=>r.kind==='fic'&&!r.core); // 다섯 벗(core)은 bonds.js의 이야기만 따른다
 const npLive=()=>npAll().filter(r=>r.alive);
 const npAge=r=>s.year-r.by;
 const npNob=r=>!!(ESTATES[r.estate]&&ESTATES[r.estate].noble);
@@ -32,7 +32,7 @@ const npCler=r=>!!r.cler;
 // 그대와 그의 정치적 거리(공개 입장 기준)
 const npGap=r=>Math.abs((r.pol||0)-(child()?s.pol:pubPol()));
 const npTm=(y,m)=>y*12+m-1;
-function npName(sex,E){const used=new Set((s.rel||[]).map(r=>r.n));for(let k=0;k<12;k++){const g=pick(sex==='M'?M_NAMES:F_NAMES)[0];
+function npName(sex,E){const used=new Set((s.rel||[]).map(r=>r.n));const cg=new Set((s.rel||[]).filter(r=>r.core).map(r=>r.n.split(' ')[0]).concat(['에티엔','엘리즈','쥘','쥘리','앙투안','앙투아네트','가브리엘','루이즈']));for(let k=0;k<24;k++){const g=pick(sex==='M'?M_NAMES:F_NAMES)[0];if(cg.has(g))continue;
   const n=ESTATES[E]&&ESTATES[E].noble?`${g} 드 ${pick(NOBLE_SURS)[0]}`:`${g} ${pick(SURS.concat(PEOPLE_M))[0]}`;if(!used.has(n)&&!n.endsWith(' '+s.sur[0]))return n}return `${pick(sex==='M'?M_NAMES:F_NAMES)[0]} ${pick(SURS)[0]}`}
 function npEraPol(E,t=T()){const b=t<1787?0:t<1789.5?10:t<1792.5?25:t<1794.6?40:t<1799.8?15:t<1814.3?0:t<1830.6?10:t<1848?20:30;
   return b+(E==='artisan'?(t<1787?5:15):E==='peasant'?-10:E==='noble'?(t<1787?-35:-50):0)}
