@@ -52,7 +52,8 @@
       <div class="card home" id="homeCard" hidden></div>
       <div class="card sched" id="schedCard" hidden></div>
       <div class="econ" id="econCard" hidden></div>
-      <div class="card logc">
+      <div class="card storyc"><div class="ch"><h2>이야기</h2><span class="mut"><span class="fr">Récit</span> <button class="lnk" id="storyT" type="button" aria-pressed="false">연대기 보기</button></span></div><div id="storyBox"></div></div>
+      <div class="card logc" id="logCard" hidden>
         <div class="ch"><h2>인생 기록</h2><span class="mut">최근 순 <button class="lnk" id="dataT" type="button" aria-pressed="false">자료 보기</button></span></div>
         <div id="log" aria-live="polite"></div>
         <div class="logmore"><button class="pill" id="logMore" type="button" hidden></button><button class="pill" id="logLess" type="button" hidden>접기</button></div>
@@ -94,7 +95,7 @@
         <input id="inSur" maxlength="16" autocomplete="off" placeholder="성" aria-label="성">
         <button class="cb dice" id="rollB" type="button" aria-label="무작위로 정하기" title="이름·신분·출생일을 무작위로">⚄</button>
       </div>
-      <div class="nf-est"><span id="estName"></span><span class="mut" id="estFr"></span></div>
+      <div class="nf-est"><label for="estSel">신분</label><select id="estSel" aria-label="신분"></select><span class="mut" id="estFr"></span></div>
       <div class="nf-sex" role="group" aria-label="성별"><button type="button" class="fopt" data-x="M">남</button><button type="button" class="fopt" data-x="F">여</button></div>
       <div class="nf-date"><label>출생일</label><select id="bY" aria-label="출생 연도"></select><select id="bM" aria-label="출생 월"></select><select id="bD" aria-label="출생 일"></select></div>
       <p class="mut small nf-place">출생지 · 파리</p>
