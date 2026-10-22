@@ -716,3 +716,59 @@ ul.ob-ll{list-style:none;margin:0;padding:0;display:grid;gap:5px}
 ul.ob-ll li{font-size:.88rem;line-height:1.6;border-bottom:1px dotted color-mix(in srgb,#CFAE68 30%,transparent);padding-bottom:5px}
 ul.ob-ll li small{display:block;color:#C9BBA2;font-style:italic}
 ul.ob-ll li b{font-weight:600;margin-right:2px}
+
+/* ---------- 프로필: 신분증 · 평판(작게) · 영향력 ---------- */
+#profCard.pf2{display:grid;gap:14px;background:none;border:0;padding:0;box-shadow:none}
+.pf2-id{position:relative;border:1px solid var(--gold);background:#EBE2D1;padding:6px;overflow:hidden}
+.pf2-id::before{content:"";position:absolute;inset:0;background:var(--pf2-bg,none) center 60%/cover no-repeat;opacity:.22;filter:sepia(.5) contrast(.9)}
+.pf2-in{position:relative;border:1px solid var(--gold);padding:18px 16px 16px;background:linear-gradient(180deg,rgba(244,238,226,.8),rgba(244,238,226,.93));color:#2A211A}
+.pf2-c{position:absolute;width:46px;height:46px;pointer-events:none}.pf2-c svg{width:100%;height:100%;display:block}
+.pf2-c.c-tl{left:2px;top:2px}.pf2-c.c-tr{right:2px;top:2px;transform:scaleX(-1)}.pf2-c.c-bl{left:2px;bottom:2px;transform:scaleY(-1)}.pf2-c.c-br{right:2px;bottom:2px;transform:scale(-1)}
+.pf2-doc{text-align:center;font-family:'UnifrakturMaguntia',serif;font-size:1.05rem;color:#5A1C1E;letter-spacing:.04em;line-height:1.1}
+.pf2-doc small{display:block;font-family:'Cormorant Garamond','Noto Serif KR',serif;font-style:italic;font-size:.78rem;color:#6E5F4E;letter-spacing:.12em;margin-top:3px}
+.pf2-row{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:start;margin-top:14px}
+.pf2-por{width:92px;height:114px;border-radius:50% / 46%;overflow:hidden;box-shadow:0 0 0 2px #EBE2D1,0 0 0 3.5px var(--gold),0 0 0 7px #EBE2D1,0 0 0 8px rgba(176,141,69,.55);background:#E2D6BF}
+.pf2-por img,.pf2-por .cameo-w{width:100%;height:100%;object-fit:cover;object-position:50% 10%;display:block}
+.pf2-por .cameo-w svg{width:100%;height:100%}
+.pf2-who{min-width:0}
+.pf2-nm{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-weight:600;font-size:1.6rem;line-height:1.08;text-wrap:balance}
+.pf2-fr{font-family:'Pinyon Script',cursive;font-size:1.2rem;color:var(--gold);line-height:1.1;margin:2px 0 6px}
+.pf2-who dl{margin:6px 0 0;display:grid;grid-template-columns:auto 1fr;gap:1px 10px;font-size:.84rem}
+.pf2-who dt{color:#6E5F4E;font-family:'Cormorant Garamond','Noto Serif KR',serif;font-style:italic;font-size:.88rem}
+.pf2-who dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.pf2-tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:14px;padding:12px 62px 0 0;border-top:1px solid rgba(176,141,69,.5)}
+.pf2-lab{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-style:italic;color:#6E5F4E;font-size:.88rem;margin-right:2px}
+.pf2-tag{font-size:.8rem;padding:3px 11px;border-radius:999px;border:1px solid var(--gold);background:rgba(244,238,226,.7)}
+.pf2-tag i{font-style:normal;color:var(--gold);margin-right:4px}
+.pf2-none{font-size:.8rem;color:#6E5F4E}
+.pf2-seal{position:absolute;right:16px;bottom:14px;width:52px;height:52px;border-radius:50%;border:1.5px solid #5A1C1E;display:grid;place-items:center;font-family:'UnifrakturMaguntia',serif;color:#5A1C1E;font-size:1.05rem;opacity:.72;transform:rotate(-12deg)}
+.pf2-seal::before{content:"";position:absolute;inset:4px;border-radius:50%;border:1px dotted #5A1C1E}
+.pf2-panel{position:relative;background:#1E2F27;color:#EFE4CB;border:1px solid var(--gold);padding:14px 14px 14px}
+.pf2-panel::after{content:"";position:absolute;inset:5px;border:1px solid rgba(217,188,122,.55);pointer-events:none}
+.pf2-f{position:absolute;width:40px;height:40px;pointer-events:none;opacity:.85}.pf2-f svg{width:100%;height:100%;display:block}
+.pf2-f.f-tl{left:4px;top:4px}.pf2-f.f-tr{right:4px;top:4px;transform:scaleX(-1)}.pf2-f.f-bl{left:4px;bottom:4px;transform:scaleY(-1)}.pf2-f.f-br{right:4px;bottom:4px;transform:scale(-1)}
+.pf2-ph{margin:0;text-align:center;font-family:'Cormorant Garamond','Noto Serif KR',serif;font-weight:500;font-size:1.15rem;letter-spacing:.06em;line-height:1.1;color:#EFE4CB}
+.pf2-ph small{display:block;font-family:'Pinyon Script',cursive;font-size:1rem;color:#D9BC7A;font-weight:400;letter-spacing:0;margin-top:1px}
+.pf2-rep{padding:18px 16px 16px}
+.pf2-rep .pf2-ph{font-size:1.35rem}.pf2-rep .pf2-ph small{font-size:1.15rem;margin-top:2px}
+.pf2-bloom{display:flex;justify-content:center;margin:8px 0 10px}.pf2-bloom svg{width:150px;height:22px}
+.pf2-rg{display:grid;grid-template-columns:1fr 1fr;gap:12px 10px;margin-top:4px}
+.pf2-ri{position:relative;text-align:center;padding:16px 8px 12px;border:1px solid rgba(217,188,122,.4)}
+.pf2-ri::before,.pf2-ri::after{content:"";position:absolute;top:-1px;width:28px;height:28px;background:var(--repbg) no-repeat;background-size:100%}
+.pf2-ri::before{left:-1px}.pf2-ri::after{right:-1px;transform:scaleX(-1)}
+.pf2-rk{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-size:1.1rem;font-weight:500;letter-spacing:.08em}
+.pf2-rv{font-family:'Cormorant Garamond',serif;font-size:1.9rem;line-height:1;margin:4px 0 2px;color:#D9BC7A;font-variant-numeric:lining-nums tabular-nums}
+.pf2-rv.low{color:#E0A49C}
+.pf2-rw{font-size:.76rem;color:#C9BA98}
+.pf2-rb{height:3px;margin:8px 14px 0;background:rgba(239,228,203,.14)}.pf2-rb i{display:block;height:100%;background:#D9BC7A}
+.pf2-inf{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:14px;padding:14px 18px}
+.pf2-inf .pf2-f{width:28px;height:28px}
+.pf2-ib{position:relative;width:74px;height:56px;border-radius:50%;border:1px solid #D9BC7A;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 30%,#2A4035,#1E2F27 70%)}
+.pf2-ib::before{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(217,188,122,.4)}
+.pf2-in-n{font-family:'Cormorant Garamond',serif;font-size:1.6rem;line-height:1;color:#D9BC7A;font-variant-numeric:lining-nums tabular-nums}
+.pf2-ik{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-size:.95rem;letter-spacing:.06em;color:#EFE4CB}
+.pf2-ik small{font-family:'Pinyon Script',cursive;font-size:.95rem;color:#D9BC7A;margin-left:6px;letter-spacing:0}
+.pf2-in-l{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-size:.95rem;font-style:italic;line-height:1.4;margin-top:2px}
+.pf2-in-l b{font-style:normal;font-weight:600;color:#D9BC7A}
+.pf2-warn{margin:0;text-align:center;font-size:.85rem;color:var(--rouge)}
+@media (max-width:360px){.pf2-row{grid-template-columns:78px 1fr}.pf2-por{width:78px;height:98px}}
