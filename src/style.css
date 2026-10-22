@@ -788,7 +788,6 @@ ul.ob-ll li b{font-weight:600;margin-right:2px}
 .st-x::first-letter{font-size:1.5em;font-weight:700;color:var(--rouge)}
 
 /* ================= 책 한 쪽 디자인 (시간 기능 없음) ================= */
-#top .topbar,#top .prog,#top .hint{display:none!important}
 #top{padding-bottom:6px}
 .mini{text-align:center;font-family:var(--fd);font-style:italic;font-size:.86rem;color:var(--mut);letter-spacing:.04em;margin-top:2px}
 #tDaily .hero,#tDaily .home,#tDaily .sched,#tDaily .econ{display:none!important}
@@ -837,3 +836,7 @@ main.tabs{padding-bottom:140px}
 .pgpill.inflow{position:static;margin:14px 6px 0 auto;width:max-content}
 #tDaily .pgwrap{display:flex;justify-content:flex-end}
 .page.draft .pg-title{color:#8A3A2A}.page.draft .pg-rule{border-top-style:dashed}
+
+/* 기록 사이에 섞이는 짧은 줄글 */
+.le.story .tx{font-family:var(--fd),"Noto Serif KR",serif;font-style:italic;color:var(--mut);line-height:1.75}
+.le.story .tx::before{content:"❦ ";font-style:normal;color:var(--gold)}
