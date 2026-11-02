@@ -873,6 +873,7 @@ details.fold>.cgrid{margin-top:8px}
 .cap-row u{display:block;height:100%;background:#D9BC7A;text-decoration:none}
 .cap-row b{text-align:right;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:#D9BC7A;font-variant-numeric:lining-nums tabular-nums}
 .cap-row.low b{color:#E0A49C}
+#obWill .wl-k{display:block;font-style:normal;font-size:.72rem;letter-spacing:.3em;opacity:.7;margin-bottom:6px}
 
 </style>
 </head>
@@ -9502,20 +9503,34 @@ const FN_LETTER=[
   b.onclick=()=>{const box=el('div','letter-ch');box.appendChild(el('div','lab','무엇을 쓸까?'));FN_LETTER.forEach(o=>{const c=el('button','opt row');c.type='button';const sp=el('span');sp.appendChild(el('span','ol',o.l));sp.appendChild(el('small',null,o.s));c.appendChild(sp);
     c.onclick=()=>{s.acts['let_'+(r.fid||r.pid)]=s.year;say(o.f(r));save();personPage(r);render()};box.appendChild(c)});b.replaceWith(box)}}catch(e){console.error(e)}}}
 
-/* ---------- 사망 뒤: 네 줄 유언 ---------- */
-function fnWill(){const nm=`${s.given[0]} ${s.sur[0]}`,L0=[];const kids=kidsAlive(),sp=s.spouse&&s.spouse.alive?s.spouse:null;
-  if(s.age<14){L0.push(`나는 ${s.age}살이에요.`);L0.push(s.mo&&s.mo.alive?'엄마, 울지 마세요.':s.fa&&s.fa.alive?'아빠, 울지 마세요.':'누군가 내 이름을 기억해 주면 좋겠어요.');
-    const f=(typeof BF_KEYS!=='undefined'?BF_KEYS:[]).map(bfR).find(r=>r&&r.alive);L0.push(f?`${bN(f.core)}에게, 내일 강가에 못 가서 미안해.`:'내 구슬은 골목 아이들에게 나눠 주세요.');L0.push(willLine());return L0}
-  L0.push(`나 ${jo(nm,'은','는')} ${s.year}년, ${s.age}세에 이 글을 남긴다.`);
-  if(kids.length)L0.push(`사랑하는 ${kids.map(k=>k.n).slice(0,3).join(', ')}에게. 서로 의지하며 살고${sp?`, ${jo(sp.n||(isM()?'어머니':'아버지'),'의','의')} 곁을 지켜 다오`:''}.`);
-  else if(sp)L0.push(`${sp.n||(isM()?'아내':'남편')}에게, 함께한 날들에 고맙다. 나를 너무 오래 슬퍼하지 마라.`);
-  else L0.push('남길 식구가 없으니, 내 몫의 빵은 골목의 가난한 아이들에게 나눠 주기를 바란다.');
-  const fr=(typeof BF_KEYS!=='undefined'?BF_KEYS:[]).map(bfR).filter(Boolean);const alive=fr.filter(r=>r.alive).sort((a,b)=>b.close-a.close)[0],gone=fr.filter(r=>!r.alive).sort((a,b)=>b.close-a.close)[0];
-  if(alive){const o=(s.bf&&s.bf.obj||[]).find(x=>!x.lost);L0.push(`${bN(alive.core)}에게 ${o?jo(o.t,'을','를'):'내 책 몇 권을'} 남긴다. 퐁뇌프에서의 약속을 잊지 마라.`)}
-  else if(gone)L0.push(`먼저 간 ${bN(gone.core)}의 곁에 묻어 다오. 할 이야기가 많다.`);
-  else L0.push('장례는 소박하게, 종은 한 번만 울려 다오.');
-  let w='';try{w=willLine()}catch(e){}L0.push(w||'신이 허락한 날들에 감사한다. 모두 잘 있거라.');return L0.slice(0,4)}
-{const _se=showEnd;showEnd=function(){_se();try{const w=$('#obWill');if(!w||!s)return;w.innerHTML='';fnWill().forEach(t=>w.appendChild(el('span','wl',t)));
+/* ---------- 사망 뒤: 마지막 말 ----------
+   삶의 모양(어린아이 · 후회 · 혁명 · 출세와 명예 · 진리 · 신앙 · 평범한 행복)에 따라 고르고, 신분에 따라 말투를 바꾼다.
+   귀족: 예스럽고 격식 있는 말투 / 부르주아: 단정한 문어체 / 서민: 입말. */
+const FN_LAST={
+ child:{alive:{noble:'어머님… 유모를 불러 주세요. 추워요.',bourg:'어머니, 손 잡아 주세요. 촛불 끄지 마세요.',common:'엄마… 엄마 어디 있어? 무서워.'},
+   gone:{noble:'어머님이… 저기 문가에 서 계세요. 이제 춥지 않아요.',bourg:'어머니가 저기 계세요. 이제 안 무서워요.',common:'엄마가 저기 있어. 이제 안 무서워.'}},
+ regret:{noble:'다른 길을 택할 수 있었을까… 이제는 그 답을 알 길이 없구려.',bourg:'다른 선택을 할 수 있었을까? 이제는 그 답을 알 수 없겠구나.',common:'다르게 살 수도 있었을까? 이젠 알 수가 없네.'},
+ rev:{noble:'내가 옳았는지는 역사가 판단하리라. 다만 내가 믿은 바를 저버리지는 않았노라.',bourg:'내가 옳았는지는 역사가 판단하겠지. 다만 내가 믿었던 것을 배반하지는 않았다.',common:'내가 옳았는지는 나중 사람들이 따지겠지. 그래도 내가 믿은 걸 팔아넘기진 않았어.'},
+ royal:{noble:'신과 국왕 폐하께 바친 생이었노라. 부끄러움은 없다.',bourg:'왕과 교회를 지키려 했다. 그것을 후회하지 않는다.',common:'임금님 편에 섰던 걸 후회 안 해. 하느님은 아실 거야.'},
+ fame:{noble:'후세가 내 이름을 기억하겠지. 그렇지 않소?',bourg:'사람들은 나를 기억할 것이다. 그렇지 않은가?',common:'사람들이 날 기억하겠지? 그렇지?'},
+ truth:{noble:'평생 진리를 찾아 헤맸노라. 이제야 내가 알지 못한 것이 얼마나 많았는지 알 것 같구나.',bourg:'나는 평생 진리를 찾아 헤맸다. 이제야 내가 알지 못했던 것들이 얼마나 많았는지 알 것 같다.',common:'평생 뭔가를 알고 싶어 했지. 이제 보니 모르는 게 훨씬 많았어.'},
+ faith:{noble:'주여, 제 영혼을 당신 손에 맡기나이다.',bourg:'하느님, 이제 당신께 돌아갑니다. 저를 받아 주소서.',common:'하느님, 이제 가요. 받아 주세요.'},
+ happy:{noble:'내게는 넉넉한 세월이 있었소. 사랑하는 이들과 함께였으니, 그것으로 족하오.',bourg:'내게는 충분한 시간이 있었다. 사랑하는 사람들과 함께했으니, 그것으로 충분하다.',common:'살 만큼 살았어. 좋아하는 사람들이랑 같이 있었으니, 그거면 됐지.'},
+ plain:{noble:'가문의 이름에 부끄럽지 않게 살았노라. 이제 쉬어도 되겠지.',bourg:'장부는 다 맞췄다. 이제 셈을 끝내도 되겠지.',common:'아, 따뜻하다. 이제 좀 쉬어야겠어.'}};
+function fnKind(){if(s.age<14)return 'child';
+  const reg=s.bf?s.bf.reg.filter(r=>!r.ease).length:0;if(reg>=2)return 'regret';
+  if(s.pol>=45&&(s.party||s.flags.bastille||s.flags.regicide))return 'rev';
+  if(s.pol<=-45&&(s.party||noble()))return 'royal';
+  if(['부','명예'].includes(s.goal)||s.trait==='야심'||s.fame>=50)return 'fame';
+  if(s.goal==='학문'||s.trait==='계몽'||(s.st.edu||0)>=70)return 'truth';
+  if(s.goal==='신앙'||s.faith>=80||priest()||nun())return 'faith';
+  if((s.spouse&&(s.spouse.alive||s.married))&&kidsAlive().length&&reg===0)return 'happy';
+  if(reg===1)return 'regret';
+  return kidsAlive().length?'happy':'plain'}
+function fnLast(){const st=noble()?'noble':s.estate==='bourgeois'?'bourg':'common';const k=fnKind();
+  if(k==='child'){const alive=(s.mo&&s.mo.alive)||(s.fa&&s.fa.alive);return FN_LAST.child[alive?'alive':'gone'][st]}
+  return FN_LAST[k][st]}
+{const _se=showEnd;showEnd=function(){_se();try{const w=$('#obWill');if(!w||!s)return;w.innerHTML='';w.appendChild(el('span','wl-k','마지막 말'));w.appendChild(el('span','wl',`“${fnLast()}”`));
   document.querySelectorAll('#end .ob-sec').forEach(x=>x.hidden=true)}catch(e){console.error(e)}}}
 
 </script>
