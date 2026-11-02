@@ -846,3 +846,17 @@ details.fold>summary::-webkit-details-marker{display:none}
 details.fold>summary::after{content:"펼치기 ▾";font-size:.78rem;font-weight:400;color:var(--mut)}
 details.fold[open]>summary::after{content:"접기 ▴"}
 details.fold>.cgrid{margin-top:8px}
+/* 사건 카드의 그림을 뺀다 */
+#shArt{display:none!important}
+.pf2-cap .pf2-rg{grid-template-columns:1fr 1fr}
+.letter-ch{display:grid;gap:6px;margin-top:8px}
+#obWill .wl{display:block;margin:2px 0}
+#obWill{font-style:italic;line-height:1.85;text-wrap:balance}
+#obWill{max-width:30em;margin-inline:auto}
+.cap-bars{display:grid;gap:9px;margin:12px 18px 4px}
+.cap-row{display:grid;grid-template-columns:3.2em 1fr 2.2em;align-items:center;gap:10px;font-size:.92rem}
+.cap-row span{font-family:'Cormorant Garamond','Noto Serif KR',serif;letter-spacing:.06em}
+.cap-row s{display:block;height:4px;background:rgba(239,228,203,.16);text-decoration:none}
+.cap-row u{display:block;height:100%;background:#D9BC7A;text-decoration:none}
+.cap-row b{text-align:right;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:#D9BC7A;font-variant-numeric:lining-nums tabular-nums}
+.cap-row.low b{color:#E0A49C}
