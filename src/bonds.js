@@ -8,6 +8,8 @@
    두 갈래 시대: 1774년 이전에 태어나면 대혁명(1789~1794)이, 그 뒤에 태어나면 7월 혁명과 1832년(콜레라·6월 봉기)이 시험의 시간이 된다.
    가상의 벗(kind:'fic')과 같은 s.rel에 core 표시를 달고 들어가지만, npc.js의 무작위 운명은 받지 않고 이 파일의 이야기만 따른다. */
 const BF_KEYS=['louise','etienne','jules','antoine','gabriel'];
+// 어린 시절 다섯 벗(로베스피에르·데물랭은 무리 장면에 넣지 않는다)
+const BF5=['louise','etienne','jules','antoine','gabriel'];
 const bfS=()=>{if(!s.bf)s.bf={st:{},f:{},mem:[],q:[],reg:[],obj:[],let:[],nx:0,amb:{},br:0,ca:0};return s.bf};
 const bfR=k=>(s.rel||[]).find(r=>r.core===k)||null;
 const bfMet=k=>!!bfR(k);
@@ -128,8 +130,8 @@ beat('antoine','an_meet',{when:()=>s.age>=9&&bfHere(),run:async()=>{bfMake('anto
    {l:'내기를 하지 않는다',a:'safe',f:()=>{bfMem('m_button','antoine',`${bI('antoine')} 은단추를 걸고 구슬 내기를 하자고 했지만 하지 않았다.`,{tone:'그리움',place:'생드니 거리',their:'그 아이는 내기를 하지 않았다. 조심성 많은 아이였다. 나는 그런 사람이 부러웠다.'});bfRel('antoine',{close:3});say(`${bU('antoine')} 어깨를 으쓱하더니 다른 아이와 내기를 했다. 그리고 졌다.`)}}])}});
 
 beat('gabriel','ga_meet',{when:()=>s.age>=10&&bfHere()&&[11,0,1].includes(s.month),run:async()=>{bfMake('gabriel');const Ga=bN('gabriel');bfJob('gabriel',noble()?'이웃 저택의 아이':'도매상의 아이');
-  say(`겨울, 튈르리 정원의 큰 연못이 꽁꽁 얼었다. 모피 깃을 단 새 외투 차림의 ${bU('gabriel')} 당신의 낡은 신발을 보고 깔깔 웃더니, 누가 더 멀리 미끄러지나 내기하자고 했다. 연못 한가운데서 얼음이 쩍 갈라졌다. ${bU('gabriel')} 뒤도 돌아보지 않고 달아났고, 당신은 허리까지 차가운 물에 빠졌다. 지나가던 물장수가 장대를 내밀어 당신을 끌어냈다.`+fx({hp:-3}),'ev');
-  await bfScene('누가 먼저 도망쳤나','la glace',`이튿날, 골목 아이들이 열이 올라 콜록거리는 당신을 둘러싸고 묻는다. “누가 먼저 도망쳤어?” 저만치 ${bI('gabriel')} 새 외투를 입은 채 굳은 얼굴로 서 있다.`,[
+  fx({hp:-3});
+  await bfScene('얼어붙은 연못','la glace',`겨울, 튈르리 정원의 큰 연못이 꽁꽁 얼었다. 모피 깃을 단 새 외투 차림의 아이가 당신의 낡은 신발을 보고 깔깔 웃더니, 누가 더 멀리 미끄러지나 내기하자고 한다. 이웃 ${noble()?'저택':'도매상'}의 아이, ${jo(Ga,'이다','다')}. 연못 한가운데서 얼음이 쩍 갈라졌다. ${bU('gabriel')} 뒤도 돌아보지 않고 달아났고, 당신은 허리까지 차가운 물에 빠졌다. 지나가던 물장수가 장대를 내밀어 당신을 끌어냈다. 이튿날, 골목 아이들이 열이 올라 콜록거리는 당신을 둘러싸고 묻는다. “누가 먼저 도망쳤어?” 저만치 ${bI('gabriel')} 새 외투를 입은 채 굳은 얼굴로 서 있다.`,[
    {l:'“둘 다 도망쳤어.”라고 말한다',a:'social',f:()=>{bfSet('gabriel','kept');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`튈르리 정원 연못의 얼음이 깨지던 날 ${bU('gabriel')} 달아났고, 당신은 물에 빠졌다. 아이들에게는 둘 다 도망쳤다고 말했다.`,{tone:'그리움',place:'튈르리 정원 연못',their:'그 아이는 내가 먼저 도망쳤다고 말하지 않았다. 나는 평생 그 거짓말에 빚졌다.'});bfObj('ribbon',`${bI('gabriel')} 말없이 쥐여 준 푸른 리본`,{from:'gabriel'});bfRel('gabriel',{close:10,trust:12,riv:-10});say(`며칠 뒤 ${bI('gabriel')} 말없이 푸른 리본 하나를 당신 손에 쥐여 주었다.`)}},
    {l:'“가브리엘이 먼저 도망쳤어.”라고 말한다',a:'bold',f:()=>{bfSet('gabriel','told');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`튈르리 정원 연못의 얼음이 깨지던 날 ${bU('gabriel')} 달아났고, 당신은 물에 빠졌다. 아이들에게 ${bI('gabriel')} 먼저 도망쳤다고 말했다. 다들 웃었다.`,{tone:'씁쓸함',place:'튈르리 정원 연못',their:'모두가 웃었다. 그 아이는 사실을 말했을 뿐이다. 나는 그날부터 다시는 도망치지 않겠다고 다짐했다.'});bfRel('gabriel',{riv:15,close:-4});say(`${bU('gabriel')} 한 달 동안 골목에 나오지 않았다.`)}},
    {l:'아무 말도 하지 않는다',a:'safe',f:()=>{bfSet('gabriel','silent');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`튈르리 정원 연못의 얼음이 깨지던 날 ${bU('gabriel')} 달아났고, 당신은 물에 빠졌다. 누가 먼저 도망쳤느냐는 물음에 아무 말도 하지 않았다.`,{tone:'그리움',place:'튈르리 정원 연못',their:'그 아이는 아무 말도 하지 않았다. 차라리 나를 비웃었으면 했다.'});bfRel('gabriel',{close:4})}}])}});
@@ -149,7 +151,7 @@ beat('etienne','et_promise',{when:()=>s.age>=10&&s.year>=bfR('etienne').y+1&&bfH
     {tone:'희망',place:'퐁뇌프',their:law==='seize'?'그 아이가 나더러 고르라고 했다. 그래서 그 법을 말해 버렸다. 왜 그 법이었는지는 묻지 않았다. 고마웠다.':'그날 그 아이가 고른 법보다, 내가 차마 말하지 못한 법이 더 오래 생각났다.'});
   bfRel('etienne',{close:8,trust:8});say(law==='seize'?`${bI('etienne')} 고른 법을 듣고, 당신은 왜 하필 그 법이냐고 묻지 않았다.`:`${bU('etienne')} 진지하게 고개를 끄덕였다. “좋아. 약속이야.”`)}});
 
-beat('group','g_scold',{when:()=>s.age>=11&&bfMetN()>=3&&bfHere(),until:()=>s.age>=14,run:async()=>{const ks=BF_KEYS.filter(k=>bfMet(k)&&bfAlive(k));const who=bfList(ks);const tch=noble()?'가정교사':'본당 신부';
+beat('group','g_scold',{when:()=>s.age>=11&&bfMetN()>=3&&bfHere(),until:()=>s.age>=14,run:async()=>{const ks=BF5.filter(k=>bfMet(k)&&bfAlive(k));const who=bfList(ks);const tch=noble()?'가정교사':'본당 신부';
   const TH={louise:'사과 맛밖에 기억나지 않는다. 그렇게 단 사과는 그 뒤로 없었다.',etienne:'그 아이가 나섰을 때 나는 나서지 못했다. 그게 오래 부끄러웠다.',jules:'신부님이 “용기는 매를 맞는 쪽에 있다”고 하셨다. 그 말을 평생 외웠다.',antoine:'사실 담을 넘자고 한 건 나였다. 다들 그걸 알면서 아무도 말하지 않았다.',gabriel:'아버지가 돈을 보내 나만 빠졌다. 그날 다른 아이들의 손바닥이 부어 있었다.'};
   const mk=(t,ov={})=>{const m=bfMem('m_apple',ks,t,{place:'카르투지오 수도원 과수원',tone:'기쁨'});if(m){m.their=Object.assign({},TH,ov);Object.keys(m.their).forEach(k=>{if(!ks.includes(k))delete m.their[k]})}ks.forEach(k=>bfRel(k,{close:4}))};
   await bfScene('수도원 과수원','les pommes des Chartreux',`${who}, 그리고 당신. 카르투지오 수도원 과수원 담을 넘어 사과를 따다가 수사에게 붙잡혔다. ${tch} 앞에 줄지어 섰다. “누가 먼저 넘자고 했느냐?” 모두 발끝만 내려다본다.`,[
@@ -157,7 +159,7 @@ beat('group','g_scold',{when:()=>s.age>=11&&bfMetN()>=3&&bfHere(),until:()=>s.ag
    bfMet('gabriel')?{l:`“${bN('gabriel')}가 하자고 했어요.”`,a:'safe',f:()=>{bfCare();mk(`${bfList(ks)}, 그리고 당신이 함께 수도원 과수원 담을 넘었다가 붙잡혔다. 당신은 ${bN('gabriel')}의 이름을 댔다.`,{gabriel:'그 아이가 내 이름을 댔다. 맞는 말은 아니었지만 틀린 말도 아니었다. 다들 내가 빠져나갈 걸 알았으니까.'});bfRel('gabriel',{riv:8});say(`${bN('gabriel')}의 집에서 돈을 보내 왔고, 나머지는 모두 손바닥을 맞았다.`)}}:null,
    {l:'아무도 말하지 않는다',a:'social',f:()=>{mk(`${bfList(ks)}, 그리고 당신이 함께 수도원 과수원 담을 넘었다가 붙잡혔다. 아무도 입을 열지 않아 모두 함께 벌을 받았다.`,{antoine:'아무도 말하지 않았다. 그날 우리가 한 패라는 걸 알았다. 그런 날은 다시 오지 않았다.'});say('모두 함께 손바닥을 맞았다. 돌아오는 길에 누군가 먼저 웃음을 터뜨렸다.')}}])}});
 
-beat('group','g_bridge',{when:()=>s.age>=13&&bfMetN()>=3&&bfHere(),until:()=>s.age>=17,run:async()=>{const ks=BF_KEYS.filter(k=>bfMet(k)&&bfAlive(k));
+beat('group','g_bridge',{when:()=>s.age>=13&&bfMetN()>=3&&bfHere(),until:()=>s.age>=17,run:async()=>{const ks=BF5.filter(k=>bfMet(k)&&bfAlive(k));
   const go={louise:'빵집 일을 도맡게 되었다',etienne:noble()?'집사 일을 거드는 서기가 되었다':'공증인 사무소의 사환이 되었다',jules:'성가대 장학생으로 신학교 예비 학교에 가게 되었다',antoine:'포목상 견습으로 들어가게 되었다',gabriel:noble()?'쥘리 기숙학교로 떠나게 되었다':'루이르그랑 콜레주 기숙생이 되었다'};
   const J={louise:'빵집 일꾼',etienne:noble()?'집사 서기':'공증인 사무소 사환',jules:'신학교 예비 학생',antoine:'포목상 견습',gabriel:'기숙학교 학생'};ks.forEach(k=>bfJob(k,J[k]));
   const t=ks.map(k=>`${bU(k)} ${go[k]}`).join('. ')+'.';
@@ -433,7 +435,7 @@ beat('jules','ju_late',{when:()=>bfAlive('jules')&&s.age>=60&&bfHere(),until:()=
 // 스무 해 뒤의 다리
 beat('group','g_reunion',{when:()=>bfS().meetY&&s.year===bfS().meetY&&s.month>=(bfS().meetM||0)&&bfHere(),dead:true,until:()=>bfS().meetY?s.year>bfS().meetY:false,
   miss:()=>{if(!bfS().meetY||bfS().reunion)return;bfReg('r_reunion','group','퐁뇌프에서 스무 해 뒤에 만나자던 날, 그 자리에 가지 못했다.');bfAsk('q_reunion','group','스무 해 뒤 그날, 다리에는 누가 왔을까?')},
-  run:async()=>{const B=bfS();B.reunion=true;const all=BF_KEYS.filter(bfMet);const came=[],absent=[];
+  run:async()=>{const B=bfS();B.reunion=true;const all=BF5.filter(bfMet);const came=[],absent=[];
   for(const k of all){const r=bfR(k);if(!r.alive){absent.push(`${bU(k)} 이미 세상에 없었다`);continue}if(r.cond!=='normal'){absent.push(`${bU(k)} ${r.cond==='prison'?'감옥에':r.cond==='deported'?'먼 유형지에':'먼 곳에'} 있었다`);continue}
     if(k==='louise'&&R()<.35){absent.push(`${bU(k)} 오지 않았다`);bfAsk('q_lou_bridge','louise',`약속한 날 ${bU('louise')} 왜 다리에 오지 않았을까?`);continue}
     if(r.close<35&&R()<.6){absent.push(`${bU(k)} 오지 않았다`);continue}came.push(k)}

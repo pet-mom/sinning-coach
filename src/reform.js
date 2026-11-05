@@ -51,7 +51,7 @@ statusLadder=function(){const j=job();if(!j)return '';const rows=PL.filter(x=>x[
 {const b=$('#dataT');if(b)b.hidden=true;document.body.classList.remove('showdata')}
 
 /* ---------- 4. 사건과 선택을 기록에 ---------- */
-{const _Q=Q;Q=async function(title,fr,text,opts){const i=await _Q(title,fr,text,opts);try{const o=opts[i];if(o&&o.l&&!rfNoLog){const p=rfPast(o.l);if(p)L(p,'ev',{choice:1})}}catch(e){}return i}}
+{const _Q=Q;Q=async function(title,fr,text,opts){const i=await _Q(title,fr,text,opts);try{const o=opts[i];if(o&&o.l&&!rfNoLog&&typeof rf2Pend!=='undefined')rf2Pend.push({n:s.log.length,mem:s.bf&&s.bf.mem?s.bf.mem.length:0,l:o.l,text:typeof text==='function'?'':String(text||'')})}catch(e){}return i}}
 
 /* ---------- 6. 떠난 사람은 다시 나오지 않는다 ---------- */
 const RF_MEMO=/세상을 떠|죽|돌아가|무덤|장례|유산|유품|생전|기억|떠올|그리|기일|고아|잃|남긴|남겨|없는|없이|묘|부고|불러도|대답이 없|물려|빈자리|그날|옛|예전|어린 시절|어릴 적|그때|온기|냄새|들꽃|조문/;
