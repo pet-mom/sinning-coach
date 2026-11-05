@@ -887,3 +887,8 @@ details.fold>.cgrid{margin-top:8px}
 .porsel .ps-bar .pill[disabled]{opacity:.45;cursor:default}
 .pf2-por.pf2-empty{background:#E2D6BF}
 .pf2-por .pf2-sel{width:100%;height:100%;background-repeat:no-repeat;background-color:#E2D6BF}
+/* 평판 카드 글씨 조금 작게 */
+.pf2-rep:not(.pf2-cap) .pf2-ph{font-size:1.2rem}.pf2-rep:not(.pf2-cap) .pf2-ph small{font-size:1rem}
+.pf2-rep:not(.pf2-cap) .pf2-rk{font-size:.96rem}
+.pf2-rep:not(.pf2-cap) .pf2-rv{font-size:1.6rem}
+.pf2-rep:not(.pf2-cap) .pf2-rw{font-size:.7rem}
