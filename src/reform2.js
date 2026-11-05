@@ -105,7 +105,7 @@ const RF2_ATT={
   ['흘려듣고 내 일을 한다','safe',{},[
     '당신은 그 소식을 흘려들었다. 세상 일보다 오늘 저녁 땔감이 더 급했다. 그래도 잠들기 전, 그 이야기가 한 번 더 떠올랐다.',
     '세상은 늘 무언가로 떠들썩했다. 당신은 하던 일로 돌아갔다. 몇 해 뒤에야 그날의 소식이 당신 삶에 어떤 그림자를 드리웠는지 알게 되었다.']]]};
-const rf2CanAsk=()=>s&&!s.dead&&!child()&&s.age>=14&&s.cond==='normal';
+const rf2CanAsk=()=>s&&!s.dead&&!child()&&s.age>=14&&s.cond==='normal'&&T()>=1789;
 // 같은 달에 7. 태도 장면(RF_ATT)이 따로 뜨는가
 const rf2AttSame=mi=>inParis()&&adult()&&RF_ATT.some(x=>x[0]*12+x[1]-1===mi&&!(s.att&&s.att[x[2]])&&(!x[7]||x[7]()));
 async function rf2Att(h,tx){const k=rf2Kind(tx);const os=RF2_ATT[k]();const y=Math.floor(h.mi/12),m=h.mi%12+1;
@@ -266,7 +266,7 @@ defineAct({k:'bfvisit',g:'social',n:'벗을 찾아간다',s:'벗 한 사람과 �
 const RF2_SIDE=[];
 const side=(k,id,when,run)=>RF2_SIDE.push({k,id,when,run});
 async function rf2Side(){const B=bfS();B.side=B.side||{};const ok=RF2_SIDE.filter(x=>!B.side[x.id]&&(x.k==='group'||(bfMet(x.k)&&bfAlive(x.k)&&!bfR(x.k).cut&&bfR(x.k).cond!=='prison'))&&(()=>{try{return x.when()}catch(e){return false}})());
-  if(!ok.length||!bfHere()||sheetLive)return;const x=pick(ok);B.side[x.id]=s.year;try{await x.run()}catch(e){console.error('side',x.id,e);sheetClose()}}
+  if(!ok.length||!bfHere()||sheetLive)return;const pr=ok.filter(x=>x.pri);const x=pick(pr.length?pr:ok);B.side[x.id]=s.year;try{await x.run()}catch(e){console.error('side',x.id,e);sheetClose()}}
 const aB=k=>s.year-(bfR(k)?bfR(k).by:s.by);
 
 // 루이즈
