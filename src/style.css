@@ -838,8 +838,6 @@ main.tabs{padding-bottom:140px}
 .page.draft .pg-title{color:#8A3A2A}.page.draft .pg-rule{border-top-style:dashed}
 
 /* 기록 사이에 섞이는 짧은 줄글 */
-.le.story .tx{font-family:var(--fd),"Noto Serif KR",serif;font-style:italic;color:var(--mut);line-height:1.75}
-.le.story .tx::before{content:"❦ ";font-style:normal;color:var(--gold)}
 details.fold{border-top:1px solid var(--line);padding:8px 0}
 details.fold>summary{cursor:pointer;font-family:var(--fd);font-weight:600;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
 details.fold>summary::-webkit-details-marker{display:none}
