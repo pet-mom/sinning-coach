@@ -469,7 +469,7 @@ function bfYear(){const B=bfS();if(!BF_KEYS.some(bfMet))return;
   // 기억은 흐려진다. 그 사람이 곁에 없으면 더 빨리.
   for(const m of B.mem){const alive=m.k.some(k=>k==='group'||bfAlive(k));m.w=Math.max(12,m.w-(alive?3:5))}
   // 그들의 삶: 늙고, 병들고, 떠난다
-  for(const k of BF_KEYS){const r=bfR(k);if(!r||!r.alive)continue;const a=s.year-r.by;if(a<40)continue;
+  for(const k of BF_KEYS){const r=bfR(k);if(!r||!r.alive||r.pid)continue;const a=s.year-r.by;if(a<40)continue;
     if(R()<baseMort(a)*.75){bfDie(k,a>=60?'old':'ill',`${a}세로 세상을 떠났다.`);
       if(r.close>=55){const ms=B.mem.filter(m=>m.k.includes(k));const m=ms[ms.length-1];if(m)bfRe(m.id,`${bN(k)}의 부고를 받은 날, 이 기억을 다시 꺼냈다.`,'그리움')}}}
   // 쥘의 서품과 본당
@@ -488,7 +488,7 @@ async function bfTick(){if(!s||s.dead)return;const B=bfS();const now=MI();
   const order=BF_KEYS.concat(['group']);const ready=[];
   for(const k of order){const L0=BFB.filter(b=>b.k===k);let st=B.st[k]||0;
     while(st<L0.length){const b=L0[st];if(k!=='group'&&st>0&&!bfMet(k)){st=L0.length;break}
-      if(k!=='group'&&st>0&&!bfAlive(k)&&!b.dead){st++;continue}
+      if(k!=='group'&&st>0&&(!bfAlive(k)||bfR(k).cut)&&!b.dead){st++;continue}
       let exp=false;try{exp=b.until&&b.until()}catch(e){exp=true}
       if(exp){try{b.miss&&b.miss()}catch(e){console.error(e)}st++;continue}break}
     B.st[k]=st;const b=L0[st];if(!b)continue;let ok=false;try{ok=b.when()}catch(e){}if(ok)ready.push(b)}
