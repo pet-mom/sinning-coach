@@ -140,12 +140,8 @@ async function comingOfAge(){s.flags.adult=true;
   s.dues={hobereau:300,robe:600,epee:3000}[E]||0;
   if(s.inherit){s.money+=s.inherit;s.inherit=0}
   if(s.estate==='peasant'&&R()<.25){s.land+=40}
-  // 첫 영성체 · 성품
-  sheetOpen('첫 영성체를 마치고','première communion');
-  shText('어른들 틈에 섞여 일할 나이가 되었다. 사람들은 이 아이가 어떤 사람이 될지 벌써 말하기 시작한다.','q');
-  const i=await shButtons(TRAITS.map(t=>({l:t.k,s:t.s,a:''})));s.trait=TRAITS[i].k;
-  say(`사람들은 ${jo(s.given[0],'이','가')} ${{열정:'불같은',신중:'조심스러운',경건:'신심 깊은',계몽:'책을 좋아하는',야심:'야망이 큰',쾌활:'잘 웃고 사람 좋은'}[s.trait]} 아이라고 하였다.`);
-  await shContinue();sheetClose();
+  // 성품은 조용히 정해진다(첫 영성체 사건은 없앴다)
+  if(!s.trait)s.trait=pick(TRAITS).k;
   if(inSchool(['college','convent','univ','seminary'])){say(SCH().st==='convent'?'기숙학교에서 몇 해를 더 보내게 되었다.':'학업을 계속하였다.','sys');return}
   await careerChoice(true);
 }
