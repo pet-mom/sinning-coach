@@ -34,7 +34,10 @@ $('#goB').onclick=async()=>{const g=$('#inGiven').value.trim(),sr=$('#inSur').va
   start(true,o)};
 {const _ns=newState;newState=function(o){const x=_ns(o);x.portrait=o&&o.portrait&&rf3PorNeed(x.estate)?o.portrait:null;return x}}
 // 세례 증서(신분증 카드)의 초상
-{const _rp=renderProfile;renderProfile=function(){_rp();try{if(!s||!s.portrait)return;const p=rf3PorOf(s.portrait);const box=document.querySelector('#profCard .pf2-por');if(!p||!box)return;
+{const _rp=renderProfile;renderProfile=function(){_rp();try{if(!s)return;
+  // 평민(초상을 고르지 않는 신분)은 세례 증서의 초상 틀을 비워 둔다
+  if(!rf3PorNeed(s.estate)){const b=document.querySelector('#profCard .pf2-por');if(b){b.innerHTML='';b.classList.add('pf2-empty');b.setAttribute('aria-hidden','true')}return}
+  if(!s.portrait)return;const p=rf3PorOf(s.portrait);const box=document.querySelector('#profCard .pf2-por');if(!p||!box)return;
   box.innerHTML='';const d=el('div','pf2-sel');d.style.backgroundImage=`url("${imgSrc(p[0])}")`;d.style.backgroundSize=`${p[3]*100}% auto`;d.style.backgroundPosition=`${p[1]}% ${p[2]}%`;d.setAttribute('role','img');d.setAttribute('aria-label','초상');
   d.title=typeof credLine==='function'?credLine(p[0]):'';box.appendChild(d)}catch(e){console.error(e)}}}
 
