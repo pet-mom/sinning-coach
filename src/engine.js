@@ -23,7 +23,7 @@ function newState(o){const sex=o.sex||(R()<.5?'M':'F');const by=o.year||ri(1750,
     seeds:[],met:[],flags:{},cnt:{arrest:0,wound:0,battle:0,emigre:0},acts:{},cd:{},done:{},log:[],dead:false,death:null})}
 function birth(){L(`${yl()}`,'yr');const E=ESTATES[s.estate],Rg=REGIONS[s.region];
   const who=isM()?'아들':'딸';
-  say(`${s.by}년 ${s.bm+1}월 ${s.bd||1}일, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 저택`:`${s.sur[0]} 집안`}에서 ${who}로 태어났다. ${E.d}`,'big');
+  say(`${s.by}년 ${s.bm+1}월 ${s.bd||1}일, ${Rg.n}의 ${E.noble?`${s.sur[0]} 가문 저택`:`${s.sur[0]} 집안`}에서 ${jo(who,'으로')} 태어났다. ${E.d}`,'big');
   say(`세례명은 ${s.given[0]}${s.given[1]?` (${s.given[1]} ${s.sur[1]})`:''}.`+(s.faithKind==='protestant'?(s.year<1788?' 집안은 몰래 신교 예배를 지키는 위그노다. 왕국의 법은 신교도의 혼인조차 인정하지 않는다.':' 집안은 신교(위그노)를 믿는다.'):s.faithKind==='jewish'?(s.year<1791?' 집안은 유대교를 믿는다. 왕국에서 유대인은 시민이 아니다.':' 집안은 유대교를 믿는다.'):''));
   L(`지금 프랑스를 다스리는 것은 ${ruler()}. 시대는 ${era().n}.`,'sys')}
 
@@ -186,10 +186,10 @@ function parentDies(k,txt){const P=s[k];if(!P||!P.alive)return false;P.alive=fal
       if(k==='fa'){const base={peasant:60,artisan:250,bourgeois:9000,hobereau:20000,robe:60000,epee:160000}[s.estate];
         const eldestNoble=noble()&&isM()&&s.eldest&&s.year<1791;let share=eldestNoble?.7:1/(1+s.sibs*.8);if(s.flags.disowned)share=0;
         const amt=Math.round(base*share),landAdd=noble()?Math.round({hobereau:500,robe:2000,epee:7000}[s.estate]*share):0;
-        if(child()){s.inherit+=amt;say(`${who}가 ${P.age}세로 세상을 떠났다.`,'big')}
+        if(child()){s.inherit+=amt;say(`${jo(who,'이','가')} ${P.age}세로 세상을 떠났다.`,'big')}
         else{s.money+=amt;s.land+=landAdd;if(eldestNoble)s.dues+=Math.round(s.dues*.5);
-          say(`${who}가 ${P.age}세로 세상을 떠났다. 유산 ${fmt(amt)} ${money()}${landAdd?`과 땅(지대 +${fmt(landAdd)})`:''}을 물려받았다.`+(eldestNoble?' 장자 상속의 관습에 따라 몫이 컸다.':'')+fx({hp:-2}),'big')}}
-      else say(`${who}가 ${P.age}세로 세상을 떠났다.`+(child()?'':fx({hp:-2})),'big')
+          say(`${jo(who,'이','가')} ${P.age}세로 세상을 떠났다. 유산 ${fmt(amt)} ${money()}${landAdd?`과 땅(지대 +${fmt(landAdd)})`:''}을 물려받았다.`+(eldestNoble?' 장자 상속의 관습에 따라 몫이 컸다.':'')+fx({hp:-2}),'big')}}
+      else say(`${jo(who,'이','가')} ${P.age}세로 세상을 떠났다.`+(child()?'':fx({hp:-2})),'big')
   if(txt)L(txt,'sys');return true}
 async function family(){
   for(const k of ['fa','mo']){const P=s[k];if(!P.alive)continue;if(R()<baseMort(P.age)*.95)parentDies(k)}
@@ -206,7 +206,7 @@ async function family(){
         say(`${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳았다.`+fx({hp:-4}))}
       else{if(R()<.011){s.spouse.alive=false;s.spouse.dy=s.year;s.widowed++;say(`아내가 ${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳다가 숨을 거두었다.`+fx({hp:-6}),'big')}else say(`아내가 ${sx==='M'?'아들':'딸'} ${jo(nm,'을','를')} 낳았다.`)}}}
   // 자녀 사망
-  for(const k of s.kids){if(!k.alive)continue;const a=s.year-k.y;if(a<20&&R()<childP(a)*(price(s.year)>=1.5&&!rich()?1.3:1)*(urban()&&a<2?1.15:1)){k.alive=false;k.dy=s.year;say(`${a<1?'갓난':a+'살 난'} ${k.sex==='M'?'아들':'딸'} ${jo(k.n,'이','가')} ${a<5?pick(['열병','천연두','이질','경련']):pick(['열병','천연두','디프테리아'])}으로 죽었다.`+fx({hp:-3}))}}
+  for(const k of s.kids){if(!k.alive)continue;const a=s.year-k.y;if(a<20&&R()<childP(a)*(price(s.year)>=1.5&&!rich()?1.3:1)*(urban()&&a<2?1.15:1)){k.alive=false;k.dy=s.year;say(`${a<1?'갓난':a+'살 난'} ${k.sex==='M'?'아들':'딸'} ${jo(k.n,'이','가')} ${jo(a<5?pick(['열병','천연두','이질','경련']):pick(['열병','천연두','디프테리아']),'으로')} 죽었다.`+fx({hp:-3}))}}
 }
 async function marriageCheck(){if(s.married&&s.spouse&&s.spouse.alive)return;if(priest()||nun())return;
   if(s.married&&s.age>55)return;
@@ -254,7 +254,7 @@ async function arrest(why){s.cnt.arrest++;sheetOpen('체포','arrestation');
   if(i===0){const {m,why:w}=md([[s.st.soc>=55,1,'사교'],[s.st.edu>=60,1,'학식'],[s.pol>=40,1,'혁명 열성'],[noble(),-1,'귀족'],[s.sus>=50,-1,'짙은 혐의']]);
     const r=await roll(m-1,{label:'항변',why:w});if(r.v>=5){say('위원들이 서류를 다시 보더니 돌아갔다. 이번에는 넘어갔다.'+fx({sus:-8}));await done();return}}
   if(i===1){const pay=Math.min(s.money,Math.round(500+s.money*.15));const r=await roll(s.st.soc>=45?1:0,{label:'뇌물'});
-    if(r.v>=4){say(`위원 한 사람에게 ${fmt(pay)} ${money()}을 쥐여 주었다. 명단에서 이름이 빠졌다.`+fx({money:-pay,sus:-5}));await done();return}
+    if(r.v>=4){say(`위원 한 사람에게 ${fmt(pay)} ${jo(money(),'을','를')} 쥐여 주었다. 명단에서 이름이 빠졌다.`+fx({money:-pay,sus:-5}));await done();return}
     say('뇌물을 내밀었다가 오히려 부패 혐의까지 덧씌워졌다.'+fx({money:-Math.round(pay/2),sus:10}))}
   if(i===2){const r=await roll(s.st.cour>=55?1:s.st.cour<30?-1:0,{label:'도주'});
     if(r.v>=5){s.cond='hiding';s.condSince=T();say('지붕을 타고 달아나 친지의 다락방에 숨었다.'+fx({cour:3}),'big');await done();return}
@@ -326,7 +326,7 @@ async function conscript(p,label,o={}){if(!isM()||child()||s.cond!=='normal'||so
 
 /* ================= 망명 ================= */
 async function emigrate(dest){s.cond='emigre';s.condSince=T();s.cnt.emigre++;s.emiPlace=dest||pick(['코블렌츠','런던','토리노','함부르크','브뤼셀']);
-  const carry=Math.round(s.money*.5);s.money=carry;loseJob();say(`국경을 넘어 ${jo(s.emiPlace,'으로')} 망명하였다. 가져간 것은 ${fmt(carry)} ${money()}와 보석 몇 점뿐.`,'big')}
+  const carry=Math.round(s.money*.5);s.money=carry;loseJob();say(`국경을 넘어 ${jo(s.emiPlace,'으로')} 망명하였다. 가져간 것은 ${fmt(carry)} ${jo(money(),'과','와')} 보석 몇 점뿐.`,'big')}
 async function emigreSeason(){const t=T();
   if(t>=1802.25&&!s.flags.amnestyAsked){s.flags.amnestyAsked=true;sheetOpen('대사면','amnistie');
     shText('제1통령이 망명자 대사면령을 내렸다. 공화국에 충성을 맹세하면 돌아갈 수 있다. 팔리지 않은 재산은 되찾을 수 있다고 한다.','q');

@@ -39,7 +39,11 @@ async function fallIll(d){const P=Math.round((1.3-hsub('rec')/100*.6)*d.cfr()*(s
   s.ill={k:d.k,y:s.year};let cfr=P;
   if(!child()&&cfr>=.08&&s.cond==='normal'){const doc=Math.max(10,Math.round(s.money*.03));
     const i=await Q(`${d.n}`,d.fr,`${d.n}에 걸렸다. 열이 오르고 자리에서 일어나지 못한다.`,[{l:'의사를 부른다',s:`재산 -${doc}. 사혈과 하제, 키나 껍질`,a:'safe',dis:s.money<doc},{l:urban()?'시립 병원(오텔디외)에 간다':'이웃 아낙의 민간요법을 쓴다',s:urban()?'돈은 들지 않으나 병원은 붐비고 위험하다':'약초와 기도',a:'greedy'},{l:'성인에게 기도한다',s:'신앙에 기댄다',a:'pious'}]);
-    if(i===0){fx({money:-doc});cfr*=d.k==='ague'?.5:.88}else if(i===1&&urban())cfr*=1.25;else if(i===2&&s.faith>=60)fx({faith:2});await done()}
+    if(i===0){fx({money:-doc});cfr*=d.k==='ague'?.5:.88;say(pick([`검은 옷의 의사가 왔다. 팔꿈치 안쪽에 피침을 꽂아 접시 두 개에 피를 받고, 쓴 가루약을 물에 타 주었다. “사흘이 고비요.” 문을 나서며 의사는 왕진비로 ${fmt(doc)} ${jo(money(),'을','를')} 받아 갔다.`,`의사는 맥을 짚고 혀를 들여다보더니 하제와 키나 껍질 달인 물을 처방했다. 밤새 식은땀이 흘렀다. 새벽녘, 누군가 이마의 젖은 수건을 갈아 주고 있었다.`]))}
+    else if(i===1&&urban()){cfr*=1.25;say(pick(['오텔디외의 긴 병실에는 침대 하나에 환자가 셋씩 누워 있었다. 옆 사람의 기침이 당신 얼굴에 그대로 닿았다. 수녀가 묽은 수프를 떠먹여 주었다. 돈은 들지 않았지만, 살아서 나가는 사람보다 들것에 실려 나가는 사람이 더 많았다.','병원 수녀들은 밤새 병실을 돌며 등잔을 갈았다. 당신은 천장의 얼룩을 세며 열이 내리기를 기다렸다. 옆 침대가 아침마다 비었다가 저녁이면 다시 찼다.']))}
+    else if(i===1){say('이웃 아낙이 버드나무 껍질과 쑥을 달여 왔다. 쓴 물을 억지로 삼키는 동안 그녀는 성모송을 중얼거렸다. 약인지 기도인지 모를 것들이 밤새 머리맡에 놓여 있었다.')}
+    else{if(s.faith>=60)fx({faith:2});say(pick(['성녀 즈느비에브의 작은 그림을 머리맡에 세워 두고 묵주를 쥐었다. 열에 들뜬 밤마다 기도문이 자꾸 엉켰다. 그래도 손에서 묵주를 놓지 않았다.','본당 신부가 와서 이마에 성유를 발라 주었다. “하느님 뜻대로.” 당신은 그 말이 위로인지 작별인지 알 수 없었다.']))}
+    await done()}
   if(await chance(cfr,`${d.n} 사망`,`이 병에 걸린 사람이 죽은 비율 · 건강 ${s.st.hp}`)){die('ill',d.n);return}
   const sev=d.sev;say(`${d.n}${bat(d.n)?'을':'를'} 앓았다.${d.mo>1?` ${d.mo}달 넘게 앓아누웠다.`:''}`+fx({hp:-sev,str:-Math.round(sev/4)}),sev>=18?'big':'ev');
   if(d.after)d.after();if(d.chronic&&R()<d.chronic){s.flags[d.k==='phthisis'?'phthisis':d.k]=true;if(d.k==='phthisis')L('기침이 멎지 않는다. 폐병이 깊어졌다.','sys')}

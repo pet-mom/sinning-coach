@@ -62,7 +62,7 @@ function daySchedule(){const j=job(),a=s.age,x=SCH(),out=[];const add=(t,n,h)=>o
   else if(tr==='peuple'){add('05:00','물 긷기·짐 나르기','짐 나르기 +');add('12:00','장터 점심');add('14:00','다시 일','체력 +')}
   else{add('08:00',pname(j)+' 일');add('14:00','일')}
   if(s.party)add('19:30',`${FAC[s.party].n} 회합`,'웅변 +');
-  if(s.spouse&&s.spouse.alive)add('20:00',`${isM()?'아내':'남편'}와 저녁${kidsAlive().length?' · 아이들':''}`,'가족 +');else add('20:00','저녁');
+  if(s.spouse&&s.spouse.alive)add('20:00',`${jo(isM()?'아내':'남편','과','와')} 저녁${kidsAlive().length?' · 아이들':''}`,'가족 +');else add('20:00','저녁');
   add(noble()?'23:30':'21:30','잠자리');return out.sort((a,b)=>a[0].localeCompare(b[0]))}
 function renderSched(){const C=$('#schedCard');if(!C||!s)return;C.innerHTML='';const h=el('div','ch');h.innerHTML=`<h2>오늘의 일과</h2><span class="mut small">${s.year}년 ${s.month+1}월 · 방침 ${s.plan||'근면'}</span>`;C.appendChild(h);
   const ul=el('ul','sched-l');daySchedule().forEach(([t,n,hh])=>{const li=el('li');li.innerHTML=`<span class="tm">${t}</span><span class="dot"></span><span class="nm">${n}${hh?` <i>${hh}</i>`:''}</span>`;ul.appendChild(li)});C.appendChild(ul)}

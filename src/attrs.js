@@ -249,8 +249,8 @@ async function relEvent(r){const j=relJudge(r);const roleS=`${r.role} ${r.n}`;
     const i=await Q('연정',`amour`,`${r.n}${bat(r.n)?'이':'가'} 몰래 편지를 보냈다. 집안끼리는 아직 아무 말이 없다.`,[{l:'마음을 받아들인다',s:'친밀 +',a:'family'},{l:'거리를 둔다',s:'',a:'safe'}]);
     if(i===0)say(`${r.n}${bat(r.n)?'과':'와'} 성당 뒤 산책길에서 만나기 시작했다.`+fx({rfam:noble()?-2:0})+relFx(r,{close:15,trust:8}));else say('답장을 쓰지 않았다.'+relFx(r,{close:-15}));await done();return}
   if(r.role==='후원자'){if(j<0){say(`후원자 ${r.n}${bat(r.n)?'은':'는'} 당신의 처신이 못마땅하다는 말을 흘렸다.`+relFx(r,{trust:-8,close:-5}));return}
-    const i=await Q('후원자의 부탁',`protection`,`${r.n}${bat(r.n)?'이':'가'} 그의 일을 거들어 달라고 한다. 시간과 돈이 든다.`,[{l:'기꺼이 돕는다',s:'재산 -50, 신뢰 +',a:'social work'},{l:'핑계를 대고 빠진다',s:'',a:'safe'}]);
-    if(i===0)say(`${r.n}의 일을 도왔다. 그는 당신을 잊지 않겠다고 했다.`+fx({money:-50,inf:2})+relFx(r,{trust:12,close:8}));else say('그는 아무 말도 하지 않았다.'+relFx(r,{trust:-10}));await done();return}
+    const i=await Q('후원자의 부탁',`protection`,`${r.n}${bat(r.n)?'이':'가'} 자기 일을 거들어 달라고 한다. 시간과 돈이 든다.`,[{l:'기꺼이 돕는다',s:'재산 -50, 신뢰 +',a:'social work'},{l:'핑계를 대고 빠진다',s:'',a:'safe'}]);
+    if(i===0)say(`${r.n}의 일을 도왔다. ${ev2He(r)}는 당신을 잊지 않겠다고 했다.`+fx({money:-50,inf:2})+relFx(r,{trust:12,close:8}));else say(`핑계를 대자 ${r.n.split(' ')[0]}의 얼굴에서 웃음이 사라졌다. ${ev2He(r)}는 아무 말도 하지 않았다. 그 침묵이 꾸지람보다 길게 남았다.`+relFx(r,{trust:-10}));await done();return}
   if(r.role==='스승'){say(`${roleS}에게서 ${pick(['책 몇 권을 빌렸다','편지로 조언을 받았다','손수 고친 원고를 돌려받았다'])}.`+fx({edu:1})+relFx(r,{resp:4,close:3}));return}
   // 친구 · 동료
   const pool=[
@@ -259,7 +259,7 @@ async function relEvent(r){const j=relJudge(r);const roleS=`${r.role} ${r.n}`;
     ()=>say(`${r.n}${bat(r.n)?'과':'와'} ${pick(['돈 문제로','정치 이야기로','여자(남자) 문제로','하찮은 일로'])} 크게 다투었다.`+relFx(r,{close:-12,riv:5})),
     ()=>{if(j>0)say(`${r.n}${bat(r.n)?'은':'는'} 당신이 ${VALUES.find(x=>x[0]===r.v)[1]}${bat(VALUES.find(x=>x[0]===r.v)[1])?'을':'를'} 지키는 사람이라며 치켜세웠다.`+fx({rloc:1})+relFx(r,{resp:8}));else if(j<0)say(`${r.n}${bat(r.n)?'은':'는'} 당신의 요즘 처신을 탐탁지 않아 한다.`+relFx(r,{resp:-8,close:-4}));else say(`${r.n}${bat(r.n)?'과':'와'} 편지를 주고받았다.`+relFx(r,{close:3}))},
     ()=>{if(s.money<50&&r.close>=55)say(`살림이 어렵다는 말을 듣고 ${r.n}${bat(r.n)?'이':'가'} 돈을 꾸어 주었다.`+fx({money:ri(30,80)})+relFx(r,{trust:5}));
-      else say(`${r.n}의 아이 세례식에 ${isM()?'대부':'대모'}로 섰다.`+fx({rloc:1})+relFx(r,{close:8,trust:4}))}];
+      else say(`${r.n}의 아이 세례식에 ${jo(isM()?'대부':'대모','으로')} 섰다.`+fx({rloc:1})+relFx(r,{close:8,trust:4}))}];
   pick(pool)()}
 // 아는 사람의 파벌이 몰락할 때: 숨겨 줄 것인가
 async function relPurge(id){const r=relsAlive().find(x=>x.fac===id&&x.close>=45&&(x.kind!=='fic'||x.cond==='normal'));if(!r||s.cond!=='normal'||child()||s.party===id)return;

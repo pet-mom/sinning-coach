@@ -113,7 +113,7 @@ async function schoolAt10(){const x=SCH();if(x.st!=='petite')return;const t=T(),
   // 도시 서민: 장학생
   const cl=t>=1792.5&&t<1796,ce=colEra(t);
   if(isM()&&!cl&&x.grade>=65&&R()<(tal>=70?.55:tal>=55?.35:.15)){const where=ce<=1?'루이르그랑 콜레주':ce===2?'중앙학교':'리세';
-    sheetOpen('장학생','boursier');shText(`${x.pk==='freres'?'수사 선생':'본당 신부'}가 ${s.fa.alive?'아버지':s.mo.alive?'어머니':'후견인'}를 찾아왔다. ${tal>=70?'이렇게 머리 좋은 아이는 처음 본다며':'성실하고 셈이 빠르다며'} ${ce<=1?'루이르그랑의 장학금 자리(부르스)':ce===2?'수업료 없는 중앙학교':'국가 장학금(부르스 나시오날)'}를 알아보겠다고 한다.`,'q');
+    sheetOpen('장학생','boursier');shText(`${jo(x.pk==='freres'?'수사 선생':'본당 신부','이','가')} ${jo(s.fa.alive?'아버지':s.mo.alive?'어머니':'후견인','을','를')} 찾아왔다. ${tal>=70?'이렇게 머리 좋은 아이는 처음 본다며':'성실하고 셈이 빠르다며'} ${jo(ce<=1?'루이르그랑의 장학금 자리(부르스)':ce===2?'수업료 없는 중앙학교':'국가 장학금(부르스 나시오날)','을','를')} 알아보겠다고 한다.`,'q');
     const i=await shButtons([{l:`${where}에 보낸다`,s:'집안 일손을 잃는다',a:'study'},{l:'집안일을 거들게 한다',s:'',a:'safe family'}]);
     if(i===0){enterCollege({school:ce<=1?'llg':ce===2?'harcourt':'llg',ext:ce===2,board:ce!==2});x.scholar=ce!==2;say(`장학생으로 들어갔다. 부잣집 아이들 사이에서 낡은 옷이 눈에 띄었다.`+fx({edu:2,soc:-1}),'big')}else{x.st='done';say('학교를 그만두고 집안일을 거들었다.')}await done();return}
 }
@@ -134,8 +134,8 @@ async function schoolTick(){const x=SCH();if(s.dead)return;
   if(inMonth(7)&&inSchool())await schoolExam();
   if(x.st==='petite'&&s.age>=12&&inMonth(8)){x.st='done';x.home=false;
     L(s.estate==='artisan'?(isM()?'학교를 마치고 공방 심부름과 물 길어 오기를 시작하였다.':'학교를 마치고 바느질 일감을 받아 오기 시작하였다.'):x.pk==='gouv'?'가정교사와의 수업을 마쳤다.':'작은 학교를 마쳤다.','sys')}
-  if(x.st==='convent'&&s.age>=16&&inMonth(8)){x.st='done';say(`${convName()}를 나와 집으로 돌아왔다.`+fx({soc:2}))}
-  if(x.st==='college'&&s.age>=(s.flags.schSkip?16:17)&&inMonth(8)){if(['milit','brienne'].includes(x.school)&&univOpen('mil')&&x.grade>=40){x.st='done';say(`${collegeName()}를 마치고 소위로 임관하였다.`+fx({cour:3,soc:2,arms:2}),'big');takeJob('a3');return}await universityChoice()}
+  if(x.st==='convent'&&s.age>=16&&inMonth(8)){x.st='done';say(`${jo(convName(),'을','를')} 나와 집으로 돌아왔다.`+fx({soc:2}))}
+  if(x.st==='college'&&s.age>=(s.flags.schSkip?16:17)&&inMonth(8)){if(['milit','brienne'].includes(x.school)&&univOpen('mil')&&x.grade>=40){x.st='done';say(`${jo(collegeName(),'을','를')} 마치고 소위로 임관하였다.`+fx({cour:3,soc:2,arms:2}),'big');takeJob('a3');return}await universityChoice()}
   if((x.st==='univ'||x.st==='seminary')&&inMonth(6)&&s.year-x.y0>=x.dur)await graduate();
 }
 function univOpen(f){const t=T();if(f==='law')return !(t>=1793.7&&t<1804.2);if(f==='theo')return !(t>=1792.6&&t<1802);if(f==='mil')return (t<1788.7)||(t>=1802.4);if(f==='poly')return t>=1794.9;return true}
@@ -147,7 +147,7 @@ async function universityChoice(){const x=SCH(),g=x.grade,ks=(s.kn&&s.kn.ksci)||
    {f:'mil',l:'사관학교에 들어간다',s:'귀족(1802년부터는 누구나). 성적 40 이상',ok:g>=40&&univOpen('mil')&&(noble()||T()>=1802.4),a:'bold'},
    {f:'poly',l:'이공과학교(에콜 폴리테크니크) 입학시험을 치른다',s:'1794년 설립. 성적 70·수학 20 이상. 합격은 재능과 수학 실력에 달렸다',ok:univOpen('poly')&&g>=70&&ks>=20&&isM(),hide:!univOpen('poly')||!isM(),a:'study bold'},
    {f:null,l:'학업을 접고 일을 찾는다',s:'',ok:true,a:'safe work'}].filter(o=>!o.hide);
-  sheetOpen('진로','après le collège');shText(`${collegeName()}의 ${colEra(T())===2?'과정':'철학반'}을 마쳤다. 성적은 ${g}점(${gradeLabel(g)}). 어느 길로 가겠는가.`,'q');
+  sheetOpen('진로','après le collège');shText(`${collegeName()}의 ${jo(colEra(T())===2?'과정':'철학반','을','를')} 마쳤다. 성적은 ${g}점(${gradeLabel(g)}). 어느 길로 가겠는가.`,'q');
   const i=await shButtons(opts.map(o=>({l:o.l,s:o.ok?o.s:'조건 부족 · '+o.s,a:o.a,dis:!o.ok})));const o=opts[i];
   if(!o.f){x.st='done';await done();await careerChoice(true);return}
   if(o.f==='poly'){const p=clamp(((s.talent||50)-40)/60*.5+ks/100*.6+(g-70)/100,.08,.9);x.st='done';

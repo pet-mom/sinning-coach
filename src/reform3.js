@@ -53,20 +53,20 @@ cf('etienne','cf_oath',()=>rf3Win(1791,1792.6)&&rf3Two('etienne','jules'),async(
      say(`${bU('etienne')} 당신 어깨를 툭 쳤다. ${bU('jules')} 아무 말 없이 성당 안으로 들어가 문을 닫았다. 그 문이 닫히는 소리가 광장 끝까지 들렸다. 그날 저녁 에티엔은 신이 나서 떠들었지만, 당신은 그 소리를 오래 잊지 못했다.`+fx({rpeople:2,faith:-1}))}},
    {l:'쥘 앞을 막아서며 “양심은 법이 정하는 게 아니야.”라고 말한다',a:'pious bold',f:()=>{bfMem('m_cf_oath',['etienne','jules'],`${bfPar()} 앞에서 ${bI('etienne')} ${J}에게 선서를 요구했다. 당신은 쥘 앞을 막아섰다.`,{tone:'두려움',place:bfPar()+' 앞',their:'그 사람이 내 앞에 섰다. 말을 더듬지 않아도 되었다. 그 사람이 대신 말해 주었으니까.'});
      bfRel('jules',{close:10,trust:10});bfRel('etienne',{close:-6,riv:8});bfSet('etienne','cfOath','against');s.pol=clamp(s.pol-4,-100,100);
-     say(`구민들이 웅성거렸다. ${bI('etienne')} 이를 악물고 당신을 보았다. “너까지 그러는구나.” 그는 돌아섰지만, 모퉁이에서 한 번 뒤돌아보았다. 계단 위에서 ${bU('jules')} 처음으로 더듬지 않고 “고마워.”라고 말했다.`+fx({cour:2,faith:1,sus:T()>=1792?3:1}))}},
+     say(`구민들이 웅성거렸다. ${bI('etienne')} 이를 악물고 당신을 보았다. “너까지 그러는구나.” ${bHe('etienne')}는 돌아섰지만, 모퉁이에서 한 번 뒤돌아보았다. 계단 위에서 ${bU('jules')} 처음으로 더듬지 않고 “고마워.”라고 말했다.`+fx({cour:2,faith:1,sus:T()>=1792?3:1}))}},
    {l:'둘 사이에 서서 “오늘은 그냥 돌아가자.”라고 달랜다',a:'social',f:()=>{const ok=R()<.35+s.st.soc/250;bfMem('m_cf_oath',['etienne','jules'],`${bfPar()} 앞에서 ${bW('etienne')} ${J} 사이에 섰다. ${ok?'그날은 둘 다 물러섰다':'아무도 물러서지 않았다'}.`,{tone:ok?'위로':'씁쓸함',place:bfPar()+' 앞'});
      if(ok){bfRel('etienne',{close:2});bfRel('jules',{close:3});say(`당신은 ${bL('etienne')} 팔을 붙들고 광장 밖으로 끌고 나왔다. 선술집에서 포도주 한 병을 비우는 동안 ${bU('etienne')} 씩씩거리다 결국 웃었다. “쥘 녀석, 어릴 때부터 고집은 세었지.” 그 웃음이 오래가지는 않으리라는 것을, 둘 다 알고 있었다.`+fx({soc:1}))}
      else{bfRel('etienne',{close:-3});bfRel('jules',{close:-3});say(`“너는 늘 그렇게 가운데 서 있지.” ${bI('etienne')} 쏘아붙였다. ${bU('jules')} 당신 눈을 피했다. 양쪽 모두에게 당신은 아무 편도 아닌 사람이 되었다.`)}}}])});
 
 cf('gabriel','cf_varennes',()=>rf3Win(1791.45,1792.2)&&rf3Two('gabriel','etienne'),async()=>{const Ga=bN('gabriel'),E=bN('etienne');
   await bfScene('바렌 뒤의 카페','après Varennes',`왕 일가가 바렌에서 붙잡혀 돌아온 지 며칠 뒤, 팔레루아얄의 카페. ${bU('gabriel')} 은테 손거울을 탁자에 탁 내려놓는다. “왕은 납치당한 거야. 오를레앙 공 패거리가 꾸민 일이라고.” ${bI('etienne')} 컵을 쾅 내려놓는다. “도망친 왕을 감싸는 놈도 배신자야.” 옆 탁자 사람들이 돌아본다. ${bU('gabriel')} 장갑을 벗어 손에 쥔다. 결투를 신청하려는 손짓이다.`,[
-   {l:'에티엔 편을 들어 “왕은 국민을 버렸어.”라고 말한다',a:'radical',f:()=>{bfMem('m_cf_var',['gabriel','etienne'],`바렌 사건 뒤 팔레루아얄 카페에서 ${bW('gabriel')} ${E}가 부딪쳤다. 당신은 왕이 국민을 버렸다고 말했다.`,{tone:'씁쓸함',place:'팔레루아얄',their:'그 사람마저 저쪽이었다. 나는 장갑을 다시 끼었다. 손이 떨려서 단추를 잘못 채웠다.'});
+   {l:'에티엔 편을 들어 “왕은 국민을 버렸어.”라고 말한다',a:'radical',f:()=>{bfMem('m_cf_var',['gabriel','etienne'],`바렌 사건 뒤 팔레루아얄 카페에서 ${bW('gabriel')} ${jo(E,'이','가')} 부딪쳤다. 당신은 왕이 국민을 버렸다고 말했다.`,{tone:'씁쓸함',place:'팔레루아얄',their:'그 사람마저 저쪽이었다. 나는 장갑을 다시 끼었다. 손이 떨려서 단추를 잘못 채웠다.'});
      bfRel('etienne',{close:6});bfRel('gabriel',{close:-8,riv:6});s.pol=clamp(s.pol+5,-100,100);
-     say(`${bU('gabriel')} 장갑을 천천히 다시 끼었다. 손가락 하나하나에. “알았어. 너희는 너희 공화국이나 해.” 그가 나간 뒤, 탁자 위에 은테 손거울이 남아 있었다. 당신은 그것을 주머니에 넣었다가 사흘 뒤에야 돌려주었다. 그는 고맙다는 말도 하지 않았다.`+fx({rpeople:1}))}},
-   {l:'가브리엘 편을 들어 “왕을 심판할 권리는 아무에게도 없어.”라고 말한다',a:'royal',f:()=>{bfMem('m_cf_var',['gabriel','etienne'],`바렌 사건 뒤 팔레루아얄 카페에서 ${bW('gabriel')} ${E}가 부딪쳤다. 당신은 가브리엘 편을 들었다.`,{tone:'두려움',place:'팔레루아얄',their:'그 사람이 내 편을 들었다. 카페 안의 누구도 그러지 않았는데.'});
+     say(`${bU('gabriel')} 장갑을 천천히 다시 끼었다. 손가락 하나하나에. “알았어. 너희는 너희 공화국이나 해.” ${bHe('gabriel')}가 나간 뒤, 탁자 위에 은테 손거울이 남아 있었다. 당신은 그것을 주머니에 넣었다가 사흘 뒤에야 돌려주었다. ${bHe('gabriel')}는 고맙다는 말도 하지 않았다.`+fx({rpeople:1}))}},
+   {l:'가브리엘 편을 들어 “왕을 심판할 권리는 아무에게도 없어.”라고 말한다',a:'royal',f:()=>{bfMem('m_cf_var',['gabriel','etienne'],`바렌 사건 뒤 팔레루아얄 카페에서 ${bW('gabriel')} ${jo(E,'이','가')} 부딪쳤다. 당신은 가브리엘 편을 들었다.`,{tone:'두려움',place:'팔레루아얄',their:'그 사람이 내 편을 들었다. 카페 안의 누구도 그러지 않았는데.'});
      bfRel('gabriel',{close:8,trust:6});bfRel('etienne',{close:-8,riv:8});s.pol=clamp(s.pol-5,-100,100);
-     say(`카페 안이 조용해졌다. ${bI('etienne')} 의자를 밀치고 일어섰다. “기억해 둘게.” 문이 쾅 닫혔다. ${bU('gabriel')} 장갑을 탁자에 내려놓더니 웃었다. 그런데 그 웃음이 끝나기도 전에 그는 창밖을 내다보며 낮게 말했다. “저 녀석, 정말 기억해 둘 거야.”`+fx({relite:2,sus:2}))}},
-   {l:'장갑을 빼앗아 들고 “결투는 내가 대신 받지.” 하고 농담한다',a:'social bold',f:()=>{const ok=R()<.5+s.st.soc/300;bfMem('m_cf_var',['gabriel','etienne'],`바렌 사건 뒤 팔레루아얄 카페에서 ${bW('gabriel')} ${E}가 부딪쳤다. 당신은 가브리엘의 장갑을 빼앗아 들고 농담을 했다.`,{tone:ok?'기쁨':'씁쓸함',place:'팔레루아얄'});
+     say(`카페 안이 조용해졌다. ${bI('etienne')} 의자를 밀치고 일어섰다. “기억해 둘게.” 문이 쾅 닫혔다. ${bU('gabriel')} 장갑을 탁자에 내려놓더니 웃었다. 그런데 그 웃음이 끝나기도 전에 ${bHe('gabriel')}는 창밖을 내다보며 낮게 말했다. “저 녀석, 정말 기억해 둘 거야.”`+fx({relite:2,sus:2}))}},
+   {l:'장갑을 빼앗아 들고 “결투는 내가 대신 받지.” 하고 농담한다',a:'social bold',f:()=>{const ok=R()<.5+s.st.soc/300;bfMem('m_cf_var',['gabriel','etienne'],`바렌 사건 뒤 팔레루아얄 카페에서 ${bW('gabriel')} ${jo(E,'이','가')} 부딪쳤다. 당신은 가브리엘의 장갑을 빼앗아 들고 농담을 했다.`,{tone:ok?'기쁨':'씁쓸함',place:'팔레루아얄'});
      if(ok){bfRel('gabriel',{close:4});bfRel('etienne',{close:4});say(`옆 탁자에서 누군가 웃음을 터뜨렸다. ${bU('gabriel')} 어이없다는 듯 당신을 보더니 결국 따라 웃었다. ${bU('etienne')} 웃지 않았지만, 다시 앉았다. 그날 셋은 밤늦게까지 같은 탁자에 앉아 있었다. 정치 이야기는 한 마디도 하지 않았다.`+fx({soc:2}))}
      else{bfRel('gabriel',{close:-3});bfRel('etienne',{close:-3});say(`아무도 웃지 않았다. ${bU('gabriel')} 장갑을 낚아채 갔고, ${bU('etienne')} 계산도 하지 않고 나가 버렸다. 당신 혼자 세 사람 몫의 커피값을 냈다.`+fx({money:-3}))}}}])});
 
@@ -90,29 +90,29 @@ cf('antoine','cf_max',()=>rf3Win(1793.4,1794.6)&&rf3Two('antoine','louise'),asyn
    {l:'루이즈와 함께 위원회에 가서 증언한다',a:'radical',f:()=>{bfMem('m_cf_max',['antoine','louise'],`최고가격제 시절, ${bW('louise')} 함께 구 위원회에 가서 ${A}의 창고를 증언했다.`,{tone:'죄책감',their:'그 사람이 증언했다. 벌금으로 끝났지만, 나는 그 사람 얼굴을 다시 볼 수 없었다.'});
      bfRel('louise',{close:6,trust:6});bfRel('antoine',{close:-14,trust:-12,hate:8});bfSet('antoine','cfMax','told');s.pol=clamp(s.pol+5,-100,100);
      say(`위원회 서기가 당신의 말을 받아 적었다. 사흘 뒤 ${bN('antoine')}의 창고 문에 봉인이 붙었다. 벌금과 압수로 끝났다. 감옥은 피했다. 그 뒤로 생드니 거리에서 ${bU('antoine')} 당신을 보면 길을 건넜다. ${bU('louise')} 압수된 설탕이 구민들에게 나눠지던 날 당신 몫까지 받아 왔다.`+fx({rpeople:3,sus:-4}))}},
-   {l:'앙투안에게 몰래 알려 정해진 값에 팔게 한다',a:'social',f:()=>{const ok=R()<.55;bfMem('m_cf_max',['antoine','louise'],`최고가격제 시절, ${A}에게 고발이 있을 거라고 몰래 알려 주었다. ${ok?'그는 이튿날 정해진 값에 설탕을 내놓았다':'그는 듣지 않았다'}.`,{tone:ok?'위로':'씁쓸함'});
+   {l:'앙투안에게 몰래 알려 정해진 값에 팔게 한다',a:'social',f:()=>{const ok=R()<.55;bfMem('m_cf_max',['antoine','louise'],`최고가격제 시절, ${A}에게 고발이 있을 거라고 몰래 알려 주었다. ${ok?bHe('antoine')+'는 이튿날 정해진 값에 설탕을 내놓았다':bHe('antoine')+'는 듣지 않았다'}.`,{tone:ok?'위로':'씁쓸함'});
      if(ok){bfRel('antoine',{close:6,resp:6});bfRel('louise',{close:2});say(`이튿날 아침 ${bN('antoine')}의 가게 앞에 “설탕 있음 · 최고가격”이라는 쪽지가 붙었다. 줄이 골목 끝까지 섰다. 위원회 사람들이 왔다가 빈손으로 돌아갔다. ${bU('louise')} 그 줄에 서 있다가 당신을 보고 눈을 찡긋했다. 알고 있었던 것이다.`+fx({rloc:2}))}
      else{bfRel('antoine',{close:-3});bfRel('louise',{trust:-4});say(`${bU('antoine')} 코웃음을 쳤다. “위원회? 다 아는 사람들이야.” 사흘 뒤 창고에 봉인이 붙었다. ${bU('louise')} 위원회 문 앞에서 당신을 기다리다 혼자 들어갔다. 둘 다 당신에게 서운했다.`)}}}])});
 
 cf('etienne','cf_list',()=>rf3Win(1793.7,1794.55)&&rf3Two('etienne','gabriel'),async()=>{const E=bN('etienne'),Ga=bN('gabriel');
-  await bfScene('명단','la liste des suspects',`구 혁명감시위원회 사무실. 등잔 아래 ${bI('etienne')} 혐의자 명단 초안을 당신 앞에 밀어 놓는다. 손가락이 한 이름 위에 멈춘다. ${Ga}. “옛 귀족들과 어울린다는 신고가 세 번 들어왔어.” 그는 당신을 보지 않고 말한다. “그 녀석, 정말 공화국의 적이야? 네 말 한마디면 돼. 지울 수도 있고.”`,[
+  await bfScene('명단','la liste des suspects',`구 혁명감시위원회 사무실. 등잔 아래 ${bI('etienne')} 혐의자 명단 초안을 당신 앞에 밀어 놓는다. 손가락이 한 이름 위에 멈춘다. ${Ga}. “옛 귀족들과 어울린다는 신고가 세 번 들어왔어.” ${bHe('etienne')}는 당신을 보지 않고 말한다. “그 녀석, 정말 공화국의 적이야? 네 말 한마디면 돼. 지울 수도 있고.”`,[
    {l:'“내가 보증해. 그 애는 겉멋만 들었지 아무 짓도 안 해.”',a:'bold social',f:()=>{bfMem('m_cf_list',['etienne','gabriel'],`공포정치 때, ${E}의 혐의자 명단에 오른 ${Ga}의 이름을 보증으로 지웠다.`,{tone:'두려움',their:bfR('gabriel')?'나중에야 알았다. 그 사람이 나를 보증했다는 걸. 그날 이후 나는 그 사람에게 목숨을 빚졌다.':null});
      bfRel('gabriel',{trust:12,close:6});bfRel('etienne',{trust:-4});
      say(`${bU('etienne')} 한참 펜을 들고 있다가 그 이름 위에 줄을 그었다. “네 이름으로 지우는 거야. 알지?” 당신은 고개를 끄덕였다. 그날부터 당신의 이름도 어딘가에 적혔다. 그 사실을 ${bU('gabriel')} 몇 해 뒤에야 알게 되었다.`+fx({sus:8,cour:3}))}},
-   {l:'“모르겠어. 요즘은 아무도 모르잖아.”',a:'safe',f:()=>{bfMem('m_cf_list',['etienne','gabriel'],`공포정치 때, ${E}가 ${Ga}에 대해 물었다. 모르겠다고 대답했다.`,{tone:'죄책감'});bfReg('r_cf_list','gabriel',`${bN('etienne')}의 명단에 ${Ga}의 이름이 있을 때 보증하지 않았다.`);bfRel('etienne',{close:-2});
+   {l:'“모르겠어. 요즘은 아무도 모르잖아.”',a:'safe',f:()=>{bfMem('m_cf_list',['etienne','gabriel'],`공포정치 때, ${jo(E,'이','가')} ${Ga}에 대해 물었다. 모르겠다고 대답했다.`,{tone:'죄책감'});bfReg('r_cf_list','gabriel',`${bN('etienne')}의 명단에 ${Ga}의 이름이 있을 때 보증하지 않았다.`);bfRel('etienne',{close:-2});
      say(`${bU('etienne')} 명단을 접었다. 이름은 그대로 남았다. 그 주에 ${bU('gabriel')} 파리를 떠나 시골 친척 집으로 숨었다. 누가 알려 주었는지는 아무도 몰랐다. 당신은 그 일을 오래 생각했다. 지우지도, 적지도 않은 그 이름을.`+fx({sus:-2}))}},
-   {l:'“그 애는 늘 왕 편이었어.”라고 말한다',a:'radical',f:()=>{bfMem('m_cf_list',['etienne','gabriel'],`공포정치 때, ${E}의 혐의자 명단에 오른 ${Ga}가 늘 왕 편이었다고 말했다.`,{tone:'죄책감'});bfRel('etienne',{trust:6});bfRel('gabriel',{trust:-15,hate:10});bfSet('gabriel','cfList','told');s.pol=clamp(s.pol+5,-100,100);
-     bfReg('r_cf_list2','gabriel',`${bN('etienne')}의 명단 앞에서 ${Ga}가 왕 편이었다고 말했다.`);
+   {l:'“그 애는 늘 왕 편이었어.”라고 말한다',a:'radical',f:()=>{bfMem('m_cf_list',['etienne','gabriel'],`공포정치 때, ${E}의 혐의자 명단에 오른 ${jo(Ga,'이','가')} 늘 왕 편이었다고 말했다.`,{tone:'죄책감'});bfRel('etienne',{trust:6});bfRel('gabriel',{trust:-15,hate:10});bfSet('gabriel','cfList','told');s.pol=clamp(s.pol+5,-100,100);
+     bfReg('r_cf_list2','gabriel',`${bN('etienne')}의 명단 앞에서 ${jo(Ga,'이','가')} 왕 편이었다고 말했다.`);
      say(`${bU('etienne')} 아무 말 없이 펜을 내려놓았다. 이튿날 위원들이 생토노레 거리의 그 집에 갔지만, ${bU('gabriel')} 이미 떠난 뒤였다. 창가에 푸른 리본 하나가 걸려 있었다고 했다. 당신은 그 말을 듣고 잠을 이루지 못했다.`+fx({sus:-5,rpeople:1}))}}])});
 
 cf('gabriel','cf_gourdin',()=>rf3Win(1794.7,1795.7)&&rf3Two('gabriel','etienne'),async()=>{const Ga=bN('gabriel'),E=bN('etienne');
   await bfScene('몽둥이','le gourdin',`테르미도르 뒤. ${bU('gabriel')} 이제 금빛 청년단의 맨 앞줄에 선다. 귀를 덮는 머리, 넥타이를 높이 맨 목, 손에는 납을 박은 몽둥이. 생토노레 거리에서 당신을 붙잡고 웃는다. “에티엔 어디 숨었는지 알지? 그 녀석이 우리 아버지 이름을 명단에 적었어.” 당신은 ${bI('etienne')} 어느 다락방에 숨어 있는지 알고 있다.`,[
    {l:'“몰라. 파리를 떴다던데.”라고 거짓말한다',a:'bold',f:()=>{bfMem('m_cf_gourdin',['gabriel','etienne'],`테르미도르 뒤, 몽둥이를 든 ${Ga}에게 ${E}의 은신처를 모른다고 거짓말했다.`,{tone:'두려움',their:bfR('etienne')?'그 사람이 나를 숨겨 주었다는 걸 나중에 알았다. 가브리엘에게 거짓말을 했다는 것도.':null});
      bfRel('etienne',{close:10,trust:12});bfRel('gabriel',{trust:-4});bfBrave();
-     say(`${bU('gabriel')} 당신 얼굴을 한참 보더니 어깨를 으쓱했다. “그래? 아깝네.” 그가 돌아선 뒤 당신은 다리가 풀려 벽에 기댔다. 그날 밤, 다락방에 빵과 초를 가져다주었다. ${bU('etienne')} 처음으로 당신 앞에서 울었다.`+fx({cour:3}))}},
+     say(`${bU('gabriel')} 당신 얼굴을 한참 보더니 어깨를 으쓱했다. “그래? 아깝네.” ${bHe('gabriel')}가 돌아선 뒤 당신은 다리가 풀려 벽에 기댔다. 그날 밤, 다락방에 빵과 초를 가져다주었다. ${bU('etienne')} 처음으로 당신 앞에서 울었다.`+fx({cour:3}))}},
    {l:'“그만둬. 그러면 너도 그 녀석이랑 똑같아.”라고 말한다',a:'social bold',f:()=>{bfMem('m_cf_gourdin',['gabriel','etienne'],`테르미도르 뒤, 몽둥이를 든 ${Ga}에게 그러면 에티엔과 똑같다고 말했다.`,{tone:'씁쓸함',their:'그 사람 말이 맞았다. 그래서 그날 몽둥이를 강물에 던졌다. 다음 날 새 몽둥이를 샀지만.'});
      bfRel('gabriel',{resp:8,close:-2});
      say(`${bU('gabriel')} 웃음을 거두었다. 몽둥이 끝이 길바닥을 몇 번 두드렸다. “똑같다고?” 그러고는 아무 말 없이 가 버렸다. 그날 저녁 센 강에 몽둥이 하나가 떠내려갔다는 이야기를, 당신은 나중에 들었다.`)}},
-   {l:'아무 대답도 하지 않는다',a:'safe',f:()=>{bfMem('m_cf_gourdin',['gabriel','etienne'],`테르미도르 뒤, 몽둥이를 든 ${Ga}가 ${E}의 은신처를 물었다. 아무 대답도 하지 않았다.`,{tone:'의문'});bfRel('gabriel',{close:-2});bfRel('etienne',{close:-2});
+   {l:'아무 대답도 하지 않는다',a:'safe',f:()=>{bfMem('m_cf_gourdin',['gabriel','etienne'],`테르미도르 뒤, 몽둥이를 든 ${jo(Ga,'이','가')} ${E}의 은신처를 물었다. 아무 대답도 하지 않았다.`,{tone:'의문'});bfRel('gabriel',{close:-2});bfRel('etienne',{close:-2});
      say(`침묵이 길어졌다. ${bU('gabriel')} 피식 웃었다. “너는 옛날부터 그랬어. 늘 아무 편도 아니지.” 그 말이 칼처럼 박혔다. 그 주에 ${bU('etienne')} 다락방을 옮겼다. 누가 알려 주었는지는 묻지 않았다.`)}}])});
 

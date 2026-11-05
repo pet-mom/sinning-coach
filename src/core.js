@@ -9,7 +9,7 @@ const SEASON_FR=['printemps','été','automne','hiver'];
 function wpick(list){const t=list.reduce((a,x)=>a+x[1],0);let r=R()*t;for(const x of list){r-=x[1];if(r<=0)return x[0]}return list[list.length-1][0]}
 function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
 /* 한국어 조사 */
-function bat(w){const c=String(w).trim().slice(-1).charCodeAt(0);if(c>=0xAC00&&c<=0xD7A3)return (c-0xAC00)%28;if(/[0-9]$/.test(w))return [1,1,0,1,0,0,1,1,1,0][+String(w).slice(-1)]?1:0;return 0}
+function bat(w){w=String(w).trim().replace(/[’”'"]+$/,'').replace(/\s*\([^()]*\)$/,'').replace(/[’”』」》\])'"]+$/,'');const c=w.slice(-1).charCodeAt(0);if(c>=0xAC00&&c<=0xD7A3)return (c-0xAC00)%28;if(/[0-9]$/.test(w))return [1,1,0,1,0,0,1,1,1,0][+String(w).slice(-1)]?1:0;return 0}
 function jo(w,a,b){if(a==='으로')return w+(bat(w)&&bat(w)!==8?'으로':'로');return w+(bat(w)?a:b)}
 const fmt=n=>Math.round(n).toLocaleString('ko-KR');
 

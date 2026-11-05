@@ -195,12 +195,12 @@ function obituary(){const d=s.death,nm=`${s.given[0]} ${s.sur[0]}`,out=[];
   const bestH=s.hist.reduce((b,h)=>{const p=POST[h.id];return !b||p.t>POST[b.id].t?h:b},null);
   const ttl=s.job?pname(job()):bestH?`전 ${bestH.n}`:'';
   out.push(`${d.year}년 ${s.month+1}월, ${ttl?ttl+' ':''}${jo(nm,'이','가')} ${s.age}세로 숨을 거두었다. 사인은 ${d.cause==='ill'?d.detail:CAUSE[d.cause]}.`);
-  out.push(`${s.by}년 ${REGIONS[s.region].n}의 ${ESTATES[s.estate].n} 집안에서 ${isM()?'아들':'딸'}로 태어났다.${s.faithKind==='protestant'?' 위그노였다.':s.faithKind==='jewish'?' 유대인이었다.':''}${lit()||s.age<8?'':' 평생 글을 몰랐다.'}`);
+  out.push(`${s.by}년 ${REGIONS[s.region].n}의 ${ESTATES[s.estate].n} 집안에서 ${jo(isM()?'아들':'딸','으로')} 태어났다.${s.faithKind==='protestant'?' 위그노였다.':s.faithKind==='jewish'?' 유대인이었다.':''}${lit()||s.age<8?'':' 평생 글을 몰랐다.'}`);
   if(s.age<14){out.push(s.age<2?'세례를 받은 것이 생의 거의 전부였다. 그 시절 프랑스 아이 넷 중 하나가 그렇게 갔다.':'어른이 되기 전에 세상을 떠났다.');return out}
   if(s.hist.length){const seq=s.hist.map(h=>h.n);out.push(`${[...new Set(seq)].join(', ')}${bat(seq[seq.length-1])?'을':'를'} 거쳤다.`)}
   const ex=[];if(s.flags.bastille)ex.push('1789년 7월 14일 바스티유를 공격했다');if(s.flags.marche)ex.push('빵을 달라며 베르사유까지 행진했다');if(s.flags.constituent)ex.push('삼부회 대표로 뽑혀 테니스코트의 방에 있었다');else if(s.flags.wasDeputy)ex.push('국민의 대표로 의사당에 앉았다');
   if(s.flags.regicide)ex.push('왕의 사형에 표를 던졌다');if(s.flags.refractory)ex.push('헌법 선서를 거부했다');if(s.flags.juror)ex.push('헌법에 선서했다');if(s.flags.vendeen)ex.push('방데의 왕당군에 들었다');
-  if(s.cnt.emigre)ex.push(`${s.emiPlace||'국외'}로 망명했다`);if(s.cnt.arrest)ex.push(`${s.cnt.arrest}번 체포되었다`);if(s.cnt.battle)ex.push(`${s.cnt.battle}번의 전투에 나섰다`);
+  if(s.cnt.emigre)ex.push(`${jo(s.emiPlace||'국외','으로')} 망명했다`);if(s.cnt.arrest)ex.push(`${s.cnt.arrest}번 체포되었다`);if(s.cnt.battle)ex.push(`${s.cnt.battle}번의 전투에 나섰다`);
   if(ex.length)out.push(ex.join(', ')+'.');
   out.push(`정치적으로는 ${polLabel(s.pol)}(${s.pol>0?'+':''}${s.pol})였다.${s.party?` 마지막으로 ${FAC[s.party].n}의 ${PRANK[s.prank]}였다.`:''}`);
   const hon=[];if(s.flags.legion)hon.push('레지옹 도뇌르를 받았다');if(s.flags.title)hon.push('제국 작위를 받았다');if(s.flags.book)hon.push('책을 남겼다');if(hon.length)out.push(hon.join(', ')+'.');

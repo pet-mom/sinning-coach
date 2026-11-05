@@ -115,7 +115,7 @@ defineAct({k:'mediate',g:'social',n:'이웃 다툼을 중재한다',s:'사교·�
   const d=pick(['밭 경계석을 누가 옮겼느냐','우물 물을 누가 먼저 긷느냐','빌려준 돈 20리브르를 갚느냐','술집에서 오간 욕설을 사과하느냐','닭이 남의 밭을 헤집었느냐']);
   const {m,why}=md([[s.st.soc>=50,1,'사교'],[s.sk.orat>=30,1,'웅변'],[(s.kn.klaw||0)>=20,1,'법을 앎'],[s.rep.rloc>=65,1,'이웃의 신망'],[s.fame>=30,1,'명성'],[s.st.soc<30,-1,'숫기 없음']]);const r=await roll(m,{label:'중재',why});
   const jp=T()>=1791?' 치안판사에게 가기 전에 매듭지었다.':'';
-  if(r.v>=4)say(`이웃 둘이 ${d}로 다투었다. 양쪽 말을 다 듣고 술 한 병씩 사게 하였다.${jp}`+fx({rloc:4,inf:1,orat:1,vjus:1}));else say(`이웃 둘이 ${d}로 다투었다. 끼어들었다가 양쪽 모두에게 원망을 샀다.`+fx({rloc:-2,orat:1}))}});
+  if(r.v>=4)say(`이웃 둘이 ${jo(d,'으로')} 다투었다. 양쪽 말을 다 듣고 술 한 병씩 사게 하였다.${jp}`+fx({rloc:4,inf:1,orat:1,vjus:1}));else say(`이웃 둘이 ${jo(d,'으로')} 다투었다. 끼어들었다가 양쪽 모두에게 원망을 샀다.`+fx({rloc:-2,orat:1}))}});
 defineAct({k:'mutual',g:'social',n:'공제회에 든다',s:'재산 20. 동업자 평판 +',cost:20,c:()=>acTown()&&!noble()&&!s.flags.mutual&&(T()<1791.4||T()>=1806),f:()=>{s.flags.mutual=true;say((T()<1791.4?'직인 조합의 상호부조 금고에 회비를 냈다. 떠돌이 직인이 앓으면 동료들이 돌본다.':'공제회(소시에테 드 스쿠르 뮈튀엘) 명부에 이름을 올렸다. 다달이 회비를 내면 앓을 때 일당을 받는다.')+fx({money:-20,rguild:3,rloc:1,vfam:1}))}});
 defineAct({k:'lodge',g:'social',n:'프리메이슨 지부에 입회한다',s:'재산 150. 사교·영향력 +',cost:150,c:()=>free()&&lit()&&s.age>=21&&!s.flags.mason&&(T()<1793||T()>=1800)&&(isM()?(noble()||rich()||s.estate==='bourgeois'||urban()):(T()>=1774&&(noble()||rich()))),f:()=>{s.flags.mason=true;
   say((isM()?'눈가리개를 쓰고 입회 의식을 치렀다. 지부의 ‘형제’들 가운데 귀족도 상인도 있었다.':'귀부인들의 입양 지부(로주 다돕시옹)에 들었다. 1774년 그랑토리앙이 여성 지부를 인정하였다.')+fx({money:-150,soc:3,inf:2,relite:2,vlib:2,kphil:1}))}});
@@ -135,7 +135,7 @@ function acSavNow(){const e=acSav();if(!e)return 0;const y=s.year-e.y;if(y>0){e.
 defineAct({k:'epargne',g:'money',n:'저축 금고를 쓴다',s:'연 4% 이자. 맡기거나 찾는다',c:()=>free()&&T()>=1818.4&&(inParis()||(urban()&&T()>=1819.5)||T()>=1835)&&(s.money>=50||acSavNow()>0),inter:async()=>{
   const cur=acSavNow(),cap=T()>=1845.5?1500:T()>=1835.5?3000:1e9,room=Math.max(0,cap-cur),q=Math.min(room,Math.round(s.money/4));
   const o=[];if(s.money>=50&&room>=50)o.push({l:'50 맡긴다',s:'',a:'safe',v:50});if(q>50)o.push({l:`${fmt(q)} 맡긴다`,s:'재산의 4분의 1',a:'safe greedy',v:q});if(cur>0)o.push({l:`모두 찾는다`,s:`${acM(cur)}`,a:'',v:-cur});o.push({l:'그만둔다',s:'',a:'',v:0});
-  const i=await Q('저축 금고','Caisse d’épargne',`${inParis()?'1818년 들레세르가 세운 파리 저축 금고':'저축 금고'}가 일요일에도 문을 연다. 날품팔이와 하녀도 몇 프랑씩 맡긴다. 맡긴 돈 ${acM(cur)}.${cap<1e9?` 한도는 ${fmt(cap)}프랑이다.`:''}`,o);const v=o[i].v;
+  const i=await Q('저축 금고','Caisse d’épargne',`${jo(inParis()?'1818년 들레세르가 세운 파리 저축 금고':'저축 금고','이','가')} 일요일에도 문을 연다. 날품팔이와 하녀도 몇 프랑씩 맡긴다. 맡긴 돈 ${acM(cur)}.${cap<1e9?` 한도는 ${fmt(cap)}프랑이다.`:''}`,o);const v=o[i].v;
   if(v>0){s.money-=v;s.flags.epargne={a:cur+v,y:s.year};say(`저축 금고 통장에 ${jo(acM(v),'을','를')} 적었다.`+fx({vord:1,vfam:1}))}else if(v<0){s.money+=-v;s.flags.epargne=null;say(`저축 금고에서 ${jo(acM(-v),'을','를')} 찾았다.`)}await done()}});
 function acRentP(){const t=T();return t<1789?.9:t<1797.75?Math.max(.25,econ().cur*.8):t<1800?.15:t<1802?.45:t<1814.25?.8:t<1816?.6:t<1830.5?.9:1.05}
 function acRent(){const r=s.flags.rente;if(!r)return null;if(r.t0<1797.75&&T()>=1797.75&&!r.cut){r.cut=1;r.p=Math.round(r.p/3);say('1797년 9월, ‘3분의 2 파산’으로 국채의 3분의 2가 휴지 같은 증권으로 바뀌었다. 남은 것은 ‘3분의 1 확정 국채’뿐이다.','big')}return r}

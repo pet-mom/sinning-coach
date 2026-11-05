@@ -62,10 +62,10 @@ function leaveParty(why){if(!s.party)return;const f=FAC[s.party];frelAdd(f.id,-2
 async function partyInvite(id,force){const f=FAC[id];if(!f||!adult()||s.age<18||s.party===id)return;if(!(T()>=f.a&&T()<f.b))return;
   if(affinity(f)<(force?55:60))return;if(!force&&(!(s.plan==='정치'||lit()||urban()||s.fame>=20)||R()>.6))return;
   const i=await Q(`${f.n}의 초대`,f.fr,`${f.lead}${bat(f.lead)?'을':'를'} 따르는 이들이 모임에 나오라고 권한다. 목표: ${f.goal}. 지지층: ${f.sup}.`,[{l:'가입한다',s:`성향 친밀도 ${affinity(f)}%`,a:'social radical'},{l:'사양한다',s:'',a:'safe'}]);
-  if(i===0)joinParty(id);else say('정중히 사양하였다.');await done()}
+  if(i===0)joinParty(id);else say(pick([`${f.n} 사람들이 건넨 모임 쪽지를 접어 주머니에 넣었다. 다음 모임 날짜가 적혀 있었지만, 당신은 그날 일부러 다른 약속을 잡았다.`,`“생각해 보겠습니다.” 당신은 웃으며 모자를 들어 인사했다. 권하러 온 사람은 그 웃음이 거절이라는 것을 알아들었다. 문을 닫고 나서야 당신은 숨을 내쉬었다.`,`정중히 사양했다. 어느 편에 이름을 올리는 순간 다른 편의 명단에도 이름이 오른다는 것을, 이 도시에서 살다 보면 저절로 알게 된다.`]));await done()}
 async function partySplit(){if(s.party!=='jacobin'&&s.party!=='patriote')return;
   const i=await Q('클럽의 분열','scission des Feuillants','왕을 폐위할 것인가. 라파예트와 바르나브가 자코뱅을 떠나 푀양 수도원으로 간다. 어느 쪽에 남겠는가.',[{l:'자코뱅에 남는다 (폐위 찬성)',s:'',a:'radical'},{l:'푀양파로 간다 (입헌군주정 수호)',s:'',a:'safe'}]);
-  if(i===0){joinParty('jacobin');setStance('crown',2,true)}else{joinParty('feuillant');setStance('crown',1,true)}await done()}
+  if(i===0){say('당신은 생토노레 거리의 자코뱅 수도원에 남았다. 의자 절반이 비었다. 남은 사람들은 서로의 얼굴을 확인하듯 오래 바라보았고, 그날 밤 연단의 목소리는 두 배로 컸다.');joinParty('jacobin');setStance('crown',2,true)}else{say('당신은 라파예트와 바르나브를 따라 길 건너 푀양 수도원으로 갔다. 길 하나 건넜을 뿐인데, 어제의 동지들이 등 뒤에서 “배신자”라고 외쳤다.');joinParty('feuillant');setStance('crown',1,true)}await done()}
 // 파벌 몰락: 소속원은 지위(prank)에 따라 혐의·체포·처형을 겪는다
 const PURGE={
  feuillant:{t:'푀양파의 몰락',d:'라파예트가 달아나고 입헌군주파는 ‘반혁명’으로 몰렸다.',sus:[5,15,25,35],arrest:[0,.05,.15,.3],death:.2},
@@ -106,14 +106,14 @@ async function municipal(){if(!adult()||!isM()||s.age<25||s.money<60||s.job==='p
 const PACTS=[
  {k:'speech',n:'클럽 연단에서 연설한다',s:'사교·웅변 판정. 명성과 당내 지위',c:()=>!!s.party&&s.age>=18&&lit(),inter:async()=>{const f=party();
    const r=await roll(md([[s.st.soc>=55,1,'사교'],[s.sk.orat>=45,1,'웅변'],[s.st.edu>=60,1,'학식'],[trait('열정'),1,'열정'],[s.sk.orat<15,-1,'연단이 낯섦']]).m,{label:'연설'});fx({orat:r.v>=4?3:2});frelAdd(f.id,r.v>=4?5:1);
-   if(r.v>=5){say(`${f.n} 회합에서 연설해 우레 같은 박수를 받았다.`+fx({fame:4,soc:1,inf:3,rpeople:f.pol>=40?3:0}));if(s.prank<3&&R()<.6){s.prank++;say(`${f.n}의 ${PRANK[s.prank]}이 되었다.`,'big')}}
+   if(r.v>=5){say(`${f.n} 회합에서 연설해 우레 같은 박수를 받았다.`+fx({fame:4,soc:1,inf:3,rpeople:f.pol>=40?3:0}));if(s.prank<3&&R()<.6){s.prank++;say(`${f.n}의 ${jo(PRANK[s.prank],'이','가')} 되었다.`,'big')}}
    else if(r.v<=2)say('야유 속에 연단을 내려왔다.'+fx({fame:-2}));else say('연설은 무난했다.'+fx({fame:1}));await done()}},
  {k:'write',n:'당 신문에 논설을 싣는다',s:'학식 판정. 성향이 당 쪽으로 기운다',c:()=>!!s.party&&lit()&&s.year>=1789,inter:async()=>{const f=party();
-   const r=await roll(md([[s.st.edu>=60,1,'학식'],[s.sk.pen>=45,1,'문장력']]).m,{label:'논설'});fx({pen:2});frelAdd(f.id,3);say(`『${pick(['인민의 벗','애국 프랑스인','뒤셴 영감','혁명 연보','국민 소식'])}』에 ${f.goal}을 호소하는 글을 실었다.`+fx({fame:r.v>=4?3:1,pol:Math.round((f.pol-s.pol)*.2),sus:inTerror()&&f.pol<40?6:0}));await done()}},
+   const r=await roll(md([[s.st.edu>=60,1,'학식'],[s.sk.pen>=45,1,'문장력']]).m,{label:'논설'});fx({pen:2});frelAdd(f.id,3);say(`『${pick(['인민의 벗','애국 프랑스인','뒤셴 영감','혁명 연보','국민 소식'])}』에 ${jo(f.goal,'을','를')} 호소하는 글을 실었다.`+fx({fame:r.v>=4?3:1,pol:Math.round((f.pol-s.pol)*.2),sus:inTerror()&&f.pol<40?6:0}));await done()}},
  {k:'rally',n:'청원과 시위를 조직한다',s:'의지 판정. 명성↑, 혐의↑',c:()=>!!s.party&&s.age>=18&&((T()>=1789.25&&T()<1795.5)||T()>=tm(1830,7)),inter:async()=>{
    const r=await roll(s.st.cour>=50?1:0,{label:'시위'});if(r.v>=4)say('구민 수천 명이 청원서에 서명하였다.'+fx({fame:4,sus:6,cour:2,orat:2,rpeople:4,relite:-2,inf:3}));else if(r.v===1){say('국민방위대에 해산당하고 주동자로 찍혔다.'+fx({sus:15}));if(R()<.3){s.cond='prison';s.prisonKind=inTerror()?'terror':'plain';s.condSince=T();say('감옥에 갇혔다.','big')}}else say('모인 사람이 많지 않았다.'+fx({sus:3}));await done()}},
  {k:'caucus',n:'파벌 지도부와 만난다',s:'사교 판정. 당내 지위',c:()=>!!s.party&&s.prank<3,inter:async()=>{const f=party();
-   const r=await roll(s.st.soc>=50?1:0,{label:'회합'});if(r.v>=5&&s.prank<3){s.prank++;meet(f.lead);frelAdd(f.id,8);fx({inf:2});say(`${f.lead}${bat(f.lead)?'과':'와'} 마주 앉았다. ${f.n}의 ${PRANK[s.prank]}이 되었다.`+fx({fame:2}),'big')}else say('지도부는 바빴다.');await done()}},
+   const r=await roll(s.st.soc>=50?1:0,{label:'회합'});if(r.v>=5&&s.prank<3){s.prank++;meet(f.lead);frelAdd(f.id,8);fx({inf:2});say(`${f.lead}${bat(f.lead)?'과':'와'} 마주 앉았다. ${f.n}의 ${jo(PRANK[s.prank],'이','가')} 되었다.`+fx({fame:2}),'big')}else say('지도부는 바빴다.');await done()}},
  {k:'run',n:'선거에 나선다',s:'의원이 될 수 있다',c:()=>isM()&&s.age>=25&&lit()&&!deputy()&&s.fame>=30&&[1791,1792,1795,1797,1798,1799].includes(s.year),inter:async()=>{await election('보궐 선거',.08)}},
  {k:'leave',n:'파벌을 떠난다',s:'',c:()=>!!s.party,f:()=>leaveParty()}
 ];
