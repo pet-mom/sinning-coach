@@ -61,7 +61,7 @@ function npcMeet(ctx){const a=s.age,E0=noble()?s.estate:s.estate;let role='친�
     else{o.estate=s.estate==='bourgeois'?(R()<.6?'bourgeois':'artisan'):(R()<.85?'artisan':'bourgeois');w=pick(['같은 골목에 사는 아이','본당 교리반에서 만난 아이','센 강가에서 함께 놀던 아이','같은 셋집 위층에 사는 아이'])}
     if(R()<.18){role='경쟁자';w='골목 아이들의 대장 노릇을 하던 아이'}}
   else if(ctx==='school'){const st=SCH().st;sx=same();o.age=a+ri(-1,1);
-    if(st==='college'){o.estate=wpick([['bourgeois',6],['robe',2],['epee',1],['artisan',1]]);w=`${t<1762.5?'루이르그랑 예수회 콜레주':t<1793?pick(['루이르그랑 콜레주','아르쿠르 콜레주','마자랭 콜레주']):t<1802.5?'중앙학교':pick(['리세 앵페리알','리세 앙리 4세','리세 샤를마뉴'])} 동급생`}
+    if(st==='college'){o.estate=wpick([['bourgeois',6],['robe',2],['epee',1],['artisan',1]]);w=`${(()=>{try{if(inSchool(['college']))return collegeName()}catch(e){}return t<1762.5?'루이르그랑 예수회 콜레주':t<1793?pick(['루이르그랑 콜레주','아르쿠르 콜레주','마자랭 콜레주']):t<1802.5?'중앙학교':pick(['리세 앵페리알','리세 앙리 4세','리세 샤를마뉴'])})()} 동급생`}
     else if(st==='convent'){o.estate=noble()?(R()<.7?s.estate:'bourgeois'):(R()<.7?'bourgeois':'robe');w=`${noble()?'팡테몽 수녀원':'성모방문회 수녀원'} 기숙학교 동무`}
     else if(st==='seminary'){o.estate=wpick([['artisan',3],['bourgeois',3],['peasant',2],['robe',1]]);o.cler=true;w='생쉴피스 신학교 동기'}
     else{o.estate=wpick([['bourgeois',6],['robe',1],['artisan',1]]);w=`${SCH().fac==='med'?'의학부':SCH().fac==='law'?'법학부':'대학'} 동기`;o.age=a+ri(-2,3)}
