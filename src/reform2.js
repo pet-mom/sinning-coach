@@ -52,6 +52,9 @@ function rf2Flush(){if(!s)return;const ps=rf2Pend.splice(0);for(const p of ps){
   const after=s.log.slice(p.n).some(e=>['ev','big','dark'].includes(e.k)&&!(e.d&&e.d.choice));if(after)continue;
   const ms=s.bf&&s.bf.mem?s.bf.mem.slice(p.mem):[];if(ms.length){L(ms[ms.length-1].t,'ev',{choice:1});continue}
   const c=rfPast(p.l);if(!c)continue;const f=rf2First(p.text);L(f&&f.length<=120?`${f} 당신은 ${c.replace(/^당신은\s*/,'')}`:c,'ev',{choice:1})}}
+// 고른 뒤 첫 결과 글이 너무 짧으면 사건의 첫 문장을 앞에 붙여 무슨 일이었는지 알 수 있게 한다
+{const _L2=L;L=function(t,k='ev',d){try{const p=rf2Pend[rf2Pend.length-1];if(p&&!p.ctx&&['ev','big','dark'].includes(k)&&!(d&&d.choice)&&s&&s.log.length>=p.n){
+    const bare=String(t).replace(/\s*\([^()]*\)\s*/g,'').trim();if(bare.length<34){const f=rf2First(p.text);if(f&&f.length<=110&&!String(t).startsWith(f.slice(0,8))){t=f+' '+t}}p.ctx=1}}catch(e){}return _L2(t,k,d)}}
 {const _dn=done;done=async function(){try{rf2Flush()}catch(e){console.error(e)}return _dn.apply(this,arguments)}}
 
 /* ---------- 1. 무작위 달의 일상 줄 ---------- */
@@ -286,9 +289,9 @@ side('louise','lo_flour',()=>!child()&&(price(s.year)>=1.35||(T()>=1789.3&&T()<1
    {l:'한 자루는 아이들 몫으로 숨기라고 한다',a:'family',f:()=>{say(`그날 밤 ${bU('louise')} 밀가루 한 자루를 침대 밑에 밀어 넣었다. 이튿날 빵집 앞 줄의 끝에서 빵이 모자랐다. 빈손으로 돌아서는 노파의 뒷모습을 당신도 보았다.`);bfMem('m_lo_flour','louise',`밀가루가 모자라던 해, ${bN('louise')}에게 한 자루는 아이들 몫으로 숨기라고 했다.`,{tone:'죄책감',place:'빵집 뒷문',their:'그 사람이 숨기라고 했다. 내 아이들은 살았다. 그 말이 고마웠고, 부끄러웠다.'});bfRel('louise',{close:8,trust:5})}},
    {l:'당신 몫의 빵을 아이들에게 준다',a:'family bold',f:()=>{bfMem('m_lo_flour','louise',`밀가루가 모자라던 해, 당신 몫의 빵을 ${bN('louise')}의 아이들에게 주었다.`,{tone:'감사',place:'빵집 뒷문',their:'그 사람은 자기 빵을 내 아이들에게 주었다. 그해 겨울을 평생 갚지 못했다.'});bfRel('louise',{close:12,trust:10});say('그 주 내내 당신은 배가 고팠다.'+fx({hp:-2,rloc:2}))}}])});
 side('louise','lo_god',()=>s.age>=24&&aB('louise')<=42,async()=>{
-  await bfScene('대모','la marraine',`${bI('louise')} 갓 태어난 딸을 안고 왔다. “이 아이 ${isM()?'대부':'대모'}가 되어 줘. 글을 아는 사람이었으면 해. 나처럼 살지 않게.”`,[
-   {l:'기꺼이 받아들인다',a:'family pious',f:()=>{bfMem('m_lo_god','louise',`${bN('louise')}의 딸의 ${isM()?'대부':'대모'}가 되었다. 세례반 앞에서 아이 이름을 대신 말했다.`,{obj:'세례 증서',place:bfPar(),their:'그 사람이 우리 딸의 이름을 불러 주었다. 그 아이는 커서 글을 배웠다.'});bfObj('godchild',`${bN('louise')}의 딸의 세례 증서`,{from:'louise'});bfRel('louise',{close:10,trust:10});say('세례반의 물이 차가웠는지 아이가 크게 울었다. 다들 좋은 징조라고 했다.'+fx({faith:1,rfam:1}))}},
-   {l:'더 좋은 사람을 찾으라고 한다',a:'safe',f:()=>{say(`${bU('louise')} 아이를 고쳐 안으며 “그래, 알았어.” 하고 말했다. 세례식 날 당신은 맨 뒷자리에 앉았다. 세례반 앞에 선 사람은 글을 모르는 이웃 아낙이었다.`);bfMem('m_lo_god','louise',`${bN('louise')}의 딸의 ${isM()?'대부':'대모'}가 되어 달라는 부탁을 사양했다.`,{tone:'후회',their:'그 사람은 사양했다. 겸손해서인지, 귀찮아서인지 끝내 묻지 못했다.'});bfAsk('q_lo_god','louise',`${bU('louise')} 왜 하필 당신에게 부탁했을까?`);bfRel('louise',{close:-3})}}])});
+  await bfScene('대모','la marraine',`${bI('louise')} 갓 태어난 딸을 안고 왔다. “이 아이 ${jo(isM()?'대부':'대모','이','가')} 되어 줘. 글을 아는 사람이었으면 해. 나처럼 살지 않게.”`,[
+   {l:'기꺼이 받아들인다',a:'family pious',f:()=>{bfMem('m_lo_god','louise',`${bN('louise')}의 딸의 ${jo(isM()?'대부':'대모','이','가')} 되었다. 세례반 앞에서 아이 이름을 대신 말했다.`,{obj:'세례 증서',place:bfPar(),their:'그 사람이 우리 딸의 이름을 불러 주었다. 그 아이는 커서 글을 배웠다.'});bfObj('godchild',`${bN('louise')}의 딸의 세례 증서`,{from:'louise'});bfRel('louise',{close:10,trust:10});say('세례반의 물이 차가웠는지 아이가 크게 울었다. 다들 좋은 징조라고 했다.'+fx({faith:1,rfam:1}))}},
+   {l:'더 좋은 사람을 찾으라고 한다',a:'safe',f:()=>{say(`${bU('louise')} 아이를 고쳐 안으며 “그래, 알았어.” 하고 말했다. 세례식 날 당신은 맨 뒷자리에 앉았다. 세례반 앞에 선 사람은 글을 모르는 이웃 아낙이었다.`);bfMem('m_lo_god','louise',`${bN('louise')}의 딸의 ${jo(isM()?'대부':'대모','이','가')} 되어 달라는 부탁을 사양했다.`,{tone:'후회',their:'그 사람은 사양했다. 겸손해서인지, 귀찮아서인지 끝내 묻지 못했다.'});bfAsk('q_lo_god','louise',`${bU('louise')} 왜 하필 당신에게 부탁했을까?`);bfRel('louise',{close:-3})}}])});
 
 // 에티엔
 side('etienne','et_pamph',()=>s.age>=17&&s.age<=34&&lit(),async()=>{const E=bN('etienne');
@@ -300,18 +303,18 @@ side('etienne','et_love',()=>s.age>=19&&s.age<=34,async()=>{const E=bN('etienne'
   await bfScene('부치지 못한 편지','la lettre',`${bU('etienne')} 연설은 잘하면서 연애편지는 한 줄도 못 쓴다. 인쇄소 집 ${F?'아들':'딸'}에게 쓴 편지를 세 번째 찢고 있다. “네가 좀 써 줘. 너는 이런 거 잘하잖아.”`,[
    {l:'대신 써 준다',a:'social',dis:!lit(),f:()=>{bfMem('m_et_love','etienne',`${E} 대신 연애편지를 써 주었다. 답장이 왔다.`,{their:'그 편지 덕에 결혼했다. 아내는 지금도 내가 쓴 줄 안다.'});bfRel('etienne',{close:6});bfS().etWed=1;say(`답장이 왔다. ${bU('etienne')} 그 답장을 당신에게 열 번쯤 읽어 주었다.`)}},
    {l:'“네 말로 써야 해.”라고 말한다',a:'bold',f:()=>{say(`${bU('etienne')} 투덜거리면서도 새 종이를 꺼냈다. 밤새 창문에 촛불이 켜져 있었다. 이튿날 본 편지는 철자가 엉망이고 문장은 서툴렀지만, 한 줄 한 줄이 ${bN('etienne')}의 목소리였다.`);bfMem('m_et_love','etienne',`${bI('etienne')} 연애편지를 대신 써 달라고 했다. 네 말로 쓰라고 했다.`,{their:'그 사람 말대로 내 말로 썼다. 엉망이었다. 그래도 답장이 왔다.'});bfRel('etienne',{resp:6,close:3})}},
-   {l:'“혁명이 먼저 아니었어?”라고 놀린다',a:'safe',f:()=>{say(`${bU('etienne')} 얼굴이 새빨개져 편지 조각을 난로에 던졌다. “혁명이 먼저야. 당연하지.” 그 뒤로 ${bHe('etienne')}는 그 사람 이야기를 다시 꺼내지 않았다.`);bfMem('m_et_love','etienne',`연애편지를 찢는 ${bN('etienne')}을 놀렸다.`,{tone:'부끄러움',their:'놀림을 받고 편지를 부치지 않았다. 그 사람은 다른 사람과 결혼했다.'});bfRel('etienne',{close:-2})}}])});
+   {l:'“혁명이 먼저 아니었어?”라고 놀린다',a:'safe',f:()=>{say(`${bU('etienne')} 얼굴이 새빨개져 편지 조각을 난로에 던졌다. “혁명이 먼저야. 당연하지.” 그 뒤로 ${bHe('etienne')}는 그 사람 이야기를 다시 꺼내지 않았다.`);bfMem('m_et_love','etienne',`연애편지를 찢는 ${jo(bN('etienne'),'을','를')} 놀렸다.`,{tone:'부끄러움',their:'놀림을 받고 편지를 부치지 않았다. 그 사람은 다른 사람과 결혼했다.'});bfRel('etienne',{close:-2})}}])});
 side('etienne','et_father',()=>s.age>=24&&bfKn('etienne','father')>=1,async()=>{const E=bN('etienne');
   await bfScene('아버지의 임종','le père',`${bN('etienne')}의 아버지가 위독하다는 소식이 왔다. ${bU('etienne')} 가지 않겠다고 한다. “그 사람이 끌어낸 침대가 몇 개인지 알아?” 그런데 외투는 벌써 입고 있다.`,[
    {l:'같이 가 주겠다고 한다',a:'family',f:()=>{bfMem('m_et_father','etienne',`${E}의 아버지 임종에 함께 갔다. 아버지는 아들의 이름을 부르고 숨을 거두었다.`,{tone:'위로',their:'그 사람이 같이 가 주지 않았다면 나는 문 앞에서 돌아섰을 것이다.'});bfKnow('etienne','father',2);bfRel('etienne',{close:10,trust:10});say(`${bU('etienne')} 장례식에서 울지 않았다. 묘지를 나와서야 울었다.`)}},
-   {l:'“가지 않으면 평생 후회해.”라고 말한다',a:'bold',f:()=>{say(`${bU('etienne')} 당신을 노려보다가 문을 박차고 나갔다. 사흘 뒤 짧은 쪽지가 왔다. “늦지 않았어. 고마워. 그래도 너 미워.”`);bfMem('m_et_father','etienne',`${E}에게 아버지 임종에 가라고 했다. 그는 갔다.`,{their:'그 사람 말이 맞았다. 그래도 그 말을 들을 때는 미웠다.'});bfKnow('etienne','father',2);bfRel('etienne',{resp:6})}},
-   {l:'아무 말도 하지 않는다',a:'safe',f:()=>{say(`${bU('etienne')} 외투를 벗어 의자에 걸었다. 그리고 그날 밤 내내 신문을 읽었다. 같은 쪽을 몇 번이고. 이튿날 아침, 아버지의 부고가 왔다.`);bfMem('m_et_father','etienne',`${E}의 아버지가 위독하던 날, 아무 말도 하지 않았다. 그는 가지 않았다.`,{tone:'후회',their:'아무도 가라고 하지 않았다. 나는 가지 않았다.'});bfReg('r_et_father','etienne',`${bN('etienne')}에게 아버지 임종에 가라고 말해 주지 못했다.`)}}])});
+   {l:'“가지 않으면 평생 후회해.”라고 말한다',a:'bold',f:()=>{say(`${bU('etienne')} 당신을 노려보다가 문을 박차고 나갔다. 사흘 뒤 짧은 쪽지가 왔다. “늦지 않았어. 고마워. 그래도 너 미워.”`);bfMem('m_et_father','etienne',`${E}에게 아버지 임종에 가라고 했다. ${bHe('etienne')}는 갔다.`,{their:'그 사람 말이 맞았다. 그래도 그 말을 들을 때는 미웠다.'});bfKnow('etienne','father',2);bfRel('etienne',{resp:6})}},
+   {l:'아무 말도 하지 않는다',a:'safe',f:()=>{say(`${bU('etienne')} 외투를 벗어 의자에 걸었다. 그리고 그날 밤 내내 신문을 읽었다. 같은 쪽을 몇 번이고. 이튿날 아침, 아버지의 부고가 왔다.`);bfMem('m_et_father','etienne',`${E}의 아버지가 위독하던 날, 아무 말도 하지 않았다. ${bHe('etienne')}는 가지 않았다.`,{tone:'후회',their:'아무도 가라고 하지 않았다. 나는 가지 않았다.'});bfReg('r_et_father','etienne',`${bN('etienne')}에게 아버지 임종에 가라고 말해 주지 못했다.`)}}])});
 
 // 쥘
 side('jules','ju_bells',()=>s.age>=12&&s.age<=30,async()=>{const J=bN('jules');
   await bfScene('부활절 종','les cloches de Pâques',`성 목요일부터 종은 울리지 않는다. 종들이 로마에 갔다고 아이들은 믿는다. 부활절 아침, ${bI('jules')} 종탑 위에서 손짓한다. “가, 같이 쳐 볼래?”`,[
    {l:'종탑에 올라가 함께 종을 친다',a:'social pious',f:()=>{bfMem('m_ju_bells','jules',`부활절 아침, ${bW('jules')} 함께 종을 쳤다. 줄에 매달려 발이 바닥에서 떴다.`,{obj:'종 줄',place:'종탑',their:'그날 종소리는 내 평생 가장 컸다. 그 사람이 같이 매달려 있었으니까.'});bfRel('jules',{close:8});say('온 동네가 종소리에 잠을 깼다. 손바닥에 물집이 잡혔다.'+fx({faith:1}))}},
-   {l:'아래에서 듣는다',a:'safe',f:()=>{say(`종탑 아래 광장에 서서 종소리를 들었다. 첫 종이 울리자 비둘기 떼가 한꺼번에 날아올랐다. 종탑 창문으로 ${bN('jules')}의 작은 얼굴이 보였다. 당신은 손을 흔들었다.`);bfMem('m_ju_bells','jules',`부활절 아침, 종탑 아래에서 ${bN('jules')}이 치는 종소리를 들었다.`,{place:'종탑 아래',their:'그 사람이 아래에서 듣고 있었다. 나는 더 세게 쳤다.'});bfRel('jules',{close:3})}}])});
+   {l:'아래에서 듣는다',a:'safe',f:()=>{say(`종탑 아래 광장에 서서 종소리를 들었다. 첫 종이 울리자 비둘기 떼가 한꺼번에 날아올랐다. 종탑 창문으로 ${bN('jules')}의 작은 얼굴이 보였다. 당신은 손을 흔들었다.`);bfMem('m_ju_bells','jules',`부활절 아침, 종탑 아래에서 ${jo(bN('jules'),'이','가')} 치는 종소리를 들었다.`,{place:'종탑 아래',their:'그 사람이 아래에서 듣고 있었다. 나는 더 세게 쳤다.'});bfRel('jules',{close:3})}}])});
 side('jules','ju_confess',()=>s.age>=26&&bfR('jules').job&&/신부/.test(bfR('jules').job),async()=>{const J=bN('jules');
   await bfScene('고해소','le confessionnal',`고해소 칸막이 너머의 목소리가 낯익다. ${J}다. 그도 당신을 알아보았는지 잠시 숨을 고른다. “말, 말씀하세요.”`,[
    {l:'평생 숨겨 온 잘못을 털어놓는다',a:'pious',f:()=>{bfMem('m_ju_conf','jules',`${bN('jules')}에게 고해했다. 칸막이 너머에서 그는 한 번도 더듬지 않았다.`,{tone:'위로',place:'고해소',their:'그 사람의 고해는 무덤까지 가지고 간다. 그것이 내 일이다.'});bfRel('jules',{trust:10,close:4});say('보속은 주님의 기도 세 번이었다. 성당을 나오는데 몸이 가벼웠다.'+fx({faith:3,cour:1}))}},

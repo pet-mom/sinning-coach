@@ -45,7 +45,7 @@ EV.push(
   {l:'손바닥을 내민다',s:'건강 -',a:'safe',f:()=>say('손바닥을 세 대 맞았다. 손이 부어 펜을 쥘 수 없었다.'+fx({hp:-1,cour:2}))},
   {l:'옆 아이가 먼저 떠들었다고 한다',s:'사교 판정',a:'greedy',f:async()=>{const r=await roll(s.st.soc>=40?1:0,{label:'둘러대기'});if(r.v>=4)say('옆 아이가 대신 맞았다. 그 아이는 다시는 말을 걸지 않았다.'+fx({soc:-2}));else say('거짓말이 들통나 당나귀 모자를 쓰고 하루 종일 구석에 서 있었다.'+fx({soc:-1,cour:-1})+addGrade(-2))}},
   {l:'잘못했다고 빌고 벌로 교리문답을 외운다',s:'신앙',a:'pious',f:()=>say('매 대신 교리문답 한 장을 통째로 외웠다.'+fx({faith:2})+addGrade(1))}]),
- C('sch_p_harvest',()=>schIs('petite')&&schHarvest()&&!noble()&&s.estate!=='bourgeois'&&!urban(),1.5,1,'추수철','la moisson',()=>`${s.month<=7?'밀 베기':'포도 따기'}가 시작되었다. 아버지는 이삭줍기와 짐 나르기에 일손 하나가 아쉽다고 한다. 학교 의자는 반이 비었다.`,[
+ C('sch_p_harvest',()=>schIs('petite')&&schHarvest()&&!noble()&&s.estate!=='bourgeois'&&!urban(),1.5,1,'추수철','la moisson',()=>`${jo(s.month<=7?'밀 베기':'포도 따기','이','가')} 시작되었다. 아버지는 이삭줍기와 짐 나르기에 일손 하나가 아쉽다고 한다. 학교 의자는 반이 비었다.`,[
   {l:'밭으로 나간다',s:'건강·가족, 성적 -',a:'family work',f:()=>say('석 달을 밭에서 보냈다. 돌아오니 배운 글자를 반쯤 잊었다.'+fx({hp:2,soc:1})+addGrade(-4))},
   {l:'학교에 보내 달라고 조른다',s:'부모 허락 확률',a:'study',f:async()=>{if(await chance(.35,'부모의 허락','추수철에는 대부분의 아이가 학교를 빠졌다'))say('텅 빈 교실에 혼자 남아 선생의 귀여움을 독차지했다.'+fx({edu:2})+addGrade(3));else say('아버지에게 꾸중을 듣고 결국 낫을 들었다.'+fx({hp:1})+addGrade(-3))}}]),
  S('sch_p_walk',()=>schIs('petite')&&s.season===3&&!urban()&&!noble(),1,2,[
@@ -161,7 +161,7 @@ EV.push(
   {l:'밤에 이불 속에서 읽는다',s:'학식 +, 신앙 -, 들킬 위험',a:'radical study',f:async()=>{say('촛농이 이불에 떨어지는 것도 모르고 밤새 읽었다.'+fx({edu:3,faith:-3,pol:2,vlib:3,brl:4}));if(await chance(.2,'들킴','사감은 밤마다 등불을 들고 침대 사이를 돌았다')){const r=await roll(s.st.soc>=50?1:0,{label:'처분'});if(r.v<=1&&['jes','old'].includes(schKind()))schExpel('사감이 베개 밑에서 책을 찾아냈다. 교장은 부모를 불러 아이를 데려가라고 하였다. 콜레주에서 쫓겨났다.'+fx({fame:-2}));else say('책을 압수당하고 '+schPunish()+fx({hp:-1})+addGrade(-5))}}},
   {l:'사감에게 갖다 바친다',s:'신앙 +, 사교 -',a:'pious',f:()=>say('사감이 칭찬했다. 친구는 벌을 받았고 다시는 말을 걸지 않았다.'+fx({faith:2,soc:-3})+addGrade(1))},
   {l:'돌려준다',s:'',a:'safe',f:()=>say('"나중에"라고 하고 돌려주었다.')}]),
- C('sch_c_novel',()=>schBoard()&&s.age>=13,.8,4,'숨겨 온 소설','roman en contrebande',()=>`${T()<1788.5?'프레보 신부의 『마농 레스코』':T()<1801?'베르나르댕 드 생피에르의 『폴과 비르지니』':'샤토브리앙의 『아탈라』'}가 기숙사를 돌고 있다. 표지는 『그리스도를 본받아』로 바꿔 씌워 놓았다.`,[
+ C('sch_c_novel',()=>schBoard()&&s.age>=13,.8,4,'숨겨 온 소설','roman en contrebande',()=>`${jo(T()<1788.5?'프레보 신부의 『마농 레스코』':T()<1801?'베르나르댕 드 생피에르의 『폴과 비르지니』':'샤토브리앙의 『아탈라』','이','가')} 기숙사를 돌고 있다. 표지는 『그리스도를 본받아』로 바꿔 씌워 놓았다.`,[
   {l:'읽고 다음 아이에게 넘긴다',s:'사교·학식, 들킬 위험',a:'social',f:async()=>{say('밤새 읽고 눈이 퉁퉁 부은 채 아침 기도에 나갔다.'+fx({edu:1,soc:2,faith:-1}));if(await chance(.2,'들킴','책이 손을 많이 탈수록 들키기 쉽다'))say('미사 중에 책이 떨어졌다. '+schPunish()+addGrade(-3))}},
   {l:'하룻밤 빌려주는 값을 받는다',s:'돈 +, 사교 -',a:'greedy',f:()=>say('하룻밤에 몇 수씩 받고 빌려주었다. "책장수"라는 별명이 붙었다.'+fx(schAdultM()?{money:8,soc:-1}:{soc:-1}))},
   {l:'손대지 않는다',s:'',a:'pious safe',f:()=>say('외면하고 성무일도서만 펼쳤다.'+fx({faith:1}))}]),
@@ -288,7 +288,7 @@ EV.push(
   ['가난한 이들에게 줄 셔츠를 지으며 성인전 낭독을 들었다.',{faith:1}],
   ['셈은 살림 장부를 적을 만큼만, 역사는 성서 이야기와 함께 조금 배웠다.',{edu:1}],
  ]),
- C('sch_v_music',()=>schIs('convent'),1.2,3,'음악 수업','la leçon de musique',()=>`음악 선생이 악기를 하나 고르라고 한다. 하프와 ${T()<1780?'클라브생':'클라브생, 그리고 요즘 유행하는 포르테피아노'}가 있다. 연말에는 면회실에서 부모들 앞에 연주를 한다.`,[
+ C('sch_v_music',()=>schIs('convent'),1.2,3,'음악 수업','la leçon de musique',()=>`음악 선생이 악기를 하나 고르라고 한다. 하프와 ${jo(T()<1780?'클라브생':'클라브생, 그리고 요즘 유행하는 포르테피아노','이','가')} 있다. 연말에는 면회실에서 부모들 앞에 연주를 한다.`,[
   {l:'하프를 배운다',s:'악기 판정',a:'social',f:async()=>{const {m,why}=md([[s.st.soc>=45,1,'사교'],[s.sk.music>=25,1,'악기 솜씨'],[s.st.dex<15,-1,'굳은 손']]);const r=await roll(m,{label:'연주회',why});if(r.v>=4)say('연주회에서 하프를 뜯자 어머니 친구들이 "혼처가 줄을 서겠다"며 수군댔다.'+fx({soc:3,fame:1,music:3,rfam:3})+addGrade(2));else say('줄이 끊어져 손끝에 물집만 잡혔다.'+fx({soc:1,music:1}))}},
   {l:'건반을 배운다',s:'학식·악기',a:'study',f:()=>say('쿠프랭과 라모의 소품을 익혔다. 손가락이 저절로 움직였다.'+fx({edu:1,soc:1,music:3,dex:1})+addGrade(2))},
   {l:'예배당 성가대에 선다',s:'신앙 +',a:'pious',f:()=>say('저녁 기도의 성가를 맡아 불렀다. 수녀님들이 흐뭇해했다.'+fx({faith:3,soc:1,music:1})+addGrade(1))}]),
@@ -303,7 +303,7 @@ EV.push(
   {l:'솔직하게 쓴다',s:'운',a:'bold',f:async()=>{if(await chance(.5,'검열','수녀님은 편지를 한 줄도 빼놓지 않고 읽었다'))say('편지는 돌려받았고 "감사할 줄 모르는 아이"라며 꾸중을 들었다.'+fx({cour:1})+addGrade(-2));else say('편지가 그대로 나갔다. 어머니가 털 숄과 과자를 보내 주었다.'+fx({hp:1,soc:1}))}},
   {l:'공들인 글씨로 감사 편지를 쓴다',s:'성적 +',a:'safe study',f:()=>say('세비녜 부인을 흉내 낸 우아한 문장으로 썼다. 수녀님이 다른 아이들에게 본보기로 읽어 주었다.'+fx({edu:1,soc:1})+addGrade(2))},
   {l:'면회 온 하녀 편에 몰래 부친다',s:'의지, 들킬 위험',a:'bold family',f:async()=>{if(await chance(.3,'들킴','면회실 창살 너머로 무엇이 오가는지 수녀님이 지켜본다'))say('편지가 발각되어 한 달 면회 금지를 받았다.'+fx({soc:-1})+addGrade(-2));else say('편지가 무사히 갔다.'+fx({cour:2,soc:1}))}}]),
- C('sch_v_novel',()=>schIs('convent')&&s.age>=12,1,4,'숨긴 소설','le roman caché',()=>`동무가 침대 밑에서 ${T()<1761.5?'프레보 신부가 옮긴 리처드슨의 『클라리사』':T()<1788.5?'루소의 『신엘로이즈』':T()<1801?'『폴과 비르지니』':'샤토브리앙의 『아탈라』'}를 꺼냈다. 수녀님들이 "영혼을 더럽히는 책"이라 부르는 소설이다.`,[
+ C('sch_v_novel',()=>schIs('convent')&&s.age>=12,1,4,'숨긴 소설','le roman caché',()=>`동무가 침대 밑에서 ${jo(T()<1761.5?'프레보 신부가 옮긴 리처드슨의 『클라리사』':T()<1788.5?'루소의 『신엘로이즈』':T()<1801?'『폴과 비르지니』':'샤토브리앙의 『아탈라』','을','를')} 꺼냈다. 수녀님들이 "영혼을 더럽히는 책"이라 부르는 소설이다.`,[
   {l:'밤마다 몰래 읽는다',s:'학식·사교, 들킬 위험',a:'social',f:async()=>{say('사랑 이야기에 가슴이 두근거려 잠을 이루지 못했다.'+fx({edu:2,soc:1,faith:-2}));if(await chance(.25,'들킴','수녀님은 침대 밑을 뒤졌다'))say('책이 발견되어 불태워졌다. 고해성사에서 긴 보속을 받았다.'+fx({faith:1})+addGrade(-3))}},
   {l:'수녀님께 갖다 드린다',s:'신앙 +, 사교 -',a:'pious',f:()=>say('동무는 벌을 받았다. 수녀님은 칭찬했지만 동무들은 등을 돌렸다.'+fx({faith:2,soc:-3})+addGrade(1))},
   {l:'못 본 척한다',s:'',a:'safe',f:()=>say('눈을 감고 기도서를 폈다.')}]),
@@ -546,13 +546,13 @@ EV.push(
   {l:'판결문 초안을 쓴다',s:'글씨·문서 +',a:'study',f:()=>say('양쪽 주장을 갈래지어 판결 이유를 적었다. 깨끗이 정서해 돌렸다.'+fx({pen:3,edu:1})+addGrade(2))},
   {l:'모임 뒤 선술집에만 따라간다',s:'사교 +',a:'social',f:()=>{const nm=person();say(`포도주 몇 병을 비우며 ${jo(nm,'과','와')} 밤새 정치 이야기를 하였다.`+fx({soc:2,hp:-1})+schRel('친구',nm,{close:55,sex:'M'}))}}]),
  C('sch2_mentor',()=>schOK()&&inSchool(['college','convent','univ','seminary'])&&s.age>=12&&!schRelOf('스승')&&SCH().grade>=55,.8,99,'눈여겨본 선생','le maître',()=>{s.flags.sch2T=schTeacher();return `${jo(s.flags.sch2T,'이','가')} 수업이 끝난 뒤 따로 불렀다. "${SCH().st==='convent'?'너는 머리가 좋으니 바느질만 하기엔 아깝다.':'너는 생각을 할 줄 아는 아이다.'} 저녁에 내 방에 와서 책을 더 읽어 보겠느냐."`},[
-  {l:'기꺼이 찾아간다',s:'학식·스승',a:'study',f:()=>say(`${s.flags.sch2T}의 방에서 ${SCH().st==='univ'?'아직 강의하지 않은 논문들':SCH().st==='convent'?'역사책과 세비녜 부인의 편지':'타키투스와 파스칼'}을 읽었다. 선생은 틀린 데를 하나하나 짚어 주었다.`+fx({edu:3,pen:1})+addGrade(3)+schRel('스승',s.flags.sch2T,{close:60,resp:70,trust:55,inf:ri(10,35),sex:SCH().st==='convent'?'F':'M',v:pick(['vord','vjus','vlib'])}))},
+  {l:'기꺼이 찾아간다',s:'학식·스승',a:'study',f:()=>say(`${s.flags.sch2T}의 방에서 ${jo(SCH().st==='univ'?'아직 강의하지 않은 논문들':SCH().st==='convent'?'역사책과 세비녜 부인의 편지':'타키투스와 파스칼','을','를')} 읽었다. 선생은 틀린 데를 하나하나 짚어 주었다.`+fx({edu:3,pen:1})+addGrade(3)+schRel('스승',s.flags.sch2T,{close:60,resp:70,trust:55,inf:ri(10,35),sex:SCH().st==='convent'?'F':'M',v:pick(['vord','vjus','vlib'])}))},
   {l:'동무들 눈이 신경 쓰여 사양한다',s:'',a:'safe social',f:()=>say('"선생님 강아지"라는 말을 듣기 싫었다.'+fx({soc:1}))}]),
  C('sch2_rival',()=>schOK()&&inSchool(['college','convent','univ'])&&s.age>=11&&!schRelOf('경쟁자'),.8,99,'1등 다툼','la rivalité',()=>{s.flags.sch2R=isM()?person():woman();return `${jo(s.flags.sch2R,'이','가')} 들어온 뒤로 작문 1등 자리가 매달 바뀐다. ${jo(s.flags.sch2R,'은','는')} 당신 답안을 흘끗 보고 코웃음을 쳤다. 선생은 둘을 일부러 맞붙인다.`},[
   {l:'이를 악물고 겨룬다',s:'맞수가 생긴다',a:'bold study',f:async()=>{const r=await roll(s.st.edu>=55?1:0,{label:'작문 다툼'});say((r.v>=4?`다음 달 작문에서 ${jo(s.flags.sch2R,'을','를')} 제쳤다.`+fx({edu:2})+addGrade(4):`${s.flags.sch2R}에게 또 한 점 차로 졌다.`+fx({edu:2})+addGrade(1))+schRel('경쟁자',s.flags.sch2R,{riv:ri(60,75),resp:ri(40,60)}))}},
   {l:'손을 내밀어 함께 공부하자고 한다',s:'친구가 생긴다',a:'social',f:()=>say(`${jo(s.flags.sch2R,'은','는')} 잠시 머뭇거리더니 손을 잡았다. 둘은 서로 답안을 고쳐 주었다.`+fx({soc:2,edu:1})+addGrade(2)+schRel('친구',s.flags.sch2R,{close:55,riv:30}))},
   {l:'신경 쓰지 않는다',s:'',a:'safe',f:()=>say('1등은 그 아이 차지가 되었다.'+addGrade(-1))}]),
- C('sch2_read',()=>schOK()&&inSchool(['college','convent','univ'])&&s.age>=14&&lit(),.9,3,'밤의 독서','lectures',()=>`${SCH().st==='convent'?'면회 온 사촌':SCH().st==='univ'?'하숙집 아래층 책방 주인':'도서실 담당 신부'}이 책 몇 권을 건넸다. 어느 책을 먼저 펴겠는가.`,()=>{const o=[];
+ C('sch2_read',()=>schOK()&&inSchool(['college','convent','univ'])&&s.age>=14&&lit(),.9,3,'밤의 독서','lectures',()=>`${jo(SCH().st==='convent'?'면회 온 사촌':SCH().st==='univ'?'하숙집 아래층 책방 주인':'도서실 담당 신부','이','가')} 책 몇 권을 건넸다. 어느 책을 먼저 펴겠는가.`,()=>{const o=[];
   if(T()>=1762.4)o.push({l:T()<1789?'루소의 『사회계약론』':'루소의 『사회계약론』 — 모두가 이야기하는 책',s:'자유·평등, 공화정 쪽으로',a:'radical study',f:()=>say('"사람은 자유롭게 태어났으나 어디서나 쇠사슬에 묶여 있다." 첫 줄에서 눈을 뗄 수 없었다.'+fx({edu:2,vlib:3,veq:3,brg:4,bor:3,faith:-1}))});
   o.push({l:'몽테스키외의 『법의 정신』',s:'자유·정의, 점진 개혁',a:'study',f:()=>say('권력이 권력을 멈추게 해야 한다는 대목에 밑줄을 그었다. 영국 헌정 이야기를 밤새 읽었다.'+fx({edu:3,vlib:2,vjus:2,bch:-3,bpw:3}))});
   o.push({l:'플루타르코스 『영웅전』(아미오 번역)',s:'명예, 로마 공화정',a:'bold',f:()=>say('카토와 브루투스의 이야기를 읽고 로마 사람처럼 살고 싶어졌다.'+fx({edu:2,vhon:3,cour:1,brg:2}))});
@@ -661,7 +661,7 @@ EV.push(
     campan:['원장은 연극과 낭독을 즐겨 시켰다. 오르탕스 드 보아르네의 이름이 자주 들렸다.'],pensionF:['원장 부인은 피아노 선생과 그림 선생을 따로 불렀다. 학비 대부분이 그 몫이었다.'],
     ecouen:['학생들은 제복을 입고, 훈장 받은 아버지의 이름으로 불렸다.'],oiseaux:['옛 저택의 새장 이름이 그대로 학교 이름이 되었다.']}[k];
    if(!ls)return;let l=ls.filter(x=>!(x.includes('아버지')&&!s.fa.alive));if(k==='llg'&&schCe()>=2)l=l.filter(x=>!x.includes('장학생'));if(!l.length)return;say(`${schoolName()} — ${pick(l)}`+fx({soc:1}))}},
- C('sch3_praise',()=>schIs('petite')&&s.age>=8&&s.age<=11&&(schTal()>=70||schTal()<=32)&&!s.flags.schPraise,1.2,99,'선생의 말','le jugement du maître',()=>{s.flags.schPraise=1;const w=SCH().home?'가정교사':SCH().pk==='freres'?'수사 선생':'선생';return schTal()>=70?`${w}가 집안 어른들에게 “이 아이는 한 번 들은 것을 잊지 않습니다”라고 하였다. 남보다 일찍 라틴어를 시작해도 되겠다고 한다.`:`${w}가 집안 어른들에게 “머리보다 손이 빠른 아이입니다”라고 하였다. 책 앞에서는 금세 몸을 비튼다고 한다.`},()=>schTal()>=70?[
+ C('sch3_praise',()=>schIs('petite')&&s.age>=8&&s.age<=11&&(schTal()>=70||schTal()<=32)&&!s.flags.schPraise,1.2,99,'선생의 말','le jugement du maître',()=>{s.flags.schPraise=1;const w=SCH().home?'가정교사':SCH().pk==='freres'?'수사 선생':'선생';return schTal()>=70?`${jo(w,'이','가')} 집안 어른들에게 “이 아이는 한 번 들은 것을 잊지 않습니다”라고 하였다. 남보다 일찍 라틴어를 시작해도 되겠다고 한다.`:`${jo(w,'이','가')} 집안 어른들에게 “머리보다 손이 빠른 아이입니다”라고 하였다. 책 앞에서는 금세 몸을 비튼다고 한다.`},()=>schTal()>=70?[
   {l:'일찍 라틴어를 시작한다',s:'라틴어·성적 +',a:'study',f:()=>say('또래보다 두 해 먼저 라틴어 문법책을 폈다. 타고난 기억력 덕에 동사 변화가 술술 나왔다.'+fx({klat:3,edu:2})+addGrade(4))},
   {l:'서두르지 않고 뛰놀게 한다',s:'건강 +',a:'safe',f:()=>say('집안 어른들은 아이를 서두르게 하지 않았다. 마당에서 실컷 뛰놀았다.'+fx({hp:2,soc:1}))}]:[
   {l:'더 엄하게 가르친다',s:'성적 +, 의지 -',a:'study',f:()=>{const ok=R()<.4+effort()/40;say(ok?'날마다 한 시간씩 더 붙들려 앉았다. 노력으로 조금씩 따라붙었다.'+fx({edu:2,cour:-1})+addGrade(4):'붙들려 앉아도 글자가 눈에 들어오지 않았다. 매만 늘었다.'+fx({hp:-1,cour:-1})+addGrade(1))}},
@@ -676,7 +676,7 @@ EV.push(
   {l:'복습 교사(레페티퇴르)를 붙인다',s:noble()||s.estate==='bourgeois'?'집안이 돈을 댄다. 재능·노력에 달렸다':'형편이 안 된다',a:'study',dis:!(noble()||s.estate==='bourgeois'),f:()=>{const p=.35+(schTal()-50)/150+effort()/50;if(R()<p)say('저녁마다 가난한 법학도가 와서 문법을 처음부터 다시 짚었다. 노력으로 따라붙었다.'+fx({edu:3,klat:2})+addGrade(10));else say('복습 교사가 와도 머리에 잘 들어오지 않았다. 조금 나아졌을 뿐이다.'+fx({edu:1})+addGrade(3))}},
   {l:'한 해를 다시 다닌다',s:'성적 +',a:'safe',f:()=>say('동생뻘 아이들과 같은 반에 앉았다. 부끄러웠지만 두 번째라 귀에 들어왔다.'+fx({soc:-2,edu:2})+addGrade(7))},
   {l:'학교를 그만둔다',s:'학업 끝',a:'work family',f:()=>{SCH().st='done';say(noble()?(isM()?'공부는 이만하면 됐다는 집안의 뜻으로 학교를 나왔다. 승마와 검술 선생이 대신 왔다.'+fx({ride:2,arms:2}):'학교를 나와 집에서 바느질과 음악을 익혔다.'+fx({sew:2,music:1})):s.estate==='bourgeois'?'학교를 나와 집안 가게의 계산대를 거들었다. 라틴어보다 장부가 쉬웠다.'+fx({trade:3}):'학교를 나와 공방 심부름을 시작하였다.'+fx({craft:2,str:1}),'big')}}]),
- C('sch3_bourse',()=>schIs('petite')&&isM()&&!noble()&&s.age>=11&&s.age<=12&&SCH().grade>=68&&schTal()>=58&&!SCH().scholar&&schCe()>=0&&!s.flags.schBourse,1.2,99,'장학금 시험','la bourse',()=>{s.flags.schBourse=1;const ce=schCe();return `${SCH().pk==='freres'?'수사 선생':'본당 신부'}가 ${ce<=1?'루이르그랑 콜레주에 가난한 수재를 위한 장학금 자리(부르스)':ce===2?'수업료 없는 중앙학교':'리세의 국가 장학금(부르스 나시오날)'}가 있다며 시험을 쳐 보라고 한다.${ce<=1&&T()>=1771?' 아라스에서 올라온 로베스피에르라는 장학생도 그렇게 들어갔다고 했다.':''}`},()=>[
+ C('sch3_bourse',()=>schIs('petite')&&isM()&&!noble()&&s.age>=11&&s.age<=12&&SCH().grade>=68&&schTal()>=58&&!SCH().scholar&&schCe()>=0&&!s.flags.schBourse,1.2,99,'장학금 시험','la bourse',()=>{s.flags.schBourse=1;const ce=schCe();return `${jo(SCH().pk==='freres'?'수사 선생':'본당 신부','이','가')} ${jo(ce<=1?'루이르그랑 콜레주에 가난한 수재를 위한 장학금 자리(부르스)':ce===2?'수업료 없는 중앙학교':'리세의 국가 장학금(부르스 나시오날)','이','가')} 있다며 시험을 쳐 보라고 한다.${ce<=1&&T()>=1771?' 아라스에서 올라온 로베스피에르라는 장학생도 그렇게 들어갔다고 했다.':''}`},()=>[
   {l:'시험을 치른다',s:'재능과 성적에 달렸다',a:'study bold',f:()=>{const ce=schCe(),p=clamp(.2+(schTal()-50)/80+(SCH().grade-68)/60+effort()/60,.1,.9);if(R()<p){enterCollege({school:ce===2?'harcourt':'llg',ext:ce===2,board:ce!==2});SCH().scholar=ce!==2;say((schTal()>=75?'시험관이 타고난 머리라고 하였다. ':'밤마다 외운 보람이 있었다. ')+'장학생으로 뽑혔다. 기운 옷을 입고 부잣집 아이들 틈에 앉았다.'+fx({fame:1,rfam:5,rloc:3}),'big')}else say('시험에 떨어졌다. 뽑힌 아이들은 모두 라틴어를 몇 해 먼저 배운 아이들이었다.'+fx({cour:-1,edu:1}))}},
   {l:'공방으로 간다',s:'학교 그만둠',a:'work family',f:()=>{SCH().st='done';say('시험을 포기하고 공방 견습을 시작하였다. 집안에 일손 하나가 늘었다.'+fx({craft:2,rfam:2}))}}]),
  C('sch3_ruban',()=>schIs('convent')&&SCH().grade>=75&&s.age>=11,.9,4,'리본','le ruban d’honneur',()=>`${convName()}에서 성적과 품행이 좋은 기숙생에게 주는 리본을 달아 주겠다고 한다. 리본을 단 아이는 어린 기숙생들을 돌보고 본보기가 되어야 한다.`,[

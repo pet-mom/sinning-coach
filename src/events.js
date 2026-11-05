@@ -86,7 +86,7 @@ const EV=[
    {l:'사양한다',s:'',a:'safe pious',f:()=>say('정중히 사양하였다.')}]),
 
  // ---------- 혁명기 ----------
- C('denounce',()=>free()&&terror(),1.2,1,'고발','dénonciation',()=>`감시위원회 사람이 넌지시 묻는다. 이웃 ${person()}이 왕당파 노래를 흥얼거리지 않더냐고.`,[
+ C('denounce',()=>free()&&terror(),1.2,1,'고발','dénonciation',()=>`감시위원회 사람이 넌지시 묻는다. 이웃 ${jo(person(),'이','가')} 왕당파 노래를 흥얼거리지 않더냐고.`,[
    {l:'들은 대로 말한다',s:'혐의는 줄지만 원한을 산다',a:'safe radical',f:()=>{s.seeds.push({t:'denounced',n:person(),y:s.year});say('이웃의 이름을 댔다. 사흘 뒤 그 집에 불이 꺼졌다. 골목 사람들이 당신 앞에서 말을 아꼈다.'+fx({sus:-8,faith:-3,rloc:-6,vjus:-3}))}},
    {l:'모른다고 한다',s:'',a:'pious',f:()=>{s.seeds.push({t:'saved',n:person(),y:s.year});say('아무것도 못 들었다고 했다.'+fx({sus:4,rloc:2,vjus:2}))}}]),
  S('revcity',()=>free()&&rev(),1.1,0,[
@@ -116,7 +116,7 @@ const EV=[
  S('daily',()=>free(),1,0,[
    ['독감으로 일주일을 누워 지냈다.',{hp:-3}],['옛 친구를 우연히 만났다.',{soc:1}],['성탄 자정 미사에 갔다.',{faith:1},()=>!(T()>=1793.75&&T()<1795)],['이가 아파 떠돌이 치과의사에게 뽑았다.',{hp:-1}],
    ['혜성이 나타나 사람들이 불길하다고 수군댔다.',{},()=>[1759,1769,1811].includes(s.year)],['일식을 보았다.',{},()=>[1764,1788,1820,1842].includes(s.year)],['맑은 날, 먼 데까지 걸었다.',{hp:1}]]),
- C('loan',()=>free()&&s.money>=400,.6,4,'돈 부탁','prêt',()=>{ev2P=relsAlive().find(r=>['친구','동료'].includes(r.role)&&r.close>=40)||null;ev2N=ev2P?ev2P.n:person();return `${ev2P?ev2Who(ev2P):ev2N}${bat(ev2N)?'이':'가'} 사업이 어렵다며 300 ${money()}을 빌려 달라고 한다.`},()=>{const r=ev2P,n=ev2N;return [
+ C('loan',()=>free()&&s.money>=400,.6,4,'돈 부탁','prêt',()=>{ev2P=relsAlive().find(r=>['친구','동료'].includes(r.role)&&r.close>=40)||null;ev2N=ev2P?ev2P.n:person();return `${ev2P?ev2Who(ev2P):ev2N}${bat(ev2N)?'이':'가'} 사업이 어렵다며 300 ${jo(money(),'을','를')} 빌려 달라고 한다.`},()=>{const r=ev2P,n=ev2N;return [
    {l:'빌려준다',s:'재산 -300',a:'social',f:()=>{s.seeds.push({t:'debtor',n,y:s.year,a:Math.round(300*(1+R()*.3))});say('돈을 빌려주었다.'+fx({money:-300,soc:2})+(r?relFx(r,{trust:10,close:6}):''))}},
    {l:'거절한다',s:'',a:'greedy safe',f:()=>say('거절하였다.'+(r?relFx(r,{close:-10,trust:-4}):''))}]}),
  C('unhappy',()=>free()&&s.married&&s.spouse&&s.spouse.alive&&!s.flags.unhappy,.4,8,'부부 사이','ménage',()=>`${jo(s.spouse.n,'과','와')} 다툼이 잦아졌다.`,[
@@ -135,7 +135,7 @@ const EV=[
    return `장날, 시장에 밀 자루가 ${e.supply<35?'거의 보이지 않았다':'적게 나왔다'}. ${urban()?`4리브르짜리 빵 한 덩이가 ${Math.round(9*e.price)}수까지 올랐다.`:'곡물상들이 마을 밀을 도시로 실어 가려 한다.'} ${wageEarner()?'하루 품삯의 절반 넘게 빵값으로 나간다. ':rich()?'당신의 곳간에는 아직 밀이 있다. ':''}아낙들이 앞장서서 곡물 수레를 막아섰다. 정당한 값에 팔라는 것이다.`},()=>[
    {l:'무리에 끼어 정당한 값에 팔게 한다',s:'의지·체력 판정',a:'bold radical',f:async()=>{const e=econ();const {m,why}=md([[s.st.cour>=45,1,'의지'],[s.st.str>=55,1,'완력'],[s.rep.rpeople>=60,1,'민중의 신망'],[e.supply<35,1,'군중이 크게 불어남'],[s.st.str<30,-1,'힘 부족']]);const r=await roll(m,{label:'곡물 수레',why});
      if(r.v>=4)say('군중은 밀을 평년 값에 팔게 하고 그 돈을 자루 옆에 두고 갔다. 아무것도 훔치지 않았다는 것이 자랑이었다.'+fx({money:wageEarner()?15:5,rpeople:4,relite:-3,veq:2,bor:2,sus:rev()?0:3}));
-     else{say(`${T()<1791?'기마경찰대(마레쇼세)':'헌병대'}가 몰려와 앞장선 몇 사람을 붙잡았다.`+fx({hp:-4,sus:8,rpeople:2}));if(r.v===1&&await chance(.25,'투옥','곡물 폭동 가담자 가운데 재판에 넘겨진 비율')){say('주동자로 몰려 감옥에 갇혔다.','big');s.cond='prison';s.prisonKind='plain';s.condSince=T()}}}},
+     else{say(`${jo(T()<1791?'기마경찰대(마레쇼세)':'헌병대','이','가')} 몰려와 앞장선 몇 사람을 붙잡았다.`+fx({hp:-4,sus:8,rpeople:2}));if(r.v===1&&await chance(.25,'투옥','곡물 폭동 가담자 가운데 재판에 넘겨진 비율')){say('주동자로 몰려 감옥에 갇혔다.','big');s.cond='prison';s.prisonKind='plain';s.condSince=T()}}}},
    {l:'사람들을 달래고 관리에게 공정가를 청한다',s:'웅변·평판 판정',a:'social safe',f:async()=>{const {m,why}=md([[s.sk.orat>=35,1,'웅변'],[s.st.soc>=55,1,'사교'],[s.rep.rloc>=60,1,'이웃의 신망'],[influence().v>=20,1,'영향력'],[s.rep.rloc<=30,-1,'나쁜 평판']]);const r=await roll(m,{label:'중재',why});
      if(r.v>=4)say('관리가 곡물상에게 시장에서 정해진 값에 팔라고 명했다. 수레는 무사히 지나갔다.'+fx({rloc:4,inf:2,orat:1,vord:2}));else say('“배부른 소리!” 야유가 돌아왔다.'+fx({rpeople:-3,orat:1}))}},
    rich()?{l:'곳간의 밀을 이웃에게 원가에 푼다',s:'재산 -80',a:'family pious',f:()=>say('곳간 문을 열고 밀을 됫박으로 팔았다. 매점꾼이라는 말은 당신에게 붙지 않았다.'+fx({money:-80,rloc:5,rpeople:3,vjus:2}))}:
@@ -145,7 +145,7 @@ const EV=[
    const r=ev2P;return `${ev2Who(r)}${bat(r.n)?'이':'가'} 찾아왔다. ${!urban()?'비가 오기 전에 밀단을 거둬들여야 하는데 일손이 모자란다고 한다.':R()<.5?'셋방에서 쫓겨나 오늘 안에 짐을 옮겨야 한다고 한다.':'빚쟁이에게 몰려 집기를 압류당하게 생겼다고 한다.'} ${ev2He(r)}의 눈빛이 간절하다.`},()=>{const r=ev2P;return [
    {l:'팔을 걷어붙이고 거든다',s:'체력 판정',a:'family work',f:async()=>{const {m,why}=md([[s.st.str>=50,1,'체력'],[!urban()&&s.sk.farm>=30,1,'농사 솜씨'],[s.st.str<30,-1,'힘 부족'],[s.age>=55,-1,'나이']]);const r2=await roll(m,{label:'일손 거들기',why});
      if(r2.v>=3)say(`해 질 녘까지 ${r.n}${bat(r.n)?'과':'와'} 함께 일을 끝냈다. ${ev2He(r)}는 당신 손을 오래 붙잡았다.`+fx({str:1,rloc:1})+relFx(r,{close:10,trust:6}));else say(`짐을 들다 허리를 삐끗했다. 그래도 ${ev2He(r)}는 고마워했다.`+fx({hp:-3})+relFx(r,{close:6,trust:3}))}},
-   {l:'돈을 보탠다',s:'재산 -40',a:'social',dis:s.money<40,f:()=>say(`${r.n}에게 40 ${money()}을 쥐여 주었다.`+fx({money:-40})+relFx(r,{trust:6,close:4}))},
+   {l:'돈을 보탠다',s:'재산 -40',a:'social',dis:s.money<40,f:()=>say(`${r.n}에게 40 ${jo(money(),'을','를')} 쥐여 주었다.`+fx({money:-40})+relFx(r,{trust:6,close:4}))},
    {l:'바쁘다며 돌려보낸다',s:'',a:'safe greedy',f:()=>say(`${r.n}${bat(r.n)?'은':'는'} 말없이 돌아갔다.`+fx({rloc:-1})+relFx(r,{close:-12,trust:-8}))}]}),
  // 스승: 숙련을 기르는 길. 이미 스승이 있으면 그에게서 배운다
  C('ev2_mentor',()=>free()&&s.age>=14&&s.age<40&&!rich()&&(!!job()||['artisan','peasant'].includes(s.estate)),.8,6,'솜씨를 물려받다','le tour de main',()=>{const k=mainSkill();ev2P=relsAlive().find(r=>r.role==='스승')||null;ev2N=ev2P?ev2P.n:person();
