@@ -51,7 +51,7 @@ statusLadder=function(){const j=job();if(!j)return '';const rows=PL.filter(x=>x[
 {const b=$('#dataT');if(b)b.hidden=true;document.body.classList.remove('showdata')}
 
 /* ---------- 4. 사건과 선택을 기록에 ---------- */
-{const _Q=Q;Q=async function(title,fr,text,opts){const i=await _Q(title,fr,text,opts);try{const o=opts[i];if(o&&o.l&&title)L(`${title} — ${String(o.l).replace(/\s*\([^)]*\)\s*$/,'')}`,'ev',{choice:1})}catch(e){}return i}}
+{const _Q=Q;Q=async function(title,fr,text,opts){const i=await _Q(title,fr,text,opts);try{const o=opts[i];if(o&&o.l&&!rfNoLog){const p=rfPast(o.l);if(p)L(p,'ev',{choice:1})}}catch(e){}return i}}
 
 /* ---------- 6. 떠난 사람은 다시 나오지 않는다 ---------- */
 const RF_MEMO=/세상을 떠|죽|돌아가|무덤|장례|유산|유품|생전|기억|떠올|그리|기일|고아|잃|남긴|남겨|없는|없이|묘|부고|불러도|대답이 없|물려|빈자리|그날|옛|예전|어린 시절|어릴 적|그때|온기|냄새|들꽃|조문/;
@@ -92,7 +92,6 @@ async function rfAttitude(a,b){if(!s||s.dead||!adult()||!inParis())return;s.att=
     // 벗들의 반응: 태도와 성향이 가까우면 가까워지고, 멀면 멀어진다
     try{const rad=/radical/.test(o[1]),roy=/royal/.test(o[1]);for(const k of BF_KEYS){const r=bfR(k);if(!r||!r.alive||r.cut)continue;const fp=r.pol||0;const near=(rad&&fp>=30)||(roy&&fp<=-20)||(!rad&&!roy&&Math.abs(fp)<40);const far=(rad&&fp<=-20)||(roy&&fp>=30);if(near)relFx(r,{close:3,trust:2});else if(far)relFx(r,{close:-4,riv:3})}}catch(e){}
     await done()}}
-{const _rh=runHistory;runHistory=async function(a,b){const q0=s?(s.qN||0):0;await _rh(a,b);if(!s||s.dead)return;if((s.qN||0)>q0)return;try{await rfAttitude(a,b)}catch(e){console.error(e)}}}
 {const _Q2=Q;Q=async function(){if(s)s.qN=(s.qN||0)+1;return _Q2.apply(this,arguments)}}
 
 /* ---------- 8. 당파가 일상에 스민다 ---------- */
@@ -195,4 +194,4 @@ async function rfQuarrel(){if(!s||s.dead||child()||s.cond!=='normal'||!RF_QWIN()
      bfMem('m_qr_'+k+s.year,k,`${topic}를 두고 ${bW(k)} 절교했다. “다시는 보지 말자.” 둘 중 누가 먼저 말했는지는 기억나지 않는다.`,{tone:'후회',their:'그날 우리는 서로를 버렸다. 나는 그 사람의 뒷모습을 오래 보았다.'});
      const ms=(s.bf&&s.bf.mem||[]).filter(m=>m.k.includes(k));if(ms.length)bfRe(ms[0].id,`${N}${jo(N,'과','와').slice(-1)} 절교한 날, 이 기억이 가장 아팠다.`,'후회');say(`${bW(k)} 다시 만나지 않았다. 골목에서 마주치면 서로 고개를 돌렸다.`,'dark')}},
    {l:'말을 아낀다',a:'safe',f:()=>{bfRel(k,{close:-1});bfMem('m_qr_'+k+s.year,k,`${topic}를 두고 ${bW(k)} 목소리가 높아졌지만, 당신은 말을 아꼈다. 둘은 다른 이야기로 넘어갔다.`,{tone:'그리움',their:'그 사람은 말을 아꼈다. 고마웠다. 그리고 조금 외로웠다.'})}}])}
-{const _ny=npcYear;npcYear=async function(){await _ny();if(!s||s.dead)return;try{rfPartyYear()}catch(e){console.error(e)}try{await rfQuarrel()}catch(e){console.error(e)}}}
+{const _ny=npcYear;npcYear=async function(){await _ny();if(!s||s.dead)return;try{await rfQuarrel()}catch(e){console.error(e)}}}

@@ -82,8 +82,8 @@ const BF={
  gabriel:{sex:()=> s.sex,name:sx=>noble()?'가브리엘 드 사브리':'가브리엘 마르상',estate:()=> noble()?(s.estate==='robe'?'robe':'epee'):'bourgeois',tr:'허영',v:'vhon',pol:-15,motif:'푸른 리본',
    home:()=> noble()?'생제르맹 문밖의 이웃 저택':'생토노레 거리 포목 도매상 저택',
    w:()=> noble()?'이웃 저택의 아이. 늘 새 옷을 입고 다녔다':'포목 도매상의 아이. 늘 새 옷을 입고 다녔다',
-   inner:{desire:'남들의 눈에 특별한 사람으로 남는 것',fear:'평범하게 잊히는 것',shame:'개가 달려들던 날 달아난 일',bond:'푸른 리본',lie:'나는 겉멋만 든 겁쟁이다'},
-   sec:{dog:[()=>`개가 달려들던 날 ${bU('gabriel')} 달아났다.`,()=>`${bU('gabriel')} 그날 일을 한 번도 잊은 적이 없었다.`,()=>`${bI('gabriel')} 목숨을 걸고 남을 숨겨 준 것은 그날의 자신을 용서하지 못해서였다.`]}}
+   inner:{desire:'남들의 눈에 특별한 사람으로 남는 것',fear:'평범하게 잊히는 것',shame:'얼음이 깨지던 날 달아난 일',bond:'푸른 리본',lie:'나는 겉멋만 든 겁쟁이다'},
+   sec:{dog:[()=>`얼음이 깨지던 날 ${bU('gabriel')} 달아났다.`,()=>`${bU('gabriel')} 그날 일을 한 번도 잊은 적이 없었다.`,()=>`${bI('gabriel')} 목숨을 걸고 남을 숨겨 준 것은 그날의 자신을 용서하지 못해서였다.`]}}
 };
 const bfSecT=(k,sec,i)=>{const x=BF[k].sec[sec][i];return typeof x==='function'?x():x};
 function bfMake(k){const T0=BF[k];const sex=T0.sex();const r={kind:'fic',core:k,fid:'c_'+k,n:T0.name(sex),sex,role:'친구',by:s.by+(k==='gabriel'?1:k==='antoine'?-1:0),estate:T0.estate(),job:null,home:T0.home(),tr:T0.tr,v:T0.v,pol:T0.pol,po:0,eng:k==='etienne'?80:30,
@@ -127,12 +127,12 @@ beat('antoine','an_meet',{when:()=>s.age>=9&&bfHere(),run:async()=>{bfMake('anto
    {l:'내기를 하고, 딴 단추를 돌려준다',a:'social',f:()=>{bfSet('antoine','gave');bfMem('m_button','antoine',`구슬 내기에서 ${A}의 은단추를 땄다가 돌려주었다. ${bU('antoine')} 한참 단추를 만지작거리다 “빚진 거야.”라고 했다.`,{obj:'은단추',place:'생드니 거리',their:'그 아이는 단추를 돌려주었다. 나는 그 빚을 평생 기억했다. 빚은 갚아야 하는 거니까.'});bfRel('antoine',{close:8,resp:10});say(`${bU('antoine')} 단추를 주머니 깊숙이 넣었다.`)}},
    {l:'내기를 하지 않는다',a:'safe',f:()=>{bfMem('m_button','antoine',`${bI('antoine')} 은단추를 걸고 구슬 내기를 하자고 했지만 하지 않았다.`,{tone:'그리움',place:'생드니 거리',their:'그 아이는 내기를 하지 않았다. 조심성 많은 아이였다. 나는 그런 사람이 부러웠다.'});bfRel('antoine',{close:3});say(`${bU('antoine')} 어깨를 으쓱하더니 다른 아이와 내기를 했다. 그리고 졌다.`)}}])}});
 
-beat('gabriel','ga_meet',{when:()=>s.age>=10&&bfHere(),run:async()=>{bfMake('gabriel');const Ga=bN('gabriel');bfJob('gabriel',noble()?'이웃 저택의 아이':'도매상의 아이');
-  say(`레알 시장 뒷골목. ${bU('gabriel')} 당신의 낡은 신발을 보고 깔깔 웃었다. 그때 푸줏간의 커다란 개가 줄을 끊고 달려들었다. ${bU('gabriel')} 비명을 지르며 달아났고, 개는 당신의 다리를 물었다.`+fx({hp:-2}),'ev');
-  await bfScene('누가 먼저 도망쳤나','le chien du boucher',`이튿날, 골목 아이들이 붕대 감은 당신 다리를 둘러싸고 묻는다. “누가 먼저 도망쳤어?” 저만치 ${bI('gabriel')} 새 옷을 입은 채 굳은 얼굴로 서 있다.`,[
-   {l:'“둘 다 도망쳤어.”라고 말한다',a:'social',f:()=>{bfSet('gabriel','kept');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`푸줏간 개가 달려들던 날 ${bU('gabriel')} 달아났고, 당신은 다리를 물렸다. 아이들에게는 둘 다 도망쳤다고 말했다.`,{tone:'그리움',place:'레알 시장 뒷골목',their:'그 아이는 내가 먼저 도망쳤다고 말하지 않았다. 나는 평생 그 거짓말에 빚졌다.'});bfObj('ribbon',`${bI('gabriel')} 말없이 쥐여 준 푸른 리본`,{from:'gabriel'});bfRel('gabriel',{close:10,trust:12,riv:-10});say(`며칠 뒤 ${bI('gabriel')} 말없이 푸른 리본 하나를 당신 손에 쥐여 주었다.`)}},
-   {l:'“가브리엘이 먼저 도망쳤어.”라고 말한다',a:'bold',f:()=>{bfSet('gabriel','told');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`푸줏간 개가 달려들던 날 ${bU('gabriel')} 달아났고, 당신은 다리를 물렸다. 아이들에게 ${bI('gabriel')} 먼저 도망쳤다고 말했다. 다들 웃었다.`,{tone:'씁쓸함',place:'레알 시장 뒷골목',their:'모두가 웃었다. 그 아이는 사실을 말했을 뿐이다. 나는 그날부터 다시는 도망치지 않겠다고 다짐했다.'});bfRel('gabriel',{riv:15,close:-4});say(`${bU('gabriel')} 한 달 동안 골목에 나오지 않았다.`)}},
-   {l:'아무 말도 하지 않는다',a:'safe',f:()=>{bfSet('gabriel','silent');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`푸줏간 개가 달려들던 날 ${bU('gabriel')} 달아났고, 당신은 다리를 물렸다. 누가 먼저 도망쳤느냐는 물음에 아무 말도 하지 않았다.`,{tone:'그리움',place:'레알 시장 뒷골목',their:'그 아이는 아무 말도 하지 않았다. 차라리 나를 비웃었으면 했다.'});bfRel('gabriel',{close:4})}}])}});
+beat('gabriel','ga_meet',{when:()=>s.age>=10&&bfHere()&&[11,0,1].includes(s.month),run:async()=>{bfMake('gabriel');const Ga=bN('gabriel');bfJob('gabriel',noble()?'이웃 저택의 아이':'도매상의 아이');
+  say(`겨울, 튈르리 정원의 큰 연못이 꽁꽁 얼었다. 모피 깃을 단 새 외투 차림의 ${bU('gabriel')} 당신의 낡은 신발을 보고 깔깔 웃더니, 누가 더 멀리 미끄러지나 내기하자고 했다. 연못 한가운데서 얼음이 쩍 갈라졌다. ${bU('gabriel')} 뒤도 돌아보지 않고 달아났고, 당신은 허리까지 차가운 물에 빠졌다. 지나가던 물장수가 장대를 내밀어 당신을 끌어냈다.`+fx({hp:-3}),'ev');
+  await bfScene('누가 먼저 도망쳤나','la glace',`이튿날, 골목 아이들이 열이 올라 콜록거리는 당신을 둘러싸고 묻는다. “누가 먼저 도망쳤어?” 저만치 ${bI('gabriel')} 새 외투를 입은 채 굳은 얼굴로 서 있다.`,[
+   {l:'“둘 다 도망쳤어.”라고 말한다',a:'social',f:()=>{bfSet('gabriel','kept');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`튈르리 정원 연못의 얼음이 깨지던 날 ${bU('gabriel')} 달아났고, 당신은 물에 빠졌다. 아이들에게는 둘 다 도망쳤다고 말했다.`,{tone:'그리움',place:'튈르리 정원 연못',their:'그 아이는 내가 먼저 도망쳤다고 말하지 않았다. 나는 평생 그 거짓말에 빚졌다.'});bfObj('ribbon',`${bI('gabriel')} 말없이 쥐여 준 푸른 리본`,{from:'gabriel'});bfRel('gabriel',{close:10,trust:12,riv:-10});say(`며칠 뒤 ${bI('gabriel')} 말없이 푸른 리본 하나를 당신 손에 쥐여 주었다.`)}},
+   {l:'“가브리엘이 먼저 도망쳤어.”라고 말한다',a:'bold',f:()=>{bfSet('gabriel','told');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`튈르리 정원 연못의 얼음이 깨지던 날 ${bU('gabriel')} 달아났고, 당신은 물에 빠졌다. 아이들에게 ${bI('gabriel')} 먼저 도망쳤다고 말했다. 다들 웃었다.`,{tone:'씁쓸함',place:'튈르리 정원 연못',their:'모두가 웃었다. 그 아이는 사실을 말했을 뿐이다. 나는 그날부터 다시는 도망치지 않겠다고 다짐했다.'});bfRel('gabriel',{riv:15,close:-4});say(`${bU('gabriel')} 한 달 동안 골목에 나오지 않았다.`)}},
+   {l:'아무 말도 하지 않는다',a:'safe',f:()=>{bfSet('gabriel','silent');bfKnow('gabriel','dog',1);bfMem('m_dog','gabriel',`튈르리 정원 연못의 얼음이 깨지던 날 ${bU('gabriel')} 달아났고, 당신은 물에 빠졌다. 누가 먼저 도망쳤느냐는 물음에 아무 말도 하지 않았다.`,{tone:'그리움',place:'튈르리 정원 연못',their:'그 아이는 아무 말도 하지 않았다. 차라리 나를 비웃었으면 했다.'});bfRel('gabriel',{close:4})}}])}});
 
 const BF_LAW={debt:'빚을 못 갚으면 사람을 가두는 법',tax:'가난한 사람만 무거운 세금을 내는 법',birth:'태어난 집안이 평생을 정하는 법',vote:'돈 없는 사람은 투표도 못 하게 하는 법',seize:()=>noble()?'밀린 지대 때문에 남의 집 냄비를 가져갈 수 있게 하는 법':'빚진 집의 침대를 끌어낼 수 있게 하는 법'};
 const bfLawN=k=>{const x=BF_LAW[k];return typeof x==='function'?x():x};
@@ -223,10 +223,10 @@ beat('antoine','an_letter',{when:()=>bfAlive('antoine')&&s.year>=(bfF('antoine')
 
 beat('gabriel','ga_mirror',{when:()=>s.age>=16&&bfAlive('gabriel')&&bfHere(),until:()=>s.age>=24,run:async()=>{const Ga=bN('gabriel');bfJob('gabriel',noble()?'궁정에 드나드는 젊은 귀족':'도매상의 상속자');
   const place=noble()?(T()<1789.5?'베르사유 무도회':'생제르맹 문밖의 살롱'):'팔레루아얄의 카페';
-  await bfScene('손거울','le miroir',`${bU('gabriel')} 이제 ${place}에서 가장 옷 잘 입는 젊은이로 통한다. 분 바른 머리, 손에는 은테 손거울. 당신의 옷차림을 보고 여전히 웃는다. 그런데 밤늦게 둘만 남자 손거울을 내려놓고 묻는다. ${bfFl('gabriel','told')?'“그 개 기억나? 다들 아직도 그 얘길 할까?”':'“그 개 기억나? 누구한테 말한 적 있어?”'}`,[
-   bfFl('gabriel','told')?null:{l:'“아무에게도 말하지 않았어.”',a:'social',f:()=>{bfKnow('gabriel','dog',2);bfMem('m_mirror','gabriel',`${place}에서 돌아오는 밤, ${bI('gabriel')} 개 이야기를 꺼냈다. 아무에게도 말하지 않았다고 하자, ${bHe('gabriel')}는 오래 고개를 숙이고 있었다.`,{tone:'그리움',their:'그 아이는 정말로 말하지 않았다. 그 아이 앞에서만은 거울을 내려놓을 수 있었다.'});bfRel('gabriel',{close:8,trust:8})}},
-   {l:'“그런 일이 있었나? 다 잊었어.”',a:'safe',f:()=>{bfKnow('gabriel','dog',2);bfMem('m_mirror','gabriel',`${place}에서 돌아오는 밤, ${bI('gabriel')} 개 이야기를 꺼냈다. 다 잊었다고 하자 ${bHe('gabriel')}는 이상한 얼굴로 웃었다.`,{tone:'그리움',their:'그 아이는 잊었다고 했다. 나는 하루도 잊은 적이 없는데.'})}},
-   {l:'“아직도 그 생각을 해? 겁쟁이.”',a:'bold',f:()=>{bfKnow('gabriel','dog',2);bfMem('m_mirror','gabriel',`${place}에서 돌아오는 밤, ${bI('gabriel')} 개 이야기를 꺼냈다. 아직도 그 생각을 하느냐고, 겁쟁이라고 놀렸다. ${bHe('gabriel')}는 웃었다.`,{tone:'부끄러움',their:'그 아이가 웃으며 겁쟁이라고 했다. 맞는 말이었다. 그래서 웃었다.'});bfRel('gabriel',{riv:8})}}])}});
+  await bfScene('손거울','le miroir',`${bU('gabriel')} 이제 ${place}에서 가장 옷 잘 입는 젊은이로 통한다. 분 바른 머리, 손에는 은테 손거울. 당신의 옷차림을 보고 여전히 웃는다. 그런데 밤늦게 둘만 남자 손거울을 내려놓고 묻는다. ${bfFl('gabriel','told')?'“그 연못 기억나? 다들 아직도 그 얘길 할까?”':'“그 연못 기억나? 누구한테 말한 적 있어?”'}`,[
+   bfFl('gabriel','told')?null:{l:'“아무에게도 말하지 않았어.”',a:'social',f:()=>{bfKnow('gabriel','dog',2);bfMem('m_mirror','gabriel',`${place}에서 돌아오는 밤, ${bI('gabriel')} 연못 이야기를 꺼냈다. 아무에게도 말하지 않았다고 하자, ${bHe('gabriel')}는 오래 고개를 숙이고 있었다.`,{tone:'그리움',their:'그 아이는 정말로 말하지 않았다. 그 아이 앞에서만은 거울을 내려놓을 수 있었다.'});bfRel('gabriel',{close:8,trust:8})}},
+   {l:'“그런 일이 있었나? 다 잊었어.”',a:'safe',f:()=>{bfKnow('gabriel','dog',2);bfMem('m_mirror','gabriel',`${place}에서 돌아오는 밤, ${bI('gabriel')} 연못 이야기를 꺼냈다. 다 잊었다고 하자 ${bHe('gabriel')}는 이상한 얼굴로 웃었다.`,{tone:'그리움',their:'그 아이는 잊었다고 했다. 나는 하루도 잊은 적이 없는데.'})}},
+   {l:'“아직도 그 생각을 해? 겁쟁이.”',a:'bold',f:()=>{bfKnow('gabriel','dog',2);bfMem('m_mirror','gabriel',`${place}에서 돌아오는 밤, ${bI('gabriel')} 연못 이야기를 꺼냈다. 아직도 그 생각을 하느냐고, 겁쟁이라고 놀렸다. ${bHe('gabriel')}는 웃었다.`,{tone:'부끄러움',their:'그 아이가 웃으며 겁쟁이라고 했다. 맞는 말이었다. 그래서 웃었다.'});bfRel('gabriel',{riv:8})}}])}});
 
 beat('etienne','et_debate',{when:()=>s.age>=18&&bfAlive('etienne')&&bfHere(),until:()=>s.age>=28,run:async()=>{const E=bN('etienne');bfJob('etienne',bfR('etienne').sex==='F'?'필경사':'변호사 서기');
   await bfScene('카페 프로코프','le café Procope',`카페 프로코프 구석에서 ${bW('etienne')} 밤늦도록 이야기한다. 퐁뇌프의 약속이 화제에 오른다. ${bU('etienne')} 이제 루소와 마블리를 줄줄 외운다. “사람들이 동의할 때까지 기다려야 할까? 사람들이 언제 동의했어? 필요하면 억지로라도 바꿔야 해.”`,[
@@ -289,11 +289,11 @@ beat('louise','lo_crisis',{when:()=>bfAlive('louise')&&bfHere()&&!child()&&(bfRe
 const bfGuest=()=>bfRev()?(bfAlive('jules')&&bfFl('jules','refr')?bN('jules'):'선서 거부 신부 한 사람'):'생메리 바리케이드에서 다친 학생 하나';
 beat('gabriel','ga_hide',{when:()=>bfAlive('gabriel')&&bfHere()&&!child()&&(bfRev()?bfW(1793.85,1794.5):bfW(1832.44,1832.8)),until:()=>bfRev()?T()>=1794.5:T()>=1832.8,run:async()=>{const Ga=bN('gabriel'),rv=bfRev(),g=bfGuest(),isJ=rv&&g===bN('jules');
   bfSet('gabriel','hid');bfKnow('gabriel','dog',3);bfFate('gabriel',rv?`다락방에 ${isJ?jo(bN('jules'),'을','를'):'선서 거부 신부를'} 숨겼다`:'6월 봉기의 부상자를 숨겼다');if(isJ)bfSet('jules','atGab');
-  await bfScene('다락방','la mansarde',`${Ga}에게서 짧은 쪽지가 왔다. 찾아가 보니 분 바른 머리도 손거울도 없다. 낡은 옷을 입은 ${bI('gabriel')} 다락방 문을 연다. 그 안에 ${jo(g,'이','가')} 있다. ${bI('gabriel')} 낮게 말한다. “그 개 기억나? 그날 이후로 다시는 도망치지 않기로 했어.”`,[
+  await bfScene('다락방','la mansarde',`${Ga}에게서 짧은 쪽지가 왔다. 찾아가 보니 분 바른 머리도 손거울도 없다. 낡은 옷을 입은 ${bI('gabriel')} 다락방 문을 연다. 그 안에 ${jo(g,'이','가')} 있다. ${bI('gabriel')} 낮게 말한다. “그 연못 기억나? 그날 이후로 다시는 도망치지 않기로 했어.”`,[
    {l:'먹을 것과 옷을 날라 주겠다고 한다',s:rv?'혐의 +':'',a:'bold',f:()=>{bfBrave();bfSet('gabriel','helped');if(rv)s.sus=clamp((s.sus||0)+4,0,100);bfMem('m_attic',isJ?['gabriel','jules']:'gabriel',`${Ga}의 다락방에 ${jo(g,'이','가')} 숨어 있었다. 당신은 몇 달 동안 빵과 옷을 날랐다.`,{tone:'두려움',place:'다락방',their:'그 사람이 빵을 날라 왔다. 그 사람 앞에서 나는 처음으로 겁쟁이가 아니었다.'});bfRel('gabriel',{close:10,trust:12,resp:10});if(isJ)bfRel('jules',{close:8})}},
    {l:'“너까지 죽어. 그만둬.”라고 말린다',a:'safe',f:()=>{bfMem('m_attic','gabriel',`${Ga}의 다락방에 ${jo(g,'이','가')} 숨어 있었다. 그만두라고 말렸지만 ${bHe('gabriel')}는 듣지 않았다.`,{tone:'두려움',place:'다락방',their:'그 사람은 나를 말렸다. 나를 아껴서라는 걸 알았다. 그래도 그만두지 않았다.'});bfRel('gabriel',{close:4})}},
    {l:'아무것도 보지 못한 것으로 하겠다고 한다',a:'safe',f:()=>{bfCare();bfMem('m_attic','gabriel',`${Ga}의 다락방에 ${jo(g,'이','가')} 숨어 있었다. 당신은 아무것도 보지 못한 것으로 하겠다고 했다.`,{tone:'두려움',place:'다락방',their:'그 사람은 아무것도 못 본 걸로 하겠다고 했다. 그 시절엔 그것만으로도 충분했다.'})}}]);
-  bfRe('m_dog',bfFl('gabriel','told')?'다락방 문을 열던 그 얼굴을 보며, 골목에서 모두가 웃던 날을 생각했다.':'다락방 문을 열던 그 얼굴을 보며, 그날 달아나던 아이를 다시 생각했다.',bfFl('gabriel','told')?'죄책감':'위로')}});
+  bfRe('m_dog',bfFl('gabriel','told')?'다락방 문을 열던 그 얼굴을 보며, 연못가에서 모두가 웃던 날을 생각했다.':'다락방 문을 열던 그 얼굴을 보며, 그날 달아나던 아이를 다시 생각했다.',bfFl('gabriel','told')?'죄책감':'위로')}});
 
 // 에티엔: 같은 약속, 다른 정의 — 서로 반대편에 서는 밤
 beat('etienne','et_list',{when:()=>bfAlive('etienne')&&bfHere()&&!child()&&(bfRev()?bfW(1793.9,1794.55)&&(bfFl('gabriel','hid')||T()>=1794.15):bfW(1832.45,1832.9)&&(bfFl('gabriel','hid')||T()>=1832.6)),until:()=>bfRev()?T()>=1794.55:T()>=1832.9,run:async()=>{const E=bN('etienne'),rv=bfRev(),F=bfR('etienne').sex==='F';
@@ -420,9 +420,9 @@ beat('antoine','an_truth',{when:()=>s.age>=58&&bfHere()&&bfMet('antoine'),dead:t
    {l:'그냥 함께 잔을 비운다',a:'social',f:()=>{bfMem('m_old_tavern','antoine',`늙은 ${bW('antoine')} 예전 그 선술집 구석에서 잔을 비웠다. 둘 다 옛날 일은 묻지 않았다.`,{tone:'그리움',their:'그 사람은 아무것도 묻지 않았다. 고마웠고, 조금 서운했다. 젊을 때와 똑같이.'})}}])}});
 
 beat('gabriel','ga_late',{when:()=>bfAlive('gabriel')&&s.age>=56&&bfHere(),until:()=>false,run:async()=>{const Ga=bN('gabriel');const hid=bfFl('gabriel','hid');
-  await bfScene('늙은 멋쟁이','le vieux dandy',`${bU('gabriel')} 일흔이 다 되어서도 머리에 물을 들인다. 손거울을 보며 웃는다. “늙은 얼굴도 볼만하지?” 그러다 묻는다. “그 개 기억나?”`,[
-   hid?{l:'“다락방 문을 열던 네 얼굴이 기억나.”',a:'social',f:()=>{bfTheirs('m_dog',bfM('m_dog')&&bfM('m_dog').their);bfRe('m_dog','늙어서 다시 그 개 이야기를 했다. 이제 그 골목은 달아난 날이 아니라, 다시는 달아나지 않기로 한 날로 기억된다.','위로');say(`${bU('gabriel')} 손거울을 내려놓았다. 오래전 그 밤처럼.`)}}:null,
-   {l:'“기억나. 네가 제일 빨랐지.”',a:'bold',f:()=>{bfRe('m_dog','늙어서 다시 그 개 이야기를 하며 둘이 깔깔 웃었다.','기쁨');say('둘은 늙은이답지 않게 깔깔 웃었다.')}},
+  await bfScene('늙은 멋쟁이','le vieux dandy',`${bU('gabriel')} 일흔이 다 되어서도 머리에 물을 들인다. 손거울을 보며 웃는다. “늙은 얼굴도 볼만하지?” 그러다 묻는다. “그 연못 기억나?”`,[
+   hid?{l:'“다락방 문을 열던 네 얼굴이 기억나.”',a:'social',f:()=>{bfTheirs('m_dog',bfM('m_dog')&&bfM('m_dog').their);bfRe('m_dog','늙어서 다시 그 연못 이야기를 했다. 이제 그 연못은 달아난 날이 아니라, 다시는 달아나지 않기로 한 날로 기억된다.','위로');say(`${bU('gabriel')} 손거울을 내려놓았다. 오래전 그 밤처럼.`)}}:null,
+   {l:'“기억나. 네가 제일 빨랐지.”',a:'bold',f:()=>{bfRe('m_dog','늙어서 다시 그 연못 이야기를 하며 둘이 깔깔 웃었다.','기쁨');say('둘은 늙은이답지 않게 깔깔 웃었다.')}},
    {l:'푸른 리본을 꺼내 보여 준다',dis:!bfHas('ribbon'),a:'social',f:()=>{bfRe('m_dog','늙어서 그가 준 푸른 리본을 꺼내 보였다. 그는 그 리본을 기억하지 못했다.','그리움');bfMem('m_ribbon','gabriel',`늙은 ${Ga}에게 그가 열 살 때 준 푸른 리본을 보여 주었다. ${bHe('gabriel')}는 그 리본을 기억하지 못했다.`,{tone:'그리움',their:'그 사람이 리본을 꺼냈다. 내가 준 거라고 했다. 기억나지 않았다. 그래도 그 사람이 그걸 오십 년 동안 가지고 있었다는 건 잊지 않을 것이다.'})}}])}});
 
 beat('jules','ju_late',{when:()=>bfAlive('jules')&&s.age>=60&&bfHere(),until:()=>false,run:async()=>{const J=bN('jules'),F=bfR('jules').sex==='F';

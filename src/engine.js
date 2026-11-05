@@ -49,8 +49,11 @@ async function advanceSeason(){
   if(s.dead)return;
   const f=s.tick/12; // 이번 진행 길이(년)
   // 사망
-  if(R()<deathP(s.age)*f*(s.age>=1?(s.age<60?.5:s.age<75?.8:1):1)*(s.age>=95?2:1)){die(s.age>=60?'old':'ill');return}
-  await illnessTick();if(s.dead)return;
+  // 열여덟 살부터는 사망·병 판정을 한 해에 한 번, 그해의 무작위 달에 한다(건강이 낮을수록 위험하다)
+  if(s.age<18){if(R()<deathP(s.age)*f*(s.age>=1?(s.age<60?.5:s.age<75?.8:1):1)*(s.age>=95?2:1)){die(s.age>=60?'old':'ill');return}
+    await illnessTick();if(s.dead)return}
+  else{if(rfDue('death')&&R()<deathP(s.age)*(s.age<60?.5:s.age<75?.8:1)*(s.age>=95?2:1)*hpRisk()){die(s.age>=60?'old':'ill');return}
+    if(rfDue('ill')){const t0=s.tick;s.tick=12;try{await illnessTick()}finally{s.tick=t0}if(s.dead)return}}
   // 역사: 지난 진행 구간 안의 사건을 모두 처리
   await runHistory(prev,nx);if(s.dead)return;
   if(typeof npcMonth==='function'){await npcMonth(tPrev,T());if(s.dead)return}
@@ -73,8 +76,13 @@ async function advanceSeason(){
   if(s.age>=14&&!s.flags.adult)await comingOfAge();
   if(s.dead)return;
   await randomEvent(monthly()?.42:.72);if(s.dead)return;
-  if(s.month===11){await family();if(s.dead)return;await relTick();if(s.dead)return;if(typeof npcYear==='function'){await npcYear();if(s.dead)return}await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
+  if(typeof rfDaily==='function'){await rfDaily();if(s.dead)return}
+  if(rfDue('yr')){await family();if(s.dead)return;await relTick();if(s.dead)return;if(typeof npcYear==='function'){await npcYear();if(s.dead)return}await seeds();if(s.dead)return;if(!child()&&s.cond==='normal')await marriageCheck();goalCheck()}
 }
+// 한 해의 무작위 달: 해마다 일마다 다른 달을 뽑고, 그달이 지나면 한 번만 참이 된다
+function rfDue(k){if(!s.rnd||s.rnd.y!==s.year){s.rnd={y:s.year,d:{}}}if(s.rnd[k]==null)s.rnd[k]=Math.floor(R()*12);if(s.rnd.d[k]||s.month<s.rnd[k])return false;s.rnd.d[k]=1;return true}
+// 건강이 낮을수록 사망 위험이 커진다(deathP의 건강 보정에 더해)
+function hpRisk(){const h=s.st.hp;return h<20?1.8:h<35?1.4:h<50?1.15:h>=85?.7:h>=70?.85:1}
 function birthday(){if(s.age>=50)s.st.hp=clamp(s.st.hp-(s.age>=65?2:1),0,100);else if(s.st.hp<50)s.st.hp+=2;else if(s.st.hp<60)s.st.hp+=1}
 function newYear(){s.fa.age++;s.mo.age++;if(s.spouse)s.spouse.age++;
   const ry=repYear(s.year);L(`${yl()}${ry?' · '+ry:''}`,'yr');

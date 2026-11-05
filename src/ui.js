@@ -75,8 +75,7 @@ function renderPolCard(C0){const C=C0||$('#polCard');if(!C)return;C.innerHTML=''
   const h=el('div','ch');h.innerHTML=`<h2>정치 성향</h2><span class="mut small">${S.n}</span>`;C.appendChild(h);
   const lab=el('div','pol-lab');lab.innerHTML=`<b style="color:${s.pol<=-25?'var(--roy)':s.pol>=35?'var(--rad)':'var(--fg)'}">${polLabel(s.pol)}</b> <span class="mut">${s.pol>0?'+':''}${s.pol}</span>${pp!==s.pol?` <span class="mut small">· 겉으로는 ${polLabel(pp)}</span>`:''}`;C.appendChild(lab);
   const sp=el('div','spec');sp.innerHTML=`<div class="bar">${pp!==s.pol?`<i class="pub" style="left:${polPos(pp)}%"></i>`:''}<i class="mk" style="left:${polPos(s.pol)}%"></i></div><div class="lbl">${specLabels().map(x=>`<span>${x}</span>`).join('')}</div>`;C.appendChild(sp);
-  const info=el('p','small');info.innerHTML=`${s.party?`<b>${FAC[s.party].n}</b> ${PRANK[s.prank]}`:'<span class="mut">무소속</span>'} · <span class="mut">처신</span> ${CONDUCT.find(x=>x.k===conduct()).n}`;C.appendChild(info);
-  const b=el('button','pill','정치 활동 ›');b.type='button';b.onclick=()=>showPolitics();C.appendChild(b)}
+  const info=el('p','small');info.innerHTML=`${s.party?`<b>${FAC[s.party].n}</b> ${PRANK[s.prank]}`:'<span class="mut">무소속</span>'} · <span class="mut">처신</span> ${CONDUCT.find(x=>x.k===conduct()).n}`;C.appendChild(info);}
 function planBox(){const W=el('div','planw');W.appendChild(el('h3',null,'한 해의 방침'));
   W.appendChild(el('p','mut',`해가 바뀔 때 이 방침대로 지표가 자랍니다.${s.goal?` 평생의 뜻은 ‘${s.goal}’${s.goalDone?'(이룸)':''}.`:''}`));
   const pg=el('div','plans');PLANS.forEach(p=>{const b=el('button','plan');b.type='button';b.innerHTML=`<b>${p.k}</b><small>${p.s}</small>`;b.setAttribute('aria-pressed',String(s.plan===p.k));
@@ -147,7 +146,7 @@ function schedule(){clearTimeout(timer);if(!running||paused||busy||sheetLive||s.
   timer=setTimeout(()=>{ticking=false;frac=0;step()},dur)}
 async function step(){if(!running||busy)return;busy=true;try{await advanceSeason()}catch(e){console.error(e);sheetClose()}
   busy=false;render();save();if(s.dead){running=false;setTimeout(showEnd,900);return}
-  if(!child()&&!s.goal&&s.age>=20)await pickGoal();schedule()}
+  schedule()}
 async function pickGoal(){busy=true;sheetOpen('평생의 뜻','vocation');shText('스무 살. 무엇을 이루며 살고 싶은가?','q');
   const i=await shButtons(GOALS.map(g=>({l:g.k,s:g.s,a:{부:'greedy',명예:'social',자유:'radical',신앙:'pious',장수:'safe',가문:'family',학문:'study',무공:'bold'}[g.k]})));s.goal=GOALS[i].k;say(`평생의 뜻을 ‘${s.goal}’에 두었다.`);await done();busy=false;render();save()}
 const PLAY='<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>',PAUSE='<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="3" y="2" width="3.4" height="12" rx="1" fill="currentColor"/><rect x="9.6" y="2" width="3.4" height="12" rx="1" fill="currentColor"/></svg>';
