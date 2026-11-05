@@ -22,7 +22,7 @@ function rf4Grp(){return RF4_GRP(s.party)||(s.pol>=35?'jac':s.pol<=-25?'roy':'no
 /* ---------- 단두대에서 떠난 벗을 애도한다 ---------- */
 const rf4Pit=()=>{const t=T();return t<1794.24?'마들렌 묘지':t<1794.45?'에랑시 묘지':t<1794.57?'픽퓌스의 구덩이':'에랑시 묘지'};
 const rf4Terror=()=>T()>=1793.2&&T()<1794.65;
-async function rf4Guillo(r){const k=r.core,N=r.n.split(' ')[0],a=(r.dead||s.year)-r.by,pit=rf4Pit(),tr=rf4Terror();
+async function rf4Guillo(r){const k=r.core||r.pid,N=r.n.split(' ')[0],a=(r.dead||s.year)-(r.by||(typeof perOf==='function'&&perOf(r)?perOf(r).b:s.by)),pit=rf4Pit(),tr=rf4Terror();
   const ms=(s.bf&&s.bf.mem||[]).filter(m=>m.k.includes(k));const first=ms[0];
   const gift=typeof G_CORE_GIFT!=='undefined'&&G_CORE_GIFT[k];const ob=typeof G_CORE_OBJ!=='undefined'&&G_CORE_OBJ[k];const has=ob&&bfHas(ob);
   const obN={feather:'참새 깃털',button:'은단추',ribbon:'푸른 리본'}[ob];
