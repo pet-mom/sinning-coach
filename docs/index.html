@@ -9967,7 +9967,7 @@ const RF2_FK={train:'gym',labor:'gym',spa:'gym',hunt:'gym',read:'lib',cabinet:'l
   learn:'lec',skill:'lec',orat:'lec',study:'lec',lang:'lec',math:'lec',lecture:'lec',drawl:'lec',musicl:'lec',dance:'lec',physique:'lec',
   salon:'soc',visit:'soc',charity:'soc',theatre:'soc',guing:'soc',billet:'soc',mediate:'soc',mutual:'soc',lodge:'soc',lodgem:'soc',lavoir:'soc',marche:'soc',salon_f:'soc',cabaret:'soc',gamble:'soc',lottery:'soc',bfvisit:'soc',
   mass:'church',pilgr:'church',confr:'church',worship:'church',hotel:'church'};
-const rf2FacOf=a=>RF2_FK[a.k]||({body:'gym',learn:'lec',social:'soc',faith:'church',politics:'sec',money:'notary'})[a.g||actGroup(a)]||'etc';
+const rf2FacOf=a=>RF2_FK[a.k]||({body:'gym',learn:'lec',social:'soc',faith:'church'})[a.g||actGroup(a)]||'etc';
 let rf2Fac=null;
 const RF2_SHOP=[
  {k:'coffee',n:'모카 커피와 설탕 한 봉',p:25,rep:1,fx:{soc:1,hp:1},t:'카페 드 라 레장스에서 산 모카 원두를 집에서 볶았다. 설탕을 두 덩이나 넣었다.'},
@@ -11489,7 +11489,7 @@ rm12('desmoulins','rm_ds3',30,()=>T()>=1790.95&&T()<1794.25,async()=>{await bfSc
 
 /* ================= 개편 13 =================
    1. 1789~1794년에 사건 창이 연달아 뜨면, 앞 창이 닫히고 4초 뒤에 다음 창이 뜬다(그 밖의 해에는 5초).
-   2. 생활의 시설: 활동마다 어울리는 건물로 다시 배치한다.
+   2. 생활의 시설: 예전 일곱 곳 그대로 두고, 온천 요양만 체육관에서 떼어 ‘온천’으로 옮긴다.
    3. 신분에 어울리는 직업 열 갈래, 갈래마다 여섯 계단을 더한다.
       근거: William Doyle, Venality (1996) · Daniel Roche, La France des Lumières (1993) · Jean Meyer, La Noblesse bretonne (1966)
       · Louis Bergeron, Banquiers, négociants et manufacturiers parisiens (1978) · Steven Kaplan, Provisioning Paris (1984)
@@ -11498,41 +11498,9 @@ rm12('desmoulins','rm_ds3',30,()=>T()>=1790.95&&T()<1794.25,async()=>{await bfSc
 /* ---------- 1. 사건 창 간격 ---------- */
 /* reform11.js의 rf11Gap에서 처리한다. */
 
-/* ---------- 2. 시설과 활동 ---------- */
-RF2_FAC.splice(0,RF2_FAC.length,
- ['gym','검술장','la salle d’armes'],
- ['field','들판과 숲','la campagne'],
- ['lib','도서관·독서실','le cabinet de lecture'],
- ['lec','학교·강의실','le collège'],
- ['atel','화실·연습실','l’atelier'],
- ['cafe','카페·팔레루아얄','le café'],
- ['soc','살롱·응접실','le salon'],
- ['theatre','극장','le théâtre'],
- ['tav','선술집','la guinguette'],
- ['mkt','시장·빨래터','les Halles'],
- ['church','성당','l’église'],
- ['hosp','병원·온천','l’Hôtel-Dieu'],
- ['sec','구청·클럽','la section'],
- ['notary','공증인 사무소','l’étude'],
- ['shop','상점','la boutique'],
- ['etc','그 밖의 일','la vie']);
-for(const k in RF2_FK)delete RF2_FK[k];
-Object.assign(RF2_FK,{
- train:'gym',labor:'gym',
- hunt:'field',poach:'field',fauxsel:'field',
- read:'lib',cabinet:'lib',latin:'lib',
- learn:'lec',study:'lec',lang:'lec',math:'lec',lecture:'lec',orat:'lec',physique:'lec',
- skill:'atel',drawl:'atel',musicl:'atel',dance:'atel',
- paper:'cafe',salon:'cafe',gamble:'cafe',lottery:'cafe',
- salon_f:'soc',visit:'soc',bfvisit:'soc',billet:'soc',lodge:'soc',lodgem:'soc',match:'soc',
- theatre:'theatre',
- guing:'tav',cabaret:'tav',mutual:'tav',
- marche:'mkt',lavoir:'mkt',mediate:'mkt',
- mass:'church',pilgr:'church',confr:'church',worship:'church',charity:'church',
- hotel:'hosp',spa:'hosp',
- club:'sec',cert:'sec',pamph:'sec',petition:'sec',garde:'sec',vote:'sec',femclub:'sec',
- land:'notary',buy:'notary',rente:'notary',epargne:'notary',shop:'notary'});
-// 나머지(진로·은퇴·여행·숨기·망명)는 ‘그 밖의 일’. 새로 생긴 활동은 갈래에 따라 들어간다(reform2.js의 rf2FacOf).
+/* ---------- 2. 시설: 예전 일곱 곳으로 되돌리고, 온천만 따로 둔다 ---------- */
+RF2_FAC.splice(RF2_FAC.findIndex(x=>x[0]==='shop'),0,['spa','온천','les eaux']);
+RF2_FK.spa='spa';
 
 /* ---------- 3. 새 직업 열 갈래 ---------- */
 const r13Court=()=>T()<1792.6||T()>=1804.4;
@@ -11651,6 +11619,35 @@ Object.assign(RF_WHY,{
   const j=job();if(j&&R13_CTJ.has(j.id)&&!r13Court()){loseJob('8월 10일 튈르리궁이 무너지자 궁정도 사라졌다. %의 자리는 하루아침에 없어졌다.');fx({sus:6})}
   if(j&&j.id==='fn4'&&!r13Bourse()){loseJob('증권거래소가 문을 닫았다. %의 일은 이제 투기로 몰린다.')}
 }catch(e){console.error(e)}}}
+
+/* ================= 개편 14: 시간의 박자 =================
+   1. 평소에는 한 번 넘어갈 때마다(계절 또는 달) 5초. 사건 창도 연달아 뜨면 앞 창이 닫히고 5초 뒤에 뜬다.
+   2. 1794년 4~7월: 하루씩 넘기지 않는다. 역사 순서대로 사건이 있는 날로 건너뛰며, 7초마다 새 기록이 쌓인다.
+   3. 1789~1794년에는 연달아 뜨는 사건 창 사이가 4초. 빨리감기와 자동 선택 중에도 이 쉼을 지킨다. */
+
+/* ---------- 1·2. 한 칸의 길이 ---------- */
+msPer=function(){return (typeof rf9In==='function'&&rf9In()&&s&&s.day)?7000:5000};
+
+/* ---------- 2. 사건이 있는 날로만 건너뛴다 ---------- */
+function r14Days(){const m=s.month+1,cur=s.day||1,d9=s.d9||{},o=new Set();
+  for(const [mm,dd] of RF9_DAYS)if(mm===m&&dd>cur&&!d9[mm+'-'+dd])o.add(dd);
+  for(const k in RF9_DD){const [y,mm,dd]=RF9_DD[k];if(y===s.year&&mm===m&&dd>cur)o.add(dd)}
+  return [...o].sort((a,b)=>a-b)}
+rf9DayStep=async function(){if(!s||s.dead)return false;const mi=MI();
+  if(mi<RF9_A-1||mi>RF9_B){s.day=null;return false}
+  if(mi===RF9_A-1){s.day=null;return false}
+  const ds=r14Days();if(!ds.length){s.day=null;return false} // 이달에 남은 사건이 없으면 다음 달로
+  s.day=Math.min(ds[0],RF9_DIM[s.month]);s.tick=0;await rf9DayEvents();try{relSync()}catch(e){}
+  try{await bfTick()}catch(e){}try{await rvTick()}catch(e){}
+  return true};
+
+/* ---------- 3. 쉼은 실제 시간으로: 빨리감기·자동 선택도 기다린다 ---------- */
+let r14ShowAt=0;
+{const _so=sheetOpen;sheetOpen=function(t,fr){_so(t,fr);try{const w=rf11Last?rf11Last+rf11Gap()-Date.now():0;r14ShowAt=Date.now()+Math.max(0,w)}catch(e){r14ShowAt=0}}}
+const r14Wait=()=>Math.max(0,r14ShowAt-Date.now());
+arm=function(fn){pend=fn;if(autoMode)setTimeout(()=>{if(autoMode&&pend===fn)fn()},r14Wait()+ad())};
+{setAuto=function(on){autoMode=on;$('#autoT').setAttribute('aria-pressed',String(on));$('#autoT').textContent=on?'자동 선택 켜짐':'자동 선택 꺼짐';
+  if(on&&pend){const f=pend;setTimeout(()=>{if(autoMode&&pend===f)f()},r14Wait()+ad())}}}
 
 </script>
 </body>

@@ -150,7 +150,7 @@ const RF2_FK={train:'gym',labor:'gym',spa:'gym',hunt:'gym',read:'lib',cabinet:'l
   learn:'lec',skill:'lec',orat:'lec',study:'lec',lang:'lec',math:'lec',lecture:'lec',drawl:'lec',musicl:'lec',dance:'lec',physique:'lec',
   salon:'soc',visit:'soc',charity:'soc',theatre:'soc',guing:'soc',billet:'soc',mediate:'soc',mutual:'soc',lodge:'soc',lodgem:'soc',lavoir:'soc',marche:'soc',salon_f:'soc',cabaret:'soc',gamble:'soc',lottery:'soc',bfvisit:'soc',
   mass:'church',pilgr:'church',confr:'church',worship:'church',hotel:'church'};
-const rf2FacOf=a=>RF2_FK[a.k]||({body:'gym',learn:'lec',social:'soc',faith:'church',politics:'sec',money:'notary'})[a.g||actGroup(a)]||'etc';
+const rf2FacOf=a=>RF2_FK[a.k]||({body:'gym',learn:'lec',social:'soc',faith:'church'})[a.g||actGroup(a)]||'etc';
 let rf2Fac=null;
 const RF2_SHOP=[
  {k:'coffee',n:'모카 커피와 설탕 한 봉',p:25,rep:1,fx:{soc:1,hp:1},t:'카페 드 라 레장스에서 산 모카 원두를 집에서 볶았다. 설탕을 두 덩이나 넣었다.'},
