@@ -56,3 +56,21 @@ rvTick=async function(){if(!rvOn()||sheetLive)return;s.rv=s.rv||{d:{},nx:0};cons
   fixB('et_fall',{when:(w=>()=>(bfRev()?(T()>=1794.5&&T()<1794.55&&bfAlive('etienne')&&!child()&&s.cond!=='prison'):w()))(BFB.find(x=>x.id==='et_fall').when),until:(u=>()=>bfRev()?T()>=1794.55:u())(BFB.find(x=>x.id==='et_fall').until),gap:0});
   fixB('ds_death',{when:()=>rfRDon()&&bfAlive('desmoulins')&&T()>=1794.25,until:()=>T()>=1794.34&&!bfAlive('desmoulins')});
   fixB('rb_death',{when:()=>rfRDon()&&bfAlive('robespierre')&&T()>=1794.5,until:()=>T()>=1794.59&&!bfAlive('robespierre')})}
+
+/* ---------- 부고 화면: 이전으로 · 유언을 작성하기 ---------- */
+// 이전으로: 부고를 닫고 마지막 플레이 화면으로 돌아간다(기록과 탭을 둘러볼 수 있다). 아래의 버튼으로 다시 부고를 연다.
+function rf8BackPill(on){let b=$('#obBack');if(!b){b=el('button','shback');b.id='obBack';b.type='button';b.innerHTML='<span>부고로 돌아가기</span><small>Nécrologie</small>';b.onclick=()=>{rf8BackPill(false);showEnd()};document.body.appendChild(b)}b.hidden=!on}
+{const hb=$('#homeB');if(hb){hb.textContent='이전으로';hb.onclick=()=>{if(!s){$('#end').hidden=true;$('#title').hidden=false;return}
+  $('#end').hidden=true;$('#title').hidden=true;document.body.classList.remove('covered');try{render();setTab(curTab||'daily')}catch(e){}rf8BackPill(true)}}}
+{const ab=$('#againB');if(ab){const a0=ab.onclick;ab.onclick=e=>{rf8BackPill(false);return a0&&a0(e)}}}
+// 유언을 작성하기: 직접 쓴 말이 부고의 ‘마지막 말’이 된다
+{const wb=$('#willB');if(wb)wb.onclick=()=>{if(!s)return;const w=$('#obWill');if(!w)return;let box=$('#willBox');if(box){box.remove();return}
+  box=el('div','will-box');box.id='willBox';const ta=el('textarea');ta.maxLength=200;ta.rows=3;ta.placeholder='남기고 싶은 마지막 말을 적으세요. (200자 이내)';ta.value=s.willText||'';
+  const row=el('div','will-row');const ok=el('button','pill pri','남긴다');ok.type='button';const cancel=el('button','pill','그만둔다');cancel.type='button';
+  ok.onclick=()=>{const v=ta.value.trim();s.willText=v||null;try{save()}catch(e){}box.remove();showEnd()};cancel.onclick=()=>box.remove();
+  row.appendChild(cancel);row.appendChild(ok);box.appendChild(ta);box.appendChild(row);w.after(box);ta.focus()}}
+{const _se=showEnd;showEnd=function(){_se();try{rf8BackPill(false);const w=$('#obWill');if(!w||!s)return;const wb=$('#willB');if(wb)wb.textContent=s.willText?'유언을 고쳐 쓰기':'유언을 작성하기';
+  if(s.willText){const wl=w.querySelector('.wl');if(wl)wl.textContent=`“${s.willText}”`;const k=w.querySelector('.wl-k');if(k)k.textContent='마지막 말 · 손수 남긴 글'}}catch(e){console.error(e)}}}
+// 부고 뒤 둘러보기: 죽은 뒤에는 시간이 흐르지 않는다
+{const _sp=setPaused;setPaused=function(v){if(s&&s.dead&&!v)return;return _sp(v)}}
+{const _stp=step;step=async function(){if(s&&s.dead)return;return _stp()}}
