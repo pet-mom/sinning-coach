@@ -1,6 +1,6 @@
 /* ================= 개편 13 =================
    1. 1789~1794년에 사건 창이 연달아 뜨면, 앞 창이 닫히고 4초 뒤에 다음 창이 뜬다(그 밖의 해에는 5초).
-   2. 생활의 시설: 활동마다 어울리는 건물로 다시 배치한다.
+   2. 생활의 시설: 예전 일곱 곳 그대로 두고, 온천 요양만 체육관에서 떼어 ‘온천’으로 옮긴다.
    3. 신분에 어울리는 직업 열 갈래, 갈래마다 여섯 계단을 더한다.
       근거: William Doyle, Venality (1996) · Daniel Roche, La France des Lumières (1993) · Jean Meyer, La Noblesse bretonne (1966)
       · Louis Bergeron, Banquiers, négociants et manufacturiers parisiens (1978) · Steven Kaplan, Provisioning Paris (1984)
@@ -9,41 +9,9 @@
 /* ---------- 1. 사건 창 간격 ---------- */
 /* reform11.js의 rf11Gap에서 처리한다. */
 
-/* ---------- 2. 시설과 활동 ---------- */
-RF2_FAC.splice(0,RF2_FAC.length,
- ['gym','검술장','la salle d’armes'],
- ['field','들판과 숲','la campagne'],
- ['lib','도서관·독서실','le cabinet de lecture'],
- ['lec','학교·강의실','le collège'],
- ['atel','화실·연습실','l’atelier'],
- ['cafe','카페·팔레루아얄','le café'],
- ['soc','살롱·응접실','le salon'],
- ['theatre','극장','le théâtre'],
- ['tav','선술집','la guinguette'],
- ['mkt','시장·빨래터','les Halles'],
- ['church','성당','l’église'],
- ['hosp','병원·온천','l’Hôtel-Dieu'],
- ['sec','구청·클럽','la section'],
- ['notary','공증인 사무소','l’étude'],
- ['shop','상점','la boutique'],
- ['etc','그 밖의 일','la vie']);
-for(const k in RF2_FK)delete RF2_FK[k];
-Object.assign(RF2_FK,{
- train:'gym',labor:'gym',
- hunt:'field',poach:'field',fauxsel:'field',
- read:'lib',cabinet:'lib',latin:'lib',
- learn:'lec',study:'lec',lang:'lec',math:'lec',lecture:'lec',orat:'lec',physique:'lec',
- skill:'atel',drawl:'atel',musicl:'atel',dance:'atel',
- paper:'cafe',salon:'cafe',gamble:'cafe',lottery:'cafe',
- salon_f:'soc',visit:'soc',bfvisit:'soc',billet:'soc',lodge:'soc',lodgem:'soc',match:'soc',
- theatre:'theatre',
- guing:'tav',cabaret:'tav',mutual:'tav',
- marche:'mkt',lavoir:'mkt',mediate:'mkt',
- mass:'church',pilgr:'church',confr:'church',worship:'church',charity:'church',
- hotel:'hosp',spa:'hosp',
- club:'sec',cert:'sec',pamph:'sec',petition:'sec',garde:'sec',vote:'sec',femclub:'sec',
- land:'notary',buy:'notary',rente:'notary',epargne:'notary',shop:'notary'});
-// 나머지(진로·은퇴·여행·숨기·망명)는 ‘그 밖의 일’. 새로 생긴 활동은 갈래에 따라 들어간다(reform2.js의 rf2FacOf).
+/* ---------- 2. 시설: 예전 일곱 곳으로 되돌리고, 온천만 따로 둔다 ---------- */
+RF2_FAC.splice(RF2_FAC.findIndex(x=>x[0]==='shop'),0,['spa','온천','les eaux']);
+RF2_FK.spa='spa';
 
 /* ---------- 3. 새 직업 열 갈래 ---------- */
 const r13Court=()=>T()<1792.6||T()>=1804.4;
