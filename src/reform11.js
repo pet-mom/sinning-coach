@@ -2,7 +2,7 @@
    3. 1789~1794년에는 역사 사건에 태도를 묻는 창을 띄우지 않는다. 벗들의 반응만 남는다.
    4. 그 시기의 역사적으로 미미한 사건은 기록에서 뺀다.
    5. 벗과의 말다툼: 그 사람다운 장소와 선택지
-   8. 사건 창은 앞 창이 닫히고 7초쯤 뒤에 뜬다.
+   8. 사건 창이 연달아 뜰 때는 앞 창이 닫히고 5초 뒤에 뜬다.
    9·10. 단두대: 그 사람다운 마지막 수레, 그 사람과의 이야기에 맞춘 애도 세 가지 */
 
 /* ---------- 3. 1789~1794: 태도 창 없음 ---------- */
@@ -33,7 +33,7 @@ const RF11_QV={
   return _bs11(title,fr,text,opts)}}
 
 /* ---------- 8. 사건 창 사이의 쉼: 7초쯤 ---------- */
-const RF11_GAP=7000;let rf11Last=0;
+const RF11_GAP=5000;let rf11Last=0;
 const rf11Gap=()=>(typeof window!=='undefined'&&window.__nogap)?0:RF11_GAP;
 {const _so=sheetOpen;sheetOpen=function(t,fr){_so(t,fr);try{const w=rf11Last+rf11Gap()-Date.now();if(w>0&&rf11Last){const sh=$('#sheet');sh.hidden=true;document.body.classList.remove('modal');
     setTimeout(()=>{if(sheetLive&&!($('#shBack')&&!$('#shBack').hidden)){sh.hidden=false;document.body.classList.add('modal')}},w)}}catch(e){}}}
