@@ -180,12 +180,12 @@ beat('robespierre','rb_death',{when:()=>rfRDon()&&bfAlive('robespierre')&&T()>=1
   if(!f&&s&&s.by===1758&&!BF_KEYS.includes('robespierre'))BF_KEYS.push(...RF_RD)}}
 
 /* ---------- 10. 벗과 정치가 갈릴 때 ---------- */
-const RF_QWIN=()=>T()>=1789.4&&T()<1800||T()>=1830.5&&T()<1849;
+const RF_QWIN=()=>T()>=1789.4&&T()<1849;
 async function rfQuarrel(){if(!s||s.dead||child()||s.cond!=='normal'||!RF_QWIN())return;s.qr=s.qr||{};
   const ks=BF_KEYS.filter(k=>{const r=bfR(k);return r&&r.alive&&r.cond==='normal'&&!r.cut&&Math.abs((r.pol||0)-s.pol)>=40&&(s.qr[k]||0)+3<=s.year});if(!ks.length||R()>.55)return;
   const k=pick(ks),r=bfR(k),N=bN(k);s.qr[k]=s.year;const him=r.pol>s.pol;
-  const topic=T()<1800?pick(['왕의 재판','선서 거부 사제','최고가격제','혐의자법','구민 회의']):pick(['7월 왕정','선거권','6월 봉기','기조 내각']);
-  await bfScene(`${N}${jo(N,'과','와').slice(-1)}의 말다툼`,'la querelle',`${topic} 이야기가 나왔다. ${bU(k)} ${him?'당신이 너무 미지근하다고':'당신이 너무 멀리 갔다고'} 했다. 목소리가 높아지고, 옆자리 사람들이 돌아본다. 어린 시절의 얼굴이 낯선 사람의 얼굴로 보인다.`,[
+  const topic=typeof rf10Topic==='function'?rf10Topic():(T()<1800?'왕의 재판':'7월 왕정');
+  await bfScene(`${N}${jo(N,'과','와').slice(-1)}의 말다툼`,'la querelle',typeof rf10QText==='function'?rf10QText(k,topic,him):`${topic} 이야기가 나왔다. ${bU(k)} ${him?'당신이 너무 미지근하다고':'당신이 너무 멀리 갔다고'} 했다.`,[
    {l:'설득한다',s:'웅변·학식 판정',a:'social',f:async()=>{const {m,why}=md([[(s.sk.orat||0)>=30,1,'웅변'],[(s.st.edu||0)>=55,1,'학식'],[r.trust>=60,1,'오랜 신뢰'],[r.tr==='열정',-1,'불같은 성미']]);const x=await roll(m,{label:`${N} 설득`,why});
      if(x.v>=5){r.pol=Math.round(r.pol+(s.pol-r.pol)*.35);bfRel(k,{close:6,trust:4});bfMem('m_qr_'+k+s.year,k,`${jo(topic,'을','를')} 두고 ${bW(k)} 다투었다. 밤이 깊도록 설득한 끝에 ${bU(k)} “네 말에도 일리가 있어.”라고 했다.`,{tone:'위로',their:'그 사람 말이 맞는 데가 있었다. 인정하기 싫었지만.'});say(`${bU(k)} 끝내 고개를 끄덕였다.`,'big')}
      else{bfRel(k,{close:-4});bfMem('m_qr_'+k+s.year,k,`${jo(topic,'을','를')} 두고 ${bW(k)} 다투었다. 설득하려 했지만 ${bU(k)} 듣지 않았다.`,{tone:'씁쓸함',their:'그 사람은 나를 가르치려 들었다. 어릴 때부터 그랬다.'});say(`${bU(k)} 끝까지 듣지 않았다.`)}}},

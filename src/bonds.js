@@ -530,7 +530,7 @@ let bfLastPP=null;
 const bfStatus=r=>{if(!r.alive)return `${r.dead}년 세상을 떠남`;const c={prison:'감옥에 있다',deported:'먼 유형지에 있다',emigre:'망명 중',hiding:'숨어 지낸다'}[r.cond];return `${s.year-r.by}세 · ${c||r.job||''}`};
 {const _rm=relMore;relMore=function(H){_rm(H);try{const ks=BF_KEYS.filter(bfMet);if(!ks.length||relFilter!=='all')return;const c=el('section','card bfc');const h=el('div','ch');h.innerHTML='<h2>오래된 벗</h2><span class="fr">les amis d’enfance</span>';c.appendChild(h);
   ks.forEach(k=>{const r=bfR(k);const b=el('button','prow bfrow'+(r.alive?'':' dead'));b.type='button';const t=el('div','pt');const n=bfS().mem.filter(m=>m.k.includes(k)).length;
-    t.innerHTML=`<b>${r.n}</b><span>${BF[k].motif}</span><small>${bfStatus(r)} · 기억 ${n}</small>`;b.appendChild(t);b.appendChild(el('span','pic b-'+(r.alive?'love':'mid'),r.alive?'❦':'✝'));b.onclick=()=>personPage(r);c.appendChild(b)});
+    t.innerHTML=`<b>${r.n}</b><span>${BF[k].motif}</span><small>${bfStatus(r)} · 기억 ${n}</small>`;b.appendChild(t);b.appendChild(el('span','pic b-'+(r.alive?'love':'mid'),r.alive?'❦':'✟'));b.onclick=()=>personPage(r);c.appendChild(b)});
   c.appendChild(el('p','mut small center','어린 시절 일상에서 만난 사람들. 함께 보낸 시간은 기억이 되고, 기억은 세월에 따라 뜻이 바뀝니다.'));H.insertBefore(c,H.firstChild)}catch(e){console.error(e)}}}
 
 /* ================= 생애 기록: 결말 대신 남는 것 ================= */

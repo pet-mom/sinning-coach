@@ -930,3 +930,4 @@ details.fold>.cgrid{margin-top:8px}
 #end .will-box{max-width:520px;margin:12px auto 0;display:flex;flex-direction:column;gap:8px}
 #end .will-box textarea{font:inherit;font-size:1rem;line-height:1.6;padding:10px 12px;border:1px solid #D9BC7A;background:rgba(239,229,211,.08);color:#EFE5D3;border-radius:6px;resize:vertical}
 #end .will-row{display:flex;justify-content:flex-end;gap:8px}
+.menu button[hidden]{display:none!important}
