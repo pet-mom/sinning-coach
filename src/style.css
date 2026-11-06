@@ -892,3 +892,35 @@ details.fold>.cgrid{margin-top:8px}
 .pf2-rep:not(.pf2-cap) .pf2-rk{font-size:.96rem}
 .pf2-rep:not(.pf2-cap) .pf2-rv{font-size:1.6rem}
 .pf2-rep:not(.pf2-cap) .pf2-rw{font-size:.7rem}
+/* ===== 개편 7 ===== */
+/* 시작 화면: 밑그림이 화면 전체를 채운다 · 주사위는 칸 가운데 */
+#title .t-bg{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;max-width:none!important;margin:0!important;border:0!important;border-radius:0!important;transform:none!important}
+#title .t-bg img,#title .t-bg canvas{width:100%!important;height:100%!important;object-fit:cover!important}
+#rollB{display:flex!important;align-items:center;justify-content:center;padding:0!important;line-height:1!important;align-self:stretch;font-size:1.7rem!important}
+/* 카드 머리: 제목 → 영제목 → 내용 사이 빈칸을 줄인다 */
+.ch{padding-bottom:9px!important;margin-bottom:6px!important;background-size:150px 12px!important}
+.ch h2{line-height:1.15}
+.ch .mut,.ch .fr{line-height:1.1;font-size:1.02rem}
+/* 일상 탭: 머리말 없이 바로 기록 */
+.logc{padding-top:10px}
+/* 벗과의 첫 만남 표지 */
+.le.meet .lb{border-left:3px solid var(--gold);padding-left:9px;background:color-mix(in srgb,var(--gold) 9%,transparent)}
+.le.meet .lb::before{content:'첫 만남';display:inline-block;font-size:.66rem;letter-spacing:.12em;color:var(--gold);border:1px solid var(--gold);padding:0 5px;margin-right:6px;vertical-align:1px}
+/* 사건 창 잠시 내리기 */
+.shmin{margin-left:auto;font:inherit;font-size:.78rem;background:transparent;border:1px solid var(--line);color:var(--mut);padding:3px 9px;border-radius:999px;cursor:pointer}
+.sh-top{display:flex;align-items:center;gap:8px}
+.shback{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);z-index:400;display:flex;flex-direction:column;align-items:center;gap:1px;padding:9px 18px;background:#1E2F27;color:#EFE4CB;border:1px solid #D9BC7A;border-radius:999px;font:inherit;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer;max-width:90vw}
+.shback small{font-size:.72rem;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70vw}
+/* 평판 카드: 상자와 카드를 조금 작게 */
+.pf2-rep:not(.pf2-cap){padding:12px 12px 12px}
+.pf2-rep:not(.pf2-cap) .pf2-rg{gap:8px 8px}
+.pf2-rep:not(.pf2-cap) .pf2-ri{padding:9px 6px 8px}
+.pf2-rep:not(.pf2-cap) .pf2-ri::before,.pf2-rep:not(.pf2-cap) .pf2-ri::after{width:20px;height:20px}
+.pf2-rep:not(.pf2-cap) .pf2-rv{font-size:1.35rem;margin:2px 0 1px}
+.pf2-rep:not(.pf2-cap) .pf2-rk{font-size:.88rem}
+.pf2-rep:not(.pf2-cap) .pf2-bloom{transform:scale(.8);margin:-4px 0}
+/* 능력: 자간 줄이기 */
+.cap-row span{letter-spacing:0!important}
+.cap-row{gap:8px}
+/* 엔딩: 사인 */
+#obWill .wl-c{display:block;margin-top:10px;font-style:normal;font-size:.8rem;letter-spacing:.06em;opacity:.8}
