@@ -1,7 +1,7 @@
 /* ================= 정치: 파벌 · 강령 · 성향 =================
    성향 점수 s.pol: -100(절대왕정) … +100(급진 상퀼로트). 해마다 s.polHist에 남는다.
    파벌은 실제로 존재한 기간에만 나타나고, 몰락할 때 소속원은 화를 입는다. */
-const tm=(y,m)=>y+(m-3)/12; // T() 눈금으로 바꾼 '연도+달'
+const tm=(y,m)=>y+(m-1)/12; // T() 눈금으로 바꾼 '연도+달'
 // st: 강령 7개(왕정·참정권·재산권·교회·경제·혁명사법·전쟁)에 대한 파벌의 입장(-1 = 입장 없음)
 const FACTIONS=[
  {id:'devot',n:'신앙파',fr:'Parti dévot',lead:'보몽 대주교',goal:'교회와 왕권 수호',belief:'신앙과 전통',sup:'성직자·법복귀족 일부',pol:-60,a:1750,b:tm(1789,5),st:[0,0,0,0,-1,-1,-1]},
@@ -163,7 +163,7 @@ function conductYear(){if(child()||s.age<16)return;const c=conduct(),gap=Math.ab
   if(c==='open'&&gap===0&&s.fame>=20&&R()<.3)fxAttr('rpeople',s.pol>=30?1:0)}
 // 정권 교체 앞에서
 const REGIMES=[[tm(1789,7),'바스티유 이후','국민의회가 권력을 잡았다'],[tm(1792,8),'왕정의 몰락','8월 10일 왕정이 무너지고 공화국이 섰다'],[tm(1794,7),'테르미도르','로베스피에르가 쓰러지고 공포정치가 끝났다'],[tm(1799,11),'브뤼메르','보나파르트가 권력을 잡았다'],[tm(1804,5),'제정','공화국이 제국이 되었다'],[tm(1814,4),'복고','황제가 물러나고 부르봉 왕가가 돌아왔다'],[tm(1815,3),'백일천하','엘바섬에서 돌아온 황제가 파리에 들어왔다'],[tm(1815,7),'두 번째 복고','워털루 뒤 왕이 다시 돌아왔다'],[tm(1830,8),'7월 혁명','샤를 10세가 쫓겨나고 루이 필리프가 왕이 되었다']];
-async function regimeTurn(t0,t1){for(const [t,n,d] of REGIMES){if(!(t>=t0&&t<t1))continue;
+async function regimeTurn(t0,t1){for(const [t,n,d] of REGIMES){if(!(t>t0+1e-9&&t<=t1+1e-9))continue;
   if(child()||s.age<18||s.cond!=='normal'||s.dead)continue;const visible=s.fame>=15||s.party||(job()&&job().t>=3)||deputy();if(!visible)continue;
   const rp=rulingPol(),gap=Math.abs(rp-s.pol);
   const i=await Q(n,'changement de régime',`${d}. 새 정권 앞에서 당신은 어떻게 처신할 것인가. (새 정권 쪽 성향 ${rp>0?'+':''}${rp}, 당신의 속마음 ${s.pol>0?'+':''}${s.pol})`,[

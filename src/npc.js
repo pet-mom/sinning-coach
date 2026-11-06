@@ -383,7 +383,7 @@ const NP_D=[
  [1851,12,async()=>{for(const r of npLive().filter(x=>npIn(x)&&x.pol>=50&&npM(x)))if(R()<.15){r.cond='deported';npEv(r,'12월 2일 쿠데타에 맞서다 붙잡혀 알제리로 유형되었다.',true)}}],
 ];
 // 공포정치의 한 달 (1793년 9월 ~ 1794년 7월): 체포와 혁명재판소. 테르미도르 뒤에는 석방.
-async function npTerrorMonth(mi){const t=(mi-2)/12;const great=t>=1794.25&&t<1794.4;let q=null;
+async function npTerrorMonth(mi){const t=mi/12;const great=t>=1794.25&&t<1794.4;let q=null;
   for(const r of npLive()){if(r.cond==='normal'){let p=.0015+(npNob(r)?.02:0)+(r.cler&&r.refr?.04:0)+(r.pol<=-30?.006:0)+(['girondin','feuillant','royalist','monarchien','indulgent'].includes(r.fac)?.01:0)+(r.denounced?.08:0);
       p*=(great?1.8:1)*(r.tr==='신중'?.6:1);if(R()<p){npArrest(r,`혐의자법에 따라 ${pick(['뤽상부르','포르리브르','라포르스','생라자르','카름'])} 감옥에 갇혔다.`);if(r.close>=55&&!q)q=r}}
     else if(r.cond==='prison'){const p=(npNob(r)||r.cler||['girondin','royalist','feuillant'].includes(r.fac)?.05:.015)*(great?2.5:1)*(r.saved?.4:1);
@@ -396,9 +396,9 @@ function npRelease(){for(const r of npLive())if(r.cond==='prison'&&R()<.35){r.co
 // 콜레라(1832년 4~9월 파리 사망률 약 2.3%, 1849년 약 1.9%): 가난하고 늙을수록 위험
 function npCholera(mi){const y=Math.floor(mi/12),m=mi%12+1;const tot=y===1832?.023:.019;const sh=y===1832?{4:.55,5:.1,6:.08,7:.12,8:.1,9:.05}:{3:.05,4:.15,5:.2,6:.35,7:.15,8:.07,9:.03};const f=sh[m]||0;if(!f)return;
   for(const r of npLive().filter(x=>x.cond==='normal'||x.cond==='prison')){const mult=(npNob(r)?.5:r.estate==='bourgeois'?.8:1.4)*(npAge(r)>=50?2:npAge(r)<10?1.3:1);if(R()<tot*f*mult)npDie(r,'cholera',`${npAge(r)}세에 콜레라에 걸려 하루 만에 숨을 거두었다.`)}}
-async function npcMonth(a,b){if(s.dead||!(s.rel||[]).some(r=>r.kind==='fic'&&r.alive))return;npQ=0;const A=Math.round(a*12+2),B=Math.round(b*12+2);
+async function npcMonth(a,b){if(s.dead||!(s.rel||[]).some(r=>r.kind==='fic'&&r.alive))return;npQ=0;const A=Math.round(a*12),B=Math.round(b*12);
   for(const [y,m,f] of NP_D){const mi=npTm(y,m);if(mi>A&&mi<=B){await f();if(s.dead)return}}
-  for(let mi=A+1;mi<=B;mi++){const t=(mi-2)/12;
+  for(let mi=A+1;mi<=B;mi++){const t=mi/12;
     if(t>=1793.5&&t<1794.4){await npTerrorMonth(mi);if(s.dead)return}
     else if(t>=1794.4&&t<1795.2)npRelease();
     const y=Math.floor(mi/12);if(y===1832||y===1849)npCholera(mi)}}
