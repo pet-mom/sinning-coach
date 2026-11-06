@@ -161,7 +161,6 @@ function npLife(r){const a=npAge(r),y=s.year,t=T();if(!r.alive)return;
 function npReact(r){if(child()||!npIn(r))return;const g=npGap(r);
   if(r.eng>=45&&g>=70&&R()<.6){const t=r.pol>s.pol?`${npTop(r)} 당신이 ‘${polLabel(pubPol())}’ 쪽에 섰다며 냉담해졌다.`:`${npTop(r)} 당신의 ‘과격한’ 생각을 두려워하게 되었다.`;L(t+relFx(r,{close:-5,resp:-4}),'sys')}
   else if(r.eng>=45&&g<=20&&R()<.4)L(`${npWith(r)} 시국 이야기를 나누면 말이 잘 통했다.`+relFx(r,{close:3,resp:2}),'sys');
-  if(s.party&&r.fac&&FAC[r.fac]&&r.fac!==s.party&&facPair(s.party,r.fac)<=-50&&R()<.5)L(`${npTop(r)} ${FAC[r.fac].n}, 당신은 ${FAC[s.party].n}. 식탁에서 정치 이야기는 금기가 되었다.`+relFx(r,{close:-4,trust:-3}),'sys');
   const j=relJudge(r);if(j&&R()<.3)L(j>0?`${npTop(r)} 당신을 ${VALUES.find(x=>x[0]===r.v)[1]}${bat(VALUES.find(x=>x[0]===r.v)[1])?'을':'를'} 아는 사람이라 했다.`+relFx(r,{resp:4}):`${npTop(r)} 당신의 요즘 처신을 못마땅해한다.`+relFx(r,{resp:-4}),'sys');
   // 시간이 흐르면 저절로 조금씩 식는다
   if(R()<.5)r.close=clamp(r.close-1,0,100);if(r.hate>0&&R()<.4)r.hate=clamp(r.hate-2,0,100);if(r.riv>0&&R()<.3)r.riv=clamp(r.riv-2,0,100)}
