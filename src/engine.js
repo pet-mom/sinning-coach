@@ -40,6 +40,8 @@ function msPer(){return monthly()?4200:9000}
 function secPerYear(){return Math.round(msPer()*(12/tickMonths())/speed/1000)}
 function ageNow(){return s.year-s.by-(s.month<s.bm?1:0)}
 async function advanceSeason(){
+  // 1794년 4~7월은 하루씩 진행한다(reform9.js). 달이 바뀌는 날만 아래의 달 처리로 넘어간다
+  if(typeof rf9DayStep==='function'&&await rf9DayStep())return;
   const k=tickMonths();const prev=MI();const tPrev=T();
   // 1788년 12월 다음은 1789년 1월(월 단위 진입)
   let nx=prev+k;if(prev<REV_START&&nx>REV_START)nx=REV_START;
