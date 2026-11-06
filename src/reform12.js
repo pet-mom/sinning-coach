@@ -49,7 +49,8 @@ sd12('jules','ju_d_choir',()=>s.age>=12&&T()<1791,async()=>{const dp=(T()>=1781.
 sd12('jules','ju_d_cellar',()=>s.age>=16&&T()>=1792.7&&T()<1801.6&&bfFl('jules','refr'),async()=>{
   await bfScene('지하실의 미사','la messe clandestine',`어느 지하실. 촛불 두 개, 나무 상자 위에 깐 흰 천. 선서를 거부한 ${r12I('jules')} 숨어서 미사를 드린다. 계단 위 문 앞에 누군가 망을 봐야 한다.`,[
    {l:'문 앞에서 망을 본다',a:'bold',f:()=>{r12Rel('jules',{close:5,trust:6});bfMem('m_ju_cellar','jules',`${r12N('jules')}의 지하실 미사에서 문 앞을 지켰다.`,{tone:'두려움',their:'문 앞에 그 사람이 서 있었다. 그날은 성체를 드는 손이 떨리지 않았다.'});say('순찰대의 발소리가 두 번 문 앞을 지나갔다. 두 번 다 멈추지 않았다. 미사가 끝나자 그가 계단을 올라와 말없이 당신 손을 잡았다.'+fx({cour:2,sus:3}))}},
-   {l:'함께 내려가 미사에 참례한다',a:'pious',f:()=>{r12Rel('jules',{close:4});say(`좁은 지하실에 열 명 남짓이 무릎을 꿇었다. ${r12U('jules')} 라틴어 기도를 한 번도 더듬지 않았다. 축성의 순간, 누군가 숨죽여 울었다.`+fx({faith:3,sus:2}))}}])});
+   {l:'함께 내려가 미사에 참례한다',a:'pious',f:()=>{r12Rel('jules',{close:4});say(`좁은 지하실에 열 명 남짓이 무릎을 꿇었다. ${r12U('jules')} 라틴어 기도를 한 번도 더듬지 않았다. 축성의 순간, 누군가 숨죽여 울었다.`+fx({faith:3,sus:2}))}},
+   r16OptJules()])});
 sd12('jules','ju_d_bells',()=>T()>=1802.3&&s.age>=20,async()=>{
   await bfScene('돌아온 종','les cloches',`정교협약 뒤, 새로 부어 만든 종이 ${bfPar()} 종탑에 올라간다. 밧줄을 끄는 사람들 맨 앞에 ${r12I('jules')} 있다. 머리는 희끗해졌다. “가, 같이 당길래?”`,[
    {l:'밧줄을 함께 잡는다',a:'social pious',f:()=>{r12Rel('jules',{close:5});bfMem('m_ju_bells2','jules',`정교협약 뒤 새 종을 종탑에 올리는 밧줄을 ${r12W('jules')} 함께 잡았다.`,{tone:'희망',their:'열 해 만의 종소리였다. 어릴 때 종탑 아래에서 처음 만난 그 사람이 옆에 있었다.'});say('종이 제자리에 걸리자 그가 줄을 당겼다. 열 해 만의 종소리가 지붕들 위로 퍼졌다. 골목마다 사람들이 창문을 열었다.'+fx({faith:2,hap:4}))}},
