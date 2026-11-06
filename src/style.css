@@ -924,3 +924,9 @@ details.fold>.cgrid{margin-top:8px}
 .cap-row{gap:8px}
 /* 엔딩: 사인 */
 #obWill .wl-c{display:block;margin-top:10px;font-style:normal;font-size:.8rem;letter-spacing:.06em;opacity:.8}
+/* 부고 화면 버튼: 세 개를 같은 폭으로 세로 정렬 */
+#end .end-btns{display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:300px;margin:26px auto 8px}
+#end .end-btns .pill{width:100%;justify-content:center;text-align:center;margin:0}
+#end .will-box{max-width:520px;margin:12px auto 0;display:flex;flex-direction:column;gap:8px}
+#end .will-box textarea{font:inherit;font-size:1rem;line-height:1.6;padding:10px 12px;border:1px solid #D9BC7A;background:rgba(239,229,211,.08);color:#EFE5D3;border-radius:6px;resize:vertical}
+#end .will-row{display:flex;justify-content:flex-end;gap:8px}
